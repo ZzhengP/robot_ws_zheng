@@ -1,0 +1,19 @@
+<launch>
+
+<node name="cart_controller"
+      pkg = "robot6R"
+      type = "arm_cart_control"
+/>
+
+<node name="joint_vel_plot"
+      pkg = "rqt_plot"
+      type = "rqt_plot"
+      args = "/ur5/shoulder_pan_joint_position_controller/vel
+              /ur5/shoulder_lift_joint_position_controller/vel
+              /ur5/elbow_joint_position_controller
+              /ur5/wrist_1_joint_position_controller/vel
+              /ur5/wrist_2_joint_position_controller/vel
+              /ur5/wrist_3_joint_position_controller/vel"
+/>
+
+</launch>
