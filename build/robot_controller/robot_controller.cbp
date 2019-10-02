@@ -887,6 +887,12 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/examples/load_robot.cpp">
 			<Option target="load_robot_0"/>
 		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h">
 			<Option target="robot_controller_library"/>
 		</Unit>

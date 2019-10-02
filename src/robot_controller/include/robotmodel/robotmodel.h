@@ -10,8 +10,9 @@
 #include "kdl/frames_io.hpp"
 #include <boost/scoped_ptr.hpp>
 #include <urdf/model.h>
-#include <Eigen/Dense>
-#include <Eigen/Core>
+#include "commun/commun_definition.h"
+#include "commun/color.h"
+
 class SegmentIndice
 {
     /* This class is used to bind segment names to the index in the chain */

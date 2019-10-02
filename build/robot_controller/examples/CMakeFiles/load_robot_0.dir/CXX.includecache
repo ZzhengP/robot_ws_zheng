@@ -248,6 +248,16 @@ cmath
 qpOASES.hpp
 /home/zheng/robot_ws_zheng/src/robot_controller/examples/qpOASES.hpp
 
+/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
+
+/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h
+Eigen/Core
+-
+Eigen/Dense
+-
+iostream
+-
+
 /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h
 iostream
 /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/iostream
@@ -283,10 +293,10 @@ boost/scoped_ptr.hpp
 -
 urdf/model.h
 -
-Eigen/Dense
--
-Eigen/Core
--
+commun/commun_definition.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/commun/commun_definition.h
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/commun/color.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/solver/mpc_solver.h
 qpOASES.hpp
@@ -299,16 +309,18 @@ iostream
 -
 boost/shared_ptr.hpp
 -
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/solver/commun/color.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/mpc_task.h
-Eigen/Core
-/home/zheng/robot_ws_zheng/src/robot_controller/include/task/Eigen/Core
 iostream
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/iostream
 unsupported/Eigen/MatrixFunctions
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/unsupported/Eigen/MatrixFunctions
-Eigen/Dense
-/home/zheng/robot_ws_zheng/src/robot_controller/include/task/Eigen/Dense
+commun/commun_definition.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/task/commun/commun_definition.h
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/task/commun/color.h
 
 /opt/ros/melodic/include/kdl/chain.hpp
 segment.hpp

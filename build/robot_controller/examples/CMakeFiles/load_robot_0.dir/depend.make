@@ -34,6 +34,8 @@ robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zh
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.hpp
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/examples/load_robot.cpp
+robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
+robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_acc_cst.h
 robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h

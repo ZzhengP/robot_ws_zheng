@@ -3,6 +3,7 @@
 #include <Eigen/Core>
 #include <iostream>
 #include <boost/shared_ptr.hpp>
+#include "commun/color.h"
 class mpc_solve
 {
 public:
@@ -17,6 +18,12 @@ public:
         options_.numRefinementSteps = 1;
         qpoases_.reset(new qpOASES::QProblemB(nV_));
         qpoases_standard_.reset(new qpOASES::QProblem());
+
+        std::cout <<"---------------------------------------------" << std::endl;
+        std::cout << BOLD(FRED("QPs solver is successively created: "))  <<'\n'
+                  << FYEL("The number of optimization variable is : ") << nV_ << std::endl;
+
+        std::cout <<"---------------------------------------------" << std::endl;
     }
 
     bool initData(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub)
@@ -31,7 +38,11 @@ public:
         g_ = g;
         lb_ = lb;
         ub_ = ub;
+        std::cout <<"---------------------------------------------" << std::endl;
+        std::cout << BOLD(FRED("QPs basic formulation solver is successively initialized: "))  <<std::endl;
+        std::cout <<"---------------------------------------------" << std::endl;
         return true;
+
     }
 
     bool initData(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::MatrixXd A,Eigen::VectorXd lb, Eigen::VectorXd ub, Eigen::VectorXd lbA, Eigen::VectorXd ubA)
@@ -53,6 +64,10 @@ public:
         A_ = A;
         lbA_ = lbA;
         ubA_ = ubA;
+
+        std::cout <<"---------------------------------------------" << std::endl;
+        std::cout << BOLD(FRED("QPs standard formulation solver is successively initialized: "))  <<std::endl;
+        std::cout <<"---------------------------------------------" << std::endl;
         return true;
     }
     void solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub){

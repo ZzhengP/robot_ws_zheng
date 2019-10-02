@@ -216,6 +216,8 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_
 robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
+robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/src/robotmodel/robotmodel.cpp
 robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o: /opt/ros/melodic/include/kdl/chain.hpp
@@ -568,6 +570,7 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.c
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/OQPinterface.hpp
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.hpp
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
+robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/solver/mpc_solver.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/src/solver/mpc_solver.cpp
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /usr/include/eigen3/Eigen/Cholesky
@@ -783,6 +786,8 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.c
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
+robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/include/task/mpc_task.h
 robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/src/task/mpc_task.cpp
 robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o: /usr/include/eigen3/Eigen/Cholesky

@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     const std::string& urdf_name= "/home/zheng/robot_ws_zheng/src/ur_description/urdf/ur5_robot.urdf";
     const std::string& panda_urdf = "/home/zheng/catkin_ws/src/franka_ros/franka_description/robots/panda_arm.urdf";
 
-    const int ndof=6, N=4, panda_ndof = 7;
+    const int ndof=6, N=2, panda_ndof = 7;
     arm_kinematic robot_arm(urdf_name, ndof,"base_link", "wrist_3_link");
     arm_kinematic panda_arm(panda_urdf, panda_ndof,"panda_link0", "panda_link7");
 
@@ -51,7 +51,6 @@ int main(int argc, char **argv)
     robot_arm.init(q_init.data, dotq_init.data, N);
 
     panda_arm.init(panda_q_init.data, panda_dotq_init.data, N);
-
 
     KDL::Frame ee_frame, des_frame, back_des_frame, panda_ee_frame, panda_des_frame;
     ee_frame = robot_arm.getSegmentPosition(5);
@@ -77,13 +76,12 @@ int main(int argc, char **argv)
     Eigen::VectorXd optimal_Solution, robot_state, q_horizon;
     Eigen::VectorXd panda_optimal_Solution, panda_robot_state, panda_q_horizon;
 
-    MPC_Task task(N,1,0.001,ndof,dt);
-    MPC_Task panda_task(N,1,0.001,panda_ndof,dt);
-
     bool ok;
     bool panda_ok;
-
+    MPC_Task task(N,1,0.001,ndof,dt, "ur5");
     ok = task.init();
+
+    MPC_Task panda_task(N,1,0.001,panda_ndof,dt, "panda");
     panda_ok = panda_task.init();
 
     Eigen::MatrixXd Px, Pu, Px_dq, Pu_dq;
@@ -212,8 +210,8 @@ int main(int argc, char **argv)
     ddq_C.setIdentity();
 
     for (size_t i = 0; i < N ; i++){
-        ddq_min.segment(6*i,6) << -0.02, -0.02, -0.02, -0.02, -0.02, -0.02;
-        ddq_max.segment(6*i,6) << 0.02, 0.02, 0.02, 0.02, 0.02, 0.02;
+        ddq_min.segment(6*i,6) << -2, -2, -2, -2, -2, -2;
+        ddq_max.segment(6*i,6) << 2, 2, 2, 2, 2, 2;
       }
     joint_acc_cst jnt_acc_cst(ndof, N);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
@@ -221,6 +219,7 @@ int main(int argc, char **argv)
     jnt_acc_cst.setUpperBound(robot_state, Px);
     ddq_lb = jnt_acc_cst.getLowerBound();
     ddq_ub = jnt_acc_cst.getUpperBound();
+    double error = 100;
 
     while(ros::ok())
 //         for (int i(0);i<1;i++)
