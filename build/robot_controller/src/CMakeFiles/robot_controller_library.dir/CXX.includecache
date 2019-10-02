@@ -202,15 +202,13 @@ qpOASES/extras/SolutionAnalysis.ipp
 
 /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
 
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_vel_cst.h
-Eigen/Core
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/Eigen/Core
+/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h
 iostream
 /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/iostream
-unsupported/Eigen/MatrixFunctions
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/unsupported/Eigen/MatrixFunctions
 Eigen/Dense
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/Eigen/Dense
+-
+Eigen/Core
+-
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h
 iostream
@@ -262,9 +260,9 @@ unsupported/Eigen/MatrixFunctions
 Eigen/Dense
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/Eigen/Dense
 
-/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp
-constraint/joint_vel_cst.h
-/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/constraint/joint_vel_cst.h
+/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp
+constraint/generic_cst.h
+/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/constraint/generic_cst.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/src/robotmodel/robotmodel.cpp
 robotmodel/robotmodel.h

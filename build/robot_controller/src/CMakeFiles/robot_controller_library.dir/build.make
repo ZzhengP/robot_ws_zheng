@@ -81,28 +81,28 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmod
 robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o.provides.build: robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o
 
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o: robot_controller/src/CMakeFiles/robot_controller_library.dir/flags.make
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o"
-	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o -c /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o: robot_controller/src/CMakeFiles/robot_controller_library.dir/flags.make
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o: /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o -c /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.i"
-	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp > CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.i
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp > CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.s"
-	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp -o CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.s
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp -o CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.requires:
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.requires:
 
-.PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.requires
+.PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.requires
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.provides: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.requires
-	$(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.provides.build
-.PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.provides
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.provides: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.requires
+	$(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.provides.build
+.PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.provides
 
-robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.provides.build: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o
+robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.provides.build: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o
 
 
 robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o: robot_controller/src/CMakeFiles/robot_controller_library.dir/flags.make
@@ -156,7 +156,7 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o
 # Object files for target robot_controller_library
 robot_controller_library_OBJECTS = \
 "CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o" \
-"CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o" \
+"CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o" \
 "CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o" \
 "CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o"
 
@@ -164,7 +164,7 @@ robot_controller_library_OBJECTS = \
 robot_controller_library_EXTERNAL_OBJECTS =
 
 /home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o
-/home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/librobot_controller_library.so: robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make
@@ -334,7 +334,7 @@ robot_controller/src/CMakeFiles/robot_controller_library.dir/build: /home/zheng/
 .PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/build
 
 robot_controller/src/CMakeFiles/robot_controller_library.dir/requires: robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o.requires
-robot_controller/src/CMakeFiles/robot_controller_library.dir/requires: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o.requires
+robot_controller/src/CMakeFiles/robot_controller_library.dir/requires: robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o.requires
 robot_controller/src/CMakeFiles/robot_controller_library.dir/requires: robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o.requires
 robot_controller/src/CMakeFiles/robot_controller_library.dir/requires: robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o.requires
 

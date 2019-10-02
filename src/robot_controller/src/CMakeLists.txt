@@ -1,11 +1,15 @@
 set(HEADER_LIST "${robot_controller_SOURCE_DIR}/include/robotmodel/robotmodel.h"
-                "${robot_controller_SOURCE_DIR}/include/constraint/joint_vel_cst.h"
+                "${robot_controller_SOURCE_DIR}/include/constraint/generic_cst.h"
+#                "${robot_controller_SOURCE_DIR}/include/constraint/joint_vel_cst.h"
+#                "${robot_controller_SOURCE_DIR}/include/constraint/joint_pos_cst.h"
+                "${robot_controller_SOURCE_DIR}/include/constraint/joint_acc_cst.h"
                 "${robot_controller_SOURCE_DIR}/include/solver/mpc_solver.h"
                 "${robot_controller_SOURCE_DIR}/include/task/mpc_task.h")
 
 add_library(robot_controller_library
     robotmodel/robotmodel.cpp
-    constraint/joint_vel_cst.cpp
+    constraint/generic_cst.cpp
+#    constraint/joint_pos_cst.cpp
     solver/mpc_solver.cpp
     task/mpc_task.cpp
     ${HEADER_LIST})

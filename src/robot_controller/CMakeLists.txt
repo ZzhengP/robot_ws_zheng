@@ -25,6 +25,9 @@ find_package(iDynTree REQUIRED)
 # find_package(Boost REQUIRED COMPONENTS system)
 set(HEADERS
     include/robotmodel/robotmodel.h
+    include/constraint/generic_cst.h
+    include/constraint/joint_acc_cst.h
+
   )
 
 catkin_package(

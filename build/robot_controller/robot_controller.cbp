@@ -887,7 +887,10 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/examples/load_robot.cpp">
 			<Option target="load_robot_0"/>
 		</Unit>
-		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_vel_cst.h">
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_acc_cst.h">
 			<Option target="robot_controller_library"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h">
@@ -899,7 +902,7 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/task/mpc_task.h">
 			<Option target="robot_controller_library"/>
 		</Unit>
-		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp">
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp">
 			<Option target="robot_controller_library"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/robotmodel/robotmodel.cpp">

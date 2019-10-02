@@ -1,7 +1,9 @@
 #include "robotmodel/robotmodel.h"
-#include "constraint/joint_vel_cst.h"
 #include "solver/mpc_solver.h"
 #include "task/mpc_task.h"
+#include "constraint/generic_cst.h"
+#include "constraint/joint_acc_cst.h"
+
 
 #include "iostream"
 #include "kdl/chain.hpp"
@@ -33,7 +35,7 @@ int main(int argc, char **argv)
     const std::string& urdf_name= "/home/zheng/robot_ws_zheng/src/ur_description/urdf/ur5_robot.urdf";
     const std::string& panda_urdf = "/home/zheng/catkin_ws/src/franka_ros/franka_description/robots/panda_arm.urdf";
 
-    const int ndof=6, N=2, panda_ndof = 7;
+    const int ndof=6, N=4, panda_ndof = 7;
     arm_kinematic robot_arm(urdf_name, ndof,"base_link", "wrist_3_link");
     arm_kinematic panda_arm(panda_urdf, panda_ndof,"panda_link0", "panda_link7");
 
@@ -153,6 +155,7 @@ int main(int argc, char **argv)
     panda_A = panda_task.getStateA();
     panda_B = panda_task.getStateB();
 
+
     mpc_solve qpSolver(N, ndof), panda_qpSolver(N,panda_ndof);
     qpSolver.setDefaultOptions();
     qpSolver.initData(H,g,lb,ub);
@@ -196,24 +199,28 @@ int main(int argc, char **argv)
     q_horizon = Px*robot_state + Pu*optimal_Solution;
     panda_q_horizon = panda_Px*panda_robot_state + panda_Pu*panda_optimal_Solution;
 
-    // Define MPC constraint
-    Eigen::VectorXd dq_lower, dq_upper;
-    Eigen::MatrixXd cst_C_dq;
-    dq_lower.resize(N*ndof);
-    dq_upper.resize(N*ndof);
+
+    // Define constraint
+
+    Eigen::VectorXd ddq_min, ddq_max, ddq_lb, ddq_ub;
+    Eigen::MatrixXd ddq_C;
+    ddq_min.resize(N*ndof);
+    ddq_max.resize(N*ndof);
+    ddq_lb.resize(N*ndof);
+    ddq_ub.resize(N*ndof);
+    ddq_C.resize(N*ndof, N*ndof);
+    ddq_C.setIdentity();
 
     for (size_t i = 0; i < N ; i++){
-        dq_lower.segment(6*i,6) << -2, -2, -2, -2, -2, -2;
-        dq_upper.segment(6*i,6) << 2, 2, 2, 2, 2, 2;
+        ddq_min.segment(6*i,6) << -0.02, -0.02, -0.02, -0.02, -0.02, -0.02;
+        ddq_max.segment(6*i,6) << 0.02, 0.02, 0.02, 0.02, 0.02, 0.02;
       }
-    cst_C_dq.resize(ndof*N,ndof*N);
-    jnt_vel_cst jnt_vel_constraint(N,ndof,dq_lower,dq_upper,Px_dq,Pu_dq);
-    cst_C_dq = jnt_vel_constraint.compute_C_dotq();
-    dq_lower = jnt_vel_constraint.compute_low_dq(robot_state);
-    dq_upper = jnt_vel_constraint.compute_upper_dq(robot_state);
-
-    std::cout<<"q_horizon:"<<q_horizon <<std::endl;
-    //    qpSolver.initData(H,g,cst_C_dq,lb,ub,dq_lower,dq_upper);
+    joint_acc_cst jnt_acc_cst(ndof, N);
+    jnt_acc_cst.setLimit(ddq_min,ddq_max);
+    jnt_acc_cst.setLowerBound(robot_state, Px);
+    jnt_acc_cst.setUpperBound(robot_state, Px);
+    ddq_lb = jnt_acc_cst.getLowerBound();
+    ddq_ub = jnt_acc_cst.getUpperBound();
 
     while(ros::ok())
 //         for (int i(0);i<1;i++)
@@ -251,17 +258,13 @@ int main(int argc, char **argv)
               g = task.getVectorg();
               panda_g = panda_task.getVectorg();
 
-              lb.setConstant(-10);
-              ub.setConstant(10);
               panda_lb.setConstant(-10);
               panda_ub.setConstant(10);
 
-              dq_lower = jnt_vel_constraint.compute_low_dq(robot_state);
-              dq_upper = jnt_vel_constraint.compute_upper_dq(robot_state);
       //        qpSolver.initData(H.block(0,6,6,6),g.segment(6,6),lb.segment(0,6),ub.segment(0,6));
 
       //        qpSolver.solve(H,g,cst_C_dq,lb,ub,dq_lower,dq_upper);
-              qpSolver.solve(H,g,lb,ub);
+              qpSolver.solve(H,g,ddq_lb,ddq_ub);
               panda_qpSolver.solve(panda_H,panda_g,panda_lb,panda_ub);
 
               optimal_Solution = qpSolver.getSolution();
