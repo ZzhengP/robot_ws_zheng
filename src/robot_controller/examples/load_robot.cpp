@@ -14,6 +14,7 @@
 #include "kdl/frames_io.hpp"
 // ros
 #include "ros/ros.h"
+#include "sensor_msgs/JointState.h"
 #include <sdf/parser_urdf.hh>
 #include <fstream>
 #include <thread>
@@ -27,7 +28,22 @@ using namespace  std;
 using namespace qpOASES;
 
 const double pi = 3.1415927;
-// Test: Formuler un problème MPC et résoudre par MPC
+
+sensor_msgs::JointState jnt_state;
+
+void callback(const sensor_msgs::JointState& msg )
+{
+
+    std::cout <<" good ? \n " << std::endl;
+    for (size_t i(0); i<msg.position.size() ; i ++){
+        jnt_state.name[i] = msg.name[i];
+        jnt_state.position[i] = msg.position[i];
+        jnt_state.velocity[i] = msg.velocity[i];
+    }
+
+}
+
+
 int main(int argc, char **argv)
 {
 
@@ -164,30 +180,33 @@ int main(int argc, char **argv)
     ros::init(argc,argv,"cart_controller");
     ros::NodeHandle n;
     // ur5
-    ros::Publisher joint_state_1_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/command", 500);
-    ros::Publisher joint_state_2_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/command", 500);
-    ros::Publisher joint_state_3_pub = n.advertise<std_msgs::Float64>("/ur5/elbow_joint_position_controller/command", 500);
-    ros::Publisher joint_state_4_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/command", 500);
-    ros::Publisher joint_state_5_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/command", 500);
-    ros::Publisher joint_state_6_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/command", 500);
+    ros::Publisher joint_state_1_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/command", 1000);
+    ros::Publisher joint_state_2_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/command", 1000);
+    ros::Publisher joint_state_3_pub = n.advertise<std_msgs::Float64>("/ur5/elbow_joint_position_controller/command", 1000);
+    ros::Publisher joint_state_4_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/command", 1000);
+    ros::Publisher joint_state_5_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/command", 1000);
+    ros::Publisher joint_state_6_pub = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/command", 1000);
 
     // Franka Emika panda
-    ros::Publisher panda_joint_state_1_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint1_position_controller/command", 500);
-    ros::Publisher panda_joint_state_2_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint2_position_controller/command", 500);
-    ros::Publisher panda_joint_state_3_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint3_position_controller/command", 500);
-    ros::Publisher panda_joint_state_4_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint4_position_controller/command", 500);
-    ros::Publisher panda_joint_state_5_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint5_position_controller/command", 500);
-    ros::Publisher panda_joint_state_6_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint6_position_controller/command", 500);
-    ros::Publisher panda_joint_state_7_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint7_position_controller/command", 500);
+    ros::Publisher panda_joint_state_1_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint1_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_2_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint2_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_3_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint3_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_4_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint4_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_5_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint5_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_6_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint6_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_7_pub = n.advertise<std_msgs::Float64>("/ur5/panda_joint7_position_controller/command", 1000);
 
 
-    ros::Publisher joint_1_vel = n.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/vel", 500);
-    ros::Publisher joint_2_vel = n.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/vel", 500);
-    ros::Publisher joint_3_vel = n.advertise<std_msgs::Float64>("/ur5/elbow_joint_position_controller/vel", 500);
-    ros::Publisher joint_4_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/vel", 500);
-    ros::Publisher joint_5_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/vel", 500);
-    ros::Publisher joint_6_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/vel", 500);
-    ros::Rate loop_rate(1000);
+    ros::Publisher joint_1_vel = n.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/vel", 1000);
+    ros::Publisher joint_2_vel = n.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/vel", 1000);
+    ros::Publisher joint_3_vel = n.advertise<std_msgs::Float64>("/ur5/elbow_joint_position_controller/vel", 1000);
+    ros::Publisher joint_4_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/vel", 1000);
+    ros::Publisher joint_5_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/vel", 1000);
+    ros::Publisher joint_6_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/vel", 1000);
+    ros::Rate loop_rate(10);
+
+    ros::Subscriber sub;
+
     robot_state = robot_arm.getRobotState();
     panda_robot_state = panda_arm.getRobotState();
 
@@ -221,8 +240,8 @@ int main(int argc, char **argv)
     ddq_ub = jnt_acc_cst.getUpperBound();
     double error = 100;
 
-    while(ros::ok())
-//         for (int i(0);i<1;i++)
+//    while(ros::ok())
+         for (int i(0);i<1;i++)
           {        
               robot_state = robot_arm.getRobotState();
               panda_robot_state = panda_arm.getRobotState();
@@ -270,7 +289,7 @@ int main(int argc, char **argv)
               panda_optimal_Solution = panda_qpSolver.getSolution();
 
       //        optimal_Solution.segment(0,6) = qpSolver.getSolution();
-              std::cout<<"La solution optimale est : \n" << optimal_Solution << std::endl;
+//              std::cout<<"La solution optimale est : \n" << optimal_Solution << std::endl;
               robot_state = A*robot_state + B*optimal_Solution.segment(0,ndof);
               panda_robot_state = panda_A*panda_robot_state + panda_B*panda_optimal_Solution.segment(0,panda_ndof);
 
@@ -321,9 +340,20 @@ int main(int argc, char **argv)
               joint_6_vel.publish(v6);
 
       //        q_init.data = q_des.data;
+              sub = n.subscribe("/ur5/joint_states",1000,&callback);
+              for (size_t j(0) ; j < jnt_state.position.size(); j++ )
+              {
+                 std::cout << jnt_state.name[j] << std::endl;
+              }
               robot_arm.setState(robot_state.head(ndof),robot_state.tail(ndof));
               panda_arm.setState(panda_robot_state.head(panda_ndof),panda_robot_state.tail(panda_ndof));
-
+              ee_frame = robot_arm.getSegmentPosition(5);
+              error = pow(des_frame.p[0]-ee_frame.p[0],2) + pow(des_frame.p[1]-ee_frame.p[1],2) + pow(des_frame.p[2]-ee_frame.p[2],2) ;
+              std::cout << FRED("error of tracking :") << sqrt(error) << std::endl;
+              if (sqrt(error) < 0.0001)
+              {
+                  break;
+              }
           }
           ros::spinOnce();
           loop_rate.sleep();

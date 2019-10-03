@@ -229,6 +229,8 @@ kdl/frames_io.hpp
 /home/zheng/robot_ws_zheng/src/robot_controller/examples/kdl/frames_io.hpp
 ros/ros.h
 /home/zheng/robot_ws_zheng/src/robot_controller/examples/ros/ros.h
+sensor_msgs/JointState.h
+/home/zheng/robot_ws_zheng/src/robot_controller/examples/sensor_msgs/JointState.h
 sdf/parser_urdf.hh
 -
 fstream
