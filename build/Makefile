@@ -1169,6 +1169,19 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named ros_gazebo_sim
+
+# Build rule for target.
+ros_gazebo_sim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_gazebo_sim
+.PHONY : ros_gazebo_sim
+
+# fast build rule for target.
+ros_gazebo_sim/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
+.PHONY : ros_gazebo_sim/fast
+
+#=============================================================================
 # Target rules for targets named ros_robot_controller_library
 
 # Build rule for target.
@@ -1310,6 +1323,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... tf_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... ros_gazebo_sim"
 	@echo "... ros_robot_controller_library"
 	@echo "... gazebo_sim"
 	@echo "... load_robot_0"

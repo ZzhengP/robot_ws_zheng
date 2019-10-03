@@ -81,14 +81,144 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o
 
 
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp > CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.s
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.requires:
+
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.requires
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.provides: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.requires
+	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.provides.build
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.provides
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o
+
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointPosCst.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointPosCst.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointPosCst.cpp > CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointPosCst.cpp -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.s
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.requires:
+
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.requires
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.provides: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.requires
+	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.provides.build
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.provides
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o
+
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointVelCst.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointVelCst.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointVelCst.cpp > CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointVelCst.cpp -o CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.requires:
+
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.requires
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.provides: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.requires
+	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.provides.build
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.provides
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o
+
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp > CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp -o CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.requires:
+
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.requires
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.provides: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.requires
+	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.provides.build
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.provides
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o
+
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/RosMpcTask.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/RosMpcTask.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/RosMpcTask.cpp > CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/RosMpcTask.cpp -o CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.s
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.requires:
+
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.requires
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.provides: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.requires
+	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.provides.build
+.PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.provides
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.provides.build: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o
+
+
 # Object files for target ros_robot_controller_library
 ros_robot_controller_library_OBJECTS = \
-"CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o"
+"CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o"
 
 # External object files for target ros_robot_controller_library
 ros_robot_controller_library_EXTERNAL_OBJECTS =
 
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libkdl_parser.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/liborocos-kdl.so.1.4.0
@@ -247,7 +377,7 @@ ros_robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libavutil.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libavutil.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ros_robot_controller_library.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -256,6 +386,11 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build: /hom
 .PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build
 
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o.requires
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o.requires
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o.requires
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o.requires
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o.requires
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o.requires
 
 .PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/requires
 

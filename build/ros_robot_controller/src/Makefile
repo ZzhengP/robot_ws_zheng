@@ -182,6 +182,87 @@ ros_robot_controller_library/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build
 .PHONY : ros_robot_controller_library/fast
 
+constraint/RosGenericCst.o: constraint/RosGenericCst.cpp.o
+
+.PHONY : constraint/RosGenericCst.o
+
+# target to build an object file
+constraint/RosGenericCst.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o
+.PHONY : constraint/RosGenericCst.cpp.o
+
+constraint/RosGenericCst.i: constraint/RosGenericCst.cpp.i
+
+.PHONY : constraint/RosGenericCst.i
+
+# target to preprocess a source file
+constraint/RosGenericCst.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.i
+.PHONY : constraint/RosGenericCst.cpp.i
+
+constraint/RosGenericCst.s: constraint/RosGenericCst.cpp.s
+
+.PHONY : constraint/RosGenericCst.s
+
+# target to generate assembly for a file
+constraint/RosGenericCst.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.s
+.PHONY : constraint/RosGenericCst.cpp.s
+
+constraint/RosJointPosCst.o: constraint/RosJointPosCst.cpp.o
+
+.PHONY : constraint/RosJointPosCst.o
+
+# target to build an object file
+constraint/RosJointPosCst.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o
+.PHONY : constraint/RosJointPosCst.cpp.o
+
+constraint/RosJointPosCst.i: constraint/RosJointPosCst.cpp.i
+
+.PHONY : constraint/RosJointPosCst.i
+
+# target to preprocess a source file
+constraint/RosJointPosCst.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.i
+.PHONY : constraint/RosJointPosCst.cpp.i
+
+constraint/RosJointPosCst.s: constraint/RosJointPosCst.cpp.s
+
+.PHONY : constraint/RosJointPosCst.s
+
+# target to generate assembly for a file
+constraint/RosJointPosCst.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.s
+.PHONY : constraint/RosJointPosCst.cpp.s
+
+constraint/RosJointVelCst.o: constraint/RosJointVelCst.cpp.o
+
+.PHONY : constraint/RosJointVelCst.o
+
+# target to build an object file
+constraint/RosJointVelCst.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o
+.PHONY : constraint/RosJointVelCst.cpp.o
+
+constraint/RosJointVelCst.i: constraint/RosJointVelCst.cpp.i
+
+.PHONY : constraint/RosJointVelCst.i
+
+# target to preprocess a source file
+constraint/RosJointVelCst.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.i
+.PHONY : constraint/RosJointVelCst.cpp.i
+
+constraint/RosJointVelCst.s: constraint/RosJointVelCst.cpp.s
+
+.PHONY : constraint/RosJointVelCst.s
+
+# target to generate assembly for a file
+constraint/RosJointVelCst.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s
+.PHONY : constraint/RosJointVelCst.cpp.s
+
 robotmodel/RosRobotModel.o: robotmodel/RosRobotModel.cpp.o
 
 .PHONY : robotmodel/RosRobotModel.o
@@ -209,6 +290,60 @@ robotmodel/RosRobotModel.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.s
 .PHONY : robotmodel/RosRobotModel.cpp.s
 
+solver/RosMpcSolver.o: solver/RosMpcSolver.cpp.o
+
+.PHONY : solver/RosMpcSolver.o
+
+# target to build an object file
+solver/RosMpcSolver.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o
+.PHONY : solver/RosMpcSolver.cpp.o
+
+solver/RosMpcSolver.i: solver/RosMpcSolver.cpp.i
+
+.PHONY : solver/RosMpcSolver.i
+
+# target to preprocess a source file
+solver/RosMpcSolver.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.i
+.PHONY : solver/RosMpcSolver.cpp.i
+
+solver/RosMpcSolver.s: solver/RosMpcSolver.cpp.s
+
+.PHONY : solver/RosMpcSolver.s
+
+# target to generate assembly for a file
+solver/RosMpcSolver.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s
+.PHONY : solver/RosMpcSolver.cpp.s
+
+task/RosMpcTask.o: task/RosMpcTask.cpp.o
+
+.PHONY : task/RosMpcTask.o
+
+# target to build an object file
+task/RosMpcTask.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o
+.PHONY : task/RosMpcTask.cpp.o
+
+task/RosMpcTask.i: task/RosMpcTask.cpp.i
+
+.PHONY : task/RosMpcTask.i
+
+# target to preprocess a source file
+task/RosMpcTask.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.i
+.PHONY : task/RosMpcTask.cpp.i
+
+task/RosMpcTask.s: task/RosMpcTask.cpp.s
+
+.PHONY : task/RosMpcTask.s
+
+# target to generate assembly for a file
+task/RosMpcTask.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.s
+.PHONY : task/RosMpcTask.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,9 +358,24 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... constraint/RosGenericCst.o"
+	@echo "... constraint/RosGenericCst.i"
+	@echo "... constraint/RosGenericCst.s"
+	@echo "... constraint/RosJointPosCst.o"
+	@echo "... constraint/RosJointPosCst.i"
+	@echo "... constraint/RosJointPosCst.s"
+	@echo "... constraint/RosJointVelCst.o"
+	@echo "... constraint/RosJointVelCst.i"
+	@echo "... constraint/RosJointVelCst.s"
 	@echo "... robotmodel/RosRobotModel.o"
 	@echo "... robotmodel/RosRobotModel.i"
 	@echo "... robotmodel/RosRobotModel.s"
+	@echo "... solver/RosMpcSolver.o"
+	@echo "... solver/RosMpcSolver.i"
+	@echo "... solver/RosMpcSolver.s"
+	@echo "... task/RosMpcTask.o"
+	@echo "... task/RosMpcTask.i"
+	@echo "... task/RosMpcTask.s"
 .PHONY : help
 
 
