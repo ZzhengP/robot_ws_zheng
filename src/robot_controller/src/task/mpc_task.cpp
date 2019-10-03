@@ -1,11 +1,14 @@
 #include "task/mpc_task.h"
 
+MPC_Task::MPC_Task(int N, double Q, double R, int ndof, double dt, std::string robot_name):N_(N), ndof(ndof), dt_(dt),weightTask1_(Q),weightTask2_(R){
 
-MPC_Task::MPC_Task(int N, double Q, double R, int ndof, double dt):N_(N), ndof(ndof), dt_(dt){
-    weightTask1_ = Q;
-    weightTask2_ = R;
     Id_.resize(ndof,ndof);
     Id_.setIdentity();
+
+    std::cout <<"---------------------------------------------" << std::endl;
+    std::cout <<BOLD(FRED("add tracking task for "))<< robot_name << std::endl;
+    std::cout <<"---------------------------------------------" << std::endl;
+
 }
 
 bool MPC_Task::init()
@@ -65,15 +68,19 @@ bool MPC_Task::init()
 
     Acc_reg_.resize(N_*ndof,N_*ndof);
     Acc_reg_.setIdentity();
-    std::cout << "Le problème est initialisé: " << "\n";
-    std::cout << "Matrice  A : \n" << A_ << "\n"
-              << "Matrice  B : \n" << B_ << "\n"
-              << "Matrice C_q_: \n"<< C_q_<< "\n"
-              << "Matrice C_dq_: \n"<< C_dq_ << "\n"
-              << "C*B: \n" << C_q_*B_<< "\n"
-              << "C*A: \n" << C_q_*A_ <<"\n"
-              << "Px: \n" << Px_<< "\n"
-              << "Pu: \n" << Pu_ << std::endl;
+    std::cout <<"---------------------------------------------" << std::endl;
+    std::cout << FYEL("The task is successively initialized: ") << std::endl;
+    std::cout << FYEL("With position tracking weight : ") << weightTask1_ <<'\n'
+              << FYEL("With velocity tracking weight : ") << weightTask2_ <<'\n'
+              << FYEL("With acceleration tracking weight :") << weightTask2_ << std::endl;
+
+    std::cout << FYEL("State matrix A is: \n") << A_.format(CleanFmt)  << "\n"
+              << FYEL("Input matrix B is: \n") << B_.format(CleanFmt) << "\n"
+//              << "Joint position output matrix C_q: \n"<< C_q_.format(CleanFmt)<< "\n"
+//              << "Joint velocity output matrix C_dq: \n"<< C_dq_.format(CleanFmt) << "\n"
+//              << "Augmented state matrix Px is : \n" << Px_.format(CleanFmt)<< "\n"
+//              << "Augmented input matrix Pu is : \n" << Pu_.format(CleanFmt)<< std::endl;
+                <<"---------------------------------------------" << std::endl;
     return true;
 
 }

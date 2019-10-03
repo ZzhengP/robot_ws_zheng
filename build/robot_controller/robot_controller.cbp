@@ -5,7 +5,7 @@
 		<Option title="robot_controller"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\opt\ros\melodic\;CMake Files\..\..\..\..\opt\ros\melodic\share\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\test\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\em\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\cpp_common\;CMake Files\..\..\..\..\opt\ros\melodic\share\cpp_common\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_runtime\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_runtime\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_serialization\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_traits\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rostime\;CMake Files\..\..\..\..\opt\ros\melodic\share\rostime\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\xmlrpcpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospy\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospy\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\kdl_parser\;CMake Files\..\..\..\..\opt\ros\melodic\share\kdl_parser\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\urdf\;CMake Files\..\..\..\..\opt\ros\melodic\share\urdf\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole_bridge\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole_bridge\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_ros\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_ros\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roslib\;CMake Files\..\..\..\..\opt\ros\melodic\share\roslib\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospack\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospack\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\geometry_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_srvs\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_srvs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_filters\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_filters\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\sensor_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_ros\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_ros\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genmsg\;CMake Files\..\..\..\..\opt\ros\melodic\share\genmsg\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gencpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\gencpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\geneus\;CMake Files\..\..\..\..\opt\ros\melodic\share\geneus\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genlisp\;CMake Files\..\..\..\..\opt\ros\melodic\share\genlisp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gennodejs\;CMake Files\..\..\..\..\opt\ros\melodic\share\gennodejs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genpy\;CMake Files\..\..\..\..\opt\ros\melodic\share\genpy\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_generation\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_generation\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_py\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_py\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\opt\ros\melodic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\trajectory_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\trajectory_msgs\cmake\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\src\;CMake Files\..\..\..\..\usr\src\googletest\;CMake Files\..\..\..\..\usr\src\googletest\googlemock\;CMake Files\..\..\..\..\usr\src\googletest\googletest\;CMake Files\..\..\..\..\usr\src\googletest\googletest\cmake\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\gazebo\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\simbody\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\sdformat\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-math4\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-cmake0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-cmake0\cmake0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-transport4\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-msgs1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-common1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-fuel_tools1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OGRE\;CMake Files\..\..\..\..\usr\share\OGRE\cmake\;CMake Files\..\..\..\..\usr\share\OGRE\cmake\modules\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\iDynTree\;CMake Files\..\..\catkin_ws\;CMake Files\..\..\catkin_ws\devel\;CMake Files\..\..\catkin_ws\devel\share\;CMake Files\..\..\catkin_ws\devel\share\qpOASES\;CMake Files\..\..\catkin_ws\devel\share\qpOASES\cmake\;CMake Files\..\..\anaconda3\;CMake Files\..\..\anaconda3\lib\;CMake Files\..\..\anaconda3\lib\cmake\;CMake Files\..\..\anaconda3\lib\cmake\ZeroMQ\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\ur_description\;CMake Files\..\build\ur_description\catkin_generated\;CMake Files\..\build\robot_controller\;CMake Files\..\build\robot_controller\catkin_generated\;CMake Files\ur_description\;CMake Files\robot_controller\;CMake Files\robot_controller\examples\;CMake Files\robot_controller\src\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\opt\ros\melodic\;CMake Files\..\..\..\..\opt\ros\melodic\share\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\test\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\opt\ros\melodic\share\catkin\cmake\em\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\cpp_common\;CMake Files\..\..\..\..\opt\ros\melodic\share\cpp_common\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_runtime\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_runtime\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_serialization\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_traits\;CMake Files\..\..\..\..\opt\ros\melodic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rostime\;CMake Files\..\..\..\..\opt\ros\melodic\share\rostime\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\xmlrpcpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospy\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospy\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\kdl_parser\;CMake Files\..\..\..\..\opt\ros\melodic\share\kdl_parser\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\urdf\;CMake Files\..\..\..\..\opt\ros\melodic\share\urdf\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole_bridge\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosconsole_bridge\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_ros\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_ros\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\roslib\;CMake Files\..\..\..\..\opt\ros\melodic\share\roslib\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospack\;CMake Files\..\..\..\..\opt\ros\melodic\share\rospack\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\geometry_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_srvs\;CMake Files\..\..\..\..\opt\ros\melodic\share\std_srvs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_filters\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_filters\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\sensor_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_ros\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_ros\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genmsg\;CMake Files\..\..\..\..\opt\ros\melodic\share\genmsg\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gencpp\;CMake Files\..\..\..\..\opt\ros\melodic\share\gencpp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\geneus\;CMake Files\..\..\..\..\opt\ros\melodic\share\geneus\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genlisp\;CMake Files\..\..\..\..\opt\ros\melodic\share\genlisp\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gennodejs\;CMake Files\..\..\..\..\opt\ros\melodic\share\gennodejs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\genpy\;CMake Files\..\..\..\..\opt\ros\melodic\share\genpy\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph\;CMake Files\..\..\..\..\opt\ros\melodic\share\rosgraph\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_generation\;CMake Files\..\..\..\..\opt\ros\melodic\share\message_generation\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_py\;CMake Files\..\..\..\..\opt\ros\melodic\share\tf2_py\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\opt\ros\melodic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\gazebo_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\melodic\share\trajectory_msgs\;CMake Files\..\..\..\..\opt\ros\melodic\share\trajectory_msgs\cmake\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\src\;CMake Files\..\..\..\..\usr\src\googletest\;CMake Files\..\..\..\..\usr\src\googletest\googlemock\;CMake Files\..\..\..\..\usr\src\googletest\googletest\;CMake Files\..\..\..\..\usr\src\googletest\googletest\cmake\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\gazebo\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\simbody\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\sdformat\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-math4\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-cmake0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-cmake0\cmake0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-transport4\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-msgs1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-common1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\ignition-fuel_tools1\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OGRE\;CMake Files\..\..\..\..\usr\share\OGRE\cmake\;CMake Files\..\..\..\..\usr\share\OGRE\cmake\modules\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\iDynTree\;CMake Files\..\..\catkin_ws\;CMake Files\..\..\catkin_ws\devel\;CMake Files\..\..\catkin_ws\devel\share\;CMake Files\..\..\catkin_ws\devel\share\qpOASES\;CMake Files\..\..\catkin_ws\devel\share\qpOASES\cmake\;CMake Files\..\..\anaconda3\;CMake Files\..\..\anaconda3\lib\;CMake Files\..\..\anaconda3\lib\cmake\;CMake Files\..\..\anaconda3\lib\cmake\ZeroMQ\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\ur_description\;CMake Files\..\build\ur_description\catkin_generated\;CMake Files\..\build\ros_robot_controller\;CMake Files\..\build\ros_robot_controller\catkin_generated\;CMake Files\..\build\robot_controller\;CMake Files\..\build\robot_controller\catkin_generated\;CMake Files\ur_description\;CMake Files\ros_robot_controller\;CMake Files\ros_robot_controller\examples\;CMake Files\ros_robot_controller\src\;CMake Files\robot_controller\;CMake Files\robot_controller\examples\;CMake Files\robot_controller\src\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
@@ -17,674 +17,102 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="trajectory_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 trajectory_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trajectory_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 trajectory_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trajectory_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 trajectory_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_gencfg">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_gencfg"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf2_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf2_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf2_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf2_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf2_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_srvs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trajectory_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 trajectory_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rosgraph_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 rosgraph_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rosgraph_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 rosgraph_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rosgraph_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 rosgraph_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rosgraph_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 rosgraph_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_srvs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sensor_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sensor_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dynamic_reconfigure_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rosgraph_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 rosgraph_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="roscpp_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 roscpp_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="geometry_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gazebo_ros_gencfg">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 gazebo_ros_gencfg"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="roscpp_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 roscpp_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sensor_msgs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trajectory_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 trajectory_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="roscpp_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 roscpp_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="roscpp_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 roscpp_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="roscpp_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 roscpp_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="geometry_msgs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="geometry_msgs_generate_messages_cpp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_cpp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="geometry_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="geometry_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="actionlib_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_srvs_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_srvs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf_generate_messages_nodejs">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf_generate_messages_nodejs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="std_srvs_generate_messages_eus">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sensor_msgs_generate_messages_lisp">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_lisp"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tf_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 tf_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sensor_msgs_generate_messages_py">
-				<Option working_dir="/home/zheng/robot_ws_zheng/build/robot_controller"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/Makefile&quot;  VERBOSE=1 clean"/>
+			<Target title="gazebo_sim">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/robot_controller/gazebo_sim" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/robot_controller/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/robot_controller/src/../include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 gazebo_sim"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gazebo_sim/fast">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/robot_controller/gazebo_sim" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/robot_controller/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/robot_controller/src/../include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 gazebo_sim/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="load_robot_0">
@@ -884,10 +312,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/examples/gazebo_sim.cpp">
+			<Option target="gazebo_sim"/>
+		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/examples/load_robot.cpp">
 			<Option target="load_robot_0"/>
 		</Unit>
-		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_vel_cst.h">
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h">
+			<Option target="robot_controller_library"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_acc_cst.h">
 			<Option target="robot_controller_library"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h">
@@ -899,7 +339,7 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/include/task/mpc_task.h">
 			<Option target="robot_controller_library"/>
 		</Unit>
-		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp">
+		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp">
 			<Option target="robot_controller_library"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/src/robotmodel/robotmodel.cpp">
@@ -1613,6 +1053,12 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/../build/ur_description/catkin_generated/package.cmake">
 			<Option virtualFolder="CMake Files\..\build\ur_description\catkin_generated\"/>
 		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/../build/ros_robot_controller/catkin_generated/ordered_paths.cmake">
+			<Option virtualFolder="CMake Files\..\build\ros_robot_controller\catkin_generated\"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/../build/ros_robot_controller/catkin_generated/package.cmake">
+			<Option virtualFolder="CMake Files\..\build\ros_robot_controller\catkin_generated\"/>
+		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/../build/robot_controller/catkin_generated/ordered_paths.cmake">
 			<Option virtualFolder="CMake Files\..\build\robot_controller\catkin_generated\"/>
 		</Unit>
@@ -1624,6 +1070,18 @@
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ur_description/package.xml">
 			<Option virtualFolder="CMake Files\ur_description\"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ros_robot_controller\"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/package.xml">
+			<Option virtualFolder="CMake Files\ros_robot_controller\"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ros_robot_controller\examples\"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ros_robot_controller\src\"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/robot_controller/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\robot_controller\"/>

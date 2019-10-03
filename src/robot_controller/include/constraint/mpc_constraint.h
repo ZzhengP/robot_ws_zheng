@@ -1,4 +1,0 @@
-#ifndef MPC_CONSTRAINT_H
-#define MPC_CONSTRAINT_H
-
-#endif // MPC_CONSTRAINT_H

@@ -182,32 +182,32 @@ robot_controller_library/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/build
 .PHONY : robot_controller_library/fast
 
-constraint/joint_vel_cst.o: constraint/joint_vel_cst.cpp.o
+constraint/generic_cst.o: constraint/generic_cst.cpp.o
 
-.PHONY : constraint/joint_vel_cst.o
+.PHONY : constraint/generic_cst.o
 
 # target to build an object file
-constraint/joint_vel_cst.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.o
-.PHONY : constraint/joint_vel_cst.cpp.o
+constraint/generic_cst.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o
+.PHONY : constraint/generic_cst.cpp.o
 
-constraint/joint_vel_cst.i: constraint/joint_vel_cst.cpp.i
+constraint/generic_cst.i: constraint/generic_cst.cpp.i
 
-.PHONY : constraint/joint_vel_cst.i
+.PHONY : constraint/generic_cst.i
 
 # target to preprocess a source file
-constraint/joint_vel_cst.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.i
-.PHONY : constraint/joint_vel_cst.cpp.i
+constraint/generic_cst.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i
+.PHONY : constraint/generic_cst.cpp.i
 
-constraint/joint_vel_cst.s: constraint/joint_vel_cst.cpp.s
+constraint/generic_cst.s: constraint/generic_cst.cpp.s
 
-.PHONY : constraint/joint_vel_cst.s
+.PHONY : constraint/generic_cst.s
 
 # target to generate assembly for a file
-constraint/joint_vel_cst.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/joint_vel_cst.cpp.s
-.PHONY : constraint/joint_vel_cst.cpp.s
+constraint/generic_cst.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s
+.PHONY : constraint/generic_cst.cpp.s
 
 robotmodel/robotmodel.o: robotmodel/robotmodel.cpp.o
 
@@ -304,9 +304,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... constraint/joint_vel_cst.o"
-	@echo "... constraint/joint_vel_cst.i"
-	@echo "... constraint/joint_vel_cst.s"
+	@echo "... constraint/generic_cst.o"
+	@echo "... constraint/generic_cst.i"
+	@echo "... constraint/generic_cst.s"
 	@echo "... robotmodel/robotmodel.o"
 	@echo "... robotmodel/robotmodel.i"
 	@echo "... robotmodel/robotmodel.s"

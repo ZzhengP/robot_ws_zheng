@@ -1,7 +1,7 @@
-#include "Eigen/Core"
 #include "iostream"
 #include "unsupported/Eigen/MatrixFunctions"
-#include "Eigen/Dense"
+#include "commun/commun_definition.h"
+#include "commun/color.h"
 Eigen::MatrixXd matPow(int N, const Eigen::MatrixXd&  A)
 {
     Eigen::MatrixXd A_pow;
@@ -17,7 +17,7 @@ Eigen::MatrixXd matPow(int N, const Eigen::MatrixXd&  A)
 class  MPC_Task
 {
 public:
-    MPC_Task(int N, double Q, double R, int ndof, double dt);
+    MPC_Task(int N, double Q, double R, int ndof, double dt, std::string robot_name);
 
 
     bool init();

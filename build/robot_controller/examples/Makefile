@@ -68,6 +68,29 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -101,17 +124,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
+.PHONY : robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
+
+# Convenience name for target.
+gazebo_sim: robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
+
+.PHONY : gazebo_sim
+
+# fast build rule for target.
+gazebo_sim/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/build
+.PHONY : gazebo_sim/fast
+
+# Convenience name for target.
 robot_controller/examples/CMakeFiles/load_robot_0.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
 .PHONY : robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
@@ -181,6 +196,33 @@ load_robot_0: robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
 load_robot_0/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/load_robot_0.dir/build.make robot_controller/examples/CMakeFiles/load_robot_0.dir/build
 .PHONY : load_robot_0/fast
+
+gazebo_sim.o: gazebo_sim.cpp.o
+
+.PHONY : gazebo_sim.o
+
+# target to build an object file
+gazebo_sim.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.o
+.PHONY : gazebo_sim.cpp.o
+
+gazebo_sim.i: gazebo_sim.cpp.i
+
+.PHONY : gazebo_sim.i
+
+# target to preprocess a source file
+gazebo_sim.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.i
+.PHONY : gazebo_sim.cpp.i
+
+gazebo_sim.s: gazebo_sim.cpp.s
+
+.PHONY : gazebo_sim.s
+
+# target to generate assembly for a file
+gazebo_sim.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.s
+.PHONY : gazebo_sim.cpp.s
 
 load_robot.o: load_robot.cpp.o
 
@@ -216,13 +258,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install"
+	@echo "... gazebo_sim"
+	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
 	@echo "... load_robot_0"
-	@echo "... edit_cache"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... gazebo_sim.o"
+	@echo "... gazebo_sim.i"
+	@echo "... gazebo_sim.s"
 	@echo "... load_robot.o"
 	@echo "... load_robot.i"
 	@echo "... load_robot.s"

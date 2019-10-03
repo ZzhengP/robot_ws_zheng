@@ -202,15 +202,23 @@ qpOASES/extras/SolutionAnalysis.ipp
 
 /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
 
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/joint_vel_cst.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/color.h
+
+/home/zheng/robot_ws_zheng/src/robot_controller/include/commun/commun_definition.h
 Eigen/Core
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/Eigen/Core
+-
+Eigen/Dense
+-
+iostream
+-
+
+/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/generic_cst.h
 iostream
 /home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/iostream
-unsupported/Eigen/MatrixFunctions
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/unsupported/Eigen/MatrixFunctions
 Eigen/Dense
-/home/zheng/robot_ws_zheng/src/robot_controller/include/constraint/Eigen/Dense
+-
+Eigen/Core
+-
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/robotmodel.h
 iostream
@@ -235,10 +243,10 @@ boost/scoped_ptr.hpp
 -
 urdf/model.h
 -
-Eigen/Dense
--
-Eigen/Core
--
+commun/commun_definition.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/commun/commun_definition.h
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/robotmodel/commun/color.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/solver/mpc_solver.h
 qpOASES.hpp
@@ -251,20 +259,22 @@ iostream
 -
 boost/shared_ptr.hpp
 -
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/solver/commun/color.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/mpc_task.h
-Eigen/Core
-/home/zheng/robot_ws_zheng/src/robot_controller/include/task/Eigen/Core
 iostream
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/iostream
 unsupported/Eigen/MatrixFunctions
 /home/zheng/robot_ws_zheng/src/robot_controller/include/task/unsupported/Eigen/MatrixFunctions
-Eigen/Dense
-/home/zheng/robot_ws_zheng/src/robot_controller/include/task/Eigen/Dense
+commun/commun_definition.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/task/commun/commun_definition.h
+commun/color.h
+/home/zheng/robot_ws_zheng/src/robot_controller/include/task/commun/color.h
 
-/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/joint_vel_cst.cpp
-constraint/joint_vel_cst.h
-/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/constraint/joint_vel_cst.h
+/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/generic_cst.cpp
+constraint/generic_cst.h
+/home/zheng/robot_ws_zheng/src/robot_controller/src/constraint/constraint/generic_cst.h
 
 /home/zheng/robot_ws_zheng/src/robot_controller/src/robotmodel/robotmodel.cpp
 robotmodel/robotmodel.h

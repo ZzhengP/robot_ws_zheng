@@ -1,5 +1,7 @@
 #include "robotmodel/robotmodel.h"
 
+
+
 arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,const std::string& root_name, const std::string& end_name){
 
    kdl_parser::treeFromFile(urdf_name, arm_tree_);
@@ -21,6 +23,21 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
        joints_name_[i] = arm_chain_.getSegment(i).getName();
        seg_names_idx_.add(joints_name_[i],i);
    }
+
+   std::cout <<"---------------------------------------------" << std::endl;
+   std::cout << BOLD(FRED("Robot's model is successively parsed into KDL ")) << std::endl;
+   std::cout << FYEL("load joint : \n") <<  std::endl;
+   for (int i(0); i < NrOfDeg_; i++){
+      std::cout<<FCYN("Joint " ) << i << " name "<< arm_chain_.getSegment(i).getJoint().getName() <<std::endl;
+   }
+   std::cout <<"\n" << std::endl;
+   std::cout <<FYEL("load link : \n") << std::endl;
+
+   for (int i(0); i <arm_chain_.getNrOfSegments();i++)
+   {
+       std::cout<<FCYN("Link " ) << i << " name "<< arm_chain_.getSegment(i).getName() <<std::endl;
+   }
+   std::cout <<"---------------------------------------------" << std::endl;
 
 }
 
@@ -52,14 +69,16 @@ bool arm_kinematic::init(Eigen::VectorXd q_init, Eigen::VectorXd dotq_init,unsig
         ee_pos_horion_.segment(6*i,6) << ee_pos_.p.x(),ee_pos_.p.y(),ee_pos_.p.z(),RPY_angle_(0),RPY_angle_(1),RPY_angle_(2);
     }
 
-    printRobotInformation();
-    std::cout << "Robot is initalized:  \n"
-              << "Joint position: \n " << robot_state_.head(NrOfDeg_).transpose() << '\n'
-              << "Joint velocity: \n " << robot_state_.tail(NrOfDeg_).transpose() << '\n'
-              << "end-effector cartesien position: \n"<< '\n'
-              << "x : \n" << ee_pos_.p.x() << '\n'
-              << "y : \n" << ee_pos_.p.y() << '\n'
-              << "z : \n" << ee_pos_.p.z() << std::endl;
+//    printRobotInformation();
+    std::cout <<"---------------------------------------------" << std::endl;
+    std::cout << BOLD(FRED("Robot is initalized: "))  <<'\n'
+              << FYEL("Joint position: \n ") << robot_state_.head(NrOfDeg_).transpose().format(CleanFmt) << '\n'
+              << FYEL("Joint velocity: \n ") << robot_state_.tail(NrOfDeg_).transpose().format(CleanFmt) << '\n'
+              << FYEL("end-effector cartesien position: ")<< '\n'
+              << FYEL("x : ") << ee_pos_.p.x() << '\n'
+              << FYEL("y : ") << ee_pos_.p.y() << '\n'
+              << FYEL("z : ") << ee_pos_.p.z() << std::endl;
+    std::cout <<"---------------------------------------------" << std::endl;
     return true;
 }
 
