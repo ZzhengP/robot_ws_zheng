@@ -7,17 +7,14 @@
 class mpc_solve
 {
 public:
-    mpc_solve(int N_horz, int Ndof)
+    mpc_solve(int N_horz, int Ndof, int nbrCst):N_prediction_(N_horz), Ndof_(Ndof),nC_(nbrCst)
     {
-        N_prediction_ = N_horz;
-        Ndof_ = Ndof;
         nV_ = Ndof*N_horz; // wo cao, wo ri le  !!!!!
-        nC_ = 0;
         options_.enableFlippingBounds = qpOASES::BT_FALSE;
         options_.initialStatusBounds = qpOASES::ST_INACTIVE;
         options_.numRefinementSteps = 1;
         qpoases_.reset(new qpOASES::QProblemB(nV_));
-        qpoases_standard_.reset(new qpOASES::QProblem());
+        qpoases_standard_.reset(new qpOASES::QProblem(nV_,nC_));
 
         std::cout <<"---------------------------------------------" << std::endl;
         std::cout << BOLD(FRED("QPs solver is successively created: "))  <<'\n'
@@ -54,9 +51,7 @@ public:
         A_.resize(A.rows(),A.cols());
         lbA_.resize(lbA.size());
         ubA_.resize(ubA.size());
-
         data_optimal_solution_.resize(nV_);
-
         H_ = H;
         g_ = g;
         lb_ = lb;
@@ -87,6 +82,7 @@ public:
           ret = qpoases_standard_->init(H.data(),g.data(),A.data(),lb.data(),ub.data(),lbA.data(),ubA.data(),nWSR,0);
          qpoases_standard_->getPrimalSolution(data_optimal_solution_.data());
     }
+
    Eigen::VectorXd getSolution()
    {
         return data_optimal_solution_;
@@ -113,5 +109,5 @@ private:
     Eigen::VectorXd g_, lb_, ub_, lbA_, ubA_, data_optimal_solution_;
 
 
-    int nV_, nC_;
+    int nV_, nC_ ;
 };

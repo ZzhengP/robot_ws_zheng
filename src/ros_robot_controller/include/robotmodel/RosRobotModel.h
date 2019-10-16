@@ -13,7 +13,11 @@
 #include <urdf/model.h>
 #include "commun/color.h"
 #include "commun/RosCommunDefinition.h"
-
+#include "ros/ros.h"
+#include "sensor_msgs/JointState.h"
+#include "std_msgs/String.h"
+#include "std_msgs/Float64.h"
+#include "sensor_msgs/JointState.h"
 class SegmentIndice
 {
     /* This class is used to bind segment names to the index in the chain */
@@ -52,7 +56,10 @@ class SegmentIndice
 class  arm_kinematic
 {
 public:
+    arm_kinematic(ros::NodeHandle* nodehandle, const std::string& urdf_name,  unsigned int NrOfDeg, const std::string& root_name, const std::string& end_name);
+
     arm_kinematic(const std::string& urdf_name,  unsigned int NrOfDeg, const std::string& root_name, const std::string& end_name);
+
     /**
      * @brief Initialize all robot state ( Matrix or vector)
      * @return
@@ -226,7 +233,16 @@ public:
         return arm_tree_.getNrOfSegments();
     }
 
+    void initializeSubscriber();
+
+    void subscriberCallback(const sensor_msgs::JointState& jntState);
+
+    void initializePublisher();
 protected:
+
+    ros::NodeHandle nh_;
+    ros::Subscriber subscriber_;
+    ros::Publisher publisher_1_, publisher_2_, publisher_3_, publisher_4_, publisher_5_, publisher_6_;
     unsigned int NrOfDeg_, N_Prediciton_ ;
     /**
      * @brief The chain structure of the robot

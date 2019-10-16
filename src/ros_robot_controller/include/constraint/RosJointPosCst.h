@@ -4,11 +4,11 @@
 #include "constraint/RosGenericCst.h"
 
 
-class joint_pos_cst : public generic_cst
+class jnt_pos_cst : public generic_cst
 {
 public:
 
-    joint_pos_cst(int ndof, int n) : generic_cst (ndof, n) {}
+    jnt_pos_cst(int ndof, int n) : generic_cst (ndof, n) {}
 
     void setLimit(Eigen::VectorXd min, Eigen::VectorXd max);
 
@@ -18,8 +18,8 @@ public:
 
     void setConstraintMatrix(Eigen::MatrixXd Pu);
 
+    void update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
 protected:
-       Eigen::VectorXd min_,  max_;
 
 
 };

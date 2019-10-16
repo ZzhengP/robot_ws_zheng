@@ -38,6 +38,8 @@ ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/color.h
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointAccCst.h
+ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
+ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointVelCst.h
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h

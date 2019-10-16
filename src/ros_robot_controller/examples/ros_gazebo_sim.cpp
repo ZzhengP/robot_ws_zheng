@@ -3,7 +3,8 @@
 #include "task/RosMpcTask.h"
 #include "constraint/RosGenericCst.h"
 #include "constraint/RosJointAccCst.h"
-
+#include "constraint/RosJointVelCst.h"
+#include "constraint/RosJointPosCst.h"
 
 #include "iostream"
 #include "kdl/chain.hpp"
@@ -29,34 +30,20 @@ using namespace qpOASES;
 
 const double pi = 3.1415927;
 
-sensor_msgs::JointState jnt_state;
-
-void callback(const sensor_msgs::JointState& msg )
-{
-
-    jnt_state.position.resize(msg.position.size());
-    jnt_state.velocity.resize(msg.velocity.size());
-    for (size_t i(0); i<msg.position.size() ; i ++){
-//        jnt_state.name[i] = msg.name[i];
-        jnt_state.position[i] = msg.position[i];
-        jnt_state.velocity[i] = msg.velocity[i];
-//         std::cout << msg.position[i] << std::endl;
-    }
-
-}
 
 
 int main(int argc, char **argv)
 {
+    ros::init(argc,argv,"cart_controller");
+    ros::NodeHandle n;
 
     double dt(0.05);
     const std::string& urdf_name= "/home/zheng/robot_ws_zheng/src/ur_description/urdf/ur5_robot.urdf";
     const std::string& panda_urdf = "/home/zheng/catkin_ws/src/franka_ros/franka_description/robots/panda_arm.urdf";
 
     const int ndof=6, N=5, panda_ndof = 7;
-    arm_kinematic robot_arm(urdf_name, ndof,"base_link", "wrist_3_link");
+    arm_kinematic robot_arm(&n,urdf_name, ndof,"base_link", "wrist_3_link");
     arm_kinematic panda_arm(panda_urdf, panda_ndof,"panda_link0", "panda_link7");
-
     KDL::JntArray q_init(ndof), dotq_init(ndof), q_des(ndof), q_des_back(ndof), panda_q_des(panda_ndof);
     KDL::JntArray panda_q_init(panda_ndof), panda_dotq_init(panda_ndof), panda_q_des_back(panda_ndof);
 
@@ -67,7 +54,6 @@ int main(int argc, char **argv)
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
     robot_arm.init(q_init.data, dotq_init.data, N);
-
     panda_arm.init(panda_q_init.data, panda_dotq_init.data, N);
 
     KDL::Frame ee_frame, des_frame, back_des_frame, panda_ee_frame, panda_des_frame;
@@ -153,17 +139,6 @@ int main(int argc, char **argv)
          panda_q_horizon_des.segment(panda_ndof*i,panda_ndof) = panda_q_des.data;
     }
 
-    Eigen::MatrixXd H, panda_H;
-    H.resize(N*ndof,N*ndof);
-    panda_H.resize(N*panda_ndof,N*panda_ndof);
-
-    Eigen::VectorXd g, lb, ub, panda_g, panda_lb, panda_ub;
-    g.resize(N*ndof);
-    lb.resize(N*ndof);
-    ub.resize(N*ndof);
-    panda_g.resize(N*panda_ndof);
-    panda_lb.resize(N*panda_ndof);
-    panda_ub.resize(N*panda_ndof);
 
     Eigen::MatrixXd A, B, panda_A, panda_B;
     A = task.getStateA();
@@ -172,15 +147,8 @@ int main(int argc, char **argv)
     panda_B = panda_task.getStateB();
 
 
-    mpc_solve qpSolver(N, ndof), panda_qpSolver(N,panda_ndof);
-    qpSolver.setDefaultOptions();
-    qpSolver.initData(H,g,lb,ub);
-    panda_qpSolver.setDefaultOptions();
-    panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
-
     // Etablir la communication avec ROS
-    ros::init(argc,argv,"cart_controller");
-    ros::NodeHandle n;
+
     // ur5
     ros::Publisher joint_state_1_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/command", 1000);
     ros::Publisher joint_state_2_pub = n.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/command", 1000);
@@ -205,9 +173,8 @@ int main(int argc, char **argv)
     ros::Publisher joint_4_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/vel", 1000);
     ros::Publisher joint_5_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/vel", 1000);
     ros::Publisher joint_6_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/vel", 1000);
-    ros::Rate loop_rate(100);
+    ros::Rate loop_rate(1000);
 
-    ros::Subscriber sub = n.subscribe("/ur5/joint_states",1000,callback);
 
     robot_state = robot_arm.getRobotState();
     panda_robot_state = panda_arm.getRobotState();
@@ -219,33 +186,95 @@ int main(int argc, char **argv)
     panda_q_horizon = panda_Px*panda_robot_state + panda_Pu*panda_optimal_Solution;
 
 
+
     // Define constraint
-
-    Eigen::VectorXd ddq_min, ddq_max, ddq_lb, ddq_ub;
+    int Cst = 0;
+    Eigen::VectorXd ddq_min, ddq_max, ddq_lb, ddq_ub, dq_min, dq_max, q_min, q_max;
     Eigen::MatrixXd ddq_C;
-    ddq_min.resize(N*ndof);
-    ddq_max.resize(N*ndof);
-    ddq_lb.resize(N*ndof);
-    ddq_ub.resize(N*ndof);
-    ddq_C.resize(N*ndof, N*ndof);
-    ddq_C.setIdentity();
+    ddq_min.resize(N*ndof), ddq_max.resize(N*ndof);
+    ddq_lb.resize(N*ndof), ddq_ub.resize(N*ndof);
+    ddq_C.resize(N*ndof, N*ndof), ddq_C.setIdentity();
+    dq_min.resize(N*ndof), dq_max.resize(N*ndof);
+    q_min.resize(N*ndof), q_max.resize(N*ndof);
 
+    double jnt_vel_lim = 0.5;
     for (size_t i = 0; i < N ; i++){
         ddq_min.segment(6*i,6) << -10, -10, -10, -10, -10, -10;
         ddq_max.segment(6*i,6) << 10, 10, 10, 10, 10, 10;
+        dq_min.segment(6*i,6) << -jnt_vel_lim, -jnt_vel_lim, -jnt_vel_lim, -jnt_vel_lim, -jnt_vel_lim, -jnt_vel_lim;
+        dq_max.segment(6*i,6) << jnt_vel_lim, jnt_vel_lim, jnt_vel_lim, jnt_vel_lim , jnt_vel_lim, jnt_vel_lim ;
+        q_min.segment(6*i,6) << -pi, -pi, -pi, -pi, -pi, -pi;
+        q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
-    joint_acc_cst jnt_acc_cst(ndof, N);
+    // Define joint acceleration limit
+    jnt_acc_cst jnt_acc_cst(ndof, N);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
     jnt_acc_cst.setLowerBound(robot_state, Px);
     jnt_acc_cst.setUpperBound(robot_state, Px);
     ddq_lb = jnt_acc_cst.getLowerBound();
     ddq_ub = jnt_acc_cst.getUpperBound();
 
+//    // Define joint velocity limit
+    jnt_vel_cst jnt_vel_cst(ndof,N);
+    jnt_vel_cst.setLimit(dq_min, dq_max);
+    jnt_vel_cst.setLowerBound(robot_state,Px_dq);
+    jnt_vel_cst.setUpperBound(robot_state,Px_dq);
+    jnt_vel_cst.setConstraintMatrix(Pu_dq);
+
+    Cst += 1 ;
+//    // Define joint position limit
+    jnt_pos_cst jnt_pos_cst(ndof,N);
+    jnt_pos_cst.setLimit(q_min,q_max);
+    jnt_pos_cst.setLowerBound(robot_state,Px);
+    jnt_pos_cst.setUpperBound(robot_state,Px);
+    jnt_pos_cst.setConstraintMatrix(Pu);
+
+    Cst += 1;
+    std::vector<Eigen::VectorXd> cstArray_lbA(Cst), cstArray_ubA(Cst);
+    std::vector<Eigen::MatrixXd> cstArray_A(Cst);
+
+    cstArray_lbA[0] =  jnt_pos_cst.getLowerBound();
+    cstArray_lbA[1] = jnt_vel_cst.getLowerBound();
+
+    cstArray_ubA[0] = jnt_pos_cst.getUpperBound();
+    cstArray_ubA[1] =jnt_vel_cst.getUpperBound();
+
+    cstArray_A[0] = jnt_pos_cst.getConstraintMatrix();
+    cstArray_A[1] = jnt_vel_cst.getConstraintMatrix();
 
     double error = 100;
     Eigen::VectorXd jnt_pos_temp, jnt_vel_temp ;
     jnt_pos_temp.resize(6);
     jnt_vel_temp.resize(6);
+
+
+    // Define QP solver
+    // compute the total number of constraint
+    unsigned int cstNbr = 0 ;
+    for(size_t t(0) ; t < Cst; t++){
+        cstNbr += cstArray_lbA[t].size();
+    }
+
+    Eigen::MatrixXd H, panda_H, cst_A;
+    H.resize(N*ndof,N*ndof);
+    panda_H.resize(N*panda_ndof,N*panda_ndof);
+    cst_A.resize(cstNbr,ndof*N);
+
+    Eigen::VectorXd g, lb, ub, lbA, ubA,  panda_g, panda_lb, panda_ub;
+    g.resize(N*ndof), lb.resize(N*ndof), ub.resize(N*ndof);
+    panda_g.resize(N*panda_ndof), panda_lb.resize(N*panda_ndof), panda_ub.resize(N*panda_ndof);
+    lbA.resize(cstNbr), ubA.resize(cstNbr);
+
+
+
+    mpc_solve qpSolver(N, ndof,cstNbr), panda_qpSolver(N,panda_ndof,0);
+
+    qpSolver.setDefaultOptions();
+//    qpSolver.initData(H,g,lb,ub);
+    qpSolver.initData(H,g,cst_A,lb,ub,lbA,ubA);
+    panda_qpSolver.setDefaultOptions();
+    panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
+
     while(ros::ok())
 //         for (int i(0);i<1;i++)
           {
@@ -258,7 +287,7 @@ int main(int argc, char **argv)
       //       std::cout <<"q horizon : \n" << q_horizon << std::endl;
       //        q_horizon = Px*robot_state + Pu*optimal_Solution;
               q_horizon = robot_arm.getqEnlarged();
-              panda_q_horizon = panda_Px*panda_robot_state + panda_Pu*panda_optimal_Solution;
+              panda_q_horizon = panda_arm.getqEnlarged();
 
               robot_arm.computeJacobianHorz(q_horizon);
               panda_arm.computeJacobianHorz(panda_q_horizon);
@@ -266,14 +295,7 @@ int main(int argc, char **argv)
               J_horizon = robot_arm.getJacobianHorz();
               panda_J_horizon = panda_arm.getJacobianHorz();
 
-     //        std::cout <<"J_horizon : \n" << J_horizon << std::endl;
 
-//              robot_arm.computeCartPosHorz(q_horizon);
-//              panda_arm.computeCartPosHorz(panda_q_horizon);
-
-
-      //        std::cout <<"q_horizon : \n" << q_horizon << std::endl;
-      //        return 0;
               task.computeHandg(J_horizon,robot_state,q_horizon_des);
               panda_task.computeHandg(panda_J_horizon,panda_robot_state,panda_q_horizon_des);
               H = task.getMatrixH();
@@ -285,10 +307,45 @@ int main(int argc, char **argv)
               panda_lb.setConstant(-10);
               panda_ub.setConstant(10);
 
-      //        qpSolver.initData(H.block(0,6,6,6),g.segment(6,6),lb.segment(0,6),ub.segment(0,6));
+              jnt_pos_cst.update(robot_state,Px,Pu);
+              jnt_vel_cst.update(robot_state,Px_dq,Pu_dq);
+              cstArray_lbA[0] = jnt_pos_cst.getLowerBound();
+              cstArray_lbA[1] = jnt_vel_cst.getLowerBound();
 
-      //        qpSolver.solve(H,g,cst_C_dq,lb,ub,dq_lower,dq_upper);
-              qpSolver.solve(H,g,ddq_lb,ddq_ub);
+              cstArray_ubA[0] = jnt_pos_cst.getUpperBound();
+              cstArray_ubA[1] = jnt_vel_cst.getUpperBound();
+
+              cstArray_A[0] = jnt_pos_cst.getConstraintMatrix();
+              cstArray_A[1] = jnt_vel_cst.getConstraintMatrix();
+              std::cout << "cst array size \n" << cstArray_lbA.size() << std::endl;
+//              for (size_t t(0) ; t < cstArray_lbA.size(); t ++  ){
+//                  if (t == 0){
+//                          lbA.segment(0,cstArray_lbA[0].size()) =  cstArray_lbA[0];
+//                          ubA.segment(0,cstArray_ubA[0].size()) =  cstArray_ubA[0];
+//                          cst_A.block(0,0,cstArray_A[0].rows(),ndof*N) = cstArray_A[0];
+
+//                  }
+//                  else {
+//                        lbA.segment(cstArray_lbA[t-1].size(),cstArray_lbA[t].size()) =  cstArray_lbA[t];
+//                        ubA.segment(cstArray_ubA[t-1].size(),cstArray_ubA[t].size()) =  cstArray_ubA[t];
+//                        cst_A.block(cstArray_A[t-1].rows(),0,cstArray_A[t].rows(),ndof*N) = cstArray_A[t];
+
+//                  }
+//              }
+//              qpSolver.solve(H,g,ddq_lb,ddq_ub);
+              lbA.segment(0,cstArray_lbA[0].size()) =  cstArray_lbA[0];
+              ubA.segment(0,cstArray_ubA[0].size()) =  cstArray_ubA[0];
+              cst_A.block(0,0,cstArray_A[0].rows(),ndof*N) = cstArray_A[0];
+              lbA.segment(cstArray_lbA[0].rows(),cstArray_lbA[1].size()) =  cstArray_lbA[1];
+              ubA.segment( cstArray_ubA[0].rows(),cstArray_ubA[1].size()) =  cstArray_ubA[1];
+             cst_A.block(cstArray_A[0].rows(),0,cstArray_A[1].rows(),ndof*N) = cstArray_A[1];
+              std::cout << "lbA \n " << lbA << std::endl;
+              std::cout << "ubA \n " << ubA << std::endl;
+              std::cout << "cst_A \n " << cst_A << std::endl;
+
+//              qpSolver.initData(H,g,cst_A,ddq_lb,ddq_ub,lbA,ubA);
+
+              qpSolver.solve(H,g,cst_A,ddq_lb,ddq_ub,lbA,ubA);
               panda_qpSolver.solve(panda_H,panda_g,panda_lb,panda_ub);
 
               optimal_Solution = qpSolver.getSolution();
@@ -316,13 +373,6 @@ int main(int argc, char **argv)
               panda_t6.data = panda_robot_state[5];
               panda_t7.data = panda_robot_state[6];
 
-              v1.data = robot_state[6];
-              v2.data = robot_state[7];
-              v3.data = robot_state[8];
-              v4.data = robot_state[9];
-              v5.data = robot_state[10];
-              v6.data = robot_state[11];
-
               joint_state_1_pub.publish(t1);
               joint_state_2_pub.publish(t2);
               joint_state_3_pub.publish(t3);
@@ -345,21 +395,7 @@ int main(int argc, char **argv)
               joint_5_vel.publish(v5);
               joint_6_vel.publish(v6);
 
-      //        q_init.data = q_des.data;
-              if (jnt_state.position.size() != 0){
-               jnt_pos_temp << jnt_state.position[9],jnt_state.position[8],jnt_state.position[0],jnt_state.position[10],jnt_state.position[11],jnt_state.position[12] ;
-               jnt_vel_temp << jnt_state.velocity[9],jnt_state.velocity[8],jnt_state.velocity[0],jnt_state.velocity[10],jnt_state.velocity[11],jnt_state.velocity[12] ;
-
-              robot_arm.setState(jnt_pos_temp,jnt_vel_temp);
               panda_arm.setState(panda_robot_state.head(panda_ndof),panda_robot_state.tail(panda_ndof));
-              }
-              ee_frame = robot_arm.getSegmentPosition(5);
-              error = pow(des_frame.p[0]-ee_frame.p[0],2) + pow(des_frame.p[1]-ee_frame.p[1],2) + pow(des_frame.p[2]-ee_frame.p[2],2) ;
-              std::cout << FRED("error of tracking :") << sqrt(error) << std::endl;
-              if (sqrt(error) < 0.001)
-              {
-                  break;
-              }
               ros::spinOnce();
               loop_rate.sleep();
           }

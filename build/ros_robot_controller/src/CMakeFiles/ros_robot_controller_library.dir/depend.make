@@ -709,6 +709,7 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/message.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/message_event.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/message_forward.h
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/message_operations.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/message_traits.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/names.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/node_handle.h
@@ -746,6 +747,10 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/wall_timer.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/sensor_msgs/JointState.h
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/Float64.h
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/Header.h
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/urdf/model.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o: /opt/ros/melodic/include/urdf/visibility_control.hpp

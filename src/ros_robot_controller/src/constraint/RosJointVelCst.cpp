@@ -18,3 +18,8 @@ void jnt_vel_cst::setUpperBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px)
 void jnt_vel_cst::setConstraintMatrix(Eigen::MatrixXd Pu){
     A_ = Pu;
 }
+void jnt_vel_cst::update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu){
+     setLowerBound( robot_state, Px);
+     setUpperBound( robot_state, Px);
+     setConstraintMatrix(Pu);
+}

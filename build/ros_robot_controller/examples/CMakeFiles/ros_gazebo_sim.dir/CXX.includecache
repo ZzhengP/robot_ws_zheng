@@ -213,6 +213,10 @@ constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosGenericCst.h
 constraint/RosJointAccCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosJointAccCst.h
+constraint/RosJointVelCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosJointVelCst.h
+constraint/RosJointPosCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosJointPosCst.h
 iostream
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/iostream
 kdl/chain.hpp
@@ -272,6 +276,28 @@ Eigen/Core
 constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
 
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
+Eigen/Core
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Core
+iostream
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/iostream
+Eigen/Dense
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Dense
+constraint/RosGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointVelCst.h
+Eigen/Core
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Core
+iostream
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/iostream
+unsupported/Eigen/MatrixFunctions
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/unsupported/Eigen/MatrixFunctions
+Eigen/Dense
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Dense
+constraint/RosGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
+
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
 iostream
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/iostream
@@ -299,6 +325,16 @@ commun/color.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/commun/color.h
 commun/RosCommunDefinition.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/commun/RosCommunDefinition.h
+ros/ros.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/ros/ros.h
+sensor_msgs/JointState.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
+std_msgs/String.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/std_msgs/String.h
+std_msgs/Float64.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/std_msgs/Float64.h
+sensor_msgs/JointState.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 qpOASES.hpp

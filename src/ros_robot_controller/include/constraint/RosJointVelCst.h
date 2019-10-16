@@ -14,7 +14,8 @@ public:
     void setLowerBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px);
     void setUpperBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px);
     void setConstraintMatrix(Eigen::MatrixXd Pu);
+    void update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
+
 private:
-   Eigen::VectorXd min_, max_ ;
 
 };

@@ -39,6 +39,8 @@ ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/color.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointAccCst.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointVelCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h

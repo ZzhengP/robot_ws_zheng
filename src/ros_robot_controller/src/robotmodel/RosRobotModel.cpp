@@ -2,11 +2,10 @@
 
 
 
-arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,const std::string& root_name, const std::string& end_name){
-
+arm_kinematic::arm_kinematic(ros::NodeHandle* nodehandle,const std::string& urdf_name, unsigned int NrOfDeg,const std::string& root_name, const std::string& end_name)
+   :nh_(*nodehandle),NrOfDeg_(NrOfDeg){
    kdl_parser::treeFromFile(urdf_name, arm_tree_);
    arm_tree_.getChain(root_name,end_name,arm_chain_);
-   NrOfDeg_ = NrOfDeg;
    q_.resize(NrOfDeg_);
    dotq_.resize(NrOfDeg_);
    robot_state_.resize(2*NrOfDeg_);
@@ -25,7 +24,50 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
    }
 
    std::cout <<"---------------------------------------------" << std::endl;
-   std::cout << BOLD(FRED("Robot's model is successively parsed into KDL ")) << std::endl;
+//   std::cout << BOLD(FRED("Robot's model is successively parsed into KDL ")) << std::endl;
+   ROS_INFO("Robot's model is successively parsed into KDL");
+   std::cout << FYEL("load joint : \n") <<  std::endl;
+   for (int i(0); i < NrOfDeg_; i++){
+      std::cout<<FCYN("Joint " ) << i << " name "<< arm_chain_.getSegment(i).getJoint().getName() <<std::endl;
+   }
+   std::cout <<"\n" << std::endl;
+   std::cout <<FYEL("load link : \n") << std::endl;
+
+   for (int i(0); i <arm_chain_.getNrOfSegments();i++)
+   {
+       std::cout<<FCYN("Link " ) << i << " name "<< arm_chain_.getSegment(i).getName() <<std::endl;
+   }
+   std::cout <<"---------------------------------------------" << std::endl;
+   initializeSubscriber();
+   initializePublisher();
+}
+
+
+
+arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,const std::string& root_name, const std::string& end_name)
+   :NrOfDeg_(NrOfDeg){
+   kdl_parser::treeFromFile(urdf_name, arm_tree_);
+   arm_tree_.getChain(root_name,end_name,arm_chain_);
+   q_.resize(NrOfDeg_);
+   dotq_.resize(NrOfDeg_);
+   robot_state_.resize(2*NrOfDeg_);
+   qqd_.resize(NrOfDeg_);
+   jacobian_.resize(NrOfDeg_);
+   joints_name_.resize(NrOfDeg_);
+   L(0)=1;L(1)=1;L(2)=1;
+   L(3)=0.01;L(4)=0.01;L(5)=0.01;
+   fksolver_.reset(new KDL::ChainFkSolverPos_recursive(arm_chain_));
+   iksolver_.reset(new KDL::ChainIkSolverPos_LMA(arm_chain_, L));
+   chainjacsolver_.reset(new KDL::ChainJntToJacSolver(arm_chain_));
+   for (int i(0); i<NrOfDeg_ ;i++)
+   {
+       joints_name_[i] = arm_chain_.getSegment(i).getName();
+       seg_names_idx_.add(joints_name_[i],i);
+   }
+
+   std::cout <<"---------------------------------------------" << std::endl;
+//   std::cout << BOLD(FRED("Robot's model is successively parsed into KDL ")) << std::endl;
+   ROS_INFO("Robot's model is successively parsed into KDL");
    std::cout << FYEL("load joint : \n") <<  std::endl;
    for (int i(0); i < NrOfDeg_; i++){
       std::cout<<FCYN("Joint " ) << i << " name "<< arm_chain_.getSegment(i).getJoint().getName() <<std::endl;
@@ -40,7 +82,6 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
    std::cout <<"---------------------------------------------" << std::endl;
 
 }
-
 
 bool arm_kinematic::init(Eigen::VectorXd q_init, Eigen::VectorXd dotq_init,unsigned int N)
 {
@@ -142,5 +183,29 @@ void arm_kinematic::computeCartPosHorz(Eigen::VectorXd q_horizon)
       frame_horz_temp.M.GetRPY(angle(0),angle(1),angle(2));
       ee_pos_horion_.segment(6*i,6) << frame_horz_temp.p(0),frame_horz_temp.p(1),frame_horz_temp.p(2),angle(0),angle(1),angle(2);
     }
+
+}
+
+void arm_kinematic::initializeSubscriber(){
+    ROS_INFO("Initialize Subscribers to robot joints states");
+    subscriber_ = nh_.subscribe("/ur5/joint_states",1000,&arm_kinematic::subscriberCallback,this);
+ }
+
+
+void arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState){
+
+        robot_state_.head(NrOfDeg_) << jntState.position[9],jntState.position[8],jntState.position[0],jntState.position[10],jntState.position[11],jntState.position[12] ;
+        robot_state_.tail(NrOfDeg_) <<jntState.velocity[9],jntState.velocity[8],jntState.velocity[0],jntState.velocity[10],jntState.velocity[11],jntState.velocity[12] ;
+    }
+
+
+void arm_kinematic::initializePublisher(){
+   ROS_INFO("Initialize Publisher to robot joint's command");
+   publisher_1_ = nh_.advertise<std_msgs::Float64>("/ur5/shoulder_pan_joint_position_controller/command", 1000);
+   publisher_2_ = nh_.advertise<std_msgs::Float64>("/ur5/shoulder_lift_joint_position_controller/command", 1000);
+   publisher_3_ = nh_.advertise<std_msgs::Float64>("/ur5/elbow_joint_position_controller/command", 1000);
+   publisher_4_ = nh_.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/command", 1000);
+   publisher_5_ = nh_.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/command", 1000);
+   publisher_6_ = nh_.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/command", 1000);
 
 }

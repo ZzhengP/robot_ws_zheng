@@ -15,6 +15,8 @@ public:
 
      virtual void setConstraintMatrix(Eigen::MatrixXd Pu) ;
 
+     virtual void update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
+
      Eigen::VectorXd getLowerBound(){
             return lb_;
      }
@@ -29,7 +31,7 @@ public:
 
 
 protected:
-     Eigen::VectorXd lb_, ub_;
+     Eigen::VectorXd lb_, ub_, min_, max_;
      Eigen::MatrixXd A_;
 
      int NrOfDeg_, N_Prediction_ ;

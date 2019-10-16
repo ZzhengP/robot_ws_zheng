@@ -1,2 +1,2 @@
 robot_controller:ros_robot_controller:ur_description
--DCATKIN_DEVEL_PREFIX=/home/zheng/robot_ws_zheng/devel -DCMAKE_INSTALL_PREFIX=/home/zheng/robot_ws_zheng/install -G Unix Makefiles
+-G CodeBlocks - Unix Makefiles -DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/zheng/robot_ws_zheng/devel -DCMAKE_INSTALL_PREFIX=/home/zheng/robot_ws_zheng/install
