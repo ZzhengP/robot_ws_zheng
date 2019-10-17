@@ -5,6 +5,7 @@
 #include "constraint/RosJointAccCst.h"
 #include "constraint/RosJointVelCst.h"
 #include "constraint/RosJointPosCst.h"
+#include "visualization/RosMarkers.h"
 
 #include "iostream"
 #include "kdl/chain.hpp"
@@ -41,7 +42,7 @@ int main(int argc, char **argv)
     const std::string& urdf_name= "/home/zheng/robot_ws_zheng/src/ur_description/urdf/ur5_robot.urdf";
     const std::string& panda_urdf = "/home/zheng/catkin_ws/src/franka_ros/franka_description/robots/panda_arm.urdf";
 
-    const int ndof=6, N=5, panda_ndof = 7;
+    const int ndof=6, N=6, panda_ndof = 7;
     arm_kinematic robot_arm(&n,urdf_name, ndof,"base_link", "wrist_3_link");
     arm_kinematic panda_arm(panda_urdf, panda_ndof,"panda_link0", "panda_link7");
     KDL::JntArray q_init(ndof), dotq_init(ndof), q_des(ndof), q_des_back(ndof), panda_q_des(panda_ndof);
@@ -64,9 +65,9 @@ int main(int argc, char **argv)
     ee_frame.M.GetRPY(ZYX_angle(0),ZYX_angle(1),ZYX_angle(2));
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
 
-    des_frame.p[0] = 0. ;
+    des_frame.p[0] = 0.5 ;
     des_frame.p[1] = -0.5;
-    des_frame.p[2] = 0.5 ;
+    des_frame.p[2] = 0.3 ;
     des_frame.M = ee_frame.M ;
     panda_des_frame.p[0] = 0.5 ;
     panda_des_frame.p[1] = 0. ;
@@ -173,7 +174,7 @@ int main(int argc, char **argv)
     ros::Publisher joint_4_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_1_joint_position_controller/vel", 1000);
     ros::Publisher joint_5_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_2_joint_position_controller/vel", 1000);
     ros::Publisher joint_6_vel = n.advertise<std_msgs::Float64>("/ur5/wrist_3_joint_position_controller/vel", 1000);
-    ros::Rate loop_rate(1000);
+    ros::Rate loop_rate(100);
 
 
     robot_state = robot_arm.getRobotState();
@@ -197,7 +198,7 @@ int main(int argc, char **argv)
     dq_min.resize(N*ndof), dq_max.resize(N*ndof);
     q_min.resize(N*ndof), q_max.resize(N*ndof);
 
-    double jnt_vel_lim = 0.5;
+    double jnt_vel_lim = 1;
     for (size_t i = 0; i < N ; i++){
         ddq_min.segment(6*i,6) << -10, -10, -10, -10, -10, -10;
         ddq_max.segment(6*i,6) << 10, 10, 10, 10, 10, 10;
@@ -233,14 +234,13 @@ int main(int argc, char **argv)
     std::vector<Eigen::VectorXd> cstArray_lbA(Cst), cstArray_ubA(Cst);
     std::vector<Eigen::MatrixXd> cstArray_A(Cst);
 
-    cstArray_lbA[0] =  jnt_pos_cst.getLowerBound();
-    cstArray_lbA[1] = jnt_vel_cst.getLowerBound();
+    cstArray_lbA[1] =  jnt_pos_cst.getLowerBound();
+    cstArray_lbA[0] = jnt_vel_cst.getLowerBound();
+    cstArray_ubA[1] = jnt_pos_cst.getUpperBound();
+    cstArray_ubA[0] =jnt_vel_cst.getUpperBound();
 
-    cstArray_ubA[0] = jnt_pos_cst.getUpperBound();
-    cstArray_ubA[1] =jnt_vel_cst.getUpperBound();
-
-    cstArray_A[0] = jnt_pos_cst.getConstraintMatrix();
-    cstArray_A[1] = jnt_vel_cst.getConstraintMatrix();
+    cstArray_A[1] = jnt_pos_cst.getConstraintMatrix();
+    cstArray_A[0] = jnt_vel_cst.getConstraintMatrix();
 
     double error = 100;
     Eigen::VectorXd jnt_pos_temp, jnt_vel_temp ;
@@ -274,6 +274,24 @@ int main(int argc, char **argv)
     qpSolver.initData(H,g,cst_A,lb,ub,lbA,ubA);
     panda_qpSolver.setDefaultOptions();
     panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
+
+    // define markers for visualization
+    KDL::Frame forearm;
+    std::vector<Eigen::Vector3d> robot_link_location;
+    std::vector<Eigen::Vector4d> robot_link_orient;
+    robot_link_location.resize(2);
+    robot_link_orient.resize(2);
+    robot_link_location[0].x() = ee_frame.p.x();
+    robot_link_location[0].y() = ee_frame.p.y();
+    robot_link_location[0].z() = ee_frame.p.z();
+    ee_frame.M.GetQuaternion(robot_link_orient[0].x(),robot_link_orient[0].y(),robot_link_orient[0].z(),robot_link_orient[0].w());
+
+    forearm = robot_arm.getSegmentPosition(2);
+    robot_link_location[1].x() = forearm.p.x();
+    robot_link_location[1].y() = forearm.p.y();
+    robot_link_location[1].z() = forearm.p.z();
+    forearm.M.GetQuaternion(robot_link_orient[1].x(),robot_link_orient[1].y(),robot_link_orient[1].z(),robot_link_orient[1].w());
+    markers markers(&n,robot_link_location, robot_link_orient);
 
     while(ros::ok())
 //         for (int i(0);i<1;i++)
@@ -309,15 +327,15 @@ int main(int argc, char **argv)
 
               jnt_pos_cst.update(robot_state,Px,Pu);
               jnt_vel_cst.update(robot_state,Px_dq,Pu_dq);
-              cstArray_lbA[0] = jnt_pos_cst.getLowerBound();
-              cstArray_lbA[1] = jnt_vel_cst.getLowerBound();
+//              cstArray_lbA[0] = jnt_pos_cst.getLowerBound();
+              cstArray_lbA[0] = jnt_vel_cst.getLowerBound();
 
-              cstArray_ubA[0] = jnt_pos_cst.getUpperBound();
-              cstArray_ubA[1] = jnt_vel_cst.getUpperBound();
+//              cstArray_ubA[0] = jnt_pos_cst.getUpperBound();
+              cstArray_ubA[0] = jnt_vel_cst.getUpperBound();
 
-              cstArray_A[0] = jnt_pos_cst.getConstraintMatrix();
-              cstArray_A[1] = jnt_vel_cst.getConstraintMatrix();
-              std::cout << "cst array size \n" << cstArray_lbA.size() << std::endl;
+//              cstArray_A[0] = jnt_pos_cst.getConstraintMatrix();
+              cstArray_A[0] = jnt_vel_cst.getConstraintMatrix();
+//              std::cout << "cst array size \n" << cstArray_lbA.size() << std::endl;
 //              for (size_t t(0) ; t < cstArray_lbA.size(); t ++  ){
 //                  if (t == 0){
 //                          lbA.segment(0,cstArray_lbA[0].size()) =  cstArray_lbA[0];
@@ -333,17 +351,16 @@ int main(int argc, char **argv)
 //                  }
 //              }
 //              qpSolver.solve(H,g,ddq_lb,ddq_ub);
-              lbA.segment(0,cstArray_lbA[0].size()) =  cstArray_lbA[0];
-              ubA.segment(0,cstArray_ubA[0].size()) =  cstArray_ubA[0];
+              lbA.segment(0,cstArray_lbA[0].rows())=  cstArray_lbA[0];
+              ubA.segment(0,cstArray_ubA[0].rows()) =  cstArray_ubA[0];
               cst_A.block(0,0,cstArray_A[0].rows(),ndof*N) = cstArray_A[0];
-              lbA.segment(cstArray_lbA[0].rows(),cstArray_lbA[1].size()) =  cstArray_lbA[1];
-              ubA.segment( cstArray_ubA[0].rows(),cstArray_ubA[1].size()) =  cstArray_ubA[1];
-             cst_A.block(cstArray_A[0].rows(),0,cstArray_A[1].rows(),ndof*N) = cstArray_A[1];
-              std::cout << "lbA \n " << lbA << std::endl;
-              std::cout << "ubA \n " << ubA << std::endl;
-              std::cout << "cst_A \n " << cst_A << std::endl;
+              lbA.segment(cstArray_lbA[0].rows(),cstArray_lbA[1].rows()) =  cstArray_lbA[1];
+              ubA.segment( cstArray_ubA[0].rows(),cstArray_ubA[1].rows()) =  cstArray_ubA[1];
+              cst_A.block(cstArray_A[0].rows(),0,cstArray_A[1].rows(),ndof*N) = cstArray_A[1];
+//              std::cout << "lbA \n " << lbA << std::endl;
+//              std::cout << "ubA \n " << ubA << std::endl;
+//              std::cout << "cst_A \n " << cst_A << std::endl;
 
-//              qpSolver.initData(H,g,cst_A,ddq_lb,ddq_ub,lbA,ubA);
 
               qpSolver.solve(H,g,cst_A,ddq_lb,ddq_ub,lbA,ubA);
               panda_qpSolver.solve(panda_H,panda_g,panda_lb,panda_ub);
@@ -387,6 +404,21 @@ int main(int argc, char **argv)
               panda_joint_state_5_pub.publish(panda_t5);
               panda_joint_state_6_pub.publish(panda_t6);
               panda_joint_state_7_pub.publish(panda_t7);
+              // Update marker's information
+              ee_frame = robot_arm.getSegmentPosition(5);
+              robot_link_location[0].x() = ee_frame.p.x();
+              robot_link_location[0].y() = ee_frame.p.y();
+              robot_link_location[0].z() = ee_frame.p.z();
+              ee_frame.M.GetQuaternion(robot_link_orient[0].x(),robot_link_orient[0].y(),robot_link_orient[0].z(),robot_link_orient[0].w());
+
+              forearm = robot_arm.getSegmentPosition(2);
+              robot_link_location[1].x() = forearm.p.x();
+              robot_link_location[1].y() = forearm.p.y();
+              robot_link_location[1].z() = forearm.p.z();
+              forearm.M.GetQuaternion(robot_link_orient[1].x(),robot_link_orient[1].y(),robot_link_orient[1].z(),robot_link_orient[1].w());
+
+              markers.setMarkersPos(robot_link_location, robot_link_orient);
+              markers.markerPublish();
 
               joint_1_vel.publish(v1);
               joint_2_vel.publish(v2);

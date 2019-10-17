@@ -188,7 +188,7 @@ void arm_kinematic::computeCartPosHorz(Eigen::VectorXd q_horizon)
 
 void arm_kinematic::initializeSubscriber(){
     ROS_INFO("Initialize Subscribers to robot joints states");
-    subscriber_ = nh_.subscribe("/ur5/joint_states",1000,&arm_kinematic::subscriberCallback,this);
+    subscriber_ = nh_.subscribe("/ur5/joint_states",100,&arm_kinematic::subscriberCallback,this);
  }
 
 
@@ -196,7 +196,9 @@ void arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState){
 
         robot_state_.head(NrOfDeg_) << jntState.position[9],jntState.position[8],jntState.position[0],jntState.position[10],jntState.position[11],jntState.position[12] ;
         robot_state_.tail(NrOfDeg_) <<jntState.velocity[9],jntState.velocity[8],jntState.velocity[0],jntState.velocity[10],jntState.velocity[11],jntState.velocity[12] ;
-    }
+        q_.data <<  jntState.position[9],jntState.position[8],jntState.position[0],jntState.position[10],jntState.position[11],jntState.position[12] ;
+        dotq_.data << jntState.velocity[9],jntState.velocity[8],jntState.velocity[0],jntState.velocity[10],jntState.velocity[11],jntState.velocity[12] ;
+}
 
 
 void arm_kinematic::initializePublisher(){

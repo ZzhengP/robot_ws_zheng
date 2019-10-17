@@ -344,6 +344,33 @@ task/RosMpcTask.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.s
 .PHONY : task/RosMpcTask.cpp.s
 
+visualization/RosMarkers.o: visualization/RosMarkers.cpp.o
+
+.PHONY : visualization/RosMarkers.o
+
+# target to build an object file
+visualization/RosMarkers.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.o
+.PHONY : visualization/RosMarkers.cpp.o
+
+visualization/RosMarkers.i: visualization/RosMarkers.cpp.i
+
+.PHONY : visualization/RosMarkers.i
+
+# target to preprocess a source file
+visualization/RosMarkers.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.i
+.PHONY : visualization/RosMarkers.cpp.i
+
+visualization/RosMarkers.s: visualization/RosMarkers.cpp.s
+
+.PHONY : visualization/RosMarkers.s
+
+# target to generate assembly for a file
+visualization/RosMarkers.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.s
+.PHONY : visualization/RosMarkers.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -376,6 +403,9 @@ help:
 	@echo "... task/RosMpcTask.o"
 	@echo "... task/RosMpcTask.i"
 	@echo "... task/RosMpcTask.s"
+	@echo "... visualization/RosMarkers.o"
+	@echo "... visualization/RosMarkers.i"
+	@echo "... visualization/RosMarkers.s"
 .PHONY : help
 
 
