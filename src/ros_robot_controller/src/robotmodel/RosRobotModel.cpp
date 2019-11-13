@@ -35,6 +35,7 @@ arm_kinematic::arm_kinematic(ros::NodeHandle* nodehandle,const std::string& urdf
 
    for (int i(0); i <arm_chain_.getNrOfSegments();i++)
    {
+       std::cout <<"erreur? " << std::endl;
        std::cout<<FCYN("Link " ) << i << " name "<< arm_chain_.getSegment(i).getName() <<std::endl;
    }
    std::cout <<"---------------------------------------------" << std::endl;
@@ -145,7 +146,7 @@ void arm_kinematic::setState(const Eigen::VectorXd& q,const Eigen::VectorXd& qd)
     setJointVelocities(qd);
     robot_state_.head(NrOfDeg_) = q_.data;
     robot_state_.tail(NrOfDeg_) = dotq_.data;
-    ee_pos_ = getSegmentPosition(5) ;
+    ee_pos_ = getSegmentPosition(6) ;
 }
 
 void arm_kinematic::computeJacobianHorz(Eigen::VectorXd q_horizon)

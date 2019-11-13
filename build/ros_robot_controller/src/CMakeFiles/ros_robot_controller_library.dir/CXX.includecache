@@ -280,6 +280,22 @@ std_msgs/Float64.h
 sensor_msgs/JointState.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
 
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
+iostream
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/iostream
+ros/ros.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/ros/ros.h
+Eigen/Core
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/Eigen/Core
+Eigen/Dense
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/Eigen/Dense
+geometry_msgs/PoseArray.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/geometry_msgs/PoseArray.h
+commun/color.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/commun/color.h
+commun/RosCommunDefinition.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/commun/RosCommunDefinition.h
+
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 qpOASES.hpp
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/qpOASES.hpp
@@ -315,6 +331,8 @@ Eigen/Core
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/Eigen/Core
 Eigen/Dense
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/Eigen/Dense
+geometry_msgs/PoseArray.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/geometry_msgs/PoseArray.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp
 constraint/RosGenericCst.h
@@ -331,6 +349,10 @@ constraint/RosJointVelCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/RosRobotModel.cpp
 robotmodel/RosRobotModel.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/robotmodel/RosRobotModel.h
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/sepPlane/sepPlane.cpp
+sepPlane/sepPlane.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/sepPlane/sepPlane/sepPlane.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp
 solver/RosMpcSolver.h
@@ -378,6 +400,26 @@ ros/message_operations.h
 geometry_msgs/Point.h
 -
 geometry_msgs/Quaternion.h
+-
+
+/opt/ros/melodic/include/geometry_msgs/PoseArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Pose.h
 -
 
 /opt/ros/melodic/include/geometry_msgs/Quaternion.h

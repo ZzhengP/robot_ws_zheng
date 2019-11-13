@@ -290,6 +290,33 @@ robotmodel/RosRobotModel.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.s
 .PHONY : robotmodel/RosRobotModel.cpp.s
 
+sepPlane/sepPlane.o: sepPlane/sepPlane.cpp.o
+
+.PHONY : sepPlane/sepPlane.o
+
+# target to build an object file
+sepPlane/sepPlane.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o
+.PHONY : sepPlane/sepPlane.cpp.o
+
+sepPlane/sepPlane.i: sepPlane/sepPlane.cpp.i
+
+.PHONY : sepPlane/sepPlane.i
+
+# target to preprocess a source file
+sepPlane/sepPlane.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.i
+.PHONY : sepPlane/sepPlane.cpp.i
+
+sepPlane/sepPlane.s: sepPlane/sepPlane.cpp.s
+
+.PHONY : sepPlane/sepPlane.s
+
+# target to generate assembly for a file
+sepPlane/sepPlane.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.s
+.PHONY : sepPlane/sepPlane.cpp.s
+
 solver/RosMpcSolver.o: solver/RosMpcSolver.cpp.o
 
 .PHONY : solver/RosMpcSolver.o
@@ -397,6 +424,9 @@ help:
 	@echo "... robotmodel/RosRobotModel.o"
 	@echo "... robotmodel/RosRobotModel.i"
 	@echo "... robotmodel/RosRobotModel.s"
+	@echo "... sepPlane/sepPlane.o"
+	@echo "... sepPlane/sepPlane.i"
+	@echo "... sepPlane/sepPlane.s"
 	@echo "... solver/RosMpcSolver.o"
 	@echo "... solver/RosMpcSolver.i"
 	@echo "... solver/RosMpcSolver.s"

@@ -92,7 +92,7 @@ public:
       * @param[out] kdl_frame The corresponding positon of the segment
       */
     KDL::Frame getSegmentPosition(unsigned int segment) {
-        fksolver_->JntToCart(q_, seg_pos_, segment+1);
+        fksolver_->JntToCart(q_, seg_pos_, segment);
         return seg_pos_;
     }
     /**

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.o"
+  "CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o"
   "/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.pdb"
   "/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
 )

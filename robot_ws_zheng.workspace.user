@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.2, 2019-10-17T13:52:30. -->
+<!-- Written by QtCreator 4.9.2, 2019-11-05T17:51:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -110,7 +110,7 @@
      <value type="QString">PATH=/home/zheng/catkin_ws/devel/bin:/opt/ros/melodic/bin:/home/zheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</value>
      <value type="QString">PKG_CONFIG_PATH=/home/zheng/robot_ws_zheng/devel/lib/pkgconfig:/home/zheng/catkin_ws/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig</value>
      <value type="QString">PWD=/home/zheng/robot_ws_zheng</value>
-     <value type="QString">PYTHONPATH=/home/zheng/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages</value>
+     <value type="QString">PYTHONPATH=/home/zheng/robot_ws_zheng/devel/lib/python2.7/dist-packages:/home/zheng/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages</value>
      <value type="QString">QTDIR</value>
      <value type="QString">ROSLISP_PACKAGE_DIRECTORIES=/home/zheng/robot_ws_zheng/devel/share/common-lisp:/home/zheng/catkin_ws/devel/share/common-lisp</value>
      <value type="QString">ROS_DISTRO=melodic</value>
@@ -120,7 +120,7 @@
      <value type="QString">ROS_PYTHON_VERSION=2</value>
      <value type="QString">ROS_ROOT=/opt/ros/melodic/share/ros</value>
      <value type="QString">ROS_VERSION=1</value>
-     <value type="QString">SHLVL=434</value>
+     <value type="QString">SHLVL=746</value>
      <value type="QString">TERM=xterm</value>
      <value type="QString">_=/usr/bin/env</value>
     </valuelist>

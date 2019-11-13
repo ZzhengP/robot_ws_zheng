@@ -33,6 +33,8 @@ Panels:
     SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -64,21 +66,12 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
+        panda_hand:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ee_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        forearm_link:
+        panda_leftfinger:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -127,21 +120,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        shoulder_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        table_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        upper_arm_link:
+        panda_rightfinger:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -150,21 +129,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        wrist_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -176,47 +140,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base:
-          Value: false
-        base_link:
-          Value: false
-        ee_link:
-          Value: false
-        forearm_link:
+        panda_hand:
           Value: true
         panda_link0:
-          Value: false
-        panda_link1:
-          Value: false
-        panda_link2:
-          Value: false
-        panda_link3:
-          Value: false
-        panda_link4:
-          Value: false
-        panda_link5:
-          Value: false
-        panda_link6:
           Value: false
         panda_link7:
           Value: false
         panda_link8:
           Value: false
-        shoulder_link:
-          Value: false
-        table_link:
-          Value: false
-        tool0:
-          Value: false
-        upper_arm_link:
-          Value: false
         world:
-          Value: false
-        wrist_1_link:
-          Value: false
-        wrist_2_link:
-          Value: false
-        wrist_3_link:
           Value: false
       Marker Scale: 1
       Name: TF
@@ -226,29 +158,7 @@ Visualization Manager:
       Tree:
         world:
           panda_link0:
-            panda_link1:
-              panda_link2:
-                panda_link3:
-                  panda_link4:
-                    panda_link5:
-                      panda_link6:
-                        panda_link7:
-                          panda_link8:
-                            {}
-          table_link:
-            base_link:
-              base:
-                {}
-              shoulder_link:
-                upper_arm_link:
-                  forearm_link:
-                    wrist_1_link:
-                      wrist_2_link:
-                        wrist_3_link:
-                          ee_link:
-                            {}
-                          tool0:
-                            {}
+            {}
       Update Interval: 0
       Value: true
     - Class: rviz/MarkerArray
@@ -263,7 +173,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -274,7 +184,10 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint

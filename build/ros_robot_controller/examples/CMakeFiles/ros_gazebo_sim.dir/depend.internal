@@ -47,6 +47,7 @@ ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/RosMarkers.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseArray.h
  /opt/ros/melodic/include/geometry_msgs/Quaternion.h
  /opt/ros/melodic/include/geometry_msgs/Vector3.h
  /opt/ros/melodic/include/kdl/chain.hpp

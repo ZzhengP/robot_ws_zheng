@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel
+
+Name: fake_target_detector
+Description: Description of fake_target_detector
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
+Requires: roscpp tf

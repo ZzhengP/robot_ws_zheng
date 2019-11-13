@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel
+
+Name: human_moveit_config
+Description: Description of human_moveit_config
+Version: 0.2.0
+Cflags: -I/home/zheng/robot_ws_zheng/devel/include
+Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
+Requires: rospy

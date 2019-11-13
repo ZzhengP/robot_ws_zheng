@@ -68,6 +68,28 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -91,16 +113,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+
+# Convenience name for target.
+franka_example: ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+
+.PHONY : franka_example
+
+# fast build rule for target.
+franka_example/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
+.PHONY : franka_example/fast
+
+# Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
 .PHONY : ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
@@ -181,6 +196,75 @@ ros_gazebo_sim: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
 ros_gazebo_sim/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
 .PHONY : ros_gazebo_sim/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+
+# Convenience name for target.
+markers: ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+
+.PHONY : markers
+
+# fast build rule for target.
+markers/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
+.PHONY : markers/fast
+
+franka_example.o: franka_example.cpp.o
+
+.PHONY : franka_example.o
+
+# target to build an object file
+franka_example.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
+.PHONY : franka_example.cpp.o
+
+franka_example.i: franka_example.cpp.i
+
+.PHONY : franka_example.i
+
+# target to preprocess a source file
+franka_example.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.i
+.PHONY : franka_example.cpp.i
+
+franka_example.s: franka_example.cpp.s
+
+.PHONY : franka_example.s
+
+# target to generate assembly for a file
+franka_example.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.s
+.PHONY : franka_example.cpp.s
+
+markers.o: markers.cpp.o
+
+.PHONY : markers.o
+
+# target to build an object file
+markers.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.o
+.PHONY : markers.cpp.o
+
+markers.i: markers.cpp.i
+
+.PHONY : markers.i
+
+# target to preprocess a source file
+markers.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.i
+.PHONY : markers.cpp.i
+
+markers.s: markers.cpp.s
+
+.PHONY : markers.s
+
+# target to generate assembly for a file
+markers.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.s
+.PHONY : markers.cpp.s
 
 ros_gazebo_sim.o: ros_gazebo_sim.cpp.o
 
@@ -216,13 +300,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... franka_example"
+	@echo "... ros_gazebo_sim"
+	@echo "... markers"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... ros_gazebo_sim"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... franka_example.o"
+	@echo "... franka_example.i"
+	@echo "... franka_example.s"
+	@echo "... markers.o"
+	@echo "... markers.i"
+	@echo "... markers.s"
 	@echo "... ros_gazebo_sim.o"
 	@echo "... ros_gazebo_sim.i"
 	@echo "... ros_gazebo_sim.s"

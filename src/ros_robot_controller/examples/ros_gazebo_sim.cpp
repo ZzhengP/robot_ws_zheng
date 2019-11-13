@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 
     double dt(0.05);
     const std::string& urdf_name= "/home/zheng/robot_ws_zheng/src/ur_description/urdf/ur5_robot.urdf";
-    const std::string& panda_urdf = "/home/zheng/catkin_ws/src/franka_ros/franka_description/robots/panda_arm.urdf";
+    const std::string& panda_urdf = "/home/zheng/robot_ws_zheng/src/franka_description/robots/panda_arm.urdf";
 
     const int ndof=6, N=6, panda_ndof = 7;
     arm_kinematic robot_arm(&n,urdf_name, ndof,"base_link", "wrist_3_link");
@@ -276,21 +276,28 @@ int main(int argc, char **argv)
     panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
 
     // define markers for visualization
-    KDL::Frame forearm;
+    KDL::Frame forearm, elbow;
     std::vector<Eigen::Vector3d> robot_link_location;
     std::vector<Eigen::Vector4d> robot_link_orient;
-    robot_link_location.resize(2);
-    robot_link_orient.resize(2);
+    robot_link_location.resize(3);
+    robot_link_orient.resize(3);
     robot_link_location[0].x() = ee_frame.p.x();
     robot_link_location[0].y() = ee_frame.p.y();
     robot_link_location[0].z() = ee_frame.p.z();
     ee_frame.M.GetQuaternion(robot_link_orient[0].x(),robot_link_orient[0].y(),robot_link_orient[0].z(),robot_link_orient[0].w());
 
-    forearm = robot_arm.getSegmentPosition(2);
+    forearm = robot_arm.getSegmentPosition(4);
     robot_link_location[1].x() = forearm.p.x();
     robot_link_location[1].y() = forearm.p.y();
     robot_link_location[1].z() = forearm.p.z();
     forearm.M.GetQuaternion(robot_link_orient[1].x(),robot_link_orient[1].y(),robot_link_orient[1].z(),robot_link_orient[1].w());
+
+    elbow = robot_arm.getSegmentPosition(2);
+    robot_link_location[2].x() = elbow.p.x();
+    robot_link_location[2].y() = elbow.p.y();
+    robot_link_location[2].z() = elbow.p.z();
+    elbow.M.GetQuaternion(robot_link_orient[2].x(),robot_link_orient[2].y(),robot_link_orient[2].z(),robot_link_orient[2].w());
+
     markers markers(&n,robot_link_location, robot_link_orient);
 
     while(ros::ok())
@@ -369,7 +376,7 @@ int main(int argc, char **argv)
               panda_optimal_Solution = panda_qpSolver.getSolution();
 
       //        optimal_Solution.segment(0,6) = qpSolver.getSolution();
-              std::cout<<"La solution optimale est : \n" << optimal_Solution << std::endl;
+//              std::cout<<"La solution optimale est : \n" << optimal_Solution << std::endl;
               robot_state = A*robot_state + B*optimal_Solution.segment(0,ndof);
               panda_robot_state = panda_A*panda_robot_state + panda_B*panda_optimal_Solution.segment(0,panda_ndof);
 
@@ -411,11 +418,17 @@ int main(int argc, char **argv)
               robot_link_location[0].z() = ee_frame.p.z();
               ee_frame.M.GetQuaternion(robot_link_orient[0].x(),robot_link_orient[0].y(),robot_link_orient[0].z(),robot_link_orient[0].w());
 
-              forearm = robot_arm.getSegmentPosition(2);
+              forearm = robot_arm.getSegmentPosition(4);
               robot_link_location[1].x() = forearm.p.x();
               robot_link_location[1].y() = forearm.p.y();
               robot_link_location[1].z() = forearm.p.z();
               forearm.M.GetQuaternion(robot_link_orient[1].x(),robot_link_orient[1].y(),robot_link_orient[1].z(),robot_link_orient[1].w());
+
+              elbow = robot_arm.getSegmentPosition(2);
+              robot_link_location[2].x() = elbow.p.x();
+              robot_link_location[2].y() = elbow.p.y();
+              robot_link_location[2].z() = elbow.p.z();
+              elbow.M.GetQuaternion(robot_link_orient[2].x(),robot_link_orient[2].y(),robot_link_orient[2].z(),robot_link_orient[2].w());
 
               markers.setMarkersPos(robot_link_location, robot_link_orient);
               markers.markerPublish();

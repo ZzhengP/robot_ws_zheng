@@ -10,7 +10,7 @@
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
 
   <!-- franka emika -->
-  <xacro:include filename= "$(find franka_description)/robots/panda_arm.urdf.xacro" />
+  <xacro:include filename= "$(find franka_description)/robots/panda_arm_ur.urdf.xacro" />
 
   <!-- arm -->
   <xacro:ur5_robot prefix="" joint_limited="false"/>
