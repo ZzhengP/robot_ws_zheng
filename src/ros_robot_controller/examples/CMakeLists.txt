@@ -5,7 +5,7 @@ target_link_libraries(ros_gazebo_sim PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRAR
 
 
 add_executable(franka_example franka_example.cpp)
-target_link_libraries(franka_example PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ros_robot_controller_library)
+target_link_libraries(franka_example PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${rviz_visual_tools_LIBRARIE} ros_robot_controller_library)
 
 
 add_executable(markers markers.cpp)

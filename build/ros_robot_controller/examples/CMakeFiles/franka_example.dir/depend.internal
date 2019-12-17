@@ -46,11 +46,20 @@ ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/RosMarkers.h
+ /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/deprecation.h
+ /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/remote_control.h
+ /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/rviz_visual_tools.h
+ /opt/ros/melodic/include/eigen_stl_containers/eigen_stl_vector_container.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Point32.h
+ /opt/ros/melodic/include/geometry_msgs/Polygon.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
  /opt/ros/melodic/include/geometry_msgs/PoseArray.h
+ /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
  /opt/ros/melodic/include/geometry_msgs/Quaternion.h
  /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/graph_msgs/Edges.h
+ /opt/ros/melodic/include/graph_msgs/GeometryGraph.h
  /opt/ros/melodic/include/kdl/chain.hpp
  /opt/ros/melodic/include/kdl/chainfksolver.hpp
  /opt/ros/melodic/include/kdl/chainfksolverpos_recursive.hpp
@@ -140,11 +149,16 @@ ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
  /opt/ros/melodic/include/sensor_msgs/JointState.h
+ /opt/ros/melodic/include/sensor_msgs/Joy.h
+ /opt/ros/melodic/include/shape_msgs/Mesh.h
+ /opt/ros/melodic/include/shape_msgs/MeshTriangle.h
  /opt/ros/melodic/include/std_msgs/ColorRGBA.h
  /opt/ros/melodic/include/std_msgs/Float64.h
  /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/Int64.h
  /opt/ros/melodic/include/std_msgs/String.h
+ /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
+ /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/melodic/include/urdf/model.h
  /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
  /opt/ros/melodic/include/urdf/visibility_control.hpp
@@ -162,6 +176,7 @@ ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
  /usr/include/eigen3/Eigen/LU
  /usr/include/eigen3/Eigen/QR
  /usr/include/eigen3/Eigen/SVD
+ /usr/include/eigen3/Eigen/StdVector
  /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h
  /usr/include/eigen3/Eigen/src/Cholesky/LLT.h
  /usr/include/eigen3/Eigen/src/Cholesky/LLT_LAPACKE.h
@@ -351,6 +366,8 @@ ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD_LAPACKE.h
  /usr/include/eigen3/Eigen/src/SVD/SVDBase.h
  /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h
+ /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h
+ /usr/include/eigen3/Eigen/src/StlSupport/details.h
  /usr/include/eigen3/Eigen/src/misc/Image.h
  /usr/include/eigen3/Eigen/src/misc/Kernel.h
  /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h

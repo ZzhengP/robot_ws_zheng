@@ -1,7 +1,13 @@
 #include "visualization/RosMarkers.h"
 
 
-markers::markers(ros::NodeHandle *nodehandle, std::vector<Eigen::Vector3d> initializePos, std::vector<Eigen::Vector4d> initializeOri):nh_(*nodehandle){
+markers::markers(){
+
+}
+
+
+markers::markers(ros::NodeHandle *nodehandle, std::vector<Eigen::Vector3d> initializePos, std::vector<Eigen::Vector4d> initializeOri):
+    nh_(*nodehandle){
 
 
     initializePublisher();
@@ -76,7 +82,7 @@ void markers::subscriberCallback(const geometry_msgs::PoseArray &Poses){
     marker_virt.color.r = 1.0;
     marker_virt.color.g = 0.0;
     marker_virt.color.b = 0.0;
-    marker_virt.lifetime = ros::Duration(0.01);
+    marker_virt.lifetime = ros::Duration(0.0);
     markers.markers.push_back(marker_virt);
 
     for (size_t t(0); t < Poses.poses.size(); t++){
@@ -95,7 +101,7 @@ void markers::subscriberCallback(const geometry_msgs::PoseArray &Poses){
         marker.color.r = 0.0;
         marker.color.g = 1.0;
         marker.color.b = 0.0;
-        marker.lifetime = ros::Duration(0.01);
+        marker.lifetime = ros::Duration(0.0);
         markers.markers.push_back(marker);
 
     }
@@ -113,4 +119,57 @@ int markers::getMarkersNbr(){
 }
 void markers::markerPublish(){
      publisher_.publish(markers_);
+}
+
+void markers::setMarkers(const geometry_msgs::PoseArray &Poses){
+    markers_.markers.clear();
+    visualization_msgs::Marker marker, marker_virt;
+     visualization_msgs::MarkerArray markers;
+    marker.header.frame_id = Poses.header.frame_id;
+    marker.header.stamp = Poses.header.stamp;
+    marker.type = visualization_msgs::Marker::CUBE;
+    marker.action = visualization_msgs::Marker::ADD;
+
+    marker_virt.header.frame_id = Poses.header.frame_id;
+    marker_virt.header.stamp = Poses.header.stamp;
+    marker_virt.type = visualization_msgs::Marker::CUBE;
+    marker_virt.action = visualization_msgs::Marker::ADD;
+
+    marker_virt.pose.position.x = 0.4;
+    marker_virt.pose.position.y = 0.2;
+    marker_virt.pose.position.z = 0.5;
+    marker_virt.pose.orientation.x = Poses.poses[0].orientation.x;
+    marker_virt.pose.orientation.y = Poses.poses[0].orientation.y;
+    marker_virt.pose.orientation.z = Poses.poses[0].orientation.z;
+    marker_virt.pose.orientation.w = Poses.poses[0].orientation.w;
+    marker_virt.scale.x = 0.1;
+    marker_virt.scale.y = 0.1;
+    marker_virt.scale.z = 0.1;
+    marker_virt.color.a = 1.0; // Don't forget to set the alpha!
+    marker_virt.color.r = 1.0;
+    marker_virt.color.g = 0.0;
+    marker_virt.color.b = 0.0;
+    marker_virt.lifetime = ros::Duration(0.0);
+    markers.markers.push_back(marker_virt);
+
+    for (size_t t(0); t < Poses.poses.size(); t++){
+        marker.id = t;
+        marker.pose.position.x = Poses.poses[t].position.x;
+        marker.pose.position.y = Poses.poses[t].position.y;
+        marker.pose.position.z = Poses.poses[t].position.z;
+        marker.pose.orientation.x = Poses.poses[t].orientation.x;
+        marker.pose.orientation.y = Poses.poses[t].orientation.y;
+        marker.pose.orientation.z = Poses.poses[t].orientation.z;
+        marker.pose.orientation.w = Poses.poses[t].orientation.w;
+        marker.scale.x = 0.1;
+        marker.scale.y = 0.1;
+        marker.scale.z = 0.1;
+        marker.color.a = 1.0; // Don't forget to set the alpha!
+        marker.color.r = 0.0;
+        marker.color.g = 1.0;
+        marker.color.b = 0.0;
+        marker.lifetime = ros::Duration(0.0);
+        markers_.markers.push_back(marker);
+
+    }
 }

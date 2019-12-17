@@ -29,9 +29,9 @@
 #include <sstream>
 #include "cmath"
 #include "qpOASES.hpp"
+#include "rviz_visual_tools/rviz_visual_tools.h"//#include "rviz_visual_tools/rviz_visual_tools.h"
 using namespace  std;
 using namespace qpOASES;
-
 const double pi = 3.1415927;
 
 
@@ -61,21 +61,94 @@ int main(int argc, char **argv)
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
 
 
-    panda_des_frame.p[0] = 0.5 ;
-    panda_des_frame.p[1] = -0.3 ;
-    panda_des_frame.p[2] = 0.3 ;
-    //    panda_des_frame.p[0] = panda_ee_frame.p.x();
-    //    panda_des_frame.p[1] = panda_ee_frame.p.y() ;
-    //    panda_des_frame.p[2] = panda_ee_frame.p.z() ;
+//    panda_des_frame.p[0] = 0.5 ;
+//    panda_des_frame.p[1] = -0.3 ;
+//    panda_des_frame.p[2] = 0.3 ;
+        panda_des_frame.p[0] = panda_ee_frame.p.x();
+        panda_des_frame.p[1] = panda_ee_frame.p.y() ;
+        panda_des_frame.p[2] = panda_ee_frame.p.z() ;
     panda_des_frame.M = panda_des_frame.M;
     panda_des_frame.M.DoRotX(- pi);
     panda_arm.computeJntFromCart(panda_des_frame,panda_q_des);
 
+
+
+    // define markers for visualization
+    geometry_msgs::Pose pose, pose2, pose3, pose4 ;
+    geometry_msgs::Pose poseObs;
+    geometry_msgs::PoseArray poses;
+    KDL::Frame forearm, elbow;
+
+    pose.position.x = panda_ee_frame.p.x();
+    pose.position.y = panda_ee_frame.p.y();
+    pose.position.z = panda_ee_frame.p.z();
+    panda_ee_frame.M.GetQuaternion(pose.orientation.x,pose.orientation.y,pose.orientation.z,pose.orientation.w);
+
+    forearm = panda_arm.getSegmentPosition(3);
+    elbow = panda_arm.getSegmentPosition(6);
+
+    pose2.position.x = forearm.p.x();
+    pose2.position.y = forearm.p.y();
+    pose2.position.z = forearm.p.z();
+    forearm.M.GetQuaternion(pose2.orientation.x,pose2.orientation.y,pose2.orientation.z,pose2.orientation.w);
+
+
+    pose3.position.x = elbow.p.x();
+    pose3.position.y = elbow.p.y();
+    pose3.position.z = elbow.p.z();
+    elbow.M.GetQuaternion(pose3.orientation.x,pose3.orientation.y,pose3.orientation.z,pose3.orientation.w);
+
+
+    poses.header.frame_id = "panda_link0";
+    poses.poses.push_back(pose);
+    poses.poses.push_back(pose2);
+    poses.poses.push_back(pose3);
+
     // Definie separating plane
-    Eigen::MatrixXd robotVertices;
-    robotVertices.resize(3,1);
-    robotVertices << panda_ee_frame.p.x(), panda_ee_frame.p.y(),panda_ee_frame.p.z() ;
-    Planes Planes(N, 1, 0, robotVertices);
+    // Define an virtuel obstacle for debugging
+    Eigen::Vector3d obsCenter;
+//    Eigen::MatrixXd obsLoc;
+    double dsafe= 0.1, x_width = 2, y_width = 2;
+    obsCenter << 0.8, 0., 0.0 ;
+    panda_ee_frame.M.GetQuaternion(poseObs.orientation.x,poseObs.orientation.y,poseObs.orientation.z,poseObs.orientation.w);
+    poseObs.position.x = obsCenter.x();
+    poseObs.position.y = obsCenter.y();
+    poseObs.position.z = obsCenter.z();
+    poses.poses.push_back(poseObs);
+
+    std::vector<Eigen::MatrixXd> robotVertices;
+    Eigen::Vector4d singlePlane, singlePlane2;
+    robotVertices.resize(2);
+    robotVertices[0].resize(3,2);
+    robotVertices[1].resize(3,2);
+    robotVertices[0] << panda_ee_frame.p.x(),  forearm.p.x(),
+                     panda_ee_frame.p.y(), forearm.p.y(),
+                     panda_ee_frame.p.z(), forearm.p.z();
+
+    robotVertices[1] << 0,  forearm.p.x(),
+                     0, forearm.p.y(),
+                     0, forearm.p.z();
+//    robotVertices.block(0,1,3,1) << forearm.p.x(), forearm.p.y(), forearm.p.z() ;
+    std::cout <<" robot vertices :\n " << robotVertices[0] << "\n" << robotVertices[1] << std::endl;
+    Planes Planes(N, 2, 1, robotVertices, obsCenter);
+    Planes::PlaneData planeData;
+    planeData = Planes.getPlanes();
+    singlePlane << planeData.Planes[0].block(0,0,4,1);
+    singlePlane2 << planeData.Planes[1].block(0,0,4,1);
+    rviz_visual_tools::colors color = rviz_visual_tools::CYAN;
+    // To visualize a plan in rviz
+    rviz_visual_tools::RvizVisualToolsPtr visual_tool;
+    visual_tool.reset(new rviz_visual_tools::RvizVisualTools("panda_link0", "/rviz_visual_plane"));
+    ROS_INFO_STREAM_NAMED("test", "Displaying ABCD Plane");
+    ros::Rate loop_rate(100);
+//    while (ros::ok()){
+//        visual_tool_->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],color,x_width,y_width);
+//        visual_tool_->trigger();
+
+//        ros::spinOnce();
+//        loop_rate.sleep();
+//    }
+
 
 
     // Define MPC task
@@ -153,7 +226,6 @@ int main(int argc, char **argv)
     ros::Publisher panda_ee_pose_pub = n.advertise<geometry_msgs::PoseArray>("/panda/panda_ee_pose",1000);
 
 
-    ros::Rate loop_rate(100);
 
 
     panda_robot_state = panda_arm.getRobotState();
@@ -253,34 +325,6 @@ int main(int argc, char **argv)
     panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
 
 
-    // define markers for visualization
-    geometry_msgs::Pose pose, pose2, pose3, pose4 ;
-    geometry_msgs::PoseArray poses;
-    KDL::Frame forearm, elbow;
-
-    pose.position.x = panda_ee_frame.p.x();
-    pose.position.y = panda_ee_frame.p.y();
-    pose.position.z = panda_ee_frame.p.z();
-    panda_ee_frame.M.GetQuaternion(pose.orientation.x,pose.orientation.y,pose.orientation.z,pose.orientation.w);
-
-    forearm = panda_arm.getSegmentPosition(3);
-    elbow = panda_arm.getSegmentPosition(6);
-
-    pose2.position.x = forearm.p.x();
-    pose2.position.y = forearm.p.y();
-    pose2.position.z = forearm.p.z();
-    forearm.M.GetQuaternion(pose2.orientation.x,pose2.orientation.y,pose2.orientation.z,pose2.orientation.w);
-
-
-    pose3.position.x = elbow.p.x();
-    pose3.position.y = elbow.p.y();
-    pose3.position.z = elbow.p.z();
-    elbow.M.GetQuaternion(pose3.orientation.x,pose3.orientation.y,pose3.orientation.z,pose3.orientation.w);
-
-    poses.header.frame_id = "panda_link0";
-    poses.poses.push_back(pose);
-    poses.poses.push_back(pose2);
-    poses.poses.push_back(pose3);
     while(ros::ok())
 //         for (int i(0);i<1;i++)
           {
@@ -381,7 +425,10 @@ int main(int argc, char **argv)
               panda_joint_state_5_pub.publish(panda_t5);
               panda_joint_state_6_pub.publish(panda_t6);
               panda_joint_state_7_pub.publish(panda_t7);
+              visual_tool->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],color,x_width,y_width);
+              visual_tool->publishABCDPlane(singlePlane2[0],singlePlane2[1],singlePlane2[2],-singlePlane2[3],color,x_width,y_width);
 
+              visual_tool->trigger();
               panda_arm.setState(panda_robot_state.head(panda_ndof),panda_robot_state.tail(panda_ndof));
               ros::spinOnce();
               loop_rate.sleep();

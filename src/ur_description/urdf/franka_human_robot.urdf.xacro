@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+       name="panda" >
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find ur_description)/urdf/common_franka.gazebo.xacro" />
+  <!-- table -->
+
+
+  <!-- franka emika -->
+  <xacro:include filename= "$(find franka_description)/robots/panda_arm.urdf.xacro" />
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "table_link" />
+    <origin xyz="0.0 0.0 0.845" rpy="0.0 0.0 0.0" />
+  </joint>
+
+<!--xacro:include filename="$(find franka_description)/sensors/camera.xacro" /-->
+<xacro:include filename="$(find franka_description)/sensors/kinect.xacro" />
+
+<!-- attach the camera to the mobile robot -->
+<!--joint name="camera_joint" type="fixed">
+<parent link="world" />
+<child link="camera_link" />
+<origin rpy="3.1415/2 -3.1415/2 0 " xyz="1 0 1.2"/>
+</joint-->
+<!-- attach the kinect to the mobile robot -->
+<joint name="kinect_joint" type="fixed">
+<parent link="world" />
+<child link="kinect_link" />
+<origin rpy="0 0.628 -1.256" xyz="0.6  1.2 2"/>
+</joint>
+<!-- kinect depth frame has a different viewpoint; publish it separately-->
+
+<!--xacro:include second kinect filename="$(find franka_description)/sensors/camera.xacro" /-->
+<xacro:include filename="$(find franka_description)/sensors/kinect2.xacro" />
+<joint name="kinect2_joint" type="fixed">
+<parent link="world" />
+<child link="kinect2_link" />
+<origin rpy="0 0.628 +1.256" xyz="0.6  -1.2 2"/>
+</joint>
+</robot>

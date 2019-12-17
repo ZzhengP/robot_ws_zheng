@@ -136,6 +136,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/zheng/robot_ws_zheng/build/ur_description/cmake_install.cmake")
   include("/home/zheng/robot_ws_zheng/build/ros_robot_controller/cmake_install.cmake")
   include("/home/zheng/robot_ws_zheng/build/robot_controller/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/rviz_visual_tools/cmake_install.cmake")
 
 endif()
 

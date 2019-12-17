@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   kdl_parser
   gazebo_ros
   qpOASES
+  rviz_visual_tools
 )
 
 find_package(gazebo REQUIRED)
@@ -30,9 +31,10 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${SDFormat_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
-    ${qpAOSES_INCLUDE_DIRS})
+    ${qpAOSES_INCLUDE_DIRS}
+    ${rviz_visual_tools_INCLUDE_DIRS})
 include_directories(${GAZEBO_INCLUDE_DIRS} )
-link_directories(${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS} ${rviz_visual_tools_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 include_directories(${PCL_INCLUDE_DIRS})
