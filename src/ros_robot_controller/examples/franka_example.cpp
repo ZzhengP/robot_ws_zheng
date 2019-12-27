@@ -137,8 +137,17 @@ int main(int argc, char **argv)
     singlePlane2 << planeData.Planes[1].block(0,0,4,1);
     rviz_visual_tools::colors color = rviz_visual_tools::CYAN;
     // To visualize a plan in rviz
-    rviz_visual_tools::RvizVisualToolsPtr visual_tool;
+    rviz_visual_tools::RvizVisualToolsPtr visual_tool, visual_tool_simple_markers;
     visual_tool.reset(new rviz_visual_tools::RvizVisualTools("panda_link0", "/rviz_visual_plane"));
+    visual_tool_simple_markers.reset(new rviz_visual_tools::RvizVisualTools("panda_link0","/simpleCube"));
+
+
+    geometry_msgs::Pose cubeLocation;
+    cubeLocation.position.x = 0.5;
+    cubeLocation.position.y = 0.;
+    cubeLocation.position.z = 0.7;
+
+
     ROS_INFO_STREAM_NAMED("test", "Displaying ABCD Plane");
     ros::Rate loop_rate(100);
 //    while (ros::ok()){
@@ -257,7 +266,7 @@ int main(int argc, char **argv)
         q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
     // Define joint acceleration limit
-    jnt_acc_cst jnt_acc_cst(ndof, N);
+    jntAccCst jnt_acc_cst(ndof, N);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
     jnt_acc_cst.setLowerBound(robot_state, Px);
     jnt_acc_cst.setUpperBound(robot_state, Px);
@@ -265,7 +274,7 @@ int main(int argc, char **argv)
     ddq_ub = jnt_acc_cst.getUpperBound();
 
 //    // Define joint velocity limit
-    jnt_vel_cst jnt_vel_cst(ndof,N);
+    jntVelCst jnt_vel_cst(ndof,N);
     jnt_vel_cst.setLimit(dq_min, dq_max);
     jnt_vel_cst.setLowerBound(robot_state,Px_dq);
     jnt_vel_cst.setUpperBound(robot_state,Px_dq);
@@ -273,7 +282,7 @@ int main(int argc, char **argv)
 
     Cst += 1 ;
 //    // Define joint position limit
-    jnt_pos_cst jnt_pos_cst(ndof,N);
+    jntPosCst jnt_pos_cst(ndof,N);
     jnt_pos_cst.setLimit(q_min,q_max);
     jnt_pos_cst.setLowerBound(robot_state,Px);
     jnt_pos_cst.setUpperBound(robot_state,Px);
@@ -429,6 +438,9 @@ int main(int argc, char **argv)
               visual_tool->publishABCDPlane(singlePlane2[0],singlePlane2[1],singlePlane2[2],-singlePlane2[3],color,x_width,y_width);
 
               visual_tool->trigger();
+
+              visual_tool_simple_markers->publishCuboid(cubeLocation, 0.3,0.3,0.3);
+              visual_tool_simple_markers->trigger();
               panda_arm.setState(panda_robot_state.head(panda_ndof),panda_robot_state.tail(panda_ndof));
               ros::spinOnce();
               loop_rate.sleep();

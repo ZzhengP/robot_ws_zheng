@@ -4,11 +4,11 @@
 #include "constraint/RosGenericCst.h"
 
 
-class jnt_pos_cst : public generic_cst
+class jntPosCst : public generic_cst
 {
 public:
 
-    jnt_pos_cst(int ndof, int n) : generic_cst (ndof, n) {}
+    jntPosCst(int ndof, int n) : generic_cst (ndof, n) {}
 
     void setLimit(Eigen::VectorXd min, Eigen::VectorXd max);
 

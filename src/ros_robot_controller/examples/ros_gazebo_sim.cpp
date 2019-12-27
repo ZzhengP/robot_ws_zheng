@@ -208,7 +208,7 @@ int main(int argc, char **argv)
         q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
     // Define joint acceleration limit
-    jnt_acc_cst jnt_acc_cst(ndof, N);
+    jntAccCst jnt_acc_cst(ndof, N);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
     jnt_acc_cst.setLowerBound(robot_state, Px);
     jnt_acc_cst.setUpperBound(robot_state, Px);
@@ -216,7 +216,7 @@ int main(int argc, char **argv)
     ddq_ub = jnt_acc_cst.getUpperBound();
 
 //    // Define joint velocity limit
-    jnt_vel_cst jnt_vel_cst(ndof,N);
+    jntVelCst jnt_vel_cst(ndof,N);
     jnt_vel_cst.setLimit(dq_min, dq_max);
     jnt_vel_cst.setLowerBound(robot_state,Px_dq);
     jnt_vel_cst.setUpperBound(robot_state,Px_dq);
@@ -224,7 +224,7 @@ int main(int argc, char **argv)
 
     Cst += 1 ;
 //    // Define joint position limit
-    jnt_pos_cst jnt_pos_cst(ndof,N);
+    jntPosCst jnt_pos_cst(ndof,N);
     jnt_pos_cst.setLimit(q_min,q_max);
     jnt_pos_cst.setLowerBound(robot_state,Px);
     jnt_pos_cst.setUpperBound(robot_state,Px);

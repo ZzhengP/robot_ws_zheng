@@ -27,20 +27,19 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
   "/usr/include/eigen3"
   "/usr/include/sdformat-6.0"
-  "/usr/include/ignition/math4"
   "/usr/include/gazebo-9"
   "/usr/include/bullet"
   "/usr/include/simbody"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"
   "/usr/include/OGRE/Paging"
+  "/home/zheng/robot_ws_zheng/src/robot_controller/src/../include"
+  "/usr/include/ignition/math4"
   "/usr/include/ignition/transport4"
   "/usr/include/ignition/msgs1"
   "/usr/include/ignition/common1"
   "/usr/include/ignition/fuel_tools1"
   "/usr/include/uuid"
-  "/usr/include/x86_64-linux-gnu"
-  "/home/zheng/robot_ws_zheng/src/robot_controller/src/../include"
   )
 
 # Targets to which this target links.

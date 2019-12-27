@@ -22,6 +22,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"ros_robot_controller\""
+  "ros_robot_controller_library_EXPORTS"
   )
 
 # The include file search paths:
@@ -36,19 +37,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/OGRE"
   "/usr/include/sdformat-6.0"
-  "/usr/include/ignition/math4"
   "/usr/include/gazebo-9"
   "/usr/include/bullet"
   "/usr/include/simbody"
   "/usr/include/OGRE/Terrain"
   "/usr/include/OGRE/Paging"
+  "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"
+  "/usr/include/ignition/math4"
   "/usr/include/ignition/transport4"
   "/usr/include/ignition/msgs1"
   "/usr/include/ignition/common1"
   "/usr/include/ignition/fuel_tools1"
-  "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"
   "/usr/include/uuid"
-  "/usr/include/x86_64-linux-gnu"
   )
 
 # Targets to which this target links.

@@ -34,6 +34,7 @@ include_directories(
     ${qpAOSES_INCLUDE_DIRS}
     ${rviz_visual_tools_INCLUDE_DIRS})
 include_directories(${GAZEBO_INCLUDE_DIRS} )
+
 link_directories(${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS} ${rviz_visual_tools_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 

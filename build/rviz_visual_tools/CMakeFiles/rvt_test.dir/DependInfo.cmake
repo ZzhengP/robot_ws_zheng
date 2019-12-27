@@ -22,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "rviz_visual_tools"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools"
   "rviz_visual_tools/rvt_test_autogen/include"
+  "/usr/src/googletest/googletest/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
@@ -29,7 +30,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/OGRE/Overlay"
   "/usr/include/OGRE"
-  "/usr/src/googletest/googletest/include"
   )
 
 # Targets to which this target links.

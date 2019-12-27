@@ -101,6 +101,7 @@
 					<Add directory="/home/zheng/robot_ws_zheng/build/rviz_visual_tools"/>
 					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools"/>
 					<Add directory="/home/zheng/robot_ws_zheng/build/rviz_visual_tools/rvt_test_autogen/include"/>
+					<Add directory="/usr/src/googletest/googletest/include"/>
 					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
@@ -108,7 +109,6 @@
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/OGRE/Overlay"/>
 					<Add directory="/usr/include/OGRE"/>
-					<Add directory="/usr/src/googletest/googletest/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -139,6 +139,7 @@
 					<Add directory="/home/zheng/robot_ws_zheng/build/rviz_visual_tools"/>
 					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools"/>
 					<Add directory="/home/zheng/robot_ws_zheng/build/rviz_visual_tools/rvt_test_autogen/include"/>
+					<Add directory="/usr/src/googletest/googletest/include"/>
 					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
@@ -146,7 +147,6 @@
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/OGRE/Overlay"/>
 					<Add directory="/usr/include/OGRE"/>
-					<Add directory="/usr/src/googletest/googletest/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>

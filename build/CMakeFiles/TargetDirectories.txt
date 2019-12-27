@@ -157,14 +157,15 @@
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install/strip.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install.dir
-/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/list_install_components.dir
+/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/rebuild_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/franka_example.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/markers.dir
+/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/list_install_components.dir
+/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install/local.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/test.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/edit_cache.dir
-/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/rebuild_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/install/strip.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/install/local.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/test.dir

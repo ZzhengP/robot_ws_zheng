@@ -1,14 +1,14 @@
 #include "constraint/RosGenericCst.h"
 
-class  jnt_acc_cst : public generic_cst
+class  jntAccCst : public generic_cst
 {
 
 public:
 
-    jnt_acc_cst(int ndof, int N) : generic_cst(ndof, N) {
+    jntAccCst(int ndof, int N) : generic_cst(ndof, N) {
     }
 
-     ~jnt_acc_cst(){}
+     ~jntAccCst(){}
 
     void setLowerBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px_dq){
          lb_ = min_ ;

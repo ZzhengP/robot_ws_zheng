@@ -10,3 +10,7 @@ target_link_libraries(franka_example PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRAR
 
 add_executable(markers markers.cpp)
 target_link_libraries(markers PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ros_robot_controller_library)
+
+
+add_executable(obsavoidancedemo obsavoidancedemo.cpp)
+target_link_libraries(obsavoidancedemo PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ros_robot_controller_library)

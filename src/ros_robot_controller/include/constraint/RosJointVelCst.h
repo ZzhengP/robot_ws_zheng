@@ -4,9 +4,9 @@
 #include "Eigen/Dense"
 #include "constraint/RosGenericCst.h"
 
-class  jnt_vel_cst : public generic_cst {
+class  jntVelCst : public generic_cst {
 public:
-    jnt_vel_cst(int ndof, int N) : generic_cst (ndof, N){}
+    jntVelCst(int ndof, int N) : generic_cst (ndof, N){}
 
 
     void setLimit(Eigen::VectorXd min, Eigen::VectorXd max);
