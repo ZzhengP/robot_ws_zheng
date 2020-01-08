@@ -13,6 +13,7 @@ Panels:
         - /DepthCloud1/Auto Size1
         - /Image1
         - /PointCloud21
+        - /MarkerArray2
       Splitter Ratio: 0.5
     Tree Height: 767
   - Class: rviz/Selection
@@ -33,7 +34,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -242,10 +243,10 @@ Visualization Manager:
       Value: false
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /rviz_visual_plane
+      Marker Topic: /simpleCube
       Name: MarkerArray
       Namespaces:
-        {}
+        Cuboid: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -291,10 +292,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6802026629447937
+      Pitch: 0.2902032732963562
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.948594093322754
+      Yaw: 4.168596267700195
     Saved: ~
 Window Geometry:
   Displays:

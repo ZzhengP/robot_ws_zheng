@@ -61,12 +61,12 @@ int main(int argc, char **argv)
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
 
 
-//    panda_des_frame.p[0] = 0.5 ;
-//    panda_des_frame.p[1] = -0.3 ;
-//    panda_des_frame.p[2] = 0.3 ;
-        panda_des_frame.p[0] = panda_ee_frame.p.x();
-        panda_des_frame.p[1] = panda_ee_frame.p.y() ;
-        panda_des_frame.p[2] = panda_ee_frame.p.z() ;
+    panda_des_frame.p[0] = 0.5 ;
+    panda_des_frame.p[1] = -0.3 ;
+    panda_des_frame.p[2] = 0.3 ;
+//        panda_des_frame.p[0] = panda_ee_frame.p.x();
+//        panda_des_frame.p[1] = panda_ee_frame.p.y() ;
+//        panda_des_frame.p[2] = panda_ee_frame.p.z() ;
     panda_des_frame.M = panda_des_frame.M;
     panda_des_frame.M.DoRotX(- pi);
     panda_arm.computeJntFromCart(panda_des_frame,panda_q_des);
@@ -116,7 +116,7 @@ int main(int argc, char **argv)
     poseObs.position.z = obsCenter.z();
     poses.poses.push_back(poseObs);
 
-    std::vector<Eigen::MatrixXd> robotVertices;
+    std::vector<Eigen::MatrixXd> robotVertices, robotVerticesAugmented;
     Eigen::Vector4d singlePlane, singlePlane2;
     robotVertices.resize(2);
     robotVertices[0].resize(3,2);
@@ -129,12 +129,21 @@ int main(int argc, char **argv)
                      0, forearm.p.y(),
                      0, forearm.p.z();
 //    robotVertices.block(0,1,3,1) << forearm.p.x(), forearm.p.y(), forearm.p.z() ;
-    std::cout <<" robot vertices :\n " << robotVertices[0] << "\n" << robotVertices[1] << std::endl;
-    Planes Planes(N, 2, 1, robotVertices, obsCenter);
+    robotVerticesAugmented.resize(2);
+    robotVerticesAugmented[0].resize(3,2*N);
+    robotVerticesAugmented[1].resize(3,2*N);
+    for (int(i);i<N;i++){
+        robotVerticesAugmented[0].block(0,2*i,3,2) = robotVertices[0];
+        robotVerticesAugmented[1].block(0,2*i,3,2) = robotVertices[1];
+
+    }
+    std::cout <<" robot vertices :\n " << robotVerticesAugmented[0] << "\n" << robotVerticesAugmented[1] << std::endl;
+    int nbrRobotPart = 2, nbrObsPart=1;
+    Planes Planes(N, nbrRobotPart, nbrObsPart, robotVertices, obsCenter);
     Planes::PlaneData planeData;
     planeData = Planes.getPlanes();
-    singlePlane << planeData.Planes[0].block(0,0,4,1);
-    singlePlane2 << planeData.Planes[1].block(0,0,4,1);
+    singlePlane << planeData.planeLocation[0].block(0,0,4,1);
+    singlePlane2 << planeData.planeLocation[1].block(0,0,4,1);
     rviz_visual_tools::colors color = rviz_visual_tools::CYAN;
     // To visualize a plan in rviz
     rviz_visual_tools::RvizVisualToolsPtr visual_tool, visual_tool_simple_markers;
@@ -146,6 +155,7 @@ int main(int argc, char **argv)
     cubeLocation.position.x = 0.5;
     cubeLocation.position.y = 0.;
     cubeLocation.position.z = 0.7;
+
 
 
     ROS_INFO_STREAM_NAMED("test", "Displaying ABCD Plane");

@@ -361,6 +361,10 @@ commun/color.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/commun/color.h
 commun/RosCommunDefinition.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/commun/RosCommunDefinition.h
+qpOASES.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/qpOASES.hpp
+solver/RosMpcSolver.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/solver/RosMpcSolver.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 qpOASES.hpp

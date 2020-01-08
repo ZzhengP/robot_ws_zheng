@@ -344,6 +344,33 @@ solver/RosMpcSolver.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s
 .PHONY : solver/RosMpcSolver.cpp.s
 
+solver/lpsolver.o: solver/lpsolver.cpp.o
+
+.PHONY : solver/lpsolver.o
+
+# target to build an object file
+solver/lpsolver.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o
+.PHONY : solver/lpsolver.cpp.o
+
+solver/lpsolver.i: solver/lpsolver.cpp.i
+
+.PHONY : solver/lpsolver.i
+
+# target to preprocess a source file
+solver/lpsolver.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.i
+.PHONY : solver/lpsolver.cpp.i
+
+solver/lpsolver.s: solver/lpsolver.cpp.s
+
+.PHONY : solver/lpsolver.s
+
+# target to generate assembly for a file
+solver/lpsolver.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.s
+.PHONY : solver/lpsolver.cpp.s
+
 task/RosMpcTask.o: task/RosMpcTask.cpp.o
 
 .PHONY : task/RosMpcTask.o
@@ -430,6 +457,9 @@ help:
 	@echo "... solver/RosMpcSolver.o"
 	@echo "... solver/RosMpcSolver.i"
 	@echo "... solver/RosMpcSolver.s"
+	@echo "... solver/lpsolver.o"
+	@echo "... solver/lpsolver.i"
+	@echo "... solver/lpsolver.s"
 	@echo "... task/RosMpcTask.o"
 	@echo "... task/RosMpcTask.i"
 	@echo "... task/RosMpcTask.s"

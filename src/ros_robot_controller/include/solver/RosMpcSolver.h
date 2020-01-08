@@ -1,3 +1,4 @@
+#pragma once
 #include "qpOASES.hpp"
 #include <Eigen/Dense>
 #include <Eigen/Core>

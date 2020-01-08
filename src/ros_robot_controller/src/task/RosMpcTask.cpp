@@ -144,10 +144,10 @@ void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd robot_sta
      computef(robot_state, q_horz_Des);
     // computeEdq(J_horizon);
     // computefdq(robot_state,J_horizon);
-//     Hessien_ = E_.transpose()*E_ + 0.0001*E_dq_.transpose()*E_dq_ + 0.000001*Id.transpose()*Id;
-//     gradient_ = E_.transpose()*f_+ 0.0001*E_dq_.transpose()*f_dq_ ;
-     Hessien_ = E_.transpose()*E_ + 0.00001*Id.transpose()*Id;
-     gradient_ = E_.transpose()*f_ ;
+     Hessien_ = E_.transpose()*E_ + 0.0001*E_dq_.transpose()*E_dq_ + 0.0001*Id.transpose()*Id;
+     gradient_ = E_.transpose()*f_+ 0.0001*E_dq_.transpose()*f_dq_ ;
+//     Hessien_ = E_.transpose()*E_ + 0.0001*Id.transpose()*Id;
+//     gradient_ = E_.transpose()*f_ ;
 }
 
 void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd q_horizon, Eigen::VectorXd cartPos_horizon, Eigen::VectorXd robot_state, Eigen::VectorXd PosDes)
@@ -162,8 +162,8 @@ void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd q_horizon
 
      Id.resize(Hessien_.rows(),Hessien_.cols());
      Id.setIdentity();
-     Hessien_ = E_.transpose()*E_ + 0.001*E_dq_.transpose()*E_dq_ + 0.000001*Id.transpose()*Id ;
-     gradient_ = E_.transpose()*f_+ 0.001*E_dq_.transpose()*f_dq_ ;
+     Hessien_ = E_.transpose()*E_ + 0.0001*E_dq_.transpose()*E_dq_ + 0.0001*Id.transpose()*Id ;
+     gradient_ = E_.transpose()*f_+ 0.0001*E_dq_.transpose()*f_dq_ ;
 }
 
 

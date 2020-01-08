@@ -125,7 +125,7 @@ rviz_visual_tools_gui_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/src/remote_control.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/build.make
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /opt/ros/melodic/share/rviz/cmake/../../../lib/librviz_default_plugin.so
-/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /home/zheng/anaconda3/lib/libQt5Widgets.so.5.9.7
+/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /opt/ros/melodic/lib/libeigen_conversions.so
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /opt/ros/melodic/lib/librviz.so
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libOgreOverlay.so
@@ -178,7 +178,7 @@ rviz_visual_tools_gui_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /home/zheng/anaconda3/lib/libQt5Gui.so.5.9.7
+/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so"

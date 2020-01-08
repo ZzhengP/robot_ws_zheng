@@ -128,6 +128,8 @@ obsavoidancedemo_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /opt/ros/melodic/lib/libifopt_core.so
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /opt/ros/melodic/lib/libifopt_ipopt.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -206,6 +208,8 @@ obsavoidancedemo_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /opt/ros/melodic/lib/libifopt_core.so
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /opt/ros/melodic/lib/libifopt_ipopt.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
