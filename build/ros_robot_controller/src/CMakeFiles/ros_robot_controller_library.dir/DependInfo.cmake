@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/RosRobotModel.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/sepPlane/sepPlane.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/RosMpcSolver.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o"
+  "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolve.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolver.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/RosMpcTask.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/visualization/RosMarkers.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.o"
@@ -30,6 +31,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "ros_robot_controller"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"
+  "/home/zheng/robot_ws_zheng/devel/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"
   "/opt/ros/melodic/include"

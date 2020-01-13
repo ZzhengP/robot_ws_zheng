@@ -221,8 +221,8 @@ visualization/RosMarkers.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/visualization/RosMarkers.h
 sepPlane/sepPlane.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/sepPlane/sepPlane.h
-solver/lpsolver.h
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/solver/lpsolver.h
+solver/lpsolve.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/solver/lpsolve.h
 iostream
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/iostream
 kdl/chain.hpp
@@ -271,8 +271,12 @@ stdio.h
 -
 stdlib.h
 -
+boost/shared_ptr.hpp
+-
 glpk.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/glpk.h
+iostream
+-
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/RosCommunDefinition.h
 Eigen/Core
@@ -390,9 +394,9 @@ boost/shared_ptr.hpp
 commun/color.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/commun/color.h
 
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolver.h
-qpOASES.hpp
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/qpOASES.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
+glpk.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/glpk.h
 Eigen/Dense
 -
 Eigen/Core
@@ -403,6 +407,10 @@ boost/shared_ptr.hpp
 -
 commun/color.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/commun/color.h
+map
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/map
+cstring
+-
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h
 iostream

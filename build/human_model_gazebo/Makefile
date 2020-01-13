@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -79,16 +68,27 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : test/fast
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -100,16 +100,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -123,17 +113,49 @@ install/strip/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,94 +190,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
 
 # Convenience name for target.
-run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
 
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
 
 # fast build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
-
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
-
-# Convenience name for target.
-clean_test_results_human_model_gazebo: human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
-
-.PHONY : clean_test_results_human_model_gazebo
-
-# fast build rule for target.
-clean_test_results_human_model_gazebo/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build
-.PHONY : clean_test_results_human_model_gazebo/fast
-
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-
-# Convenience name for target.
-run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-
-# fast build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
-
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
-
-# Convenience name for target.
-_run_tests_human_model_gazebo: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
-
-.PHONY : _run_tests_human_model_gazebo
-
-# fast build rule for target.
-_run_tests_human_model_gazebo/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build
-.PHONY : _run_tests_human_model_gazebo/fast
-
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
-
-# Convenience name for target.
-run_tests_human_model_gazebo: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
-
-.PHONY : run_tests_human_model_gazebo
-
-# fast build rule for target.
-run_tests_human_model_gazebo/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build
-.PHONY : run_tests_human_model_gazebo/fast
-
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
-
-# Convenience name for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
-
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
-
-# fast build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
 
 # Convenience name for target.
 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check.dir/rule:
@@ -273,6 +220,96 @@ run_tests_human_model_gazebo_roslaunch-check/fast:
 .PHONY : run_tests_human_model_gazebo_roslaunch-check/fast
 
 # Convenience name for target.
+human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+
+# Convenience name for target.
+_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# fast build rule for target.
+_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+
+# Convenience name for target.
+human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
+
+# Convenience name for target.
+run_tests_human_model_gazebo: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/rule
+
+.PHONY : run_tests_human_model_gazebo
+
+# fast build rule for target.
+run_tests_human_model_gazebo/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build
+.PHONY : run_tests_human_model_gazebo/fast
+
+# Convenience name for target.
+human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
+
+# Convenience name for target.
+_run_tests_human_model_gazebo: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/rule
+
+.PHONY : _run_tests_human_model_gazebo
+
+# fast build rule for target.
+_run_tests_human_model_gazebo/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build
+.PHONY : _run_tests_human_model_gazebo/fast
+
+# Convenience name for target.
+human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
+
+# Convenience name for target.
+run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
+
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+
+# fast build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
+
+# Convenience name for target.
+human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
+
+# Convenience name for target.
+clean_test_results_human_model_gazebo: human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/rule
+
+.PHONY : clean_test_results_human_model_gazebo
+
+# fast build rule for target.
+clean_test_results_human_model_gazebo/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build
+.PHONY : clean_test_results_human_model_gazebo/fast
+
+# Convenience name for target.
+human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+.PHONY : human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+
+# Convenience name for target.
+run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/rule
+
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# fast build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+
+# Convenience name for target.
 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check.dir/rule
 .PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check.dir/rule
@@ -287,43 +324,30 @@ _run_tests_human_model_gazebo_roslaunch-check/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check.dir/build
 .PHONY : _run_tests_human_model_gazebo_roslaunch-check/fast
 
-# Convenience name for target.
-human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-.PHONY : human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-
-# Convenience name for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/rule
-
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-
-# fast build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... install/local"
-	@echo "... test"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
-	@echo "... rebuild_cache"
-	@echo "... clean_test_results_human_model_gazebo"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
-	@echo "... _run_tests_human_model_gazebo"
-	@echo "... run_tests_human_model_gazebo"
-	@echo "... list_install_components"
-	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check"
-	@echo "... install/strip"
-	@echo "... _run_tests_human_model_gazebo_roslaunch-check"
-	@echo "... install"
 	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
+	@echo "... install"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check"
+	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
+	@echo "... list_install_components"
+	@echo "... run_tests_human_model_gazebo"
+	@echo "... _run_tests_human_model_gazebo"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
+	@echo "... clean_test_results_human_model_gazebo"
+	@echo "... rebuild_cache"
+	@echo "... install/strip"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
+	@echo "... package"
+	@echo "... package_source"
+	@echo "... test"
+	@echo "... _run_tests_human_model_gazebo_roslaunch-check"
+	@echo "... edit_cache"
 .PHONY : help
 
 

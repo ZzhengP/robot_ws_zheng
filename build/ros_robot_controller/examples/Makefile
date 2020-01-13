@@ -80,26 +80,16 @@ install/fast: preinstall/fast
 	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -124,16 +114,48 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
+.PHONY : package_source
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target package_source
+package_source/fast: package_source
 
-.PHONY : edit_cache/fast
+.PHONY : package_source/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -227,6 +249,21 @@ obsavoidancedemo/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
 .PHONY : obsavoidancedemo/fast
 
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+
+# Convenience name for target.
+lpsolvetest: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+
+.PHONY : lpsolvetest
+
+# fast build rule for target.
+lpsolvetest/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
+.PHONY : lpsolvetest/fast
+
 franka_example.o: franka_example.cpp.o
 
 .PHONY : franka_example.o
@@ -253,6 +290,33 @@ franka_example.s: franka_example.cpp.s
 franka_example.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.s
 .PHONY : franka_example.cpp.s
+
+lpsolve_test.o: lpsolve_test.cpp.o
+
+.PHONY : lpsolve_test.o
+
+# target to build an object file
+lpsolve_test.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.o
+.PHONY : lpsolve_test.cpp.o
+
+lpsolve_test.i: lpsolve_test.cpp.i
+
+.PHONY : lpsolve_test.i
+
+# target to preprocess a source file
+lpsolve_test.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.i
+.PHONY : lpsolve_test.cpp.i
+
+lpsolve_test.s: lpsolve_test.cpp.s
+
+.PHONY : lpsolve_test.s
+
+# target to generate assembly for a file
+lpsolve_test.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.s
+.PHONY : lpsolve_test.cpp.s
 
 markers.o: markers.cpp.o
 
@@ -343,18 +407,24 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... package_source"
 	@echo "... franka_example"
 	@echo "... ros_gazebo_sim"
 	@echo "... markers"
+	@echo "... package"
 	@echo "... list_install_components"
 	@echo "... obsavoidancedemo"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... lpsolvetest"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"
+	@echo "... lpsolve_test.o"
+	@echo "... lpsolve_test.i"
+	@echo "... lpsolve_test.s"
 	@echo "... markers.o"
 	@echo "... markers.i"
 	@echo "... markers.s"

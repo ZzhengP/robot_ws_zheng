@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel
+
+Name: lpsolve_catkin
+Description: Description of lpsolve_catkin
+Version: 5.5.2
+Cflags: -I/home/zheng/robot_ws_zheng/devel/include
+Libs: -L/home/zheng/robot_ws_zheng/devel/lib -llpsolve
+Requires: 

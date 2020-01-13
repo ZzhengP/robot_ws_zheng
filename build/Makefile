@@ -90,28 +90,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -134,6 +112,50 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/local/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -294,86 +316,21 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f franka_description/CMakeFiles/_catkin_empty_exported_target.dir/build.make franka_description/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f catkin_simple/CMakeFiles/_catkin_empty_exported_target.dir/build.make catkin_simple/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+# Target rules for targets named _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
 
 # Build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
 
 # fast build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_human_model_gazebo
-
-# Build rule for target.
-clean_test_results_human_model_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_human_model_gazebo
-.PHONY : clean_test_results_human_model_gazebo
-
-# fast build rule for target.
-clean_test_results_human_model_gazebo/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build
-.PHONY : clean_test_results_human_model_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-
-# Build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-
-# fast build rule for target.
-run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
-.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_human_model_gazebo
-
-# Build rule for target.
-_run_tests_human_model_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo
-.PHONY : _run_tests_human_model_gazebo
-
-# fast build rule for target.
-_run_tests_human_model_gazebo/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build
-.PHONY : _run_tests_human_model_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_human_model_gazebo
-
-# Build rule for target.
-run_tests_human_model_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo
-.PHONY : run_tests_human_model_gazebo
-
-# fast build rule for target.
-run_tests_human_model_gazebo/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build
-.PHONY : run_tests_human_model_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
-
-# Build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
-
-# fast build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
 
 #=============================================================================
 # Target rules for targets named run_tests_human_model_gazebo_roslaunch-check
@@ -389,6 +346,84 @@ run_tests_human_model_gazebo_roslaunch-check/fast:
 .PHONY : run_tests_human_model_gazebo_roslaunch-check/fast
 
 #=============================================================================
+# Target rules for targets named _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# Build rule for target.
+_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# fast build rule for target.
+_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
+.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_human_model_gazebo
+
+# Build rule for target.
+run_tests_human_model_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo
+.PHONY : run_tests_human_model_gazebo
+
+# fast build rule for target.
+run_tests_human_model_gazebo/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo.dir/build
+.PHONY : run_tests_human_model_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_human_model_gazebo
+
+# Build rule for target.
+_run_tests_human_model_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo
+.PHONY : _run_tests_human_model_gazebo
+
+# fast build rule for target.
+_run_tests_human_model_gazebo/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo.dir/build
+.PHONY : _run_tests_human_model_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+
+# Build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+
+# fast build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_human_model_gazebo
+
+# Build rule for target.
+clean_test_results_human_model_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_human_model_gazebo
+.PHONY : clean_test_results_human_model_gazebo
+
+# fast build rule for target.
+clean_test_results_human_model_gazebo/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build.make human_model_gazebo/CMakeFiles/clean_test_results_human_model_gazebo.dir/build
+.PHONY : clean_test_results_human_model_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# Build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml
+
+# fast build rule for target.
+run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast:
+	$(MAKE) -f human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build.make human_model_gazebo/CMakeFiles/run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml.dir/build
+.PHONY : run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml/fast
+
+#=============================================================================
 # Target rules for targets named _run_tests_human_model_gazebo_roslaunch-check
 
 # Build rule for target.
@@ -402,17 +437,30 @@ _run_tests_human_model_gazebo_roslaunch-check/fast:
 .PHONY : _run_tests_human_model_gazebo_roslaunch-check/fast
 
 #=============================================================================
-# Target rules for targets named _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+# Target rules for targets named lpsolve_src
 
 # Build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml
+lpsolve_src: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lpsolve_src
+.PHONY : lpsolve_src
 
 # fast build rule for target.
-_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast:
-	$(MAKE) -f human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build.make human_model_gazebo/CMakeFiles/_run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml.dir/build
-.PHONY : _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml/fast
+lpsolve_src/fast:
+	$(MAKE) -f lpsolve_catkin/CMakeFiles/lpsolve_src.dir/build.make lpsolve_catkin/CMakeFiles/lpsolve_src.dir/build
+.PHONY : lpsolve_src/fast
+
+#=============================================================================
+# Target rules for targets named lpsolve_catkin_package
+
+# Build rule for target.
+lpsolve_catkin_package: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lpsolve_catkin_package
+.PHONY : lpsolve_catkin_package
+
+# fast build rule for target.
+lpsolve_catkin_package/fast:
+	$(MAKE) -f lpsolve_catkin/CMakeFiles/lpsolve_catkin_package.dir/build.make lpsolve_catkin/CMakeFiles/lpsolve_catkin_package.dir/build
+.PHONY : lpsolve_catkin_package/fast
 
 #=============================================================================
 # Target rules for targets named visualization_msgs_generate_messages_py
@@ -1533,6 +1581,19 @@ obsavoidancedemo/fast:
 .PHONY : obsavoidancedemo/fast
 
 #=============================================================================
+# Target rules for targets named lpsolvetest
+
+# Build rule for target.
+lpsolvetest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lpsolvetest
+.PHONY : lpsolvetest
+
+# fast build rule for target.
+lpsolvetest/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
+.PHONY : lpsolvetest/fast
+
+#=============================================================================
 # Target rules for targets named ros_robot_controller_library
 
 # Build rule for target.
@@ -2022,29 +2083,33 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... tests"
 	@echo "... rebuild_cache"
 	@echo "... download_extra_data"
 	@echo "... edit_cache"
 	@echo "... run_tests"
+	@echo "... package_source"
 	@echo "... clean_test_results"
 	@echo "... doxygen"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... package"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
-	@echo "... clean_test_results_human_model_gazebo"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
-	@echo "... _run_tests_human_model_gazebo"
-	@echo "... run_tests_human_model_gazebo"
-	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
-	@echo "... run_tests_human_model_gazebo_roslaunch-check"
-	@echo "... _run_tests_human_model_gazebo_roslaunch-check"
 	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check"
+	@echo "... _run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
+	@echo "... run_tests_human_model_gazebo"
+	@echo "... _run_tests_human_model_gazebo"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_spawn_human_playpen.test.xml"
+	@echo "... clean_test_results_human_model_gazebo"
+	@echo "... run_tests_human_model_gazebo_roslaunch-check_test_view_human.test.xml"
+	@echo "... _run_tests_human_model_gazebo_roslaunch-check"
+	@echo "... lpsolve_src"
+	@echo "... lpsolve_catkin_package"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_eus"
@@ -2131,6 +2196,7 @@ help:
 	@echo "... ros_gazebo_sim"
 	@echo "... markers"
 	@echo "... obsavoidancedemo"
+	@echo "... lpsolvetest"
 	@echo "... ros_robot_controller_library"
 	@echo "... gazebo_sim"
 	@echo "... load_robot_0"

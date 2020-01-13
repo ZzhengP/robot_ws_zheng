@@ -43,7 +43,7 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
-ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolver.h
+ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/RosMarkers.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/deprecation.h

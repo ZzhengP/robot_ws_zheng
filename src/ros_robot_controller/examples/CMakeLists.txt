@@ -13,3 +13,6 @@ target_link_libraries(markers PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${
 
 add_executable(obsavoidancedemo obsavoidancedemo.cpp)
 target_link_libraries(obsavoidancedemo PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} glpk ros_robot_controller_library)
+
+add_executable(lpsolvetest lpsolve_test.cpp)
+target_link_libraries(lpsolvetest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${lpsolve_LIBRAIRIES} glpk ros_robot_controller_library)

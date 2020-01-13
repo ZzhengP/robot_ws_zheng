@@ -130,6 +130,7 @@ ros_gazebo_sim_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /opt/ros/melodic/lib/libifopt_core.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /opt/ros/melodic/lib/libifopt_ipopt.so
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -210,6 +211,7 @@ ros_gazebo_sim_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /opt/ros/melodic/lib/libifopt_core.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /opt/ros/melodic/lib/libifopt_ipopt.so
+/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/ros_gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so

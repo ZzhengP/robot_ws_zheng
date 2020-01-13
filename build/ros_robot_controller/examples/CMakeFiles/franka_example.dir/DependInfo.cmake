@@ -21,6 +21,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "ros_robot_controller"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"
+  "/home/zheng/robot_ws_zheng/devel/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"
   "/opt/ros/melodic/include"

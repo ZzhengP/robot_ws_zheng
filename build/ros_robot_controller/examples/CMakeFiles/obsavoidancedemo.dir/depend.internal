@@ -44,7 +44,7 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
- /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolver.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/RosMpcTask.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/visualization/RosMarkers.h
  /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/deprecation.h

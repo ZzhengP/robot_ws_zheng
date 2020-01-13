@@ -174,6 +174,19 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpso
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.s"
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolver.cpp -o CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.s
 
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/flags.make
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolve.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolve.cpp
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolve.cpp > CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.i
+
+ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/lpsolve.cpp -o CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.s
+
 # Object files for target ros_robot_controller_library
 ros_robot_controller_library_OBJECTS = \
 "CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o" \
@@ -184,7 +197,8 @@ ros_robot_controller_library_OBJECTS = \
 "CMakeFiles/ros_robot_controller_library.dir/task/RosMpcTask.cpp.o" \
 "CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.o" \
 "CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o" \
-"CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o"
+"CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o" \
+"CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o"
 
 # External object files for target ros_robot_controller_library
 ros_robot_controller_library_EXTERNAL_OBJECTS =
@@ -198,6 +212,7 @@ ros_robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/visualization/RosMarkers.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.o
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libkdl_parser.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/liburdf.so
@@ -250,6 +265,7 @@ ros_robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libifopt_core.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libifopt_ipopt.so
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -333,6 +349,7 @@ ros_robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libifopt_core.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /opt/ros/melodic/lib/libifopt_ipopt.so
+/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -373,7 +390,7 @@ ros_robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libavutil.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: /usr/lib/x86_64-linux-gnu/libavutil.so
 /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ros_robot_controller_library.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

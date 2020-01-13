@@ -7,7 +7,7 @@
 #include "constraint/RosJointPosCst.h"
 #include "visualization/RosMarkers.h"
 #include "sepPlane/sepPlane.h"
-#include "solver/lpsolver.h"
+#include "solver/lpsolve.h"
 #include "iostream"
 #include "kdl/chain.hpp"
 #include "kdl/jntarray.hpp"
@@ -33,7 +33,10 @@
 #include "memory.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <boost/shared_ptr.hpp>
 #include "glpk.h"
+#include <iostream>
+
 using namespace  std;
 using namespace qpOASES;
 const double pi = 3.1415927;
@@ -42,8 +45,6 @@ const double pi = 3.1415927;
 int main(int argc, char **argv)
 {
 
-    std::cout << glp_version() <<std::endl;
-    return 0 ;
 
     // ------------------------------------   Initialize ------------------------------------------
     // Initialize ros node for collision avoidance controller
@@ -75,10 +76,10 @@ int main(int argc, char **argv)
     Eigen::Vector3d ZYX_angle, panda_ZYX_angle;
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
     forearm = pandaArm.getSegmentPosition(3);
-//    panda_des_frame.p[0] = 0.5 ;
-//    panda_des_frame.p[1] = -0. ;
-//    panda_des_frame.p[2] = 0.2 ;
-    panda_des_frame = panda_ee_frame;
+    panda_des_frame.p[0] = 0.5 ;
+    panda_des_frame.p[1] = 0.2 ;
+    panda_des_frame.p[2] = panda_ee_frame.p.z();
+//    panda_des_frame = panda_ee_frame;
     panda_des_frame.M = panda_des_frame.M;
     panda_des_frame.M.DoRotX(- pi);
     pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
@@ -115,23 +116,24 @@ int main(int argc, char **argv)
     std::vector<Eigen::MatrixXd> robotVertices, robotVerticesAugmented  ;
     robotVertices.resize(1);
     for (int i(0); i<robotVertices.size();i++){
-        robotVertices[i].resize(3,1);
+        // 2 means there is two vertices to determine robot's link
+        robotVertices[i].resize(3,2);
     }
 
     for (int i(0); i < 1; i ++){
 //        robotVertices[0].block(0,2*i,3,1) << 0,0,0;
 //        robotVertices[0].block(0,2*i+1,3,1) << forearm.p.x(),forearm.p.y(),forearm.p.z();
 //        robotVertices[0].block(0,2*i,3,1) << forearm.p.x(),forearm.p.y(),forearm.p.z();
-        robotVertices[0].block(0,i,3,1) <<  panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
-
+        robotVertices[0].block(0,2*i,3,1) <<  panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
+        robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
     }
 
     // Define augmented data for mpc
     robotVerticesAugmented.resize(1);
-    robotVerticesAugmented[0].resize(3,N);
+    robotVerticesAugmented[0].resize(3,2*N);
 //    robotVerticesAugmented[1].resize(3,2*N);
     for (int i(0);i<N;i++){
-        robotVerticesAugmented[0].block(0,i,3,1) = robotVertices[0];
+        robotVerticesAugmented[0].block(0,2*i,3,2) = robotVertices[0];
 //        robotVerticesAugmented[1].block(0,2*i,3,2) = robotVertices[1];
 
     }
@@ -163,31 +165,47 @@ int main(int argc, char **argv)
     singlePlane << planedata.planeLocation[0].block(0,0,5,1);
 //    singlePlane2 << planedata.planeLocation[1].block(0,0,5,1);
     // ------------------------------------   Initialize Lps solvers  ------------------------------------------
-    double epsilon=0.01;
-    int nbrCstLp = 4;
-    lpSolver lpSolver(N,5,nbrCstLp);
-    lpSolver.setDefaultOptions();
+
+    int Nv = 5, Nc = 6;
+    Eigen::VectorXd lpSolution;
+    lpSolution.resize(5);
+    std::shared_ptr<lpSolver> lp = std::make_shared<lpSolver>(Nv,Nc);
+    lp->setCost();
+    lp->setRowConstraint();
 
 //    for (int i(0);i<nbrRobotPart; i++){
 //        for (int j(0);j<nbrObsPart;j++){
 //            for (int k(0); k < N-1; k++){
-//                lpSolver.computeNormCst(robotVerticesAugmented[i].block(0,k,3,2),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1), epsilon);
-//                lpSolver.solve();
-//                planedata.planeLocation[i].block(0,k,5,1) = lpSolver.getSolution();
-//                planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
-//                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
-//                planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
+////                lpSolver.computeNormCst(robotVerticesAugmented[i].block(0,k,3,2),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1), epsilon);
+////                lpSolver.solve();
+////                planedata.planeLocation[i].block(0,k,5,1) = lpSolver.getSolution();
+////                planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
+////                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
+////                planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
+
+//            lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,2*k,3,4),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1));
+//            lp->setEqualityConstraintMatrix();
+//            lp->loadEqualityMatrix();
+
+////            lp->print();
+//            lp->solve();
+//            lpSolution = lp->getSolution();
+//            std::cout << BOLD(FRED("lps solver solution is: "))  <<lpSolution.transpose()<< '\n';
+//            planedata.planeLocation[i].block(0,k,5,1) = lp->getSolution();
+//            planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
+//            planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
+//            planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
+
 //            }
 //        }
 //    }
-//    std::cout << "plane data after solver  : \n " <<  planedata.planeLocation[0] << "\n" ;
+    std::cout << "plane data after solver  : \n " <<  planedata.planeLocation[0] << "\n" ;
 //    std::cout << "plane data after solver  : \n " <<  planedata.planeLocation[1] << "\n" ;
-//   singlePlane.segment(0,5) << planedata.planeLocation[0].block(0,0,5,1);
+   singlePlane.segment(0,5) << planedata.planeLocation[0].block(0,0,5,1);
 
 //    singlePlane2.segment(0,3) << planedata.planeLocation[1].block(0,0,3,1)/planedata.planeLocation[1].block(0,0,3,1).norm();
 //    singlePlane2[3] =planedata.planeLocation[1](3,0)/planedata.planeLocation[1].block(0,0,3,1).norm();
 //    singlePlane2[4] =planedata.planeLocation[1](4,0);
-//    return 0;
     // ------------------------------------   Initialize MPC  ------------------------------------------
     Eigen::VectorXd optimalSolution;
 
@@ -307,8 +325,8 @@ int main(int argc, char **argv)
     mpc_solve qpSolver(N, ndof,cstNbr);
 
     qpSolver.setDefaultOptions();
-//    qpSolver.initData(H,g,lb,ub);
-    qpSolver.initData(H,g,cstA,lb,ub,lbA,ubA);
+   qpSolver.initData(H,g,lb,ub);
+//    qpSolver.initData(H,g,cstA,lb,ub,lbA,ubA);
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
 
     ros::Rate loop_rate(100);
@@ -359,7 +377,8 @@ int main(int argc, char **argv)
 //        ubA.segment( cstArray_ubA[0].rows(),cstArray_ubA[1].rows()) =  cstArray_ubA[1];
 //        cstA.block(cstArray_A[0].rows(),0,cstArray_A[1].rows(),ndof*N) = cstArray_A[1];
 
-        qpSolver.solve(H,g,cstA,lb,ub,lbA,ubA);
+//        qpSolver.solve(H,g,cstA,lb,ub,lbA,ubA);
+        qpSolver.solve(H,g,lb,ub);
 
         optimalSolution = qpSolver.getSolution();
 
@@ -386,38 +405,64 @@ int main(int argc, char **argv)
         panda_joint_state_6_pub.publish(panda_t6);
         panda_joint_state_7_pub.publish(panda_t7);
 
-    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[0],obsSize[0],obsSize[1],obsSize[2]);
+        panda_ee_frame = pandaArm.getSegmentPosition("panda_link7");
+        robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
+        robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
+        robotVerticesPose.poses[0].position.z = panda_ee_frame.p.z();
+        cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[0],obsSize[0],obsSize[1],obsSize[2]);
 //    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[1],obsSize[0],obsSize[1],obsSize[2]);
 //    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[2],obsSize[0],obsSize[1],obsSize[2]);
-    cubeObstacleMarkers->publishCuboid(cubeLocation,obsSize[0],obsSize[1],obsSize[2],color);
-    for (int i(0);i<nbrRobotPart; i++){
-        for (int j(0);j<nbrObsPart;j++){
-            for (int k(0); k < N-1; k++){
-                lpSolver.computeNormCst(robotVerticesAugmented[i].block(0,k,3,2),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1), epsilon);
-                lpSolver.solve();
-                planedata.planeLocation[i].block(0,k,5,1) = lpSolver.getSolution();
+        cubeObstacleMarkers->publishCuboid(cubeLocation,obsSize[0],obsSize[1],obsSize[2],color);
 
+    // Update robot's vertices locations for separating plane problem
+        for (int i(0); i < 1; i ++){
+
+            robotVertices[0].block(0,2*i,3,1) <<  panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
+            robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
+        }
+
+        for (int i(0);i<N;i++){
+            robotVerticesAugmented[0].block(0,2*i,3,2) = robotVertices[0];
+        }
+        for (int i(0);i<nbrRobotPart; i++){
+            for (int j(0);j<nbrObsPart;j++){
+                for (int k(0); k < N-1; k++){
+//                lpSolver.computeNormCst(robotVerticesAugmented[i].block(0,k,3,2),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1), epsilon);
+//                lpSolver.solve();
+//                planedata.planeLocation[i].block(0,k,5,1) = lpSolver.getSolution();
+//                planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
+//                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
+//                planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
+
+                lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,2*k,3,4),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1));
+                lp->setEqualityConstraintMatrix();
+                lp->loadEqualityMatrix();
+
+//            lp->print();
+                lp->solve();
+                lpSolution = lp->getSolution();
+                planedata.planeLocation[i].block(0,k,5,1) = lp->getSolution();
                 planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
-                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
+                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)/planedata.planeLocation[i].block(0,k,3,1).norm();
                 planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
 
+                }
             }
         }
-    }
-    std::cout << "plane data after solver  : \n " <<  planedata.planeLocation[0] << "\n" ;
-    singlePlane.segment(0,5) << planedata.planeLocation[0].block(0,0,5,1);
+        std::cout << "plane data after solver  : \n " <<  planedata.planeLocation[0] << "\n" ;
+        singlePlane.segment(0,5) << planedata.planeLocation[0].block(0,0,5,1);
 
 
 
-//    cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],color,x_width,y_width);
-        cubeObstacleMarkers->publishABCDPlane(0.62,-0.62,0.478,-.61,color,x_width,y_width);
+        cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],color,x_width,y_width);
+//        cubeObstacleMarkers->publishABCDPlane(0.62,-0.62,0.478,-.61,color,x_width,y_width);
 
-    cubeObstacleMarkers->trigger();
-    cubeObstacleMarkers->deleteAllMarkers();
-    pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
+        cubeObstacleMarkers->trigger();
+        cubeObstacleMarkers->deleteAllMarkers();
+        pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
 
-    ros::spinOnce();
-    loop_rate.sleep();
+        ros::spinOnce();
+        loop_rate.sleep();
     }
     std::cout<<"panda joint final is : \n" << pandaArm.getRobotState().segment(0,ndof) << std::endl;
     std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition("panda_link7").p << std::endl;
