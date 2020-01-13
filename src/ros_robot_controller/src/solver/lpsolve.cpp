@@ -42,8 +42,8 @@ lpSolver::lpSolver(int Nv, int Nc):Nv_(Nv),Nc_(Nc){
     glp_set_col_bnds(lp_,1,GLP_DB,-1, 1);
     glp_set_col_bnds(lp_,2,GLP_DB,-1, 1);
     glp_set_col_bnds(lp_,3,GLP_DB,-1, 1);
-    glp_set_col_bnds(lp_,4,GLP_FR,0, 2);
-    glp_set_col_bnds(lp_,5,GLP_FR,-1, 1);
+    glp_set_col_bnds(lp_,4,GLP_DB,0, 2);
+    glp_set_col_bnds(lp_,5,GLP_DB,-0.1, 0.1);
 
     // Initialize auxiliary variable an then fill when we get data from robot
     for (int i(0);i<Nc_;i++){
@@ -91,7 +91,7 @@ void lpSolver::setRowConstraint(){
 
     }
 
-    glp_set_row_bnds(lp_,Nc_,GLP_DB,0.99,1);
+    glp_set_row_bnds(lp_,Nc_,GLP_DB,0.5,1);
 
 
 }

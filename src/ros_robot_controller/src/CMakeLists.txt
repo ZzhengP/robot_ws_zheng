@@ -10,7 +10,8 @@ set(HEADER_LIST "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/RosRobotM
                 "${ros_robot_controller_SOURCE_DIR}/include/solver/lpsolve.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/task/RosMpcTask.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/visualization/RosMarkers.h"
-                "${ros_robot_controller_SOURCE_DIR}/include/sepPlane/sepPlane.h")
+                "${ros_robot_controller_SOURCE_DIR}/include/sepPlane/sepPlane.h"
+                )
 
 add_library(ros_robot_controller_library
             robotmodel/RosRobotModel.cpp

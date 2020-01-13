@@ -64,7 +64,7 @@ int main(int argc, char **argv)
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
     // initialize robot's kinematic class
-    arm_kinematic pandaArm(panda_urdf, ndof,"panda_link0", "panda_link7");
+    arm_kinematic pandaArm(panda_urdf, ndof,"panda_link0", "panda_link8");
 //    auto robot = std::make_shared<arm_kinematic>(panda_urdf, ndof,"panda_link0", "panda_link7");
     pandaArm.init(panda_q_init.data, panda_dotq_init.data, N);
 //    robot->init(panda_q_init.data,panda_dotq_init.data,N)
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
     // panda's end-effector location and set up desired frame
     KDL::Frame des_frame, back_des_frame, panda_ee_frame, panda_des_frame;
     KDL::Frame forearm, elbow;
-    panda_ee_frame = pandaArm.getSegmentPosition("panda_link7");
+    panda_ee_frame = pandaArm.getSegmentPosition(7);
     Eigen::Vector3d ZYX_angle, panda_ZYX_angle;
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
     forearm = pandaArm.getSegmentPosition(3);
@@ -329,16 +329,16 @@ int main(int argc, char **argv)
 //    qpSolver.initData(H,g,cstA,lb,ub,lbA,ubA);
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
 
-    ros::Rate loop_rate(100);
+    ros::Rate loop_rate(1);
 
     // create ros topic for sending msg
-    ros::Publisher panda_joint_state_1_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint1_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_2_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint2_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_3_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint3_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_4_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint4_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_5_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint5_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_6_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint6_position_controller/command", 1000);
-    ros::Publisher panda_joint_state_7_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint7_position_controller/command", 1000);
+    ros::Publisher panda_joint_state_1_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint1_position_controller/command", 100);
+    ros::Publisher panda_joint_state_2_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint2_position_controller/command", 100);
+    ros::Publisher panda_joint_state_3_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint3_position_controller/command", 100);
+    ros::Publisher panda_joint_state_4_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint4_position_controller/command", 100);
+    ros::Publisher panda_joint_state_5_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint5_position_controller/command", 100);
+    ros::Publisher panda_joint_state_6_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint6_position_controller/command", 100);
+    ros::Publisher panda_joint_state_7_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint7_position_controller/command", 100);
     while(ros::ok())
     {
 
@@ -405,7 +405,9 @@ int main(int argc, char **argv)
         panda_joint_state_6_pub.publish(panda_t6);
         panda_joint_state_7_pub.publish(panda_t7);
 
-        panda_ee_frame = pandaArm.getSegmentPosition("panda_link7");
+        panda_ee_frame = pandaArm.getSegmentPosition(7);
+        forearm = pandaArm.getSegmentPosition(3);
+
         robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
         robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
         robotVerticesPose.poses[0].position.z = panda_ee_frame.p.z();
@@ -443,7 +445,7 @@ int main(int argc, char **argv)
                 lpSolution = lp->getSolution();
                 planedata.planeLocation[i].block(0,k,5,1) = lp->getSolution();
                 planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
-                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)/planedata.planeLocation[i].block(0,k,3,1).norm();
+                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
                 planedata.planeLocation[i](4,k) = planedata.planeLocation[i](4,k);
 
                 }
@@ -465,7 +467,7 @@ int main(int argc, char **argv)
         loop_rate.sleep();
     }
     std::cout<<"panda joint final is : \n" << pandaArm.getRobotState().segment(0,ndof) << std::endl;
-    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition("panda_link7").p << std::endl;
+    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition(7).p << std::endl;
     std::cout<<"Calcul donné par KDL est :\n " << panda_q_des.data << std::endl;
     return 0;
 }

@@ -13,7 +13,7 @@ arm_kinematic::arm_kinematic(ros::NodeHandle* nodehandle,const std::string& urdf
    jacobian_.resize(NrOfDeg_);
    joints_name_.resize(NrOfDeg_);
    L(0)=1;L(1)=1;L(2)=1;
-   L(3)=0.01;L(4)=0.01;L(5)=0.01;
+   L(3)=0.001;L(4)=0.001;L(5)=0.001;
    fksolver_.reset(new KDL::ChainFkSolverPos_recursive(arm_chain_));
    iksolver_.reset(new KDL::ChainIkSolverPos_LMA(arm_chain_, L));
    chainjacsolver_.reset(new KDL::ChainJntToJacSolver(arm_chain_));

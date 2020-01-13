@@ -19,8 +19,6 @@ find_package(catkin REQUIRED COMPONENTS
   lpsolve_catkin
 )
 find_package(gazebo REQUIRED)
-find_package(iDynTree REQUIRED)
-
 catkin_package(
     INCLUDE_DIRS include
     LIBRARIES ros_robot_controller_library
@@ -35,6 +33,7 @@ include_directories(
     ${qpAOSES_INCLUDE_DIRS}
     ${rviz_visual_tools_INCLUDE_DIRS}
     ${lpsolve_catkin_INCLUDE_DIRS}
+
     )
 include_directories(${GAZEBO_INCLUDE_DIRS} )
 

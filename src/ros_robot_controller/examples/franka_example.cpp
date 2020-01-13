@@ -458,7 +458,7 @@ int main(int argc, char **argv)
 //          ros::spin();
 
 
-          std::cout<<"panda joint final is : \n" << panda_arm.getRobotState().segment(0,ndof) << std::endl;
+          std::cout<<"panda joint final is : \n" << panda_arm.getRobotState().segment(0,panda_ndof) << std::endl;
           std::cout<<"panda ee position is :\n " << panda_arm.getSegmentPosition("panda_link7").p << std::endl;
           std::cout<<"Calcul donné par KDL est :\n " << panda_q_des.data << std::endl;
           return 0;

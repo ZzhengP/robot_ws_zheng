@@ -833,6 +833,9 @@ FreeImage_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreeimage.so
 //Path to a program.
 GITCOMMAND:FILEPATH=/usr/bin/git
 
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
 
@@ -1571,6 +1574,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Path to a library.
+abs_lib_boost_python-py27:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python-py27.so
+
+//Path to a library.
+abs_lib_eigenpy:FILEPATH=/opt/ros/melodic/lib/libeigenpy.so
+
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/melodic/share/actionlib/cmake
 
@@ -1634,6 +1643,9 @@ coinor-clp_DIR:PATH=coinor-clp_DIR-NOTFOUND
 //The directory containing a CMake configuration file for coinor_clp.
 coinor_clp_DIR:PATH=coinor_clp_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for console_bridge.
+console_bridge_DIR:PATH=/usr/lib/x86_64-linux-gnu/console_bridge/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
@@ -1645,6 +1657,9 @@ eigen_conversions_DIR:PATH=/opt/ros/melodic/share/eigen_conversions/cmake
 
 //The directory containing a CMake configuration file for eigen_stl_containers.
 eigen_stl_containers_DIR:PATH=/opt/ros/melodic/share/eigen_stl_containers/cmake
+
+//The directory containing a CMake configuration file for eigenpy.
+eigenpy_DIR:PATH=/opt/ros/melodic/share/eigenpy/cmake
 
 //Value Computed by CMake
 fake_target_detector_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/human_detector/fake_target_detector
@@ -1911,6 +1926,15 @@ pcl_msgs_DIR:PATH=/opt/ros/melodic/share/pcl_msgs/cmake
 //The directory containing a CMake configuration file for pcl_ros.
 pcl_ros_DIR:PATH=/opt/ros/melodic/share/pcl_ros/cmake
 
+//Value Computed by CMake
+pinocchio_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/pinocchio_catkin
+
+//The directory containing a CMake configuration file for pinocchio.
+pinocchio_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/pinocchio/cmake
+
+//Value Computed by CMake
+pinocchio_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/pinocchio_catkin
+
 //Path to a library.
 pkgcfg_lib_AVCODEC_avcodec:FILEPATH=/usr/lib/x86_64-linux-gnu/libavcodec.so
 
@@ -1988,6 +2012,12 @@ pkgcfg_lib_ZIP_zip:FILEPATH=/usr/lib/x86_64-linux-gnu/libzip.so
 
 //Path to a library.
 pkgcfg_lib_ZeroMQ_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
+
+//Path to a library.
+pkgcfg_lib_eigenpy_boost_python-py27:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python-py27.so
+
+//Path to a library.
+pkgcfg_lib_eigenpy_eigenpy:FILEPATH=/opt/ros/melodic/lib/libeigenpy.so
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
@@ -2170,6 +2200,12 @@ ur_description_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/ur_description
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/melodic/share/urdf/cmake
+
+//The directory containing a CMake configuration file for urdfdom.
+urdfdom_DIR:PATH=/usr/lib/x86_64-linux-gnu/urdfdom/cmake
+
+//The directory containing a CMake configuration file for urdfdom_headers.
+urdfdom_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/urdfdom_headers/cmake
 
 //The directory containing a CMake configuration file for urdfdom_py.
 urdfdom_py_DIR:PATH=/opt/ros/melodic/share/urdfdom_py/cmake
@@ -2896,6 +2932,8 @@ GCC_HAS_NARROWING:INTERNAL=1
 GCC_HAS_TYPEDEFS:INTERNAL=1
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
@@ -3895,6 +3933,7 @@ __pkg_config_arguments_UUID:INTERNAL=uuid
 __pkg_config_arguments_YAML:INTERNAL=yaml-0.1
 __pkg_config_arguments_ZIP:INTERNAL=libzip
 __pkg_config_arguments_ZeroMQ:INTERNAL=libzmq >= 4
+__pkg_config_arguments_eigenpy:INTERNAL=REQUIRED;eigenpy
 __pkg_config_checked_AVCODEC:INTERNAL=1
 __pkg_config_checked_AVDEVICE:INTERNAL=1
 __pkg_config_checked_AVFORMAT:INTERNAL=1
@@ -3915,6 +3954,42 @@ __pkg_config_checked_UUID:INTERNAL=1
 __pkg_config_checked_YAML:INTERNAL=1
 __pkg_config_checked_ZIP:INTERNAL=1
 __pkg_config_checked_ZeroMQ:INTERNAL=1
+__pkg_config_checked_eigenpy:INTERNAL=1
+eigenpy_CFLAGS:INTERNAL=-I/opt/ros/melodic/include;-I/usr/include/python2.7;-I/usr/lib/python2.7/dist-packages/numpy/core/include;-I/usr/include/eigen3
+eigenpy_CFLAGS_I:INTERNAL=
+eigenpy_CFLAGS_OTHER:INTERNAL=
+eigenpy_FOUND:INTERNAL=1
+eigenpy_INCLUDEDIR:INTERNAL=/opt/ros/melodic/include
+eigenpy_INCLUDE_DIRS:INTERNAL=/opt/ros/melodic/include;/usr/include/python2.7;/usr/lib/python2.7/dist-packages/numpy/core/include;/usr/include/eigen3
+eigenpy_LDFLAGS:INTERNAL=-L/opt/ros/melodic/lib;-leigenpy;-lboost_python-py27
+eigenpy_LDFLAGS_OTHER:INTERNAL=
+eigenpy_LIBDIR:INTERNAL=/opt/ros/melodic/lib
+eigenpy_LIBRARIES:INTERNAL=eigenpy;boost_python-py27
+eigenpy_LIBRARY_DIRS:INTERNAL=/opt/ros/melodic/lib
+eigenpy_LIBS:INTERNAL=
+eigenpy_LIBS_L:INTERNAL=
+eigenpy_LIBS_OTHER:INTERNAL=
+eigenpy_LIBS_PATHS:INTERNAL=
+eigenpy_MODULE_NAME:INTERNAL=eigenpy
+eigenpy_PREFIX:INTERNAL=/opt/ros/melodic
+eigenpy_STATIC_CFLAGS:INTERNAL=-I/opt/ros/melodic/include;-I/usr/include/python2.7;-I/usr/lib/python2.7/dist-packages/numpy/core/include;-I/usr/include/eigen3
+eigenpy_STATIC_CFLAGS_I:INTERNAL=
+eigenpy_STATIC_CFLAGS_OTHER:INTERNAL=
+eigenpy_STATIC_INCLUDE_DIRS:INTERNAL=/opt/ros/melodic/include;/usr/include/python2.7;/usr/lib/python2.7/dist-packages/numpy/core/include;/usr/include/eigen3
+eigenpy_STATIC_LDFLAGS:INTERNAL=-L/opt/ros/melodic/lib;-leigenpy;-lboost_python-py27
+eigenpy_STATIC_LDFLAGS_OTHER:INTERNAL=
+eigenpy_STATIC_LIBDIR:INTERNAL=
+eigenpy_STATIC_LIBRARIES:INTERNAL=eigenpy;boost_python-py27
+eigenpy_STATIC_LIBRARY_DIRS:INTERNAL=/opt/ros/melodic/lib
+eigenpy_STATIC_LIBS:INTERNAL=
+eigenpy_STATIC_LIBS_L:INTERNAL=
+eigenpy_STATIC_LIBS_OTHER:INTERNAL=
+eigenpy_STATIC_LIBS_PATHS:INTERNAL=
+eigenpy_VERSION:INTERNAL=1.6.9-dirty
+eigenpy_eigenpy_INCLUDEDIR:INTERNAL=
+eigenpy_eigenpy_LIBDIR:INTERNAL=
+eigenpy_eigenpy_PREFIX:INTERNAL=
+eigenpy_eigenpy_VERSION:INTERNAL=
 //Test freeExists
 freeExists:INTERNAL=1
 //Test memchrExists
@@ -3971,5 +4046,9 @@ pkgcfg_lib_ZIP_z-ADVANCED:INTERNAL=1
 pkgcfg_lib_ZIP_zip-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ZeroMQ_zmq
 pkgcfg_lib_ZeroMQ_zmq-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_eigenpy_boost_python-py27
+pkgcfg_lib_eigenpy_boost_python-py27-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_eigenpy_eigenpy
+pkgcfg_lib_eigenpy_eigenpy-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 
