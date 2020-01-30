@@ -13,15 +13,26 @@
 #include <cstring>
 
 
-// This is a C++ Eigen-Based wrapp for solving linear programming problem
-// In lp_solve file the problem is formulated is this way:
-//        Max xg'
-//        s.t
-//          Ax<= B
-//          x >= lb
+/**
+ * @brief  This is a C++ Eigen-Based wrapp for solving linear programming problem
+ * In lp_solve file the problem is formulated is this way:
+   \f{eqnarray*}{
+        (n,b,d) &=& Max ( xg' )\\
+         s.t \\
+           &Ax \leq b \\
+           & x > lb
+   \f}
+ */
 class lpSolver{
 
 public:
+
+    /**
+     * @brief lpSolver: constructor initialize variable name and variable constraint
+     * @param Nv
+     * @param Nc
+     */
+
     lpSolver(int Nv, int Nc);
 
     void setCost();
@@ -63,8 +74,8 @@ private:
     std::map<std::string, int> auxiliaryVar_;
     std::map<int,int> structureVarBnds_;
     Eigen::MatrixXd A_;
-    int ia_[31], ja_[31];
-    double ar_[31];
+    int ia_[41], ja_[41];
+    double ar_[41];
     int l_,col_;
     Eigen::VectorXd Solution_;
 };

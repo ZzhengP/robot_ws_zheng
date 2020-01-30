@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+/home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/kdl_tl.hpp
+kdl/chainfksolverpos_recursive.hpp
+-
+kdl/chainiksolvervel_pinv.hpp
+-
+
+/home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/nlopt_ik.hpp
+trac_ik/kdl_tl.hpp
+-
+nlopt.hpp
+-
+
+/home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/trac_ik.hpp
+trac_ik/nlopt_ik.hpp
+-
+kdl/chainjnttojacsolver.hpp
+-
+thread
+-
+mutex
+-
+memory
+-
+boost/date_time.hpp
+-
+
 /home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES.hpp
 MessageHandling.cpp
 -
@@ -301,12 +327,6 @@ constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
-Eigen/Core
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Core
-iostream
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/iostream
-Eigen/Dense
-/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/Eigen/Dense
 constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
 
@@ -359,6 +379,8 @@ std_msgs/Float64.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/std_msgs/Float64.h
 sensor_msgs/JointState.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
+trac_ik/trac_ik.hpp
+-
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
 iostream
@@ -393,6 +415,10 @@ boost/shared_ptr.hpp
 -
 commun/color.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/commun/color.h
+constraint/RosGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/constraint/RosGenericCst.h
+vector
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/vector
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
 glpk.h
@@ -726,6 +752,14 @@ chain.hpp
 Eigen/Dense
 -
 
+/opt/ros/melodic/include/kdl/chainiksolvervel_pinv.hpp
+chainiksolver.hpp
+/opt/ros/melodic/include/kdl/chainiksolver.hpp
+chainjnttojacsolver.hpp
+/opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
+utilities/svd_HH.hpp
+/opt/ros/melodic/include/kdl/utilities/svd_HH.hpp
+
 /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 solveri.hpp
 /opt/ros/melodic/include/kdl/solveri.hpp
@@ -875,6 +909,14 @@ assert.h
 -
 utility.h
 /opt/ros/melodic/include/kdl/utilities/utility.h
+
+/opt/ros/melodic/include/kdl/utilities/svd_HH.hpp
+../jacobian.hpp
+/opt/ros/melodic/include/kdl/jacobian.hpp
+../jntarray.hpp
+/opt/ros/melodic/include/kdl/jntarray.hpp
+vector
+-
 
 /opt/ros/melodic/include/kdl/utilities/traits.h
 utility.h

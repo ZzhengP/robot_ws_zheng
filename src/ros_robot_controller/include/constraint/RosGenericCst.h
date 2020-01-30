@@ -3,37 +3,95 @@
 #include <Eigen/Dense>
 #include <Eigen/Core>
 
+
+struct constraintData{
+       std::string name_;
+       Eigen::VectorXd lowBound_, upBound_;
+       Eigen::MatrixXd cstMatrix_;
+};
+
+/**
+ * @brief The generic constraint class
+ * \f$ lbA <= Ax <= ubA   \f$
+ * Which is defined by a lower bound, upper bound and constraint matrix
+ */
 class  generic_cst{
 public:
-     generic_cst(int ndof, int N);
+    /**
+      * @brief basic construtor
+      * @param ndof
+      * @param N
+      * @param dt
+      */
+     generic_cst(int ndof, int N, double dt, std::string name);
 
      virtual ~generic_cst();
 
-     virtual void setLowerBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px);
+     /**
+      * @brief setLowerBound: lbA
+      * @param robot_state
+      * @param Px
+      */
+     virtual void setLowerBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px){};
 
-     virtual void setUpperBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px);
+     /**
+      * @brief setUpperBound
+      * @param robot_state
+      * @param Px
+      */
+     virtual void setUpperBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px){};
 
-     virtual void setConstraintMatrix(Eigen::MatrixXd Pu) ;
+     /**
+      * @brief setConstraintMatrix
+      * @param Pu
+      */
+     virtual void setConstraintMatrix(const Eigen::MatrixXd &Pu) {};
 
-     virtual void update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
+     /**
+      * @brief update constraint state : lbA, ubA, A
+      * @param robot_state
+      * @param Px
+      * @param Pu
+      */
+     virtual void update(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Pu){};
 
+     /**
+      * @brief getLowerBound
+      * @return lbA_
+      */
      Eigen::VectorXd getLowerBound(){
-            return lb_;
+            return lbA_;
      }
 
+     /**
+      * @brief getUpperBound
+      * @return ubA_
+      */
      Eigen::VectorXd getUpperBound(){
-            return ub_;
+            return ubA_;
      }
 
+     /**
+      * @brief getConstraintMatrix
+      * @return A_
+      */
      Eigen::MatrixXd getConstraintMatrix(){
             return A_;
      }
 
-
+     /**
+      * @brief getConstraintData (name, lbA, ubA, A)
+      * @return cstData_
+      */
+     constraintData getConstraintData(){
+            return cstData_;
+     }
 protected:
-     Eigen::VectorXd lb_, ub_, min_, max_;
+     Eigen::VectorXd lbA_, ubA_, min_, max_;
      Eigen::MatrixXd A_;
+     double dt_;
+     int n_, N_ ;
+     std::string cst_name_ ;
 
-     int NrOfDeg_, N_Prediction_ ;
-
+     constraintData cstData_;
 };

@@ -1,0 +1,308 @@
+\hypertarget{classrobot_1_1RobotDynClass}{}\doxysection{robot\+::Robot\+Dyn\+Class Class Reference}
+\label{classrobot_1_1RobotDynClass}\index{robot::RobotDynClass@{robot::RobotDynClass}}
+
+
+{\ttfamily \#include $<$Robot\+Dyn\+Tree.\+h$>$}
+
+
+
+Collaboration diagram for robot\+::Robot\+Dyn\+Class\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrobot_1_1RobotDynClass__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrobot_1_1RobotDynClass_aa73bc9be788dca91fc4f539a074c7b84}{Robot\+Dyn\+Class}} (const std\+::string \&model\+File=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classrobot_1_1RobotDynClass_a65ef737687aee3f3de2fa427d41f8fc5}{load\+Model\+From\+File}} (const std\+::string \&model\+File)
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_a5c476c9eb13d1c1f347879054f822565}{set\+Robot\+State}} (const Eigen\+::\+Matrix4d \&world\+\_\+\+H\+\_\+base, const Eigen\+::\+Vector\+Xd \&joint\+Pos, const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \&base\+Vel, const Eigen\+::\+Vector\+Xd \&joint\+Vel, const Eigen\+::\+Vector3d \&gravity)
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_ac1bf6ca5cc209673971ec906daaf3456}{set\+Robot\+State}} (const Eigen\+::\+Vector\+Xd \&joint\+Pos, const Eigen\+::\+Vector\+Xd \&joint\+Vel, const Eigen\+::\+Vector3d \&global\+\_\+gravity\+\_\+vector)
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_a8acb84ee1fff6d07a4c42194956e4543}{set\+Robot\+State}} (const Eigen\+::\+Vector\+Xd \&joint\+Pos, const Eigen\+::\+Vector\+Xd \&joint\+Vel)
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_aa816eda45894ab45efc265892733987c}{print}} () const
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_a5aceeac0588c9fdbbdd5a92bc0fc2f24}{set\+Base\+Frame}} (const std\+::string \&fixed\+\_\+base\+\_\+or\+\_\+free\+\_\+floating\+\_\+frame)
+\item 
+const std\+::string \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_aa27e4828bf59e718f33d8bc72e0e0c71}{get\+Base\+Frame}} () const
+\item 
+void \mbox{\hyperlink{classrobot_1_1RobotDynClass_af34f98d46116db38b0af1726afc14ca5}{set\+Gravity}} (const Eigen\+::\+Vector3d \&global\+\_\+gravity\+\_\+vector)
+\item 
+const std\+::string \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_ac919bc1b10bd7b124918c99e0abdc25f}{get\+File\+U\+RL}} () const
+\item 
+unsigned int \mbox{\hyperlink{classrobot_1_1RobotDynClass_ac1301b33c7fa0c3f3ad7f05de42f4d95}{get\+Nr\+Of\+Degrees\+Of\+Freedom}} () const
+\item 
+unsigned int \mbox{\hyperlink{classrobot_1_1RobotDynClass_a053cdd85d52c69e47da337262731d30f}{configuration\+Space\+Dimension}} () const
+\item 
+bool \mbox{\hyperlink{classrobot_1_1RobotDynClass_a2f072f8337bdceb94d4ffee4707f738e}{frame\+Exists}} (const std\+::string \&frame\+\_\+name)
+\item 
+const std\+::map$<$ unsigned int, std\+::pair$<$ double, double $>$ $>$ \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_a1fcbe06d1a245b58a8e99a25a20b96b1}{get\+Joint\+Position\+Limits}} ()
+\item 
+Eigen\+::\+Matrix$<$ double, 4, 4, Eigen\+::\+Row\+Major $>$ \mbox{\hyperlink{classrobot_1_1RobotDynClass_ae153c976687eda67cd176d6a8cbd13b4}{get\+Relative\+Transform}} (const std\+::string \&ref\+Frame\+Name, const std\+::string \&frame\+Name)
+\item 
+const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \mbox{\hyperlink{classrobot_1_1RobotDynClass_a53f477c484427fc3ea790700860af1ee}{get\+Frame\+Vel}} (const std\+::string \&frame\+Name)
+\item 
+Eigen\+::\+Map$<$ const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ $>$ \mbox{\hyperlink{classrobot_1_1RobotDynClass_a398a56429fae6c020bdc91defb5e1999}{get\+Frame\+Bias\+Acc}} (const std\+::string \&frame\+Name)
+\item 
+Eigen\+::\+Map$<$ Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic, Eigen\+::\+Row\+Major $>$ $>$ \mbox{\hyperlink{classrobot_1_1RobotDynClass_a9ea470acd17d193b4ce053c90b28f0f8}{get\+Free\+Floating\+Mass\+Matrix}} ()
+\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_a94812162da8e7ad375009ce388e1cf7e}{get\+Joint\+Pos}} ()
+\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_a1b314d7eeaf6b1bfa50e86c5574598c2}{get\+Joint\+Vel}} ()
+\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_ac3e09fd69a36be72067e548a75492e25}{generalized\+Bias\+Forces}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classrobot_1_1RobotDynClass_ad3c088fba351726cd5f68e72644cbeb5}{get\+Jacobian}} (const std\+::string \&ref\+\_\+frame, const std\+::string \&frame\+\_\+name)
+\item 
+const i\+Dyn\+Tree\+::\+Model \& \mbox{\hyperlink{classrobot_1_1RobotDynClass_ada8f4a62d5774383e1f258e02d627f9e}{get\+Robot\+Model}} ()
+\item 
+unsigned int \mbox{\hyperlink{classrobot_1_1RobotDynClass_a4b6f5f07b7855a475332f5ad64363709}{get\+Nr\+Of\+Joints}} ()
+\item 
+std\+::string \mbox{\hyperlink{classrobot_1_1RobotDynClass_a878ad553650a54b2ca887402cae23390}{get\+Joint\+Name}} (unsigned int idx)
+\item 
+bool \mbox{\hyperlink{classrobot_1_1RobotDynClass_aa7ddea819a3102befb9cd0c164d8f994}{is\+Initialized}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+i\+Dyn\+Tree\+::\+Kin\+Dyn\+Computations \mbox{\hyperlink{classrobot_1_1RobotDynClass_ad0bad0945c9897941b2fe4f00b4d6bde}{kin\+Dyn\+Comp\+\_\+}}
+\item 
+\mbox{\hyperlink{structrobot_1_1EigenRobotState}{Eigen\+Robot\+State}} \mbox{\hyperlink{classrobot_1_1RobotDynClass_ad26127c3c957dba002dd0409650f6f24}{eig\+Robot\+State\+\_\+}}
+\item 
+\mbox{\hyperlink{structrobot_1_1iDynTreeRobotState}{i\+Dyn\+Tree\+Robot\+State}} \mbox{\hyperlink{classrobot_1_1RobotDynClass_affa1d9658b003bfe686249549a62f527}{idyn\+Robot\+State\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classrobot_1_1RobotDynClass_ab44f47969a04051c50d015bf4e233ee8}{is\+\_\+initialized\+\_\+}} = false
+\item 
+std\+::string \mbox{\hyperlink{classrobot_1_1RobotDynClass_aee91fdc8b54d09db7bb5fd6fe87cb416}{base\+\_\+frame\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classrobot_1_1RobotDynClass_aabc37e19ab3ce533470e3febd30fec33}{urdf\+\_\+url\+\_\+}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classrobot_1_1RobotDynClass_a2c6142af13eceafe77fd5ede3c157067}{global\+\_\+gravity\+\_\+vector\+\_\+}}
+\item 
+std\+::map$<$ unsigned int, std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{classrobot_1_1RobotDynClass_ad87a6d9b6de4b5814e2f9d565f306a65}{joint\+\_\+pos\+\_\+limits\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aa73bc9be788dca91fc4f539a074c7b84}\label{classrobot_1_1RobotDynClass_aa73bc9be788dca91fc4f539a074c7b84}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!RobotDynClass@{RobotDynClass}}
+\index{RobotDynClass@{RobotDynClass}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{RobotDynClass()}{RobotDynClass()}}
+{\footnotesize\ttfamily Robot\+Dyn\+Class\+::\+Robot\+Dyn\+Class (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+File = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a053cdd85d52c69e47da337262731d30f}\label{classrobot_1_1RobotDynClass_a053cdd85d52c69e47da337262731d30f}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!configurationSpaceDimension@{configurationSpaceDimension}}
+\index{configurationSpaceDimension@{configurationSpaceDimension}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{configurationSpaceDimension()}{configurationSpaceDimension()}}
+{\footnotesize\ttfamily unsigned int Robot\+Dyn\+Class\+::configuration\+Space\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a2f072f8337bdceb94d4ffee4707f738e}\label{classrobot_1_1RobotDynClass_a2f072f8337bdceb94d4ffee4707f738e}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!frameExists@{frameExists}}
+\index{frameExists@{frameExists}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{frameExists()}{frameExists()}}
+{\footnotesize\ttfamily bool Robot\+Dyn\+Class\+::frame\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frame\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ac3e09fd69a36be72067e548a75492e25}\label{classrobot_1_1RobotDynClass_ac3e09fd69a36be72067e548a75492e25}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!generalizedBiasForces@{generalizedBiasForces}}
+\index{generalizedBiasForces@{generalizedBiasForces}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{generalizedBiasForces()}{generalizedBiasForces()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& robot\+::\+Robot\+Dyn\+Class\+::generalized\+Bias\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aa27e4828bf59e718f33d8bc72e0e0c71}\label{classrobot_1_1RobotDynClass_aa27e4828bf59e718f33d8bc72e0e0c71}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getBaseFrame@{getBaseFrame}}
+\index{getBaseFrame@{getBaseFrame}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getBaseFrame()}{getBaseFrame()}}
+{\footnotesize\ttfamily const std\+::string \& Robot\+Dyn\+Class\+::get\+Base\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ac919bc1b10bd7b124918c99e0abdc25f}\label{classrobot_1_1RobotDynClass_ac919bc1b10bd7b124918c99e0abdc25f}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getFileURL@{getFileURL}}
+\index{getFileURL@{getFileURL}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getFileURL()}{getFileURL()}}
+{\footnotesize\ttfamily const std\+::string \& Robot\+Dyn\+Class\+::get\+File\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a398a56429fae6c020bdc91defb5e1999}\label{classrobot_1_1RobotDynClass_a398a56429fae6c020bdc91defb5e1999}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getFrameBiasAcc@{getFrameBiasAcc}}
+\index{getFrameBiasAcc@{getFrameBiasAcc}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getFrameBiasAcc()}{getFrameBiasAcc()}}
+{\footnotesize\ttfamily Eigen\+::\+Map$<$ const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ $>$ Robot\+Dyn\+Class\+::get\+Frame\+Bias\+Acc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frame\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a53f477c484427fc3ea790700860af1ee}\label{classrobot_1_1RobotDynClass_a53f477c484427fc3ea790700860af1ee}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getFrameVel@{getFrameVel}}
+\index{getFrameVel@{getFrameVel}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getFrameVel()}{getFrameVel()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ Robot\+Dyn\+Class\+::get\+Frame\+Vel (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frame\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a9ea470acd17d193b4ce053c90b28f0f8}\label{classrobot_1_1RobotDynClass_a9ea470acd17d193b4ce053c90b28f0f8}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getFreeFloatingMassMatrix@{getFreeFloatingMassMatrix}}
+\index{getFreeFloatingMassMatrix@{getFreeFloatingMassMatrix}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getFreeFloatingMassMatrix()}{getFreeFloatingMassMatrix()}}
+{\footnotesize\ttfamily Eigen\+::\+Map$<$Eigen\+::\+Matrix$<$double,Eigen\+::\+Dynamic,Eigen\+::\+Dynamic,Eigen\+::\+Row\+Major$>$ $>$ robot\+::\+Robot\+Dyn\+Class\+::get\+Free\+Floating\+Mass\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ad3c088fba351726cd5f68e72644cbeb5}\label{classrobot_1_1RobotDynClass_ad3c088fba351726cd5f68e72644cbeb5}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd robot\+::\+Robot\+Dyn\+Class\+::get\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ref\+\_\+frame,  }\item[{const std\+::string \&}]{frame\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a878ad553650a54b2ca887402cae23390}\label{classrobot_1_1RobotDynClass_a878ad553650a54b2ca887402cae23390}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getJointName@{getJointName}}
+\index{getJointName@{getJointName}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getJointName()}{getJointName()}}
+{\footnotesize\ttfamily std\+::string Robot\+Dyn\+Class\+::get\+Joint\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a94812162da8e7ad375009ce388e1cf7e}\label{classrobot_1_1RobotDynClass_a94812162da8e7ad375009ce388e1cf7e}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getJointPos@{getJointPos}}
+\index{getJointPos@{getJointPos}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getJointPos()}{getJointPos()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd \& Robot\+Dyn\+Class\+::get\+Joint\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a1fcbe06d1a245b58a8e99a25a20b96b1}\label{classrobot_1_1RobotDynClass_a1fcbe06d1a245b58a8e99a25a20b96b1}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getJointPositionLimits@{getJointPositionLimits}}
+\index{getJointPositionLimits@{getJointPositionLimits}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getJointPositionLimits()}{getJointPositionLimits()}}
+{\footnotesize\ttfamily const std\+::map$<$ unsigned int, std\+::pair$<$ double, double $>$ $>$ \& Robot\+Dyn\+Class\+::get\+Joint\+Position\+Limits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a1b314d7eeaf6b1bfa50e86c5574598c2}\label{classrobot_1_1RobotDynClass_a1b314d7eeaf6b1bfa50e86c5574598c2}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getJointVel@{getJointVel}}
+\index{getJointVel@{getJointVel}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getJointVel()}{getJointVel()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd \& Robot\+Dyn\+Class\+::get\+Joint\+Vel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ac1301b33c7fa0c3f3ad7f05de42f4d95}\label{classrobot_1_1RobotDynClass_ac1301b33c7fa0c3f3ad7f05de42f4d95}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getNrOfDegreesOfFreedom@{getNrOfDegreesOfFreedom}}
+\index{getNrOfDegreesOfFreedom@{getNrOfDegreesOfFreedom}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getNrOfDegreesOfFreedom()}{getNrOfDegreesOfFreedom()}}
+{\footnotesize\ttfamily unsigned int Robot\+Dyn\+Class\+::get\+Nr\+Of\+Degrees\+Of\+Freedom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a4b6f5f07b7855a475332f5ad64363709}\label{classrobot_1_1RobotDynClass_a4b6f5f07b7855a475332f5ad64363709}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getNrOfJoints@{getNrOfJoints}}
+\index{getNrOfJoints@{getNrOfJoints}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getNrOfJoints()}{getNrOfJoints()}}
+{\footnotesize\ttfamily unsigned int Robot\+Dyn\+Class\+::get\+Nr\+Of\+Joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ae153c976687eda67cd176d6a8cbd13b4}\label{classrobot_1_1RobotDynClass_ae153c976687eda67cd176d6a8cbd13b4}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getRelativeTransform@{getRelativeTransform}}
+\index{getRelativeTransform@{getRelativeTransform}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getRelativeTransform()}{getRelativeTransform()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$ double, 4, 4, Eigen\+::\+Row\+Major $>$ Robot\+Dyn\+Class\+::get\+Relative\+Transform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ref\+Frame\+Name,  }\item[{const std\+::string \&}]{frame\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ada8f4a62d5774383e1f258e02d627f9e}\label{classrobot_1_1RobotDynClass_ada8f4a62d5774383e1f258e02d627f9e}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!getRobotModel@{getRobotModel}}
+\index{getRobotModel@{getRobotModel}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{getRobotModel()}{getRobotModel()}}
+{\footnotesize\ttfamily const i\+Dyn\+Tree\+::\+Model \& Robot\+Dyn\+Class\+::get\+Robot\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aa7ddea819a3102befb9cd0c164d8f994}\label{classrobot_1_1RobotDynClass_aa7ddea819a3102befb9cd0c164d8f994}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{isInitialized()}{isInitialized()}}
+{\footnotesize\ttfamily bool Robot\+Dyn\+Class\+::is\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a65ef737687aee3f3de2fa427d41f8fc5}\label{classrobot_1_1RobotDynClass_a65ef737687aee3f3de2fa427d41f8fc5}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!loadModelFromFile@{loadModelFromFile}}
+\index{loadModelFromFile@{loadModelFromFile}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{loadModelFromFile()}{loadModelFromFile()}}
+{\footnotesize\ttfamily bool Robot\+Dyn\+Class\+::load\+Model\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aa816eda45894ab45efc265892733987c}\label{classrobot_1_1RobotDynClass_aa816eda45894ab45efc265892733987c}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!print@{print}}
+\index{print@{print}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a5aceeac0588c9fdbbdd5a92bc0fc2f24}\label{classrobot_1_1RobotDynClass_a5aceeac0588c9fdbbdd5a92bc0fc2f24}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!setBaseFrame@{setBaseFrame}}
+\index{setBaseFrame@{setBaseFrame}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{setBaseFrame()}{setBaseFrame()}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::set\+Base\+Frame (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fixed\+\_\+base\+\_\+or\+\_\+free\+\_\+floating\+\_\+frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_af34f98d46116db38b0af1726afc14ca5}\label{classrobot_1_1RobotDynClass_af34f98d46116db38b0af1726afc14ca5}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!setGravity@{setGravity}}
+\index{setGravity@{setGravity}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{setGravity()}{setGravity()}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::set\+Gravity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{global\+\_\+gravity\+\_\+vector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a5c476c9eb13d1c1f347879054f822565}\label{classrobot_1_1RobotDynClass_a5c476c9eb13d1c1f347879054f822565}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!setRobotState@{setRobotState}}
+\index{setRobotState@{setRobotState}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{setRobotState()}{setRobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::set\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix4d \&}]{world\+\_\+\+H\+\_\+base,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Pos,  }\item[{const Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \&}]{base\+Vel,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Vel,  }\item[{const Eigen\+::\+Vector3d \&}]{gravity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a8acb84ee1fff6d07a4c42194956e4543}\label{classrobot_1_1RobotDynClass_a8acb84ee1fff6d07a4c42194956e4543}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!setRobotState@{setRobotState}}
+\index{setRobotState@{setRobotState}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{setRobotState()}{setRobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::set\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Pos,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Vel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ac1bf6ca5cc209673971ec906daaf3456}\label{classrobot_1_1RobotDynClass_ac1bf6ca5cc209673971ec906daaf3456}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!setRobotState@{setRobotState}}
+\index{setRobotState@{setRobotState}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{setRobotState()}{setRobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Robot\+Dyn\+Class\+::set\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Pos,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{joint\+Vel,  }\item[{const Eigen\+::\+Vector3d \&}]{global\+\_\+gravity\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aee91fdc8b54d09db7bb5fd6fe87cb416}\label{classrobot_1_1RobotDynClass_aee91fdc8b54d09db7bb5fd6fe87cb416}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!base\_frame\_@{base\_frame\_}}
+\index{base\_frame\_@{base\_frame\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{base\_frame\_}{base\_frame\_}}
+{\footnotesize\ttfamily std\+::string robot\+::\+Robot\+Dyn\+Class\+::base\+\_\+frame\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ad26127c3c957dba002dd0409650f6f24}\label{classrobot_1_1RobotDynClass_ad26127c3c957dba002dd0409650f6f24}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!eigRobotState\_@{eigRobotState\_}}
+\index{eigRobotState\_@{eigRobotState\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{eigRobotState\_}{eigRobotState\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrobot_1_1EigenRobotState}{Eigen\+Robot\+State}} robot\+::\+Robot\+Dyn\+Class\+::eig\+Robot\+State\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_a2c6142af13eceafe77fd5ede3c157067}\label{classrobot_1_1RobotDynClass_a2c6142af13eceafe77fd5ede3c157067}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!global\_gravity\_vector\_@{global\_gravity\_vector\_}}
+\index{global\_gravity\_vector\_@{global\_gravity\_vector\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{global\_gravity\_vector\_}{global\_gravity\_vector\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d robot\+::\+Robot\+Dyn\+Class\+::global\+\_\+gravity\+\_\+vector\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_affa1d9658b003bfe686249549a62f527}\label{classrobot_1_1RobotDynClass_affa1d9658b003bfe686249549a62f527}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!idynRobotState\_@{idynRobotState\_}}
+\index{idynRobotState\_@{idynRobotState\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{idynRobotState\_}{idynRobotState\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState}{i\+Dyn\+Tree\+Robot\+State}} robot\+::\+Robot\+Dyn\+Class\+::idyn\+Robot\+State\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ab44f47969a04051c50d015bf4e233ee8}\label{classrobot_1_1RobotDynClass_ab44f47969a04051c50d015bf4e233ee8}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!is\_initialized\_@{is\_initialized\_}}
+\index{is\_initialized\_@{is\_initialized\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{is\_initialized\_}{is\_initialized\_}}
+{\footnotesize\ttfamily bool robot\+::\+Robot\+Dyn\+Class\+::is\+\_\+initialized\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ad87a6d9b6de4b5814e2f9d565f306a65}\label{classrobot_1_1RobotDynClass_ad87a6d9b6de4b5814e2f9d565f306a65}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!joint\_pos\_limits\_@{joint\_pos\_limits\_}}
+\index{joint\_pos\_limits\_@{joint\_pos\_limits\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{joint\_pos\_limits\_}{joint\_pos\_limits\_}}
+{\footnotesize\ttfamily std\+::map$<$unsigned int, std\+::pair$<$double,double$>$ $>$ robot\+::\+Robot\+Dyn\+Class\+::joint\+\_\+pos\+\_\+limits\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_ad0bad0945c9897941b2fe4f00b4d6bde}\label{classrobot_1_1RobotDynClass_ad0bad0945c9897941b2fe4f00b4d6bde}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!kinDynComp\_@{kinDynComp\_}}
+\index{kinDynComp\_@{kinDynComp\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{kinDynComp\_}{kinDynComp\_}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Kin\+Dyn\+Computations robot\+::\+Robot\+Dyn\+Class\+::kin\+Dyn\+Comp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classrobot_1_1RobotDynClass_aabc37e19ab3ce533470e3febd30fec33}\label{classrobot_1_1RobotDynClass_aabc37e19ab3ce533470e3febd30fec33}} 
+\index{robot::RobotDynClass@{robot::RobotDynClass}!urdf\_url\_@{urdf\_url\_}}
+\index{urdf\_url\_@{urdf\_url\_}!robot::RobotDynClass@{robot::RobotDynClass}}
+\doxysubsubsection{\texorpdfstring{urdf\_url\_}{urdf\_url\_}}
+{\footnotesize\ttfamily std\+::string robot\+::\+Robot\+Dyn\+Class\+::urdf\+\_\+url\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/robotmodel/\mbox{\hyperlink{RobotDynTree_8h}{Robot\+Dyn\+Tree.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/robotmodel/\mbox{\hyperlink{RobotDynTree_8cpp}{Robot\+Dyn\+Tree.\+cpp}}\end{DoxyCompactItemize}

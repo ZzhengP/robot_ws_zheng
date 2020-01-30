@@ -1,0 +1,4 @@
+<map id="jntAccCst" name="jntAccCst">
+<area shape="rect" id="node1" title="Acceleration constraint." alt="" coords="10,80,90,107"/>
+<area shape="rect" id="node2" href="$classgeneric__cst.html" title="The generic constraint class &#160;Which is defined by a lower bound, upper bound and constraint matrix." alt="" coords="5,5,95,32"/>
+</map>

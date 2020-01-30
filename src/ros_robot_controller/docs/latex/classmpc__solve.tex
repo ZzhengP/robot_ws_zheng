@@ -1,0 +1,85 @@
+\hypertarget{classmpc__solve}{}\doxysection{mpc\+\_\+solve Class Reference}
+\label{classmpc__solve}\index{mpc\_solve@{mpc\_solve}}
+
+
+{\ttfamily \#include $<$Ros\+Mpc\+Solver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmpc__solve_a5f1f8aa5cb5a6a3b1dd08e0c729ff66d}{mpc\+\_\+solve}} (int N\+\_\+horz, int Ndof, int nbr\+Cst)
+\item 
+\mbox{\hyperlink{classmpc__solve_a28927010f0b6a69fe87893a1456bf765}{$\sim$mpc\+\_\+solve}} ()
+\item 
+bool \mbox{\hyperlink{classmpc__solve_ad92800fa4bf2c13284166639868639fc}{init\+Data}} (Eigen\+::\+Matrix\+Xd H, Eigen\+::\+Vector\+Xd g, Eigen\+::\+Vector\+Xd lb, Eigen\+::\+Vector\+Xd ub)
+\item 
+bool \mbox{\hyperlink{classmpc__solve_a01323fad75cfbd19080f8e9a5d2b279a}{solve}} (Eigen\+::\+Matrix\+Xd H, Eigen\+::\+Vector\+Xd g, Eigen\+::\+Vector\+Xd lb, Eigen\+::\+Vector\+Xd ub)
+\item 
+bool \mbox{\hyperlink{classmpc__solve_a7521e6dd9f20535b5adbca46a0320a98}{solve}} ()
+\item 
+void \mbox{\hyperlink{classmpc__solve_a1aa29d5669b1354c1c9dbe03cf6286ea}{construct\+Problem}} (const std\+::vector$<$ \mbox{\hyperlink{structconstraintData}{constraint\+Data}} $>$ \&constraint\+Vector\+Data, const Eigen\+::\+Matrix\+Xd H, const Eigen\+::\+Vector\+Xd g)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classmpc__solve_adb465cf9bd753fcc80808bfc0004180d}{get\+Solution}} ()
+\item 
+void \mbox{\hyperlink{classmpc__solve_aec976768cd4ce664e15112b5c28b69c7}{set\+Default\+Options}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmpc__solve_a5f1f8aa5cb5a6a3b1dd08e0c729ff66d}\label{classmpc__solve_a5f1f8aa5cb5a6a3b1dd08e0c729ff66d}} 
+\index{mpc\_solve@{mpc\_solve}!mpc\_solve@{mpc\_solve}}
+\index{mpc\_solve@{mpc\_solve}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{mpc\_solve()}{mpc\_solve()}}
+{\footnotesize\ttfamily mpc\+\_\+solve\+::mpc\+\_\+solve (\begin{DoxyParamCaption}\item[{int}]{N\+\_\+horz,  }\item[{int}]{Ndof,  }\item[{int}]{nbr\+Cst }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmpc__solve_a28927010f0b6a69fe87893a1456bf765}\label{classmpc__solve_a28927010f0b6a69fe87893a1456bf765}} 
+\index{mpc\_solve@{mpc\_solve}!````~mpc\_solve@{$\sim$mpc\_solve}}
+\index{````~mpc\_solve@{$\sim$mpc\_solve}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{$\sim$mpc\_solve()}{~mpc\_solve()}}
+{\footnotesize\ttfamily mpc\+\_\+solve\+::$\sim$mpc\+\_\+solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmpc__solve_a1aa29d5669b1354c1c9dbe03cf6286ea}\label{classmpc__solve_a1aa29d5669b1354c1c9dbe03cf6286ea}} 
+\index{mpc\_solve@{mpc\_solve}!constructProblem@{constructProblem}}
+\index{constructProblem@{constructProblem}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{constructProblem()}{constructProblem()}}
+{\footnotesize\ttfamily void mpc\+\_\+solve\+::construct\+Problem (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structconstraintData}{constraint\+Data}} $>$ \&}]{constraint\+Vector\+Data,  }\item[{const Eigen\+::\+Matrix\+Xd}]{H,  }\item[{const Eigen\+::\+Vector\+Xd}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmpc__solve_adb465cf9bd753fcc80808bfc0004180d}\label{classmpc__solve_adb465cf9bd753fcc80808bfc0004180d}} 
+\index{mpc\_solve@{mpc\_solve}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{getSolution()}{getSolution()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd mpc\+\_\+solve\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmpc__solve_ad92800fa4bf2c13284166639868639fc}\label{classmpc__solve_ad92800fa4bf2c13284166639868639fc}} 
+\index{mpc\_solve@{mpc\_solve}!initData@{initData}}
+\index{initData@{initData}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{initData()}{initData()}}
+{\footnotesize\ttfamily bool mpc\+\_\+solve\+::init\+Data (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{H,  }\item[{Eigen\+::\+Vector\+Xd}]{g,  }\item[{Eigen\+::\+Vector\+Xd}]{lb,  }\item[{Eigen\+::\+Vector\+Xd}]{ub }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmpc__solve_aec976768cd4ce664e15112b5c28b69c7}\label{classmpc__solve_aec976768cd4ce664e15112b5c28b69c7}} 
+\index{mpc\_solve@{mpc\_solve}!setDefaultOptions@{setDefaultOptions}}
+\index{setDefaultOptions@{setDefaultOptions}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{setDefaultOptions()}{setDefaultOptions()}}
+{\footnotesize\ttfamily void mpc\+\_\+solve\+::set\+Default\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmpc__solve_a7521e6dd9f20535b5adbca46a0320a98}\label{classmpc__solve_a7521e6dd9f20535b5adbca46a0320a98}} 
+\index{mpc\_solve@{mpc\_solve}!solve@{solve}}
+\index{solve@{solve}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool mpc\+\_\+solve\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmpc__solve_a01323fad75cfbd19080f8e9a5d2b279a}\label{classmpc__solve_a01323fad75cfbd19080f8e9a5d2b279a}} 
+\index{mpc\_solve@{mpc\_solve}!solve@{solve}}
+\index{solve@{solve}!mpc\_solve@{mpc\_solve}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool mpc\+\_\+solve\+::solve (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{H,  }\item[{Eigen\+::\+Vector\+Xd}]{g,  }\item[{Eigen\+::\+Vector\+Xd}]{lb,  }\item[{Eigen\+::\+Vector\+Xd}]{ub }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/solver/\mbox{\hyperlink{RosMpcSolver_8h}{Ros\+Mpc\+Solver.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/solver/\mbox{\hyperlink{RosMpcSolver_8cpp}{Ros\+Mpc\+Solver.\+cpp}}\end{DoxyCompactItemize}

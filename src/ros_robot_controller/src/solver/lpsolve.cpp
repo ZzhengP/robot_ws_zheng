@@ -43,7 +43,7 @@ lpSolver::lpSolver(int Nv, int Nc):Nv_(Nv),Nc_(Nc){
     glp_set_col_bnds(lp_,2,GLP_DB,-1, 1);
     glp_set_col_bnds(lp_,3,GLP_DB,-1, 1);
     glp_set_col_bnds(lp_,4,GLP_DB,0, 2);
-    glp_set_col_bnds(lp_,5,GLP_DB,-0.1, 0.1);
+    glp_set_col_bnds(lp_,5,GLP_FR,-0.1, 0.2);
 
     // Initialize auxiliary variable an then fill when we get data from robot
     for (int i(0);i<Nc_;i++){
@@ -91,7 +91,7 @@ void lpSolver::setRowConstraint(){
 
     }
 
-    glp_set_row_bnds(lp_,Nc_,GLP_DB,0.5,1);
+    glp_set_row_bnds(lp_,Nc_,GLP_DB,0.999,1);
 
 
 }
@@ -129,11 +129,13 @@ void lpSolver::setConstraintMatrix(const Eigen::MatrixXd & robotPartielVertices,
     A_.block(1,0,1,5) << robotPartielVertices.block(0,1,3,1).transpose(),-1,-1;
     A_.block(2,0,1,5) << robotPartielVertices.block(0,2,3,1).transpose(),-1,-1;
     A_.block(3,0,1,5) << robotPartielVertices.block(0,3,3,1).transpose(),-1,-1;
+    A_.block(4,0,1,5) << robotPartielVertices.block(0,4,3,1).transpose(),-1,-1;
+    A_.block(5,0,1,5) << robotPartielVertices.block(0,5,3,1).transpose(),-1,-1;
 //    A_.block(2,0,1,5) << robotPartielVertices.block(0,2,3,1).transpose(),-1,0;
 //    A_.block(3,0,1,5) << robotPartielVertices.block(0,3,3,1).transpose(),-1,0;
 //    A_.block(2,0,1,5) << -obsPartielVertices.block(0,0,3,1).transpose(),1,0;
-    A_.block(4,0,1,5) << -obsPartielVertices.block(0,1,3,1).transpose(),1,-1;
-    A_.block(5,0,1,5) << dataPlanePrecedent.transpose(),0,0;
+    A_.block(6,0,1,5) << -obsPartielVertices.block(0,1,3,1).transpose(),1,-1;
+    A_.block(7,0,1,5) << dataPlanePrecedent.transpose(),0,0;
 
 }
 

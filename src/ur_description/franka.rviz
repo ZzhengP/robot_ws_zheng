@@ -246,7 +246,7 @@ Visualization Manager:
       Marker Topic: /simpleCube
       Name: MarkerArray
       Namespaces:
-        Cuboid: true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -277,25 +277,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.448148250579834
+      Distance: 3.802448272705078
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.46576768159866333
-        Y: -0.9921839237213135
-        Z: 1.8153812885284424
+        X: -0.161336749792099
+        Y: -1.0872929096221924
+        Z: 1.165032982826233
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.2902032732963562
+      Pitch: 0.7602030634880066
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.168596267700195
+      Yaw: 5.643599033355713
     Saved: ~
 Window Geometry:
   Displays:

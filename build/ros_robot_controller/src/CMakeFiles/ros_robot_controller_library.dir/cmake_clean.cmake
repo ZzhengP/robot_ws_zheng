@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o"
+  "CMakeFiles/ros_robot_controller_library.dir/robotmodel/RobotDynTree.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/sepPlane/sepPlane.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.o"

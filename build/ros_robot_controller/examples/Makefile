@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -79,17 +67,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -136,6 +113,17 @@ package/fast: package
 
 .PHONY : package/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -145,6 +133,18 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -188,6 +188,21 @@ preinstall/fast:
 depend:
 	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+
+# Convenience name for target.
+iDynTreeTest: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+
+.PHONY : iDynTreeTest
+
+# fast build rule for target.
+iDynTreeTest/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
+.PHONY : iDynTreeTest/fast
 
 # Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule:
@@ -250,6 +265,21 @@ obsavoidancedemo/fast:
 .PHONY : obsavoidancedemo/fast
 
 # Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/setinit.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
+
+# Convenience name for target.
+setinit: ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
+
+.PHONY : setinit
+
+# fast build rule for target.
+setinit/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/build
+.PHONY : setinit/fast
+
+# Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
 .PHONY : ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
@@ -290,6 +320,33 @@ franka_example.s: franka_example.cpp.s
 franka_example.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.s
 .PHONY : franka_example.cpp.s
+
+iDynTreeTest.o: iDynTreeTest.cpp.o
+
+.PHONY : iDynTreeTest.o
+
+# target to build an object file
+iDynTreeTest.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.o
+.PHONY : iDynTreeTest.cpp.o
+
+iDynTreeTest.i: iDynTreeTest.cpp.i
+
+.PHONY : iDynTreeTest.i
+
+# target to preprocess a source file
+iDynTreeTest.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.i
+.PHONY : iDynTreeTest.cpp.i
+
+iDynTreeTest.s: iDynTreeTest.cpp.s
+
+.PHONY : iDynTreeTest.s
+
+# target to generate assembly for a file
+iDynTreeTest.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.s
+.PHONY : iDynTreeTest.cpp.s
 
 lpsolve_test.o: lpsolve_test.cpp.o
 
@@ -399,29 +456,61 @@ ros_gazebo_sim.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.s
 .PHONY : ros_gazebo_sim.cpp.s
 
+setinit.o: setinit.cpp.o
+
+.PHONY : setinit.o
+
+# target to build an object file
+setinit.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.o
+.PHONY : setinit.cpp.o
+
+setinit.i: setinit.cpp.i
+
+.PHONY : setinit.i
+
+# target to preprocess a source file
+setinit.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.i
+.PHONY : setinit.cpp.i
+
+setinit.s: setinit.cpp.s
+
+.PHONY : setinit.s
+
+# target to generate assembly for a file
+setinit.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.s
+.PHONY : setinit.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
-	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... package_source"
+	@echo "... package"
+	@echo "... edit_cache"
+	@echo "... iDynTreeTest"
 	@echo "... franka_example"
 	@echo "... ros_gazebo_sim"
 	@echo "... markers"
-	@echo "... package"
 	@echo "... list_install_components"
 	@echo "... obsavoidancedemo"
+	@echo "... install/strip"
+	@echo "... setinit"
 	@echo "... rebuild_cache"
 	@echo "... lpsolvetest"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"
+	@echo "... iDynTreeTest.o"
+	@echo "... iDynTreeTest.i"
+	@echo "... iDynTreeTest.s"
 	@echo "... lpsolve_test.o"
 	@echo "... lpsolve_test.i"
 	@echo "... lpsolve_test.s"
@@ -434,6 +523,9 @@ help:
 	@echo "... ros_gazebo_sim.o"
 	@echo "... ros_gazebo_sim.i"
 	@echo "... ros_gazebo_sim.s"
+	@echo "... setinit.o"
+	@echo "... setinit.i"
+	@echo "... setinit.s"
 .PHONY : help
 
 

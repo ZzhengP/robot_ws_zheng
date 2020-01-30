@@ -144,8 +144,10 @@ void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd robot_sta
      computef(robot_state, q_horz_Des);
     // computeEdq(J_horizon);
     // computefdq(robot_state,J_horizon);
-     Hessien_ = E_.transpose()*E_ + 0.0001*E_dq_.transpose()*E_dq_ + 0.0001*Id.transpose()*Id;
-     gradient_ = E_.transpose()*f_+ 0.0001*E_dq_.transpose()*f_dq_ ;
+      computeEdq();
+      computefdq(robot_state);
+     Hessien_ = weightTask1_*E_.transpose()*E_ + weightTask2_*E_dq_.transpose()*E_dq_ + 0.0001*weightTask2_*Id.transpose()*Id;
+     gradient_ = weightTask1_*E_.transpose()*f_+ weightTask2_*E_dq_.transpose()*f_dq_ ;
 //     Hessien_ = E_.transpose()*E_ + 0.0001*Id.transpose()*Id;
 //     gradient_ = E_.transpose()*f_ ;
 }
@@ -155,21 +157,20 @@ void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd q_horizon
 //        Hessien_ = weightTask1_*E_.transpose()*E_ + weightTask2_*E_dq_.transpose()*E_dq_;
 
      computeE(J_horizon);
+     std::cout <<" here " << std::endl;
      computef(J_horizon,cartPos_horizon,q_horizon,robot_state, PosDes);
-     computeEdq(J_horizon);
-     computefdq(robot_state,J_horizon);
      Eigen::MatrixXd Id;
-
      Id.resize(Hessien_.rows(),Hessien_.cols());
      Id.setIdentity();
-     Hessien_ = E_.transpose()*E_ + 0.0001*E_dq_.transpose()*E_dq_ + 0.0001*Id.transpose()*Id ;
-     gradient_ = E_.transpose()*f_+ 0.0001*E_dq_.transpose()*f_dq_ ;
+     Hessien_ = weightTask1_*E_.transpose()*E_ + 0.001*weightTask2_*Id.transpose()*Id;
+     gradient_ = weightTask1_*E_.transpose()*f_ ;
 }
 
 
 void MPC_Task::computeE(Eigen::MatrixXd J_horizon )
 {
-    E_ = J_horizon*Pu_;
+    E_ = J_horizon*Pu_dq_*dt_;
+
 
 }
 
@@ -182,7 +183,14 @@ void MPC_Task::computeE()
 
 void MPC_Task::computef(Eigen::MatrixXd J_horizon, Eigen::VectorXd cartPos_horizon, Eigen::VectorXd q_horizon, Eigen::VectorXd robot_state, Eigen::VectorXd PosDes)
 {
-    f_ = cartPos_horizon + J_horizon*Px_*robot_state - J_horizon*q_horizon - PosDes;
+    Eigen::VectorXd Pos, linPos;
+    Pos.resize(N_*6);
+    linPos.resize(N_*3);
+    Pos = J_horizon*Px_dq_*robot_state*dt_;
+    for (int i(0);i<N_;i++){
+          linPos.segment(3*i,3) = Pos.segment(6*i,3);
+    }
+    f_ = cartPos_horizon + J_horizon*Px_dq_*robot_state*dt_ - PosDes;
 }
 
 void MPC_Task::computef(const Eigen::VectorXd& robot_state, const Eigen::VectorXd& q_horz_Des)
@@ -201,5 +209,14 @@ void MPC_Task::computefdq(Eigen::VectorXd robot_state, Eigen::MatrixXd J_horizon
    f_dq_ = J_horizon*Px_dq_*robot_state ;
 }
 
+void MPC_Task::computeEdq()
+{
+    E_dq_ = Pu_dq_;
+}
+
+void MPC_Task::computefdq(Eigen::VectorXd robot_state)
+{
+   f_dq_ = Px_dq_*robot_state ;
+}
 
 

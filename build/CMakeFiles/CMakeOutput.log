@@ -1883,3 +1883,33 @@ int main(int argc, char** argv)
   return 0;
 #endif
 }
+Performing C++ SOURCE FILE Test CXX_HAS_WNO_DEPRECATED_DECLARATIONS succeeded with the following output:
+Change Dir: /home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_06a38/fast && /usr/bin/make -f CMakeFiles/cmTC_06a38.dir/build.make CMakeFiles/cmTC_06a38.dir/build
+make[1]: Entering directory '/home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_06a38.dir/src.cxx.o
+/usr/bin/c++    -DCXX_HAS_WNO_DEPRECATED_DECLARATIONS -fPIE   -Wno-deprecated-declarations -o CMakeFiles/cmTC_06a38.dir/src.cxx.o -c /home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_06a38
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06a38.dir/link.txt --verbose=1
+/usr/bin/c++   -DCXX_HAS_WNO_DEPRECATED_DECLARATIONS    CMakeFiles/cmTC_06a38.dir/src.cxx.o  -o cmTC_06a38 
+make[1]: Leaving directory '/home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CXX_HAS_WNO_DEPRECATED succeeded with the following output:
+Change Dir: /home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_524e8/fast && /usr/bin/make -f CMakeFiles/cmTC_524e8.dir/build.make CMakeFiles/cmTC_524e8.dir/build
+make[1]: Entering directory '/home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_524e8.dir/src.cxx.o
+/usr/bin/c++    -DCXX_HAS_WNO_DEPRECATED -fPIE   -Wno-deprecated -o CMakeFiles/cmTC_524e8.dir/src.cxx.o -c /home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_524e8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_524e8.dir/link.txt --verbose=1
+/usr/bin/c++   -DCXX_HAS_WNO_DEPRECATED    CMakeFiles/cmTC_524e8.dir/src.cxx.o  -o cmTC_524e8 
+make[1]: Leaving directory '/home/zheng/robot_ws_zheng/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }

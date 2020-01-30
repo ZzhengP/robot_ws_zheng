@@ -2,6 +2,7 @@
 #include "unsupported/Eigen/MatrixFunctions"
 #include "commun/RosCommunDefinition.h"
 #include "commun/color.h"
+
 Eigen::MatrixXd matPow(int N, const Eigen::MatrixXd&  A)
 {
     Eigen::MatrixXd A_pow;
@@ -14,85 +15,173 @@ Eigen::MatrixXd matPow(int N, const Eigen::MatrixXd&  A)
     return A_pow;
 }
 
+
+/**
+ * @brief The MPC_Task class define the cost (objectif) function for Model Predictive Control
+ * @brief And the related enlarged state, such as Px, Pu, Pxdq, Pudq
+ *
+ * \f$ q_{1:N} = Px*q_{0} + Pu*U_{0:N-1}   \\
+ *      dq_{1:N} = Pxdq*q_{0} + Pudq*U_{0:N-1} \f$
+ */
 class  MPC_Task
 {
 public:
+    /**
+     * @brief MPC_Task constructor
+     * @param N : Horizon of prediction
+     * @param Q : First Weight
+     * @param R : Second Weight
+     * @param ndof
+     * @param dt : time interval
+     * @param robot_name
+     */
     MPC_Task(int N, double Q, double R, int ndof, double dt, std::string robot_name);
 
 
+    /**
+     * @brief initialize private parameters
+     * @return
+     */
     bool init();
 
-
+    /**
+     * @brief computePx: Augmented joint position state
+     */
     void computePx();
+    /**
+     * @brief computePu: Augmented joint position state
+     */
     void computePu();
 
+    /**
+     * @brief computePxDq: Augmented joint velocity state
+     */
     void computePxDq();
+
+    /**
+     * @brief computePuDq: Augmented joint velocity state
+     */
     void computePuDq();
 
-
+    /**
+     * @brief computeHandg: Joints desired positions are given
+     * @param J_horizon
+     * @param robot_state
+     * @param q_horz_Des
+     */
     void computeHandg(Eigen::MatrixXd J_horizon,Eigen::VectorXd robot_state,Eigen::VectorXd q_horz_Des);
+
+    /**
+     * @brief computeHandg: Cartesien desired positions are given
+     * @param J_horizon
+     * @param q_horizon
+     * @param cartPos_horizon
+     * @param robot_state
+     * @param PosDes
+     */
     void computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd q_horizon,Eigen::VectorXd cartPos_horizon, Eigen::VectorXd robot_state,Eigen::VectorXd PosDes);
 
+    /**
+     * @brief computeE associated to cartesien space : \f$ ||Ex + f||^{2}\f$
+     * @param J_horizon
+     */
     void computeE(Eigen::MatrixXd J_horizon );
+    /**
+     * @brief computeE associated to joint space : \f$ ||Ex + f||^{2}\f$
+     */
     void computeE();
 
+    /**
+     * @brief computef ssociated to cartesien space : \f$ ||Ex + f||^{2}\f$
+     * @param J_horizon
+     * @param cartPos_horizon
+     * @param q_horizon
+     * @param robot_state
+     * @param PosDes
+     */
     void computef(Eigen::MatrixXd J_horizon,Eigen::VectorXd cartPos_horizon,Eigen::VectorXd q_horizon, Eigen::VectorXd robot_state, Eigen::VectorXd PosDes);
 
+    /**
+     * @brief computef  associated to joint space : \f$ ||Ex + f||^{2}\f$
+     * @param robot_state
+     * @param q_horz_Des
+     */
     void computef(const Eigen::VectorXd& robot_state, const Eigen::VectorXd& q_horz_Des);
 
     void computeEdq(Eigen::MatrixXd J_horizon);
     void computefdq(Eigen::VectorXd robot_state,Eigen::MatrixXd J_horizon);
 
+    void computeEdq();
+    void computefdq(Eigen::VectorXd robot_state);
 
     /**
-     * @brief get all matrix needed
-     * @return
+     * @brief getStateA
+     * @return A_
      */
 
     Eigen::MatrixXd getStateA()
     {
         return A_;
     }
+
+    /**
+     * @brief getStateB
+     * @return B_
+     */
     Eigen::MatrixXd getStateB()
     {
         return B_;
     }
+
+    /**
+     * @brief getMatrixH
+     * @return H_
+     */
     Eigen::MatrixXd getMatrixH()
     {
         return Hessien_;
     }
+
+    /**
+     * @brief getVectorg
+     * @return  g
+     */
     Eigen::VectorXd getVectorg()
     {
         return gradient_;
     }
-    Eigen::MatrixXd getMatrixE()
-    {
-        return E_;
-    }
-    Eigen::MatrixXd getVectorf()
-    {
-        return f_;
-    }
-    Eigen::MatrixXd getMatrixdE()
-    {
-        return E_dq_;
-    }
-    Eigen::MatrixXd getVectordf()
-    {
-        return f_dq_;
-    }
+
+    /**
+     * @brief getMatrixPx
+     * @return  Px_
+     */
     Eigen::MatrixXd getMatrixPx()
     {
         return Px_;
     }
+
+    /**
+     * @brief getMatrixPu
+     * @return Pu_
+     */
     Eigen::MatrixXd getMatrixPu()
     {
         return Pu_;
     }
+
+    /**
+     * @brief getMatrixPxdq
+     * @return Pxdq_
+     */
     Eigen::MatrixXd getMatrixPxdq()
     {
         return Px_dq_;
     }
+
+    /**
+     * @brief getMatrixPudq
+     * @return Pudq_
+     */
     Eigen::MatrixXd getMatrixPudq()
     {
         return Pu_dq_;

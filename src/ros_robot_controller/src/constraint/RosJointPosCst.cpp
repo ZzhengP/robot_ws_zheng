@@ -2,27 +2,30 @@
 
 
 
-void jntPosCst::setLimit(Eigen::VectorXd min, Eigen::VectorXd max){
+void jntPosCst::setLimit(const Eigen::VectorXd &min, const Eigen::VectorXd &max){
     min_ = min;
     max_ = max;
 }
 
 
 
-void jntPosCst::setLowerBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px){
-    lb_ = min_ - Px*robot_state;
+void jntPosCst::setLowerBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px){
+    lbA_ = min_ - Px*robot_state;
+    cstData_.lowBound_ = lbA_;
 }
 
-void jntPosCst::setUpperBound(Eigen::VectorXd robot_state, Eigen::MatrixXd Px)
+void jntPosCst::setUpperBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px)
 {
-    ub_ = max_ - Px*robot_state;
+    ubA_ = max_ - Px*robot_state;
+    cstData_.upBound_ = ubA_;
 }
 
-void jntPosCst::setConstraintMatrix(Eigen::MatrixXd Pu){
+void jntPosCst::setConstraintMatrix(const Eigen::MatrixXd &Pu){
     A_ = Pu;
+    cstData_.cstMatrix_ = A_;
 }
 
-void jntPosCst::update(Eigen::VectorXd robot_state, Eigen::MatrixXd Px, Eigen::MatrixXd Pu){
+void jntPosCst::update(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Pu){
     setLowerBound( robot_state, Px);
     setUpperBound(robot_state, Px);
     setConstraintMatrix(Pu);

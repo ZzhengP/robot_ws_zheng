@@ -30,7 +30,7 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
     // Initialize data's size
     robotVertices_.N = N_;
     robotVertices_.nbrOfObject = nbrRobobotPart;
-    robotVertices_.nbrVertices = 2;
+    robotVertices_.nbrVertices = 3;
     robotVertices_.Vertices.resize(robotVertices_.nbrOfObject);
     std::cout <<" robotVertices nbr vertices \n" << robotVertices_.nbrVertices << std::endl;
 

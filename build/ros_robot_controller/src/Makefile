@@ -285,6 +285,33 @@ constraint/RosJointVelCst.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s
 .PHONY : constraint/RosJointVelCst.cpp.s
 
+robotmodel/RobotDynTree.o: robotmodel/RobotDynTree.cpp.o
+
+.PHONY : robotmodel/RobotDynTree.o
+
+# target to build an object file
+robotmodel/RobotDynTree.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RobotDynTree.cpp.o
+.PHONY : robotmodel/RobotDynTree.cpp.o
+
+robotmodel/RobotDynTree.i: robotmodel/RobotDynTree.cpp.i
+
+.PHONY : robotmodel/RobotDynTree.i
+
+# target to preprocess a source file
+robotmodel/RobotDynTree.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RobotDynTree.cpp.i
+.PHONY : robotmodel/RobotDynTree.cpp.i
+
+robotmodel/RobotDynTree.s: robotmodel/RobotDynTree.cpp.s
+
+.PHONY : robotmodel/RobotDynTree.s
+
+# target to generate assembly for a file
+robotmodel/RobotDynTree.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RobotDynTree.cpp.s
+.PHONY : robotmodel/RobotDynTree.cpp.s
+
 robotmodel/RosRobotModel.o: robotmodel/RosRobotModel.cpp.o
 
 .PHONY : robotmodel/RosRobotModel.o
@@ -499,6 +526,9 @@ help:
 	@echo "... constraint/RosJointVelCst.o"
 	@echo "... constraint/RosJointVelCst.i"
 	@echo "... constraint/RosJointVelCst.s"
+	@echo "... robotmodel/RobotDynTree.o"
+	@echo "... robotmodel/RobotDynTree.i"
+	@echo "... robotmodel/RobotDynTree.s"
 	@echo "... robotmodel/RosRobotModel.o"
 	@echo "... robotmodel/RosRobotModel.i"
 	@echo "... robotmodel/RosRobotModel.s"

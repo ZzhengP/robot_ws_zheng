@@ -208,7 +208,7 @@ int main(int argc, char **argv)
         q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
     // Define joint acceleration limit
-    jntAccCst jnt_acc_cst(ndof, N);
+    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst");
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
     jnt_acc_cst.setLowerBound(robot_state, Px);
     jnt_acc_cst.setUpperBound(robot_state, Px);
@@ -216,7 +216,7 @@ int main(int argc, char **argv)
     ddq_ub = jnt_acc_cst.getUpperBound();
 
 //    // Define joint velocity limit
-    jntVelCst jnt_vel_cst(ndof,N);
+    jntVelCst jnt_vel_cst(ndof,N,dt, "jointVelCst");
     jnt_vel_cst.setLimit(dq_min, dq_max);
     jnt_vel_cst.setLowerBound(robot_state,Px_dq);
     jnt_vel_cst.setUpperBound(robot_state,Px_dq);
@@ -224,7 +224,7 @@ int main(int argc, char **argv)
 
     Cst += 1 ;
 //    // Define joint position limit
-    jntPosCst jnt_pos_cst(ndof,N);
+    jntPosCst jnt_pos_cst(ndof,N,dt, "jointPosCst");
     jnt_pos_cst.setLimit(q_min,q_max);
     jnt_pos_cst.setLowerBound(robot_state,Px);
     jnt_pos_cst.setUpperBound(robot_state,Px);
@@ -271,7 +271,7 @@ int main(int argc, char **argv)
 
     qpSolver.setDefaultOptions();
 //    qpSolver.initData(H,g,lb,ub);
-    qpSolver.initData(H,g,cst_A,lb,ub,lbA,ubA);
+    qpSolver.initData(H,g,lb,ub);
     panda_qpSolver.setDefaultOptions();
     panda_qpSolver.initData(panda_H,panda_g,panda_lb,panda_ub);
 
@@ -369,7 +369,7 @@ int main(int argc, char **argv)
 //              std::cout << "cst_A \n " << cst_A << std::endl;
 
 
-              qpSolver.solve(H,g,cst_A,ddq_lb,ddq_ub,lbA,ubA);
+              qpSolver.solve();
               panda_qpSolver.solve(panda_H,panda_g,panda_lb,panda_ub);
 
               optimal_Solution = qpSolver.getSolution();

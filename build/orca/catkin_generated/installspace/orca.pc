@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/install
+
+Name: orca
+Description: Description of orca
+Version: 2.0.0
+Cflags: -I/home/zheng/robot_ws_zheng/install/include -I/usr/include/eigen3
+Libs: -L/home/zheng/robot_ws_zheng/install/lib -lorca /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.5.2
+Requires: 

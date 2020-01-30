@@ -5,108 +5,49 @@
 #include <iostream>
 #include <boost/shared_ptr.hpp>
 #include "commun/color.h"
+#include "constraint/RosGenericCst.h"
+#include "vector"
+
 class mpc_solve
 {
 public:
-    mpc_solve(int N_horz, int Ndof, int nbrCst):N_prediction_(N_horz), Ndof_(Ndof),nC_(nbrCst)
-    {
-        nV_ = Ndof*N_horz; // wo cao, wo ri le  !!!!!
-        options_.enableFlippingBounds = qpOASES::BT_FALSE;
-        options_.initialStatusBounds = qpOASES::ST_INACTIVE;
-        options_.numRefinementSteps = 1;
-        qpoases_.reset(new qpOASES::QProblemB(nV_));
-        qpoases_standard_.reset(new qpOASES::QProblem(nV_,nC_));
+    mpc_solve(int N_horz, int Ndof, int nbrCst);
+    ~mpc_solve(){}
+    bool initData(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub);
 
-        std::cout <<"---------------------------------------------" << std::endl;
-        std::cout << BOLD(FRED("QPs solver is successively created: "))  <<'\n'
-                  << FYEL("The number of optimization variable is : ") << nV_ << std::endl;
 
-        std::cout <<"---------------------------------------------" << std::endl;
-    }
+    bool solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub);
 
-    bool initData(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub)
-    {
-        H_.resize(H.rows(),H.cols());
-        g_.resize(g.size());
-        lb_.resize(lb.size());
-        ub_.resize(ub.size());
-        data_optimal_solution_.resize(nV_);
 
-        H_ = H;
-        g_ = g;
-        lb_ = lb;
-        ub_ = ub;
-        std::cout <<"---------------------------------------------" << std::endl;
-        std::cout << BOLD(FRED("QPs basic formulation solver is successively initialized: "))  <<std::endl;
-        std::cout <<"---------------------------------------------" << std::endl;
-        return true;
+    bool solve();
 
-    }
-
-    bool initData(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::MatrixXd A,Eigen::VectorXd lb, Eigen::VectorXd ub, Eigen::VectorXd lbA, Eigen::VectorXd ubA)
-    {
-        H_.resize(H.rows(),H.cols());
-        g_.resize(g.size());
-        lb_.resize(lb.size());
-        ub_.resize(ub.size());
-        A_.resize(A.rows(),A.cols());
-        lbA_.resize(lbA.size());
-        ubA_.resize(ubA.size());
-        data_optimal_solution_.resize(nV_);
-        H_ = H;
-        g_ = g;
-        lb_ = lb;
-        ub_ = ub;
-        A_ = A;
-        lbA_ = lbA;
-        ubA_ = ubA;
-
-        std::cout <<"---------------------------------------------" << std::endl;
-        std::cout << BOLD(FRED("QPs standard formulation solver is successively initialized: "))  <<std::endl;
-        std::cout <<"---------------------------------------------" << std::endl;
-        return true;
-    }
-    void solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub){
-         qpOASES::returnValue ret;
-         qpOASES::int_t nWSR = 1000;
-         qpoases_->setOptions(options_);
-//         ret = qpoases_->init(H_.data(),g_.data(),lb_.data(),ub_.data(),nWSR,0);
-          ret = qpoases_->init(H.data(),g.data(),lb.data(),ub.data(),nWSR,0);
-         qpoases_->getPrimalSolution(data_optimal_solution_.data());
-    }
-
-    void solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::MatrixXd A,Eigen::VectorXd lb, Eigen::VectorXd ub, Eigen::VectorXd lbA, Eigen::VectorXd ubA){
-         qpOASES::returnValue ret;
-         qpOASES::int_t nWSR = 1000;
-         qpoases_->setOptions(options_);
-//         ret = qpoases_->init(H_.data(),g_.data(),lb_.data(),ub_.data(),nWSR,0);
-          ret = qpoases_standard_->init(H.data(),g.data(),A.data(),lb.data(),ub.data(),lbA.data(),ubA.data(),nWSR,0);
-         qpoases_standard_->getPrimalSolution(data_optimal_solution_.data());
-    }
+    void constructProblem(const std::vector<constraintData> &constraintVectorData,const Eigen::MatrixXd H, const Eigen::VectorXd g);
 
    Eigen::VectorXd getSolution()
    {
         return data_optimal_solution_;
    }
+
     void setDefaultOptions()
     {
         if(!qpoases_)
             throw std::runtime_error("qpsolver pointer is null");
 
-        options_.setToMPC(); // setToReliable() // setToDefault()
-        options_.enableRegularisation = qpOASES::BT_FALSE; // since we specify the type of Hessian matrix, we do not need automatic regularisation
-        options_.enableEqualities = qpOASES::BT_TRUE; // Specifies whether equalities shall be  always treated as active constraints.
         qpoases_->setOptions( options_ );
-        qpoases_->setPrintLevel(qpOASES::PL_NONE);
+        qpoases_->setPrintLevel(qpOASES::PL_HIGH);
+
+        qpoases_standard_->setOptions( options_ );
+        qpoases_standard_->setPrintLevel(qpOASES::PL_HIGH);
     }
 
 
 private:
     std::shared_ptr<qpOASES::QProblemB> qpoases_;
-    std::shared_ptr<qpOASES::QProblem> qpoases_standard_;
+    std::shared_ptr<qpOASES::SQProblem> qpoases_standard_;
     qpOASES::Options options_;
     int N_prediction_, Ndof_;
-    Eigen::MatrixXd H_, A_;
+    Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> H_;
+    Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> A_;
     Eigen::VectorXd g_, lb_, ub_, lbA_, ubA_, data_optimal_solution_;
 
 

@@ -45,6 +45,7 @@
 <!-- convert joint states to TF transforms for rviz, etc -->
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
   respawn="false" output="screen">
+  <rosparam param="publish_frequency">1000</rosparam>
   <remap from="/joint_states" to="/panda/joint_states" />
 </node >
 

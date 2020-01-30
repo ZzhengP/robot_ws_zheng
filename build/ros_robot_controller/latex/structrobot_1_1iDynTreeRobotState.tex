@@ -1,0 +1,90 @@
+\hypertarget{structrobot_1_1iDynTreeRobotState}{}\doxysection{robot\+::i\+Dyn\+Tree\+Robot\+State Struct Reference}
+\label{structrobot_1_1iDynTreeRobotState}\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+
+
+{\ttfamily \#include $<$Robot\+Dyn\+Tree.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_aef33b5bdea47625ce09b0270a978f9c5}{resize}} (int nr\+Of\+Internal\+D\+O\+Fs)
+\item 
+void \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_af7cb91e8a78af3c28e0504fcb6540de6}{set\+Fixed\+Base}} ()
+\item 
+void \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_ad2036f25b2e4773d91df6c132ad2acdb}{from\+Eigen}} (\mbox{\hyperlink{structrobot_1_1EigenRobotState}{Eigen\+Robot\+State}} \&eig\+Robot\+State)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+i\+Dyn\+Tree\+::\+Transform \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_af3020cacda1c062ca83dc2123084c6db}{world\+\_\+\+H\+\_\+base}}
+\item 
+i\+Dyn\+Tree\+::\+Vector\+Dyn\+Size \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_a95f540bff4fb5b8b41cbe697d6e8efd6}{joint\+Pos}}
+\item 
+i\+Dyn\+Tree\+::\+Twist \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_a150f99baab33946e2619db7d480266e3}{base\+Vel}}
+\item 
+i\+Dyn\+Tree\+::\+Vector\+Dyn\+Size \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_a1b1541c8574201cfebb8e35c21f8ad89}{joint\+Vel}}
+\item 
+i\+Dyn\+Tree\+::\+Vector3 \mbox{\hyperlink{structrobot_1_1iDynTreeRobotState_af456cd984f5635a2384d9e9b9bbe1d93}{gravity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct containing the floating robot state using i\+Dyn\+Tree data structures. For the semantics of this structures, see Kin\+Dyn\+Computation\+::set\+Robot\+State method. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_ad2036f25b2e4773d91df6c132ad2acdb}\label{structrobot_1_1iDynTreeRobotState_ad2036f25b2e4773d91df6c132ad2acdb}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!fromEigen@{fromEigen}}
+\index{fromEigen@{fromEigen}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{fromEigen()}{fromEigen()}}
+{\footnotesize\ttfamily void robot\+::i\+Dyn\+Tree\+Robot\+State\+::from\+Eigen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobot_1_1EigenRobotState}{Eigen\+Robot\+State}} \&}]{eig\+Robot\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_aef33b5bdea47625ce09b0270a978f9c5}\label{structrobot_1_1iDynTreeRobotState_aef33b5bdea47625ce09b0270a978f9c5}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!resize@{resize}}
+\index{resize@{resize}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void robot\+::i\+Dyn\+Tree\+Robot\+State\+::resize (\begin{DoxyParamCaption}\item[{int}]{nr\+Of\+Internal\+D\+O\+Fs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_af7cb91e8a78af3c28e0504fcb6540de6}\label{structrobot_1_1iDynTreeRobotState_af7cb91e8a78af3c28e0504fcb6540de6}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!setFixedBase@{setFixedBase}}
+\index{setFixedBase@{setFixedBase}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{setFixedBase()}{setFixedBase()}}
+{\footnotesize\ttfamily void robot\+::i\+Dyn\+Tree\+Robot\+State\+::set\+Fixed\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_a150f99baab33946e2619db7d480266e3}\label{structrobot_1_1iDynTreeRobotState_a150f99baab33946e2619db7d480266e3}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!baseVel@{baseVel}}
+\index{baseVel@{baseVel}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{baseVel}{baseVel}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Twist robot\+::i\+Dyn\+Tree\+Robot\+State\+::base\+Vel}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_af456cd984f5635a2384d9e9b9bbe1d93}\label{structrobot_1_1iDynTreeRobotState_af456cd984f5635a2384d9e9b9bbe1d93}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!gravity@{gravity}}
+\index{gravity@{gravity}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Vector3 robot\+::i\+Dyn\+Tree\+Robot\+State\+::gravity}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_a95f540bff4fb5b8b41cbe697d6e8efd6}\label{structrobot_1_1iDynTreeRobotState_a95f540bff4fb5b8b41cbe697d6e8efd6}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!jointPos@{jointPos}}
+\index{jointPos@{jointPos}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{jointPos}{jointPos}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Vector\+Dyn\+Size robot\+::i\+Dyn\+Tree\+Robot\+State\+::joint\+Pos}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_a1b1541c8574201cfebb8e35c21f8ad89}\label{structrobot_1_1iDynTreeRobotState_a1b1541c8574201cfebb8e35c21f8ad89}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!jointVel@{jointVel}}
+\index{jointVel@{jointVel}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{jointVel}{jointVel}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Vector\+Dyn\+Size robot\+::i\+Dyn\+Tree\+Robot\+State\+::joint\+Vel}
+
+\mbox{\Hypertarget{structrobot_1_1iDynTreeRobotState_af3020cacda1c062ca83dc2123084c6db}\label{structrobot_1_1iDynTreeRobotState_af3020cacda1c062ca83dc2123084c6db}} 
+\index{robot::iDynTreeRobotState@{robot::iDynTreeRobotState}!world\_H\_base@{world\_H\_base}}
+\index{world\_H\_base@{world\_H\_base}!robot::iDynTreeRobotState@{robot::iDynTreeRobotState}}
+\doxysubsubsection{\texorpdfstring{world\_H\_base}{world\_H\_base}}
+{\footnotesize\ttfamily i\+Dyn\+Tree\+::\+Transform robot\+::i\+Dyn\+Tree\+Robot\+State\+::world\+\_\+\+H\+\_\+base}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/robotmodel/\mbox{\hyperlink{RobotDynTree_8h}{Robot\+Dyn\+Tree.\+h}}\end{DoxyCompactItemize}

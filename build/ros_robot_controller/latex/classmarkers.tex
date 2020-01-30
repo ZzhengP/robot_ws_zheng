@@ -1,0 +1,128 @@
+\hypertarget{classmarkers}{}\doxysection{markers Class Reference}
+\label{classmarkers}\index{markers@{markers}}
+
+
+{\ttfamily \#include $<$Ros\+Markers.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmarkers_a35b516bf09b1ac9b3f8ed2abb66658e3}{markers}} (ros\+::\+Node\+Handle $\ast$nh, std\+::vector$<$ Eigen\+::\+Vector3d $>$ initialize\+Pos, std\+::vector$<$ Eigen\+::\+Vector4d $>$ initialize\+Ori)
+\item 
+\mbox{\hyperlink{classmarkers_a754e2e55dde6a3ce30891054efd4f0a6}{markers}} (ros\+::\+Node\+Handle $\ast$nh)
+\item 
+\mbox{\hyperlink{classmarkers_ab930f9bf846e04bfc2652f9ad7ef0149}{markers}} ()
+\item 
+void \mbox{\hyperlink{classmarkers_ad4ea72182041d5bce5bc4a28d04d4a59}{set\+Markers\+Pos}} (std\+::vector$<$ Eigen\+::\+Vector3d $>$ pts\+Pos, std\+::vector$<$ Eigen\+::\+Vector4d $>$ initialize\+Ori)
+\item 
+visualization\+\_\+msgs\+::\+Marker\+Array \mbox{\hyperlink{classmarkers_a5558a3a8219715c5ec28f433122e6a39}{get\+Markers}} ()
+\item 
+void \mbox{\hyperlink{classmarkers_abbac570d4252a88a4bcb1fb231facce9}{set\+Markers}} (const geometry\+\_\+msgs\+::\+Pose\+Array \&Poses)
+\item 
+std\+::vector$<$ Eigen\+::\+Vector3d $>$ \mbox{\hyperlink{classmarkers_a20193bb2894d20a3daabcb96e94bc7ae}{get\+Markers\+Pos}} ()
+\item 
+int \mbox{\hyperlink{classmarkers_a2b7fbc768e524402496fe0b0484117a9}{get\+Markers\+Nbr}} ()
+\item 
+void \mbox{\hyperlink{classmarkers_a8e377851541cae4f2a5a45551d8e7111}{marker\+Publish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmarkers_a2c0872e34d06c8ccb39ff300d2cab5bc}{initialize\+Subscriber}} ()
+\item 
+void \mbox{\hyperlink{classmarkers_ae055210105708d65b990de127cf1e48a}{initialize\+Publisher}} ()
+\item 
+void \mbox{\hyperlink{classmarkers_ad410a0a514aa1b479ccacba0630cd169}{initialize\+Markers}} (std\+::vector$<$ Eigen\+::\+Vector3d $>$ initialize\+Pos, std\+::vector$<$ Eigen\+::\+Vector4d $>$ initialize\+Ori)
+\item 
+void \mbox{\hyperlink{classmarkers_a42c55f19ed6c8f8f5d9d73d37da9f61c}{subscriber\+Callback}} (const geometry\+\_\+msgs\+::\+Pose\+Array \&Poses)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmarkers_a35b516bf09b1ac9b3f8ed2abb66658e3}\label{classmarkers_a35b516bf09b1ac9b3f8ed2abb66658e3}} 
+\index{markers@{markers}!markers@{markers}}
+\index{markers@{markers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{markers()}{markers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily markers\+::markers (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nh,  }\item[{std\+::vector$<$ Eigen\+::\+Vector3d $>$}]{initialize\+Pos,  }\item[{std\+::vector$<$ Eigen\+::\+Vector4d $>$}]{initialize\+Ori }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_a754e2e55dde6a3ce30891054efd4f0a6}\label{classmarkers_a754e2e55dde6a3ce30891054efd4f0a6}} 
+\index{markers@{markers}!markers@{markers}}
+\index{markers@{markers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{markers()}{markers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily markers\+::markers (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_ab930f9bf846e04bfc2652f9ad7ef0149}\label{classmarkers_ab930f9bf846e04bfc2652f9ad7ef0149}} 
+\index{markers@{markers}!markers@{markers}}
+\index{markers@{markers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{markers()}{markers()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily markers\+::markers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmarkers_a5558a3a8219715c5ec28f433122e6a39}\label{classmarkers_a5558a3a8219715c5ec28f433122e6a39}} 
+\index{markers@{markers}!getMarkers@{getMarkers}}
+\index{getMarkers@{getMarkers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{getMarkers()}{getMarkers()}}
+{\footnotesize\ttfamily visualization\+\_\+msgs\+::\+Marker\+Array markers\+::get\+Markers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmarkers_a2b7fbc768e524402496fe0b0484117a9}\label{classmarkers_a2b7fbc768e524402496fe0b0484117a9}} 
+\index{markers@{markers}!getMarkersNbr@{getMarkersNbr}}
+\index{getMarkersNbr@{getMarkersNbr}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{getMarkersNbr()}{getMarkersNbr()}}
+{\footnotesize\ttfamily int markers\+::get\+Markers\+Nbr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_a20193bb2894d20a3daabcb96e94bc7ae}\label{classmarkers_a20193bb2894d20a3daabcb96e94bc7ae}} 
+\index{markers@{markers}!getMarkersPos@{getMarkersPos}}
+\index{getMarkersPos@{getMarkersPos}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{getMarkersPos()}{getMarkersPos()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Vector3d $>$ markers\+::get\+Markers\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_ad410a0a514aa1b479ccacba0630cd169}\label{classmarkers_ad410a0a514aa1b479ccacba0630cd169}} 
+\index{markers@{markers}!initializeMarkers@{initializeMarkers}}
+\index{initializeMarkers@{initializeMarkers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{initializeMarkers()}{initializeMarkers()}}
+{\footnotesize\ttfamily void markers\+::initialize\+Markers (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Eigen\+::\+Vector3d $>$}]{initialize\+Pos,  }\item[{std\+::vector$<$ Eigen\+::\+Vector4d $>$}]{initialize\+Ori }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmarkers_ae055210105708d65b990de127cf1e48a}\label{classmarkers_ae055210105708d65b990de127cf1e48a}} 
+\index{markers@{markers}!initializePublisher@{initializePublisher}}
+\index{initializePublisher@{initializePublisher}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{initializePublisher()}{initializePublisher()}}
+{\footnotesize\ttfamily void markers\+::initialize\+Publisher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmarkers_a2c0872e34d06c8ccb39ff300d2cab5bc}\label{classmarkers_a2c0872e34d06c8ccb39ff300d2cab5bc}} 
+\index{markers@{markers}!initializeSubscriber@{initializeSubscriber}}
+\index{initializeSubscriber@{initializeSubscriber}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{initializeSubscriber()}{initializeSubscriber()}}
+{\footnotesize\ttfamily void markers\+::initialize\+Subscriber (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmarkers_a8e377851541cae4f2a5a45551d8e7111}\label{classmarkers_a8e377851541cae4f2a5a45551d8e7111}} 
+\index{markers@{markers}!markerPublish@{markerPublish}}
+\index{markerPublish@{markerPublish}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{markerPublish()}{markerPublish()}}
+{\footnotesize\ttfamily void markers\+::marker\+Publish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_abbac570d4252a88a4bcb1fb231facce9}\label{classmarkers_abbac570d4252a88a4bcb1fb231facce9}} 
+\index{markers@{markers}!setMarkers@{setMarkers}}
+\index{setMarkers@{setMarkers}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{setMarkers()}{setMarkers()}}
+{\footnotesize\ttfamily void markers\+::set\+Markers (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Pose\+Array \&}]{Poses }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_ad4ea72182041d5bce5bc4a28d04d4a59}\label{classmarkers_ad4ea72182041d5bce5bc4a28d04d4a59}} 
+\index{markers@{markers}!setMarkersPos@{setMarkersPos}}
+\index{setMarkersPos@{setMarkersPos}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{setMarkersPos()}{setMarkersPos()}}
+{\footnotesize\ttfamily void markers\+::set\+Markers\+Pos (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Eigen\+::\+Vector3d $>$}]{pts\+Pos,  }\item[{std\+::vector$<$ Eigen\+::\+Vector4d $>$}]{initialize\+Ori }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmarkers_a42c55f19ed6c8f8f5d9d73d37da9f61c}\label{classmarkers_a42c55f19ed6c8f8f5d9d73d37da9f61c}} 
+\index{markers@{markers}!subscriberCallback@{subscriberCallback}}
+\index{subscriberCallback@{subscriberCallback}!markers@{markers}}
+\doxysubsubsection{\texorpdfstring{subscriberCallback()}{subscriberCallback()}}
+{\footnotesize\ttfamily void markers\+::subscriber\+Callback (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Pose\+Array \&}]{Poses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/visualization/\mbox{\hyperlink{RosMarkers_8h}{Ros\+Markers.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/visualization/\mbox{\hyperlink{RosMarkers_8cpp}{Ros\+Markers.\+cpp}}\end{DoxyCompactItemize}

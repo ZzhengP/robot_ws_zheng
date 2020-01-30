@@ -336,6 +336,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=Project
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=2.0.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=2
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -662,6 +677,9 @@ COMPILE_OSI_SOPLEX:BOOL=OFF
 //Compile the OSI Xpress solver
 COMPILE_OSI_XPRESS:BOOL=OFF
 
+//Perform code coverage
+COVERAGE:BOOL=OFF
+
 //Path to the coverage program that CTest uses for performing coverage
 // inspection
 COVERAGE_COMMAND:FILEPATH=/usr/bin/gcov
@@ -726,6 +744,9 @@ CTEST_SUBMIT_RETRY_COUNT:STRING=3
 //How long to wait between timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_DELAY:STRING=5
 
+//Enable user interrupt (Ctrl-C)
+CTRLC:BOOL=ON
+
 //Path to a file.
 CURL_INCLUDE_DIR:PATH=/usr/include/x86_64-linux-gnu
 
@@ -756,6 +777,12 @@ DAVIDSDK_INCLUDE_DIR:PATH=DAVIDSDK_INCLUDE_DIR-NOTFOUND
 //Path to a library.
 DAVIDSDK_LIBRARY:FILEPATH=DAVIDSDK_LIBRARY-NOTFOUND
 
+//Use float numbers instead of doubles
+DFLOAT:BOOL=OFF
+
+//Use long integers (64bit) for indexing
+DLONG:BOOL=OFF
+
 //Path to a file.
 DL_INCLUDE_DIRS:PATH=/usr/include
 
@@ -766,7 +793,10 @@ DL_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libdl.so
 DOXYGEN_DOT_EXECUTABLE:FILEPATH=/usr/bin/dot
 
 //Path to a program.
-DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
+DOXYGEN_EXECUTABLE:FILEPATH=/usr/local/bin/doxygen
+
+//Doxygen found
+DOXYGEN_FOUND:BOOL=TRUE
 
 //DepthSense SDK directory
 DSSDK_DIR:PATH=DSSDK_DIR-NOTFOUND
@@ -781,6 +811,9 @@ DSSDK_LIBRARY_DepthSensePlugins:FILEPATH=DSSDK_LIBRARY_DepthSensePlugins-NOTFOUN
 DSSDK_LIBRARY_turbojpeg:FILEPATH=DSSDK_LIBRARY_turbojpeg-NOTFOUND
 
 //Path to a file.
+EIGEN3_INCLUDE_DIR:PATH=/usr/include/eigen3
+
+//Path to a file.
 EIGEN_INCLUDE_DIR:PATH=/usr/include/eigen3
 
 //Path to a file.
@@ -791,6 +824,9 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 
 //Empy script
 EMPY_SCRIPT:STRING=/usr/bin/empy
+
+//Enable MKL Pardiso solver
+ENABLE_MKL_PARDISO:BOOL=OFF
 
 //Build libraries as shared libraries
 ENABLE_SHARED_LIBRARIES:BOOL=OFF
@@ -878,6 +914,83 @@ Glpk_DIR:PATH=Glpk_DIR-NOTFOUND
 //Path to a program.
 HGCOMMAND:FILEPATH=/usr/bin/hg
 
+//The directory containing a CMake configuration file for ICUB.
+ICUB_DIR:PATH=ICUB_DIR-NOTFOUND
+
+//Compile iDynTree tests
+IDYNTREE_COMPILE_TESTS:BOOL=OFF
+
+//Enable RPATH for the library
+IDYNTREE_ENABLE_RPATH:BOOL=ON
+
+//Enable support for SyMoRo par format
+IDYNTREE_ENABLE_SYMORO_PAR:BOOL=ON
+
+//Enable if you have the experimental version of SWIG necessary
+// for generating the Matlab wrapper
+IDYNTREE_GENERATE_MATLAB:BOOL=OFF
+
+//Only produce iDynTree documentation, without compiling
+IDYNTREE_ONLY_DOCS:BOOL=OFF
+
+//Run iDynTree tests with Valgrind
+IDYNTREE_RUN_VALGRIND_TESTS:BOOL=OFF
+
+//Compile iDynTree as a shared library
+IDYNTREE_SHARED_LIBRARY:BOOL=OFF
+
+//Build the part of iDynTree that depends on package ICUB
+IDYNTREE_USES_ICUB_MAIN:BOOL=FALSE
+
+//Compile iDynTree with an internal copy of urdfdom patched to
+// avoid Boost dependencies
+IDYNTREE_USES_INTERNAL_URDFDOM:BOOL=OFF
+
+//Build the part of iDynTree that depends on package IPOPT
+IDYNTREE_USES_IPOPT:BOOL=ON
+
+//Build the part of iDynTree that depends on package Irrlicht
+IDYNTREE_USES_IRRLICHT:BOOL=OFF
+
+//Build the part of iDynTree that depends on package orocos_kdl
+IDYNTREE_USES_KDL:BOOL=OFF
+
+//Do you want to create the Lua bindings
+IDYNTREE_USES_LUA:BOOL=OFF
+
+//Do you want to create the MATLAB bindings
+IDYNTREE_USES_MATLAB:BOOL=OFF
+
+//Do you want to create the OCTAVE bindings
+IDYNTREE_USES_OCTAVE:BOOL=OFF
+
+//Do you want to create the Python bindings
+IDYNTREE_USES_PYTHON:BOOL=OFF
+
+//Build the part of iDynTree that depends on package Qt5
+IDYNTREE_USES_QT5:BOOL=ON
+
+//Compile iDynTree semantics check
+IDYNTREE_USES_SEMANTICS:BOOL=OFF
+
+//Build the part of iDynTree that depends on package YARP
+IDYNTREE_USES_YARP:BOOL=FALSE
+
+//Additional compiler flags for IPOPT
+IPOPT_DEFINITIONS:STRING=-DHAVE_CSTDDEF
+
+//IPOPT include directory
+IPOPT_INCLUDE_DIRS:PATH=/usr/include/coin
+
+//IPOPT libraries
+IPOPT_LIBRARIES:STRING=
+
+//Path to a file.
+IRRLICHT_INCLUDE_DIR:PATH=IRRLICHT_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+IRRLICHT_LIBRARY:FILEPATH=IRRLICHT_LIBRARY-NOTFOUND
+
 //Path to a library.
 JSONCPP_LIBRARY_jsoncpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libjsoncpp.so
 
@@ -886,6 +999,15 @@ LIBUSB_1_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
 LIBUSB_1_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libusb-1.0.so
+
+//Path to a file.
+LIBXML2_INCLUDE_DIR:PATH=/usr/include/libxml2
+
+//Path to a library.
+LIBXML2_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libxml2.so
+
+//Path to a program.
+LIBXML2_XMLLINT_EXECUTABLE:FILEPATH=/usr/bin/xmllint
 
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
@@ -1151,6 +1273,8 @@ OPENNI_INCLUDE_DIRS:PATH=/usr/include/ni
 //Path to a library.
 OPENNI_LIBRARY:FILEPATH=/usr/lib/libOpenNI.so
 
+ORCA_BUILD_PLOT_EXAMPLE:BOOL=OFF
+
 //The directory containing a CMake configuration file for OR_TOOLS.
 OR_TOOLS_DIR:PATH=OR_TOOLS_DIR-NOTFOUND
 
@@ -1381,6 +1505,12 @@ PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libpcl_visual
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Enable solver printing
+PRINTING:BOOL=ON
+
+//Enable solver profiling (timing)
+PROFILING:BOOL=OFF
+
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
 
@@ -1447,6 +1577,12 @@ Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
 //The directory containing a CMake configuration file for Qt5Network.
 Qt5Network_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Network
 
+//The directory containing a CMake configuration file for Qt5Qml.
+Qt5Qml_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Qml
+
+//The directory containing a CMake configuration file for Qt5Quick.
+Qt5Quick_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Quick
+
 //The directory containing a CMake configuration file for Qt5WebKit.
 Qt5WebKit_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5WebKit
 
@@ -1486,6 +1622,15 @@ SLURM_SRUN_COMMAND:FILEPATH=SLURM_SRUN_COMMAND-NOTFOUND
 //Path to a program.
 SVNCOMMAND:FILEPATH=/usr/bin/svn
 
+//Path to a file.
+SWIG_DIR:PATH=/usr/share/swig3.0
+
+//Path to a program.
+SWIG_EXECUTABLE:FILEPATH=/usr/bin/swig3.0
+
+//Swig version
+SWIG_VERSION:STRING=3.0.12
+
 //Path to a library.
 SWSCALE_LIBRARY_swscale:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale.so
 
@@ -1501,11 +1646,29 @@ Simbody_STATIC_LIBRARIES:STRING=Simbody_STATIC_LIBRARIES-NOTFOUND
 //Path to a library.
 TINYXML2_LIBRARY_tinyxml2:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml2.so
 
+//Additional compiler flags for TinyXML
+TinyXML_DEFINITIONS:STRING=
+
+//The directory containing a CMake configuration file for TinyXML.
+TinyXML_DIR:PATH=TinyXML_DIR-NOTFOUND
+
+//TinyXML include directory
+TinyXML_INCLUDE_DIRS:PATH=
+
+//Path to a library.
+TinyXML_TINYXML_LIBRARY_DEBUG:FILEPATH=TinyXML_TINYXML_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+TinyXML_TINYXML_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml.so
+
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 
 //LSB Distrib - codename tag
 UBUNTU_BIONIC:BOOL=TRUE
+
+//Enable unittests generation
+UNITTESTS:BOOL=OFF
 
 //Use and external directory where the headers / libraries used
 // are stored
@@ -1541,8 +1704,14 @@ UUID_LIBRARY_uuid:FILEPATH=/usr/lib/x86_64-linux-gnu/libuuid.so
 //The directory containing VTKConfig.cmake
 VTK_DIR:PATH=/usr/lib/cmake/vtk-6.3
 
+//Path to a program.
+XENOMAI_XENO_CONFIG:FILEPATH=XENOMAI_XENO_CONFIG-NOTFOUND
+
 //Path to a library.
 YAML_LIBRARY_yaml:FILEPATH=/usr/lib/x86_64-linux-gnu/libyaml.so
+
+//The directory containing a CMake configuration file for YARP.
+YARP_DIR:PATH=YARP_DIR-NOTFOUND
 
 //Path to a library.
 ZIP_LIBRARY_z:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
@@ -1558,6 +1727,8 @@ ZeroMQ_DIR:PATH=ZeroMQ_DIR-NOTFOUND
 
 //Path to a library.
 ZeroMQ_LIBRARY_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
+
+__ADD_UNINSTALL_TARGET_INCLUDED:BOOL=TRUE
 
 //Path to a file.
 _file_name:FILEPATH=/home/zheng/robot_ws_zheng/src/rviz_visual_tools/launch/rvt_test.launch
@@ -1604,6 +1775,9 @@ actor_services_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/gym_ped_sim/acto
 //Dependencies for the target
 actorplugin_ros_LIB_DEPENDS:STATIC=general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
 
+//Path to a library.
+blas_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/libblas.so
+
 //The directory containing a CMake configuration file for bond.
 bond_DIR:PATH=/opt/ros/melodic/share/bond/cmake
 
@@ -1648,6 +1822,12 @@ console_bridge_DIR:PATH=/usr/lib/x86_64-linux-gnu/console_bridge/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
+
+//Path to a library.
+dl_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/libdl.so
+
+//Path to a library.
+dmumps_seq_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/libdmumps_seq.so
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/melodic/share/dynamic_reconfigure/cmake
@@ -1708,6 +1888,9 @@ geometric_shapes_DIR:PATH=/opt/ros/melodic/share/geometric_shapes/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
+
+//Path to a library.
+gfortran_PATH:FILEPATH=gfortran_PATH-NOTFOUND
 
 //The directory containing a CMake configuration file for glpk.
 glpk_DIR:PATH=glpk_DIR-NOTFOUND
@@ -1791,8 +1974,107 @@ human_moveit_config_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/human_mov
 //Value Computed by CMake
 human_moveit_config_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/human_moveit_config
 
+//Value Computed by CMake
+iDynTree_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7
+
+//Value Computed by CMake
+iDynTree_Base_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/core
+
+//Value Computed by CMake
+iDynTree_Base_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/core
+
 //The directory containing a CMake configuration file for iDynTree.
 iDynTree_DIR:PATH=/usr/local/lib/cmake/iDynTree
+
+//Value Computed by CMake
+iDynTree_Estimation_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/estimation
+
+//Value Computed by CMake
+iDynTree_Estimation_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/estimation
+
+//Value Computed by CMake
+iDynTree_HighLevel_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/high-level
+
+//Value Computed by CMake
+iDynTree_HighLevel_KDL_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/legacy/high-level-kdl
+
+//Value Computed by CMake
+iDynTree_HighLevel_KDL_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/legacy/high-level-kdl
+
+//Value Computed by CMake
+iDynTree_HighLevel_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/high-level
+
+//Value Computed by CMake
+iDynTree_InverseKinematics_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/inverse-kinematics
+
+//Value Computed by CMake
+iDynTree_InverseKinematics_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/inverse-kinematics
+
+//Value Computed by CMake
+iDynTree_ModelIO_URDF_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/model_io/urdf
+
+//Value Computed by CMake
+iDynTree_ModelIO_URDF_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/model_io/urdf
+
+//Value Computed by CMake
+iDynTree_ModelIO_XML_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/model_io/xml
+
+//Value Computed by CMake
+iDynTree_ModelIO_XML_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/model_io/xml
+
+//Value Computed by CMake
+iDynTree_Model_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/model
+
+//Value Computed by CMake
+iDynTree_Model_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/model
+
+//Value Computed by CMake
+iDynTree_Regressors_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/regressors
+
+//Value Computed by CMake
+iDynTree_Regressors_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/regressors
+
+//Value Computed by CMake
+iDynTree_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7
+
+//Value Computed by CMake
+iDynTree_Sensors_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/idyntree-fe5a3d7/src/sensors
+
+//Value Computed by CMake
+iDynTree_Sensors_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/idyntree-fe5a3d7/src/sensors
+
+//Dependencies for the target
+idyntree-estimation_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-model;general;idyntree-sensors;general;idyntree-modelio-urdf;
+
+//Dependencies for the target
+idyntree-high-level-kdl_LIB_DEPENDS:STATIC=general;idyntree-core;
+
+//Dependencies for the target
+idyntree-high-level_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-model;general;idyntree-sensors;general;idyntree-modelio-urdf;
+
+//Dependencies for the target
+idyntree-inverse-kinematics_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-high-level;general;/usr/lib/libipopt.so;general;/usr/lib/x86_64-linux-gnu/libdmumps_seq.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/libdmumps_seq.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/usr/lib/x86_64-linux-gnu/libm.so;general;/usr/lib/gcc/x86_64-linux-gnu/7/libquadmath.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/libm.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;
+
+//Dependencies for the target
+idyntree-model_LIB_DEPENDS:STATIC=general;idyntree-core;
+
+//Dependencies for the target
+idyntree-modelio-urdf_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-model;general;idyntree-sensors;general;idyntree-modelio-xml;
+
+//Dependencies for the target
+idyntree-modelio-xml_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;idyntree-core;
+
+//Dependencies for the target
+idyntree-regressors_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-sensors;
+
+//Dependencies for the target
+idyntree-sensors_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-model;
+
+//Dependencies for the target
+idyntree-visualization_LIB_DEPENDS:STATIC=general;idyntree-core;general;idyntree-model;
+
+//The directory containing a CMake configuration file for idyntree.
+idyntree_DIR:PATH=idyntree_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for ifopt.
 ifopt_DIR:PATH=/opt/ros/melodic/share/ifopt/cmake
@@ -1821,6 +2103,9 @@ image_transport_DIR:PATH=/opt/ros/melodic/share/image_transport/cmake
 //The directory containing a CMake configuration file for interactive_markers.
 interactive_markers_DIR:PATH=/opt/ros/melodic/share/interactive_markers/cmake
 
+//Path to a library.
+ipopt_PATH:FILEPATH=/usr/lib/libipopt.so
+
 //The directory containing a CMake configuration file for jsk_footstep_msgs.
 jsk_footstep_msgs_DIR:PATH=/opt/ros/melodic/share/jsk_footstep_msgs/cmake
 
@@ -1836,11 +2121,14 @@ kdl_conversions_DIR:PATH=/opt/ros/melodic/share/kdl_conversions/cmake
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 
+//Path to a library.
+lapack_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/liblapack.so
+
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libkdl_conversions.so
+lib:FILEPATH=/home/zheng/catkin_ws/devel/lib/libtrac_ik.so
 
 //Value Computed by CMake
 lpsolve_catkin_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/lpsolve_catkin
@@ -1850,6 +2138,9 @@ lpsolve_catkin_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/lpsolve_catkin/cm
 
 //Value Computed by CMake
 lpsolve_catkin_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/lpsolve_catkin
+
+//Path to a library.
+m_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/melodic/share/map_msgs/cmake
@@ -1914,8 +2205,25 @@ or-tools_DIR:PATH=or-tools_DIR-NOTFOUND
 //The directory containing a CMake configuration file for or_tools.
 or_tools_DIR:PATH=or_tools_DIR-NOTFOUND
 
+//Value Computed by CMake
+orca_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca
+
+orca_DIR:PATH=
+
+//Dependencies for the target
+orca_LIB_DEPENDS:STATIC=general;yaml-cpp;general;idyntree-high-level;general;orca_priv_qpOASES;general;osqpstatic;general;orca_priv_tinyxml;general;/usr/lib/x86_64-linux-gnu/libxml2.so;
+
+//Value Computed by CMake
+orca_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca
+
 //The directory containing a CMake configuration file for ortools.
 ortools_DIR:PATH=ortools_DIR-NOTFOUND
+
+//Value Computed by CMake
+osqp_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/orca/external/osqp-0.3.0
+
+//Value Computed by CMake
+osqp_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/orca/external/osqp-0.3.0
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/melodic/share/pcl_conversions/cmake
@@ -1929,8 +2237,7 @@ pcl_ros_DIR:PATH=/opt/ros/melodic/share/pcl_ros/cmake
 //Value Computed by CMake
 pinocchio_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/pinocchio_catkin
 
-//The directory containing a CMake configuration file for pinocchio.
-pinocchio_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/pinocchio/cmake
+pinocchio_DIR:PATH=
 
 //Value Computed by CMake
 pinocchio_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/pinocchio_catkin
@@ -1993,6 +2300,9 @@ pkgcfg_lib_OGRE_PKGC_pthread:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 pkgcfg_lib_PC_CURL_curl:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
 
 //Path to a library.
+pkgcfg_lib_PC_LIBXML_xml2:FILEPATH=/usr/lib/x86_64-linux-gnu/libxml2.so
+
+//Path to a library.
 pkgcfg_lib_SWSCALE_swscale:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale.so
 
 //Path to a library.
@@ -2014,6 +2324,33 @@ pkgcfg_lib_ZIP_zip:FILEPATH=/usr/lib/x86_64-linux-gnu/libzip.so
 pkgcfg_lib_ZeroMQ_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
 
 //Path to a library.
+pkgcfg_lib__PC_IPOPT_blas:FILEPATH=/usr/lib/x86_64-linux-gnu/libblas.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_dl:FILEPATH=/usr/lib/x86_64-linux-gnu/libdl.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_dmumps_seq:FILEPATH=/usr/lib/x86_64-linux-gnu/libdmumps_seq.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_gfortran:FILEPATH=pkgcfg_lib__PC_IPOPT_gfortran-NOTFOUND
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_ipopt:FILEPATH=/usr/lib/libipopt.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_lapack:FILEPATH=/usr/lib/x86_64-linux-gnu/liblapack.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
+
+//Path to a library.
+pkgcfg_lib__PC_IPOPT_quadmath:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/7/libquadmath.so
+
+//Path to a library.
+pkgcfg_lib__PC_TINYXML_tinyxml:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml.so
+
+//Path to a library.
 pkgcfg_lib_eigenpy_boost_python-py27:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python-py27.so
 
 //Path to a library.
@@ -2030,6 +2367,9 @@ point_cloud_reducer_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/human_detec
 
 //The directory containing a CMake configuration file for qpOASES.
 qpOASES_DIR:PATH=/home/zheng/catkin_ws/devel/share/qpOASES/cmake
+
+//Path to a library.
+quadmath_PATH:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/7/libquadmath.so
 
 //The directory containing a CMake configuration file for random_numbers.
 random_numbers_DIR:PATH=/opt/ros/melodic/share/random_numbers/cmake
@@ -2053,7 +2393,7 @@ ros_robot_controller_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/ros_robo
 ros_robot_controller_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/ros_robot_controller
 
 //Dependencies for the target
-ros_robot_controller_library_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libkdl_parser.so;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/home/zheng/catkin_ws/devel/lib/libqpOASES.so;general;/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools.so;general;/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_gui.so;general;/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_remote_control.so;general;/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_imarker_simple.so;general;/opt/ros/melodic/lib/libeigen_conversions.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libifopt_core.so;general;/opt/ros/melodic/lib/libifopt_ipopt.so;general;/home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so;general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/home/zheng/catkin_ws/devel/lib/libqpOASES.so;general;glpk;
+ros_robot_controller_library_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/home/zheng/catkin_ws/devel/lib/libqpOASES.so;general;rviz_visual_tools;general;rviz_visual_tools_gui;general;rviz_visual_tools_remote_control;general;rviz_visual_tools_imarker_simple;general;/opt/ros/melodic/lib/libeigen_conversions.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libifopt_core.so;general;/opt/ros/melodic/lib/libifopt_ipopt.so;general;/home/zheng/robot_ws_zheng/devel/lib/liblpsolve.so;general;/home/zheng/catkin_ws/devel/lib/libtrac_ik.so;general;/opt/ros/melodic/lib/libkdl_parser.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/home/zheng/catkin_ws/devel/lib/libqpOASES.so;general;iDynTree::idyntree-core;general;iDynTree::idyntree-model;general;iDynTree::idyntree-sensors;general;iDynTree::idyntree-modelio-xml;general;iDynTree::idyntree-modelio-urdf;general;iDynTree::idyntree-estimation;general;iDynTree::idyntree-solid-shapes;general;iDynTree::idyntree-high-level;general;iDynTree::idyntree-inverse-kinematics;general;iDynTree::idyntree-optimalcontrol;general;iDynTree::idyntree-high-level-kdl;general;iDynTree::idyntree-regressors;general;iDynTree::idyntree-visualization;general;glpk;
 
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/melodic/share/rosbag/cmake
@@ -2112,7 +2452,8 @@ rviz_DIR:PATH=/opt/ros/melodic/share/rviz/cmake
 //Value Computed by CMake
 rviz_visual_tools_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/rviz_visual_tools
 
-rviz_visual_tools_DIR:PATH=
+//The directory containing a CMake configuration file for rviz_visual_tools.
+rviz_visual_tools_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/rviz_visual_tools/cmake
 
 //Dependencies for the target
 rviz_visual_tools_LIB_DEPENDS:STATIC=general;rviz_visual_tools_remote_control;general;/opt/ros/melodic/lib/libeigen_conversions.so;general;/opt/ros/melodic/lib/librviz.so;general;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;general;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libinteractive_markers.so;general;/opt/ros/melodic/lib/liblaser_geometry.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libresource_retriever.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;
@@ -2180,8 +2521,14 @@ tf_conversions_DIR:PATH=/opt/ros/melodic/share/tf_conversions/cmake
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/melodic/share/topic_tools/cmake
 
+//The directory containing a CMake configuration file for trac_ik.
+trac_ik_DIR:PATH=trac_ik_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for trac_ik_lib.
 trac_ik_lib_DIR:PATH=/home/zheng/catkin_ws/devel/share/trac_ik_lib/cmake
+
+//The directory containing a CMake configuration file for track_ik.
+track_ik_DIR:PATH=track_ik_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/melodic/share/trajectory_msgs/cmake
@@ -2218,6 +2565,9 @@ warehouse_ros_DIR:PATH=/opt/ros/melodic/share/warehouse_ros/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
+
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp
 
 
 ########################
@@ -2457,6 +2807,8 @@ CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/zheng/robot_ws_zheng/build/test_results
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
+//STRINGS property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Debug;Release;MinSizeRel;RelWithDebInfo
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/zheng/robot_ws_zheng/build
 //Major version of cmake used to create the current loaded cache
@@ -2796,6 +3148,10 @@ CURL_LIBRARY-ADVANCED:INTERNAL=1
 CVSCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CVS_UPDATE_OPTIONS
 CVS_UPDATE_OPTIONS-ADVANCED:INTERNAL=1
+//Test CXX_HAS_WNO_DEPRECATED
+CXX_HAS_WNO_DEPRECATED:INTERNAL=1
+//Test CXX_HAS_WNO_DEPRECATED_DECLARATIONS
+CXX_HAS_WNO_DEPRECATED_DECLARATIONS:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_DOT_EXECUTABLE
@@ -2808,6 +3164,8 @@ DSSDK_LIBRARY_DepthSense-ADVANCED:INTERNAL=1
 DSSDK_LIBRARY_DepthSensePlugins-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DSSDK_LIBRARY_turbojpeg
 DSSDK_LIBRARY_turbojpeg-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EIGEN3_INCLUDE_DIR
+EIGEN3_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ENABLE_SHARED_LIBRARIES
@@ -2827,17 +3185,21 @@ FIND_PACKAGE_MESSAGE_DETAILS_AVFORMAT:INTERNAL=[true][v()]
 //Details about finding AVUTIL
 FIND_PACKAGE_MESSAGE_DETAILS_AVUTIL:INTERNAL=[true][v()]
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/include][cfound components: thread system chrono date_time atomic ][v1.65.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/include][c ][v1.65.1()]
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.58.0()]
 //Details about finding DL
 FIND_PACKAGE_MESSAGE_DETAILS_DL:INTERNAL=[true][v()]
+//Details about finding Doxygen
+FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/local/bin/doxygen][cfound components: doxygen dot ][v1.8.18 (59fc1a94e84278dedc80569b72756f336a705693)()]
 //Details about finding Eigen
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding Flann
 FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_cpp_s.a][/usr/include][v()]
 //Details about finding GTS
 FIND_PACKAGE_MESSAGE_DETAILS_GTS:INTERNAL=[true][v()]
+//Details about finding IPOPT
+FIND_PACKAGE_MESSAGE_DETAILS_IPOPT:INTERNAL=[/usr/lib/libipopt.so;/usr/lib/x86_64-linux-gnu/libdmumps_seq.so;/usr/lib/x86_64-linux-gnu/libblas.so;/usr/lib/x86_64-linux-gnu/liblapack.so;/usr/lib/x86_64-linux-gnu/libblas.so;/usr/lib/x86_64-linux-gnu/libdmumps_seq.so;/usr/lib/x86_64-linux-gnu/libdl.so;/usr/lib/x86_64-linux-gnu/libm.so;/usr/lib/gcc/x86_64-linux-gnu/7/libquadmath.so;/usr/lib/x86_64-linux-gnu/libblas.so;/usr/lib/x86_64-linux-gnu/libm.so;/usr/lib/x86_64-linux-gnu/libdl.so][v()]
 //Details about finding JSONCPP
 FIND_PACKAGE_MESSAGE_DETAILS_JSONCPP:INTERNAL=[true][v()]
 //Details about finding OpenNI2
@@ -2900,12 +3262,16 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread][/usr/include][v2.5.0(2.3.0)]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.17()]
+//Details about finding SWIG
+FIND_PACKAGE_MESSAGE_DETAILS_SWIG:INTERNAL=[/usr/bin/swig3.0][/usr/share/swig3.0][v3.0.12()]
 //Details about finding SWSCALE
 FIND_PACKAGE_MESSAGE_DETAILS_SWSCALE:INTERNAL=[true][v()]
 //Details about finding Simbody
 FIND_PACKAGE_MESSAGE_DETAILS_Simbody:INTERNAL=[/usr/include/simbody][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding TinyXML
+FIND_PACKAGE_MESSAGE_DETAILS_TinyXML:INTERNAL=[/usr/lib/x86_64-linux-gnu/libtinyxml.so][v()]
 //Details about finding UUID
 FIND_PACKAGE_MESSAGE_DETAILS_UUID:INTERNAL=[TRUE][v()]
 //Details about finding YAML
@@ -3092,6 +3458,18 @@ HAVE__SNPRINTF:INTERNAL=
 HAVE__VSNPRINTF:INTERNAL=
 //ADVANCED property for variable: HGCOMMAND
 HGCOMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IDYNTREE_ENABLE_RPATH
+IDYNTREE_ENABLE_RPATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IDYNTREE_ONLY_DOCS
+IDYNTREE_ONLY_DOCS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IDYNTREE_RUN_VALGRIND_TESTS
+IDYNTREE_RUN_VALGRIND_TESTS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IPOPT_DEFINITIONS
+IPOPT_DEFINITIONS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IPOPT_INCLUDE_DIRS
+IPOPT_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IPOPT_LIBRARIES
+IPOPT_LIBRARIES-ADVANCED:INTERNAL=1
 JSONCPP_CFLAGS:INTERNAL=-I/usr/include/jsoncpp
 JSONCPP_CFLAGS_I:INTERNAL=
 JSONCPP_CFLAGS_OTHER:INTERNAL=
@@ -3126,6 +3504,12 @@ JSONCPP_jsoncpp_INCLUDEDIR:INTERNAL=
 JSONCPP_jsoncpp_LIBDIR:INTERNAL=
 JSONCPP_jsoncpp_PREFIX:INTERNAL=
 JSONCPP_jsoncpp_VERSION:INTERNAL=
+//ADVANCED property for variable: LIBXML2_INCLUDE_DIR
+LIBXML2_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBXML2_LIBRARY
+LIBXML2_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LIBXML2_XMLLINT_EXECUTABLE
+LIBXML2_XMLLINT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
@@ -3553,6 +3937,41 @@ PC_FLANN_flann_INCLUDEDIR:INTERNAL=
 PC_FLANN_flann_LIBDIR:INTERNAL=
 PC_FLANN_flann_PREFIX:INTERNAL=
 PC_FLANN_flann_VERSION:INTERNAL=
+PC_LIBXML_CFLAGS:INTERNAL=-I/usr/include/libxml2
+PC_LIBXML_CFLAGS_I:INTERNAL=
+PC_LIBXML_CFLAGS_OTHER:INTERNAL=
+PC_LIBXML_FOUND:INTERNAL=1
+PC_LIBXML_INCLUDEDIR:INTERNAL=/usr/include
+PC_LIBXML_INCLUDE_DIRS:INTERNAL=/usr/include/libxml2
+PC_LIBXML_LDFLAGS:INTERNAL=-lxml2
+PC_LIBXML_LDFLAGS_OTHER:INTERNAL=
+PC_LIBXML_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_LIBXML_LIBRARIES:INTERNAL=xml2
+PC_LIBXML_LIBRARY_DIRS:INTERNAL=
+PC_LIBXML_LIBS:INTERNAL=
+PC_LIBXML_LIBS_L:INTERNAL=
+PC_LIBXML_LIBS_OTHER:INTERNAL=
+PC_LIBXML_LIBS_PATHS:INTERNAL=
+PC_LIBXML_MODULE_NAME:INTERNAL=libxml-2.0
+PC_LIBXML_PREFIX:INTERNAL=/usr
+PC_LIBXML_STATIC_CFLAGS:INTERNAL=-I/usr/include/libxml2
+PC_LIBXML_STATIC_CFLAGS_I:INTERNAL=
+PC_LIBXML_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_LIBXML_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/libxml2
+PC_LIBXML_STATIC_LDFLAGS:INTERNAL=-lxml2;-licui18n;-licuuc;-licudata;-lz;-llzma;-lm
+PC_LIBXML_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_LIBXML_STATIC_LIBDIR:INTERNAL=
+PC_LIBXML_STATIC_LIBRARIES:INTERNAL=xml2;icui18n;icuuc;icudata;z;lzma;m
+PC_LIBXML_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_LIBXML_STATIC_LIBS:INTERNAL=
+PC_LIBXML_STATIC_LIBS_L:INTERNAL=
+PC_LIBXML_STATIC_LIBS_OTHER:INTERNAL=
+PC_LIBXML_STATIC_LIBS_PATHS:INTERNAL=
+PC_LIBXML_VERSION:INTERNAL=2.9.4
+PC_LIBXML_libxml-2.0_INCLUDEDIR:INTERNAL=
+PC_LIBXML_libxml-2.0_LIBDIR:INTERNAL=
+PC_LIBXML_libxml-2.0_PREFIX:INTERNAL=
+PC_LIBXML_libxml-2.0_VERSION:INTERNAL=
 PC_OPENNI2_CFLAGS:INTERNAL=-I/usr/include/openni2
 PC_OPENNI2_CFLAGS_I:INTERNAL=
 PC_OPENNI2_CFLAGS_OTHER:INTERNAL=
@@ -3675,6 +4094,12 @@ SLURM_SRUN_COMMAND-ADVANCED:INTERNAL=1
 STDC_HEADERS:INTERNAL=1
 //ADVANCED property for variable: SVNCOMMAND
 SVNCOMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SWIG_DIR
+SWIG_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SWIG_EXECUTABLE
+SWIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SWIG_VERSION
+SWIG_VERSION-ADVANCED:INTERNAL=1
 SWSCALE_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
 SWSCALE_CFLAGS_I:INTERNAL=
 SWSCALE_CFLAGS_OTHER:INTERNAL=
@@ -3749,6 +4174,16 @@ TINYXML2_tinyxml2_INCLUDEDIR:INTERNAL=
 TINYXML2_tinyxml2_LIBDIR:INTERNAL=
 TINYXML2_tinyxml2_PREFIX:INTERNAL=
 TINYXML2_tinyxml2_VERSION:INTERNAL=
+//ADVANCED property for variable: TinyXML_DEFINITIONS
+TinyXML_DEFINITIONS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TinyXML_DIR
+TinyXML_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TinyXML_INCLUDE_DIRS
+TinyXML_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TinyXML_TINYXML_LIBRARY_DEBUG
+TinyXML_TINYXML_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TinyXML_TINYXML_LIBRARY_RELEASE
+TinyXML_TINYXML_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: USE_COINOR_BIN
 USE_COINOR_BIN-ADVANCED:INTERNAL=1
 //Have function memcpy
@@ -3789,6 +4224,8 @@ UUID_uuid_INCLUDEDIR:INTERNAL=
 UUID_uuid_LIBDIR:INTERNAL=
 UUID_uuid_PREFIX:INTERNAL=
 UUID_uuid_VERSION:INTERNAL=
+//ADVANCED property for variable: XENOMAI_XENO_CONFIG
+XENOMAI_XENO_CONFIG-ADVANCED:INTERNAL=1
 YAML_CFLAGS:INTERNAL=
 YAML_CFLAGS_I:INTERNAL=
 YAML_CFLAGS_OTHER:INTERNAL=
@@ -3913,6 +4350,76 @@ _Boost_NAMESPACE_LAST:INTERNAL=boost
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/home/zheng/robot_ws_zheng/install
+_PC_IPOPT_CFLAGS:INTERNAL=-DHAVE_CSTDDEF;-I/usr/include/coin
+_PC_IPOPT_CFLAGS_I:INTERNAL=
+_PC_IPOPT_CFLAGS_OTHER:INTERNAL=-DHAVE_CSTDDEF
+_PC_IPOPT_FOUND:INTERNAL=1
+_PC_IPOPT_INCLUDEDIR:INTERNAL=/usr/include/coin
+_PC_IPOPT_INCLUDE_DIRS:INTERNAL=/usr/include/coin
+_PC_IPOPT_LDFLAGS:INTERNAL=-L/usr/lib/gcc/x86_64-linux-gnu/7;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib;-L/lib/../lib;-L/usr/lib/../lib;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..;-lipopt;-ldmumps_seq;-lblas;-llapack;-lblas;-ldmumps_seq;-ldl;-lgfortran;-lm;-lquadmath;-lblas;-lm;-ldl
+_PC_IPOPT_LDFLAGS_OTHER:INTERNAL=
+_PC_IPOPT_LIBDIR:INTERNAL=/usr/lib
+_PC_IPOPT_LIBRARIES:INTERNAL=ipopt;dmumps_seq;blas;lapack;blas;dmumps_seq;dl;gfortran;m;quadmath;blas;m;dl
+_PC_IPOPT_LIBRARY_DIRS:INTERNAL=/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu;/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib;/lib/../lib;/usr/lib/../lib;/usr/lib/gcc/x86_64-linux-gnu/7/../../..
+_PC_IPOPT_LIBS:INTERNAL=
+_PC_IPOPT_LIBS_L:INTERNAL=
+_PC_IPOPT_LIBS_OTHER:INTERNAL=
+_PC_IPOPT_LIBS_PATHS:INTERNAL=
+_PC_IPOPT_MODULE_NAME:INTERNAL=ipopt
+_PC_IPOPT_PREFIX:INTERNAL=/usr
+_PC_IPOPT_STATIC_CFLAGS:INTERNAL=-DHAVE_CSTDDEF;-I/usr/include/coin
+_PC_IPOPT_STATIC_CFLAGS_I:INTERNAL=
+_PC_IPOPT_STATIC_CFLAGS_OTHER:INTERNAL=-DHAVE_CSTDDEF
+_PC_IPOPT_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/coin
+_PC_IPOPT_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/gcc/x86_64-linux-gnu/7;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib;-L/lib/../lib;-L/usr/lib/../lib;-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..;-lipopt;-ldmumps_seq;-lblas;-llapack;-lblas;-ldmumps_seq;-ldl;-lgfortran;-lm;-lquadmath;-lblas;-lm;-ldl
+_PC_IPOPT_STATIC_LDFLAGS_OTHER:INTERNAL=
+_PC_IPOPT_STATIC_LIBDIR:INTERNAL=
+_PC_IPOPT_STATIC_LIBRARIES:INTERNAL=ipopt;dmumps_seq;blas;lapack;blas;dmumps_seq;dl;gfortran;m;quadmath;blas;m;dl
+_PC_IPOPT_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu;/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib;/lib/../lib;/usr/lib/../lib;/usr/lib/gcc/x86_64-linux-gnu/7/../../..
+_PC_IPOPT_STATIC_LIBS:INTERNAL=
+_PC_IPOPT_STATIC_LIBS_L:INTERNAL=
+_PC_IPOPT_STATIC_LIBS_OTHER:INTERNAL=
+_PC_IPOPT_STATIC_LIBS_PATHS:INTERNAL=
+_PC_IPOPT_VERSION:INTERNAL=3.11.9
+_PC_IPOPT_ipopt_INCLUDEDIR:INTERNAL=
+_PC_IPOPT_ipopt_LIBDIR:INTERNAL=
+_PC_IPOPT_ipopt_PREFIX:INTERNAL=
+_PC_IPOPT_ipopt_VERSION:INTERNAL=
+_PC_TINYXML_CFLAGS:INTERNAL=
+_PC_TINYXML_CFLAGS_I:INTERNAL=
+_PC_TINYXML_CFLAGS_OTHER:INTERNAL=
+_PC_TINYXML_FOUND:INTERNAL=1
+_PC_TINYXML_INCLUDEDIR:INTERNAL=/usr/include
+_PC_TINYXML_INCLUDE_DIRS:INTERNAL=
+_PC_TINYXML_LDFLAGS:INTERNAL=-ltinyxml
+_PC_TINYXML_LDFLAGS_OTHER:INTERNAL=
+_PC_TINYXML_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+_PC_TINYXML_LIBRARIES:INTERNAL=tinyxml
+_PC_TINYXML_LIBRARY_DIRS:INTERNAL=
+_PC_TINYXML_LIBS:INTERNAL=
+_PC_TINYXML_LIBS_L:INTERNAL=
+_PC_TINYXML_LIBS_OTHER:INTERNAL=
+_PC_TINYXML_LIBS_PATHS:INTERNAL=
+_PC_TINYXML_MODULE_NAME:INTERNAL=tinyxml
+_PC_TINYXML_PREFIX:INTERNAL=/usr
+_PC_TINYXML_STATIC_CFLAGS:INTERNAL=
+_PC_TINYXML_STATIC_CFLAGS_I:INTERNAL=
+_PC_TINYXML_STATIC_CFLAGS_OTHER:INTERNAL=
+_PC_TINYXML_STATIC_INCLUDE_DIRS:INTERNAL=
+_PC_TINYXML_STATIC_LDFLAGS:INTERNAL=-ltinyxml
+_PC_TINYXML_STATIC_LDFLAGS_OTHER:INTERNAL=
+_PC_TINYXML_STATIC_LIBDIR:INTERNAL=
+_PC_TINYXML_STATIC_LIBRARIES:INTERNAL=tinyxml
+_PC_TINYXML_STATIC_LIBRARY_DIRS:INTERNAL=
+_PC_TINYXML_STATIC_LIBS:INTERNAL=
+_PC_TINYXML_STATIC_LIBS_L:INTERNAL=
+_PC_TINYXML_STATIC_LIBS_OTHER:INTERNAL=
+_PC_TINYXML_STATIC_LIBS_PATHS:INTERNAL=
+_PC_TINYXML_VERSION:INTERNAL=2.6.2
+_PC_TINYXML_tinyxml_INCLUDEDIR:INTERNAL=
+_PC_TINYXML_tinyxml_LIBDIR:INTERNAL=
+_PC_TINYXML_tinyxml_PREFIX:INTERNAL=
+_PC_TINYXML_tinyxml_VERSION:INTERNAL=
 __pkg_config_arguments_AVCODEC:INTERNAL=libavcodec
 __pkg_config_arguments_AVDEVICE:INTERNAL=libavdevice >= 56.4.100
 __pkg_config_arguments_AVFORMAT:INTERNAL=libavformat
@@ -3925,6 +4432,7 @@ __pkg_config_arguments_OGRE_PKGC:INTERNAL=OGRE
 __pkg_config_arguments_PC_CURL:INTERNAL=QUIET;libcurl
 __pkg_config_arguments_PC_EIGEN:INTERNAL=eigen3
 __pkg_config_arguments_PC_FLANN:INTERNAL=flann
+__pkg_config_arguments_PC_LIBXML:INTERNAL=QUIET;libxml-2.0
 __pkg_config_arguments_PC_OPENNI:INTERNAL=libopenni
 __pkg_config_arguments_PC_OPENNI2:INTERNAL=libopenni2
 __pkg_config_arguments_SWSCALE:INTERNAL=libswscale
@@ -3933,6 +4441,8 @@ __pkg_config_arguments_UUID:INTERNAL=uuid
 __pkg_config_arguments_YAML:INTERNAL=yaml-0.1
 __pkg_config_arguments_ZIP:INTERNAL=libzip
 __pkg_config_arguments_ZeroMQ:INTERNAL=libzmq >= 4
+__pkg_config_arguments__PC_IPOPT:INTERNAL=QUIET;ipopt
+__pkg_config_arguments__PC_TINYXML:INTERNAL=QUIET;tinyxml
 __pkg_config_arguments_eigenpy:INTERNAL=REQUIRED;eigenpy
 __pkg_config_checked_AVCODEC:INTERNAL=1
 __pkg_config_checked_AVDEVICE:INTERNAL=1
@@ -3946,6 +4456,7 @@ __pkg_config_checked_OGRE_PKGC:INTERNAL=1
 __pkg_config_checked_PC_CURL:INTERNAL=1
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
 __pkg_config_checked_PC_FLANN:INTERNAL=1
+__pkg_config_checked_PC_LIBXML:INTERNAL=1
 __pkg_config_checked_PC_OPENNI:INTERNAL=1
 __pkg_config_checked_PC_OPENNI2:INTERNAL=1
 __pkg_config_checked_SWSCALE:INTERNAL=1
@@ -3954,6 +4465,8 @@ __pkg_config_checked_UUID:INTERNAL=1
 __pkg_config_checked_YAML:INTERNAL=1
 __pkg_config_checked_ZIP:INTERNAL=1
 __pkg_config_checked_ZeroMQ:INTERNAL=1
+__pkg_config_checked__PC_IPOPT:INTERNAL=1
+__pkg_config_checked__PC_TINYXML:INTERNAL=1
 __pkg_config_checked_eigenpy:INTERNAL=1
 eigenpy_CFLAGS:INTERNAL=-I/opt/ros/melodic/include;-I/usr/include/python2.7;-I/usr/lib/python2.7/dist-packages/numpy/core/include;-I/usr/include/eigen3
 eigenpy_CFLAGS_I:INTERNAL=
@@ -4032,6 +4545,8 @@ pkgcfg_lib_OGRE_PKGC_OgreMain-ADVANCED:INTERNAL=1
 pkgcfg_lib_OGRE_PKGC_pthread-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
 pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_LIBXML_xml2
+pkgcfg_lib_PC_LIBXML_xml2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SWSCALE_swscale
 pkgcfg_lib_SWSCALE_swscale-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_TINYXML2_tinyxml2
@@ -4046,6 +4561,24 @@ pkgcfg_lib_ZIP_z-ADVANCED:INTERNAL=1
 pkgcfg_lib_ZIP_zip-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ZeroMQ_zmq
 pkgcfg_lib_ZeroMQ_zmq-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_blas
+pkgcfg_lib__PC_IPOPT_blas-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_dl
+pkgcfg_lib__PC_IPOPT_dl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_dmumps_seq
+pkgcfg_lib__PC_IPOPT_dmumps_seq-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_gfortran
+pkgcfg_lib__PC_IPOPT_gfortran-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_ipopt
+pkgcfg_lib__PC_IPOPT_ipopt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_lapack
+pkgcfg_lib__PC_IPOPT_lapack-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_m
+pkgcfg_lib__PC_IPOPT_m-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_IPOPT_quadmath
+pkgcfg_lib__PC_IPOPT_quadmath-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__PC_TINYXML_tinyxml
+pkgcfg_lib__PC_TINYXML_tinyxml-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_eigenpy_boost_python-py27
 pkgcfg_lib_eigenpy_boost_python-py27-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_eigenpy_eigenpy

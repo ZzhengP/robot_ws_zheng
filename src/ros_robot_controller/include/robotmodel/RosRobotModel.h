@@ -1,3 +1,7 @@
+#ifndef ROSROBOTMODEL_HH
+#define ROSROBOTMODEL_HH
+
+
 #pragma once
 #include "iostream"
 #include "kdl/chain.hpp"
@@ -18,6 +22,9 @@
 #include "std_msgs/String.h"
 #include "std_msgs/Float64.h"
 #include "sensor_msgs/JointState.h"
+#include <trac_ik/trac_ik.hpp>
+
+
 class SegmentIndice
 {
     /* This class is used to bind segment names to the index in the chain */
@@ -52,21 +59,49 @@ class SegmentIndice
     protected : std::map<std::string,int> seg_idx_names;
 };
 
+/**
+    This class is used to compute forward and inverse kinematic with KDL
 
+  */
 class  arm_kinematic
 {
+
 public:
+    /**
+      Constructor with ros node
+    */
     arm_kinematic(ros::NodeHandle* nodehandle, const std::string& urdf_name,  unsigned int NrOfDeg, const std::string& root_name, const std::string& end_name);
+
+    /**
+     Constructor creates robot's kinematic chain
+     * @brief arm_kinematic
+     * @param urdf_name
+     * @param NrOfDeg
+     * @param root_name
+     * @param end_name
+     */
 
     arm_kinematic(const std::string& urdf_name,  unsigned int NrOfDeg, const std::string& root_name, const std::string& end_name);
 
     /**
-     * @brief Initialize all robot state ( Matrix or vector)
+     Initialize robot's state such as joint velocity and position
+     * @brief init
+     * @param q_init
+     * @param dotq_init
+     * @param N
      * @return
      */
     bool init(Eigen::VectorXd q_init, Eigen::VectorXd dotq_init,unsigned int N);
 
+//    bool testTracIk(KDL::JntArray q, KDL::Frame desired_end_effector_pose,KDL::JntArray& return_joints){
+//        return ik_solver->CartToJnt(q,desired_end_effector_pose,return_joints) >= 0;
+//    }
 
+//    KDL::Frame testforward(KDL::JntArray q) {
+//        KDL::Frame seg_pos;
+//        fksolver_->JntToCart(q, seg_pos);
+//        return seg_pos;
+//    }
     /**
     * @brief Gives the kdl segment corresponding to the index
     * @param[in] segment Index number of the segment
@@ -92,8 +127,9 @@ public:
       * @param[out] kdl_frame The corresponding positon of the segment
       */
     KDL::Frame getSegmentPosition(unsigned int segment) {
-        fksolver_->JntToCart(q_, seg_pos_, segment);
-        return seg_pos_;
+        KDL::Frame seg_pos;
+        fksolver_->JntToCart(q_, seg_pos, segment);
+        return seg_pos;
     }
     /**
      * @brief Gives the kdl frame position corresponding to its name
@@ -106,25 +142,28 @@ public:
         return getSegmentPosition(getSegmentIndex(segment_name));
     }
 
-    KDL::JntArray getJointsPosition(){
-        return q_;
-    }
-
-    KDL::JntArray getJointsVelocity()
-    {
-        return dotq_;
-    }
-
+    /**
+     * @brief getqEnlarged
+     * @return  q predicted
+     */
     Eigen::VectorXd getqEnlarged()
     {
         return q_horizon_;
     }
 
+    /**
+     * @brief getdqEnlarged
+     * @return dq predicted
+     */
     Eigen::VectorXd getdqEnlarged()
     {
         return dotq_horizon_;
     }
 
+    /**
+     * @brief getJacobianHorz
+     * @return jacobian matrix predicted
+     */
     Eigen::MatrixXd getJacobianHorz()
     {
         return jacobian_horizon_;
@@ -138,11 +177,73 @@ public:
         return robot_state_;
     }
 
+    /**
+     * @brief getCartPosHorz
+     * @return  end-effector predicted position
+     */
     Eigen::VectorXd getCartPosHorz()
     {
         return ee_pos_horion_;
     }
 
+    /**
+     * @brief getJointPos
+     * @return q_: joint position
+     */
+    KDL::JntArray getJointPos()
+    {
+        return q_;
+    }
+
+    /**
+     * @brief getJointVel
+     * @return dq_ : joint velocity
+     */
+    KDL::JntArray getJointVel()
+    {
+        return dotq_;
+    }
+
+    /**
+     * @brief getChain
+     * @return KDL robot arm chain
+     */
+    KDL::Chain getChain()
+    {
+        return arm_chain_ ;
+    }
+
+    /**
+     * @brief getNrOfJoints
+     * @return total number of joint
+     */
+    unsigned int getNrOfJoints()
+    {
+       return arm_tree_.getNrOfJoints();
+    }
+
+    /**
+     * @brief getRootName
+     * @return base name
+     */
+    std::string getRootName()
+    {
+        return arm_tree_.getSegments().begin()->second.segment.getName();
+    }
+
+    /**
+     * @brief getNrOfSegment
+     * @return the total number of robot
+     */
+    unsigned int getNrOfSegment()
+    {
+        return arm_tree_.getNrOfSegments();
+    }
+
+    /**
+     * @brief printRobotInformation
+     *  Joint name and link name
+     */
     void printRobotInformation()
     {
         for (int i(0); i < NrOfDeg_; i++){
@@ -154,6 +255,10 @@ public:
         }
     }
 
+    /**
+     * @brief setJointPositions
+     * @param q
+     */
     void setJointPositions(const Eigen::VectorXd& q);
     /**
     * @brief Sets the joint velocity of the model
@@ -161,13 +266,20 @@ public:
     */
     void setJointVelocities(const Eigen::VectorXd& qd);
 
+    /**
+     * @brief setState
+     * @param q
+     * @param qd
+     */
     void setState(const Eigen::VectorXd& q,const Eigen::VectorXd& qd);
 
 
-    std::vector<double> getJointLowerLimits();
-    std::vector<double> getJointUpperLimits();
 
-
+    /**
+     * @brief compute inverse kinematic
+     * @param desire_frame
+     * @param q_sol: desired joint position
+     */
     void computeJntFromCart(const KDL::Frame& desire_frame,KDL::JntArray& q_sol)
     {
         int i ;
@@ -182,13 +294,16 @@ public:
         chainjacsolver_->JntToJac(q_, jacobian_);
     }
 
+    /**
+     * @brief getJacobian
+     * @return jacobian
+     */
     KDL::Jacobian getJacobian()
     {
         return jacobian_;
     }
-
     /**
-     * @brief computeJacobian for MPC use
+     * @brief computeJacobian
      * @param q_in
      * @param jacobian_out
      */
@@ -196,54 +311,56 @@ public:
         chainjacsolver_->JntToJac(q_in,jacobian_out);
     }
 
-    void computeqEnlarged(Eigen::VectorXd optimal_Solution, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+    /**
+     * @brief compute q horizon
+     * @param optimal_Solution
+     * @param Px
+     * @param Pu
+     */
+    void computeqEnlarged(const Eigen::VectorXd &optimal_Solution,const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Pu)
     {
         q_horizon_ = Px*robot_state_ + Pu*optimal_Solution;
     }
 
-    void KDLToEigen(const KDL::Jacobian &jacobian, Eigen::MatrixXd &matrix)
-    {
-        matrix.resize(jacobian.rows(),jacobian.columns());
-        for (size_t i=0; i<jacobian.rows();i++)
-            for (size_t j=0; j<jacobian.columns(); j++)
-                matrix(i,j) = jacobian(i,j);
-    }
 
-    void computeJacobianHorz(Eigen::VectorXd q_horizon);
+    /**
+     * @brief ComputeJacobian matrix during predicted horizon
+     * @param q_horizon
+     */
+    void computeJacobianHorz(const Eigen::VectorXd &q_horizon);
 
-    void computeCartPosHorz(Eigen::VectorXd q_horizon);
+    /**
+     * @brief Compute end-effector' position during predicted horizon
+     * @param q_horizon
+     */
+    void computeCartPosHorz(const Eigen::VectorXd &q_horizon);
 
-    KDL::Chain getChain()
-    {
-        return arm_chain_ ;
-    }
 
-    unsigned int getNrOfJoints()
-    {
-       return arm_tree_.getNrOfJoints();
-    }
 
-    std::string getRootName()
-    {
-        return arm_tree_.getSegments().begin()->second.segment.getName();
-    }
-
-    unsigned int getNrOfSegment()
-    {
-        return arm_tree_.getNrOfSegments();
-    }
-
+    /**
+     * @brief Initalize ros subscriber node to update robot's joint position and joint vel
+     */
     void initializeSubscriber();
 
+    /**
+     * @brief subscriberCallback
+     * @param Ros message joint state
+     */
     void subscriberCallback(const sensor_msgs::JointState& jntState);
 
-    void initializePublisher();
+
 protected:
 
     ros::NodeHandle nh_;
     ros::Subscriber subscriber_;
     ros::Publisher publisher_1_, publisher_2_, publisher_3_, publisher_4_, publisher_5_, publisher_6_;
+
+    /**
+     * @brief NrOfDeg_ : dof of robot
+     * @brief N_prediction : Prediction step
+     */
     unsigned int NrOfDeg_, N_Prediciton_ ;
+
     /**
      * @brief The chain structure of the robot
      */
@@ -253,21 +370,21 @@ protected:
     /**
     * @brief The joints limits
     */
-    std::vector<double> joints_lower_limit_;
     Eigen::VectorXd joint_lower_limit_;
-    std::vector<double> joints_upper_limit_;
     Eigen::VectorXd joint_upper_limit_;
 
     /**
+
      * @brief the current joint positon and joint velocity, Jacobian etc ...
+     * @brief robot_state = (q, dq)
      */
 
     KDL::JntArray q_, dotq_;
     Eigen::VectorXd robot_state_;
     KDL::Jacobian jacobian_;
-    Eigen::Vector3d RPY_angle_;
+    Eigen::Vector3d RPY_angle_ ;
     /**
-     * @brief Enlarge data to formulate MPC problem
+     * @brief Enlarge data to formulate MPC problem (q, dq, ee, Jacobian)
      */
     Eigen::VectorXd q_horizon_, dotq_horizon_, ee_pos_horion_;
     Eigen::MatrixXd jacobian_horizon_;
@@ -284,7 +401,7 @@ protected:
      */
     boost::scoped_ptr<KDL::ChainFkSolverPos_recursive> fksolver_;
     boost::scoped_ptr<KDL::ChainIkSolverPos_LMA> iksolver_;
-
+    boost::shared_ptr<TRAC_IK::TRAC_IK> ik_solver;
     /**
     * @brief The jacobian solver.
     */
@@ -313,3 +430,5 @@ protected:
     SegmentIndice seg_names_idx_;
 
 };
+
+#endif
