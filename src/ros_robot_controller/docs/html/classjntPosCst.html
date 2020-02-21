@@ -95,28 +95,36 @@ Collaboration diagram for jntPosCst:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adaee6616a2d40c65c58a3ef9fb6df995"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#adaee6616a2d40c65c58a3ef9fb6df995">jntPosCst</a> (int ndof, int n, double dt, std::string name)</td></tr>
-<tr class="separator:adaee6616a2d40c65c58a3ef9fb6df995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134a16052aac04d8106eeb764628afbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a134a16052aac04d8106eeb764628afbc">jntPosCst</a> (int ndof, int n, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</td></tr>
+<tr class="separator:a134a16052aac04d8106eeb764628afbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b9d1b9c43a1e51973e36415cf5f07b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#ac1b9d1b9c43a1e51973e36415cf5f07b">setLimit</a> (const Eigen::VectorXd &amp;min, const Eigen::VectorXd &amp;max)</td></tr>
 <tr class="separator:ac1b9d1b9c43a1e51973e36415cf5f07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bf1b57c57d7ccfbc68bed63803f8742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a5bf1b57c57d7ccfbc68bed63803f8742">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:a5bf1b57c57d7ccfbc68bed63803f8742"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classjntPosCst.html#a5bf1b57c57d7ccfbc68bed63803f8742">More...</a><br /></td></tr>
-<tr class="separator:a5bf1b57c57d7ccfbc68bed63803f8742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cdbc07f37c460d6716be3e565a44ce4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a0cdbc07f37c460d6716be3e565a44ce4">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:a0cdbc07f37c460d6716be3e565a44ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classjntPosCst.html#a0cdbc07f37c460d6716be3e565a44ce4">More...</a><br /></td></tr>
-<tr class="separator:a0cdbc07f37c460d6716be3e565a44ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ae3367aa65d9b12946310f700e6409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a19ae3367aa65d9b12946310f700e6409">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a19ae3367aa65d9b12946310f700e6409"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classjntPosCst.html#a19ae3367aa65d9b12946310f700e6409">More...</a><br /></td></tr>
-<tr class="separator:a19ae3367aa65d9b12946310f700e6409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeae39f24d21ed818bafa4d18ec825eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#aeae39f24d21ed818bafa4d18ec825eb4">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px, const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:aeae39f24d21ed818bafa4d18ec825eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classjntPosCst.html#aeae39f24d21ed818bafa4d18ec825eb4">More...</a><br /></td></tr>
-<tr class="separator:aeae39f24d21ed818bafa4d18ec825eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822cffa5969c2a3b5822699236aca7e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a822cffa5969c2a3b5822699236aca7e1">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a822cffa5969c2a3b5822699236aca7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classjntPosCst.html#a822cffa5969c2a3b5822699236aca7e1">More...</a><br /></td></tr>
+<tr class="separator:a822cffa5969c2a3b5822699236aca7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6b3e628a7288861046ebd0216f6932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#a3a6b3e628a7288861046ebd0216f6932">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a3a6b3e628a7288861046ebd0216f6932"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classjntPosCst.html#a3a6b3e628a7288861046ebd0216f6932">More...</a><br /></td></tr>
+<tr class="separator:a3a6b3e628a7288861046ebd0216f6932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39e6054dd5dc590d3e3108a967e7b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#ab39e6054dd5dc590d3e3108a967e7b96">setConstraintMatrix</a> ()</td></tr>
+<tr class="memdesc:ab39e6054dd5dc590d3e3108a967e7b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classjntPosCst.html#ab39e6054dd5dc590d3e3108a967e7b96">More...</a><br /></td></tr>
+<tr class="separator:ab39e6054dd5dc590d3e3108a967e7b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdfcde815993440d1eec2049be1778f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntPosCst.html#afdfcde815993440d1eec2049be1778f2">update</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:afdfcde815993440d1eec2049be1778f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classjntPosCst.html#afdfcde815993440d1eec2049be1778f2">More...</a><br /></td></tr>
+<tr class="separator:afdfcde815993440d1eec2049be1778f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgeneric__cst"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgeneric__cst')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgeneric__cst.html">generic_cst</a></td></tr>
-<tr class="memitem:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">generic_cst</a> (int ndof, int N, double dt, std::string name)</td></tr>
-<tr class="memdesc:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">More...</a><br /></td></tr>
-<tr class="separator:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">generic_cst</a> (int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</td></tr>
+<tr class="memdesc:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">More...</a><br /></td></tr>
+<tr class="separator:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c540bea22f3e211be2e27653bb4aba9 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a4c540bea22f3e211be2e27653bb4aba9">~generic_cst</a> ()</td></tr>
 <tr class="separator:a4c540bea22f3e211be2e27653bb4aba9 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d8b6499130bb833ad515bee7a49b4a inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a98d8b6499130bb833ad515bee7a49b4a">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a98d8b6499130bb833ad515bee7a49b4a inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fc5466e30b92506e63e1a849fd0ebd inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a67fc5466e30b92506e63e1a849fd0ebd">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a67fc5466e30b92506e63e1a849fd0ebd inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54855f6d5bf41da00c178ee2da05f39 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab54855f6d5bf41da00c178ee2da05f39">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:ab54855f6d5bf41da00c178ee2da05f39 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dbad6abae0eb61d062cabf34d831a19 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3dbad6abae0eb61d062cabf34d831a19">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a3dbad6abae0eb61d062cabf34d831a19 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">getLowerBound</a> ()</td></tr>
 <tr class="memdesc:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLowerBound  <a href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">More...</a><br /></td></tr>
 <tr class="separator:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +151,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a250e68dc92ec3ddb5ba310e3800b6b7b inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71311e52d88790be9785e6f9835c6df5 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a71311e52d88790be9785e6f9835c6df5">A_</a></td></tr>
 <tr class="separator:a71311e52d88790be9785e6f9835c6df5 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2588e79ab7ca72e596c6ec220924d341 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2588e79ab7ca72e596c6ec220924d341">Px_</a></td></tr>
+<tr class="separator:a2588e79ab7ca72e596c6ec220924d341 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f58cd6a0bb3d76388484f38b3c38f1 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac4f58cd6a0bb3d76388484f38b3c38f1">Pu_</a></td></tr>
+<tr class="separator:ac4f58cd6a0bb3d76388484f38b3c38f1 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f245e8a591b27d83674c1629b29ca6e inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3f245e8a591b27d83674c1629b29ca6e">dt_</a></td></tr>
 <tr class="separator:a3f245e8a591b27d83674c1629b29ca6e inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab202a11ce2d7bd8ae345cd73d26dd846 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab202a11ce2d7bd8ae345cd73d26dd846">n_</a></td></tr>
@@ -157,8 +169,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Joint position constraint class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adaee6616a2d40c65c58a3ef9fb6df995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaee6616a2d40c65c58a3ef9fb6df995">&#9670;&nbsp;</a></span>jntPosCst()</h2>
+<a id="a134a16052aac04d8106eeb764628afbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134a16052aac04d8106eeb764628afbc">&#9670;&nbsp;</a></span>jntPosCst()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +200,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Pu</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -206,8 +230,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a19ae3367aa65d9b12946310f700e6409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19ae3367aa65d9b12946310f700e6409">&#9670;&nbsp;</a></span>setConstraintMatrix()</h2>
+<a id="ab39e6054dd5dc590d3e3108a967e7b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39e6054dd5dc590d3e3108a967e7b96">&#9670;&nbsp;</a></span>setConstraintMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,8 +242,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void jntPosCst::setConstraintMatrix </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Pu</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -238,7 +261,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a288d2ef38bbd6a7bd1a679248cd8145b">generic_cst</a>.</p>
+<p>Reimplemented from <a class="el" href="classgeneric__cst.html#aa2d67900b471443a9ff1ebec0c1595f6">generic_cst</a>.</p>
 
 </div>
 </div>
@@ -270,8 +293,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5bf1b57c57d7ccfbc68bed63803f8742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bf1b57c57d7ccfbc68bed63803f8742">&#9670;&nbsp;</a></span>setLowerBound()</h2>
+<a id="a822cffa5969c2a3b5822699236aca7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822cffa5969c2a3b5822699236aca7e1">&#9670;&nbsp;</a></span>setLowerBound()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,18 +306,8 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void jntPosCst::setLowerBound </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -313,12 +326,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a98a39c0f4393400240d6ddba3859babe">generic_cst</a>.</p>
+<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a2abe1560af7edcf43afe6368611323ec">generic_cst</a>.</p>
 
 </div>
 </div>
-<a id="a0cdbc07f37c460d6716be3e565a44ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cdbc07f37c460d6716be3e565a44ce4">&#9670;&nbsp;</a></span>setUpperBound()</h2>
+<a id="a3a6b3e628a7288861046ebd0216f6932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6b3e628a7288861046ebd0216f6932">&#9670;&nbsp;</a></span>setUpperBound()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,18 +343,8 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void jntPosCst::setUpperBound </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -360,12 +363,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classgeneric__cst.html#ae9fd42a8ba4b49c87e7e0959621b0e31">generic_cst</a>.</p>
+<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a5e40d8debbebf764f4d82b46dc979956">generic_cst</a>.</p>
 
 </div>
 </div>
-<a id="aeae39f24d21ed818bafa4d18ec825eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeae39f24d21ed818bafa4d18ec825eb4">&#9670;&nbsp;</a></span>update()</h2>
+<a id="afdfcde815993440d1eec2049be1778f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfcde815993440d1eec2049be1778f2">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,24 +380,8 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void jntPosCst::update </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Pu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -414,7 +401,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a892ed6bb2f07479b06554e420159f565">generic_cst</a>.</p>
+<p>Reimplemented from <a class="el" href="classgeneric__cst.html#a2b572887603fbf016c12535c87b9a709">generic_cst</a>.</p>
 
 </div>
 </div>

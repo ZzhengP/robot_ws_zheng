@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['robot_5fdescription_5fros_5fname_491',['robot_description_ros_name',['../classarm__kinematic.html#a1f833954d34556d126ac0dd1ba4c94a4',1,'arm_kinematic']]],
-  ['robot_5fstate_5f_492',['robot_state_',['../classarm__kinematic.html#a7242baf2331a600e944c95b64aff89f9',1,'arm_kinematic']]],
-  ['root_5flink_5fros_5fname_493',['root_link_ros_name',['../classarm__kinematic.html#a2689ece0be42fb60b7d570cdf9e48364',1,'arm_kinematic']]],
-  ['rpy_5fangle_5f_494',['RPY_angle_',['../classarm__kinematic.html#ad0a51ced7cb3cd312f91a6eaed240c32',1,'arm_kinematic']]]
+  ['q_5f_680',['q_',['../classarm__kinematic.html#a491f392668f37361908f907104b95968',1,'arm_kinematic']]],
+  ['q_5fhorizon_5f_681',['q_horizon_',['../classarm__kinematic.html#af6cb1f79b5b8a39cd7ab7d4c26887084',1,'arm_kinematic']]],
+  ['qqd_5f_682',['qqd_',['../classarm__kinematic.html#ab264526e24fef670c737b5dcd972cbec',1,'arm_kinematic']]]
 ];

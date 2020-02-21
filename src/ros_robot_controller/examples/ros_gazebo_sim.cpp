@@ -180,8 +180,7 @@ int main(int argc, char **argv)
     robot_state = robot_arm.getRobotState();
     panda_robot_state = panda_arm.getRobotState();
 
-    robot_arm.computeqEnlarged(optimal_Solution,Px,Pu);
-    panda_arm.computeqEnlarged(panda_optimal_Solution,panda_Px,panda_Pu);
+
 
     q_horizon = Px*robot_state + Pu*optimal_Solution;
     panda_q_horizon = panda_Px*panda_robot_state + panda_Pu*panda_optimal_Solution;
@@ -208,27 +207,27 @@ int main(int argc, char **argv)
         q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
     // Define joint acceleration limit
-    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst");
+    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst", Px,Pu);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
-    jnt_acc_cst.setLowerBound(robot_state, Px);
-    jnt_acc_cst.setUpperBound(robot_state, Px);
+    jnt_acc_cst.setLowerBound(robot_state);
+    jnt_acc_cst.setUpperBound(robot_state);
     ddq_lb = jnt_acc_cst.getLowerBound();
     ddq_ub = jnt_acc_cst.getUpperBound();
 
 //    // Define joint velocity limit
-    jntVelCst jnt_vel_cst(ndof,N,dt, "jointVelCst");
+    jntVelCst jnt_vel_cst(ndof,N,dt, "jointVelCst",Px_dq,Pu_dq);
     jnt_vel_cst.setLimit(dq_min, dq_max);
-    jnt_vel_cst.setLowerBound(robot_state,Px_dq);
-    jnt_vel_cst.setUpperBound(robot_state,Px_dq);
-    jnt_vel_cst.setConstraintMatrix(Pu_dq);
+    jnt_vel_cst.setLowerBound(robot_state);
+    jnt_vel_cst.setUpperBound(robot_state);
+    jnt_vel_cst.setConstraintMatrix();
 
     Cst += 1 ;
 //    // Define joint position limit
-    jntPosCst jnt_pos_cst(ndof,N,dt, "jointPosCst");
+    jntPosCst jnt_pos_cst(ndof,N,dt, "jointPosCst",Px,Pu);
     jnt_pos_cst.setLimit(q_min,q_max);
-    jnt_pos_cst.setLowerBound(robot_state,Px);
-    jnt_pos_cst.setUpperBound(robot_state,Px);
-    jnt_pos_cst.setConstraintMatrix(Pu);
+    jnt_pos_cst.setLowerBound(robot_state);
+    jnt_pos_cst.setUpperBound(robot_state);
+    jnt_pos_cst.setConstraintMatrix();
 
     Cst += 1;
     std::vector<Eigen::VectorXd> cstArray_lbA(Cst), cstArray_ubA(Cst);
@@ -306,8 +305,7 @@ int main(int argc, char **argv)
               robot_state = robot_arm.getRobotState();
               panda_robot_state = panda_arm.getRobotState();
 
-              robot_arm.computeqEnlarged(optimal_Solution,Px,Pu);
-              panda_arm.computeqEnlarged(panda_optimal_Solution,panda_Px,panda_Pu);
+
 
       //       std::cout <<"q horizon : \n" << q_horizon << std::endl;
       //        q_horizon = Px*robot_state + Pu*optimal_Solution;
@@ -332,8 +330,8 @@ int main(int argc, char **argv)
               panda_lb.setConstant(-10);
               panda_ub.setConstant(10);
 
-              jnt_pos_cst.update(robot_state,Px,Pu);
-              jnt_vel_cst.update(robot_state,Px_dq,Pu_dq);
+              jnt_pos_cst.update(robot_state);
+              jnt_vel_cst.update(robot_state);
 //              cstArray_lbA[0] = jnt_pos_cst.getLowerBound();
               cstArray_lbA[0] = jnt_vel_cst.getLowerBound();
 

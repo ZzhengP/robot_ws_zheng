@@ -30,18 +30,26 @@ Collaboration diagram for generic\+\_\+cst\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classgeneric__cst_ab2d531d4d3d3b95aa9b52ab3c0cbcebd}{generic\+\_\+cst}} (int ndof, int N, double dt, std\+::string name)
+\mbox{\hyperlink{classgeneric__cst_ac1c0b36ab00a1194dd6d154f1d1bea96}{generic\+\_\+cst}} (int ndof, int N, double dt, std\+::string name, Eigen\+::\+Matrix\+Xd Px, Eigen\+::\+Matrix\+Xd Pu)
 \begin{DoxyCompactList}\small\item\em basic construtor \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classgeneric__cst_a4c540bea22f3e211be2e27653bb4aba9}{$\sim$generic\+\_\+cst}} ()
 \item 
-virtual void \mbox{\hyperlink{classgeneric__cst_a98a39c0f4393400240d6ddba3859babe}{set\+Lower\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Px)
+virtual void \mbox{\hyperlink{classgeneric__cst_a2abe1560af7edcf43afe6368611323ec}{set\+Lower\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state)
 \begin{DoxyCompactList}\small\item\em set\+Lower\+Bound\+: lbA \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classgeneric__cst_ae9fd42a8ba4b49c87e7e0959621b0e31}{set\+Upper\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Px)
+virtual void \mbox{\hyperlink{classgeneric__cst_a98d8b6499130bb833ad515bee7a49b4a}{set\+Lower\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
+\item 
+virtual void \mbox{\hyperlink{classgeneric__cst_a5e40d8debbebf764f4d82b46dc979956}{set\+Upper\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state)
 \begin{DoxyCompactList}\small\item\em set\+Upper\+Bound \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classgeneric__cst_a288d2ef38bbd6a7bd1a679248cd8145b}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&Pu)
+virtual void \mbox{\hyperlink{classgeneric__cst_a67fc5466e30b92506e63e1a849fd0ebd}{set\+Upper\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
+\item 
+virtual void \mbox{\hyperlink{classgeneric__cst_aa2d67900b471443a9ff1ebec0c1595f6}{set\+Constraint\+Matrix}} ()
 \begin{DoxyCompactList}\small\item\em set\+Constraint\+Matrix \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classgeneric__cst_a892ed6bb2f07479b06554e420159f565}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Px, const Eigen\+::\+Matrix\+Xd \&Pu)
+virtual void \mbox{\hyperlink{classgeneric__cst_ab54855f6d5bf41da00c178ee2da05f39}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&Jacobian)
+\item 
+virtual void \mbox{\hyperlink{classgeneric__cst_a2b572887603fbf016c12535c87b9a709}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state)
 \begin{DoxyCompactList}\small\item\em update constraint state \+: lbA, ubA, A \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classgeneric__cst_a3dbad6abae0eb61d062cabf34d831a19}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
+\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classgeneric__cst_aeea66a61e89666e863e08cf3293da933}{get\+Lower\+Bound}} ()
 \begin{DoxyCompactList}\small\item\em get\+Lower\+Bound \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classgeneric__cst_a02de5e5b6128351ba5f879c68ee102cf}{get\+Upper\+Bound}} ()
@@ -63,6 +71,10 @@ Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classgeneric__cst_a250e68dc92ec3ddb5ba310
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classgeneric__cst_a71311e52d88790be9785e6f9835c6df5}{A\+\_\+}}
 \item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classgeneric__cst_a2588e79ab7ca72e596c6ec220924d341}{Px\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classgeneric__cst_ac4f58cd6a0bb3d76388484f38b3c38f1}{Pu\+\_\+}}
+\item 
 double \mbox{\hyperlink{classgeneric__cst_a3f245e8a591b27d83674c1629b29ca6e}{dt\+\_\+}}
 \item 
 int \mbox{\hyperlink{classgeneric__cst_ab202a11ce2d7bd8ae345cd73d26dd846}{n\+\_\+}}
@@ -79,11 +91,11 @@ std\+::string \mbox{\hyperlink{classgeneric__cst_a27020b6b3cde3721b0c781888100fe
 The generic constraint class $ lbA <= Ax <= ubA $ Which is defined by a lower bound, upper bound and constraint matrix. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classgeneric__cst_ab2d531d4d3d3b95aa9b52ab3c0cbcebd}\label{classgeneric__cst_ab2d531d4d3d3b95aa9b52ab3c0cbcebd}} 
+\mbox{\Hypertarget{classgeneric__cst_ac1c0b36ab00a1194dd6d154f1d1bea96}\label{classgeneric__cst_ac1c0b36ab00a1194dd6d154f1d1bea96}} 
 \index{generic\_cst@{generic\_cst}!generic\_cst@{generic\_cst}}
 \index{generic\_cst@{generic\_cst}!generic\_cst@{generic\_cst}}
 \doxysubsubsection{\texorpdfstring{generic\_cst()}{generic\_cst()}}
-{\footnotesize\ttfamily generic\+\_\+cst\+::generic\+\_\+cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily generic\+\_\+cst\+::generic\+\_\+cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pu }\end{DoxyParamCaption})}
 
 
 
@@ -159,11 +171,11 @@ get\+Upper\+Bound
 \begin{DoxyReturn}{Returns}
 ub\+A\+\_\+ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classgeneric__cst_a288d2ef38bbd6a7bd1a679248cd8145b}\label{classgeneric__cst_a288d2ef38bbd6a7bd1a679248cd8145b}} 
+\mbox{\Hypertarget{classgeneric__cst_aa2d67900b471443a9ff1ebec0c1595f6}\label{classgeneric__cst_aa2d67900b471443a9ff1ebec0c1595f6}} 
 \index{generic\_cst@{generic\_cst}!setConstraintMatrix@{setConstraintMatrix}}
 \index{setConstraintMatrix@{setConstraintMatrix}!generic\_cst@{generic\_cst}}
-\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
-{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -176,13 +188,23 @@ set\+Constraint\+Matrix
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{classjntPosCst_a19ae3367aa65d9b12946310f700e6409}{jnt\+Pos\+Cst}}, \mbox{\hyperlink{classjntVelCst_a8df14109328a0ef7cb681a7840fe7ce5}{jnt\+Vel\+Cst}}, and \mbox{\hyperlink{classcartVelCst_a184eac9398f58c5ed75d4ded85f60fc8}{cart\+Vel\+Cst}}.
+Reimplemented in \mbox{\hyperlink{classjntPosCst_ab39e6054dd5dc590d3e3108a967e7b96}{jnt\+Pos\+Cst}}, and \mbox{\hyperlink{classjntVelCst_a9da0b0cb9d55df997ae2a790754e2f76}{jnt\+Vel\+Cst}}.
 
-\mbox{\Hypertarget{classgeneric__cst_a98a39c0f4393400240d6ddba3859babe}\label{classgeneric__cst_a98a39c0f4393400240d6ddba3859babe}} 
+\mbox{\Hypertarget{classgeneric__cst_ab54855f6d5bf41da00c178ee2da05f39}\label{classgeneric__cst_ab54855f6d5bf41da00c178ee2da05f39}} 
+\index{generic\_cst@{generic\_cst}!setConstraintMatrix@{setConstraintMatrix}}
+\index{setConstraintMatrix@{setConstraintMatrix}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classcartVelCst_a184eac9398f58c5ed75d4ded85f60fc8}{cart\+Vel\+Cst}}.
+
+\mbox{\Hypertarget{classgeneric__cst_a2abe1560af7edcf43afe6368611323ec}\label{classgeneric__cst_a2abe1560af7edcf43afe6368611323ec}} 
 \index{generic\_cst@{generic\_cst}!setLowerBound@{setLowerBound}}
 \index{setLowerBound@{setLowerBound}!generic\_cst@{generic\_cst}}
-\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}}
-{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -197,13 +219,23 @@ set\+Lower\+Bound\+: lbA
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{classjntPosCst_a5bf1b57c57d7ccfbc68bed63803f8742}{jnt\+Pos\+Cst}}, \mbox{\hyperlink{classjntVelCst_a87596e3742c408bf01f307aab873b906}{jnt\+Vel\+Cst}}, and \mbox{\hyperlink{classcartVelCst_a5780fd2fb80be7fe1c66e4eb56b9b447}{cart\+Vel\+Cst}}.
+Reimplemented in \mbox{\hyperlink{classjntPosCst_a822cffa5969c2a3b5822699236aca7e1}{jnt\+Pos\+Cst}}, and \mbox{\hyperlink{classjntVelCst_a387c9f7b65755434fe534d09e7cc8c08}{jnt\+Vel\+Cst}}.
 
-\mbox{\Hypertarget{classgeneric__cst_ae9fd42a8ba4b49c87e7e0959621b0e31}\label{classgeneric__cst_ae9fd42a8ba4b49c87e7e0959621b0e31}} 
+\mbox{\Hypertarget{classgeneric__cst_a98d8b6499130bb833ad515bee7a49b4a}\label{classgeneric__cst_a98d8b6499130bb833ad515bee7a49b4a}} 
+\index{generic\_cst@{generic\_cst}!setLowerBound@{setLowerBound}}
+\index{setLowerBound@{setLowerBound}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classcartVelCst_a5780fd2fb80be7fe1c66e4eb56b9b447}{cart\+Vel\+Cst}}.
+
+\mbox{\Hypertarget{classgeneric__cst_a5e40d8debbebf764f4d82b46dc979956}\label{classgeneric__cst_a5e40d8debbebf764f4d82b46dc979956}} 
 \index{generic\_cst@{generic\_cst}!setUpperBound@{setUpperBound}}
 \index{setUpperBound@{setUpperBound}!generic\_cst@{generic\_cst}}
-\doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}}
-{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+\doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -218,13 +250,23 @@ set\+Upper\+Bound
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{classjntPosCst_a0cdbc07f37c460d6716be3e565a44ce4}{jnt\+Pos\+Cst}}, \mbox{\hyperlink{classjntVelCst_a41db6da231f399dc97144038b1a4e96f}{jnt\+Vel\+Cst}}, and \mbox{\hyperlink{classcartVelCst_aea25af284486841a8cc9dee140601398}{cart\+Vel\+Cst}}.
+Reimplemented in \mbox{\hyperlink{classjntPosCst_a3a6b3e628a7288861046ebd0216f6932}{jnt\+Pos\+Cst}}, and \mbox{\hyperlink{classjntVelCst_a614af8e8a7464d5dfcb123773fc3cd03}{jnt\+Vel\+Cst}}.
 
-\mbox{\Hypertarget{classgeneric__cst_a892ed6bb2f07479b06554e420159f565}\label{classgeneric__cst_a892ed6bb2f07479b06554e420159f565}} 
+\mbox{\Hypertarget{classgeneric__cst_a67fc5466e30b92506e63e1a849fd0ebd}\label{classgeneric__cst_a67fc5466e30b92506e63e1a849fd0ebd}} 
+\index{generic\_cst@{generic\_cst}!setUpperBound@{setUpperBound}}
+\index{setUpperBound@{setUpperBound}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classcartVelCst_aea25af284486841a8cc9dee140601398}{cart\+Vel\+Cst}}.
+
+\mbox{\Hypertarget{classgeneric__cst_a2b572887603fbf016c12535c87b9a709}\label{classgeneric__cst_a2b572887603fbf016c12535c87b9a709}} 
 \index{generic\_cst@{generic\_cst}!update@{update}}
 \index{update@{update}!generic\_cst@{generic\_cst}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -241,7 +283,17 @@ update constraint state \+: lbA, ubA, A
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{classjntPosCst_aeae39f24d21ed818bafa4d18ec825eb4}{jnt\+Pos\+Cst}}, \mbox{\hyperlink{classjntVelCst_aedea1e3a55e1fec81bf7a06a23dc2cda}{jnt\+Vel\+Cst}}, and \mbox{\hyperlink{classcartVelCst_aab53e5b7c8c2ec3c23a54a5f48fb6e6c}{cart\+Vel\+Cst}}.
+Reimplemented in \mbox{\hyperlink{classjntPosCst_afdfcde815993440d1eec2049be1778f2}{jnt\+Pos\+Cst}}, and \mbox{\hyperlink{classjntVelCst_aba7ebba614b2f51b7a1c31c334c2b80e}{jnt\+Vel\+Cst}}.
+
+\mbox{\Hypertarget{classgeneric__cst_a3dbad6abae0eb61d062cabf34d831a19}\label{classgeneric__cst_a3dbad6abae0eb61d062cabf34d831a19}} 
+\index{generic\_cst@{generic\_cst}!update@{update}}
+\index{update@{update}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void generic\+\_\+cst\+::update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classcartVelCst_a4e82535fc45c2a437f2cc76ae1cecdb4}{cart\+Vel\+Cst}}.
 
 
 
@@ -299,6 +351,18 @@ Reimplemented in \mbox{\hyperlink{classjntPosCst_aeae39f24d21ed818bafa4d18ec825e
 \index{n\_@{n\_}!generic\_cst@{generic\_cst}}
 \doxysubsubsection{\texorpdfstring{n\_}{n\_}}
 {\footnotesize\ttfamily int generic\+\_\+cst\+::n\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classgeneric__cst_ac4f58cd6a0bb3d76388484f38b3c38f1}\label{classgeneric__cst_ac4f58cd6a0bb3d76388484f38b3c38f1}} 
+\index{generic\_cst@{generic\_cst}!Pu\_@{Pu\_}}
+\index{Pu\_@{Pu\_}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{Pu\_}{Pu\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd generic\+\_\+cst\+::\+Pu\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classgeneric__cst_a2588e79ab7ca72e596c6ec220924d341}\label{classgeneric__cst_a2588e79ab7ca72e596c6ec220924d341}} 
+\index{generic\_cst@{generic\_cst}!Px\_@{Px\_}}
+\index{Px\_@{Px\_}!generic\_cst@{generic\_cst}}
+\doxysubsubsection{\texorpdfstring{Px\_}{Px\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd generic\+\_\+cst\+::\+Px\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classgeneric__cst_a53a2bf798e062ae2e28d51485c9ca6d6}\label{classgeneric__cst_a53a2bf798e062ae2e28d51485c9ca6d6}} 
 \index{generic\_cst@{generic\_cst}!ubA\_@{ubA\_}}

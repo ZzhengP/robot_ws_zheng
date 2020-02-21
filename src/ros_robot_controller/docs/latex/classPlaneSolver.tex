@@ -1,0 +1,125 @@
+\hypertarget{classPlaneSolver}{}\doxysection{Plane\+Solver Class Reference}
+\label{classPlaneSolver}\index{PlaneSolver@{PlaneSolver}}
+
+
+{\ttfamily \#include $<$Ros\+Plane\+Solver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlaneSolver_ac7b2d992326d4253ec2f427137fc7e44}{Plane\+Solver}} (int nbr\+Cst, double dsafe)
+\item 
+void \mbox{\hyperlink{classPlaneSolver_af74db8352b869fa4ea132c303a3ff05d}{set\+Cost}} (const Eigen\+::\+Vector\+Xd \&g)
+\item 
+void \mbox{\hyperlink{classPlaneSolver_ad3f30fbdaf34f35606a9ae396828176a}{set\+Cst\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&robot\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&obs\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&data\+Plane\+Precedent)
+\item 
+bool \mbox{\hyperlink{classPlaneSolver_a284e601c4761320dc0b26f105f300d2c}{solve}} ()
+\item 
+void \mbox{\hyperlink{classPlaneSolver_a9a1996b21c0c4f1a80463aeb4e0162ad}{print}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_a5834af4abb0d4afaf972f7af9abd34b2}{get\+Solution}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classPlaneSolver_adc6e2ab55f3763ef735c443b10b7da7b}{get\+Hessien}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classPlaneSolver_a3223a13bba41f987dad03834b175d8c0}{get\+Constraint\+Matrix}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_a42ff90253b987eb89d0e126e11a7a0dd}{get\+Constraint\+Lower\+Bound}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_a5a8458cf9d5768f790a1d26a93d4e6ad}{get\+Constraint\+Upper\+Bound}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_aa2b316aa639e263fd0ee1938c38cc00e}{get\+Lower\+Bound}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_aaf322906b7f6ed8bae2b682018046d19}{get\+Upper\+Bound}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classPlaneSolver_a095f52e6a393a6380930baaa6ea6dd51}{get\+Gradient}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlaneSolver_ac7b2d992326d4253ec2f427137fc7e44}\label{classPlaneSolver_ac7b2d992326d4253ec2f427137fc7e44}} 
+\index{PlaneSolver@{PlaneSolver}!PlaneSolver@{PlaneSolver}}
+\index{PlaneSolver@{PlaneSolver}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{PlaneSolver()}{PlaneSolver()}}
+{\footnotesize\ttfamily Plane\+Solver\+::\+Plane\+Solver (\begin{DoxyParamCaption}\item[{int}]{nbr\+Cst,  }\item[{double}]{dsafe }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlaneSolver_a42ff90253b987eb89d0e126e11a7a0dd}\label{classPlaneSolver_a42ff90253b987eb89d0e126e11a7a0dd}} 
+\index{PlaneSolver@{PlaneSolver}!getConstraintLowerBound@{getConstraintLowerBound}}
+\index{getConstraintLowerBound@{getConstraintLowerBound}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getConstraintLowerBound()}{getConstraintLowerBound()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Constraint\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_a3223a13bba41f987dad03834b175d8c0}\label{classPlaneSolver_a3223a13bba41f987dad03834b175d8c0}} 
+\index{PlaneSolver@{PlaneSolver}!getConstraintMatrix@{getConstraintMatrix}}
+\index{getConstraintMatrix@{getConstraintMatrix}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getConstraintMatrix()}{getConstraintMatrix()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Plane\+Solver\+::get\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_a5a8458cf9d5768f790a1d26a93d4e6ad}\label{classPlaneSolver_a5a8458cf9d5768f790a1d26a93d4e6ad}} 
+\index{PlaneSolver@{PlaneSolver}!getConstraintUpperBound@{getConstraintUpperBound}}
+\index{getConstraintUpperBound@{getConstraintUpperBound}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getConstraintUpperBound()}{getConstraintUpperBound()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Constraint\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_a095f52e6a393a6380930baaa6ea6dd51}\label{classPlaneSolver_a095f52e6a393a6380930baaa6ea6dd51}} 
+\index{PlaneSolver@{PlaneSolver}!getGradient@{getGradient}}
+\index{getGradient@{getGradient}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getGradient()}{getGradient()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_adc6e2ab55f3763ef735c443b10b7da7b}\label{classPlaneSolver_adc6e2ab55f3763ef735c443b10b7da7b}} 
+\index{PlaneSolver@{PlaneSolver}!getHessien@{getHessien}}
+\index{getHessien@{getHessien}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getHessien()}{getHessien()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Plane\+Solver\+::get\+Hessien (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_aa2b316aa639e263fd0ee1938c38cc00e}\label{classPlaneSolver_aa2b316aa639e263fd0ee1938c38cc00e}} 
+\index{PlaneSolver@{PlaneSolver}!getLowerBound@{getLowerBound}}
+\index{getLowerBound@{getLowerBound}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getLowerBound()}{getLowerBound()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_a5834af4abb0d4afaf972f7af9abd34b2}\label{classPlaneSolver_a5834af4abb0d4afaf972f7af9abd34b2}} 
+\index{PlaneSolver@{PlaneSolver}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getSolution()}{getSolution()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_aaf322906b7f6ed8bae2b682018046d19}\label{classPlaneSolver_aaf322906b7f6ed8bae2b682018046d19}} 
+\index{PlaneSolver@{PlaneSolver}!getUpperBound@{getUpperBound}}
+\index{getUpperBound@{getUpperBound}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{getUpperBound()}{getUpperBound()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Plane\+Solver\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_a9a1996b21c0c4f1a80463aeb4e0162ad}\label{classPlaneSolver_a9a1996b21c0c4f1a80463aeb4e0162ad}} 
+\index{PlaneSolver@{PlaneSolver}!print@{print}}
+\index{print@{print}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Plane\+Solver\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPlaneSolver_af74db8352b869fa4ea132c303a3ff05d}\label{classPlaneSolver_af74db8352b869fa4ea132c303a3ff05d}} 
+\index{PlaneSolver@{PlaneSolver}!setCost@{setCost}}
+\index{setCost@{setCost}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{setCost()}{setCost()}}
+{\footnotesize\ttfamily void Plane\+Solver\+::set\+Cost (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPlaneSolver_ad3f30fbdaf34f35606a9ae396828176a}\label{classPlaneSolver_ad3f30fbdaf34f35606a9ae396828176a}} 
+\index{PlaneSolver@{PlaneSolver}!setCstMatrix@{setCstMatrix}}
+\index{setCstMatrix@{setCstMatrix}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{setCstMatrix()}{setCstMatrix()}}
+{\footnotesize\ttfamily void Plane\+Solver\+::set\+Cst\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{robot\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{obs\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{data\+Plane\+Precedent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPlaneSolver_a284e601c4761320dc0b26f105f300d2c}\label{classPlaneSolver_a284e601c4761320dc0b26f105f300d2c}} 
+\index{PlaneSolver@{PlaneSolver}!solve@{solve}}
+\index{solve@{solve}!PlaneSolver@{PlaneSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily bool Plane\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/solver/\mbox{\hyperlink{RosPlaneSolver_8h}{Ros\+Plane\+Solver.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/solver/\mbox{\hyperlink{RosPlaneSolver_8cpp}{Ros\+Plane\+Solver.\+cpp}}\end{DoxyCompactItemize}

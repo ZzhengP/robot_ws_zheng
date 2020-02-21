@@ -14,6 +14,7 @@ Panels:
         - /Image1
         - /PointCloud21
         - /MarkerArray2
+        - /MarkerArray3
       Splitter Ratio: 0.5
     Tree Height: 767
   - Class: rviz/Selection
@@ -246,7 +247,15 @@ Visualization Manager:
       Marker Topic: /simpleCube
       Name: MarkerArray
       Namespaces:
-        {}
+        Cuboid: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /mpcPath
+      Name: MarkerArray
+      Namespaces:
+        Path: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -277,25 +286,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.802448272705078
+      Distance: 1.3850480318069458
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.161336749792099
-        Y: -1.0872929096221924
-        Z: 1.165032982826233
+        X: 0.20126979053020477
+        Y: 0.05491960793733597
+        Z: 1.2562386989593506
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7602030634880066
+      Pitch: 0.6552029848098755
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.643599033355713
+      Yaw: 0.16541315615177155
     Saved: ~
 Window Geometry:
   Displays:

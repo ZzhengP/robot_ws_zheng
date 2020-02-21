@@ -25,27 +25,27 @@ Collaboration diagram for cart\+Vel\+Cst\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcartVelCst_aba961ab34490af0b06b3822352f5b118}{cart\+Vel\+Cst}} (int ndof, int N, double dt, std\+::string name)
+\mbox{\hyperlink{classcartVelCst_aff5d1be69d38b0a0e42ab4c99ab227f8}{cart\+Vel\+Cst}} (int ndof, int N, double dt, std\+::string name, Eigen\+::\+Matrix\+Xd Px, Eigen\+::\+Matrix\+Xd Pu)
 \item 
 void \mbox{\hyperlink{classcartVelCst_a91c5dfdceb7804a6cad07c851439577d}{set\+Limit}} (const Eigen\+::\+Vector\+Xd \&min, const Eigen\+::\+Vector\+Xd \&max)
 \item 
 void \mbox{\hyperlink{classcartVelCst_a5780fd2fb80be7fe1c66e4eb56b9b447}{set\+Lower\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
-\begin{DoxyCompactList}\small\item\em set\+Lower\+Bound\+: lbA \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{classcartVelCst_aea25af284486841a8cc9dee140601398}{set\+Upper\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
-\begin{DoxyCompactList}\small\item\em set\+Upper\+Bound \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{classcartVelCst_a184eac9398f58c5ed75d4ded85f60fc8}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&Jacobian)
-\begin{DoxyCompactList}\small\item\em set\+Constraint\+Matrix \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classcartVelCst_aab53e5b7c8c2ec3c23a54a5f48fb6e6c}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Px, const Eigen\+::\+Matrix\+Xd \&Jacobian)
-\begin{DoxyCompactList}\small\item\em update constraint state \+: lbA, ubA, A \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcartVelCst_a4e82535fc45c2a437f2cc76ae1cecdb4}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcartVelCst_aba961ab34490af0b06b3822352f5b118}\label{classcartVelCst_aba961ab34490af0b06b3822352f5b118}} 
+\mbox{\Hypertarget{classcartVelCst_aff5d1be69d38b0a0e42ab4c99ab227f8}\label{classcartVelCst_aff5d1be69d38b0a0e42ab4c99ab227f8}} 
 \index{cartVelCst@{cartVelCst}!cartVelCst@{cartVelCst}}
 \index{cartVelCst@{cartVelCst}!cartVelCst@{cartVelCst}}
 \doxysubsubsection{\texorpdfstring{cartVelCst()}{cartVelCst()}}
-{\footnotesize\ttfamily cart\+Vel\+Cst\+::cart\+Vel\+Cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily cart\+Vel\+Cst\+::cart\+Vel\+Cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -54,20 +54,11 @@ void \mbox{\hyperlink{classcartVelCst_aab53e5b7c8c2ec3c23a54a5f48fb6e6c}{update}
 \index{cartVelCst@{cartVelCst}!setConstraintMatrix@{setConstraintMatrix}}
 \index{setConstraintMatrix@{setConstraintMatrix}!cartVelCst@{cartVelCst}}
 \doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
-{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-set\+Constraint\+Matrix 
-
-
-\begin{DoxyParams}{Parameters}
-{\em Pu} & \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classgeneric__cst_a288d2ef38bbd6a7bd1a679248cd8145b}{generic\+\_\+cst}}.
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_ab54855f6d5bf41da00c178ee2da05f39}{generic\+\_\+cst}}.
 
 \mbox{\Hypertarget{classcartVelCst_a91c5dfdceb7804a6cad07c851439577d}\label{classcartVelCst_a91c5dfdceb7804a6cad07c851439577d}} 
 \index{cartVelCst@{cartVelCst}!setLimit@{setLimit}}
@@ -79,66 +70,31 @@ Reimplemented from \mbox{\hyperlink{classgeneric__cst_a288d2ef38bbd6a7bd1a679248
 \index{cartVelCst@{cartVelCst}!setLowerBound@{setLowerBound}}
 \index{setLowerBound@{setLowerBound}!cartVelCst@{cartVelCst}}
 \doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}}
-{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-set\+Lower\+Bound\+: lbA 
-
-
-\begin{DoxyParams}{Parameters}
-{\em robot\+\_\+state} & \\
-\hline
-{\em Px} & \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classgeneric__cst_a98a39c0f4393400240d6ddba3859babe}{generic\+\_\+cst}}.
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_a98d8b6499130bb833ad515bee7a49b4a}{generic\+\_\+cst}}.
 
 \mbox{\Hypertarget{classcartVelCst_aea25af284486841a8cc9dee140601398}\label{classcartVelCst_aea25af284486841a8cc9dee140601398}} 
 \index{cartVelCst@{cartVelCst}!setUpperBound@{setUpperBound}}
 \index{setUpperBound@{setUpperBound}!cartVelCst@{cartVelCst}}
 \doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}}
-{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void cart\+Vel\+Cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-set\+Upper\+Bound 
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_a67fc5466e30b92506e63e1a849fd0ebd}{generic\+\_\+cst}}.
 
-
-\begin{DoxyParams}{Parameters}
-{\em robot\+\_\+state} & \\
-\hline
-{\em Px} & \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classgeneric__cst_ae9fd42a8ba4b49c87e7e0959621b0e31}{generic\+\_\+cst}}.
-
-\mbox{\Hypertarget{classcartVelCst_aab53e5b7c8c2ec3c23a54a5f48fb6e6c}\label{classcartVelCst_aab53e5b7c8c2ec3c23a54a5f48fb6e6c}} 
+\mbox{\Hypertarget{classcartVelCst_a4e82535fc45c2a437f2cc76ae1cecdb4}\label{classcartVelCst_a4e82535fc45c2a437f2cc76ae1cecdb4}} 
 \index{cartVelCst@{cartVelCst}!update@{update}}
 \index{update@{update}!cartVelCst@{cartVelCst}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void cart\+Vel\+Cst\+::update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void cart\+Vel\+Cst\+::update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-update constraint state \+: lbA, ubA, A 
-
-
-\begin{DoxyParams}{Parameters}
-{\em robot\+\_\+state} & \\
-\hline
-{\em Px} & \\
-\hline
-{\em Pu} & \\
-\hline
-\end{DoxyParams}
-
-
-Reimplemented from \mbox{\hyperlink{classgeneric__cst_a892ed6bb2f07479b06554e420159f565}{generic\+\_\+cst}}.
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_a3dbad6abae0eb61d062cabf34d831a19}{generic\+\_\+cst}}.
 
 
 

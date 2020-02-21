@@ -6,7 +6,8 @@
 
 class  jntVelCst : public generic_cst {
 public:
-    jntVelCst(int ndof, int N, double dt, std::string name) : generic_cst (ndof, N,dt, name){
+    jntVelCst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+        : generic_cst (ndof, N,dt, name, Px, Pu){
         cstData_.name_ = name;
         cstData_.upBound_.resize(ndof*N_);
         cstData_.lowBound_.resize(ndof*N_);
@@ -16,10 +17,10 @@ public:
 
     void setLimit(const Eigen::VectorXd &min,const Eigen::VectorXd &max);
 
-    void setLowerBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px);
-    void setUpperBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px);
-    void setConstraintMatrix(const Eigen::MatrixXd &Pu);
-    void update(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Pu);
+    void setLowerBound(const Eigen::VectorXd &robot_state);
+    void setUpperBound(const Eigen::VectorXd &robot_state);
+    void setConstraintMatrix();
+    void update(const Eigen::VectorXd &robot_state);
 
 private:
 

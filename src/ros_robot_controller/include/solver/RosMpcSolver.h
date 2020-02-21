@@ -7,7 +7,7 @@
 #include "commun/color.h"
 #include "constraint/RosGenericCst.h"
 #include "vector"
-
+#include "fstream"
 class mpc_solve
 {
 public:
@@ -40,12 +40,22 @@ public:
         qpoases_standard_->setPrintLevel(qpOASES::PL_HIGH);
     }
 
+    void print(){
 
+        std::cout << "H_ \n " <<  H_ << '\n';
+        std::cout << "g_ \n " << g_ << '\n';
+        std::cout << "A_ \n " << A_ << '\n';
+        std::cout << "lbA_ \n " << lbA_ << '\n';
+        std::cout << "ubA_ \n " << ubA_ << '\n';
+        std::cout << "lb_ \n " << lb_ << '\n';
+        std::cout << "ub_ \n " << ub_ << '\n';
+    }
 private:
     std::shared_ptr<qpOASES::QProblemB> qpoases_;
     std::shared_ptr<qpOASES::SQProblem> qpoases_standard_;
     qpOASES::Options options_;
     int N_prediction_, Ndof_;
+    // Need RowMajor
     Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> H_;
     Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> A_;
     Eigen::VectorXd g_, lb_, ub_, lbA_, ubA_, data_optimal_solution_;

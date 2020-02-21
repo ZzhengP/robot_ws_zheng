@@ -98,23 +98,31 @@ Collaboration diagram for generic_cst:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab2d531d4d3d3b95aa9b52ab3c0cbcebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">generic_cst</a> (int ndof, int N, double dt, std::string name)</td></tr>
-<tr class="memdesc:ab2d531d4d3d3b95aa9b52ab3c0cbcebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">More...</a><br /></td></tr>
-<tr class="separator:ab2d531d4d3d3b95aa9b52ab3c0cbcebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c0b36ab00a1194dd6d154f1d1bea96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">generic_cst</a> (int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</td></tr>
+<tr class="memdesc:ac1c0b36ab00a1194dd6d154f1d1bea96"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">More...</a><br /></td></tr>
+<tr class="separator:ac1c0b36ab00a1194dd6d154f1d1bea96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c540bea22f3e211be2e27653bb4aba9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a4c540bea22f3e211be2e27653bb4aba9">~generic_cst</a> ()</td></tr>
 <tr class="separator:a4c540bea22f3e211be2e27653bb4aba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a39c0f4393400240d6ddba3859babe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a98a39c0f4393400240d6ddba3859babe">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:a98a39c0f4393400240d6ddba3859babe"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classgeneric__cst.html#a98a39c0f4393400240d6ddba3859babe">More...</a><br /></td></tr>
-<tr class="separator:a98a39c0f4393400240d6ddba3859babe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9fd42a8ba4b49c87e7e0959621b0e31"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ae9fd42a8ba4b49c87e7e0959621b0e31">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:ae9fd42a8ba4b49c87e7e0959621b0e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classgeneric__cst.html#ae9fd42a8ba4b49c87e7e0959621b0e31">More...</a><br /></td></tr>
-<tr class="separator:ae9fd42a8ba4b49c87e7e0959621b0e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a288d2ef38bbd6a7bd1a679248cd8145b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a288d2ef38bbd6a7bd1a679248cd8145b">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a288d2ef38bbd6a7bd1a679248cd8145b"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classgeneric__cst.html#a288d2ef38bbd6a7bd1a679248cd8145b">More...</a><br /></td></tr>
-<tr class="separator:a288d2ef38bbd6a7bd1a679248cd8145b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a892ed6bb2f07479b06554e420159f565"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a892ed6bb2f07479b06554e420159f565">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px, const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a892ed6bb2f07479b06554e420159f565"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classgeneric__cst.html#a892ed6bb2f07479b06554e420159f565">More...</a><br /></td></tr>
-<tr class="separator:a892ed6bb2f07479b06554e420159f565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abe1560af7edcf43afe6368611323ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2abe1560af7edcf43afe6368611323ec">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a2abe1560af7edcf43afe6368611323ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classgeneric__cst.html#a2abe1560af7edcf43afe6368611323ec">More...</a><br /></td></tr>
+<tr class="separator:a2abe1560af7edcf43afe6368611323ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d8b6499130bb833ad515bee7a49b4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a98d8b6499130bb833ad515bee7a49b4a">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a98d8b6499130bb833ad515bee7a49b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e40d8debbebf764f4d82b46dc979956"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a5e40d8debbebf764f4d82b46dc979956">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a5e40d8debbebf764f4d82b46dc979956"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classgeneric__cst.html#a5e40d8debbebf764f4d82b46dc979956">More...</a><br /></td></tr>
+<tr class="separator:a5e40d8debbebf764f4d82b46dc979956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fc5466e30b92506e63e1a849fd0ebd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a67fc5466e30b92506e63e1a849fd0ebd">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a67fc5466e30b92506e63e1a849fd0ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d67900b471443a9ff1ebec0c1595f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#aa2d67900b471443a9ff1ebec0c1595f6">setConstraintMatrix</a> ()</td></tr>
+<tr class="memdesc:aa2d67900b471443a9ff1ebec0c1595f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classgeneric__cst.html#aa2d67900b471443a9ff1ebec0c1595f6">More...</a><br /></td></tr>
+<tr class="separator:aa2d67900b471443a9ff1ebec0c1595f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54855f6d5bf41da00c178ee2da05f39"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab54855f6d5bf41da00c178ee2da05f39">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:ab54855f6d5bf41da00c178ee2da05f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b572887603fbf016c12535c87b9a709"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2b572887603fbf016c12535c87b9a709">update</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a2b572887603fbf016c12535c87b9a709"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classgeneric__cst.html#a2b572887603fbf016c12535c87b9a709">More...</a><br /></td></tr>
+<tr class="separator:a2b572887603fbf016c12535c87b9a709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dbad6abae0eb61d062cabf34d831a19"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3dbad6abae0eb61d062cabf34d831a19">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a3dbad6abae0eb61d062cabf34d831a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea66a61e89666e863e08cf3293da933"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">getLowerBound</a> ()</td></tr>
 <tr class="memdesc:aeea66a61e89666e863e08cf3293da933"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLowerBound  <a href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">More...</a><br /></td></tr>
 <tr class="separator:aeea66a61e89666e863e08cf3293da933"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +148,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a250e68dc92ec3ddb5ba310e3800b6b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71311e52d88790be9785e6f9835c6df5"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a71311e52d88790be9785e6f9835c6df5">A_</a></td></tr>
 <tr class="separator:a71311e52d88790be9785e6f9835c6df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2588e79ab7ca72e596c6ec220924d341"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2588e79ab7ca72e596c6ec220924d341">Px_</a></td></tr>
+<tr class="separator:a2588e79ab7ca72e596c6ec220924d341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f58cd6a0bb3d76388484f38b3c38f1"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac4f58cd6a0bb3d76388484f38b3c38f1">Pu_</a></td></tr>
+<tr class="separator:ac4f58cd6a0bb3d76388484f38b3c38f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f245e8a591b27d83674c1629b29ca6e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3f245e8a591b27d83674c1629b29ca6e">dt_</a></td></tr>
 <tr class="separator:a3f245e8a591b27d83674c1629b29ca6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab202a11ce2d7bd8ae345cd73d26dd846"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab202a11ce2d7bd8ae345cd73d26dd846">n_</a></td></tr>
@@ -154,8 +166,8 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The generic constraint class <img class="formulaInl" alt="$ lbA &lt;= Ax &lt;= ubA $" src="form_0.png"/> Which is defined by a lower bound, upper bound and constraint matrix. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab2d531d4d3d3b95aa9b52ab3c0cbcebd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">&#9670;&nbsp;</a></span>generic_cst()</h2>
+<a id="ac1c0b36ab00a1194dd6d154f1d1bea96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c0b36ab00a1194dd6d154f1d1bea96">&#9670;&nbsp;</a></span>generic_cst()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +194,19 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Pu</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -342,8 +366,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a288d2ef38bbd6a7bd1a679248cd8145b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a288d2ef38bbd6a7bd1a679248cd8145b">&#9670;&nbsp;</a></span>setConstraintMatrix()</h2>
+<a id="aa2d67900b471443a9ff1ebec0c1595f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d67900b471443a9ff1ebec0c1595f6">&#9670;&nbsp;</a></span>setConstraintMatrix() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,8 +378,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void generic_cst::setConstraintMatrix </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Pu</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -374,12 +397,40 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classjntPosCst.html#a19ae3367aa65d9b12946310f700e6409">jntPosCst</a>, <a class="el" href="classjntVelCst.html#a8df14109328a0ef7cb681a7840fe7ce5">jntVelCst</a>, and <a class="el" href="classcartVelCst.html#a184eac9398f58c5ed75d4ded85f60fc8">cartVelCst</a>.</p>
+<p>Reimplemented in <a class="el" href="classjntPosCst.html#ab39e6054dd5dc590d3e3108a967e7b96">jntPosCst</a>, and <a class="el" href="classjntVelCst.html#a9da0b0cb9d55df997ae2a790754e2f76">jntVelCst</a>.</p>
 
 </div>
 </div>
-<a id="a98a39c0f4393400240d6ddba3859babe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98a39c0f4393400240d6ddba3859babe">&#9670;&nbsp;</a></span>setLowerBound()</h2>
+<a id="ab54855f6d5bf41da00c178ee2da05f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54855f6d5bf41da00c178ee2da05f39">&#9670;&nbsp;</a></span>setConstraintMatrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void generic_cst::setConstraintMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Jacobian</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classcartVelCst.html#a184eac9398f58c5ed75d4ded85f60fc8">cartVelCst</a>.</p>
+
+</div>
+</div>
+<a id="a2abe1560af7edcf43afe6368611323ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abe1560af7edcf43afe6368611323ec">&#9670;&nbsp;</a></span>setLowerBound() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,18 +442,8 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual void generic_cst::setLowerBound </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -421,12 +462,50 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classjntPosCst.html#a5bf1b57c57d7ccfbc68bed63803f8742">jntPosCst</a>, <a class="el" href="classjntVelCst.html#a87596e3742c408bf01f307aab873b906">jntVelCst</a>, and <a class="el" href="classcartVelCst.html#a5780fd2fb80be7fe1c66e4eb56b9b447">cartVelCst</a>.</p>
+<p>Reimplemented in <a class="el" href="classjntPosCst.html#a822cffa5969c2a3b5822699236aca7e1">jntPosCst</a>, and <a class="el" href="classjntVelCst.html#a387c9f7b65755434fe534d09e7cc8c08">jntVelCst</a>.</p>
 
 </div>
 </div>
-<a id="ae9fd42a8ba4b49c87e7e0959621b0e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9fd42a8ba4b49c87e7e0959621b0e31">&#9670;&nbsp;</a></span>setUpperBound()</h2>
+<a id="a98d8b6499130bb833ad515bee7a49b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d8b6499130bb833ad515bee7a49b4a">&#9670;&nbsp;</a></span>setLowerBound() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void generic_cst::setLowerBound </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>robot_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Jacobian</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classcartVelCst.html#a5780fd2fb80be7fe1c66e4eb56b9b447">cartVelCst</a>.</p>
+
+</div>
+</div>
+<a id="a5e40d8debbebf764f4d82b46dc979956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e40d8debbebf764f4d82b46dc979956">&#9670;&nbsp;</a></span>setUpperBound() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,18 +517,8 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual void generic_cst::setUpperBound </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -468,12 +537,50 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classjntPosCst.html#a0cdbc07f37c460d6716be3e565a44ce4">jntPosCst</a>, <a class="el" href="classjntVelCst.html#a41db6da231f399dc97144038b1a4e96f">jntVelCst</a>, and <a class="el" href="classcartVelCst.html#aea25af284486841a8cc9dee140601398">cartVelCst</a>.</p>
+<p>Reimplemented in <a class="el" href="classjntPosCst.html#a3a6b3e628a7288861046ebd0216f6932">jntPosCst</a>, and <a class="el" href="classjntVelCst.html#a614af8e8a7464d5dfcb123773fc3cd03">jntVelCst</a>.</p>
 
 </div>
 </div>
-<a id="a892ed6bb2f07479b06554e420159f565"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a892ed6bb2f07479b06554e420159f565">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a67fc5466e30b92506e63e1a849fd0ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fc5466e30b92506e63e1a849fd0ebd">&#9670;&nbsp;</a></span>setUpperBound() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void generic_cst::setUpperBound </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>robot_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Jacobian</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classcartVelCst.html#aea25af284486841a8cc9dee140601398">cartVelCst</a>.</p>
+
+</div>
+</div>
+<a id="a2b572887603fbf016c12535c87b9a709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b572887603fbf016c12535c87b9a709">&#9670;&nbsp;</a></span>update() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,24 +592,8 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual void generic_cst::update </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>robot_state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>robot_state</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Pu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -522,7 +613,45 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classjntPosCst.html#aeae39f24d21ed818bafa4d18ec825eb4">jntPosCst</a>, <a class="el" href="classjntVelCst.html#aedea1e3a55e1fec81bf7a06a23dc2cda">jntVelCst</a>, and <a class="el" href="classcartVelCst.html#aab53e5b7c8c2ec3c23a54a5f48fb6e6c">cartVelCst</a>.</p>
+<p>Reimplemented in <a class="el" href="classjntPosCst.html#afdfcde815993440d1eec2049be1778f2">jntPosCst</a>, and <a class="el" href="classjntVelCst.html#aba7ebba614b2f51b7a1c31c334c2b80e">jntVelCst</a>.</p>
+
+</div>
+</div>
+<a id="a3dbad6abae0eb61d062cabf34d831a19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dbad6abae0eb61d062cabf34d831a19">&#9670;&nbsp;</a></span>update() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void generic_cst::update </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>robot_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Jacobian</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classcartVelCst.html#a4e82535fc45c2a437f2cc76ae1cecdb4">cartVelCst</a>.</p>
 
 </div>
 </div>
@@ -714,6 +843,50 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int generic_cst::n_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4f58cd6a0bb3d76388484f38b3c38f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f58cd6a0bb3d76388484f38b3c38f1">&#9670;&nbsp;</a></span>Pu_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd generic_cst::Pu_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2588e79ab7ca72e596c6ec220924d341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2588e79ab7ca72e596c6ec220924d341">&#9670;&nbsp;</a></span>Px_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd generic_cst::Px_</td>
         </tr>
       </table>
   </td>

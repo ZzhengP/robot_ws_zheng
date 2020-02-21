@@ -5,6 +5,8 @@
 #include "constraint/RosJointAccCst.h"
 #include "constraint/RosJointVelCst.h"
 #include "constraint/RosJointPosCst.h"
+#include "constraint/RosCartVelCst.h"
+#include "constraint/RosAvoidanceCst.h"
 #include "visualization/RosMarkers.h"
 #include "sepPlane/sepPlane.h"
 #include "solver/lpsolve.h"
@@ -36,9 +38,10 @@
 #include <boost/shared_ptr.hpp>
 #include "glpk.h"
 #include <iostream>
-
+#include <math.h>
 using namespace  std;
 using namespace qpOASES;
+using namespace  plane;
 const double pi = 3.1415927;
 
 
@@ -51,16 +54,18 @@ int main(int argc, char **argv)
     ros::init(argc,argv,"panda_safety_controller");
     ros::NodeHandle n;
 
-    double dt(0.02);
+    double dt(0.05);
     // load robot's kinematic dynamic description
     const std::string& panda_urdf = "/home/zheng/robot_ws_zheng/src/franka_description/robots/panda_arm.urdf";
 
     // set robot's dof and predictive step
-    const int N=1, ndof = 7;
+    const int N=2, ndof = 7;
     KDL::JntArray panda_q_init(ndof), panda_dotq_init(ndof),panda_q_des(ndof), panda_q_des_back(ndof);
 
     // initialize robot's joint position and velocity according to roslaunch initialization
-    panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
+    //panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
+    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
+
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
     // initialize robot's kinematic class
@@ -69,17 +74,21 @@ int main(int argc, char **argv)
     pandaArm.init(panda_q_init.data, panda_dotq_init.data, N);
 
     // panda's end-effector location and set up desired frame
-    KDL::Frame des_frame, back_des_frame, panda_ee_frame, panda_des_frame;
+    KDL::Frame des_frame, back_des_frame, panda_ee_frame, panda_des_frame, panda_obs_frame;
     KDL::Frame forearm, elbow, base_link;
-    panda_ee_frame = pandaArm.getSegmentPosition(7);
+    panda_obs_frame = pandaArm.getSegmentPosition(7);
+    panda_ee_frame = pandaArm.getSegmentPosition(8);
     Eigen::Vector3d ZYX_angle, panda_ZYX_angle;
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
+    panda_obs_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
     forearm = pandaArm.getSegmentPosition(3);
     base_link = pandaArm.getSegmentPosition(1);
-    panda_des_frame.p[0] = 0.5 ;
-    panda_des_frame.p[1] = 0.2 ;
-    panda_des_frame.p[2] = 0.5 ;
-//    panda_des_frame.p[0] = panda_ee_frame.p[0] ;
+
+
+    panda_des_frame.p[0] = 0.470808;
+    panda_des_frame.p[1] = -0.3 ;
+    panda_des_frame.p[2] = 0.517842 ;
+//    panda_des_frame.p[0] = 0.4 ;
 //    panda_des_frame.p[1] = panda_ee_frame.p[1] ;
 //    panda_des_frame.p[2] = panda_ee_frame.p[2] ;
     panda_des_frame.M = panda_des_frame.M;
@@ -90,19 +99,19 @@ int main(int argc, char **argv)
     rviz_visual_tools::RvizVisualToolsPtr cubeObstacleMarkers;
     rviz_visual_tools::colors color = rviz_visual_tools::RED;
     rviz_visual_tools::colors color2 = rviz_visual_tools::CYAN;
-
+    rviz_visual_tools::colors colorPlane = rviz_visual_tools::TRANSLUCENT_DARK;
     cubeObstacleMarkers.reset(new rviz_visual_tools::RvizVisualTools("panda_link0","/simpleCube"));
-
     // define cube location (we suppose this is only a point)
-    geometry_msgs::Pose cubeLocation;
+    Eigen::Vector3d cube ;
+    geometry_msgs::Pose cubeLocation, forearmLocation;
     cubeLocation.position.x = 0.5;
-    cubeLocation.position.y = 0.1;
+    cubeLocation.position.y = 0.0;
 //    cubeLocation.position.z = forearm.p.z();
-    cubeLocation.position.z = 0.2;
-
+    cubeLocation.position.z = 0.517842;
+    cube << cubeLocation.position.x, cubeLocation.position.y, cubeLocation.position.z;
     // define cube's size (x,y,z)
     Eigen::Vector3d obsSize;
-    obsSize << 0.1,0.1,0.1;
+    obsSize << 0.05,0.05,0.05;
     Eigen::MatrixXd obsVertices, obsVerticesAugmented;
     obsVertices.resize(3,1);
     obsVerticesAugmented.resize(3,N);
@@ -116,7 +125,7 @@ int main(int argc, char **argv)
         obsVerticesAugmented.block(0,i,3,1) = obsVertices;
     }
     // define robot's vertices to be controlled (only two points)
-    // We choose the base points, forearm and end-effcotor, initialized these
+    // We choose only the end-effector position with a augmented
     std::vector<Eigen::MatrixXd> robotVertices, robotVerticesAugmented  ;
     robotVertices.resize(1);
     for (int i(0); i<robotVertices.size();i++){
@@ -144,16 +153,17 @@ int main(int argc, char **argv)
     std::cout <<"  robotVerticesAugmented :\n " << robotVerticesAugmented[0] << std::endl;
     // put vertices into ros msg to visualize them in rviz
     geometry_msgs::PoseArray robotVerticesPose;
-    robotVerticesPose.poses.resize(1);
+    robotVerticesPose.poses.resize(2);
 
     robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
     robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
     robotVerticesPose.poses[0].position.z = panda_ee_frame.p.z();
-//    robotVerticesPose.poses[1].position.x = forearm.p.x();
-//    robotVerticesPose.poses[1].position.y = forearm.p.y();
-//    robotVerticesPose.poses[1].position.z = forearm.p.z();
+    robotVerticesPose.poses[1].position.x = forearm.p.x();
+    robotVerticesPose.poses[1].position.y = forearm.p.y();
+    robotVerticesPose.poses[1].position.z = forearm.p.z();
 
     // ------------------------------------   Initialize plane  ------------------------------------------
+
     int nbrRobotPart = 1, nbrObsPart=1;
 
     Planes plane(N,nbrRobotPart,nbrObsPart,robotVertices,obsVertices);
@@ -161,14 +171,18 @@ int main(int argc, char **argv)
     singlePlane.resize(5);
     singlePlane2.resize(5);
     double x_width = 2, y_width = 2;
-
+ std::cout <<FYEL("here  : \n") << std::endl;
     Planes::PlaneData planedata,planedataIni ;
     planedata = plane.getPlanes();
+
+
+
     singlePlane << planedata.planeLocation[0].block(0,0,5,1);
     planedataIni = planedata;
+
 //    singlePlane2 << planedata.planeLocation[1].block(0,0,5,1);
     // ------------------------------------   Initialize Lps solvers  ------------------------------------------
-
+    std::cout <<FYEL("here  : \n") << std::endl;
     int Nv = 5, Nc = 8;
     Eigen::VectorXd lpSolution;
     lpSolution.resize(5);
@@ -176,12 +190,11 @@ int main(int argc, char **argv)
     lp->setCost();
     lp->setRowConstraint();
 
-
     // ------------------------------------   Initialize MPC  ------------------------------------------
     Eigen::VectorXd optimalSolution;
 
     // Define MPC task
-    Eigen::VectorXd pandaState, qHorizon;
+    Eigen::VectorXd pandaState, q_horizon;
     bool panda_ok;
     MPC_Task pandaTask(N,1,0.001,ndof,dt, "panda");
     panda_ok = pandaTask.init();
@@ -203,7 +216,7 @@ int main(int argc, char **argv)
 
     optimalSolution.resize(ndof*N);
     optimalSolution.setZero();
-    qHorizon.resize(ndof*N);
+    q_horizon.resize(ndof*N);
 
     Eigen::MatrixXd jacobianHorizon;
     jacobianHorizon.resize(N*6, N*ndof);
@@ -218,67 +231,103 @@ int main(int argc, char **argv)
     Eigen::MatrixXd  stateA, stateB;
     stateA = pandaTask.getStateA();
     stateB = pandaTask.getStateB();
-    pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
-    qHorizon = pandaPx*pandaState + pandaPu*optimalSolution;
+    q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
+    pandaArm.setJointHorizon(q_horizon);
+    q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
+
+    pandaArm.computeJacobianHorz(q_horizon);
+    jacobianHorizon = pandaArm.getJacobianHorz();
 
     // define mpc constraints
-    int Cst = 0;
-    Eigen::VectorXd ddqMin, ddqMax, ddqLb, ddqUb, dqMin, dqMax, qMin, qMax;
-    Eigen::MatrixXd ddqC;
+    Eigen::VectorXd ddqMin, ddqMax, ddqLb, ddqUb, dqMin, dqMax, qMin, qMax, vMax, vMin;
+    std::vector<constraintData> constraintVectorData;
+
+
     ddqMin.resize(N*ndof), ddqMax.resize(N*ndof);
-    ddqLb.resize(N*ndof), ddqUb.resize(N*ndof);
-    ddqC.resize(N*ndof, N*ndof), ddqC.setIdentity();
-    dqMin.resize(N*ndof), dqMax.resize(N*ndof);
     qMin.resize(N*ndof), qMax.resize(N*ndof);
-    ddqMin.setConstant(-5);
-    ddqMax.setConstant(5);
-    dqMin.setConstant(-10);
-    dqMax.setConstant(10);
-    qMin.setConstant(-pi);
-    qMax.setConstant(pi);
+    qMin.setConstant(-3.14);
+    qMax.setConstant(3.14);
+
+    dqMin.resize(N*ndof);
+    dqMax.resize(N*ndof);
+    dqMin.setConstant(-0.5);
+    dqMax.setConstant(0.5);
+
+    jntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
+    jointPosCst.setLimit(qMin,qMax);
+    jointPosCst.setLowerBound(pandaState);
+    jointPosCst.setUpperBound(pandaState);
+    jointPosCst.setConstraintMatrix();
+    constraintVectorData.push_back(jointPosCst.getConstraintData());
+
+    jntVelCst jointVelCst(ndof,N,dt, "jointVelCst",pandaPxdq,pandaPudq);
+    jointVelCst.setLimit(dqMin,dqMax);
+    jointVelCst.setLowerBound(pandaState);
+    jointVelCst.setUpperBound(pandaState);
+    jointVelCst.setConstraintMatrix();
+    constraintVectorData.push_back(jointVelCst.getConstraintData());
 
     // Define joint acceleration limit
-    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst");
+    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst",pandaPx,pandaPu);
     jnt_acc_cst.setLimit(ddqMin,ddqMax);
 
+    Eigen::VectorXd cartVelMin, cartVelMax, dq, dq_horizon ;
+    cartVelMin.resize(6*N);
+    cartVelMax.resize(6*N);
 
-    // Define joint velocity limit
-    jntVelCst jnt_vel_cst(ndof,N,dt, "jointVelCst");
-    jnt_vel_cst.setLimit(dqMin, dqMax);
-    jnt_vel_cst.setLowerBound(pandaState,pandaPxdq);
-    jnt_vel_cst.setUpperBound(pandaState,pandaPxdq);
-    jnt_vel_cst.setConstraintMatrix(pandaPudq);
+    cartVelMin.setConstant(-0.2);
+    cartVelMax.setConstant(0.2);
 
+    dq.resize(ndof);
+    dq_horizon.resize(ndof*N);
+    q_horizon.resize(ndof*N);
+    Eigen::MatrixXd Jacobian, C;
+    dq_horizon = pandaPxdq*pandaState + pandaPudq*optimalSolution;
+    pandaArm.setJointVelHorizon(dq_horizon);
+    pandaArm.computeJacobian();
+    dq_horizon = pandaArm.getdqEnlarged();
+    Jacobian.resize(6,7);
+    Jacobian = pandaArm.getJacobian().data;
+    dq = pandaArm.getJointVel().data;
+
+
+    cartVelCst cartesianVelCst(ndof,N,dt,"cartesienVelCst",pandaPxdq,pandaPudq);
+    cartesianVelCst.setLimit(cartVelMin,cartVelMax);
+    cartesianVelCst.setLowerBound(dq_horizon,jacobianHorizon);
+    cartesianVelCst.setUpperBound(dq_horizon,jacobianHorizon);
+    cartesianVelCst.setConstraintMatrix(jacobianHorizon);
+//    constraintVectorData.push_back(cartesianVelCst.getConstraintData());
+
+    double dsafe =0.1;
+    ObsAvoidanceCSt obsAvoidanceCst(ndof,N,dt,dsafe,"ObsAvoidanceCOnstra",pandaPx,pandaPu);
+    obsAvoidanceCst.setLowerBound();
+    obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
+    constraintVectorData.push_back(obsAvoidanceCst.getConstraintData());
+     obsAvoidanceCst.getConstraintData().print();
 
      // ------------------------------------   Initialize qpOASES solver  ------------------------------------------
 
-
-    // Define QP solver
-    // compute the total number of constraint
-    unsigned int cstNbr = 0 ;
-
-
-    Eigen::MatrixXd H,cstA ;
+    Eigen::MatrixXd H ;
     H.resize(N*ndof,N*ndof);
-    Eigen::VectorXd g, lb, ub, lbA, ubA;
-    g.resize(N*ndof), lb.resize(N*ndof), ub.resize(N*ndof);
+    Eigen::VectorXd g, lb, ub;
+    g.resize(N*ndof);
+    lb.resize(N*ndof);
+    ub.resize(N*ndof);
+
     pandaTask.computeHandg(jacobianHorizon,pandaState,qHorizonDes);
     H = pandaTask.getMatrixH();
     g = pandaTask.getVectorg();
-    cstA.resize(ndof*N,ndof);
-    cstA = pandaPudq;
-    lbA.resize(ndof*N);
-    ubA.resize(ndof*N);
-    lbA = dqMin - pandaPxdq*pandaState;
-    ubA = dqMax - pandaPxdq*pandaState;
-    lb.setConstant(-5);
-    ub.setConstant(5);
-    // ndof*N constraint here, because only variable associated to velocity
-    mpc_solve qpSolver(N, ndof,ndof*N);
 
-    qpSolver.setDefaultOptions();
-    qpSolver.initData(H,g,lb,ub);
-//    qpSolver.initData(H,g,lb,ub);
+
+    lb.setConstant(-10);
+    ub.setConstant(10);
+
+    mpc_solve qptest(1,ndof*N,2*ndof*N+obsAvoidanceCst.getConstraintData().upBound_.size());
+    qptest.initData(H,g,lb,ub);
+    qptest.constructProblem(constraintVectorData,H,g);
+    qptest.setDefaultOptions();
+    std::cout <<" here :\n " << std::endl;
+
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
 
     ros::Rate loop_rate(1000);
@@ -291,62 +340,74 @@ int main(int argc, char **argv)
     ros::Publisher panda_joint_state_5_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint5_position_controller/command", 1000);
     ros::Publisher panda_joint_state_6_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint6_position_controller/command", 1000);
     ros::Publisher panda_joint_state_7_pub = n.advertise<std_msgs::Float64>("/panda/panda_joint7_position_controller/command", 1000);
+
+    bool is_solved;
+    int ite=0;
+    double distance_safety = 0.;
+    std::ofstream myfile;
+    myfile.open ("/home/zheng/Bureau/distance.txt");
     while(ros::ok())
     {
-
-        pandaState = pandaArm.getRobotState();
-        pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
-        std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
-        qHorizon = pandaArm.getqEnlarged();
-
-        pandaArm.computeJacobianHorz(qHorizon);
-
-        jacobianHorizon = pandaArm.getJacobianHorz();
-
-
         pandaTask.computeHandg(jacobianHorizon,pandaState,qHorizonDes);
         H = pandaTask.getMatrixH();
         g = pandaTask.getVectorg();
 
 
-        jnt_vel_cst.setLowerBound(pandaState,pandaPxdq);
-        jnt_vel_cst.setUpperBound(pandaState,pandaPxdq);
+        pandaArm.computeJacobian();
+        Jacobian = pandaArm.getJacobian().data;
+        dq = pandaArm.getJointVel().data;
 
-        lbA = dqMin - pandaPxdq*pandaState;
-        ubA = dqMax - pandaPxdq*pandaState;
-//        qpSolver.solve(H,g,lb,ub);
-        qpSolver.solve();
-        optimalSolution = qpSolver.getSolution();
+        pandaArm.computeJacobianHorz(q_horizon);
+        jacobianHorizon = pandaArm.getJacobianHorz();
 
-        pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
+        jointPosCst.update(pandaState);
+        jointVelCst.update(pandaState);
+//        cartesianVelCst.update(dq_horizon,jacobianHorizon);
+        std::cout <<" here :\n " << std::endl;
+        obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
 
-         std_msgs::Float64 v1,v2,v3,v4,v5,v6 ; // robot joint's velocity
-        std_msgs::Float64 panda_t1,panda_t2,panda_t3,panda_t4,panda_t5,panda_t6, panda_t7 ; // robot joint's positions
+        constraintVectorData[0] = jointPosCst.getConstraintData();
+        constraintVectorData[1] = jointVelCst.getConstraintData();
+        constraintVectorData[2] =  obsAvoidanceCst.getConstraintData();
 
-        panda_t1.data = pandaState[0];
-        panda_t2.data = pandaState[1];
-        panda_t3.data = pandaState[2];
-        panda_t4.data = pandaState[3];
-        panda_t5.data = pandaState[4];
-        panda_t6.data = pandaState[5];
-        panda_t7.data = pandaState[6];
+        qptest.constructProblem(constraintVectorData,H,g);
+        is_solved = qptest.solve();
+
+        if (!is_solved){
+            std::cout <<" qp failed :\n" << std::endl;
+            std::cout <<" iteration :\n" << ite << std::endl;
+            optimalSolution.setZero();
+            std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
+//            break;
+
+        }else {
+                optimalSolution = qptest.getSolution();
+}
+
+        q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
+        pandaArm.setJointHorizon(q_horizon);
+
+        dq_horizon = pandaPxdq*pandaState + pandaPudq*optimalSolution;
+        pandaArm.setJointVelHorizon(dq_horizon);
+
+        std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
+        q_horizon = pandaArm.getqEnlarged();
+        dq_horizon = pandaArm.getdqEnlarged();
 
 
-        panda_joint_state_1_pub.publish(panda_t1);
-        panda_joint_state_2_pub.publish(panda_t2);
-        panda_joint_state_3_pub.publish(panda_t3);
-        panda_joint_state_4_pub.publish(panda_t4);
-        panda_joint_state_5_pub.publish(panda_t5);
-        panda_joint_state_6_pub.publish(panda_t6);
-        panda_joint_state_7_pub.publish(panda_t7);
 
-        panda_ee_frame = pandaArm.getSegmentPosition(7);
+        panda_ee_frame = pandaArm.getSegmentPosition(8);
         forearm = pandaArm.getSegmentPosition(3);
         base_link = pandaArm.getSegmentPosition(1);
         robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
         robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
         robotVerticesPose.poses[0].position.z = panda_ee_frame.p.z();
+        robotVerticesPose.poses[1].position.x = forearm.p.x();
+        robotVerticesPose.poses[1].position.y = forearm.p.y();
+        robotVerticesPose.poses[1].position.z = forearm.p.z();
         cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[0],obsSize[0],obsSize[1],obsSize[2]);
+//        cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[1],obsSize[0],obsSize[1],obsSize[2]);
+
 //    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[1],obsSize[0],obsSize[1],obsSize[2]);
 //    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[2],obsSize[0],obsSize[1],obsSize[2]);
         cubeObstacleMarkers->publishCuboid(cubeLocation,obsSize[0],obsSize[1],obsSize[2],color);
@@ -367,7 +428,8 @@ int main(int argc, char **argv)
             for (int j(0);j<nbrObsPart;j++){
                 for (int k(0); k < N-1; k++){
 
-                lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,3*k,3,6),obsVerticesAugmented.block(0,0,3,2), planedataIni.planeLocation[i].block(0,k,3,1));
+//                lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,3*k,3,6),obsVerticesAugmented.block(0,0,3,2), planedataIni.planeLocation[i].block(0,k,3,1));
+                lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,3*k,3,6),obsVerticesAugmented.block(0,0,3,2), planedata.planeLocation[i].block(0,k,3,1));
                 lp->setEqualityConstraintMatrix();
                 lp->loadEqualityMatrix();
 
@@ -389,18 +451,43 @@ int main(int argc, char **argv)
 
 
 
-        cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],color,x_width,y_width);
+        cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],colorPlane,x_width,y_width);
 //        cubeObstacleMarkers->publishABCDPlane(0.62,-0.62,0.478,-.61,color,x_width,y_width);
 
         cubeObstacleMarkers->trigger();
         cubeObstacleMarkers->deleteAllMarkers();
+        Eigen::Vector3d ee_pose ;
+        ee_pose << panda_ee_frame.p.x(), panda_ee_frame.p.y(), panda_ee_frame.p.z();
+        distance_safety = sqrt((ee_pose.transpose() - cube.transpose()) * (ee_pose - cube));
+        myfile << distance_safety*100 - 5  << '\n';
+        pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
         pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
+         std_msgs::Float64 v1,v2,v3,v4,v5,v6 ; // robot joint's velocity
+        std_msgs::Float64 panda_t1,panda_t2,panda_t3,panda_t4,panda_t5,panda_t6, panda_t7 ; // robot joint's positions
+
+        panda_t1.data = pandaState[0];
+        panda_t2.data = pandaState[1];
+        panda_t3.data = pandaState[2];
+        panda_t4.data = pandaState[3];
+        panda_t5.data = pandaState[4];
+        panda_t6.data = pandaState[5];
+        panda_t7.data = pandaState[6];
+
+
+        panda_joint_state_1_pub.publish(panda_t1);
+        panda_joint_state_2_pub.publish(panda_t2);
+        panda_joint_state_3_pub.publish(panda_t3);
+        panda_joint_state_4_pub.publish(panda_t4);
+        panda_joint_state_5_pub.publish(panda_t5);
+        panda_joint_state_6_pub.publish(panda_t6);
+        panda_joint_state_7_pub.publish(panda_t7);
 
         ros::spinOnce();
         loop_rate.sleep();
     }
+
     std::cout<<"panda joint final is : \n" << pandaArm.getRobotState().segment(0,ndof) << std::endl;
-    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition(7).p << std::endl;
+    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition(8).p << std::endl;
     std::cout<<"Calcul donné par KDL est :\n " << panda_q_des.data << std::endl;
     return 0;
 }

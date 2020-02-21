@@ -76,15 +76,15 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classjntAccCst.html#aeac19a4c8b7f0c39a934b2b91febd3fc">   11</a></span>&#160;    <a class="code" href="classjntAccCst.html#aeac19a4c8b7f0c39a934b2b91febd3fc">jntAccCst</a>(<span class="keywordtype">int</span> ndof, <span class="keywordtype">int</span> N,<span class="keywordtype">double</span> dt, std::string name) : <a class="code" href="classgeneric__cst.html">generic_cst</a>(ndof, N,dt, name) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">   15</a></span>&#160;     <a class="code" href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">~jntAccCst</a>(){}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classjntAccCst.html#a27941a9261d6d8dba3dd70316c93c6e9">   11</a></span>&#160;    <a class="code" href="classjntAccCst.html#a27941a9261d6d8dba3dd70316c93c6e9">jntAccCst</a>(<span class="keywordtype">int</span> ndof, <span class="keywordtype">int</span> N,<span class="keywordtype">double</span> dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        : <a class="code" href="classgeneric__cst.html">generic_cst</a>(ndof, N,dt, name, Px, Pu) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">   16</a></span>&#160;     <a class="code" href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">~jntAccCst</a>(){}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">setLimit</a>(<span class="keyword">const</span> Eigen::VectorXd &amp;min, <span class="keyword">const</span> Eigen::VectorXd &amp;max){</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">setLimit</a>(<span class="keyword">const</span> Eigen::VectorXd &amp;min, <span class="keyword">const</span> Eigen::VectorXd &amp;max){</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;         <a class="code" href="classgeneric__cst.html#ac6a530ff831b44bd7a40eb266dbc8950">min_</a> = min ;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;         <a class="code" href="classgeneric__cst.html#a250e68dc92ec3ddb5ba310e3800b6b7b">max_</a> = max;</div>
@@ -97,13 +97,13 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassjntAccCst_html"><div class="ttname"><a href="classjntAccCst.html">jntAccCst</a></div><div class="ttdoc">Acceleration constraint.</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:6</div></div>
-<div class="ttc" id="aclassgeneric__cst_html"><div class="ttname"><a href="classgeneric__cst.html">generic_cst</a></div><div class="ttdoc">The generic constraint class  Which is defined by a lower bound, upper bound and constraint matrix.</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:18</div></div>
-<div class="ttc" id="aclassjntAccCst_html_aeac19a4c8b7f0c39a934b2b91febd3fc"><div class="ttname"><a href="classjntAccCst.html#aeac19a4c8b7f0c39a934b2b91febd3fc">jntAccCst::jntAccCst</a></div><div class="ttdeci">jntAccCst(int ndof, int N, double dt, std::string name)</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:11</div></div>
-<div class="ttc" id="aclassgeneric__cst_html_ac6a530ff831b44bd7a40eb266dbc8950"><div class="ttname"><a href="classgeneric__cst.html#ac6a530ff831b44bd7a40eb266dbc8950">generic_cst::min_</a></div><div class="ttdeci">Eigen::VectorXd min_</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:90</div></div>
+<div class="ttc" id="aclassgeneric__cst_html"><div class="ttname"><a href="classgeneric__cst.html">generic_cst</a></div><div class="ttdoc">The generic constraint class  Which is defined by a lower bound, upper bound and constraint matrix.</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:25</div></div>
+<div class="ttc" id="aclassgeneric__cst_html_ac6a530ff831b44bd7a40eb266dbc8950"><div class="ttname"><a href="classgeneric__cst.html#ac6a530ff831b44bd7a40eb266dbc8950">generic_cst::min_</a></div><div class="ttdeci">Eigen::VectorXd min_</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:102</div></div>
 <div class="ttc" id="aRosGenericCst_8h_html"><div class="ttname"><a href="RosGenericCst_8h.html">RosGenericCst.h</a></div></div>
-<div class="ttc" id="aclassjntAccCst_html_a3e02ac0c53721b048dbfb57f863587b9"><div class="ttname"><a href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">jntAccCst::setLimit</a></div><div class="ttdeci">void setLimit(const Eigen::VectorXd &amp;min, const Eigen::VectorXd &amp;max)</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:18</div></div>
-<div class="ttc" id="aclassjntAccCst_html_a5668035dd9d1c66f08be9dc8d887b64d"><div class="ttname"><a href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">jntAccCst::~jntAccCst</a></div><div class="ttdeci">~jntAccCst()</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:15</div></div>
-<div class="ttc" id="aclassgeneric__cst_html_a250e68dc92ec3ddb5ba310e3800b6b7b"><div class="ttname"><a href="classgeneric__cst.html#a250e68dc92ec3ddb5ba310e3800b6b7b">generic_cst::max_</a></div><div class="ttdeci">Eigen::VectorXd max_</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:90</div></div>
+<div class="ttc" id="aclassjntAccCst_html_a3e02ac0c53721b048dbfb57f863587b9"><div class="ttname"><a href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">jntAccCst::setLimit</a></div><div class="ttdeci">void setLimit(const Eigen::VectorXd &amp;min, const Eigen::VectorXd &amp;max)</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:19</div></div>
+<div class="ttc" id="aclassjntAccCst_html_a27941a9261d6d8dba3dd70316c93c6e9"><div class="ttname"><a href="classjntAccCst.html#a27941a9261d6d8dba3dd70316c93c6e9">jntAccCst::jntAccCst</a></div><div class="ttdeci">jntAccCst(int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:11</div></div>
+<div class="ttc" id="aclassjntAccCst_html_a5668035dd9d1c66f08be9dc8d887b64d"><div class="ttname"><a href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">jntAccCst::~jntAccCst</a></div><div class="ttdeci">~jntAccCst()</div><div class="ttdef"><b>Definition:</b> RosJointAccCst.h:16</div></div>
+<div class="ttc" id="aclassgeneric__cst_html_a250e68dc92ec3ddb5ba310e3800b6b7b"><div class="ttname"><a href="classgeneric__cst.html#a250e68dc92ec3ddb5ba310e3800b6b7b">generic_cst::max_</a></div><div class="ttdeci">Eigen::VectorXd max_</div><div class="ttdef"><b>Definition:</b> RosGenericCst.h:102</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

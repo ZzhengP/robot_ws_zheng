@@ -39,8 +39,9 @@
 #include "glpk.h"
 #include <iostream>
 #include <fstream>
-
+#include <chrono>
 using namespace qpOASES;
+using namespace  plane;
 const double pi = 3.1415927;
 
 
@@ -53,7 +54,7 @@ int main(int argc, char **argv)
     ros::init(argc,argv,"panda_safety_controller");
     ros::NodeHandle n;
 
-    double dt(0.05);
+    double dt(0.04);
     // load robot's kinematic dynamic description
     const std::string& panda_urdf = "/home/zheng/robot_ws_zheng/src/franka_description/robots/panda_arm.urdf";
 
@@ -118,7 +119,7 @@ int main(int argc, char **argv)
     Eigen::VectorXd optimalSolution;
 
     // Define MPC task
-    Eigen::VectorXd pandaState, qHorizon;
+    Eigen::VectorXd pandaState, q_horizon;
     bool panda_ok;
     MPC_Task pandaTask(N,1,0.001,ndof,dt, "panda");
     panda_ok = pandaTask.init();
@@ -140,7 +141,7 @@ int main(int argc, char **argv)
 
     optimalSolution.resize(ndof*N);
     optimalSolution.setZero();
-    qHorizon.resize(ndof*N);
+    q_horizon.resize(ndof*N);
 
     Eigen::MatrixXd jacobianHorizon;
     jacobianHorizon.resize(N*6, N*ndof);
@@ -155,9 +156,11 @@ int main(int argc, char **argv)
     Eigen::MatrixXd  stateA, stateB;
     stateA = pandaTask.getStateA();
     stateB = pandaTask.getStateB();
-    pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
-    qHorizon = pandaPx*pandaState + pandaPu*optimalSolution;
-    pandaArm.computeJacobianHorz(qHorizon);
+    q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
+    pandaArm.setJointHorizon(q_horizon);
+    q_horizon = pandaArm.getqEnlarged();
+
+    pandaArm.computeJacobianHorz(q_horizon);
     jacobianHorizon = pandaArm.getJacobianHorz();
 
 
@@ -177,53 +180,61 @@ int main(int argc, char **argv)
     dqMin.setConstant(-1);
     dqMax.setConstant(1);
 
-    jntPosCst jointPosCst(ndof,N,dt, "jointPosCst");
+    jntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
     jointPosCst.setLimit(qMin,qMax);
-    jointPosCst.setLowerBound(pandaState,pandaPx);
-    jointPosCst.setUpperBound(pandaState,pandaPx);
-    jointPosCst.setConstraintMatrix(pandaPu);
+    jointPosCst.setLowerBound(pandaState);
+    jointPosCst.setUpperBound(pandaState);
+    jointPosCst.setConstraintMatrix();
     constraintVectorData.push_back(jointPosCst.getConstraintData());
 
-    jntVelCst jointVelCst(ndof,N,dt, "jointVelCst");
+    jntVelCst jointVelCst(ndof,N,dt, "jointVelCst",pandaPxdq,pandaPudq);
     jointVelCst.setLimit(dqMin,dqMax);
-    jointVelCst.setLowerBound(pandaState,pandaPxdq);
-    jointVelCst.setUpperBound(pandaState,pandaPxdq);
-    jointVelCst.setConstraintMatrix(pandaPudq);
+    jointVelCst.setLowerBound(pandaState);
+    jointVelCst.setUpperBound(pandaState);
+    jointVelCst.setConstraintMatrix();
     constraintVectorData.push_back(jointVelCst.getConstraintData());
 
 
-    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst");
+    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst",pandaPx,pandaPu);
     jnt_acc_cst.setLimit(ddqMin,ddqMax);
 
 
-    Eigen::VectorXd cartVelMin, cartVelMax, lbC,ubC, dq ;
-    cartVelMin.resize(3*N);
-    cartVelMax.resize(3*N);
+    Eigen::VectorXd cartVelMin, cartVelMax, dq, dq_horizon ;
+    cartVelMin.resize(6*N);
+    cartVelMax.resize(6*N);
 
     cartVelMin.setConstant(-0.5);
     cartVelMax.setConstant(0.5);
-
+    for (int i(0); i << N; i ++ ){
+        cartVelMin.segment((i*N+3),3) << -1,-1,-1;
+        cartVelMax.segment((i*N+3),3) << 1,1,1;
+    }
     dq.resize(ndof);
-    lbC.resize(3);
-    ubC.resize(3);
-
-    Eigen::MatrixXd Jacobian, C;
+    dq_horizon.resize(ndof*N);
+    q_horizon.resize(ndof*N);
+    Eigen::MatrixXd Jacobian;
+    dq_horizon = pandaPxdq*pandaState + pandaPudq*optimalSolution;
+    pandaArm.setJointVelHorizon(dq_horizon);
     pandaArm.computeJacobian();
+    dq_horizon = pandaArm.getdqEnlarged();
     Jacobian.resize(6,7);
     Jacobian = pandaArm.getJacobian().data;
-    C.resize(3,ndof);
     dq = pandaArm.getJointVel().data;
-//    cartVelCst cartesianVelCst(ndof,N,dt,"cartesienVelCst");
-//    cartesianVelCst.setLimit(cartVelMin,cartVelMax);
-//    cartesianVelCst.setLowerBound(pandaState.tail(ndof),Jacobian.block(0,0,3,ndof));
-//    cartesianVelCst.setUpperBound(pandaState.tail(ndof),Jacobian.block(0,0,3,ndof));
-//    cartesianVelCst.setConstraintMatrix(Jacobian.block(0,0,3,ndof));
-    constraintData cartVelCst;
-    cartVelCst.name_ = "cartesienVelCst" ;
-    cartVelCst.lowBound_ = (cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt;
-    cartVelCst.upBound_ = (cartVelMax - Jacobian.block(0,0,3,ndof)*dq)/dt;
-    cartVelCst.cstMatrix_ = Jacobian.block(0,0,3,ndof);
-    constraintVectorData.push_back(cartVelCst);
+
+
+    cartVelCst cartesianVelCst(ndof,N,dt,"cartesienVelCst",pandaPxdq,pandaPudq);
+    cartesianVelCst.setLimit(cartVelMin,cartVelMax);
+    cartesianVelCst.setLowerBound(dq_horizon,jacobianHorizon);
+    cartesianVelCst.setUpperBound(dq_horizon,jacobianHorizon);
+    cartesianVelCst.setConstraintMatrix(jacobianHorizon);
+//    constraintVectorData.push_back(cartesianVelCst.getConstraintData());
+
+//    constraintData cartVelCst;
+//    cartVelCst.name_ = "cartesienVelCst" ;
+//    cartVelCst.lowBound_ = (cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt;
+//    cartVelCst.upBound_ = (cartVelMax - Jacobian.block(0,0,3,ndof)*dq)/dt;
+//    cartVelCst.cstMatrix_ = Jacobian.block(0,0,3,ndof);
+//    constraintVectorData.push_back(cartesianVelCst.getConstraintData());
 
      // ------------------------------------   Initialize qpOASES solver  ------------------------------------------
 
@@ -247,12 +258,14 @@ int main(int argc, char **argv)
     lb.setConstant(-10);
     ub.setConstant(10);
 
-    // ======================  test of new formulation of constraints ==================================
 
-    mpc_solve qptest(1,ndof*N,2*ndof*N+3*N);
+    mpc_solve qptest(1,ndof*N,2*ndof*N);
     qptest.initData(H,g,lb,ub);
     qptest.constructProblem(constraintVectorData,H,g);
     qptest.setDefaultOptions();
+
+
+    // ------------------------------- Let's start simulation --------------------
     // Test for velocity
     Eigen::VectorXd linear_vel;
     linear_vel.resize(6);
@@ -267,11 +280,6 @@ int main(int argc, char **argv)
     {
 
 //        pandaState = pandaArm.getRobotState();
-        pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
-        std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
-        qHorizon = pandaArm.getqEnlarged();
-
-
 
         pandaTask.computeHandg(jacobianHorizon,pandaState,qHorizonDes);
         H = pandaTask.getMatrixH();
@@ -280,21 +288,43 @@ int main(int argc, char **argv)
 
         pandaArm.computeJacobian();
         Jacobian = pandaArm.getJacobian().data;
-        jointPosCst.update(pandaState,pandaPx,pandaPu);
-        jointVelCst.update(pandaState,pandaPxdq,pandaPudq);
         dq = pandaArm.getJointVel().data;
 
-        cartVelCst.lowBound_ = (cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt;
-        cartVelCst.upBound_ = (cartVelMax - Jacobian.block(0,0,3,ndof)*dq)/dt;
-        cartVelCst.cstMatrix_ = Jacobian.block(0,0,3,ndof);
+        pandaArm.computeJacobianHorz(q_horizon);
+        jacobianHorizon = pandaArm.getJacobianHorz();
 
-        std::cout << "lb cart vel debug :\n" <<(cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt <<std::endl;
+        jointPosCst.update(pandaState);
+        jointVelCst.update(pandaState);
+        cartesianVelCst.update(dq_horizon,jacobianHorizon);
+
+
+//        cartVelCst.lowBound_ = (cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt;
+//        cartVelCst.upBound_ = (cartVelMax - Jacobian.block(0,0,3,ndof)*dq)/dt;
+//        cartVelCst.cstMatrix_ = Jacobian.block(0,0,3,ndof);
+
+//        std::cout << "lbA cart vel debug :\n" <<(cartVelMin - Jacobian.block(0,0,3,ndof)*dq)/dt <<std::endl;
+//        std::cout << "ubA cart vel debug :\n" <<(cartVelMax - Jacobian.block(0,0,3,ndof)*dq)/dt <<std::endl;
+//        std::cout << "A cart vel debug :\n" <<Jacobian.block(0,0,3,ndof) <<std::endl;
+
+//        std::cout << "lbA cart vel  :\n" <<cartesianVelCst.getConstraintData().lowBound_<<std::endl;
+//        std::cout << "ubA cart vel  :\n" <<cartesianVelCst.getConstraintData().upBound_<<std::endl;
+//        std::cout << "A cart vel  :\n" <<cartesianVelCst.getConstraintData().cstMatrix_ <<std::endl;
+
         constraintVectorData[0] = jointPosCst.getConstraintData();
         constraintVectorData[1] = jointVelCst.getConstraintData();
-        constraintVectorData[2] = cartVelCst;
+//        constraintVectorData[2] = cartesianVelCst.getConstraintData();
+
+//        std::cout <<" constraint number \n" << constraintVectorData.size() << std::endl;
+//        for (int i(0); i < constraintVectorData.size(); i++) {
+//                std::cout <<" constraint : " << i << std::endl;
+//                constraintVectorData[i].print();
+//        }
 
         qptest.constructProblem(constraintVectorData,H,g);
+        auto start = std::chrono::high_resolution_clock::now();
         is_solved = qptest.solve();
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
 
         if (!is_solved){
             std::cout <<" qp failed :\n" << std::endl;
@@ -306,13 +336,27 @@ int main(int argc, char **argv)
         }else {
                 optimalSolution = qptest.getSolution();
 }
+        std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
+
+
         linear_vel = Jacobian*pandaState.tail(ndof);
-        pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
+
+        q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
+        pandaArm.setJointHorizon(q_horizon);
+
+        dq_horizon = pandaPxdq*pandaState + pandaPudq*optimalSolution;
+        pandaArm.setJointVelHorizon(dq_horizon);
+
+        q_horizon = pandaArm.getqEnlarged();
+        dq_horizon = pandaArm.getdqEnlarged();
+
 
         myfile<<pandaState.tail(7).transpose()<<'\n' ;
-        myfile2<<optimalSolution.transpose() << '\n'
-              <<"--------------------------------------------------------------------------------------------------------------" << '\n' ;
+//        myfile2<<optimalSolution.transpose() << '\n'
+//              <<"--------------------------------------------------------------------------------------------------------------" << '\n' ;
         myfile3 << linear_vel.transpose() << '\n';
+
+        pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
         pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
         ite++;
     }

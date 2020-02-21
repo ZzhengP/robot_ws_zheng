@@ -97,24 +97,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a16601936208d88958c1d371a800d0189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9393130c51d6771af535e043508b5ac4"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a9393130c51d6771af535e043508b5ac4">getSolution</a> ()</td></tr>
 <tr class="separator:a9393130c51d6771af535e043508b5ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a994cb7aa2a298ff8639797cf4ec43980"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a994cb7aa2a298ff8639797cf4ec43980">lpSolver</a> (int N_horz, int Ndof, int nbrCst)</td></tr>
-<tr class="separator:a994cb7aa2a298ff8639797cf4ec43980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39e8988b69d8f4112113e8d7c00daa1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a39e8988b69d8f4112113e8d7c00daa1a">initData</a> (Eigen::MatrixXd A, Eigen::VectorXd lb, Eigen::VectorXd ub, Eigen::VectorXd lbA, Eigen::VectorXd ubA)</td></tr>
-<tr class="separator:a39e8988b69d8f4112113e8d7c00daa1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fede36b81acd0850c077c66feb4c1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a9fede36b81acd0850c077c66feb4c1ca">computeCost</a> ()</td></tr>
-<tr class="separator:a9fede36b81acd0850c077c66feb4c1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310c95466d4a9a9d67ae8e0a553069bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a310c95466d4a9a9d67ae8e0a553069bc">computeNonDivCst</a> ()</td></tr>
-<tr class="separator:a310c95466d4a9a9d67ae8e0a553069bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d10b4635dbe3204644491ec0e19080d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a1d10b4635dbe3204644491ec0e19080d">computeNormCst</a> (const Eigen::MatrixXd &amp;robotPartielVertices, const Eigen::MatrixXd &amp;obsPartielVertices, const Eigen::MatrixXd &amp;dataPlanePrecedent, double epsilon)</td></tr>
-<tr class="separator:a1d10b4635dbe3204644491ec0e19080d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9cc9d18daab6d5f9a0dd42a5bfc2c3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#aa9cc9d18daab6d5f9a0dd42a5bfc2c3f">Update</a> (const Eigen::MatrixXd &amp;robotPartielVertices, const Eigen::MatrixXd &amp;obsPartielVertices, const Eigen::MatrixXd &amp;dataPlanePrecedent, double epsilon)</td></tr>
-<tr class="separator:aa9cc9d18daab6d5f9a0dd42a5bfc2c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16601936208d88958c1d371a800d0189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a16601936208d88958c1d371a800d0189">solve</a> ()</td></tr>
-<tr class="separator:a16601936208d88958c1d371a800d0189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9393130c51d6771af535e043508b5ac4"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a9393130c51d6771af535e043508b5ac4">getSolution</a> ()</td></tr>
-<tr class="separator:a9393130c51d6771af535e043508b5ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3091f25be2606669c5b82d07a3800414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlpSolver.html#a3091f25be2606669c5b82d07a3800414">setDefaultOptions</a> ()</td></tr>
-<tr class="separator:a3091f25be2606669c5b82d07a3800414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a C++ Eigen-Based wrapp for solving linear programming problem In lp_solve file the problem is formulated is this way: </p>
@@ -123,7 +105,7 @@ Public Member Functions</h2></td></tr>
 </p>
  </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad7b8ceed336c4297d108f78153cd764e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7b8ceed336c4297d108f78153cd764e">&#9670;&nbsp;</a></span>lpSolver() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b8ceed336c4297d108f78153cd764e">&#9670;&nbsp;</a></span>lpSolver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,117 +141,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a994cb7aa2a298ff8639797cf4ec43980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a994cb7aa2a298ff8639797cf4ec43980">&#9670;&nbsp;</a></span>lpSolver() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">lpSolver::lpSolver </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>N_horz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>Ndof</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nbrCst</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9fede36b81acd0850c077c66feb4c1ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fede36b81acd0850c077c66feb4c1ca">&#9670;&nbsp;</a></span>computeCost()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::computeCost </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a310c95466d4a9a9d67ae8e0a553069bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310c95466d4a9a9d67ae8e0a553069bc">&#9670;&nbsp;</a></span>computeNonDivCst()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::computeNonDivCst </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1d10b4635dbe3204644491ec0e19080d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d10b4635dbe3204644491ec0e19080d">&#9670;&nbsp;</a></span>computeNormCst()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::computeNormCst </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>robotPartielVertices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>obsPartielVertices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>dataPlanePrecedent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>epsilon</em> = <code>0.01</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9393130c51d6771af535e043508b5ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9393130c51d6771af535e043508b5ac4">&#9670;&nbsp;</a></span>getSolution() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9393130c51d6771af535e043508b5ac4">&#9670;&nbsp;</a></span>getSolution()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,77 +163,6 @@ Public Member Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9393130c51d6771af535e043508b5ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9393130c51d6771af535e043508b5ac4">&#9670;&nbsp;</a></span>getSolution() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd lpSolver::getSolution </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a39e8988b69d8f4112113e8d7c00daa1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39e8988b69d8f4112113e8d7c00daa1a">&#9670;&nbsp;</a></span>initData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool lpSolver::initData </td>
-          <td>(</td>
-          <td class="paramtype">Eigen::MatrixXd&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::VectorXd&#160;</td>
-          <td class="paramname"><em>lb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::VectorXd&#160;</td>
-          <td class="paramname"><em>ub</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::VectorXd&#160;</td>
-          <td class="paramname"><em>lbA</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::VectorXd&#160;</td>
-          <td class="paramname"><em>ubA</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -457,31 +260,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3091f25be2606669c5b82d07a3800414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3091f25be2606669c5b82d07a3800414">&#9670;&nbsp;</a></span>setDefaultOptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::setDefaultOptions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae7791ce73a71d63ff33fec2e78dacc37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7791ce73a71d63ff33fec2e78dacc37">&#9670;&nbsp;</a></span>setEqualityConstraintMatrix() <span class="overload">[1/2]</span></h2>
 
@@ -535,7 +313,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a16601936208d88958c1d371a800d0189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16601936208d88958c1d371a800d0189">&#9670;&nbsp;</a></span>solve() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a16601936208d88958c1d371a800d0189">&#9670;&nbsp;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,80 +333,13 @@ Public Member Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a16601936208d88958c1d371a800d0189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16601936208d88958c1d371a800d0189">&#9670;&nbsp;</a></span>solve() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::solve </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa9cc9d18daab6d5f9a0dd42a5bfc2c3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9cc9d18daab6d5f9a0dd42a5bfc2c3f">&#9670;&nbsp;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lpSolver::Update </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>robotPartielVertices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>obsPartielVertices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>dataPlanePrecedent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>epsilon</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/<a class="el" href="lpsolve_8h_source.html">lpsolve.h</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/<a class="el" href="lpsolver_8h_source.html">lpsolver.h</a></li>
 <li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/<a class="el" href="lpsolve_8cpp.html">lpsolve.cpp</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/<a class="el" href="lpsolver_8cpp.html">lpsolver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

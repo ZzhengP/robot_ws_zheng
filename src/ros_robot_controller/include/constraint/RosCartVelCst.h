@@ -5,7 +5,8 @@ class cartVelCst: public generic_cst
 {
 public:
 
-    cartVelCst(int ndof, int N,double dt, std::string name): generic_cst(ndof, N, dt, name ) {
+    cartVelCst(int ndof, int N,double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+        : generic_cst(ndof, N, dt, name, Px, Pu ) {
         min_.resize(3*N_);
         max_.resize(3*N_);
         lbA_.resize(3*N_);
@@ -28,15 +29,20 @@ public:
     void setLowerBound(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Jacobian){
 
        lbA_ = (min_ - Jacobian*robot_state)/dt_;
+       cstData_.lowBound_ = lbA_;
+
     }
     void setUpperBound(const Eigen::VectorXd &robot_state,const Eigen::MatrixXd &Jacobian){
 
        ubA_ = (max_ - Jacobian*robot_state)/dt_;
+       cstData_.upBound_ = ubA_;
+
     }
     void setConstraintMatrix(const Eigen::MatrixXd &Jacobian){
         A_ =  Jacobian;
+        cstData_.cstMatrix_ = A_;
     }
-    void update(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Jacobian){
+    void update(const Eigen::VectorXd &robot_state, const Eigen::MatrixXd &Jacobian){
 
         setLowerBound( robot_state, Jacobian);
         setUpperBound(robot_state, Jacobian);

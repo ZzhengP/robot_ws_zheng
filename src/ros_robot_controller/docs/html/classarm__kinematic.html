@@ -148,6 +148,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ac804d74522b1606d31f28f7ee825a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a5ac804d74522b1606d31f28f7ee825a9">setState</a> (const Eigen::VectorXd &amp;q, const Eigen::VectorXd &amp;qd)</td></tr>
 <tr class="memdesc:a5ac804d74522b1606d31f28f7ee825a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">setState  <a href="classarm__kinematic.html#a5ac804d74522b1606d31f28f7ee825a9">More...</a><br /></td></tr>
 <tr class="separator:a5ac804d74522b1606d31f28f7ee825a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03cfd5cd1aceca30a065e028d2e6e6bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a03cfd5cd1aceca30a065e028d2e6e6bf">setJointHorizon</a> (const Eigen::VectorXd &amp;qHorizon)</td></tr>
+<tr class="memdesc:a03cfd5cd1aceca30a065e028d2e6e6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">setJointHorizon  <a href="classarm__kinematic.html#a03cfd5cd1aceca30a065e028d2e6e6bf">More...</a><br /></td></tr>
+<tr class="separator:a03cfd5cd1aceca30a065e028d2e6e6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c10039beaf61349da7ae3be10c02fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a3c10039beaf61349da7ae3be10c02fb5">setJointVelHorizon</a> (const Eigen::VectorXd &amp;dqHorizon)</td></tr>
+<tr class="separator:a3c10039beaf61349da7ae3be10c02fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a0cfeed5f2de7c7d2672a49558c0c4601">computeJntFromCart</a> (const KDL::Frame &amp;desire_frame, KDL::JntArray &amp;q_sol)</td></tr>
 <tr class="memdesc:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute inverse kinematic  <a href="classarm__kinematic.html#a0cfeed5f2de7c7d2672a49558c0c4601">More...</a><br /></td></tr>
 <tr class="separator:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,9 +165,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3ab1c3df05a79c08e2f802512fda05a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a3ab1c3df05a79c08e2f802512fda05a1">computeJacobian</a> (const KDL::JntArray &amp;q_in, KDL::Jacobian &amp;jacobian_out)</td></tr>
 <tr class="memdesc:a3ab1c3df05a79c08e2f802512fda05a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">computeJacobian  <a href="classarm__kinematic.html#a3ab1c3df05a79c08e2f802512fda05a1">More...</a><br /></td></tr>
 <tr class="separator:a3ab1c3df05a79c08e2f802512fda05a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df3dc3c25a9ec06efc8d5aac83d6c34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a3df3dc3c25a9ec06efc8d5aac83d6c34">computeqEnlarged</a> (const Eigen::VectorXd &amp;optimal_Solution, const Eigen::MatrixXd &amp;Px, const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a3df3dc3c25a9ec06efc8d5aac83d6c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute q horizon  <a href="classarm__kinematic.html#a3df3dc3c25a9ec06efc8d5aac83d6c34">More...</a><br /></td></tr>
-<tr class="separator:a3df3dc3c25a9ec06efc8d5aac83d6c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8065025e11c27e006447cc409f183c68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a8065025e11c27e006447cc409f183c68">computeJacobianHorz</a> (const Eigen::VectorXd &amp;q_horizon)</td></tr>
 <tr class="memdesc:a8065025e11c27e006447cc409f183c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">ComputeJacobian matrix during predicted horizon.  <a href="classarm__kinematic.html#a8065025e11c27e006447cc409f183c68">More...</a><br /></td></tr>
 <tr class="separator:a8065025e11c27e006447cc409f183c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -552,58 +554,6 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">desire_frame</td><td></td></tr>
     <tr><td class="paramname">q_sol</td><td>desired joint position </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3df3dc3c25a9ec06efc8d5aac83d6c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3df3dc3c25a9ec06efc8d5aac83d6c34">&#9670;&nbsp;</a></span>computeqEnlarged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void arm_kinematic::computeqEnlarged </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>optimal_Solution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Px</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Pu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>compute q horizon </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">optimal_Solution</td><td></td></tr>
-    <tr><td class="paramname">Px</td><td></td></tr>
-    <tr><td class="paramname">Pu</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1177,6 +1127,40 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a03cfd5cd1aceca30a065e028d2e6e6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03cfd5cd1aceca30a065e028d2e6e6bf">&#9670;&nbsp;</a></span>setJointHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void arm_kinematic::setJointHorizon </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>qHorizon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setJointHorizon </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qHorizon</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab6e4ae4a319bbba485c2139181bc3805"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6e4ae4a319bbba485c2139181bc3805">&#9670;&nbsp;</a></span>setJointPositions()</h2>
 
@@ -1200,6 +1184,32 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3c10039beaf61349da7ae3be10c02fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c10039beaf61349da7ae3be10c02fb5">&#9670;&nbsp;</a></span>setJointVelHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void arm_kinematic::setJointVelHorizon </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>dqHorizon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

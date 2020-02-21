@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['seg_5fidx_5fnames_495',['seg_idx_names',['../classSegmentIndice.html#a47a19a7e4b70fa1958717d58d81e3a99',1,'SegmentIndice']]],
-  ['seg_5fjacobian_5f_496',['seg_jacobian_',['../classarm__kinematic.html#a0325d282cc64ae28655d4200fe59a5f8',1,'arm_kinematic']]],
-  ['seg_5fjacobian_5fdot_5f_497',['seg_jacobian_dot_',['../classarm__kinematic.html#adee2ce8a4b7042b16be813faf83b7b01',1,'arm_kinematic']]],
-  ['seg_5fjdot_5fqdot_5f_498',['seg_jdot_qdot_',['../classarm__kinematic.html#a9f9423ddb97c4df941ac0e7ca900c7ba',1,'arm_kinematic']]],
-  ['seg_5fnames_5fidx_5f_499',['seg_names_idx_',['../classarm__kinematic.html#a680411d847fb87392aa4329b06bdf9fc',1,'arm_kinematic']]],
-  ['seg_5fpos_5f_500',['seg_pos_',['../classarm__kinematic.html#ad4e25ade2c9ebe7105bb65f26003b65f',1,'arm_kinematic']]],
-  ['seg_5fvel_5f_501',['seg_vel_',['../classarm__kinematic.html#a835907c933dfd129923e40b0714b320b',1,'arm_kinematic']]],
-  ['subscriber_5f_502',['subscriber_',['../classarm__kinematic.html#ab6a92880459adb00f39676d43f4963af',1,'arm_kinematic']]]
+  ['robot_5fdescription_5fros_5fname_683',['robot_description_ros_name',['../classarm__kinematic.html#a1f833954d34556d126ac0dd1ba4c94a4',1,'arm_kinematic']]],
+  ['robot_5fstate_5f_684',['robot_state_',['../classarm__kinematic.html#a7242baf2331a600e944c95b64aff89f9',1,'arm_kinematic']]],
+  ['robotvertices_5f_685',['robotVertices_',['../classplane_1_1Planes.html#a65baafa03b5fa216551601670f1803c0',1,'plane::Planes']]],
+  ['root_5flink_5fros_5fname_686',['root_link_ros_name',['../classarm__kinematic.html#a2689ece0be42fb60b7d570cdf9e48364',1,'arm_kinematic']]],
+  ['rpy_5fangle_5f_687',['RPY_angle_',['../classarm__kinematic.html#ad0a51ced7cb3cd312f91a6eaed240c32',1,'arm_kinematic']]]
 ];

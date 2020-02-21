@@ -95,30 +95,38 @@ Collaboration diagram for jntAccCst:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeac19a4c8b7f0c39a934b2b91febd3fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntAccCst.html#aeac19a4c8b7f0c39a934b2b91febd3fc">jntAccCst</a> (int ndof, int N, double dt, std::string name)</td></tr>
-<tr class="separator:aeac19a4c8b7f0c39a934b2b91febd3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27941a9261d6d8dba3dd70316c93c6e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntAccCst.html#a27941a9261d6d8dba3dd70316c93c6e9">jntAccCst</a> (int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</td></tr>
+<tr class="separator:a27941a9261d6d8dba3dd70316c93c6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5668035dd9d1c66f08be9dc8d887b64d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntAccCst.html#a5668035dd9d1c66f08be9dc8d887b64d">~jntAccCst</a> ()</td></tr>
 <tr class="separator:a5668035dd9d1c66f08be9dc8d887b64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e02ac0c53721b048dbfb57f863587b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjntAccCst.html#a3e02ac0c53721b048dbfb57f863587b9">setLimit</a> (const Eigen::VectorXd &amp;min, const Eigen::VectorXd &amp;max)</td></tr>
 <tr class="separator:a3e02ac0c53721b048dbfb57f863587b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgeneric__cst"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgeneric__cst')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgeneric__cst.html">generic_cst</a></td></tr>
-<tr class="memitem:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">generic_cst</a> (int ndof, int N, double dt, std::string name)</td></tr>
-<tr class="memdesc:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ab2d531d4d3d3b95aa9b52ab3c0cbcebd">More...</a><br /></td></tr>
-<tr class="separator:ab2d531d4d3d3b95aa9b52ab3c0cbcebd inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">generic_cst</a> (int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)</td></tr>
+<tr class="memdesc:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">basic construtor  <a href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">More...</a><br /></td></tr>
+<tr class="separator:ac1c0b36ab00a1194dd6d154f1d1bea96 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c540bea22f3e211be2e27653bb4aba9 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a4c540bea22f3e211be2e27653bb4aba9">~generic_cst</a> ()</td></tr>
 <tr class="separator:a4c540bea22f3e211be2e27653bb4aba9 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a39c0f4393400240d6ddba3859babe inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a98a39c0f4393400240d6ddba3859babe">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:a98a39c0f4393400240d6ddba3859babe inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classgeneric__cst.html#a98a39c0f4393400240d6ddba3859babe">More...</a><br /></td></tr>
-<tr class="separator:a98a39c0f4393400240d6ddba3859babe inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9fd42a8ba4b49c87e7e0959621b0e31 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ae9fd42a8ba4b49c87e7e0959621b0e31">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px)</td></tr>
-<tr class="memdesc:ae9fd42a8ba4b49c87e7e0959621b0e31 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classgeneric__cst.html#ae9fd42a8ba4b49c87e7e0959621b0e31">More...</a><br /></td></tr>
-<tr class="separator:ae9fd42a8ba4b49c87e7e0959621b0e31 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a288d2ef38bbd6a7bd1a679248cd8145b inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a288d2ef38bbd6a7bd1a679248cd8145b">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a288d2ef38bbd6a7bd1a679248cd8145b inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classgeneric__cst.html#a288d2ef38bbd6a7bd1a679248cd8145b">More...</a><br /></td></tr>
-<tr class="separator:a288d2ef38bbd6a7bd1a679248cd8145b inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a892ed6bb2f07479b06554e420159f565 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a892ed6bb2f07479b06554e420159f565">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Px, const Eigen::MatrixXd &amp;Pu)</td></tr>
-<tr class="memdesc:a892ed6bb2f07479b06554e420159f565 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classgeneric__cst.html#a892ed6bb2f07479b06554e420159f565">More...</a><br /></td></tr>
-<tr class="separator:a892ed6bb2f07479b06554e420159f565 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abe1560af7edcf43afe6368611323ec inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2abe1560af7edcf43afe6368611323ec">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a2abe1560af7edcf43afe6368611323ec inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLowerBound: lbA  <a href="classgeneric__cst.html#a2abe1560af7edcf43afe6368611323ec">More...</a><br /></td></tr>
+<tr class="separator:a2abe1560af7edcf43afe6368611323ec inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d8b6499130bb833ad515bee7a49b4a inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a98d8b6499130bb833ad515bee7a49b4a">setLowerBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a98d8b6499130bb833ad515bee7a49b4a inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e40d8debbebf764f4d82b46dc979956 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a5e40d8debbebf764f4d82b46dc979956">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a5e40d8debbebf764f4d82b46dc979956 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setUpperBound  <a href="classgeneric__cst.html#a5e40d8debbebf764f4d82b46dc979956">More...</a><br /></td></tr>
+<tr class="separator:a5e40d8debbebf764f4d82b46dc979956 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fc5466e30b92506e63e1a849fd0ebd inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a67fc5466e30b92506e63e1a849fd0ebd">setUpperBound</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a67fc5466e30b92506e63e1a849fd0ebd inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d67900b471443a9ff1ebec0c1595f6 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#aa2d67900b471443a9ff1ebec0c1595f6">setConstraintMatrix</a> ()</td></tr>
+<tr class="memdesc:aa2d67900b471443a9ff1ebec0c1595f6 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">setConstraintMatrix  <a href="classgeneric__cst.html#aa2d67900b471443a9ff1ebec0c1595f6">More...</a><br /></td></tr>
+<tr class="separator:aa2d67900b471443a9ff1ebec0c1595f6 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54855f6d5bf41da00c178ee2da05f39 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab54855f6d5bf41da00c178ee2da05f39">setConstraintMatrix</a> (const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:ab54855f6d5bf41da00c178ee2da05f39 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b572887603fbf016c12535c87b9a709 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2b572887603fbf016c12535c87b9a709">update</a> (const Eigen::VectorXd &amp;robot_state)</td></tr>
+<tr class="memdesc:a2b572887603fbf016c12535c87b9a709 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">update constraint state : lbA, ubA, A  <a href="classgeneric__cst.html#a2b572887603fbf016c12535c87b9a709">More...</a><br /></td></tr>
+<tr class="separator:a2b572887603fbf016c12535c87b9a709 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dbad6abae0eb61d062cabf34d831a19 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3dbad6abae0eb61d062cabf34d831a19">update</a> (const Eigen::VectorXd &amp;robot_state, const Eigen::MatrixXd &amp;Jacobian)</td></tr>
+<tr class="separator:a3dbad6abae0eb61d062cabf34d831a19 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">getLowerBound</a> ()</td></tr>
 <tr class="memdesc:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLowerBound  <a href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">More...</a><br /></td></tr>
 <tr class="separator:aeea66a61e89666e863e08cf3293da933 inherit pub_methods_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +153,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a250e68dc92ec3ddb5ba310e3800b6b7b inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71311e52d88790be9785e6f9835c6df5 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a71311e52d88790be9785e6f9835c6df5">A_</a></td></tr>
 <tr class="separator:a71311e52d88790be9785e6f9835c6df5 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2588e79ab7ca72e596c6ec220924d341 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a2588e79ab7ca72e596c6ec220924d341">Px_</a></td></tr>
+<tr class="separator:a2588e79ab7ca72e596c6ec220924d341 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f58cd6a0bb3d76388484f38b3c38f1 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ac4f58cd6a0bb3d76388484f38b3c38f1">Pu_</a></td></tr>
+<tr class="separator:ac4f58cd6a0bb3d76388484f38b3c38f1 inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f245e8a591b27d83674c1629b29ca6e inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#a3f245e8a591b27d83674c1629b29ca6e">dt_</a></td></tr>
 <tr class="separator:a3f245e8a591b27d83674c1629b29ca6e inherit pro_attribs_classgeneric__cst"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab202a11ce2d7bd8ae345cd73d26dd846 inherit pro_attribs_classgeneric__cst"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgeneric__cst.html#ab202a11ce2d7bd8ae345cd73d26dd846">n_</a></td></tr>
@@ -159,8 +171,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Acceleration constraint. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aeac19a4c8b7f0c39a934b2b91febd3fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeac19a4c8b7f0c39a934b2b91febd3fc">&#9670;&nbsp;</a></span>jntAccCst()</h2>
+<a id="a27941a9261d6d8dba3dd70316c93c6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27941a9261d6d8dba3dd70316c93c6e9">&#9670;&nbsp;</a></span>jntAccCst()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +202,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd&#160;</td>
+          <td class="paramname"><em>Pu</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

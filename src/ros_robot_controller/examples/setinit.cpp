@@ -60,7 +60,8 @@ int main(int argc, char **argv)
     KDL::JntArray panda_q_init(ndof), panda_dotq_init(ndof),panda_q_des(ndof), panda_q_des_back(ndof);
 
     // initialize robot's joint position and velocity according to roslaunch initialization
-    panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
+//    panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
+    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
     // initialize robot's kinematic class
@@ -73,7 +74,7 @@ int main(int argc, char **argv)
     // panda's end-effector location and set up desired frame
     KDL::Frame des_frame, back_des_frame, panda_ee_frame, panda_des_frame, base_frame;
     KDL::Frame forearm, elbow;
-    panda_ee_frame = pandaArm.getSegmentPosition(7);
+    panda_ee_frame = pandaArm.getSegmentPosition(8);
     base_frame = pandaArm.getSegmentPosition(0);
     Eigen::Vector3d ZYX_angle, panda_ZYX_angle;
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
@@ -127,9 +128,8 @@ int main(int argc, char **argv)
     Eigen::MatrixXd  stateA, stateB;
     stateA = pandaTask.getStateA();
     stateB = pandaTask.getStateB();
-    pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
     qHorizon = pandaPx*pandaState + pandaPu*optimalSolution;
-
+    pandaArm.setJointHorizon(qHorizon);
     // define mpc constraints
     int Cst = 0;
     Eigen::VectorXd ddqMin, ddqMax, ddqLb, ddqUb, dqMin, dqMax, qMin, qMax;
@@ -147,10 +147,10 @@ int main(int argc, char **argv)
     qMax.setConstant(pi);
 
     // Define joint acceleration limit
-    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst");
+    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst",pandaPx,pandaPu);
     jnt_acc_cst.setLimit(ddqMin,ddqMax);
-    jnt_acc_cst.setLowerBound(pandaState, pandaPx);
-    jnt_acc_cst.setUpperBound(pandaState, pandaPx);
+    jnt_acc_cst.setLowerBound(pandaState);
+    jnt_acc_cst.setUpperBound(pandaState);
     ddqLb = jnt_acc_cst.getLowerBound();
     ddqUb = jnt_acc_cst.getUpperBound();
 
@@ -170,7 +170,7 @@ int main(int argc, char **argv)
     mpc_solve qpSolver(N, ndof,5);
 
     qpSolver.setDefaultOptions();
-   qpSolver.initData(H,g,lb,ub);
+    qpSolver.initData(H,g,lb,ub);
 //    qpSolver.initData(H,g,cstA,lb,ub,lbA,ubA);
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
 
@@ -188,8 +188,8 @@ int main(int argc, char **argv)
     {
 
         pandaState = pandaArm.getRobotState();
-        pandaArm.computeqEnlarged(optimalSolution,pandaPx,pandaPu);
-        std::cout<<"optimal solution \n" <<optimalSolution<< std::endl;
+        qHorizon = pandaPx*pandaState + pandaPu*optimalSolution;
+        pandaArm.setJointHorizon(qHorizon);
         qHorizon = pandaArm.getqEnlarged();
 
         pandaArm.computeJacobianHorz(qHorizon);
@@ -211,7 +211,6 @@ int main(int argc, char **argv)
         optimalSolution = qpSolver.getSolution();
 
         pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
-        std::cout << "panda state \n" << pandaState << std::endl;
 
          std_msgs::Float64 v1,v2,v3,v4,v5,v6 ; // robot joint's velocity
         std_msgs::Float64 panda_t1,panda_t2,panda_t3,panda_t4,panda_t5,panda_t6, panda_t7 ; // robot joint's positions
@@ -232,7 +231,7 @@ int main(int argc, char **argv)
         panda_joint_state_6_pub.publish(panda_t6);
         panda_joint_state_7_pub.publish(panda_t7);
 
-        panda_ee_frame = pandaArm.getSegmentPosition(7);
+        panda_ee_frame = pandaArm.getSegmentPosition(8);
         forearm = pandaArm.getSegmentPosition(3);
 
         pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
@@ -241,7 +240,7 @@ int main(int argc, char **argv)
         loop_rate.sleep();
     }
     std::cout<<"panda joint final is : \n" << pandaArm.getRobotState().segment(0,ndof) << std::endl;
-    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition(7).p << std::endl;
+    std::cout<<"panda ee position is :\n " << pandaArm.getSegmentPosition(8).p << std::endl;
     std::cout<<"Calcul donné par KDL est :\n " << panda_q_des.data << std::endl;
     return 0;
 }

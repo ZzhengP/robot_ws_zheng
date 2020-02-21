@@ -7,8 +7,9 @@ set(HEADER_LIST "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/RosRobotM
                 "${ros_robot_controller_SOURCE_DIR}/include/constraint/RosJointPosCst.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/constraint/RosJointVelCst.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/constraint/RosCartVelCst.h"
+                "${ros_robot_controller_SOURCE_DIR}/include/constraint/RosAvoidanceCst.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/solver/RosMpcSolver.h"
-                "${ros_robot_controller_SOURCE_DIR}/include/solver/lpsolver.h"
+                "${ros_robot_controller_SOURCE_DIR}/include/solver/RosPlaneSolver.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/solver/lpsolve.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/task/RosMpcTask.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/visualization/RosMarkers.h"
@@ -21,11 +22,12 @@ add_library(ros_robot_controller_library
             constraint/RosGenericCst.cpp
             constraint/RosJointPosCst.cpp
             constraint/RosJointVelCst.cpp
+            constraint/RosAvoidanceCst.cpp
             solver/RosMpcSolver.cpp
             task/RosMpcTask.cpp
             visualization/RosMarkers.cpp
             sepPlane/sepPlane.cpp
-            solver/lpsolver.cpp
+            solver/RosPlaneSolver.cpp
             solver/lpsolve.cpp)
 
 target_include_directories(ros_robot_controller_library PUBLIC ../include)

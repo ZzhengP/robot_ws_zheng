@@ -1,7 +1,8 @@
 #include "constraint/RosGenericCst.h"
 
 
-generic_cst::generic_cst(int ndof, int N, double dt, std::string name):n_(ndof),N_(N), dt_(dt),cst_name_(name){
+generic_cst::generic_cst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+    :n_(ndof),N_(N), dt_(dt),cst_name_(name),Px_(Px),Pu_(Pu){
 
              lbA_.resize(ndof*N);
              ubA_.resize(ndof*N);

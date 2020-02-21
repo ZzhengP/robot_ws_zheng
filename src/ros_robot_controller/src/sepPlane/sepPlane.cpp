@@ -1,5 +1,6 @@
 #include "sepPlane/sepPlane.h"
 
+using namespace plane;
 
 std::pair<int,int> closestPoint(Eigen::MatrixXd robotVertices, Eigen::MatrixXd obsVertices){
 
@@ -30,7 +31,7 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
     // Initialize data's size
     robotVertices_.N = N_;
     robotVertices_.nbrOfObject = nbrRobobotPart;
-    robotVertices_.nbrVertices = 3;
+    robotVertices_.nbrVertices = robotVertices[0].cols();
     robotVertices_.Vertices.resize(robotVertices_.nbrOfObject);
     std::cout <<" robotVertices nbr vertices \n" << robotVertices_.nbrVertices << std::endl;
 
@@ -63,8 +64,12 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
         planesData_.planeLocation.resize(nbrPlane_);
 
         for (int i = 0; i < nbrPlane_; i++) {
-            planesData_.planeLocation[i].resize(5,N_-1);
+            if (N_ == 1){
+                planesData_.planeLocation[i].resize(5,N_);
+            }else {
+                planesData_.planeLocation[i].resize(5,N_-1);
 
+            }
             planesData_.planeLocation[i].setZero();
         }
         std::cout <<" nbr planes \n"<< planesData_.nbrPlane << std::endl;
@@ -100,6 +105,27 @@ void Planes::InitializePlanesData(){
 
         for (int i(0); i < robotVertices_.nbrOfObject; i ++ ) {
             for (int l(0) ; l < obsVertices_.nbrOfObject; l++){
+                if (N_ ==1){
+
+                    verticeRobotTemp = robotVertices_.Vertices[i].block(0,robotVertices_.nbrVertices*0,3,robotVertices_.nbrVertices);
+                    verticeObsTemp = obsVertices_.Vertices[l].block(0,obsVertices_.nbrVertices*0,3,obsVertices_.nbrVertices );
+
+                    std::pair<int,int> indexClosestPts ;
+                    indexClosestPts = closestPoint(verticeRobotTemp,verticeObsTemp);
+                    verticeRobotClosest = robotVertices_.Vertices[i].block(0,indexClosestPts.first,3,1);
+                    verticeObsclosest = obsVertices_.Vertices[l].block(0,indexClosestPts.second,3,1);
+                    vect_normal = verticeObsclosest - verticeRobotClosest;
+                    vect_normal.normalize();
+
+                    Eigen::Vector3d AB;
+                    AB = verticeObsclosest - verticeRobotClosest;
+                    ptsOnPlane = verticeRobotClosest + AB.norm()*vect_normal/2  ;
+
+                    dist = ptsOnPlane.dot(vect_normal);
+
+                    planesData_.planeLocation[count].block(0,0,5,1) <<  vect_normal.x(), vect_normal.y(), vect_normal.z(), dist,0;
+
+                }else {
                 for (int j(0); j < N_-1; j++) {
                     verticeRobotTemp = robotVertices_.Vertices[i].block(0,robotVertices_.nbrVertices*j,3,robotVertices_.nbrVertices);
                     verticeObsTemp = obsVertices_.Vertices[l].block(0,obsVertices_.nbrVertices*j,3,obsVertices_.nbrVertices );
@@ -121,6 +147,7 @@ void Planes::InitializePlanesData(){
 
                 }
                 count ++ ;
+                }
             }
         }
 

@@ -20,7 +20,7 @@
 <!-- push robot_description to factory and spawn robot in gazebo -->
 <node name="spawn_gazebo_model" pkg="gazebo_ros"
       type="spawn_model" args="-urdf -param robot_description -model robot
-                               -J panda_joint1 1.57
+                               -J panda_joint1 0.5
                                -J panda_joint2 0.
                                -J panda_joint3 0.
                                -J panda_joint4 -1.8
@@ -28,6 +28,18 @@
                                -J panda_joint6 1.57
                                -J panda_joint7 0.  "
       respawn="false" output="screen" />
+
+<!--node name="spawn_gazebo_model" pkg="gazebo_ros"
+      type="spawn_model" args="-urdf -param robot_description -model robot
+                               -J panda_joint1 1.09863
+                               -J panda_joint2 -0.117713
+                               -J panda_joint3 -0.446264
+                               -J panda_joint4 -2.2771
+                               -J panda_joint5 -0.0613639
+                               -J panda_joint6 2.16992
+                               -J panda_joint7 0.689672  "
+      respawn="false" output="screen" /-->
+
 
 <rosparam file="$(find ros_robot_controller)/config/franka.yaml" command="load"/>
 <!-- load the controllers -->

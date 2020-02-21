@@ -89,6 +89,8 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
        seg_names_idx_.add(arm_chain_.getSegment(i).getName(),i);
 
    }
+
+
    std::cout <<"---------------------------------------------" << std::endl;
 
 }
@@ -163,14 +165,17 @@ void arm_kinematic::computeJacobianHorz(const Eigen::VectorXd &q_horizon)
     for (size_t i(0); i<N_Prediciton_; i++)
     {
       KDL::JntArray q_horz_temp;
-      KDL::Jacobian jac_horz_temp;
+      KDL::Jacobian jac_temp;
 
       q_horz_temp.resize(NrOfDeg_);
-      jac_horz_temp.resize(NrOfDeg_);
+      q_horz_temp.data.setZero();
+
+      jac_temp.resize(NrOfDeg_);
+      jac_temp.data.setZero();
       q_horz_temp.data = q_horizon.segment(NrOfDeg_*i,NrOfDeg_);
 
-      computeJacobian(q_horz_temp,jac_horz_temp);
-      jacobian_horizon_.block(6*i,NrOfDeg_*i,6,NrOfDeg_) = jac_horz_temp.data;
+      computeJacobian(q_horz_temp,jac_temp);
+      jacobian_horizon_.block(6*i,NrOfDeg_*i,6,NrOfDeg_) = jac_temp.data;
     }
 }
 

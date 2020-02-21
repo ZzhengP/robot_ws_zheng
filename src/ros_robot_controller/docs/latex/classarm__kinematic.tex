@@ -60,6 +60,10 @@ void \mbox{\hyperlink{classarm__kinematic_a4f4e2a06dcbb5027c14079aba72927e4}{set
 \begin{DoxyCompactList}\small\item\em Sets the joint velocity of the model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a5ac804d74522b1606d31f28f7ee825a9}{set\+State}} (const Eigen\+::\+Vector\+Xd \&q, const Eigen\+::\+Vector\+Xd \&qd)
 \begin{DoxyCompactList}\small\item\em set\+State \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classarm__kinematic_a03cfd5cd1aceca30a065e028d2e6e6bf}{set\+Joint\+Horizon}} (const Eigen\+::\+Vector\+Xd \&q\+Horizon)
+\begin{DoxyCompactList}\small\item\em set\+Joint\+Horizon \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classarm__kinematic_a3c10039beaf61349da7ae3be10c02fb5}{set\+Joint\+Vel\+Horizon}} (const Eigen\+::\+Vector\+Xd \&dq\+Horizon)
+\item 
 void \mbox{\hyperlink{classarm__kinematic_a0cfeed5f2de7c7d2672a49558c0c4601}{compute\+Jnt\+From\+Cart}} (const K\+D\+L\+::\+Frame \&desire\+\_\+frame, K\+D\+L\+::\+Jnt\+Array \&q\+\_\+sol)
 \begin{DoxyCompactList}\small\item\em compute inverse kinematic \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_aa9c9ea3af91784724ab99b59c9551db7}{compute\+Jacobian}} ()
@@ -68,8 +72,6 @@ K\+D\+L\+::\+Jacobian \mbox{\hyperlink{classarm__kinematic_afca9c4429f37ec5f2075
 \begin{DoxyCompactList}\small\item\em get\+Jacobian \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a3ab1c3df05a79c08e2f802512fda05a1}{compute\+Jacobian}} (const K\+D\+L\+::\+Jnt\+Array \&q\+\_\+in, K\+D\+L\+::\+Jacobian \&jacobian\+\_\+out)
 \begin{DoxyCompactList}\small\item\em compute\+Jacobian \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classarm__kinematic_a3df3dc3c25a9ec06efc8d5aac83d6c34}{computeq\+Enlarged}} (const Eigen\+::\+Vector\+Xd \&optimal\+\_\+\+Solution, const Eigen\+::\+Matrix\+Xd \&Px, const Eigen\+::\+Matrix\+Xd \&Pu)
-\begin{DoxyCompactList}\small\item\em compute q horizon \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a8065025e11c27e006447cc409f183c68}{compute\+Jacobian\+Horz}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+horizon)
 \begin{DoxyCompactList}\small\item\em Compute\+Jacobian matrix during predicted horizon. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a366aafb730ae7231ea87d2af0da09dcd}{compute\+Cart\+Pos\+Horz}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+horizon)
@@ -287,25 +289,6 @@ compute inverse kinematic
 {\em desire\+\_\+frame} & \\
 \hline
 {\em q\+\_\+sol} & desired joint position \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classarm__kinematic_a3df3dc3c25a9ec06efc8d5aac83d6c34}\label{classarm__kinematic_a3df3dc3c25a9ec06efc8d5aac83d6c34}} 
-\index{arm\_kinematic@{arm\_kinematic}!computeqEnlarged@{computeqEnlarged}}
-\index{computeqEnlarged@{computeqEnlarged}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{computeqEnlarged()}{computeqEnlarged()}}
-{\footnotesize\ttfamily void arm\+\_\+kinematic\+::computeq\+Enlarged (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{optimal\+\_\+\+Solution,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Px,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-compute q horizon 
-
-
-\begin{DoxyParams}{Parameters}
-{\em optimal\+\_\+\+Solution} & \\
-\hline
-{\em Px} & \\
-\hline
-{\em Pu} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classarm__kinematic_a5bb62edae09343e1d25aa0eee247b82b}\label{classarm__kinematic_a5bb62edae09343e1d25aa0eee247b82b}} 
@@ -575,6 +558,21 @@ Initalize ros subscriber node to update robot\textquotesingle{}s joint position 
 
 print\+Robot\+Information Joint name and link name 
 
+\mbox{\Hypertarget{classarm__kinematic_a03cfd5cd1aceca30a065e028d2e6e6bf}\label{classarm__kinematic_a03cfd5cd1aceca30a065e028d2e6e6bf}} 
+\index{arm\_kinematic@{arm\_kinematic}!setJointHorizon@{setJointHorizon}}
+\index{setJointHorizon@{setJointHorizon}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{setJointHorizon()}{setJointHorizon()}}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::set\+Joint\+Horizon (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+Horizon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Joint\+Horizon 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q\+Horizon} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classarm__kinematic_ab6e4ae4a319bbba485c2139181bc3805}\label{classarm__kinematic_ab6e4ae4a319bbba485c2139181bc3805}} 
 \index{arm\_kinematic@{arm\_kinematic}!setJointPositions@{setJointPositions}}
 \index{setJointPositions@{setJointPositions}!arm\_kinematic@{arm\_kinematic}}
@@ -590,6 +588,12 @@ set\+Joint\+Positions
 {\em q} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classarm__kinematic_a3c10039beaf61349da7ae3be10c02fb5}\label{classarm__kinematic_a3c10039beaf61349da7ae3be10c02fb5}} 
+\index{arm\_kinematic@{arm\_kinematic}!setJointVelHorizon@{setJointVelHorizon}}
+\index{setJointVelHorizon@{setJointVelHorizon}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{setJointVelHorizon()}{setJointVelHorizon()}}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::set\+Joint\+Vel\+Horizon (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{dq\+Horizon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{classarm__kinematic_a4f4e2a06dcbb5027c14079aba72927e4}\label{classarm__kinematic_a4f4e2a06dcbb5027c14079aba72927e4}} 
 \index{arm\_kinematic@{arm\_kinematic}!setJointVelocities@{setJointVelocities}}
 \index{setJointVelocities@{setJointVelocities}!arm\_kinematic@{arm\_kinematic}}

@@ -12,6 +12,8 @@
 // link or each osbtacle in the form of matrix organized into std vector form. The size of
 // vector depend to the number of robot link or obstacle, and the size of matrix into
 
+
+namespace plane {
 /**
  * @brief The VerticesData struct
  */
@@ -75,14 +77,22 @@ public:
            int nbrPlane;
            int N;
            std::vector<Eigen::MatrixXd> planeLocation;
+           void print(){
+               std::cout << "Number of different separating plane: " << planeLocation.size() <<'\n';
+               std::cout << "Number of one separating plane during interval of prediction : " << planeLocation[0].cols() << '\n';
+               std::cout << "one separating plane data during interval of prediction : \n " << planeLocation[0] <<'\n' ;
+
+           }
     };
 
     PlaneData getPlanes(){
               return planesData_;
     }
 
+    PlaneData  planesData_;
 
-private:
+
+    protected:
     /**
      * @brief N_: horizon of prediction
      */
@@ -95,6 +105,6 @@ private:
     VerticesData robotVertices_;
     VerticesData obsVertices_;
     // (nbrRobotPart * nbrObs)*5, first part related to all Obs, and the
-    PlaneData  planesData_;
     // Define an solver for linear programming
 };
+}

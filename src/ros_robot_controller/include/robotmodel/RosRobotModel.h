@@ -273,8 +273,17 @@ public:
      */
     void setState(const Eigen::VectorXd& q,const Eigen::VectorXd& qd);
 
+    /**
+     * @brief setJointHorizon
+     * @param qHorizon
+     */
+    void setJointHorizon(const Eigen::VectorXd &qHorizon){
+        q_horizon_ = qHorizon;
+    }
 
-
+    void setJointVelHorizon(const Eigen::VectorXd &dqHorizon){
+        dotq_horizon_ = dqHorizon ;
+    }
     /**
      * @brief compute inverse kinematic
      * @param desire_frame
@@ -291,8 +300,9 @@ public:
      */
     void computeJacobian()
     {
-        chainjacsolver_->JntToJac(q_, jacobian_);
+        chainjacsolver_->JntToJac(q_, jacobian_,7);
     }
+
 
     /**
      * @brief getJacobian
@@ -308,19 +318,10 @@ public:
      * @param jacobian_out
      */
     void computeJacobian(const KDL::JntArray& q_in, KDL::Jacobian& jacobian_out){
-        chainjacsolver_->JntToJac(q_in,jacobian_out);
+        chainjacsolver_->JntToJac(q_in,jacobian_out,7);
     }
 
-    /**
-     * @brief compute q horizon
-     * @param optimal_Solution
-     * @param Px
-     * @param Pu
-     */
-    void computeqEnlarged(const Eigen::VectorXd &optimal_Solution,const Eigen::MatrixXd &Px, const Eigen::MatrixXd &Pu)
-    {
-        q_horizon_ = Px*robot_state_ + Pu*optimal_Solution;
-    }
+
 
 
     /**
