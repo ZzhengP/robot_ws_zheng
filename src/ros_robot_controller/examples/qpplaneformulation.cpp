@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 
 
     panda_des_frame.p[0] = 0.470808;
-    panda_des_frame.p[1] = -0.3 ;
+    panda_des_frame.p[1] = -0.4 ;
     panda_des_frame.p[2] = 0.517842 ;
 //    panda_des_frame.p[0] = panda_ee_frame.p[0] ;
 //    panda_des_frame.p[1] = panda_ee_frame.p[1] ;
@@ -111,9 +111,9 @@ int main(int argc, char **argv)
     Eigen::Vector3d cube ;
     geometry_msgs::Pose cubeLocation, forearmLocation;
     cubeLocation.position.x = 0.5;
-    cubeLocation.position.y = 0.0;
+    cubeLocation.position.y = -0.2;
 //    cubeLocation.position.z = forearm.p.z();
-    cubeLocation.position.z = 0.517842;
+    cubeLocation.position.z = 0.65;
     cube << cubeLocation.position.x, cubeLocation.position.y, cubeLocation.position.z;
     // define cube's size (x,y,z)
     Eigen::Vector3d obsSize;
@@ -254,9 +254,10 @@ int main(int argc, char **argv)
 
     dqMin.resize(N*ndof);
     dqMax.resize(N*ndof);
-    dqMin.setConstant(-0.5);
-    dqMax.setConstant(0.5);
-
+    dqMin.setConstant(-pi/20);
+    dqMax.setConstant(pi/20);
+    dqMin.tail(ndof).setZero();
+    dqMax.tail(ndof).setZero();
     jntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
     jointPosCst.setLimit(qMin,qMax);
     jointPosCst.setLowerBound(pandaState);
@@ -332,6 +333,14 @@ int main(int argc, char **argv)
     qptest.constructProblem(constraintVectorData,H,g);
     qptest.setDefaultOptions();
 
+    Eigen::Vector3d cartesian_error;
+    bool task_complete ;
+    task_complete = false;
+    Eigen::Vector3d goalStart, goalEnd, currentEEpose, goal ;
+
+    goalEnd << 0.470808, -0.3, 0.517842;
+    goalStart << panda_ee_frame.p[0], panda_ee_frame.p[1], panda_ee_frame.p[2];
+    goal = goalEnd;
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
 
     ros::Rate loop_rate(1000);
@@ -367,6 +376,32 @@ int main(int argc, char **argv)
 
     while(ros::ok())
     {
+        currentEEpose << panda_ee_frame.p[0], panda_ee_frame.p[1], panda_ee_frame.p[2];
+
+
+        cartesian_error = currentEEpose - goal;
+        std::cout <<" cartesien error :\n" << cartesian_error << '\n';
+
+        if (cartesian_error.norm() < 0.01){
+
+            if (goal == goalStart){
+                goal = goalEnd;
+            }else {
+                goal = goalStart;
+            }
+
+        }
+
+        panda_des_frame.p[0]=  goal(0);
+        panda_des_frame.p[1]=  goal(1);
+        panda_des_frame.p[2]=  goal(2);
+
+        pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
+        for (size_t i=0; i<N; i++)
+        {
+             qHorizonDes.segment(ndof*i,ndof) = panda_q_des.data;
+        }
+
         pandaTask.computeHandg(jacobianHorizon,pandaState,qHorizonDes);
         H = pandaTask.getMatrixH();
         g = pandaTask.getVectorg();
@@ -393,7 +428,7 @@ int main(int argc, char **argv)
 
         qptest.constructProblem(constraintVectorData,H,g);
 //        qptest.print();
-        obsAvoidanceCst.getConstraintData().print();
+//        obsAvoidanceCst.getConstraintData().print();
 
 
         is_solved = qptest.solve();
@@ -534,7 +569,6 @@ int main(int argc, char **argv)
         panda_joint_state_7_pub.publish(panda_t7);
         myfile<<pandaState.tail(7).transpose()<<'\n' ;
         myfile2<<optimalSolution.transpose() << '\n';
-        myfile2.close();
         ite ++ ;
 //        break;
         ros::spinOnce();
