@@ -39,6 +39,8 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/obsavoidancedemo.cpp
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/RosCommunDefinition.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/color.h
+ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosAvoidanceCst.h
+ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosCartVelCst.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointAccCst.h
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h

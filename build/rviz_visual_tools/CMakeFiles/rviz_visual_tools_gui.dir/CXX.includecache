@@ -28,14 +28,6 @@ UVLADIE3JM/moc_key_tool.cpp
 UVLADIE3JM/moc_rviz_visual_tools_gui.cpp
 /home/zheng/robot_ws_zheng/build/rviz_visual_tools/rviz_visual_tools_gui_autogen/UVLADIE3JM/moc_rviz_visual_tools_gui.cpp
 
-/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/remote_control.h
-string
--
-ros/ros.h
--
-sensor_msgs/Joy.h
--
-
 /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/remote_reciever.h
 sensor_msgs/Joy.h
 -
@@ -76,12 +68,6 @@ QCursor
 QObject
 -
 rviz_visual_tools/remote_reciever.h
--
-
-/home/zheng/robot_ws_zheng/src/rviz_visual_tools/src/remote_control.cpp
-string
--
-rviz_visual_tools/remote_control.h
 -
 
 /home/zheng/robot_ws_zheng/src/rviz_visual_tools/src/rviz_visual_tools_gui.cpp

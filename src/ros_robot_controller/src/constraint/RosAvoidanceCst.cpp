@@ -40,6 +40,7 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
      nbrRobotPart_ = RobotVertices.size();
     // 2*2 because 2 vertices and 2 instants
     lbA_.resize(2*PlaneData.nbrPlane*(N_ - 1));
+    std::cout <<" low bounds size :\n" << lbA_.size() <<'\n';
     lbA_.setConstant(-100000);
     ubA_.resize(2*PlaneData.nbrPlane*(N_ - 1));
     ubA_.setZero();

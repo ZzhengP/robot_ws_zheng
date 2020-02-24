@@ -204,6 +204,33 @@ ros_robot_controller_library/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build
 .PHONY : ros_robot_controller_library/fast
 
+constraint/RosAvoidanceCst.o: constraint/RosAvoidanceCst.cpp.o
+
+.PHONY : constraint/RosAvoidanceCst.o
+
+# target to build an object file
+constraint/RosAvoidanceCst.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosAvoidanceCst.cpp.o
+.PHONY : constraint/RosAvoidanceCst.cpp.o
+
+constraint/RosAvoidanceCst.i: constraint/RosAvoidanceCst.cpp.i
+
+.PHONY : constraint/RosAvoidanceCst.i
+
+# target to preprocess a source file
+constraint/RosAvoidanceCst.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosAvoidanceCst.cpp.i
+.PHONY : constraint/RosAvoidanceCst.cpp.i
+
+constraint/RosAvoidanceCst.s: constraint/RosAvoidanceCst.cpp.s
+
+.PHONY : constraint/RosAvoidanceCst.s
+
+# target to generate assembly for a file
+constraint/RosAvoidanceCst.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosAvoidanceCst.cpp.s
+.PHONY : constraint/RosAvoidanceCst.cpp.s
+
 constraint/RosGenericCst.o: constraint/RosGenericCst.cpp.o
 
 .PHONY : constraint/RosGenericCst.o
@@ -393,6 +420,33 @@ solver/RosMpcSolver.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosMpcSolver.cpp.s
 .PHONY : solver/RosMpcSolver.cpp.s
 
+solver/RosPlaneSolver.o: solver/RosPlaneSolver.cpp.o
+
+.PHONY : solver/RosPlaneSolver.o
+
+# target to build an object file
+solver/RosPlaneSolver.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosPlaneSolver.cpp.o
+.PHONY : solver/RosPlaneSolver.cpp.o
+
+solver/RosPlaneSolver.i: solver/RosPlaneSolver.cpp.i
+
+.PHONY : solver/RosPlaneSolver.i
+
+# target to preprocess a source file
+solver/RosPlaneSolver.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosPlaneSolver.cpp.i
+.PHONY : solver/RosPlaneSolver.cpp.i
+
+solver/RosPlaneSolver.s: solver/RosPlaneSolver.cpp.s
+
+.PHONY : solver/RosPlaneSolver.s
+
+# target to generate assembly for a file
+solver/RosPlaneSolver.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/RosPlaneSolver.cpp.s
+.PHONY : solver/RosPlaneSolver.cpp.s
+
 solver/lpsolve.o: solver/lpsolve.cpp.o
 
 .PHONY : solver/lpsolve.o
@@ -419,33 +473,6 @@ solver/lpsolve.s: solver/lpsolve.cpp.s
 solver/lpsolve.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolve.cpp.s
 .PHONY : solver/lpsolve.cpp.s
-
-solver/lpsolver.o: solver/lpsolver.cpp.o
-
-.PHONY : solver/lpsolver.o
-
-# target to build an object file
-solver/lpsolver.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.o
-.PHONY : solver/lpsolver.cpp.o
-
-solver/lpsolver.i: solver/lpsolver.cpp.i
-
-.PHONY : solver/lpsolver.i
-
-# target to preprocess a source file
-solver/lpsolver.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.i
-.PHONY : solver/lpsolver.cpp.i
-
-solver/lpsolver.s: solver/lpsolver.cpp.s
-
-.PHONY : solver/lpsolver.s
-
-# target to generate assembly for a file
-solver/lpsolver.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/solver/lpsolver.cpp.s
-.PHONY : solver/lpsolver.cpp.s
 
 task/RosMpcTask.o: task/RosMpcTask.cpp.o
 
@@ -517,6 +544,9 @@ help:
 	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... constraint/RosAvoidanceCst.o"
+	@echo "... constraint/RosAvoidanceCst.i"
+	@echo "... constraint/RosAvoidanceCst.s"
 	@echo "... constraint/RosGenericCst.o"
 	@echo "... constraint/RosGenericCst.i"
 	@echo "... constraint/RosGenericCst.s"
@@ -538,12 +568,12 @@ help:
 	@echo "... solver/RosMpcSolver.o"
 	@echo "... solver/RosMpcSolver.i"
 	@echo "... solver/RosMpcSolver.s"
+	@echo "... solver/RosPlaneSolver.o"
+	@echo "... solver/RosPlaneSolver.i"
+	@echo "... solver/RosPlaneSolver.s"
 	@echo "... solver/lpsolve.o"
 	@echo "... solver/lpsolve.i"
 	@echo "... solver/lpsolve.s"
-	@echo "... solver/lpsolver.o"
-	@echo "... solver/lpsolver.i"
-	@echo "... solver/lpsolver.s"
 	@echo "... task/RosMpcTask.o"
 	@echo "... task/RosMpcTask.i"
 	@echo "... task/RosMpcTask.s"

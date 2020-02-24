@@ -65,8 +65,14 @@ int main(int argc, char **argv)
     KDL::JntArray panda_q_init(ndof), panda_dotq_init(ndof),panda_q_des(ndof), panda_q_des_back(ndof);
 
     // initialize robot's joint position and velocity according to roslaunch initialization
-    //panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
-    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
+    panda_q_init.data << 1.11222,
+                         0.80472,
+                         -0.535436,
+                         -1.98801,
+                         0.764916,
+                         2.5814,
+                         0.0391129;
+//    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
 
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
@@ -77,25 +83,30 @@ int main(int argc, char **argv)
 
     // panda's end-effector location and set up desired frame
     KDL::Frame des_frame, back_des_frame, panda_ee_frame, panda_des_frame, panda_obs_frame;
-    KDL::Frame forearm, elbow, base_link;
+    KDL::Frame forearm, wrist, base_link;
     panda_obs_frame = pandaArm.getSegmentPosition(7);
     panda_ee_frame = pandaArm.getSegmentPosition(8);
     Eigen::Vector3d ZYX_angle, panda_ZYX_angle;
     panda_ee_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
     panda_obs_frame.M.GetRPY(panda_ZYX_angle(0),panda_ZYX_angle(1),panda_ZYX_angle(2));
     forearm = pandaArm.getSegmentPosition(3);
+    wrist = pandaArm.getSegmentPosition(6);
     base_link = pandaArm.getSegmentPosition(1);
 
 
-    panda_des_frame.p[0] = 0.470808;
-    panda_des_frame.p[1] = -0.4 ;
-    panda_des_frame.p[2] = 0.517842 ;
+//    panda_des_frame.p[0] = 0.470808;
+//    panda_des_frame.p[1] = -0.5 ;
+//    panda_des_frame.p[2] = 0.517842 ;
+    panda_des_frame.p[0] = 0.8;
+    panda_des_frame.p[1] = -0.2 ;
+    panda_des_frame.p[2] = 0.1 ;
 //    panda_des_frame.p[0] = panda_ee_frame.p[0] ;
 //    panda_des_frame.p[1] = panda_ee_frame.p[1] ;
 //    panda_des_frame.p[2] = panda_ee_frame.p[2] ;
     panda_des_frame.M = panda_des_frame.M;
     panda_des_frame.M.DoRotX(- pi);
     pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
+
 
     // define an cube shape as an obstacle
     rviz_visual_tools::RvizVisualToolsPtr cubeObstacleMarkers;
@@ -110,10 +121,10 @@ int main(int argc, char **argv)
     // define cube location (we suppose this is only a point)
     Eigen::Vector3d cube ;
     geometry_msgs::Pose cubeLocation, forearmLocation;
-    cubeLocation.position.x = 0.5;
-    cubeLocation.position.y = -0.2;
+    cubeLocation.position.x = 0.65;
+    cubeLocation.position.y = 0.1;
 //    cubeLocation.position.z = forearm.p.z();
-    cubeLocation.position.z = 0.65;
+    cubeLocation.position.z = 0.2;
     cube << cubeLocation.position.x, cubeLocation.position.y, cubeLocation.position.z;
     // define cube's size (x,y,z)
     Eigen::Vector3d obsSize;
@@ -142,8 +153,8 @@ int main(int argc, char **argv)
     for (int i(0); i < 1; i ++){
 
         robotVertices[0].block(0,2*i,3,1) <<  panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
-        robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
-//        robotVertices[0].block(0,2*i+1,3,1) <<panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
+//        robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
+        robotVertices[0].block(0,2*i+1,3,1) <<wrist.p.x(),wrist.p.y(),wrist.p.z();
     }
 
     // Define augmented data for mpc
@@ -158,7 +169,7 @@ int main(int argc, char **argv)
     std::cout <<"  robotVerticesAugmented :\n " << robotVerticesAugmented[0] << std::endl;
     // put vertices into ros msg to visualize them in rviz
     geometry_msgs::PoseArray robotVerticesPose;
-    robotVerticesPose.poses.resize(2);
+    robotVerticesPose.poses.resize(3);
 
     robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
     robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
@@ -166,7 +177,9 @@ int main(int argc, char **argv)
     robotVerticesPose.poses[1].position.x = forearm.p.x();
     robotVerticesPose.poses[1].position.y = forearm.p.y();
     robotVerticesPose.poses[1].position.z = forearm.p.z();
-
+    robotVerticesPose.poses[1].position.x = wrist.p.x();
+    robotVerticesPose.poses[1].position.y = wrist.p.y();
+    robotVerticesPose.poses[1].position.z = wrist.p.z();
     // ------------------------------------   Initialize plane  ------------------------------------------
 
     int nbrRobotPart = 1, nbrObsPart=1;
@@ -177,19 +190,29 @@ int main(int argc, char **argv)
     singlePlane2.resize(5);
     double x_width = 2, y_width = 2;
     std::cout <<FYEL("here  : \n") << std::endl;
-    Planes::PlaneData planedata,planedataIni ;
+    Planes::PlaneData planedata,planedataIni, TablePlane ;
+
     planedata = plane.getPlanes();
 
 
     singlePlane << planedata.planeLocation[0].block(0,0,5,1);
     planedataIni = planedata;
 
+    TablePlane.N = 4;
+    TablePlane.nbrPlane =1;
+    TablePlane.planeLocation.resize(1);
+    TablePlane.planeLocation[0].resize(5,N-1);
+    for (int k(0); k< N-1; k++){
+        TablePlane.planeLocation[0].block(0,k,5,1) << 0,0,-1,0,0;
+    }
+
 //    cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],colorPlane,x_width,y_width);
 //    cubeObstacleMarkers->trigger();
 
 //    singlePlane2 << planedata.planeLocation[1].block(0,0,5,1);
     // ------------------------------------   Initialize Lps solvers  ------------------------------------------
-    double dsafe = 0.05;
+    double dsafe = 0.1;
+    dsafe = dsafe/2;
     PlaneSolver planeSolver(10,dsafe);
     Eigen::VectorXd gPlane;
     gPlane.resize(5);
@@ -254,8 +277,8 @@ int main(int argc, char **argv)
 
     dqMin.resize(N*ndof);
     dqMax.resize(N*ndof);
-    dqMin.setConstant(-pi/20);
-    dqMax.setConstant(pi/20);
+    dqMin.setConstant(-pi/2);
+    dqMax.setConstant(pi/2);
     dqMin.tail(ndof).setZero();
     dqMax.tail(ndof).setZero();
     jntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
@@ -306,10 +329,15 @@ int main(int argc, char **argv)
 //    constraintVectorData.push_back(cartesianVelCst.getConstraintData());
 
     ObsAvoidanceCSt obsAvoidanceCst(ndof,N,dt,dsafe,"ObsAvoidanceConstraint",pandaPx,pandaPu);
-
     obsAvoidanceCst.setLowerBound();
     obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
     constraintVectorData.push_back(obsAvoidanceCst.getConstraintData());
+
+    ObsAvoidanceCSt TableAvoidanceCst(ndof,N,dt,0,"TableAvoidanceConstraint",pandaPx,pandaPu);
+    TableAvoidanceCst.setLowerBound();
+    TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
+    TableAvoidanceCst.getConstraintData().print();
+    constraintVectorData.push_back(TableAvoidanceCst.getConstraintData());
 
      // ------------------------------------   Initialize qpOASES solver  ------------------------------------------
 
@@ -327,22 +355,27 @@ int main(int argc, char **argv)
 
     lb.setConstant(-10);
     ub.setConstant(10);
-    int constraintSize = 2*ndof*N + obsAvoidanceCst.getConstraintData().upBound_.size();
+    int constraintSize = 2*ndof*N + obsAvoidanceCst.getConstraintData().upBound_.size() + TableAvoidanceCst.getConstraintData().upBound_.size();
     mpc_solve qptest(1,ndof*N,constraintSize);
     qptest.initData(H,g,lb,ub);
     qptest.constructProblem(constraintVectorData,H,g);
+
     qptest.setDefaultOptions();
 
     Eigen::Vector3d cartesian_error;
     bool task_complete ;
     task_complete = false;
-    Eigen::Vector3d goalStart, goalEnd, currentEEpose, goal ;
+    Eigen::Vector3d currentEEpose, goal, goalStart, goalEnd ;
 
-    goalEnd << 0.470808, -0.3, 0.517842;
-    goalStart << panda_ee_frame.p[0], panda_ee_frame.p[1], panda_ee_frame.p[2];
+//    goalEnd << 0.470808, -0.3, 0.517842;
+    goalEnd << 0.7, -0.2, 0.1 ;
+//    goalStart << panda_ee_frame.p[0], panda_ee_frame.p[1], panda_ee_frame.p[2];
+    goalStart << 0.5, 0.3, 0.1 ;
+
     goal = goalEnd;
     // ------------------------------------   Initialize Ros connextion  ------------------------------------------
-
+    Eigen::VectorXd jointTemp;
+    jointTemp.resize(ndof);
     ros::Rate loop_rate(1000);
 
     // create ros topic for sending msg
@@ -395,12 +428,12 @@ int main(int argc, char **argv)
         panda_des_frame.p[0]=  goal(0);
         panda_des_frame.p[1]=  goal(1);
         panda_des_frame.p[2]=  goal(2);
-
         pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
         for (size_t i=0; i<N; i++)
         {
              qHorizonDes.segment(ndof*i,ndof) = panda_q_des.data;
         }
+//        pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
 
         pandaTask.computeHandg(jacobianHorizon,pandaState,qHorizonDes);
         H = pandaTask.getMatrixH();
@@ -420,11 +453,13 @@ int main(int argc, char **argv)
         jointPosCst.update(pandaState);
         jointVelCst.update(pandaState);
         obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
+        TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
 
 
         constraintVectorData[0] = jointPosCst.getConstraintData();
         constraintVectorData[1] = jointVelCst.getConstraintData();
         constraintVectorData[2] = obsAvoidanceCst.getConstraintData();
+        constraintVectorData[3] = TableAvoidanceCst.getConstraintData();
 
         qptest.constructProblem(constraintVectorData,H,g);
 //        qptest.print();
@@ -457,6 +492,7 @@ int main(int argc, char **argv)
 
         panda_ee_frame = pandaArm.getSegmentPosition(8);
         forearm = pandaArm.getSegmentPosition(3);
+        wrist = pandaArm.getSegmentPosition(6);
         base_link = pandaArm.getSegmentPosition(1);
         robotVerticesPose.poses[0].position.x = panda_ee_frame.p.x();
         robotVerticesPose.poses[0].position.y = panda_ee_frame.p.y();
@@ -464,7 +500,12 @@ int main(int argc, char **argv)
         robotVerticesPose.poses[1].position.x = forearm.p.x();
         robotVerticesPose.poses[1].position.y = forearm.p.y();
         robotVerticesPose.poses[1].position.z = forearm.p.z();
+        robotVerticesPose.poses[2].position.x = wrist.p.x();
+        robotVerticesPose.poses[2].position.y = wrist.p.y();
+        robotVerticesPose.poses[2].position.z = wrist.p.z();
         cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[0],obsSize[0],obsSize[1],obsSize[2]);
+        cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[2],obsSize[0],obsSize[1],obsSize[2]);
+
 //        cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[1],obsSize[0],obsSize[1],obsSize[2]);
 
 //    cubeObstacleMarkers->publishCuboid(robotVerticesPose.poses[1],obsSize[0],obsSize[1],obsSize[2]);
@@ -476,8 +517,8 @@ int main(int argc, char **argv)
         for (int i(0); i < 1; i ++){
 
             robotVertices[0].block(0,2*i,3,1) <<  panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
-            robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
-//            robotVertices[0].block(0,2*i+1,3,1) <<panda_ee_frame.p.x(),panda_ee_frame.p.y(),panda_ee_frame.p.z();
+//            robotVertices[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
+            robotVertices[0].block(0,2*i+1,3,1) <<  wrist.p.x(),wrist.p.y(),wrist.p.z();
 
         }
         pandaArm.computeCartPosHorz(q_horizon);
@@ -485,7 +526,7 @@ int main(int argc, char **argv)
 
         for (int i(0);i<N;i++){
             robotVerticesAugmented[0].block(0,2*i,3,1) << eePosHorz.segment(3*i,3);
-            robotVerticesAugmented[0].block(0,2*i+1,3,1) <<  forearm.p.x(),forearm.p.y(),forearm.p.z();
+            robotVerticesAugmented[0].block(0,2*i+1,3,1) <<  wrist.p.x(),wrist.p.y(),wrist.p.z();
             path[i].position.x =  eePosHorz(3*i);
             path[i].position.y =  eePosHorz(3*i+1);
             path[i].position.z =  eePosHorz(3*i+2);
@@ -526,7 +567,7 @@ int main(int argc, char **argv)
             }
 
         singlePlane.segment(0,5) << planedata.planeLocation[0].block(0,0,5,1);
-
+//        singlePlane.segment(0,5) <<    TablePlane.planeLocation[0].block(0,0,5,1) ;
 //        std::cout <<" plane found : \n " << planedata.planeLocation[0].block(0,0,5,1) <<'\n';
 
         cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],colorPlane1,x_width,y_width);
@@ -536,8 +577,8 @@ int main(int argc, char **argv)
                                               ,-planedata.planeLocation[0](3,2),colorPlane3,x_width,y_width);
         cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,3),planedata.planeLocation[0](1,3),planedata.planeLocation[0](2,3)
                                               ,-planedata.planeLocation[0](3,3),colorPlane4,x_width,y_width);
-//        cubeObstacleMarkers->publishABCDPlane(0.62,-0.62,0.478,-.61,color,x_width,y_width);
-        PathPublisher->publishPath(path);
+        rviz_visual_tools::scales SMALL;
+        PathPublisher->publishPath(path,colorPlane1);
         PathPublisher->trigger();
 //        PathPublisher->deleteAllMarkers();
         cubeObstacleMarkers->trigger();
@@ -545,7 +586,6 @@ int main(int argc, char **argv)
 
         Eigen::Vector3d ee_pose ;
         ee_pose << panda_ee_frame.p.x(), panda_ee_frame.p.y(), panda_ee_frame.p.z();
-
         pandaState = stateA*pandaState + stateB*optimalSolution.segment(0,ndof);
         pandaArm.setState(pandaState.head(ndof),pandaState.tail(ndof));
         std_msgs::Float64 v1,v2,v3,v4,v5,v6 ; // robot joint's velocity

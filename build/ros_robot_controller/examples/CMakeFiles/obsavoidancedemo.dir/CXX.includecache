@@ -243,6 +243,10 @@ constraint/RosJointVelCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosJointVelCst.h
 constraint/RosJointPosCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosJointPosCst.h
+constraint/RosCartVelCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosCartVelCst.h
+constraint/RosAvoidanceCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/constraint/RosAvoidanceCst.h
 visualization/RosMarkers.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/visualization/RosMarkers.h
 sepPlane/sepPlane.h
@@ -303,6 +307,8 @@ glpk.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/glpk.h
 iostream
 -
+math.h
+-
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/RosCommunDefinition.h
 Eigen/Core
@@ -313,6 +319,26 @@ iostream
 -
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/color.h
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosAvoidanceCst.h
+iostream
+-
+Eigen/Dense
+-
+Eigen/Core
+-
+string
+-
+sepPlane/sepPlane.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/sepPlane/sepPlane.h
+constraint/RosGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
+fstream
+-
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosCartVelCst.h
+constraint/RosGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 iostream
@@ -419,6 +445,8 @@ constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/constraint/RosGenericCst.h
 vector
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/vector
+fstream
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/fstream
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
 glpk.h

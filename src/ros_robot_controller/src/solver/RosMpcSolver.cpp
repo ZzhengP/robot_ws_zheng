@@ -157,6 +157,7 @@ void mpc_solve::constructProblem(const std::vector<constraintData> &constraintVe
 //        std::cout <<" cols :\n " << cols <<'\n';
 //        std::cout <<" lbA_ :\n  " << constraintVectorData[i].lowBound_ <<'\n' ;
 //        std::cout <<" ubA_ :\n  " << constraintVectorData[i].upBound_ <<'\n' ;
+//        std::cout <<" rows cumul  :\n  " << rows_cumul <<'\n' ;
 
         A_.block(rows_cumul,0,rows,cols) = constraintVectorData[i].cstMatrix_;
         lbA_.segment(rows_cumul,constraintVectorData[i].lowBound_.size()) = constraintVectorData[i].lowBound_;

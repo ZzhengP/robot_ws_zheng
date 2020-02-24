@@ -56,17 +56,17 @@ CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -80,38 +80,26 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
 
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
-.PHONY : package_source
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target package_source
-package_source/fast: package_source
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : package_source/fast
-
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-
-.PHONY : package/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,38 +112,50 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target package
+package/fast: package
 
-.PHONY : list_install_components/fast
+.PHONY : package/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
+.PHONY : package_source
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target package_source
+package_source/fast: package_source
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+.PHONY : package_source/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -190,79 +190,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
 
 # Convenience name for target.
-iDynTreeTest: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+lpsolvetest: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
 
-.PHONY : iDynTreeTest
+.PHONY : lpsolvetest
 
 # fast build rule for target.
-iDynTreeTest/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
-.PHONY : iDynTreeTest/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-
-# Convenience name for target.
-franka_example: ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-
-.PHONY : franka_example
-
-# fast build rule for target.
-franka_example/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
-.PHONY : franka_example/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-
-# Convenience name for target.
-ros_gazebo_sim: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-
-.PHONY : ros_gazebo_sim
-
-# fast build rule for target.
-ros_gazebo_sim/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
-.PHONY : ros_gazebo_sim/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/markers.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/markers.dir/rule
-
-# Convenience name for target.
-markers: ros_robot_controller/examples/CMakeFiles/markers.dir/rule
-
-.PHONY : markers
-
-# fast build rule for target.
-markers/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
-.PHONY : markers/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-
-# Convenience name for target.
-obsavoidancedemo: ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-
-.PHONY : obsavoidancedemo
-
-# fast build rule for target.
-obsavoidancedemo/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
-.PHONY : obsavoidancedemo/fast
+lpsolvetest/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
+.PHONY : lpsolvetest/fast
 
 # Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/setinit.dir/rule:
@@ -280,19 +220,109 @@ setinit/fast:
 .PHONY : setinit/fast
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+ros_robot_controller/examples/CMakeFiles/qptest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
 
 # Convenience name for target.
-lpsolvetest: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+qptest: ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
 
-.PHONY : lpsolvetest
+.PHONY : qptest
 
 # fast build rule for target.
-lpsolvetest/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
-.PHONY : lpsolvetest/fast
+qptest/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/build
+.PHONY : qptest/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
+
+# Convenience name for target.
+obsavoidancedemo: ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
+
+.PHONY : obsavoidancedemo
+
+# fast build rule for target.
+obsavoidancedemo/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
+.PHONY : obsavoidancedemo/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
+
+# Convenience name for target.
+ros_gazebo_sim: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
+
+.PHONY : ros_gazebo_sim
+
+# fast build rule for target.
+ros_gazebo_sim/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
+.PHONY : ros_gazebo_sim/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+
+# Convenience name for target.
+franka_example: ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
+
+.PHONY : franka_example
+
+# fast build rule for target.
+franka_example/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
+.PHONY : franka_example/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+
+# Convenience name for target.
+iDynTreeTest: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+
+.PHONY : iDynTreeTest
+
+# fast build rule for target.
+iDynTreeTest/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
+.PHONY : iDynTreeTest/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
+
+# Convenience name for target.
+qpplaneformulation: ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
+
+.PHONY : qpplaneformulation
+
+# fast build rule for target.
+qpplaneformulation/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build
+.PHONY : qpplaneformulation/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+
+# Convenience name for target.
+markers: ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+
+.PHONY : markers
+
+# fast build rule for target.
+markers/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
+.PHONY : markers/fast
 
 franka_example.o: franka_example.cpp.o
 
@@ -429,6 +459,60 @@ obsavoidancedemo.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.s
 .PHONY : obsavoidancedemo.cpp.s
 
+qpplaneformulation.o: qpplaneformulation.cpp.o
+
+.PHONY : qpplaneformulation.o
+
+# target to build an object file
+qpplaneformulation.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o
+.PHONY : qpplaneformulation.cpp.o
+
+qpplaneformulation.i: qpplaneformulation.cpp.i
+
+.PHONY : qpplaneformulation.i
+
+# target to preprocess a source file
+qpplaneformulation.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.i
+.PHONY : qpplaneformulation.cpp.i
+
+qpplaneformulation.s: qpplaneformulation.cpp.s
+
+.PHONY : qpplaneformulation.s
+
+# target to generate assembly for a file
+qpplaneformulation.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.s
+.PHONY : qpplaneformulation.cpp.s
+
+qptest.o: qptest.cpp.o
+
+.PHONY : qptest.o
+
+# target to build an object file
+qptest.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.o
+.PHONY : qptest.cpp.o
+
+qptest.i: qptest.cpp.i
+
+.PHONY : qptest.i
+
+# target to preprocess a source file
+qptest.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.i
+.PHONY : qptest.cpp.i
+
+qptest.s: qptest.cpp.s
+
+.PHONY : qptest.s
+
+# target to generate assembly for a file
+qptest.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.s
+.PHONY : qptest.cpp.s
+
 ros_gazebo_sim.o: ros_gazebo_sim.cpp.o
 
 .PHONY : ros_gazebo_sim.o
@@ -489,22 +573,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... package_source"
-	@echo "... package"
-	@echo "... edit_cache"
-	@echo "... iDynTreeTest"
-	@echo "... franka_example"
-	@echo "... ros_gazebo_sim"
-	@echo "... markers"
-	@echo "... list_install_components"
-	@echo "... obsavoidancedemo"
 	@echo "... install/strip"
-	@echo "... setinit"
-	@echo "... rebuild_cache"
+	@echo "... install/local"
 	@echo "... lpsolvetest"
+	@echo "... setinit"
+	@echo "... qptest"
+	@echo "... obsavoidancedemo"
+	@echo "... list_install_components"
+	@echo "... ros_gazebo_sim"
+	@echo "... rebuild_cache"
+	@echo "... franka_example"
+	@echo "... iDynTreeTest"
+	@echo "... edit_cache"
+	@echo "... qpplaneformulation"
+	@echo "... package"
+	@echo "... package_source"
+	@echo "... markers"
+	@echo "... test"
+	@echo "... install"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"
@@ -520,6 +606,12 @@ help:
 	@echo "... obsavoidancedemo.o"
 	@echo "... obsavoidancedemo.i"
 	@echo "... obsavoidancedemo.s"
+	@echo "... qpplaneformulation.o"
+	@echo "... qpplaneformulation.i"
+	@echo "... qpplaneformulation.s"
+	@echo "... qptest.o"
+	@echo "... qptest.i"
+	@echo "... qptest.s"
 	@echo "... ros_gazebo_sim.o"
 	@echo "... ros_gazebo_sim.i"
 	@echo "... ros_gazebo_sim.s"

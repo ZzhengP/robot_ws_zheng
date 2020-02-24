@@ -2010,69 +2010,17 @@ doc/fast:
 .PHONY : doc/fast
 
 #=============================================================================
-# Target rules for targets named iDynTreeTest
+# Target rules for targets named lpsolvetest
 
 # Build rule for target.
-iDynTreeTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 iDynTreeTest
-.PHONY : iDynTreeTest
+lpsolvetest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lpsolvetest
+.PHONY : lpsolvetest
 
 # fast build rule for target.
-iDynTreeTest/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
-.PHONY : iDynTreeTest/fast
-
-#=============================================================================
-# Target rules for targets named franka_example
-
-# Build rule for target.
-franka_example: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 franka_example
-.PHONY : franka_example
-
-# fast build rule for target.
-franka_example/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
-.PHONY : franka_example/fast
-
-#=============================================================================
-# Target rules for targets named ros_gazebo_sim
-
-# Build rule for target.
-ros_gazebo_sim: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ros_gazebo_sim
-.PHONY : ros_gazebo_sim
-
-# fast build rule for target.
-ros_gazebo_sim/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
-.PHONY : ros_gazebo_sim/fast
-
-#=============================================================================
-# Target rules for targets named markers
-
-# Build rule for target.
-markers: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 markers
-.PHONY : markers
-
-# fast build rule for target.
-markers/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
-.PHONY : markers/fast
-
-#=============================================================================
-# Target rules for targets named obsavoidancedemo
-
-# Build rule for target.
-obsavoidancedemo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obsavoidancedemo
-.PHONY : obsavoidancedemo
-
-# fast build rule for target.
-obsavoidancedemo/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
-.PHONY : obsavoidancedemo/fast
+lpsolvetest/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
+.PHONY : lpsolvetest/fast
 
 #=============================================================================
 # Target rules for targets named setinit
@@ -2088,17 +2036,95 @@ setinit/fast:
 .PHONY : setinit/fast
 
 #=============================================================================
-# Target rules for targets named lpsolvetest
+# Target rules for targets named qptest
 
 # Build rule for target.
-lpsolvetest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lpsolvetest
-.PHONY : lpsolvetest
+qptest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 qptest
+.PHONY : qptest
 
 # fast build rule for target.
-lpsolvetest/fast:
-	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
-.PHONY : lpsolvetest/fast
+qptest/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/build
+.PHONY : qptest/fast
+
+#=============================================================================
+# Target rules for targets named obsavoidancedemo
+
+# Build rule for target.
+obsavoidancedemo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 obsavoidancedemo
+.PHONY : obsavoidancedemo
+
+# fast build rule for target.
+obsavoidancedemo/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
+.PHONY : obsavoidancedemo/fast
+
+#=============================================================================
+# Target rules for targets named ros_gazebo_sim
+
+# Build rule for target.
+ros_gazebo_sim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_gazebo_sim
+.PHONY : ros_gazebo_sim
+
+# fast build rule for target.
+ros_gazebo_sim/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
+.PHONY : ros_gazebo_sim/fast
+
+#=============================================================================
+# Target rules for targets named franka_example
+
+# Build rule for target.
+franka_example: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 franka_example
+.PHONY : franka_example
+
+# fast build rule for target.
+franka_example/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
+.PHONY : franka_example/fast
+
+#=============================================================================
+# Target rules for targets named iDynTreeTest
+
+# Build rule for target.
+iDynTreeTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iDynTreeTest
+.PHONY : iDynTreeTest
+
+# fast build rule for target.
+iDynTreeTest/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
+.PHONY : iDynTreeTest/fast
+
+#=============================================================================
+# Target rules for targets named qpplaneformulation
+
+# Build rule for target.
+qpplaneformulation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 qpplaneformulation
+.PHONY : qpplaneformulation
+
+# fast build rule for target.
+qpplaneformulation/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build
+.PHONY : qpplaneformulation/fast
+
+#=============================================================================
+# Target rules for targets named markers
+
+# Build rule for target.
+markers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 markers
+.PHONY : markers
+
+# fast build rule for target.
+markers/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
+.PHONY : markers/fast
 
 #=============================================================================
 # Target rules for targets named ros_robot_controller_library
@@ -2268,13 +2294,15 @@ help:
 	@echo "... rviz_visual_tools_remote_control_autogen"
 	@echo "... rvt_test_autogen"
 	@echo "... doc"
-	@echo "... iDynTreeTest"
-	@echo "... franka_example"
-	@echo "... ros_gazebo_sim"
-	@echo "... markers"
-	@echo "... obsavoidancedemo"
-	@echo "... setinit"
 	@echo "... lpsolvetest"
+	@echo "... setinit"
+	@echo "... qptest"
+	@echo "... obsavoidancedemo"
+	@echo "... ros_gazebo_sim"
+	@echo "... franka_example"
+	@echo "... iDynTreeTest"
+	@echo "... qpplaneformulation"
+	@echo "... markers"
 	@echo "... ros_robot_controller_library"
 .PHONY : help
 

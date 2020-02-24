@@ -40,6 +40,8 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/obsavoidancedemo.cpp
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/RosCommunDefinition.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/commun/color.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosAvoidanceCst.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosCartVelCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointAccCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h

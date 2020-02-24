@@ -419,6 +419,8 @@ constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/constraint/RosGenericCst.h
 vector
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/vector
+fstream
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/fstream
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
 glpk.h
