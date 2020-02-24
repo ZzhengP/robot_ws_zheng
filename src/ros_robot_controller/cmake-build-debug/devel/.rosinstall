@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/zheng/robot_ws_zheng/src/ros_robot_controller/cmake-build-debug/devel/setup.sh

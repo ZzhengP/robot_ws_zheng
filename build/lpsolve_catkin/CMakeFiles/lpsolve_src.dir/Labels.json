@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/CMakeFiles/lpsolve_src"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/CMakeFiles/lpsolve_src.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/CMakeFiles/lpsolve_src-complete.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-install.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-mkdir.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-download.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-update.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-patch.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-configure.rule"
+		},
+		{
+			"file" : "/home/zheng/robot_ws_zheng/build/lpsolve_catkin/lpsolve_src-prefix/src/lpsolve_src-stamp/lpsolve_src-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"lpsolve_src"
+		],
+		"name" : "lpsolve_src"
+	}
+}

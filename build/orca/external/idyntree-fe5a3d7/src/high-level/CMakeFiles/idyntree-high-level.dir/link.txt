@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../../lib/libidyntree-high-level.a  CMakeFiles/idyntree-high-level.dir/src/KinDynComputations.cpp.o
+/usr/bin/ranlib ../../../../../lib/libidyntree-high-level.a

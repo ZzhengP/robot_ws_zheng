@@ -1,0 +1,7 @@
+\_form#0:$ lbA <= Ax <= ubA $
+\_form#1:\begin{eqnarray*} (n,b,d) &=& Max xg' \\ &=& Ax \leq b \\ &=& x > lb \end{eqnarray*}
+\_form#2:\begin{eqnarray*} (n,b,d) &=& Max xg' \\ s.t \\ &Ax \leq b \\ & x > lb \end{eqnarray*}
+\_form#3:\begin{eqnarray*} (n,b,d) &=& Max \vspace{1cm} xg' \\ s.t \\ &Ax \leq b \\ & x > lb \end{eqnarray*}
+\_form#4:\begin{eqnarray*} (n,b,d) &=& Max ( xg' )\\ s.t \\ &Ax \leq b \\ & x > lb \end{eqnarray*}
+\_form#5:$ q_{1:N} = Px*q_{0} + Pu*U_{0:N-1} \\ dq_{1:N} = Pxdq*q_{0} + Pudq*U_{0:N-1} $
+\_form#6:$ ||Ex + f||^{2}$

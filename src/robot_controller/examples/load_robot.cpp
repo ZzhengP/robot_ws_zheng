@@ -219,25 +219,32 @@ int main(int argc, char **argv)
 
     // Define constraint
 
-    Eigen::VectorXd ddq_min, ddq_max, ddq_lb, ddq_ub;
+    Eigen::VectorXd ddq_min, ddq_max, ddq_lb, ddq_ub, dq_min, dq_max, q_min, q_max;
     Eigen::MatrixXd ddq_C;
-    ddq_min.resize(N*ndof);
-    ddq_max.resize(N*ndof);
-    ddq_lb.resize(N*ndof);
-    ddq_ub.resize(N*ndof);
-    ddq_C.resize(N*ndof, N*ndof);
-    ddq_C.setIdentity();
+    ddq_min.resize(N*ndof), ddq_max.resize(N*ndof);
+    ddq_lb.resize(N*ndof), ddq_ub.resize(N*ndof);
+    ddq_C.resize(N*ndof, N*ndof), ddq_C.setIdentity();
+    dq_min.resize(N*ndof), dq_max.resize(N*ndof);
+
 
     for (size_t i = 0; i < N ; i++){
         ddq_min.segment(6*i,6) << -2, -2, -2, -2, -2, -2;
         ddq_max.segment(6*i,6) << 2, 2, 2, 2, 2, 2;
+        dq_min.segment(6*i,6) << -1, -1, -1, -1, -1, -1;
+        dq_max.segment(6*i,6) << 1, 1, 1, 1, 1, 1;
+        q_min.segment(6*i,6) << -pi, -pi, -pi, -pi, -pi, -pi;
+        q_max.segment(6*i,6) << pi, pi, pi, pi, pi, pi;
       }
+    // Define joint acceleration limitation
     joint_acc_cst jnt_acc_cst(ndof, N);
     jnt_acc_cst.setLimit(ddq_min,ddq_max);
     jnt_acc_cst.setLowerBound(robot_state, Px);
     jnt_acc_cst.setUpperBound(robot_state, Px);
     ddq_lb = jnt_acc_cst.getLowerBound();
     ddq_ub = jnt_acc_cst.getUpperBound();
+
+    // Define joint velocity limitation
+
     double error = 100;
 
 //    while(ros::ok())

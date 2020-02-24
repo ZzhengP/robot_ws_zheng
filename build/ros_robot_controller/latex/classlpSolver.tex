@@ -1,0 +1,175 @@
+\hypertarget{classlpSolver}{}\doxysection{lp\+Solver Class Reference}
+\label{classlpSolver}\index{lpSolver@{lpSolver}}
+
+
+{\ttfamily \#include $<$lpsolve.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}{lp\+Solver}} (int Nv, int Nc)
+\item 
+void \mbox{\hyperlink{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}{set\+Cost}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}{print}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}{set\+Row\+Constraint}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a1463dd174c5186d87cef70b0a1164936}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&robot\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&obs\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&data\+Plane\+Precedent)
+\item 
+void \mbox{\hyperlink{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}{set\+Equality\+Constraint\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}{set\+Equality\+Constraint\+Matrix}} (Eigen\+::\+Matrix\+Xd A)
+\item 
+void \mbox{\hyperlink{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}{load\+Equality\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a16601936208d88958c1d371a800d0189}{solve}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classlpSolver_a9393130c51d6771af535e043508b5ac4}{get\+Solution}} ()
+\item 
+\mbox{\hyperlink{classlpSolver_a994cb7aa2a298ff8639797cf4ec43980}{lp\+Solver}} (int N\+\_\+horz, int Ndof, int nbr\+Cst)
+\item 
+bool \mbox{\hyperlink{classlpSolver_a39e8988b69d8f4112113e8d7c00daa1a}{init\+Data}} (Eigen\+::\+Matrix\+Xd A, Eigen\+::\+Vector\+Xd lb, Eigen\+::\+Vector\+Xd ub, Eigen\+::\+Vector\+Xd lbA, Eigen\+::\+Vector\+Xd ubA)
+\item 
+void \mbox{\hyperlink{classlpSolver_a9fede36b81acd0850c077c66feb4c1ca}{compute\+Cost}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a310c95466d4a9a9d67ae8e0a553069bc}{compute\+Non\+Div\+Cst}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a1d10b4635dbe3204644491ec0e19080d}{compute\+Norm\+Cst}} (const Eigen\+::\+Matrix\+Xd \&robot\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&obs\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&data\+Plane\+Precedent, double epsilon)
+\item 
+void \mbox{\hyperlink{classlpSolver_aa9cc9d18daab6d5f9a0dd42a5bfc2c3f}{Update}} (const Eigen\+::\+Matrix\+Xd \&robot\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&obs\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&data\+Plane\+Precedent, double epsilon)
+\item 
+void \mbox{\hyperlink{classlpSolver_a16601936208d88958c1d371a800d0189}{solve}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classlpSolver_a9393130c51d6771af535e043508b5ac4}{get\+Solution}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a3091f25be2606669c5b82d07a3800414}{set\+Default\+Options}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}\label{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}} 
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{lpSolver()}{lpSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily lp\+Solver\+::lp\+Solver (\begin{DoxyParamCaption}\item[{int}]{Nv,  }\item[{int}]{Nc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a994cb7aa2a298ff8639797cf4ec43980}\label{classlpSolver_a994cb7aa2a298ff8639797cf4ec43980}} 
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{lpSolver()}{lpSolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily lp\+Solver\+::lp\+Solver (\begin{DoxyParamCaption}\item[{int}]{N\+\_\+horz,  }\item[{int}]{Ndof,  }\item[{int}]{nbr\+Cst }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlpSolver_a9fede36b81acd0850c077c66feb4c1ca}\label{classlpSolver_a9fede36b81acd0850c077c66feb4c1ca}} 
+\index{lpSolver@{lpSolver}!computeCost@{computeCost}}
+\index{computeCost@{computeCost}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{computeCost()}{computeCost()}}
+{\footnotesize\ttfamily void lp\+Solver\+::compute\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a310c95466d4a9a9d67ae8e0a553069bc}\label{classlpSolver_a310c95466d4a9a9d67ae8e0a553069bc}} 
+\index{lpSolver@{lpSolver}!computeNonDivCst@{computeNonDivCst}}
+\index{computeNonDivCst@{computeNonDivCst}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{computeNonDivCst()}{computeNonDivCst()}}
+{\footnotesize\ttfamily void lp\+Solver\+::compute\+Non\+Div\+Cst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a1d10b4635dbe3204644491ec0e19080d}\label{classlpSolver_a1d10b4635dbe3204644491ec0e19080d}} 
+\index{lpSolver@{lpSolver}!computeNormCst@{computeNormCst}}
+\index{computeNormCst@{computeNormCst}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{computeNormCst()}{computeNormCst()}}
+{\footnotesize\ttfamily void lp\+Solver\+::compute\+Norm\+Cst (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{robot\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{obs\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{data\+Plane\+Precedent,  }\item[{double}]{epsilon = {\ttfamily 0.01} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a9393130c51d6771af535e043508b5ac4}\label{classlpSolver_a9393130c51d6771af535e043508b5ac4}} 
+\index{lpSolver@{lpSolver}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{getSolution()}{getSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd lp\+Solver\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_a9393130c51d6771af535e043508b5ac4}\label{classlpSolver_a9393130c51d6771af535e043508b5ac4}} 
+\index{lpSolver@{lpSolver}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{getSolution()}{getSolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd lp\+Solver\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_a39e8988b69d8f4112113e8d7c00daa1a}\label{classlpSolver_a39e8988b69d8f4112113e8d7c00daa1a}} 
+\index{lpSolver@{lpSolver}!initData@{initData}}
+\index{initData@{initData}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{initData()}{initData()}}
+{\footnotesize\ttfamily bool lp\+Solver\+::init\+Data (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{A,  }\item[{Eigen\+::\+Vector\+Xd}]{lb,  }\item[{Eigen\+::\+Vector\+Xd}]{ub,  }\item[{Eigen\+::\+Vector\+Xd}]{lbA,  }\item[{Eigen\+::\+Vector\+Xd}]{ubA }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}\label{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}} 
+\index{lpSolver@{lpSolver}!loadEqualityMatrix@{loadEqualityMatrix}}
+\index{loadEqualityMatrix@{loadEqualityMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{loadEqualityMatrix()}{loadEqualityMatrix()}}
+{\footnotesize\ttfamily void lp\+Solver\+::load\+Equality\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}\label{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}} 
+\index{lpSolver@{lpSolver}!print@{print}}
+\index{print@{print}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void lp\+Solver\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a1463dd174c5186d87cef70b0a1164936}\label{classlpSolver_a1463dd174c5186d87cef70b0a1164936}} 
+\index{lpSolver@{lpSolver}!setConstraintMatrix@{setConstraintMatrix}}
+\index{setConstraintMatrix@{setConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{robot\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{obs\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{data\+Plane\+Precedent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}\label{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}} 
+\index{lpSolver@{lpSolver}!setCost@{setCost}}
+\index{setCost@{setCost}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setCost()}{setCost()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a3091f25be2606669c5b82d07a3800414}\label{classlpSolver_a3091f25be2606669c5b82d07a3800414}} 
+\index{lpSolver@{lpSolver}!setDefaultOptions@{setDefaultOptions}}
+\index{setDefaultOptions@{setDefaultOptions}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setDefaultOptions()}{setDefaultOptions()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Default\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}\label{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}} 
+\index{lpSolver@{lpSolver}!setEqualityConstraintMatrix@{setEqualityConstraintMatrix}}
+\index{setEqualityConstraintMatrix@{setEqualityConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setEqualityConstraintMatrix()}{setEqualityConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Equality\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}\label{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}} 
+\index{lpSolver@{lpSolver}!setEqualityConstraintMatrix@{setEqualityConstraintMatrix}}
+\index{setEqualityConstraintMatrix@{setEqualityConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setEqualityConstraintMatrix()}{setEqualityConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Equality\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{A }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}\label{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}} 
+\index{lpSolver@{lpSolver}!setRowConstraint@{setRowConstraint}}
+\index{setRowConstraint@{setRowConstraint}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setRowConstraint()}{setRowConstraint()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Row\+Constraint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a16601936208d88958c1d371a800d0189}\label{classlpSolver_a16601936208d88958c1d371a800d0189}} 
+\index{lpSolver@{lpSolver}!solve@{solve}}
+\index{solve@{solve}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_a16601936208d88958c1d371a800d0189}\label{classlpSolver_a16601936208d88958c1d371a800d0189}} 
+\index{lpSolver@{lpSolver}!solve@{solve}}
+\index{solve@{solve}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_aa9cc9d18daab6d5f9a0dd42a5bfc2c3f}\label{classlpSolver_aa9cc9d18daab6d5f9a0dd42a5bfc2c3f}} 
+\index{lpSolver@{lpSolver}!Update@{Update}}
+\index{Update@{Update}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void lp\+Solver\+::\+Update (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{robot\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{obs\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{data\+Plane\+Precedent,  }\item[{double}]{epsilon }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/solver/\mbox{\hyperlink{lpsolve_8h}{lpsolve.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/solver/\mbox{\hyperlink{lpsolver_8h}{lpsolver.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/solver/\mbox{\hyperlink{lpsolve_8cpp}{lpsolve.\+cpp}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/solver/\mbox{\hyperlink{lpsolver_8cpp}{lpsolver.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,169 @@
+\hypertarget{classplane_1_1Planes}{}\doxysection{plane\+::Planes Class Reference}
+\label{classplane_1_1Planes}\index{plane::Planes@{plane::Planes}}
+
+
+More like a data structure to store planes.  
+
+
+
+
+{\ttfamily \#include $<$sep\+Plane.\+h$>$}
+
+
+
+Collaboration diagram for plane\+::Planes\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classplane_1_1Planes__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classplane_1_1Planes_ab8e2d83dbcb927b1ebbebed25d57d7ce}{Planes}} (int N, int nbr\+Robobot\+Part, int nbr\+Obs, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ robot\+Vertices, Eigen\+::\+Matrix\+Xd obs\+Vertices)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classplane_1_1Planes}{Planes}} are initialized with predifined robot\textquotesingle{}s vertices and variable obs\+Vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classplane_1_1Planes_aa2cbe842027ad64a9000b87ddef7cfb7}{Planes}} (int N, int nbr\+Robobot\+Part, int nbr\+Obs, Eigen\+::\+Matrix\+Xd robot\+Vertices)
+\item 
+void \mbox{\hyperlink{classplane_1_1Planes_a7008fb40be133fb669d54437cd2ec30e}{Initialize\+Planes\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Initialize\+Planes\+Data robot\+Vertices, obs\+Vertices \mbox{\hyperlink{classplane_1_1Planes}{Planes}} data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}} \mbox{\hyperlink{classplane_1_1Planes_a7683ee145bb777c4fb5229924e9aba1f}{get\+Planes}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}} \mbox{\hyperlink{classplane_1_1Planes_a3d9f928811b24c27a1abe3b4ae4a47bd}{planes\+Data\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classplane_1_1Planes_a5622e7783a0eb9186127d3813f1a7e0d}{N\+\_\+}}
+\begin{DoxyCompactList}\small\item\em N\+\_\+\+: horizon of prediction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classplane_1_1Planes_a809be660fe9e210c6dd3895f55c52b99}{nbr\+Plane\+\_\+}}
+\item 
+int \mbox{\hyperlink{classplane_1_1Planes_a43c6ef9a6adbe9f6565690ab82091e52}{nbr\+Robot\+Part\+\_\+}}
+\begin{DoxyCompactList}\small\item\em nbr\+Robot\+Part\+\_\+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classplane_1_1Planes_a65aa1b183eba2ef94acc343eb0de2178}{nbr\+Obs\+\_\+}}
+\item 
+\mbox{\hyperlink{structplane_1_1VerticesData}{Vertices\+Data}} \mbox{\hyperlink{classplane_1_1Planes_a65baafa03b5fa216551601670f1803c0}{robot\+Vertices\+\_\+}}
+\item 
+\mbox{\hyperlink{structplane_1_1VerticesData}{Vertices\+Data}} \mbox{\hyperlink{classplane_1_1Planes_a80e2c1a143b438ba0c521e59ed68ec64}{obs\+Vertices\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+More like a data structure to store planes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classplane_1_1Planes_ab8e2d83dbcb927b1ebbebed25d57d7ce}\label{classplane_1_1Planes_ab8e2d83dbcb927b1ebbebed25d57d7ce}} 
+\index{plane::Planes@{plane::Planes}!Planes@{Planes}}
+\index{Planes@{Planes}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{Planes()}{Planes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{int}]{nbr\+Robobot\+Part,  }\item[{int}]{nbr\+Obs,  }\item[{std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$}]{robot\+Vertices,  }\item[{Eigen\+::\+Matrix\+Xd}]{obs\+Vertices }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classplane_1_1Planes}{Planes}} are initialized with predifined robot\textquotesingle{}s vertices and variable obs\+Vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \\
+\hline
+{\em nbr\+Robobot\+Part} & \\
+\hline
+{\em nbr\+Obs} & \\
+\hline
+{\em robot\+Vertices} & \\
+\hline
+{\em obs\+Vertices} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classplane_1_1Planes_aa2cbe842027ad64a9000b87ddef7cfb7}\label{classplane_1_1Planes_aa2cbe842027ad64a9000b87ddef7cfb7}} 
+\index{plane::Planes@{plane::Planes}!Planes@{Planes}}
+\index{Planes@{Planes}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{Planes()}{Planes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily plane\+::\+Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{int}]{nbr\+Robobot\+Part,  }\item[{int}]{nbr\+Obs,  }\item[{Eigen\+::\+Matrix\+Xd}]{robot\+Vertices }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classplane_1_1Planes_a7683ee145bb777c4fb5229924e9aba1f}\label{classplane_1_1Planes_a7683ee145bb777c4fb5229924e9aba1f}} 
+\index{plane::Planes@{plane::Planes}!getPlanes@{getPlanes}}
+\index{getPlanes@{getPlanes}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{getPlanes()}{getPlanes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}} plane\+::\+Planes\+::get\+Planes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a7008fb40be133fb669d54437cd2ec30e}\label{classplane_1_1Planes_a7008fb40be133fb669d54437cd2ec30e}} 
+\index{plane::Planes@{plane::Planes}!InitializePlanesData@{InitializePlanesData}}
+\index{InitializePlanesData@{InitializePlanesData}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{InitializePlanesData()}{InitializePlanesData()}}
+{\footnotesize\ttfamily void Planes\+::\+Initialize\+Planes\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize\+Planes\+Data robot\+Vertices, obs\+Vertices \mbox{\hyperlink{classplane_1_1Planes}{Planes}} data. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classplane_1_1Planes_a5622e7783a0eb9186127d3813f1a7e0d}\label{classplane_1_1Planes_a5622e7783a0eb9186127d3813f1a7e0d}} 
+\index{plane::Planes@{plane::Planes}!N\_@{N\_}}
+\index{N\_@{N\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{N\_}{N\_}}
+{\footnotesize\ttfamily int plane\+::\+Planes\+::\+N\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+N\+\_\+\+: horizon of prediction. 
+
+\mbox{\Hypertarget{classplane_1_1Planes_a65aa1b183eba2ef94acc343eb0de2178}\label{classplane_1_1Planes_a65aa1b183eba2ef94acc343eb0de2178}} 
+\index{plane::Planes@{plane::Planes}!nbrObs\_@{nbrObs\_}}
+\index{nbrObs\_@{nbrObs\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{nbrObs\_}{nbrObs\_}}
+{\footnotesize\ttfamily int plane\+::\+Planes\+::nbr\+Obs\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a809be660fe9e210c6dd3895f55c52b99}\label{classplane_1_1Planes_a809be660fe9e210c6dd3895f55c52b99}} 
+\index{plane::Planes@{plane::Planes}!nbrPlane\_@{nbrPlane\_}}
+\index{nbrPlane\_@{nbrPlane\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{nbrPlane\_}{nbrPlane\_}}
+{\footnotesize\ttfamily int plane\+::\+Planes\+::nbr\+Plane\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a43c6ef9a6adbe9f6565690ab82091e52}\label{classplane_1_1Planes_a43c6ef9a6adbe9f6565690ab82091e52}} 
+\index{plane::Planes@{plane::Planes}!nbrRobotPart\_@{nbrRobotPart\_}}
+\index{nbrRobotPart\_@{nbrRobotPart\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{nbrRobotPart\_}{nbrRobotPart\_}}
+{\footnotesize\ttfamily int plane\+::\+Planes\+::nbr\+Robot\+Part\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+nbr\+Robot\+Part\+\_\+ 
+
+\mbox{\Hypertarget{classplane_1_1Planes_a80e2c1a143b438ba0c521e59ed68ec64}\label{classplane_1_1Planes_a80e2c1a143b438ba0c521e59ed68ec64}} 
+\index{plane::Planes@{plane::Planes}!obsVertices\_@{obsVertices\_}}
+\index{obsVertices\_@{obsVertices\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{obsVertices\_}{obsVertices\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplane_1_1VerticesData}{Vertices\+Data}} plane\+::\+Planes\+::obs\+Vertices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a3d9f928811b24c27a1abe3b4ae4a47bd}\label{classplane_1_1Planes_a3d9f928811b24c27a1abe3b4ae4a47bd}} 
+\index{plane::Planes@{plane::Planes}!planesData\_@{planesData\_}}
+\index{planesData\_@{planesData\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{planesData\_}{planesData\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}} plane\+::\+Planes\+::planes\+Data\+\_\+}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a65baafa03b5fa216551601670f1803c0}\label{classplane_1_1Planes_a65baafa03b5fa216551601670f1803c0}} 
+\index{plane::Planes@{plane::Planes}!robotVertices\_@{robotVertices\_}}
+\index{robotVertices\_@{robotVertices\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{robotVertices\_}{robotVertices\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplane_1_1VerticesData}{Vertices\+Data}} plane\+::\+Planes\+::robot\+Vertices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/sep\+Plane/\mbox{\hyperlink{sepPlane_8h}{sep\+Plane.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/sep\+Plane/\mbox{\hyperlink{sepPlane_8cpp}{sep\+Plane.\+cpp}}\end{DoxyCompactItemize}

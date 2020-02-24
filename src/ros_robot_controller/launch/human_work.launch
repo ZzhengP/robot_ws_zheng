@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+<arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+<arg name="gui" default="true" doc="Starts gazebo gui" />
+<arg name="load_gripper" default="false"/>
+<arg name="rviz"  default="true"/>
+
+<!-- startup simulated world -->
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="world_name" default="worlds/pu.world"/>
+  <arg name="paused" value="$(arg paused)"/>
+  <arg name="gui" value="$(arg gui)"/>
+</include>
+
+<!-- send robot urdf to param server -->
+<include file="$(find ur_description)/launch/franka_human_upload.launch">
+</include>
+
+<!-- push robot_description to factory and spawn robot in gazebo -->
+<!--node name="spawn_gazebo_model" pkg="gazebo_ros"
+      type="spawn_model" args="-urdf -param robot_description -model robot
+                               -J panda_joint1 0.5
+                               -J panda_joint2 0.
+                               -J panda_joint3 0.
+                               -J panda_joint4 -1.8
+                               -J panda_joint5 0.
+                               -J panda_joint6 1.57
+                               -J panda_joint7 0.  "
+      respawn="false" output="screen" /-->
+
+<node name="spawn_gazebo_model" pkg="gazebo_ros"
+      type="spawn_model" args="-urdf -param robot_description -model robot
+                               -J panda_joint1 1.11222
+                               -J panda_joint2 0.80472
+                               -J panda_joint3 -0.535436
+                               -J panda_joint4 -1.98801
+                               -J panda_joint5 0.764916
+                               -J panda_joint6 2.5814
+                               -J panda_joint7 0.0391129  "
+      respawn="false" output="screen" />
+
+
+<rosparam file="$(find ros_robot_controller)/config/franka.yaml" command="load"/>
+<!-- load the controllers -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" ns="/panda" args="joint_state_controller
+      panda_joint1_position_controller
+      panda_joint2_position_controller
+      panda_joint3_position_controller
+      panda_joint4_position_controller
+      panda_joint5_position_controller
+      panda_joint6_position_controller
+      panda_joint7_position_controller"/>
+
+
+<!-- convert joint states to TF transforms for rviz, etc -->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  respawn="false" output="screen">
+  <rosparam param="publish_frequency">1000</rosparam>
+  <remap from="/joint_states" to="/panda/joint_states" />
+</node >
+
+<node name = "joint_state_publisher" pkg = "joint_state_publisher" type = "joint_state_publisher" />
+
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find ur_description)/franka.rviz" required="true" />
+
+<node type="markers" pkg="ros_robot_controller" name="markers" />
+
+</launch>

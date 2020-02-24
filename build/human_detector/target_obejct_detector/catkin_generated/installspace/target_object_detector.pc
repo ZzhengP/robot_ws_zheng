@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/install
+
+Name: target_object_detector
+Description: Description of target_object_detector
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/zheng/robot_ws_zheng/install/lib 
+Requires: 

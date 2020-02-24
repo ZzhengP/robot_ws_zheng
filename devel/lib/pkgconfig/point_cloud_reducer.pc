@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel
+
+Name: point_cloud_reducer
+Description: Description of point_cloud_reducer
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
+Requires: roscpp sensor_msgs std_msgs pcl_ros pcl_msgs tf tf_conversions

@@ -1,0 +1,1 @@
+/usr/bin/cc  -O3 -g -O0 -g  -rdynamic CMakeFiles/osqp_demo.dir/examples/osqp_demo.c.o  -o out/osqp_demo  /home/zheng/robot_ws_zheng/devel/lib/libosqpstatic.a  -lm -lrt -ldl 

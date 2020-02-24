@@ -73,38 +73,47 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zheng/robot_ws_zheng/install/setup.bash")
+   "/home/zheng/robot_ws_zheng/install/setup.bash;/home/zheng/robot_ws_zheng/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.bash"
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/local_setup.bash"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zheng/robot_ws_zheng/install/setup.sh")
+   "/home/zheng/robot_ws_zheng/install/setup.sh;/home/zheng/robot_ws_zheng/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.sh"
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/local_setup.sh"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zheng/robot_ws_zheng/install/setup.zsh")
+   "/home/zheng/robot_ws_zheng/install/setup.zsh;/home/zheng/robot_ws_zheng/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/home/zheng/robot_ws_zheng/install" TYPE FILE FILES
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/setup.zsh"
+    "/home/zheng/robot_ws_zheng/build/catkin_generated/installspace/local_setup.zsh"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -122,9 +131,14 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/zheng/robot_ws_zheng/build/gtest/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/catkin_simple/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/franka_description/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/human_model_gazebo/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/lpsolve_catkin/cmake_install.cmake")
   include("/home/zheng/robot_ws_zheng/build/ur_description/cmake_install.cmake")
-  include("/home/zheng/robot_ws_zheng/build/ros_robot_controller/cmake_install.cmake")
   include("/home/zheng/robot_ws_zheng/build/robot_controller/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/rviz_visual_tools/cmake_install.cmake")
+  include("/home/zheng/robot_ws_zheng/build/ros_robot_controller/cmake_install.cmake")
 
 endif()
 

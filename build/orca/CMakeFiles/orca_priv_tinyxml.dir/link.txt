@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/zheng/robot_ws_zheng/devel/lib/liborca_priv_tinyxml.a  CMakeFiles/orca_priv_tinyxml.dir/external/tinyxml/src/tinyxml.cpp.o CMakeFiles/orca_priv_tinyxml.dir/external/tinyxml/src/tinyxmlerror.cpp.o CMakeFiles/orca_priv_tinyxml.dir/external/tinyxml/src/tinyxmlparser.cpp.o
+/usr/bin/ranlib /home/zheng/robot_ws_zheng/devel/lib/liborca_priv_tinyxml.a

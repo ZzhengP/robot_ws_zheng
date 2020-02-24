@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 project(ros_robot_controller)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
@@ -14,8 +17,11 @@ find_package(catkin REQUIRED COMPONENTS
   kdl_parser
   gazebo_ros
   qpOASES
+  rviz_visual_tools
+  ifopt
+  lpsolve_catkin
+  trac_ik_lib
 )
-
 find_package(gazebo REQUIRED)
 find_package(iDynTree REQUIRED)
 catkin_package(
@@ -30,9 +36,14 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${SDFormat_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
-    ${qpAOSES_INCLUDE_DIRS})
-include_directories(${GAZEBO_INCLUDE_DIRS} )
-link_directories(${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS})
+    ${qpAOSES_INCLUDE_DIRS}
+    ${rviz_visual_tools_INCLUDE_DIRS}
+    ${lpsolve_catkin_INCLUDE_DIRS}
+
+    )
+include_directories(${GAZEBO_INCLUDE_DIRS})
+
+link_directories( ${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS} ${rviz_visual_tools_LIBRARY_DIRS} ${lpsolve_catkin_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 include_directories(${PCL_INCLUDE_DIRS})
@@ -41,6 +52,26 @@ add_definitions(${PCL_DEFINITIONS})
 ## Declare a C++ library
 ADD_SUBDIRECTORY(examples)
 ADD_SUBDIRECTORY(src)
+
+find_package(Doxygen)
+ if (DOXYGEN_FOUND)
+     # set input and output files
+     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
+     set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+     # request to configure the file
+     configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+     message("Doxygen build started")
+
+     # note the option ALL which allows to build the docs together with the application
+     add_custom_target( doc ALL
+         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+         COMMENT "Generating API documentation with Doxygen"
+         VERBATIM )
+ else (DOXYGEN_FOUND)
+   message("Doxygen need to be installed to generate the doxygen documentation")
+ endif (DOXYGEN_FOUND)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)

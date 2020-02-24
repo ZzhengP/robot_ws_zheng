@@ -1,0 +1,104 @@
+\hypertarget{classjntPosCst}{}\doxysection{jnt\+Pos\+Cst Class Reference}
+\label{classjntPosCst}\index{jntPosCst@{jntPosCst}}
+
+
+{\ttfamily \#include $<$Ros\+Joint\+Pos\+Cst.\+h$>$}
+
+
+
+Inheritance diagram for jnt\+Pos\+Cst\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classjntPosCst__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jnt\+Pos\+Cst\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classjntPosCst__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjntPosCst_a7e119dd191e9b4d652e5b355ea7a7b42}{jnt\+Pos\+Cst}} (int ndof, int n, double dt)
+\item 
+void \mbox{\hyperlink{classjntPosCst_a0e70ed5392552d790b5449f02cdb1544}{set\+Limit}} (Eigen\+::\+Vector\+Xd min, Eigen\+::\+Vector\+Xd max)
+\item 
+void \mbox{\hyperlink{classjntPosCst_a1755054edc76f3015ed83384828f99fa}{set\+Lower\+Bound}} (Eigen\+::\+Vector\+Xd robot\+\_\+state, Eigen\+::\+Matrix\+Xd Px)
+\item 
+void \mbox{\hyperlink{classjntPosCst_a5b5e4525fe04486c32483d738a5b95d2}{set\+Upper\+Bound}} (Eigen\+::\+Vector\+Xd robot\+\_\+state, Eigen\+::\+Matrix\+Xd Px)
+\item 
+void \mbox{\hyperlink{classjntPosCst_a22a3c534b0e2c2ff784e28ccee7ac244}{set\+Constraint\+Matrix}} (Eigen\+::\+Matrix\+Xd Pu)
+\item 
+void \mbox{\hyperlink{classjntPosCst_af626da5e52ee66e8d6df433225c36556}{update}} (Eigen\+::\+Vector\+Xd robot\+\_\+state, Eigen\+::\+Matrix\+Xd Px, Eigen\+::\+Matrix\+Xd Pu)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjntPosCst_a7e119dd191e9b4d652e5b355ea7a7b42}\label{classjntPosCst_a7e119dd191e9b4d652e5b355ea7a7b42}} 
+\index{jntPosCst@{jntPosCst}!jntPosCst@{jntPosCst}}
+\index{jntPosCst@{jntPosCst}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{jntPosCst()}{jntPosCst()}}
+{\footnotesize\ttfamily jnt\+Pos\+Cst\+::jnt\+Pos\+Cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{n,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjntPosCst_a22a3c534b0e2c2ff784e28ccee7ac244}\label{classjntPosCst_a22a3c534b0e2c2ff784e28ccee7ac244}} 
+\index{jntPosCst@{jntPosCst}!setConstraintMatrix@{setConstraintMatrix}}
+\index{setConstraintMatrix@{setConstraintMatrix}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
+{\footnotesize\ttfamily void jnt\+Pos\+Cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_a2bd937c9354f42b8b7a6b3e63fd439f8}{generic\+\_\+cst}}.
+
+\mbox{\Hypertarget{classjntPosCst_a0e70ed5392552d790b5449f02cdb1544}\label{classjntPosCst_a0e70ed5392552d790b5449f02cdb1544}} 
+\index{jntPosCst@{jntPosCst}!setLimit@{setLimit}}
+\index{setLimit@{setLimit}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{setLimit()}{setLimit()}}
+{\footnotesize\ttfamily void jnt\+Pos\+Cst\+::set\+Limit (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{min,  }\item[{Eigen\+::\+Vector\+Xd}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjntPosCst_a1755054edc76f3015ed83384828f99fa}\label{classjntPosCst_a1755054edc76f3015ed83384828f99fa}} 
+\index{jntPosCst@{jntPosCst}!setLowerBound@{setLowerBound}}
+\index{setLowerBound@{setLowerBound}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}}
+{\footnotesize\ttfamily void jnt\+Pos\+Cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{robot\+\_\+state,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_a77201d5ca28ded0958dd2f2e254d3123}{generic\+\_\+cst}}.
+
+\mbox{\Hypertarget{classjntPosCst_a5b5e4525fe04486c32483d738a5b95d2}\label{classjntPosCst_a5b5e4525fe04486c32483d738a5b95d2}} 
+\index{jntPosCst@{jntPosCst}!setUpperBound@{setUpperBound}}
+\index{setUpperBound@{setUpperBound}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}}
+{\footnotesize\ttfamily void jnt\+Pos\+Cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{robot\+\_\+state,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_ab2af99c1b630f302c9d8e8fcff4028ce}{generic\+\_\+cst}}.
+
+\mbox{\Hypertarget{classjntPosCst_af626da5e52ee66e8d6df433225c36556}\label{classjntPosCst_af626da5e52ee66e8d6df433225c36556}} 
+\index{jntPosCst@{jntPosCst}!update@{update}}
+\index{update@{update}!jntPosCst@{jntPosCst}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void jnt\+Pos\+Cst\+::update (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{robot\+\_\+state,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classgeneric__cst_aa33d97e95cd53b7218438a8d050fc04b}{generic\+\_\+cst}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/constraint/\mbox{\hyperlink{RosJointPosCst_8h}{Ros\+Joint\+Pos\+Cst.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/constraint/\mbox{\hyperlink{RosJointPosCst_8cpp}{Ros\+Joint\+Pos\+Cst.\+cpp}}\end{DoxyCompactItemize}
