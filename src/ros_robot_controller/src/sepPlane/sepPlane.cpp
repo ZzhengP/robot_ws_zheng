@@ -33,7 +33,6 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
     robotVertices_.nbrOfObject = nbrRobobotPart;
     robotVertices_.nbrVertices = robotVertices[0].cols();
     robotVertices_.Vertices.resize(robotVertices_.nbrOfObject);
-    std::cout <<" robotVertices nbr vertices \n" << robotVertices_.nbrVertices << std::endl;
 
     for (int i = 0; i < robotVertices_.nbrOfObject; ++i) {
         robotVertices_.Vertices[i].resize(3,N_*robotVertices_.nbrVertices);
@@ -47,23 +46,24 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
     obsVertices_.nbrOfObject = nbrObs;
     obsVertices_.nbrVertices = 1;
     obsVertices_.Vertices.resize(obsVertices_.nbrOfObject);
-
     for (int i =0; i < obsVertices_.nbrOfObject; i++) {
 
         obsVertices_.Vertices[i].resize(3,N_*obsVertices_.nbrVertices);
+
         for (int j = 0 ; j < N_; j++){
-            obsVertices_.Vertices[i].block(3*i,obsVertices_.nbrOfObject*j,3,1 ) = obsVertices;
+            obsVertices_.Vertices[i].block(0,obsVertices_.nbrVertices*j,3,1 ) = obsVertices.block(3*i,0,3,1);
         }
     }
 
 
         nbrPlane_ = robotVertices_.nbrOfObject*obsVertices_.nbrOfObject;
-
         planesData_.N = N_;
         planesData_.nbrPlane = nbrPlane_;
+
         planesData_.planeLocation.resize(nbrPlane_);
 
         for (int i = 0; i < nbrPlane_; i++) {
+
             if (N_ == 1){
                 planesData_.planeLocation[i].resize(5,N_);
             }else {
@@ -72,10 +72,9 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
             }
             planesData_.planeLocation[i].setZero();
         }
-        std::cout <<" nbr planes \n"<< planesData_.nbrPlane << std::endl;
+
 
         InitializePlanesData();
-
 
 
         std::cout <<"---------------------------------------------" << std::endl;

@@ -80,6 +80,18 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -144,18 +156,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -310,6 +310,21 @@ qpplaneformulation/fast:
 .PHONY : qpplaneformulation/fast
 
 # Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
+
+# Convenience name for target.
+multiobstacle: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
+
+.PHONY : multiobstacle
+
+# fast build rule for target.
+multiobstacle/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
+.PHONY : multiobstacle/fast
+
+# Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/markers.dir/rule
 .PHONY : ros_robot_controller/examples/CMakeFiles/markers.dir/rule
@@ -431,6 +446,33 @@ markers.s: markers.cpp.s
 markers.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.s
 .PHONY : markers.cpp.s
+
+multiobstacle.o: multiobstacle.cpp.o
+
+.PHONY : multiobstacle.o
+
+# target to build an object file
+multiobstacle.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.o
+.PHONY : multiobstacle.cpp.o
+
+multiobstacle.i: multiobstacle.cpp.i
+
+.PHONY : multiobstacle.i
+
+# target to preprocess a source file
+multiobstacle.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.i
+.PHONY : multiobstacle.cpp.i
+
+multiobstacle.s: multiobstacle.cpp.s
+
+.PHONY : multiobstacle.s
+
+# target to generate assembly for a file
+multiobstacle.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.s
+.PHONY : multiobstacle.cpp.s
 
 obsavoidancedemo.o: obsavoidancedemo.cpp.o
 
@@ -575,6 +617,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... install"
 	@echo "... lpsolvetest"
 	@echo "... setinit"
 	@echo "... qptest"
@@ -587,10 +630,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... qpplaneformulation"
 	@echo "... package"
+	@echo "... multiobstacle"
 	@echo "... package_source"
 	@echo "... markers"
 	@echo "... test"
-	@echo "... install"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"
@@ -603,6 +646,9 @@ help:
 	@echo "... markers.o"
 	@echo "... markers.i"
 	@echo "... markers.s"
+	@echo "... multiobstacle.o"
+	@echo "... multiobstacle.i"
+	@echo "... multiobstacle.s"
 	@echo "... obsavoidancedemo.o"
 	@echo "... obsavoidancedemo.i"
 	@echo "... obsavoidancedemo.s"

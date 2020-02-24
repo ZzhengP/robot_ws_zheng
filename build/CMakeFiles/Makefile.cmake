@@ -608,6 +608,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "ros_robot_controller/examples/CMakeFiles/franka_example.dir/DependInfo.cmake"
   "ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/DependInfo.cmake"
   "ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/DependInfo.cmake"
+  "ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/DependInfo.cmake"
   "ros_robot_controller/examples/CMakeFiles/markers.dir/DependInfo.cmake"
   "ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/DependInfo.cmake"
   )

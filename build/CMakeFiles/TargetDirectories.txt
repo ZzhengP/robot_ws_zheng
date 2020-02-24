@@ -266,6 +266,7 @@
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/CMakeFiles/rebuild_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install/strip.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install/local.dir
+/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/setinit.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/qptest.dir
@@ -278,10 +279,10 @@
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/edit_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/package.dir
+/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/multiobstacle.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/package_source.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/markers.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/test.dir
-/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/install.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/install/strip.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/install.dir
 /home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/list_install_components.dir

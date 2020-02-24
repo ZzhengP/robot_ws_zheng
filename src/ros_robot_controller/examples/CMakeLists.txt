@@ -29,5 +29,9 @@ target_link_libraries(iDynTreeTest PRIVATE ${catkin_LIBRARIES} ${iDynTree_LIBRAR
 add_executable(qpplaneformulation qpplaneformulation.cpp)
 target_link_libraries(qpplaneformulation PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
 
+
+add_executable(multiobstacle multiobstacle.cpp)
+target_link_libraries(multiobstacle PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
 add_executable(qptest qptest.cpp)
 target_link_libraries(qptest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)

@@ -577,8 +577,8 @@ int main(int argc, char **argv)
             path[i].position.z =  eePosHorz(3*i+2);
 
         }
-        for (int i(0);i<nbrRobotPart; i++){
-            for (int j(0);j<nbrObsPart;j++){
+        for (int i(0);i<nbrObsPart; i++){
+            for (int j(0);j<nbrRobotPart;j++){
                 for (int k(0); k < N-1; k++){
 
 //                lp->setConstraintMatrix(robotVerticesAugmented[i].block(0,3*k,3,6),obsVerticesAugmented.block(0,0,3,2), planedataIni.planeLocation[i].block(0,k,3,1));
@@ -593,10 +593,9 @@ int main(int argc, char **argv)
 //                planedata.planeLocation[i].block(0,k,3,1) = planedata.planeLocation[i].block(0,k,3,1)/planedata.planeLocation[i].block(0,k,3,1).norm();
 //                planedata.planeLocation[i](3,k) = planedata.planeLocation[i](3,k)*planedata.planeLocation[i].block(0,k,3,1).norm();
 //                std::cout <<" plane precedent :\n " << planedata.planeLocation[i] << std::endl;
-
-                gPlane <<singlePlane.segment(0,4),0 ;
+                gPlane <<planedata.planeLocation[i].block(0,k,4,1),0 ;
                 planeSolver.setCost(gPlane);
-                planeSolver.setCstMatrix(robotVerticesAugmented[i].block(0,2*k,3,4),obsVerticesAugmented.block(0,0,3,2),
+                planeSolver.setCstMatrix(robotVerticesAugmented[j].block(0,2*k,3,4),obsVerticesAugmented.block(0,0,3,2),
                                          planedata.planeLocation[i].block(0,k,3,1));
                 is_plane_solved = planeSolver.solve();
                 planedata.planeLocation[i].block(0,k,5,1) = planeSolver.getSolution();

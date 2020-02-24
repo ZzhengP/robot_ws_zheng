@@ -2114,6 +2114,19 @@ qpplaneformulation/fast:
 .PHONY : qpplaneformulation/fast
 
 #=============================================================================
+# Target rules for targets named multiobstacle
+
+# Build rule for target.
+multiobstacle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 multiobstacle
+.PHONY : multiobstacle
+
+# fast build rule for target.
+multiobstacle/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
+.PHONY : multiobstacle/fast
+
+#=============================================================================
 # Target rules for targets named markers
 
 # Build rule for target.
@@ -2302,6 +2315,7 @@ help:
 	@echo "... franka_example"
 	@echo "... iDynTreeTest"
 	@echo "... qpplaneformulation"
+	@echo "... multiobstacle"
 	@echo "... markers"
 	@echo "... ros_robot_controller_library"
 .PHONY : help
