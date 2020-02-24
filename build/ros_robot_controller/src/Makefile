@@ -366,6 +366,33 @@ robotmodel/RosRobotModel.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.s
 .PHONY : robotmodel/RosRobotModel.cpp.s
 
+robotmodel/chainjnttojacdotsolver.o: robotmodel/chainjnttojacdotsolver.cpp.o
+
+.PHONY : robotmodel/chainjnttojacdotsolver.o
+
+# target to build an object file
+robotmodel/chainjnttojacdotsolver.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/chainjnttojacdotsolver.cpp.o
+.PHONY : robotmodel/chainjnttojacdotsolver.cpp.o
+
+robotmodel/chainjnttojacdotsolver.i: robotmodel/chainjnttojacdotsolver.cpp.i
+
+.PHONY : robotmodel/chainjnttojacdotsolver.i
+
+# target to preprocess a source file
+robotmodel/chainjnttojacdotsolver.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/chainjnttojacdotsolver.cpp.i
+.PHONY : robotmodel/chainjnttojacdotsolver.cpp.i
+
+robotmodel/chainjnttojacdotsolver.s: robotmodel/chainjnttojacdotsolver.cpp.s
+
+.PHONY : robotmodel/chainjnttojacdotsolver.s
+
+# target to generate assembly for a file
+robotmodel/chainjnttojacdotsolver.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/chainjnttojacdotsolver.cpp.s
+.PHONY : robotmodel/chainjnttojacdotsolver.cpp.s
+
 sepPlane/sepPlane.o: sepPlane/sepPlane.cpp.o
 
 .PHONY : sepPlane/sepPlane.o
@@ -562,6 +589,9 @@ help:
 	@echo "... robotmodel/RosRobotModel.o"
 	@echo "... robotmodel/RosRobotModel.i"
 	@echo "... robotmodel/RosRobotModel.s"
+	@echo "... robotmodel/chainjnttojacdotsolver.o"
+	@echo "... robotmodel/chainjnttojacdotsolver.i"
+	@echo "... robotmodel/chainjnttojacdotsolver.s"
 	@echo "... sepPlane/sepPlane.o"
 	@echo "... sepPlane/sepPlane.i"
 	@echo "... sepPlane/sepPlane.s"

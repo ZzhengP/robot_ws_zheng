@@ -5,3 +5,9 @@
 \_form#4:\begin{eqnarray*} (n,b,d) &=& Max ( xg' )\\ s.t \\ &Ax \leq b \\ & x > lb \end{eqnarray*}
 \_form#5:$ q_{1:N} = Px*q_{0} + Pu*U_{0:N-1} \\ dq_{1:N} = Pxdq*q_{0} + Pudq*U_{0:N-1} $
 \_form#6:$ ||Ex + f||^{2}$
+\_form#7:$ {}_{bs}\dot{J}^{ee}.\dot{q} $
+\_form#8:$ {}_{bs}\dot{J}^{ee} $
+\_form#9:$ \frac{\partial {}_{bs}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $
+\_form#10:$ \frac{\partial {}_{ee}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $
+\_form#11:$ \frac{\partial {}_{bs}J^{i,bs}}{\partial q^{j}}.\dot{q}^{j} $
+\_form#12:$ \frac{\partial J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $

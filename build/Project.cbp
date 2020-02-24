@@ -3727,6 +3727,9 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/RosRobotModel.cpp">
 			<Option target="ros_robot_controller_library"/>
 		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/chainjnttojacdotsolver.cpp">
+			<Option target="ros_robot_controller_library"/>
+		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/sepPlane/sepPlane.cpp">
 			<Option target="ros_robot_controller_library"/>
 		</Unit>

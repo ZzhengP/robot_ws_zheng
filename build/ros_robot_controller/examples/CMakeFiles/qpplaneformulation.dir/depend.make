@@ -46,6 +46,7 @@ ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulati
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointVelCst.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
+ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosPlaneSolver.h
@@ -72,6 +73,7 @@ ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulati
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/chainiksolver.hpp
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/chainiksolverpos_lma.hpp
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/chainiksolvervel_pinv.hpp
+ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/chainjnttojacdotsolver.hpp
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/config.h
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o: /opt/ros/melodic/include/kdl/frameacc.hpp

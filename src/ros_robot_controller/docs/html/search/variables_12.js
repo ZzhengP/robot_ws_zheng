@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['tip_5flink_5fros_5fname_696',['tip_link_ros_name',['../classarm__kinematic.html#a538b29e778dcf48bc66d85dcded69bdd',1,'arm_kinematic']]],
-  ['tmp_5farray_5fpos_697',['tmp_array_pos',['../classarm__kinematic.html#aa80db84e48dec152bd350db07254a5fa',1,'arm_kinematic']]],
-  ['tmp_5fjac_5f_698',['tmp_jac_',['../classarm__kinematic.html#a7ebfaedcca2fc92f6f15558fdb9596e9',1,'arm_kinematic']]]
+  ['seg_5fidx_5fnames_755',['seg_idx_names',['../classSegmentIndice.html#a47a19a7e4b70fa1958717d58d81e3a99',1,'SegmentIndice']]],
+  ['seg_5fjacobian_5f_756',['seg_jacobian_',['../classarm__kinematic.html#a0325d282cc64ae28655d4200fe59a5f8',1,'arm_kinematic']]],
+  ['seg_5fjacobian_5fdot_5f_757',['seg_jacobian_dot_',['../classarm__kinematic.html#adee2ce8a4b7042b16be813faf83b7b01',1,'arm_kinematic']]],
+  ['seg_5fjdot_5fqdot_5f_758',['seg_jdot_qdot_',['../classarm__kinematic.html#a9f9423ddb97c4df941ac0e7ca900c7ba',1,'arm_kinematic']]],
+  ['seg_5fnames_5fidx_5f_759',['seg_names_idx_',['../classarm__kinematic.html#a680411d847fb87392aa4329b06bdf9fc',1,'arm_kinematic']]],
+  ['seg_5fpos_5f_760',['seg_pos_',['../classarm__kinematic.html#ad4e25ade2c9ebe7105bb65f26003b65f',1,'arm_kinematic']]],
+  ['seg_5fvel_5f_761',['seg_vel_',['../classarm__kinematic.html#a835907c933dfd129923e40b0714b320b',1,'arm_kinematic']]],
+  ['subscriber_5f_762',['subscriber_',['../classarm__kinematic.html#ab6a92880459adb00f39676d43f4963af',1,'arm_kinematic']]]
 ];

@@ -291,11 +291,11 @@ int main(int argc, char **argv)
     dq = pandaArm.getJointVel().data;
 
 
-    cartVelCst cartesianVelCst(ndof,N,dt,"cartesienVelCst",pandaPxdq,pandaPudq);
-    cartesianVelCst.setLimit(cartVelMin,cartVelMax);
-    cartesianVelCst.setLowerBound(dq_horizon,jacobianHorizon);
-    cartesianVelCst.setUpperBound(dq_horizon,jacobianHorizon);
-    cartesianVelCst.setConstraintMatrix(jacobianHorizon);
+//    cartVelCst cartesianVelCst(ndof,N,dt,"cartesienVelCst",pandaPxdq,pandaPudq);
+//    cartesianVelCst.setLimit(cartVelMin,cartVelMax);
+//    cartesianVelCst.setLowerBound(dq_horizon,jacobianHorizon);
+//    cartesianVelCst.setUpperBound(dq_horizon,jacobianHorizon);
+//    cartesianVelCst.setConstraintMatrix(jacobianHorizon);
 //    constraintVectorData.push_back(cartesianVelCst.getConstraintData());
 
     double dsafe =0.1;

@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['n_157',['N',['../structplane_1_1VerticesData.html#ac6bf6b8e2ac9fe99e45dd742acdaeeed',1,'plane::VerticesData::N()'],['../structplane_1_1Planes_1_1PlaneData.html#add687c0db4732a3fcc2fc1db04f5211c',1,'plane::Planes::PlaneData::N()']]],
-  ['n_5f_158',['N_',['../classObsAvoidanceCSt.html#a7123f215d321a493a8786d0d55b8c0fb',1,'ObsAvoidanceCSt::N_()'],['../classgeneric__cst.html#ac11935ec305565b7d884f3e1a8123326',1,'generic_cst::N_()'],['../classplane_1_1Planes.html#a5622e7783a0eb9186127d3813f1a7e0d',1,'plane::Planes::N_()'],['../classgeneric__cst.html#ab202a11ce2d7bd8ae345cd73d26dd846',1,'generic_cst::n_()']]],
-  ['n_5fprediciton_5f_159',['N_Prediciton_',['../classarm__kinematic.html#ac8e5fff7c491077e3e1cf526500fd3f4',1,'arm_kinematic']]],
-  ['name_5f_160',['name_',['../structconstraintData.html#aff6a555c54d1db7fdc9982f167cfd674',1,'constraintData']]],
-  ['nbrobs_5f_161',['nbrObs_',['../classplane_1_1Planes.html#a65aa1b183eba2ef94acc343eb0de2178',1,'plane::Planes']]],
-  ['nbrobstacle_5f_162',['nbrObstacle_',['../classObsAvoidanceCSt.html#a12f5747b096bcb5888d0ff38b8b14431',1,'ObsAvoidanceCSt']]],
-  ['nbrofobject_163',['nbrOfObject',['../structplane_1_1VerticesData.html#adb488c1c22c6df20396209c1020c7fec',1,'plane::VerticesData']]],
-  ['nbrplane_164',['nbrPlane',['../structplane_1_1Planes_1_1PlaneData.html#a427cfd9ae02cf015886e9d3e28e6504a',1,'plane::Planes::PlaneData']]],
-  ['nbrplane_5f_165',['nbrPlane_',['../classplane_1_1Planes.html#a809be660fe9e210c6dd3895f55c52b99',1,'plane::Planes']]],
-  ['nbrrobotpart_5f_166',['nbrRobotPart_',['../classObsAvoidanceCSt.html#a50f57776c53ad507750b877347a08246',1,'ObsAvoidanceCSt::nbrRobotPart_()'],['../classplane_1_1Planes.html#a43c6ef9a6adbe9f6565690ab82091e52',1,'plane::Planes::nbrRobotPart_()']]],
-  ['nbrvertices_167',['nbrVertices',['../structplane_1_1VerticesData.html#a316e02dae67e7b3b60a8e8bdf6edfc4a',1,'plane::VerticesData']]],
-  ['ndof_5f_168',['ndof_',['../classObsAvoidanceCSt.html#a30b91645a5a77e467064ee55be9c5949',1,'ObsAvoidanceCSt']]],
-  ['nh_5f_169',['nh_',['../classarm__kinematic.html#a7325dd6969b72e4f6ab49455098563dc',1,'arm_kinematic']]],
-  ['nrofdeg_5f_170',['NrOfDeg_',['../classarm__kinematic.html#a44642c6d85f688f58b9382893d9a759b',1,'arm_kinematic']]]
+  ['markerpublish_171',['markerPublish',['../classmarkers.html#a8e377851541cae4f2a5a45551d8e7111',1,'markers']]],
+  ['markers_172',['markers',['../classmarkers.html',1,'markers'],['../classmarkers.html#a35b516bf09b1ac9b3f8ed2abb66658e3',1,'markers::markers(ros::NodeHandle *nh, std::vector&lt; Eigen::Vector3d &gt; initializePos, std::vector&lt; Eigen::Vector4d &gt; initializeOri)'],['../classmarkers.html#a754e2e55dde6a3ce30891054efd4f0a6',1,'markers::markers(ros::NodeHandle *nh)'],['../classmarkers.html#ab930f9bf846e04bfc2652f9ad7ef0149',1,'markers::markers()']]],
+  ['matpow_173',['matPow',['../RosMpcTask_8h.html#a9b30b50672e38377cc0c05bacf696268',1,'RosMpcTask.h']]],
+  ['max_5f_174',['max_',['../classgeneric__cst.html#a250e68dc92ec3ddb5ba310e3800b6b7b',1,'generic_cst']]],
+  ['min_5f_175',['min_',['../classgeneric__cst.html#ac6a530ff831b44bd7a40eb266dbc8950',1,'generic_cst']]],
+  ['mpc_5fsolve_176',['mpc_solve',['../classmpc__solve.html',1,'mpc_solve'],['../classmpc__solve.html#a5f1f8aa5cb5a6a3b1dd08e0c729ff66d',1,'mpc_solve::mpc_solve()']]],
+  ['mpc_5ftask_177',['MPC_Task',['../classMPC__Task.html',1,'MPC_Task'],['../classMPC__Task.html#a188fc428c93e53139b792b440cbece93',1,'MPC_Task::MPC_Task()']]]
 ];

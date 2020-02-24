@@ -1,11 +1,19 @@
 var searchData=
 [
-  ['kblu_134',['KBLU',['../color_8h.html#a3f838f2fc3a9a3b434be606fc908964b',1,'color.h']]],
-  ['kcyn_135',['KCYN',['../color_8h.html#a32036c94dbb166a3f874b7efc169841f',1,'color.h']]],
-  ['kgrn_136',['KGRN',['../color_8h.html#ac081c83b067273757f7a2e54a5957d41',1,'color.h']]],
-  ['kindyncomp_5f_137',['kinDynComp_',['../classrobot_1_1RobotDynClass.html#ad0bad0945c9897941b2fe4f00b4d6bde',1,'robot::RobotDynClass']]],
-  ['kmag_138',['KMAG',['../color_8h.html#a6825f05d3b9d619d91d79d0ef18bb8b2',1,'color.h']]],
-  ['kred_139',['KRED',['../color_8h.html#a66290957baed5df3930ada4cb8caccf1',1,'color.h']]],
-  ['kwht_140',['KWHT',['../color_8h.html#af0036c8022c9980079ab17e5c87fd478',1,'color.h']]],
-  ['kyel_141',['KYEL',['../color_8h.html#a897b10d246533c95ba86cb79f92e465a',1,'color.h']]]
+  ['jacobian_5f_138',['jacobian_',['../classarm__kinematic.html#a0d52a7dc2a209b2f35d070f629db0a83',1,'arm_kinematic']]],
+  ['jacobian_5fdot_5fhorizon_5f_139',['jacobian_dot_horizon_',['../classarm__kinematic.html#afcbf2f5cc4afaab9b140ab5c289fdacf',1,'arm_kinematic']]],
+  ['jacobian_5fhorizon_5f_140',['jacobian_horizon_',['../classarm__kinematic.html#a6fa6f8373103cdb2b788bb6b5f378f4d',1,'arm_kinematic']]],
+  ['jacobiandot_5f_141',['jacobianDot_',['../classarm__kinematic.html#a7e38b9b6ecabd7b0edf34f94d2ae4a6c',1,'arm_kinematic']]],
+  ['jdot_5fqdot_5f_142',['jdot_qdot_',['../classarm__kinematic.html#a1121baf5d8712766600b8122d893bc6f',1,'arm_kinematic']]],
+  ['jntacccst_143',['jntAccCst',['../classjntAccCst.html',1,'jntAccCst'],['../classjntAccCst.html#a27941a9261d6d8dba3dd70316c93c6e9',1,'jntAccCst::jntAccCst()']]],
+  ['jntposcst_144',['jntPosCst',['../classjntPosCst.html',1,'jntPosCst'],['../classjntPosCst.html#a134a16052aac04d8106eeb764628afbc',1,'jntPosCst::jntPosCst()']]],
+  ['jnttojacdot_145',['JntToJacDot',['../classKDL_1_1ChainJntToJacDotSolver.html#a4d79e8dba399eead7aea1a539d74ceaa',1,'KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &amp;q_in, KDL::Twist &amp;jac_dot_q_dot, int seg_nr=-1)'],['../classKDL_1_1ChainJntToJacDotSolver.html#abe57a83d3c1dd009b6f378f1181c6daf',1,'KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &amp;q_in, KDL::Jacobian &amp;jdot, int seg_nr=-1)']]],
+  ['jntvelcst_146',['jntVelCst',['../classjntVelCst.html',1,'jntVelCst'],['../classjntVelCst.html#aeef4e9781158280f53945a738052435b',1,'jntVelCst::jntVelCst()']]],
+  ['joint_5flower_5flimit_5f_147',['joint_lower_limit_',['../classarm__kinematic.html#a2bdf1859bac7678cc39c2a0d289598a9',1,'arm_kinematic']]],
+  ['joint_5fpos_5flimits_5f_148',['joint_pos_limits_',['../classrobot_1_1RobotDynClass.html#ad87a6d9b6de4b5814e2f9d565f306a65',1,'robot::RobotDynClass']]],
+  ['joint_5fupper_5flimit_5f_149',['joint_upper_limit_',['../classarm__kinematic.html#a89ca024a05f4c187f37e1a03e0787b31',1,'arm_kinematic']]],
+  ['jointacc_150',['jointAcc',['../structrobot_1_1EigenRobotAcceleration.html#a7343dffa968d130be94c81656314853f',1,'robot::EigenRobotAcceleration::jointAcc()'],['../structrobot_1_1iDynTreeRobotAcceleration.html#a706db732c69b2e163eda4b72c318480e',1,'robot::iDynTreeRobotAcceleration::jointAcc()']]],
+  ['jointpos_151',['jointPos',['../structrobot_1_1EigenRobotState.html#a3f32b3c0e53448768162407b3e511323',1,'robot::EigenRobotState::jointPos()'],['../structrobot_1_1iDynTreeRobotState.html#a95f540bff4fb5b8b41cbe697d6e8efd6',1,'robot::iDynTreeRobotState::jointPos()']]],
+  ['joints_5fname_5f_152',['joints_name_',['../classarm__kinematic.html#a852c97a52bee85f31c82dfcb98875be9',1,'arm_kinematic']]],
+  ['jointvel_153',['jointVel',['../structrobot_1_1EigenRobotState.html#a6919db3f392568bdafb8339a23845575',1,'robot::EigenRobotState::jointVel()'],['../structrobot_1_1iDynTreeRobotState.html#a1b1541c8574201cfebb8e35c21f8ad89',1,'robot::iDynTreeRobotState::jointVel()']]]
 ];

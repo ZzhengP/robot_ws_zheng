@@ -1,5 +1,6 @@
 set(HEADER_LIST "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/RosRobotModel.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/RobotDynTree.h"
+                "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/chainjnttojacdotsolver.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/commun/color.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/commun/RosCommunDefinition.h"
                 "${ros_robot_controller_SOURCE_DIR}/include/constraint/RosGenericCst.h"
@@ -19,6 +20,7 @@ set(HEADER_LIST "${ros_robot_controller_SOURCE_DIR}/include/robotmodel/RosRobotM
 add_library(ros_robot_controller_library
             robotmodel/RosRobotModel.cpp
             robotmodel/RobotDynTree.cpp
+            robotmodel/chainjnttojacdotsolver.cpp
             constraint/RosGenericCst.cpp
             constraint/RosJointPosCst.cpp
             constraint/RosJointVelCst.cpp

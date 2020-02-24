@@ -339,6 +339,8 @@ fstream
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosCartVelCst.h
 constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/constraint/RosGenericCst.h
+fstream
+-
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 iostream
@@ -381,6 +383,8 @@ kdl/chainfksolverpos_recursive.hpp
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainfksolverpos_recursive.hpp
 kdl/chainjnttojacsolver.hpp
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacsolver.hpp
+kdl/chainjnttojacdotsolver.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacdotsolver.hpp
 boost/timer.hpp
 -
 kdl/chainiksolverpos_lma.hpp
@@ -407,6 +411,26 @@ sensor_msgs/JointState.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
 trac_ik/trac_ik.hpp
 -
+chainjnttojacdotsolver.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
+kdl/solveri.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/solveri.hpp
+kdl/frames.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/frames.hpp
+kdl/jntarrayvel.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/jntarrayvel.hpp
+kdl/jacobian.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/jacobian.hpp
+kdl/chain.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chain.hpp
+kdl/framevel.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/framevel.hpp
+kdl/chainjnttojacsolver.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacsolver.hpp
+kdl/chainfksolverpos_recursive.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainfksolverpos_recursive.hpp
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
 iostream
@@ -787,6 +811,24 @@ chainjnttojacsolver.hpp
 /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 utilities/svd_HH.hpp
 /opt/ros/melodic/include/kdl/utilities/svd_HH.hpp
+
+/opt/ros/melodic/include/kdl/chainjnttojacdotsolver.hpp
+solveri.hpp
+/opt/ros/melodic/include/kdl/solveri.hpp
+frames.hpp
+/opt/ros/melodic/include/kdl/frames.hpp
+jntarrayvel.hpp
+/opt/ros/melodic/include/kdl/jntarrayvel.hpp
+jacobian.hpp
+/opt/ros/melodic/include/kdl/jacobian.hpp
+chain.hpp
+/opt/ros/melodic/include/kdl/chain.hpp
+framevel.hpp
+/opt/ros/melodic/include/kdl/framevel.hpp
+chainjnttojacsolver.hpp
+/opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
+chainfksolverpos_recursive.hpp
+/opt/ros/melodic/include/kdl/chainfksolverpos_recursive.hpp
 
 /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 solveri.hpp

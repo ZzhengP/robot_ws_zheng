@@ -47,6 +47,7 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointVelCst.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/RosRobotModel.h
+ /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/sepPlane.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
  /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/lpsolve.h
@@ -72,6 +73,7 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.c
  /opt/ros/melodic/include/kdl/chainiksolver.hpp
  /opt/ros/melodic/include/kdl/chainiksolverpos_lma.hpp
  /opt/ros/melodic/include/kdl/chainiksolvervel_pinv.hpp
+ /opt/ros/melodic/include/kdl/chainjnttojacdotsolver.hpp
  /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
  /opt/ros/melodic/include/kdl/config.h
  /opt/ros/melodic/include/kdl/frameacc.hpp

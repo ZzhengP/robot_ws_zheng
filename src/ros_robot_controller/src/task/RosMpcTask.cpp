@@ -146,7 +146,7 @@ void MPC_Task::computeHandg(Eigen::MatrixXd J_horizon, Eigen::VectorXd robot_sta
     // computefdq(robot_state,J_horizon);
       computeEdq();
       computefdq(robot_state);
-     Hessien_ = weightTask1_*E_.transpose()*E_ + weightTask2_*E_dq_.transpose()*E_dq_ + 0.0001*weightTask2_*Id.transpose()*Id;
+     Hessien_ = weightTask1_*E_.transpose()*E_ + weightTask2_*E_dq_.transpose()*E_dq_ + weightTask2_*Id.transpose()*Id;
      gradient_ = weightTask1_*E_.transpose()*f_+ weightTask2_*E_dq_.transpose()*f_dq_ ;
 //     Hessien_ = E_.transpose()*E_ + 0.0001*Id.transpose()*Id;
 //     gradient_ = E_.transpose()*f_ ;
