@@ -116,7 +116,7 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
 //    std::cout <<"ubA_ constraint avoidance :\n" << bLarge- nLarge*VerticesPrecedent - nLarge*JacobianEnlarge*PxPBP*robotState + nLarge*JacobianEnlarge*qLargePrecedent <<  "\n" ;
     myfile_.close();
 
-    std::cout <<cst_name_ << " ubA :\n " << ubA_.size() << '\n' ;
+//    std::cout <<cst_name_ << " ubA :\n " << ubA_.size() << '\n' ;
     cstData_.upBound_.resize(ubA_.size());
 
     cstData_.upBound_.setZero(1000);

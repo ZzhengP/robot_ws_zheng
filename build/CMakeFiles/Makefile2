@@ -389,6 +389,7 @@ ros_robot_controller/clean: ros_robot_controller/src/clean
 # Recursive "all" directory target.
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/setinit.dir/all
+ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/qptest.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/all
@@ -396,6 +397,7 @@ ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/fran
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/all
+ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all
 ros_robot_controller/examples/all: ros_robot_controller/examples/CMakeFiles/markers.dir/all
 
 .PHONY : ros_robot_controller/examples/all
@@ -408,6 +410,7 @@ ros_robot_controller/examples/preinstall:
 # Recursive "clean" directory target.
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/setinit.dir/clean
+ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/qptest.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/clean
@@ -415,6 +418,7 @@ ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/fr
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/clean
+ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/clean
 ros_robot_controller/examples/clean: ros_robot_controller/examples/CMakeFiles/markers.dir/clean
 
 .PHONY : ros_robot_controller/examples/clean
@@ -2967,7 +2971,7 @@ robot_controller/examples/CMakeFiles/load_robot_0.dir/clean:
 robot_controller/src/CMakeFiles/robot_controller_library.dir/all:
 	$(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/depend
 	$(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=41,42,43,44,45 "Built target robot_controller_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=45,46,47,48,49 "Built target robot_controller_library"
 .PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3159,7 +3163,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/all: rviz
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=81,82,83 "Built target rviz_visual_tools_imarker_simple_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=85,86,87 "Built target rviz_visual_tools_imarker_simple_demo"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3404,7 +3408,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/all: rviz_visu
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=77,78,79 "Built target rviz_visual_tools_imarker_simple"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=81,82,83 "Built target rviz_visual_tools_imarker_simple"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3812,7 +3816,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all: rviz_visual_tools/CMakeF
 rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=62,63,64,65 "Built target rviz_visual_tools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=66,67,68,69 "Built target rviz_visual_tools"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3868,7 +3872,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/all: rviz_visual_tools/C
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=67,68,69 "Built target rviz_visual_tools_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=71,72,73 "Built target rviz_visual_tools_demo"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3949,7 +3953,7 @@ rviz_visual_tools/CMakeFiles/nav_msgs_generate_messages_py.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=71,72,73,74,75 "Built target rviz_visual_tools_gui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=75,76,77,78,79 "Built target rviz_visual_tools_gui"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3976,7 +3980,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=85,86,87 "Built target rviz_visual_tools_remote_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=89,90,91 "Built target rviz_visual_tools_remote_control"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4033,7 +4037,7 @@ rviz_visual_tools/CMakeFiles/rvt_test.dir/all: rviz_visual_tools/CMakeFiles/rviz
 rviz_visual_tools/CMakeFiles/rvt_test.dir/all: rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rvt_test.dir/build.make rviz_visual_tools/CMakeFiles/rvt_test.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rvt_test.dir/build.make rviz_visual_tools/CMakeFiles/rvt_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=89,90,91 "Built target rvt_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=93,94,95 "Built target rvt_test"
 .PHONY : rviz_visual_tools/CMakeFiles/rvt_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4115,7 +4119,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/a
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=84 "Built target rviz_visual_tools_imarker_simple_demo_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=88 "Built target rviz_visual_tools_imarker_simple_demo_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4142,7 +4146,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_demo_autogen.dir/c
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=80 "Built target rviz_visual_tools_imarker_simple_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=84 "Built target rviz_visual_tools_imarker_simple_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4169,7 +4173,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=66 "Built target rviz_visual_tools_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=70 "Built target rviz_visual_tools_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4196,7 +4200,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_autogen.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=70 "Built target rviz_visual_tools_demo_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=74 "Built target rviz_visual_tools_demo_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4223,7 +4227,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_demo_autogen.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/all:
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=76 "Built target rviz_visual_tools_gui_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=80 "Built target rviz_visual_tools_gui_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4250,7 +4254,7 @@ rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui_autogen.dir/clean:
 rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/all:
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=88 "Built target rviz_visual_tools_remote_control_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=92 "Built target rviz_visual_tools_remote_control_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4278,7 +4282,7 @@ rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/all: gtest/googlemock/gtest/CM
 rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/depend
 	$(MAKE) -f rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/build.make rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=92 "Built target rvt_test_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=96 "Built target rvt_test_autogen"
 .PHONY : rviz_visual_tools/CMakeFiles/rvt_test_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4367,7 +4371,7 @@ ros_robot_controller/examples/CMakeFiles/setinit.dir/all: rviz_visual_tools/CMak
 ros_robot_controller/examples/CMakeFiles/setinit.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=93,94 "Built target setinit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=97,98 "Built target setinit"
 .PHONY : ros_robot_controller/examples/CMakeFiles/setinit.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4388,6 +4392,37 @@ ros_robot_controller/examples/CMakeFiles/setinit.dir/clean:
 .PHONY : ros_robot_controller/examples/CMakeFiles/setinit.dir/clean
 
 #=============================================================================
+# Target rules for target ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir
+
+# All Build rule for target.
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/all
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/all
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/depend
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=33,34 "Built target movingobstacleavoidance"
+.PHONY : ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all
+
+# Build rule for subdir invocation for target.
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 35
+	$(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 0
+.PHONY : ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+# Convenience name for target.
+movingobstacleavoidance: ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+.PHONY : movingobstacleavoidance
+
+# clean rule for target.
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/clean:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/clean
+.PHONY : ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/clean
+
+#=============================================================================
 # Target rules for target ros_robot_controller/examples/CMakeFiles/qptest.dir
 
 # All Build rule for target.
@@ -4398,7 +4433,7 @@ ros_robot_controller/examples/CMakeFiles/qptest.dir/all: rviz_visual_tools/CMake
 ros_robot_controller/examples/CMakeFiles/qptest.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=39,40 "Built target qptest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=43,44 "Built target qptest"
 .PHONY : ros_robot_controller/examples/CMakeFiles/qptest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4429,7 +4464,7 @@ ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/all: rviz_visual_t
 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=35,36 "Built target obsavoidancedemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=39,40 "Built target obsavoidancedemo"
 .PHONY : ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4460,7 +4495,7 @@ ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/all: rviz_visual_too
 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=46,47 "Built target ros_gazebo_sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=50,51 "Built target ros_gazebo_sim"
 .PHONY : ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4553,7 +4588,7 @@ ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/all: rviz_visual
 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=37,38 "Built target qpplaneformulation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=41,42 "Built target qpplaneformulation"
 .PHONY : ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4584,7 +4619,7 @@ ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/all: rviz_visual_tool
 ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/depend
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=33,34 "Built target multiobstacle"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=35,36 "Built target multiobstacle"
 .PHONY : ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4603,6 +4638,37 @@ multiobstacle: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
 ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/clean:
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/clean
 .PHONY : ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/clean
+
+#=============================================================================
+# Target rules for target ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir
+
+# All Build rule for target.
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_imarker_simple.dir/all
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/all
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_gui.dir/all
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all: ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/depend
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=37,38 "Built target nonlinearsolve"
+.PHONY : ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all
+
+# Build rule for subdir invocation for target.
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 35
+	$(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 0
+.PHONY : ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+
+# Convenience name for target.
+nonlinearsolve: ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+
+.PHONY : nonlinearsolve
+
+# clean rule for target.
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/clean:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/clean
+.PHONY : ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/clean
 
 #=============================================================================
 # Target rules for target ros_robot_controller/examples/CMakeFiles/markers.dir
@@ -4645,7 +4711,7 @@ ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all: rviz_v
 ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all: rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/all
 	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/depend
 	$(MAKE) -f ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build.make ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=48,49,50,51,52,53,54,55,56,57,58,59,60,61 "Built target ros_robot_controller_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60,61,62,63,64,65 "Built target ros_robot_controller_library"
 .PHONY : ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/all
 
 # Build rule for subdir invocation for target.

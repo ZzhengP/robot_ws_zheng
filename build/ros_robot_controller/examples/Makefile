@@ -220,6 +220,21 @@ setinit/fast:
 .PHONY : setinit/fast
 
 # Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+# Convenience name for target.
+movingobstacleavoidance: ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+.PHONY : movingobstacleavoidance
+
+# fast build rule for target.
+movingobstacleavoidance/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build
+.PHONY : movingobstacleavoidance/fast
+
+# Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/qptest.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
 .PHONY : ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
@@ -323,6 +338,21 @@ multiobstacle: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
 multiobstacle/fast:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
 .PHONY : multiobstacle/fast
+
+# Convenience name for target.
+ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+.PHONY : ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+
+# Convenience name for target.
+nonlinearsolve: ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+
+.PHONY : nonlinearsolve
+
+# fast build rule for target.
+nonlinearsolve/fast:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build
+.PHONY : nonlinearsolve/fast
 
 # Convenience name for target.
 ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
@@ -447,6 +477,33 @@ markers.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.s
 .PHONY : markers.cpp.s
 
+movingobstacleavoidance.o: movingobstacleavoidance.cpp.o
+
+.PHONY : movingobstacleavoidance.o
+
+# target to build an object file
+movingobstacleavoidance.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.o
+.PHONY : movingobstacleavoidance.cpp.o
+
+movingobstacleavoidance.i: movingobstacleavoidance.cpp.i
+
+.PHONY : movingobstacleavoidance.i
+
+# target to preprocess a source file
+movingobstacleavoidance.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.i
+.PHONY : movingobstacleavoidance.cpp.i
+
+movingobstacleavoidance.s: movingobstacleavoidance.cpp.s
+
+.PHONY : movingobstacleavoidance.s
+
+# target to generate assembly for a file
+movingobstacleavoidance.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.s
+.PHONY : movingobstacleavoidance.cpp.s
+
 multiobstacle.o: multiobstacle.cpp.o
 
 .PHONY : multiobstacle.o
@@ -473,6 +530,33 @@ multiobstacle.s: multiobstacle.cpp.s
 multiobstacle.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.s
 .PHONY : multiobstacle.cpp.s
+
+nonlinearsolve.o: nonlinearsolve.cpp.o
+
+.PHONY : nonlinearsolve.o
+
+# target to build an object file
+nonlinearsolve.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.o
+.PHONY : nonlinearsolve.cpp.o
+
+nonlinearsolve.i: nonlinearsolve.cpp.i
+
+.PHONY : nonlinearsolve.i
+
+# target to preprocess a source file
+nonlinearsolve.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.i
+.PHONY : nonlinearsolve.cpp.i
+
+nonlinearsolve.s: nonlinearsolve.cpp.s
+
+.PHONY : nonlinearsolve.s
+
+# target to generate assembly for a file
+nonlinearsolve.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.s
+.PHONY : nonlinearsolve.cpp.s
 
 obsavoidancedemo.o: obsavoidancedemo.cpp.o
 
@@ -618,11 +702,12 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... lpsolvetest"
 	@echo "... setinit"
+	@echo "... movingobstacleavoidance"
 	@echo "... qptest"
 	@echo "... obsavoidancedemo"
-	@echo "... list_install_components"
 	@echo "... ros_gazebo_sim"
 	@echo "... rebuild_cache"
 	@echo "... franka_example"
@@ -632,6 +717,7 @@ help:
 	@echo "... package"
 	@echo "... multiobstacle"
 	@echo "... package_source"
+	@echo "... nonlinearsolve"
 	@echo "... markers"
 	@echo "... test"
 	@echo "... franka_example.o"
@@ -646,9 +732,15 @@ help:
 	@echo "... markers.o"
 	@echo "... markers.i"
 	@echo "... markers.s"
+	@echo "... movingobstacleavoidance.o"
+	@echo "... movingobstacleavoidance.i"
+	@echo "... movingobstacleavoidance.s"
 	@echo "... multiobstacle.o"
 	@echo "... multiobstacle.i"
 	@echo "... multiobstacle.s"
+	@echo "... nonlinearsolve.o"
+	@echo "... nonlinearsolve.i"
+	@echo "... nonlinearsolve.s"
 	@echo "... obsavoidancedemo.o"
 	@echo "... obsavoidancedemo.i"
 	@echo "... obsavoidancedemo.s"

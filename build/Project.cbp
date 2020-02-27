@@ -2655,6 +2655,126 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="movingobstacleavoidance">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/movingobstacleavoidance" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;ros_robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/ros_robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/devel/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/master/trac_ik_lib/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 movingobstacleavoidance"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="movingobstacleavoidance/fast">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/movingobstacleavoidance" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;ros_robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/ros_robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/devel/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/master/trac_ik_lib/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 movingobstacleavoidance/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="qptest">
 				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/qptest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
@@ -3499,6 +3619,126 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="nonlinearsolve">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/nonlinearsolve" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;ros_robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/ros_robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/devel/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/master/trac_ik_lib/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 nonlinearsolve"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nonlinearsolve/fast">
+				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/nonlinearsolve" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;ros_robot_controller&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add option="-DLIBBULLET_VERSION=2.87"/>
+					<Add option="-DLIBBULLET_VERSION_GT_282"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/zheng/robot_ws_zheng/build/ros_robot_controller"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/devel/include"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/qpOASES-3.2.1/include"/>
+					<Add directory="/home/zheng/catkin_ws/src/master/trac_ik_lib/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/sdformat-6.0"/>
+					<Add directory="/usr/include/gazebo-9"/>
+					<Add directory="/usr/include/bullet"/>
+					<Add directory="/usr/include/simbody"/>
+					<Add directory="/usr/include/OGRE/Terrain"/>
+					<Add directory="/usr/include/OGRE/Paging"/>
+					<Add directory="/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/../include"/>
+					<Add directory="/usr/include/ignition/math4"/>
+					<Add directory="/usr/include/ignition/transport4"/>
+					<Add directory="/usr/include/ignition/msgs1"/>
+					<Add directory="/usr/include/ignition/common1"/>
+					<Add directory="/usr/include/ignition/fuel_tools1"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/uuid"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 nonlinearsolve/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="markers">
 				<Option output="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/markers" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller"/>
@@ -3814,8 +4054,14 @@
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/markers.cpp">
 			<Option target="markers"/>
 		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/movingobstacleavoidance.cpp">
+			<Option target="movingobstacleavoidance"/>
+		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/multiobstacle.cpp">
 			<Option target="multiobstacle"/>
+		</Unit>
+		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/nonlinearsolve.cpp">
+			<Option target="nonlinearsolve"/>
 		</Unit>
 		<Unit filename="/home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/obsavoidancedemo.cpp">
 			<Option target="obsavoidancedemo"/>

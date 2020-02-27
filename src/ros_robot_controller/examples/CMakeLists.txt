@@ -33,5 +33,11 @@ target_link_libraries(qpplaneformulation PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LI
 add_executable(multiobstacle multiobstacle.cpp)
 target_link_libraries(multiobstacle PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
 
+add_executable(movingobstacleavoidance movingobstacleavoidance.cpp)
+target_link_libraries(movingobstacleavoidance PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
+add_executable(nonlinearsolve nonlinearsolve.cpp)
+target_link_libraries(nonlinearsolve PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
 add_executable(qptest qptest.cpp)
 target_link_libraries(qptest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)

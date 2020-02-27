@@ -2036,6 +2036,19 @@ setinit/fast:
 .PHONY : setinit/fast
 
 #=============================================================================
+# Target rules for targets named movingobstacleavoidance
+
+# Build rule for target.
+movingobstacleavoidance: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 movingobstacleavoidance
+.PHONY : movingobstacleavoidance
+
+# fast build rule for target.
+movingobstacleavoidance/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build
+.PHONY : movingobstacleavoidance/fast
+
+#=============================================================================
 # Target rules for targets named qptest
 
 # Build rule for target.
@@ -2125,6 +2138,19 @@ multiobstacle: cmake_check_build_system
 multiobstacle/fast:
 	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
 .PHONY : multiobstacle/fast
+
+#=============================================================================
+# Target rules for targets named nonlinearsolve
+
+# Build rule for target.
+nonlinearsolve: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nonlinearsolve
+.PHONY : nonlinearsolve
+
+# fast build rule for target.
+nonlinearsolve/fast:
+	$(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build
+.PHONY : nonlinearsolve/fast
 
 #=============================================================================
 # Target rules for targets named markers
@@ -2309,6 +2335,7 @@ help:
 	@echo "... doc"
 	@echo "... lpsolvetest"
 	@echo "... setinit"
+	@echo "... movingobstacleavoidance"
 	@echo "... qptest"
 	@echo "... obsavoidancedemo"
 	@echo "... ros_gazebo_sim"
@@ -2316,6 +2343,7 @@ help:
 	@echo "... iDynTreeTest"
 	@echo "... qpplaneformulation"
 	@echo "... multiobstacle"
+	@echo "... nonlinearsolve"
 	@echo "... markers"
 	@echo "... ros_robot_controller_library"
 .PHONY : help

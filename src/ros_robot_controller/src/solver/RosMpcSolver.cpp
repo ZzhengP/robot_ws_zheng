@@ -51,7 +51,7 @@ mpc_solve::mpc_solve(int N_horz, int Ndof, int nbrCst):N_prediction_(N_horz), Nd
     qpoases_standard_.reset(new qpOASES::SQProblem(nV_,nbrCst,qpOASES::HST_SEMIDEF));
     qpoases_standard_->setPrintLevel(qpOASES::PL_DEBUG_ITER);
     data_optimal_solution_.resize(nV_);
-
+    data_optimal_solution_.setZero();
     std::cout <<"---------------------------------------------" << std::endl;
     std::cout << BOLD(FRED("QPs solver is successively created: "))  <<'\n'
               << FYEL("The number of optimization variable is : ") << nV_ << std::endl;
@@ -104,8 +104,8 @@ bool mpc_solve::solve(){
 
          qpoases_standard_->setOptions(options_);
 
+//         ret = qpoases_standard_->init(H_.data(),g_.data(),A_.data(),lb_.data(),ub_.data(),lbA_.data(),ubA_.data(),nWSR,0,data_optimal_solution_.data(),0);
          ret = qpoases_standard_->init(H_.data(),g_.data(),A_.data(),lb_.data(),ub_.data(),lbA_.data(),ubA_.data(),nWSR);
-
 
          qpoases_standard_->printProperties();
 

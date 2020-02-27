@@ -121,10 +121,15 @@ int main(int argc, char **argv)
     // define cube location (we suppose this is only a point)
     Eigen::Vector3d cube ;
     geometry_msgs::Pose cubeLocation, forearmLocation;
-    cubeLocation.position.x = 0.65;
-    cubeLocation.position.y = 0.1;
+//    cubeLocation.position.x = 0.65;
+//    cubeLocation.position.y = 0.1;
+////    cubeLocation.position.z = forearm.p.z();
+//    cubeLocation.position.z = 0.1;
+    cubeLocation.position.x = 0.7;
+    cubeLocation.position.y = -0.2;
 //    cubeLocation.position.z = forearm.p.z();
     cubeLocation.position.z = 0.1;
+
     cube << cubeLocation.position.x, cubeLocation.position.y, cubeLocation.position.z;
     // define cube's size (x,y,z)
     Eigen::Vector3d obsSize;
@@ -308,8 +313,8 @@ int main(int argc, char **argv)
     cartVelMax.resize(3*N);
 
     for (int k(0); k <N; k ++){
-        cartVelMin.segment(3*k,3) << -1, -1, -1;
-        cartVelMax.segment(3*k,3) << 1, 1, 1 ;
+        cartVelMin.segment(3*k,3) << -0.2, -0.2, -0.2;
+        cartVelMax.segment(3*k,3) << 0.2, 0.2, 0.2 ;
     }
 
     dq.resize(ndof);
@@ -345,16 +350,16 @@ int main(int argc, char **argv)
     constraintVectorData.push_back(cartesianVelCst.getConstraintData());
 
    // --------------- Obstacle avoidance ----------------
-    ObsAvoidanceCSt obsAvoidanceCst(ndof,N,dt,dsafe,"ObsAvoidanceConstraint",pandaPx,pandaPu);
-    obsAvoidanceCst.setLowerBound();
-    obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
-    constraintVectorData.push_back(obsAvoidanceCst.getConstraintData());
+//    ObsAvoidanceCSt obsAvoidanceCst(ndof,N,dt,dsafe,"ObsAvoidanceConstraint",pandaPx,pandaPu);
+//    obsAvoidanceCst.setLowerBound();
+//    obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
+//    constraintVectorData.push_back(obsAvoidanceCst.getConstraintData());
 
-    ObsAvoidanceCSt TableAvoidanceCst(ndof,N,dt,0,"TableAvoidanceConstraint",pandaPx,pandaPu);
-    TableAvoidanceCst.setLowerBound();
-    TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
-    TableAvoidanceCst.getConstraintData().print();
-    constraintVectorData.push_back(TableAvoidanceCst.getConstraintData());
+//    ObsAvoidanceCSt TableAvoidanceCst(ndof,N,dt,0,"TableAvoidanceConstraint",pandaPx,pandaPu);
+//    TableAvoidanceCst.setLowerBound();
+//    TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
+//    TableAvoidanceCst.getConstraintData().print();
+//    constraintVectorData.push_back(TableAvoidanceCst.getConstraintData());
 
      // ------------------------------------   Initialize qpOASES solver  ------------------------------------------
 
@@ -372,9 +377,9 @@ int main(int argc, char **argv)
 
     lb.setConstant(-10);
     ub.setConstant(10);
-    int constraintSize = 2*ndof*N + obsAvoidanceCst.getConstraintData().upBound_.size()
-                        + TableAvoidanceCst.getConstraintData().upBound_.size() + + cartesianVelCst.getConstraintData().upBound_.size();
-//    int constraintSize = 2*ndof*N + cartesianVelCst.getConstraintData().upBound_.size();
+//    int constraintSize = 2*ndof*N + obsAvoidanceCst.getConstraintData().upBound_.size()
+//                        + TableAvoidanceCst.getConstraintData().upBound_.size() + + cartesianVelCst.getConstraintData().upBound_.size();
+    int constraintSize = 2*ndof*N + cartesianVelCst.getConstraintData().upBound_.size();
     mpc_solve qptest(1,ndof*N,constraintSize);
     qptest.initData(H,g,lb,ub);
     qptest.constructProblem(constraintVectorData,H,g);
@@ -489,8 +494,8 @@ int main(int argc, char **argv)
         // Update vel position constraint
         jointVelCst.update(pandaState);
         // Update obstacle avoidance constraint
-        obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
-        TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
+//        obsAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,planedata,pandaState,jacobianHorizon,q_horizon);
+//        TableAvoidanceCst.setUpperBoundAndConstraint(robotVerticesAugmented,TablePlane,pandaState,jacobianHorizon,q_horizon);
         // Update ee velocity constraint
         cartesianVelCst.setLowerBound(pandaState,jacobianHorizon,jacobianDotHorizon,
                                       eeVelAugmented,q_horizon,dotq_horizon);
@@ -501,8 +506,8 @@ int main(int argc, char **argv)
         constraintVectorData[0] = jointPosCst.getConstraintData();
         constraintVectorData[1] = jointVelCst.getConstraintData();
         constraintVectorData[2] = cartesianVelCst.getConstraintData();
-        constraintVectorData[3] = obsAvoidanceCst.getConstraintData();
-        constraintVectorData[4] = TableAvoidanceCst.getConstraintData();
+//        constraintVectorData[3] = obsAvoidanceCst.getConstraintData();
+//        constraintVectorData[4] = TableAvoidanceCst.getConstraintData();
 
         qptest.constructProblem(constraintVectorData,H,g);
 //        qptest.print();
@@ -615,12 +620,12 @@ int main(int argc, char **argv)
 //        std::cout <<" plane found : \n " << planedata.planeLocation[0].block(0,0,5,1) <<'\n';
 
         cubeObstacleMarkers->publishABCDPlane(singlePlane[0],singlePlane[1],singlePlane[2],-singlePlane[3],colorPlane1,x_width,y_width);
-        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,1),planedata.planeLocation[0](1,1),planedata.planeLocation[0](2,1)
-                                              ,-planedata.planeLocation[0](3,1),colorPlane2,x_width,y_width);
-        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,2),planedata.planeLocation[0](1,2),planedata.planeLocation[0](2,2)
-                                              ,-planedata.planeLocation[0](3,2),colorPlane3,x_width,y_width);
-        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,3),planedata.planeLocation[0](1,3),planedata.planeLocation[0](2,3)
-                                              ,-planedata.planeLocation[0](3,3),colorPlane4,x_width,y_width);
+//        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,1),planedata.planeLocation[0](1,1),planedata.planeLocation[0](2,1)
+//                                              ,-planedata.planeLocation[0](3,1),colorPlane2,x_width,y_width);
+//        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,2),planedata.planeLocation[0](1,2),planedata.planeLocation[0](2,2)
+//                                              ,-planedata.planeLocation[0](3,2),colorPlane3,x_width,y_width);
+//        cubeObstacleMarkers->publishABCDPlane(planedata.planeLocation[0](0,3),planedata.planeLocation[0](1,3),planedata.planeLocation[0](2,3)
+//                                              ,-planedata.planeLocation[0](3,3),colorPlane4,x_width,y_width);
         rviz_visual_tools::scales SMALL;
         PathPublisher->publishPath(path,colorPlane1);
         PathPublisher->trigger();

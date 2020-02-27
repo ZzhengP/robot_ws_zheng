@@ -44,14 +44,14 @@ Planes::Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd>
 
     obsVertices_.N = N_;
     obsVertices_.nbrOfObject = nbrObs;
-    obsVertices_.nbrVertices = 1;
+    obsVertices_.nbrVertices = obsVertices.cols();
     obsVertices_.Vertices.resize(obsVertices_.nbrOfObject);
     for (int i =0; i < obsVertices_.nbrOfObject; i++) {
 
         obsVertices_.Vertices[i].resize(3,N_*obsVertices_.nbrVertices);
 
         for (int j = 0 ; j < N_; j++){
-            obsVertices_.Vertices[i].block(0,obsVertices_.nbrVertices*j,3,1 ) = obsVertices.block(3*i,0,3,1);
+            obsVertices_.Vertices[i].block(0,obsVertices_.nbrVertices*j,3,obsVertices_.nbrVertices ) = obsVertices.block(3*i,0,3,obsVertices_.nbrVertices);
         }
     }
 

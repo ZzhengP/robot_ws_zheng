@@ -54,11 +54,11 @@ void PlaneSolver::setCost(const Eigen::VectorXd& f){
     g2 << 0,0,0,0,-1;
 
     H3.setZero();
-    H3(4,4) = 0.1;
+    H3(4,4) = 0.2;
     g3.setZero();
 
-    H_ = H1 + H2 + H3;
-    g_ = g1 + g2 + g3;
+    H_ = 0.01*H1 + 0.1*H2 + H3;
+    g_ = 0.01*g1 + 0.1*g2 + g3;
 }
 
 
@@ -74,20 +74,29 @@ void PlaneSolver::setCstMatrix(const Eigen::MatrixXd &robotPartielVertices,
     // -dsafe << pk.ak - bk - dk
     // 1-e << ak^p.ak << 1
     // Plane close to robot
+
+//    std::cout <<" rcols : \n" <<rcols <<std::endl;
+//    std::cout <<" pcols : \n" <<pcols <<std::endl ;
+
     for (int j(0); j < rcols ; j ++ ){
         A_.block(j,0,1,5) << -robotPartielVertices.block(0,j,3,1).transpose() , 1, -1;
 
     }
     for (int i(0); i < pcols; i++ ){
         A_.block(i+rcols,0,1,5) <<obsPartielVertices.block(0,i,3,1).transpose(), -1, 0;
+
+//        std::cout <<" obs partiel vertices:\n " << obsPartielVertices.block(0,i,3,1).transpose() << std::endl;
     }
+
 
     A_.block(rcols + pcols,0,1,5) <<  dataPlanePrecedent.transpose(),0,0 ;
 //    A_.block(rcols + pcols, 0, 1 ,5) << 0, 0, 0, 0, 0 ;
     lbA_.resize(rcols+pcols+1);
     ubA_.resize(rcols+pcols+1);
 
-    lbA_ << dsafe_,dsafe_,dsafe_,dsafe_,dsafe_,dsafe_, 0.9;
+    lbA_.setConstant(dsafe_);
+    lbA_.tail(1) << 0.9 ;
+//    lbA_ << dsafe_,dsafe_,dsafe_,dsafe_,dsafe_,dsafe_, 0.9;
 
 //    lbA_.tail(1) <<  1-0.1;
 
