@@ -56,9 +56,12 @@ void PlaneSolver::setCost(const Eigen::VectorXd& f){
     H3.setZero();
     H3(4,4) = 0.2;
     g3.setZero();
-
+    // For linearized
     H_ = 0.01*H1 + 0.1*H2 + H3;
     g_ = 0.01*g1 + 0.1*g2 + g3;
+    // For non linear
+//    H_ = 0.1*H1 + 0.1*H2 + H3;
+//    g_ = 0.1*g1 + 0.1*g2 + g3;
 }
 
 

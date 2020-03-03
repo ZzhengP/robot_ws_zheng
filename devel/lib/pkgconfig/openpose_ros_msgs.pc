@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel
+
+Name: openpose_ros_msgs
+Description: Description of openpose_ros_msgs
+Version: 0.1.0
+Cflags: -I/home/zheng/robot_ws_zheng/devel/include
+Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
+Requires: message_generation message_runtime

@@ -42,7 +42,6 @@ include_directories(
 
     )
 include_directories(${GAZEBO_INCLUDE_DIRS})
-
 link_directories( ${GAZEBO_LIBRARY_DIRS} ${qpOASES_LIBRARY_DIRS} ${rviz_visual_tools_LIBRARY_DIRS} ${lpsolve_catkin_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 

@@ -593,8 +593,11 @@ int main(int argc, char **argv)
         }
 //        pandaArm.computeJntFromCart(panda_des_frame,panda_q_des);
         int sqpite = 0;
-     Eigen::VectorXd q_horizon_sqp, dq_horizon_sqp,pandaStateSqp,q_horizon_sqpTest;
+     Eigen::VectorXd q_horizon_sqp, dq_horizon_sqp,pandaStateSqp,q_horizon_sqpTest,ee_horizon_sqp, ee_horizon,ee_horizon_sqp_test;
      q_horizon_sqp = q_horizon;
+     pandaArm.computeCartPosHorz(q_horizon);
+     ee_horizon = pandaArm.getCartPosHorz();
+     ee_horizon_sqp = ee_horizon;
      dq_horizon_sqp = dotq_horizon;
      pandaStateSqp = pandaState;
      q_horizon_sqpTest = pandaState;
@@ -684,10 +687,16 @@ int main(int argc, char **argv)
                    }
              q_horizon_sqp = pandaPx*pandaStateSqp + pandaPu*optimalSolution;
              q_horizon_sqpTest =pandaPx*pandaStateSqp + pandaPu*optimalSolutionPrecedent;
-             myfile5  << sqpite <<", " << (q_horizon_sqp - q_horizon_sqpTest).norm()/N<< '\n';
+             pandaArm.computeCartPosHorz(q_horizon_sqp);
+             ee_horizon_sqp = pandaArm.getCartPosHorz();
 
+             pandaArm.computeCartPosHorz(q_horizon_sqpTest);
+             ee_horizon_sqp_test = pandaArm.getCartPosHorz();
+//             myfile5  << sqpite <<", " << (q_horizon_sqp - q_horizon_sqpTest).norm()/N<< '\n';
+             myfile5  << sqpite <<", " << (ee_horizon_sqp - ee_horizon_sqp_test).norm()/N<< '\n';
              sqpite ++;
-        }while((q_horizon_sqp - q_horizon_sqpTest).norm()/N > 0.001);
+        }while((ee_horizon_sqp - ee_horizon_sqp_test).norm()/N > 0.001);
+//     while((q_horizon_sqp - q_horizon_sqpTest).norm()/N > 0.001);
         optimalSolutionPrecedent.setConstant(10);
         // compute q enlarged
         q_horizon = pandaPx*pandaState + pandaPu*optimalSolution;
