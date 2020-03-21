@@ -19,9 +19,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "rviz_visual_tools"
+  "."
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools"
-  "rviz_visual_tools/rvt_test_autogen/include"
+  "rvt_test_autogen/include"
   "/usr/src/googletest/googletest/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/opt/ros/melodic/include"
@@ -34,7 +34,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/zheng/robot_ws_zheng/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/zheng/robot_ws_zheng/build/rviz_visual_tools/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "/home/zheng/robot_ws_zheng/build/rviz_visual_tools/CMakeFiles/rviz_visual_tools.dir/DependInfo.cmake"
   "/home/zheng/robot_ws_zheng/build/rviz_visual_tools/CMakeFiles/rviz_visual_tools_remote_control.dir/DependInfo.cmake"
   )

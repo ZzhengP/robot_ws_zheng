@@ -72,7 +72,7 @@ $(function() {
 <p>The <a class="el" href="classMPC__Task.html" title="The MPC_Task class define the cost (objectif) function for Model Predictive Control.">MPC_Task</a> class define the cost (objectif) function for Model Predictive Control.  
  <a href="classMPC__Task.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="RosMpcTask_8h_source.html">RosMpcTask.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="RosWrapMpcTask_8h_source.html">RosWrapMpcTask.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -120,6 +120,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a07297dd0bc4caaa7e47e5936f42c5c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d98b59ea803cf3962f98ccfcb7eeaa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMPC__Task.html#a3d98b59ea803cf3962f98ccfcb7eeaa0">computefdq</a> (Eigen::VectorXd robot_state)</td></tr>
 <tr class="separator:a3d98b59ea803cf3962f98ccfcb7eeaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705720651c6aea8604652d0432a131c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMPC__Task.html#a705720651c6aea8604652d0432a131c1">iMarkerCallback</a> (const visualization_msgs::MarkerArray::ConstPtr &amp;marker_array)</td></tr>
+<tr class="memdesc:a705720651c6aea8604652d0432a131c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interactive markers position callback <br  />
+  <a href="classMPC__Task.html#a705720651c6aea8604652d0432a131c1">More...</a><br /></td></tr>
+<tr class="separator:a705720651c6aea8604652d0432a131c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5c7ccbb68c33a144c750063885ad49d"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMPC__Task.html#ab5c7ccbb68c33a144c750063885ad49d">getStateA</a> ()</td></tr>
 <tr class="memdesc:ab5c7ccbb68c33a144c750063885ad49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">getStateA  <a href="classMPC__Task.html#ab5c7ccbb68c33a144c750063885ad49d">More...</a><br /></td></tr>
 <tr class="separator:ab5c7ccbb68c33a144c750063885ad49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -839,6 +843,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a705720651c6aea8604652d0432a131c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705720651c6aea8604652d0432a131c1">&#9670;&nbsp;</a></span>iMarkerCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MPC_Task::iMarkerCallback </td>
+          <td>(</td>
+          <td class="paramtype">const visualization_msgs::MarkerArray::ConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>marker_array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interactive markers position callback <br  />
+ </p>
+
+</div>
+</div>
 <a id="af5231f811ed81028f7615096d326b5de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5231f811ed81028f7615096d326b5de">&#9670;&nbsp;</a></span>init()</h2>
 
@@ -860,8 +885,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/task/<a class="el" href="RosMpcTask_8h_source.html">RosMpcTask.h</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/task/<a class="el" href="RosMpcTask_8cpp.html">RosMpcTask.cpp</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraptask/<a class="el" href="RosWrapMpcTask_8h_source.html">RosWrapMpcTask.h</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraptask/<a class="el" href="RosWrapMpcTask_8cpp.html">RosWrapMpcTask.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

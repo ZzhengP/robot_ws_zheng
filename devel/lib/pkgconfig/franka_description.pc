@@ -1,8 +1,1 @@
-prefix=/home/zheng/robot_ws_zheng/devel
-
-Name: franka_description
-Description: Description of franka_description
-Version: 0.7.0
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
-Requires: xacro
+/home/zheng/robot_ws_zheng/devel/.private/franka_description/lib/pkgconfig/franka_description.pc

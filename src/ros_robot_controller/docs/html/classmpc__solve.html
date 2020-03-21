@@ -69,16 +69,22 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="RosMpcSolver_8h_source.html">RosMpcSolver.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="RosWrapMpcSolver_8h_source.html">RosWrapMpcSolver.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f1f8aa5cb5a6a3b1dd08e0c729ff66d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#a5f1f8aa5cb5a6a3b1dd08e0c729ff66d">mpc_solve</a> (int N_horz, int Ndof, int nbrCst)</td></tr>
 <tr class="separator:a5f1f8aa5cb5a6a3b1dd08e0c729ff66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61daa41454c0c29f52124ba06391aab6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#a61daa41454c0c29f52124ba06391aab6">mpc_solve</a> (ros::NodeHandle *nodehandle, int N_horz, int Ndof, int nbrCst, double dt, const std::string &amp;panda_urdf, const KDL::JntArray &amp;panda_q_init, const KDL::JntArray &amp;panda_dq_init)</td></tr>
+<tr class="memdesc:a61daa41454c0c29f52124ba06391aab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ros node versions <br  />
+  <a href="classmpc__solve.html#a61daa41454c0c29f52124ba06391aab6">More...</a><br /></td></tr>
+<tr class="separator:a61daa41454c0c29f52124ba06391aab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28927010f0b6a69fe87893a1456bf765"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">~mpc_solve</a> ()</td></tr>
 <tr class="separator:a28927010f0b6a69fe87893a1456bf765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92800fa4bf2c13284166639868639fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#ad92800fa4bf2c13284166639868639fc">initData</a> (Eigen::MatrixXd H, Eigen::VectorXd g, Eigen::VectorXd lb, Eigen::VectorXd ub)</td></tr>
-<tr class="separator:ad92800fa4bf2c13284166639868639fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5abfa4cd337b1872e70d2e7adac0b14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#ae5abfa4cd337b1872e70d2e7adac0b14">initMPCData</a> (Eigen::MatrixXd H, Eigen::VectorXd g, Eigen::VectorXd lb, Eigen::VectorXd ub)</td></tr>
+<tr class="separator:ae5abfa4cd337b1872e70d2e7adac0b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5bab4efe0edda96b54e79c3272f2ea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#ac5bab4efe0edda96b54e79c3272f2ea4">initTaskData</a> ()</td></tr>
+<tr class="separator:ac5bab4efe0edda96b54e79c3272f2ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01323fad75cfbd19080f8e9a5d2b279a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#a01323fad75cfbd19080f8e9a5d2b279a">solve</a> (Eigen::MatrixXd H, Eigen::VectorXd g, Eigen::VectorXd lb, Eigen::VectorXd ub)</td></tr>
 <tr class="separator:a01323fad75cfbd19080f8e9a5d2b279a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7521e6dd9f20535b5adbca46a0320a98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpc__solve.html#a7521e6dd9f20535b5adbca46a0320a98">solve</a> ()</td></tr>
@@ -94,7 +100,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5f1f8aa5cb5a6a3b1dd08e0c729ff66d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f1f8aa5cb5a6a3b1dd08e0c729ff66d">&#9670;&nbsp;</a></span>mpc_solve()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1f8aa5cb5a6a3b1dd08e0c729ff66d">&#9670;&nbsp;</a></span>mpc_solve() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,6 +130,73 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61daa41454c0c29f52124ba06391aab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61daa41454c0c29f52124ba06391aab6">&#9670;&nbsp;</a></span>mpc_solve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mpc_solve::mpc_solve </td>
+          <td>(</td>
+          <td class="paramtype">ros::NodeHandle *&#160;</td>
+          <td class="paramname"><em>nodehandle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N_horz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Ndof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbrCst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>panda_urdf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KDL::JntArray &amp;&#160;</td>
+          <td class="paramname"><em>panda_q_init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KDL::JntArray &amp;&#160;</td>
+          <td class="paramname"><em>panda_dq_init</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ros node versions <br  />
+ </p>
 
 </div>
 </div>
@@ -212,14 +285,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad92800fa4bf2c13284166639868639fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad92800fa4bf2c13284166639868639fc">&#9670;&nbsp;</a></span>initData()</h2>
+<a id="ae5abfa4cd337b1872e70d2e7adac0b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5abfa4cd337b1872e70d2e7adac0b14">&#9670;&nbsp;</a></span>initMPCData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool mpc_solve::initData </td>
+          <td class="memname">bool mpc_solve::initMPCData </td>
           <td>(</td>
           <td class="paramtype">Eigen::MatrixXd&#160;</td>
           <td class="paramname"><em>H</em>, </td>
@@ -246,6 +319,23 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5bab4efe0edda96b54e79c3272f2ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5bab4efe0edda96b54e79c3272f2ea4">&#9670;&nbsp;</a></span>initTaskData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mpc_solve::initTaskData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -360,8 +450,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/<a class="el" href="RosMpcSolver_8h_source.html">RosMpcSolver.h</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/solver/<a class="el" href="RosMpcSolver_8cpp.html">RosMpcSolver.cpp</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/<a class="el" href="RosWrapMpcSolver_8h_source.html">RosWrapMpcSolver.h</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapsolver/<a class="el" href="RosWrapMpcSolver_8cpp.html">RosWrapMpcSolver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

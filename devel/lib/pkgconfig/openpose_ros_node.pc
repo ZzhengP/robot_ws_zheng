@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/devel
-
-Name: openpose_ros_node
-Description: Description of openpose_ros_node
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
-Requires: std_msgs

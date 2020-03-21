@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rviz_visual_tools_demo_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/rviz_visual_tools_demo_autogen.dir/ParseCache.txt"
   "rviz_visual_tools_demo_autogen"
-  "/home/zheng/robot_ws_zheng/devel/lib/rviz_visual_tools/demo"
-  "/home/zheng/robot_ws_zheng/devel/lib/rviz_visual_tools/demo.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/rviz_visual_tools/demo"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/rviz_visual_tools/demo.pdb"
   "CMakeFiles/rviz_visual_tools_demo.dir/rviz_visual_tools_demo_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/rviz_visual_tools_demo.dir/src/rviz_visual_tools_demo.cpp.o"
 )

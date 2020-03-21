@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/01-simple_controller.dir/01-simple_controller.cc.o  -o /home/zheng/robot_ws_zheng/devel/lib/orca/01-simple_controller  -Wl,-rpath,/home/zheng/robot_ws_zheng/devel/lib: /home/zheng/robot_ws_zheng/devel/lib/liborca.so /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.5.2 

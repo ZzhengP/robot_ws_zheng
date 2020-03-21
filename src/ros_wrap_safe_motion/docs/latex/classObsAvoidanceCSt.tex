@@ -1,0 +1,180 @@
+\hypertarget{classObsAvoidanceCSt}{}\doxysection{Obs\+Avoidance\+C\+St Class Reference}
+\label{classObsAvoidanceCSt}\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+
+
+{\ttfamily \#include $<$Ros\+Avoidance\+Cst.\+h$>$}
+
+
+
+Collaboration diagram for Obs\+Avoidance\+C\+St\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classObsAvoidanceCSt__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObsAvoidanceCSt_abd25fc800e54dc12542400566e0885dc}{Obs\+Avoidance\+C\+St}} (int ndof, int N, double dt, double dsafe, std\+::string, Eigen\+::\+Matrix\+Xd Px, Eigen\+::\+Matrix\+Xd Pu)
+\item 
+\mbox{\hyperlink{classObsAvoidanceCSt_a5ad2565987efa2596e3d165c03f80c3b}{$\sim$\+Obs\+Avoidance\+C\+St}} ()
+\item 
+void \mbox{\hyperlink{classObsAvoidanceCSt_a7438778019a67642510c2782be30a94c}{set\+Lower\+Bound}} ()
+\item 
+void \mbox{\hyperlink{classObsAvoidanceCSt_a6b5c9d8809e63a340e03bd395d7af13c}{set\+Upper\+Bound\+And\+Constraint}} (const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&Robot\+Vertices, const \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Planes\+::\+Plane\+Data}} \&Plane\+Data, const Eigen\+::\+Vector\+Xd \&robot\+State, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Horizon, const Eigen\+::\+Vector\+Xd \&q\+Horizon\+Precedent)
+\item 
+\mbox{\hyperlink{structconstraintData}{constraint\+Data}} \mbox{\hyperlink{classObsAvoidanceCSt_a708edb9df1090beb52aff4fc6ad75c63}{get\+Constraint\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classObsAvoidanceCSt_a60b183561baee5209626fdb24c4f5e18}{Px\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classObsAvoidanceCSt_ab76929c37d3fcfbf08247abd9f08189c}{Pu\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classObsAvoidanceCSt_af7e433420eea36169a7d3d2418d3ecfe}{A\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classObsAvoidanceCSt_acc15f15d89d89215e405326abda9c503}{lb\+A\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classObsAvoidanceCSt_af0fc27c60efe66915c51e45f193d96ea}{ub\+A\+\_\+}}
+\item 
+double \mbox{\hyperlink{classObsAvoidanceCSt_aec87fe7c6d113adfb70370f64680f6aa}{dt\+\_\+}}
+\item 
+double \mbox{\hyperlink{classObsAvoidanceCSt_ae703abb44ba5b75f5b85f9565dc966dd}{dsafe\+\_\+}}
+\item 
+unsigned int \mbox{\hyperlink{classObsAvoidanceCSt_a7123f215d321a493a8786d0d55b8c0fb}{N\+\_\+}}
+\item 
+unsigned int \mbox{\hyperlink{classObsAvoidanceCSt_a50f57776c53ad507750b877347a08246}{nbr\+Robot\+Part\+\_\+}}
+\item 
+unsigned int \mbox{\hyperlink{classObsAvoidanceCSt_a12f5747b096bcb5888d0ff38b8b14431}{nbr\+Obstacle\+\_\+}}
+\item 
+unsigned int \mbox{\hyperlink{classObsAvoidanceCSt_a30b91645a5a77e467064ee55be9c5949}{ndof\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classObsAvoidanceCSt_a99a7f6ef147e3b104470036e0ea18900}{cst\+\_\+name\+\_\+}}
+\item 
+\mbox{\hyperlink{structconstraintData}{constraint\+Data}} \mbox{\hyperlink{classObsAvoidanceCSt_a9b41c967aa75bc1c98d7190424fed146}{cst\+Data\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObsAvoidanceCSt_abd25fc800e54dc12542400566e0885dc}\label{classObsAvoidanceCSt_abd25fc800e54dc12542400566e0885dc}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{ObsAvoidanceCSt()}{ObsAvoidanceCSt()}}
+{\footnotesize\ttfamily Obs\+Avoidance\+C\+St\+::\+Obs\+Avoidance\+C\+St (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{double}]{dsafe,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a5ad2565987efa2596e3d165c03f80c3b}\label{classObsAvoidanceCSt_a5ad2565987efa2596e3d165c03f80c3b}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!````~ObsAvoidanceCSt@{$\sim$ObsAvoidanceCSt}}
+\index{````~ObsAvoidanceCSt@{$\sim$ObsAvoidanceCSt}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{$\sim$ObsAvoidanceCSt()}{~ObsAvoidanceCSt()}}
+{\footnotesize\ttfamily Obs\+Avoidance\+C\+St\+::$\sim$\+Obs\+Avoidance\+C\+St (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObsAvoidanceCSt_a708edb9df1090beb52aff4fc6ad75c63}\label{classObsAvoidanceCSt_a708edb9df1090beb52aff4fc6ad75c63}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!getConstraintData@{getConstraintData}}
+\index{getConstraintData@{getConstraintData}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{getConstraintData()}{getConstraintData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structconstraintData}{constraint\+Data}} Obs\+Avoidance\+C\+St\+::get\+Constraint\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a7438778019a67642510c2782be30a94c}\label{classObsAvoidanceCSt_a7438778019a67642510c2782be30a94c}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!setLowerBound@{setLowerBound}}
+\index{setLowerBound@{setLowerBound}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}}
+{\footnotesize\ttfamily void Obs\+Avoidance\+C\+St\+::set\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a6b5c9d8809e63a340e03bd395d7af13c}\label{classObsAvoidanceCSt_a6b5c9d8809e63a340e03bd395d7af13c}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!setUpperBoundAndConstraint@{setUpperBoundAndConstraint}}
+\index{setUpperBoundAndConstraint@{setUpperBoundAndConstraint}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{setUpperBoundAndConstraint()}{setUpperBoundAndConstraint()}}
+{\footnotesize\ttfamily void Obs\+Avoidance\+C\+St\+::set\+Upper\+Bound\+And\+Constraint (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Robot\+Vertices,  }\item[{const \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Planes\+::\+Plane\+Data}} \&}]{Plane\+Data,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+State,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Horizon,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+Horizon\+Precedent }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classObsAvoidanceCSt_af7e433420eea36169a7d3d2418d3ecfe}\label{classObsAvoidanceCSt_af7e433420eea36169a7d3d2418d3ecfe}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!A\_@{A\_}}
+\index{A\_@{A\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{A\_}{A\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Obs\+Avoidance\+C\+St\+::\+A\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a99a7f6ef147e3b104470036e0ea18900}\label{classObsAvoidanceCSt_a99a7f6ef147e3b104470036e0ea18900}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!cst\_name\_@{cst\_name\_}}
+\index{cst\_name\_@{cst\_name\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{cst\_name\_}{cst\_name\_}}
+{\footnotesize\ttfamily std\+::string Obs\+Avoidance\+C\+St\+::cst\+\_\+name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a9b41c967aa75bc1c98d7190424fed146}\label{classObsAvoidanceCSt_a9b41c967aa75bc1c98d7190424fed146}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!cstData\_@{cstData\_}}
+\index{cstData\_@{cstData\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{cstData\_}{cstData\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structconstraintData}{constraint\+Data}} Obs\+Avoidance\+C\+St\+::cst\+Data\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_ae703abb44ba5b75f5b85f9565dc966dd}\label{classObsAvoidanceCSt_ae703abb44ba5b75f5b85f9565dc966dd}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!dsafe\_@{dsafe\_}}
+\index{dsafe\_@{dsafe\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{dsafe\_}{dsafe\_}}
+{\footnotesize\ttfamily double Obs\+Avoidance\+C\+St\+::dsafe\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_aec87fe7c6d113adfb70370f64680f6aa}\label{classObsAvoidanceCSt_aec87fe7c6d113adfb70370f64680f6aa}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!dt\_@{dt\_}}
+\index{dt\_@{dt\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{dt\_}{dt\_}}
+{\footnotesize\ttfamily double Obs\+Avoidance\+C\+St\+::dt\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_acc15f15d89d89215e405326abda9c503}\label{classObsAvoidanceCSt_acc15f15d89d89215e405326abda9c503}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!lbA\_@{lbA\_}}
+\index{lbA\_@{lbA\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{lbA\_}{lbA\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Obs\+Avoidance\+C\+St\+::lb\+A\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a7123f215d321a493a8786d0d55b8c0fb}\label{classObsAvoidanceCSt_a7123f215d321a493a8786d0d55b8c0fb}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!N\_@{N\_}}
+\index{N\_@{N\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{N\_}{N\_}}
+{\footnotesize\ttfamily unsigned int Obs\+Avoidance\+C\+St\+::\+N\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a12f5747b096bcb5888d0ff38b8b14431}\label{classObsAvoidanceCSt_a12f5747b096bcb5888d0ff38b8b14431}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!nbrObstacle\_@{nbrObstacle\_}}
+\index{nbrObstacle\_@{nbrObstacle\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{nbrObstacle\_}{nbrObstacle\_}}
+{\footnotesize\ttfamily unsigned int Obs\+Avoidance\+C\+St\+::nbr\+Obstacle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a50f57776c53ad507750b877347a08246}\label{classObsAvoidanceCSt_a50f57776c53ad507750b877347a08246}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!nbrRobotPart\_@{nbrRobotPart\_}}
+\index{nbrRobotPart\_@{nbrRobotPart\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{nbrRobotPart\_}{nbrRobotPart\_}}
+{\footnotesize\ttfamily unsigned int Obs\+Avoidance\+C\+St\+::nbr\+Robot\+Part\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a30b91645a5a77e467064ee55be9c5949}\label{classObsAvoidanceCSt_a30b91645a5a77e467064ee55be9c5949}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!ndof\_@{ndof\_}}
+\index{ndof\_@{ndof\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{ndof\_}{ndof\_}}
+{\footnotesize\ttfamily unsigned int Obs\+Avoidance\+C\+St\+::ndof\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_ab76929c37d3fcfbf08247abd9f08189c}\label{classObsAvoidanceCSt_ab76929c37d3fcfbf08247abd9f08189c}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!Pu\_@{Pu\_}}
+\index{Pu\_@{Pu\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{Pu\_}{Pu\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Obs\+Avoidance\+C\+St\+::\+Pu\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_a60b183561baee5209626fdb24c4f5e18}\label{classObsAvoidanceCSt_a60b183561baee5209626fdb24c4f5e18}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!Px\_@{Px\_}}
+\index{Px\_@{Px\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{Px\_}{Px\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Obs\+Avoidance\+C\+St\+::\+Px\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classObsAvoidanceCSt_af0fc27c60efe66915c51e45f193d96ea}\label{classObsAvoidanceCSt_af0fc27c60efe66915c51e45f193d96ea}} 
+\index{ObsAvoidanceCSt@{ObsAvoidanceCSt}!ubA\_@{ubA\_}}
+\index{ubA\_@{ubA\_}!ObsAvoidanceCSt@{ObsAvoidanceCSt}}
+\doxysubsubsection{\texorpdfstring{ubA\_}{ubA\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Obs\+Avoidance\+C\+St\+::ub\+A\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/constraint/\mbox{\hyperlink{RosAvoidanceCst_8h}{Ros\+Avoidance\+Cst.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/constraint/\mbox{\hyperlink{RosAvoidanceCst_8cpp}{Ros\+Avoidance\+Cst.\+cpp}}\end{DoxyCompactItemize}

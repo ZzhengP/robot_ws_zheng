@@ -7,7 +7,7 @@ The \mbox{\hyperlink{classMPC__Task}{M\+P\+C\+\_\+\+Task}} class define the cost
 
 
 
-{\ttfamily \#include $<$Ros\+Mpc\+Task.\+h$>$}
+{\ttfamily \#include $<$Ros\+Wrap\+Mpc\+Task.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -44,6 +44,9 @@ void \mbox{\hyperlink{classMPC__Task_a07297dd0bc4caaa7e47e5936f42c5c68}{compute\
 \item 
 void \mbox{\hyperlink{classMPC__Task_a3d98b59ea803cf3962f98ccfcb7eeaa0}{computefdq}} (Eigen\+::\+Vector\+Xd robot\+\_\+state)
 \item 
+void \mbox{\hyperlink{classMPC__Task_a705720651c6aea8604652d0432a131c1}{i\+Marker\+Callback}} (const visualization\+\_\+msgs\+::\+Marker\+Array\+::\+Const\+Ptr \&marker\+\_\+array)
+\begin{DoxyCompactList}\small\item\em Interactive markers position callback ~\newline
+ \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classMPC__Task_ab5c7ccbb68c33a144c750063885ad49d}{get\+StateA}} ()
 \begin{DoxyCompactList}\small\item\em get\+StateA \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classMPC__Task_a8e3d98573abbba4ae9717ae60a17f897}{get\+StateB}} ()
@@ -373,6 +376,17 @@ get\+Vectorg
 \begin{DoxyReturn}{Returns}
 g 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMPC__Task_a705720651c6aea8604652d0432a131c1}\label{classMPC__Task_a705720651c6aea8604652d0432a131c1}} 
+\index{MPC\_Task@{MPC\_Task}!iMarkerCallback@{iMarkerCallback}}
+\index{iMarkerCallback@{iMarkerCallback}!MPC\_Task@{MPC\_Task}}
+\doxysubsubsection{\texorpdfstring{iMarkerCallback()}{iMarkerCallback()}}
+{\footnotesize\ttfamily void M\+P\+C\+\_\+\+Task\+::i\+Marker\+Callback (\begin{DoxyParamCaption}\item[{const visualization\+\_\+msgs\+::\+Marker\+Array\+::\+Const\+Ptr \&}]{marker\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Interactive markers position callback ~\newline
+ 
+
 \mbox{\Hypertarget{classMPC__Task_af5231f811ed81028f7615096d326b5de}\label{classMPC__Task_af5231f811ed81028f7615096d326b5de}} 
 \index{MPC\_Task@{MPC\_Task}!init@{init}}
 \index{init@{init}!MPC\_Task@{MPC\_Task}}
@@ -390,5 +404,5 @@ initialize private parameters
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/task/\mbox{\hyperlink{RosMpcTask_8h}{Ros\+Mpc\+Task.\+h}}\item 
-/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/task/\mbox{\hyperlink{RosMpcTask_8cpp}{Ros\+Mpc\+Task.\+cpp}}\end{DoxyCompactItemize}
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wraptask/\mbox{\hyperlink{RosWrapMpcTask_8h}{Ros\+Wrap\+Mpc\+Task.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/src/\+Ros\+Wraptask/\mbox{\hyperlink{RosWrapMpcTask_8cpp}{Ros\+Wrap\+Mpc\+Task.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_660',['zero',['../structrobot_1_1iDynTreeRobotAcceleration.html#aa6a151c385ea61ec839887601355f7a7',1,'robot::iDynTreeRobotAcceleration']]]
+  ['verticespublisher_694',['verticesPublisher',['../classarm__kinematic.html#a452d6ba140a73daa9873ec2a353baefb',1,'arm_kinematic']]]
 ];

@@ -4,5 +4,5 @@ Name: robot_controller
 Description: Description of robot_controller
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/install/lib 
+Libs: -L${prefix}/lib 
 Requires: 

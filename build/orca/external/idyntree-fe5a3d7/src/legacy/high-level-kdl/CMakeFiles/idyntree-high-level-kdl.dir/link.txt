@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../../../../lib/libidyntree-high-level-kdl.a  CMakeFiles/idyntree-high-level-kdl.dir/src/DummyDynamicsComputations.cpp.o
-/usr/bin/ranlib ../../../../../../lib/libidyntree-high-level-kdl.a

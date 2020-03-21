@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rvt_test_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/rvt_test_autogen.dir/ParseCache.txt"
   "rvt_test_autogen"
-  "/home/zheng/robot_ws_zheng/devel/lib/rviz_visual_tools/rvt_test"
-  "/home/zheng/robot_ws_zheng/devel/lib/rviz_visual_tools/rvt_test.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/rviz_visual_tools/rvt_test"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/rviz_visual_tools/rvt_test.pdb"
   "CMakeFiles/rvt_test.dir/rvt_test_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/rvt_test.dir/tests/rvt_test.cpp.o"
 )

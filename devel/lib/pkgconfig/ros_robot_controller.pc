@@ -1,8 +1,1 @@
-prefix=/home/zheng/robot_ws_zheng/devel
-
-Name: ros_robot_controller
-Description: Description of ros_robot_controller
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
-Requires: 
+/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/pkgconfig/ros_robot_controller.pc

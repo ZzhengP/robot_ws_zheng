@@ -1,0 +1,122 @@
+\hypertarget{classlpSolver}{}\doxysection{lp\+Solver Class Reference}
+\label{classlpSolver}\index{lpSolver@{lpSolver}}
+
+
+This is a C++ Eigen-\/\+Based wrapp for solving linear programming problem In lp\+\_\+solve file the problem is formulated is this way\+:  
+
+
+
+
+{\ttfamily \#include $<$lpsolve.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}{lp\+Solver}} (int Nv, int Nc)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classlpSolver}{lp\+Solver}}\+: constructor initialize variable name and variable constraint \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}{set\+Cost}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}{print}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}{set\+Row\+Constraint}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a1463dd174c5186d87cef70b0a1164936}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&robot\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&obs\+Partiel\+Vertices, const Eigen\+::\+Matrix\+Xd \&data\+Plane\+Precedent)
+\item 
+void \mbox{\hyperlink{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}{set\+Equality\+Constraint\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}{set\+Equality\+Constraint\+Matrix}} (Eigen\+::\+Matrix\+Xd A)
+\item 
+void \mbox{\hyperlink{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}{load\+Equality\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classlpSolver_a16601936208d88958c1d371a800d0189}{solve}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classlpSolver_a9393130c51d6771af535e043508b5ac4}{get\+Solution}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a C++ Eigen-\/\+Based wrapp for solving linear programming problem In lp\+\_\+solve file the problem is formulated is this way\+: 
+
+\begin{eqnarray*} (n,b,d) &=& Max ( xg\textnormal{\textquotesingle} )\\ s.t \\ &Ax \leq b \\ & x > lb \end{eqnarray*} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}\label{classlpSolver_ad7b8ceed336c4297d108f78153cd764e}} 
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\index{lpSolver@{lpSolver}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{lpSolver()}{lpSolver()}}
+{\footnotesize\ttfamily lp\+Solver\+::lp\+Solver (\begin{DoxyParamCaption}\item[{int}]{Nv,  }\item[{int}]{Nc }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classlpSolver}{lp\+Solver}}\+: constructor initialize variable name and variable constraint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Nv} & \\
+\hline
+{\em Nc} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlpSolver_a9393130c51d6771af535e043508b5ac4}\label{classlpSolver_a9393130c51d6771af535e043508b5ac4}} 
+\index{lpSolver@{lpSolver}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{getSolution()}{getSolution()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd lp\+Solver\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}\label{classlpSolver_a0b6b8d75cc3afabbd3b49eb5e59a0836}} 
+\index{lpSolver@{lpSolver}!loadEqualityMatrix@{loadEqualityMatrix}}
+\index{loadEqualityMatrix@{loadEqualityMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{loadEqualityMatrix()}{loadEqualityMatrix()}}
+{\footnotesize\ttfamily void lp\+Solver\+::load\+Equality\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}\label{classlpSolver_ae57b5884a5ef29e3a1a7318c00857f0e}} 
+\index{lpSolver@{lpSolver}!print@{print}}
+\index{print@{print}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void lp\+Solver\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a1463dd174c5186d87cef70b0a1164936}\label{classlpSolver_a1463dd174c5186d87cef70b0a1164936}} 
+\index{lpSolver@{lpSolver}!setConstraintMatrix@{setConstraintMatrix}}
+\index{setConstraintMatrix@{setConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{robot\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{obs\+Partiel\+Vertices,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{data\+Plane\+Precedent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}\label{classlpSolver_a8b8de7c0f97525c106a0fba0ad622a5e}} 
+\index{lpSolver@{lpSolver}!setCost@{setCost}}
+\index{setCost@{setCost}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setCost()}{setCost()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}\label{classlpSolver_ae7791ce73a71d63ff33fec2e78dacc37}} 
+\index{lpSolver@{lpSolver}!setEqualityConstraintMatrix@{setEqualityConstraintMatrix}}
+\index{setEqualityConstraintMatrix@{setEqualityConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setEqualityConstraintMatrix()}{setEqualityConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Equality\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}\label{classlpSolver_a955a09a53964c10bb1c9b7d4b01d550a}} 
+\index{lpSolver@{lpSolver}!setEqualityConstraintMatrix@{setEqualityConstraintMatrix}}
+\index{setEqualityConstraintMatrix@{setEqualityConstraintMatrix}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setEqualityConstraintMatrix()}{setEqualityConstraintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Equality\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd}]{A }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}\label{classlpSolver_a93694fdc11f9f0e3d126be997208aa3b}} 
+\index{lpSolver@{lpSolver}!setRowConstraint@{setRowConstraint}}
+\index{setRowConstraint@{setRowConstraint}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{setRowConstraint()}{setRowConstraint()}}
+{\footnotesize\ttfamily void lp\+Solver\+::set\+Row\+Constraint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlpSolver_a16601936208d88958c1d371a800d0189}\label{classlpSolver_a16601936208d88958c1d371a800d0189}} 
+\index{lpSolver@{lpSolver}!solve@{solve}}
+\index{solve@{solve}!lpSolver@{lpSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily void lp\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/solver/\mbox{\hyperlink{lpsolve_8h}{lpsolve.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/solver/\mbox{\hyperlink{lpsolve_8cpp}{lpsolve.\+cpp}}\end{DoxyCompactItemize}

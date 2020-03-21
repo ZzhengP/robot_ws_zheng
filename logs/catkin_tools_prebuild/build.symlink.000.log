@@ -1,0 +1,12 @@
+Symlinking /home/zheng/robot_ws_zheng/devel/./cmake.lock
+Symlinking /home/zheng/robot_ws_zheng/devel/./local_setup.sh
+Symlinking /home/zheng/robot_ws_zheng/devel/./local_setup.zsh
+Symlinking /home/zheng/robot_ws_zheng/devel/./setup.sh
+Symlinking /home/zheng/robot_ws_zheng/devel/./setup.zsh
+Symlinking /home/zheng/robot_ws_zheng/devel/./setup.bash
+Symlinking /home/zheng/robot_ws_zheng/devel/./env.sh
+Symlinking /home/zheng/robot_ws_zheng/devel/./_setup_util.py
+Symlinking /home/zheng/robot_ws_zheng/devel/./local_setup.bash
+Symlinking /home/zheng/robot_ws_zheng/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/zheng/robot_ws_zheng/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/zheng/robot_ws_zheng/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

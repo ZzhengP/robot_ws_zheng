@@ -1,8 +1,1 @@
-prefix=/home/zheng/robot_ws_zheng/devel
-
-Name: robot_controller
-Description: Description of robot_controller
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
-Requires: 
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/pkgconfig/robot_controller.pc

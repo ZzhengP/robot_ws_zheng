@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../../../lib/libidyntree-inverse-kinematics.a  CMakeFiles/idyntree-inverse-kinematics.dir/src/ConvexHullHelpers.cpp.o CMakeFiles/idyntree-inverse-kinematics.dir/src/BoundingBoxHelpers.cpp.o CMakeFiles/idyntree-inverse-kinematics.dir/src/InverseKinematics.cpp.o CMakeFiles/idyntree-inverse-kinematics.dir/src/InverseKinematicsNLP.cpp.o CMakeFiles/idyntree-inverse-kinematics.dir/src/InverseKinematicsData.cpp.o CMakeFiles/idyntree-inverse-kinematics.dir/src/TransformConstraint.cpp.o
-/usr/bin/ranlib ../../../../../lib/libidyntree-inverse-kinematics.a

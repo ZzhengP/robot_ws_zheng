@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/devel
-
-Name: human_model
-Description: Description of human_model
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/devel/lib 
-Requires: 

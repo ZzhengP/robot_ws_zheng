@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src
+CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src/ros_robot_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
+CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build/ros_robot_controller
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,39 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -124,27 +91,15 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target package
-package/fast: package
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-
-.PHONY : package_source/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -157,16 +112,39 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/progress.marks
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 0
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_robot_controller/CMakeFiles /home/zheng/robot_ws_zheng/build/ros_robot_controller/examples/CMakeFiles/progress.marks
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_robot_controller/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/clean
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,198 +154,183 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/preinstall
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/preinstall
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
+examples/CMakeFiles/iDynTreeTest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/iDynTreeTest.dir/rule
+.PHONY : examples/CMakeFiles/iDynTreeTest.dir/rule
 
 # Convenience name for target.
-lpsolvetest: ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/rule
-
-.PHONY : lpsolvetest
-
-# fast build rule for target.
-lpsolvetest/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build
-.PHONY : lpsolvetest/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/setinit.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
-
-# Convenience name for target.
-setinit: ros_robot_controller/examples/CMakeFiles/setinit.dir/rule
-
-.PHONY : setinit
-
-# fast build rule for target.
-setinit/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/build
-.PHONY : setinit/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
-
-# Convenience name for target.
-movingobstacleavoidance: ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/rule
-
-.PHONY : movingobstacleavoidance
-
-# fast build rule for target.
-movingobstacleavoidance/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build
-.PHONY : movingobstacleavoidance/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/qptest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
-
-# Convenience name for target.
-qptest: ros_robot_controller/examples/CMakeFiles/qptest.dir/rule
-
-.PHONY : qptest
-
-# fast build rule for target.
-qptest/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/build
-.PHONY : qptest/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-
-# Convenience name for target.
-obsavoidancedemo: ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/rule
-
-.PHONY : obsavoidancedemo
-
-# fast build rule for target.
-obsavoidancedemo/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build
-.PHONY : obsavoidancedemo/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-
-# Convenience name for target.
-ros_gazebo_sim: ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/rule
-
-.PHONY : ros_gazebo_sim
-
-# fast build rule for target.
-ros_gazebo_sim/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build
-.PHONY : ros_gazebo_sim/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-
-# Convenience name for target.
-franka_example: ros_robot_controller/examples/CMakeFiles/franka_example.dir/rule
-
-.PHONY : franka_example
-
-# fast build rule for target.
-franka_example/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/build
-.PHONY : franka_example/fast
-
-# Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
-
-# Convenience name for target.
-iDynTreeTest: ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/rule
+iDynTreeTest: examples/CMakeFiles/iDynTreeTest.dir/rule
 
 .PHONY : iDynTreeTest
 
 # fast build rule for target.
 iDynTreeTest/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/build
 .PHONY : iDynTreeTest/fast
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
+examples/CMakeFiles/setinit.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/setinit.dir/rule
+.PHONY : examples/CMakeFiles/setinit.dir/rule
 
 # Convenience name for target.
-qpplaneformulation: ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/rule
+setinit: examples/CMakeFiles/setinit.dir/rule
+
+.PHONY : setinit
+
+# fast build rule for target.
+setinit/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/setinit.dir/build.make examples/CMakeFiles/setinit.dir/build
+.PHONY : setinit/fast
+
+# Convenience name for target.
+examples/CMakeFiles/movingobstacleavoidance.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/movingobstacleavoidance.dir/rule
+.PHONY : examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+# Convenience name for target.
+movingobstacleavoidance: examples/CMakeFiles/movingobstacleavoidance.dir/rule
+
+.PHONY : movingobstacleavoidance
+
+# fast build rule for target.
+movingobstacleavoidance/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/movingobstacleavoidance.dir/build.make examples/CMakeFiles/movingobstacleavoidance.dir/build
+.PHONY : movingobstacleavoidance/fast
+
+# Convenience name for target.
+examples/CMakeFiles/qptest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/qptest.dir/rule
+.PHONY : examples/CMakeFiles/qptest.dir/rule
+
+# Convenience name for target.
+qptest: examples/CMakeFiles/qptest.dir/rule
+
+.PHONY : qptest
+
+# fast build rule for target.
+qptest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qptest.dir/build.make examples/CMakeFiles/qptest.dir/build
+.PHONY : qptest/fast
+
+# Convenience name for target.
+examples/CMakeFiles/obsavoidancedemo.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsavoidancedemo.dir/rule
+.PHONY : examples/CMakeFiles/obsavoidancedemo.dir/rule
+
+# Convenience name for target.
+obsavoidancedemo: examples/CMakeFiles/obsavoidancedemo.dir/rule
+
+.PHONY : obsavoidancedemo
+
+# fast build rule for target.
+obsavoidancedemo/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/obsavoidancedemo.dir/build.make examples/CMakeFiles/obsavoidancedemo.dir/build
+.PHONY : obsavoidancedemo/fast
+
+# Convenience name for target.
+examples/CMakeFiles/ros_gazebo_sim.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/ros_gazebo_sim.dir/rule
+.PHONY : examples/CMakeFiles/ros_gazebo_sim.dir/rule
+
+# Convenience name for target.
+ros_gazebo_sim: examples/CMakeFiles/ros_gazebo_sim.dir/rule
+
+.PHONY : ros_gazebo_sim
+
+# fast build rule for target.
+ros_gazebo_sim/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/ros_gazebo_sim.dir/build.make examples/CMakeFiles/ros_gazebo_sim.dir/build
+.PHONY : ros_gazebo_sim/fast
+
+# Convenience name for target.
+examples/CMakeFiles/qpplaneformulation.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/qpplaneformulation.dir/rule
+.PHONY : examples/CMakeFiles/qpplaneformulation.dir/rule
+
+# Convenience name for target.
+qpplaneformulation: examples/CMakeFiles/qpplaneformulation.dir/rule
 
 .PHONY : qpplaneformulation
 
 # fast build rule for target.
 qpplaneformulation/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qpplaneformulation.dir/build.make examples/CMakeFiles/qpplaneformulation.dir/build
 .PHONY : qpplaneformulation/fast
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
+examples/CMakeFiles/multiobstacle.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/multiobstacle.dir/rule
+.PHONY : examples/CMakeFiles/multiobstacle.dir/rule
 
 # Convenience name for target.
-multiobstacle: ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/rule
+multiobstacle: examples/CMakeFiles/multiobstacle.dir/rule
 
 .PHONY : multiobstacle
 
 # fast build rule for target.
 multiobstacle/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/build
 .PHONY : multiobstacle/fast
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+examples/CMakeFiles/nonlinearsolve.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/nonlinearsolve.dir/rule
+.PHONY : examples/CMakeFiles/nonlinearsolve.dir/rule
 
 # Convenience name for target.
-nonlinearsolve: ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/rule
+nonlinearsolve: examples/CMakeFiles/nonlinearsolve.dir/rule
 
 .PHONY : nonlinearsolve
 
 # fast build rule for target.
 nonlinearsolve/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/nonlinearsolve.dir/build.make examples/CMakeFiles/nonlinearsolve.dir/build
 .PHONY : nonlinearsolve/fast
 
 # Convenience name for target.
-ros_robot_controller/examples/CMakeFiles/markers.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 ros_robot_controller/examples/CMakeFiles/markers.dir/rule
-.PHONY : ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+examples/CMakeFiles/markers.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/markers.dir/rule
+.PHONY : examples/CMakeFiles/markers.dir/rule
 
 # Convenience name for target.
-markers: ros_robot_controller/examples/CMakeFiles/markers.dir/rule
+markers: examples/CMakeFiles/markers.dir/rule
 
 .PHONY : markers
 
 # fast build rule for target.
 markers/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/build
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/markers.dir/build.make examples/CMakeFiles/markers.dir/build
 .PHONY : markers/fast
+
+# Convenience name for target.
+examples/CMakeFiles/franka_example.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/franka_example.dir/rule
+.PHONY : examples/CMakeFiles/franka_example.dir/rule
+
+# Convenience name for target.
+franka_example: examples/CMakeFiles/franka_example.dir/rule
+
+.PHONY : franka_example
+
+# fast build rule for target.
+franka_example/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/franka_example.dir/build.make examples/CMakeFiles/franka_example.dir/build
+.PHONY : franka_example/fast
 
 franka_example.o: franka_example.cpp.o
 
@@ -375,7 +338,7 @@ franka_example.o: franka_example.cpp.o
 
 # target to build an object file
 franka_example.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/franka_example.dir/build.make examples/CMakeFiles/franka_example.dir/franka_example.cpp.o
 .PHONY : franka_example.cpp.o
 
 franka_example.i: franka_example.cpp.i
@@ -384,7 +347,7 @@ franka_example.i: franka_example.cpp.i
 
 # target to preprocess a source file
 franka_example.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/franka_example.dir/build.make examples/CMakeFiles/franka_example.dir/franka_example.cpp.i
 .PHONY : franka_example.cpp.i
 
 franka_example.s: franka_example.cpp.s
@@ -393,7 +356,7 @@ franka_example.s: franka_example.cpp.s
 
 # target to generate assembly for a file
 franka_example.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/franka_example.dir/build.make ros_robot_controller/examples/CMakeFiles/franka_example.dir/franka_example.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/franka_example.dir/build.make examples/CMakeFiles/franka_example.dir/franka_example.cpp.s
 .PHONY : franka_example.cpp.s
 
 iDynTreeTest.o: iDynTreeTest.cpp.o
@@ -402,7 +365,7 @@ iDynTreeTest.o: iDynTreeTest.cpp.o
 
 # target to build an object file
 iDynTreeTest.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.o
 .PHONY : iDynTreeTest.cpp.o
 
 iDynTreeTest.i: iDynTreeTest.cpp.i
@@ -411,7 +374,7 @@ iDynTreeTest.i: iDynTreeTest.cpp.i
 
 # target to preprocess a source file
 iDynTreeTest.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.i
 .PHONY : iDynTreeTest.cpp.i
 
 iDynTreeTest.s: iDynTreeTest.cpp.s
@@ -420,35 +383,8 @@ iDynTreeTest.s: iDynTreeTest.cpp.s
 
 # target to generate assembly for a file
 iDynTreeTest.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/build.make ros_robot_controller/examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/iDynTreeTest.cpp.s
 .PHONY : iDynTreeTest.cpp.s
-
-lpsolve_test.o: lpsolve_test.cpp.o
-
-.PHONY : lpsolve_test.o
-
-# target to build an object file
-lpsolve_test.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.o
-.PHONY : lpsolve_test.cpp.o
-
-lpsolve_test.i: lpsolve_test.cpp.i
-
-.PHONY : lpsolve_test.i
-
-# target to preprocess a source file
-lpsolve_test.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.i
-.PHONY : lpsolve_test.cpp.i
-
-lpsolve_test.s: lpsolve_test.cpp.s
-
-.PHONY : lpsolve_test.s
-
-# target to generate assembly for a file
-lpsolve_test.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/build.make ros_robot_controller/examples/CMakeFiles/lpsolvetest.dir/lpsolve_test.cpp.s
-.PHONY : lpsolve_test.cpp.s
 
 markers.o: markers.cpp.o
 
@@ -456,7 +392,7 @@ markers.o: markers.cpp.o
 
 # target to build an object file
 markers.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/markers.dir/build.make examples/CMakeFiles/markers.dir/markers.cpp.o
 .PHONY : markers.cpp.o
 
 markers.i: markers.cpp.i
@@ -465,7 +401,7 @@ markers.i: markers.cpp.i
 
 # target to preprocess a source file
 markers.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/markers.dir/build.make examples/CMakeFiles/markers.dir/markers.cpp.i
 .PHONY : markers.cpp.i
 
 markers.s: markers.cpp.s
@@ -474,7 +410,7 @@ markers.s: markers.cpp.s
 
 # target to generate assembly for a file
 markers.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/markers.dir/build.make ros_robot_controller/examples/CMakeFiles/markers.dir/markers.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/markers.dir/build.make examples/CMakeFiles/markers.dir/markers.cpp.s
 .PHONY : markers.cpp.s
 
 movingobstacleavoidance.o: movingobstacleavoidance.cpp.o
@@ -483,7 +419,7 @@ movingobstacleavoidance.o: movingobstacleavoidance.cpp.o
 
 # target to build an object file
 movingobstacleavoidance.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/movingobstacleavoidance.dir/build.make examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.o
 .PHONY : movingobstacleavoidance.cpp.o
 
 movingobstacleavoidance.i: movingobstacleavoidance.cpp.i
@@ -492,7 +428,7 @@ movingobstacleavoidance.i: movingobstacleavoidance.cpp.i
 
 # target to preprocess a source file
 movingobstacleavoidance.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/movingobstacleavoidance.dir/build.make examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.i
 .PHONY : movingobstacleavoidance.cpp.i
 
 movingobstacleavoidance.s: movingobstacleavoidance.cpp.s
@@ -501,7 +437,7 @@ movingobstacleavoidance.s: movingobstacleavoidance.cpp.s
 
 # target to generate assembly for a file
 movingobstacleavoidance.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/build.make ros_robot_controller/examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/movingobstacleavoidance.dir/build.make examples/CMakeFiles/movingobstacleavoidance.dir/movingobstacleavoidance.cpp.s
 .PHONY : movingobstacleavoidance.cpp.s
 
 multiobstacle.o: multiobstacle.cpp.o
@@ -510,7 +446,7 @@ multiobstacle.o: multiobstacle.cpp.o
 
 # target to build an object file
 multiobstacle.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.o
 .PHONY : multiobstacle.cpp.o
 
 multiobstacle.i: multiobstacle.cpp.i
@@ -519,7 +455,7 @@ multiobstacle.i: multiobstacle.cpp.i
 
 # target to preprocess a source file
 multiobstacle.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.i
 .PHONY : multiobstacle.cpp.i
 
 multiobstacle.s: multiobstacle.cpp.s
@@ -528,7 +464,7 @@ multiobstacle.s: multiobstacle.cpp.s
 
 # target to generate assembly for a file
 multiobstacle.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/build.make ros_robot_controller/examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/multiobstacle.cpp.s
 .PHONY : multiobstacle.cpp.s
 
 nonlinearsolve.o: nonlinearsolve.cpp.o
@@ -537,7 +473,7 @@ nonlinearsolve.o: nonlinearsolve.cpp.o
 
 # target to build an object file
 nonlinearsolve.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/nonlinearsolve.dir/build.make examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.o
 .PHONY : nonlinearsolve.cpp.o
 
 nonlinearsolve.i: nonlinearsolve.cpp.i
@@ -546,7 +482,7 @@ nonlinearsolve.i: nonlinearsolve.cpp.i
 
 # target to preprocess a source file
 nonlinearsolve.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/nonlinearsolve.dir/build.make examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.i
 .PHONY : nonlinearsolve.cpp.i
 
 nonlinearsolve.s: nonlinearsolve.cpp.s
@@ -555,7 +491,7 @@ nonlinearsolve.s: nonlinearsolve.cpp.s
 
 # target to generate assembly for a file
 nonlinearsolve.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/build.make ros_robot_controller/examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/nonlinearsolve.dir/build.make examples/CMakeFiles/nonlinearsolve.dir/nonlinearsolve.cpp.s
 .PHONY : nonlinearsolve.cpp.s
 
 obsavoidancedemo.o: obsavoidancedemo.cpp.o
@@ -564,7 +500,7 @@ obsavoidancedemo.o: obsavoidancedemo.cpp.o
 
 # target to build an object file
 obsavoidancedemo.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/obsavoidancedemo.dir/build.make examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o
 .PHONY : obsavoidancedemo.cpp.o
 
 obsavoidancedemo.i: obsavoidancedemo.cpp.i
@@ -573,7 +509,7 @@ obsavoidancedemo.i: obsavoidancedemo.cpp.i
 
 # target to preprocess a source file
 obsavoidancedemo.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/obsavoidancedemo.dir/build.make examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.i
 .PHONY : obsavoidancedemo.cpp.i
 
 obsavoidancedemo.s: obsavoidancedemo.cpp.s
@@ -582,7 +518,7 @@ obsavoidancedemo.s: obsavoidancedemo.cpp.s
 
 # target to generate assembly for a file
 obsavoidancedemo.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/build.make ros_robot_controller/examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/obsavoidancedemo.dir/build.make examples/CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.s
 .PHONY : obsavoidancedemo.cpp.s
 
 qpplaneformulation.o: qpplaneformulation.cpp.o
@@ -591,7 +527,7 @@ qpplaneformulation.o: qpplaneformulation.cpp.o
 
 # target to build an object file
 qpplaneformulation.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qpplaneformulation.dir/build.make examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.o
 .PHONY : qpplaneformulation.cpp.o
 
 qpplaneformulation.i: qpplaneformulation.cpp.i
@@ -600,7 +536,7 @@ qpplaneformulation.i: qpplaneformulation.cpp.i
 
 # target to preprocess a source file
 qpplaneformulation.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qpplaneformulation.dir/build.make examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.i
 .PHONY : qpplaneformulation.cpp.i
 
 qpplaneformulation.s: qpplaneformulation.cpp.s
@@ -609,7 +545,7 @@ qpplaneformulation.s: qpplaneformulation.cpp.s
 
 # target to generate assembly for a file
 qpplaneformulation.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/build.make ros_robot_controller/examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qpplaneformulation.dir/build.make examples/CMakeFiles/qpplaneformulation.dir/qpplaneformulation.cpp.s
 .PHONY : qpplaneformulation.cpp.s
 
 qptest.o: qptest.cpp.o
@@ -618,7 +554,7 @@ qptest.o: qptest.cpp.o
 
 # target to build an object file
 qptest.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qptest.dir/build.make examples/CMakeFiles/qptest.dir/qptest.cpp.o
 .PHONY : qptest.cpp.o
 
 qptest.i: qptest.cpp.i
@@ -627,7 +563,7 @@ qptest.i: qptest.cpp.i
 
 # target to preprocess a source file
 qptest.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qptest.dir/build.make examples/CMakeFiles/qptest.dir/qptest.cpp.i
 .PHONY : qptest.cpp.i
 
 qptest.s: qptest.cpp.s
@@ -636,7 +572,7 @@ qptest.s: qptest.cpp.s
 
 # target to generate assembly for a file
 qptest.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/qptest.dir/build.make ros_robot_controller/examples/CMakeFiles/qptest.dir/qptest.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/qptest.dir/build.make examples/CMakeFiles/qptest.dir/qptest.cpp.s
 .PHONY : qptest.cpp.s
 
 ros_gazebo_sim.o: ros_gazebo_sim.cpp.o
@@ -645,7 +581,7 @@ ros_gazebo_sim.o: ros_gazebo_sim.cpp.o
 
 # target to build an object file
 ros_gazebo_sim.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/ros_gazebo_sim.dir/build.make examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.o
 .PHONY : ros_gazebo_sim.cpp.o
 
 ros_gazebo_sim.i: ros_gazebo_sim.cpp.i
@@ -654,7 +590,7 @@ ros_gazebo_sim.i: ros_gazebo_sim.cpp.i
 
 # target to preprocess a source file
 ros_gazebo_sim.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/ros_gazebo_sim.dir/build.make examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.i
 .PHONY : ros_gazebo_sim.cpp.i
 
 ros_gazebo_sim.s: ros_gazebo_sim.cpp.s
@@ -663,7 +599,7 @@ ros_gazebo_sim.s: ros_gazebo_sim.cpp.s
 
 # target to generate assembly for a file
 ros_gazebo_sim.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/build.make ros_robot_controller/examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/ros_gazebo_sim.dir/build.make examples/CMakeFiles/ros_gazebo_sim.dir/ros_gazebo_sim.cpp.s
 .PHONY : ros_gazebo_sim.cpp.s
 
 setinit.o: setinit.cpp.o
@@ -672,7 +608,7 @@ setinit.o: setinit.cpp.o
 
 # target to build an object file
 setinit.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/setinit.dir/build.make examples/CMakeFiles/setinit.dir/setinit.cpp.o
 .PHONY : setinit.cpp.o
 
 setinit.i: setinit.cpp.i
@@ -681,7 +617,7 @@ setinit.i: setinit.cpp.i
 
 # target to preprocess a source file
 setinit.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/setinit.dir/build.make examples/CMakeFiles/setinit.dir/setinit.cpp.i
 .PHONY : setinit.cpp.i
 
 setinit.s: setinit.cpp.s
@@ -690,7 +626,7 @@ setinit.s: setinit.cpp.s
 
 # target to generate assembly for a file
 setinit.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f ros_robot_controller/examples/CMakeFiles/setinit.dir/build.make ros_robot_controller/examples/CMakeFiles/setinit.dir/setinit.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/setinit.dir/build.make examples/CMakeFiles/setinit.dir/setinit.cpp.s
 .PHONY : setinit.cpp.s
 
 # Help Target
@@ -701,34 +637,28 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... lpsolvetest"
+	@echo "... iDynTreeTest"
+	@echo "... edit_cache"
 	@echo "... setinit"
 	@echo "... movingobstacleavoidance"
 	@echo "... qptest"
 	@echo "... obsavoidancedemo"
+	@echo "... list_install_components"
 	@echo "... ros_gazebo_sim"
-	@echo "... rebuild_cache"
-	@echo "... franka_example"
-	@echo "... iDynTreeTest"
-	@echo "... edit_cache"
 	@echo "... qpplaneformulation"
-	@echo "... package"
 	@echo "... multiobstacle"
-	@echo "... package_source"
 	@echo "... nonlinearsolve"
 	@echo "... markers"
 	@echo "... test"
+	@echo "... franka_example"
+	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"
 	@echo "... iDynTreeTest.o"
 	@echo "... iDynTreeTest.i"
 	@echo "... iDynTreeTest.s"
-	@echo "... lpsolve_test.o"
-	@echo "... lpsolve_test.i"
-	@echo "... lpsolve_test.s"
 	@echo "... markers.o"
 	@echo "... markers.i"
 	@echo "... markers.s"
@@ -767,6 +697,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

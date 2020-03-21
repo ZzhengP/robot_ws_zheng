@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../../../../lib/libidyntree-modelio-xml.a  CMakeFiles/idyntree-modelio-xml.dir/src/XMLParser.cpp.o CMakeFiles/idyntree-modelio-xml.dir/src/XMLElement.cpp.o CMakeFiles/idyntree-modelio-xml.dir/src/XMLAttribute.cpp.o CMakeFiles/idyntree-modelio-xml.dir/src/XMLDocument.cpp.o
-/usr/bin/ranlib ../../../../../../lib/libidyntree-modelio-xml.a

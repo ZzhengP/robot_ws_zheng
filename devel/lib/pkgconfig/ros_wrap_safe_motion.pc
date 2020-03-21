@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/pkgconfig/ros_wrap_safe_motion.pc

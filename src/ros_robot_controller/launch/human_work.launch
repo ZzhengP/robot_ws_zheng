@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+
+
 <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
 <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
 <arg name="gui" default="true" doc="Starts gazebo gui" />
@@ -8,7 +10,7 @@
 
 <!-- startup simulated world -->
 <include file="$(find gazebo_ros)/launch/empty_world.launch">
-  <arg name="world_name" default="worlds/pu.world"/>
+  <arg name="world_name" default="worlds/empty.world"/>
   <arg name="paused" value="$(arg paused)"/>
   <arg name="gui" value="$(arg gui)"/>
 </include>
@@ -16,6 +18,7 @@
 <!-- send robot urdf to param server -->
 <include file="$(find ur_description)/launch/franka_human_upload.launch">
 </include>
+
 
 <!-- push robot_description to factory and spawn robot in gazebo -->
 <!--node name="spawn_gazebo_model" pkg="gazebo_ros"
@@ -39,6 +42,8 @@
                                -J panda_joint6 2.5814
                                -J panda_joint7 0.0391129  "
       respawn="false" output="screen" />
+
+
 
 
 <rosparam file="$(find ros_robot_controller)/config/franka.yaml" command="load"/>

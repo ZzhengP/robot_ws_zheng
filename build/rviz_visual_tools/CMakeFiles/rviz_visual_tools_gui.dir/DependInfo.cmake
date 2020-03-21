@@ -15,6 +15,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_GUI_LIB"
+  "QT_NO_DEBUG"
   "QT_NO_KEYWORDS"
   "QT_WIDGETS_LIB"
   "ROSCONSOLE_BACKEND_LOG4CXX"
@@ -25,9 +26,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "rviz_visual_tools"
+  "."
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools"
-  "rviz_visual_tools/rviz_visual_tools_gui_autogen/include"
+  "rviz_visual_tools_gui_autogen/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"

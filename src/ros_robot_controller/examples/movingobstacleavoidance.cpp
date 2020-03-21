@@ -18,6 +18,7 @@
 #include <boost/timer.hpp>
 #include "kdl/chainiksolverpos_lma.hpp"
 #include "kdl/frames_io.hpp"
+
 // ros
 #include "ros/ros.h"
 #include "sensor_msgs/JointState.h"
@@ -42,6 +43,8 @@
 #include <math.h>
 #include "nav_msgs/Path.h"
 #include <chrono>
+#include "visualization_msgs/MarkerArray.h"
+
 using namespace  std;
 using namespace qpOASES;
 using namespace  plane;
@@ -154,7 +157,6 @@ int main(int argc, char **argv)
     wrist = pandaArm.getSegmentPosition(6);
     base_link = pandaArm.getSegmentPosition(1);
 
-
 //    panda_des_frame.p[0] = 0.470808;
 //    panda_des_frame.p[1] = -0.5 ;
 //    panda_des_frame.p[2] = 0.517842 ;
@@ -218,6 +220,7 @@ int main(int argc, char **argv)
     Eigen::MatrixXd obsPath ;
 
     obsPath = readMatrix(file);
+
 
 
     obsSize << 0.25,0.05,0.05;

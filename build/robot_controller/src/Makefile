@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src
+CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src/robot_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
+CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build/robot_controller
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,50 +67,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-
-.PHONY : package_source/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -135,6 +91,16 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -157,16 +123,28 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles /home/zheng/robot_ws_zheng/build/robot_controller/src/CMakeFiles/progress.marks
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 0
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/robot_controller/CMakeFiles /home/zheng/robot_ws_zheng/build/robot_controller/src/CMakeFiles/progress.marks
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/robot_controller/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/src/clean
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,32 +154,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/src/preinstall
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/src/preinstall
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-robot_controller/src/CMakeFiles/robot_controller_library.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/src/CMakeFiles/robot_controller_library.dir/rule
-.PHONY : robot_controller/src/CMakeFiles/robot_controller_library.dir/rule
+src/CMakeFiles/robot_controller_library.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/robot_controller_library.dir/rule
+.PHONY : src/CMakeFiles/robot_controller_library.dir/rule
 
 # Convenience name for target.
-robot_controller_library: robot_controller/src/CMakeFiles/robot_controller_library.dir/rule
+robot_controller_library: src/CMakeFiles/robot_controller_library.dir/rule
 
 .PHONY : robot_controller_library
 
 # fast build rule for target.
 robot_controller_library/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/build
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/build
 .PHONY : robot_controller_library/fast
 
 constraint/generic_cst.o: constraint/generic_cst.cpp.o
@@ -210,7 +188,7 @@ constraint/generic_cst.o: constraint/generic_cst.cpp.o
 
 # target to build an object file
 constraint/generic_cst.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.o
 .PHONY : constraint/generic_cst.cpp.o
 
 constraint/generic_cst.i: constraint/generic_cst.cpp.i
@@ -219,7 +197,7 @@ constraint/generic_cst.i: constraint/generic_cst.cpp.i
 
 # target to preprocess a source file
 constraint/generic_cst.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.i
 .PHONY : constraint/generic_cst.cpp.i
 
 constraint/generic_cst.s: constraint/generic_cst.cpp.s
@@ -228,7 +206,7 @@ constraint/generic_cst.s: constraint/generic_cst.cpp.s
 
 # target to generate assembly for a file
 constraint/generic_cst.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/constraint/generic_cst.cpp.s
 .PHONY : constraint/generic_cst.cpp.s
 
 robotmodel/robotmodel.o: robotmodel/robotmodel.cpp.o
@@ -237,7 +215,7 @@ robotmodel/robotmodel.o: robotmodel/robotmodel.cpp.o
 
 # target to build an object file
 robotmodel/robotmodel.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.o
 .PHONY : robotmodel/robotmodel.cpp.o
 
 robotmodel/robotmodel.i: robotmodel/robotmodel.cpp.i
@@ -246,7 +224,7 @@ robotmodel/robotmodel.i: robotmodel/robotmodel.cpp.i
 
 # target to preprocess a source file
 robotmodel/robotmodel.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.i
 .PHONY : robotmodel/robotmodel.cpp.i
 
 robotmodel/robotmodel.s: robotmodel/robotmodel.cpp.s
@@ -255,7 +233,7 @@ robotmodel/robotmodel.s: robotmodel/robotmodel.cpp.s
 
 # target to generate assembly for a file
 robotmodel/robotmodel.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/robotmodel/robotmodel.cpp.s
 .PHONY : robotmodel/robotmodel.cpp.s
 
 solver/mpc_solver.o: solver/mpc_solver.cpp.o
@@ -264,7 +242,7 @@ solver/mpc_solver.o: solver/mpc_solver.cpp.o
 
 # target to build an object file
 solver/mpc_solver.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.o
 .PHONY : solver/mpc_solver.cpp.o
 
 solver/mpc_solver.i: solver/mpc_solver.cpp.i
@@ -273,7 +251,7 @@ solver/mpc_solver.i: solver/mpc_solver.cpp.i
 
 # target to preprocess a source file
 solver/mpc_solver.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.i
 .PHONY : solver/mpc_solver.cpp.i
 
 solver/mpc_solver.s: solver/mpc_solver.cpp.s
@@ -282,7 +260,7 @@ solver/mpc_solver.s: solver/mpc_solver.cpp.s
 
 # target to generate assembly for a file
 solver/mpc_solver.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/solver/mpc_solver.cpp.s
 .PHONY : solver/mpc_solver.cpp.s
 
 task/mpc_task.o: task/mpc_task.cpp.o
@@ -291,7 +269,7 @@ task/mpc_task.o: task/mpc_task.cpp.o
 
 # target to build an object file
 task/mpc_task.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.o
 .PHONY : task/mpc_task.cpp.o
 
 task/mpc_task.i: task/mpc_task.cpp.i
@@ -300,7 +278,7 @@ task/mpc_task.i: task/mpc_task.cpp.i
 
 # target to preprocess a source file
 task/mpc_task.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.i
 .PHONY : task/mpc_task.cpp.i
 
 task/mpc_task.s: task/mpc_task.cpp.s
@@ -309,7 +287,7 @@ task/mpc_task.s: task/mpc_task.cpp.s
 
 # target to generate assembly for a file
 task/mpc_task.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/src/CMakeFiles/robot_controller_library.dir/build.make robot_controller/src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f src/CMakeFiles/robot_controller_library.dir/build.make src/CMakeFiles/robot_controller_library.dir/task/mpc_task.cpp.s
 .PHONY : task/mpc_task.cpp.s
 
 # Help Target
@@ -319,15 +297,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... package"
-	@echo "... package_source"
-	@echo "... robot_controller_library"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... list_install_components"
+	@echo "... robot_controller_library"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... constraint/generic_cst.o"
 	@echo "... constraint/generic_cst.i"
 	@echo "... constraint/generic_cst.s"
@@ -351,6 +327,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

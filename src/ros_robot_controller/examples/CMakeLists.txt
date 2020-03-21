@@ -17,8 +17,8 @@ target_link_libraries(obsavoidancedemo PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBR
 add_executable(setinit setinit.cpp)
 target_link_libraries(setinit PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} glpk ros_robot_controller_library)
 
-add_executable(lpsolvetest lpsolve_test.cpp)
-target_link_libraries(lpsolvetest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${iDynTree_LIBRARIES} ${qpOASES_LIBRARIES} ${lpsolve_LIBRAIRIES} glpk ros_robot_controller_library)
+#add_executable(lpsolvetest lpsolve_test.cpp)
+#target_link_libraries(lpsolvetest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${iDynTree_LIBRARIES} ${qpOASES_LIBRARIES} ${lpsolve_LIBRAIRIES} glpk ros_robot_controller_library)
 
 
 

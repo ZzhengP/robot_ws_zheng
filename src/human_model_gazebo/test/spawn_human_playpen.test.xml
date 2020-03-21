@@ -1,3 +1,0 @@
-<launch>
-  <include file="$(find human_model_gazebo)/launch/spawn_human_playpen.launch"/>
-</launch>

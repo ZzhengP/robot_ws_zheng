@@ -1,0 +1,2 @@
+catkin_simple:franka_description:lpsolve_catkin:qpOASES-3.2.1:robot_controller:ros_robot_controller:ros_wrap_safe_motion:rviz_visual_tools:ur_description
+-G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/zheng/robot_ws_zheng/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/zheng/robot_ws_zheng/install_isolated

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.pdb"
-  "/home/zheng/robot_ws_zheng/devel/lib/libros_robot_controller_library.so"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/libros_robot_controller_library.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/libros_robot_controller_library.so"
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosAvoidanceCst.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o"
   "CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o"

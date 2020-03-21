@@ -1,3 +1,0 @@
-repository='https://github.com/stack-of-tasks/pinocchio.git'
-module=''
-tag='origin'

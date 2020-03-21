@@ -1,0 +1,16 @@
+Doxygen build started
+[31m[1mCMake Error[0m at /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/CMakeLists.txt:20 (add_library):
+  Cannot find source file:
+
+    RosWrapconstraint/RosWrapJointPosCst.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+[31m[1mCMake Error[0m at /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/CMakeLists.txt:20 (add_library):
+  No SOURCES given to target: ros_wrap_safe_motion_library
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+make: *** [cmake_check_build_system] Error 1
