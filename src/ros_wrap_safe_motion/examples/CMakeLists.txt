@@ -3,8 +3,8 @@
 add_executable(RosMovingobstacleavoidance movingobstacleavoidance.cpp)
 target_link_libraries(RosMovingobstacleavoidance PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library)
 
-add_executable(robotAndObsVerticesSubscriber robotAndObsVerticesSubscriber.cpp)
-target_link_libraries(robotAndObsVerticesSubscriber PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library)
+add_executable(separatingPlane separatingPlane.cpp)
+target_link_libraries(separatingPlane PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library)
 
 
 add_executable(obsVerticesPublisher obsVerticesPublisher.cpp)
@@ -16,5 +16,11 @@ target_link_libraries(simpletest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES}
 add_executable(simpleMatrixReceive simpleMatrixReceive.cpp)
 target_link_libraries(simpleMatrixReceive PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
 
-add_executable(constraintSolver constraintSolver.cpp)
-target_link_libraries(constraintSolver PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
+
+add_executable(DynamicAndMPCSolver DynamicAndMPCSolver.cpp)
+target_link_libraries(DynamicAndMPCSolver PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
+
+
+add_executable(InteractiveMarkers InteractiveMarkers.cpp)
+target_link_libraries(InteractiveMarkers PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
+

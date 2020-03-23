@@ -1,7 +1,7 @@
 #include "RosWrapconstraint/RosWrapGenericCst.h"
 
 
-generic_cst::generic_cst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+GenericCst::GenericCst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
     :n_(ndof),N_(N), dt_(dt),cst_name_(name),Px_(Px),Pu_(Pu){
 
              lbA_.resize(ndof*N);
@@ -13,7 +13,7 @@ generic_cst::generic_cst(int ndof, int N, double dt, std::string name,Eigen::Mat
 
 }
 
-generic_cst::~generic_cst()
+GenericCst::~GenericCst()
 {
 
 }

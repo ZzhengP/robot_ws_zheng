@@ -30,7 +30,7 @@ struct \mbox{\hyperlink{structplane_1_1Planes_1_1PlaneData}{Plane\+Data}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classplane_1_1Planes}{Planes}} are initialized with predifined robot\textquotesingle{}s vertices and variable obs\+Vertices. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classplane_1_1Planes_aa2cbe842027ad64a9000b87ddef7cfb7}{Planes}} (int N, int nbr\+Robobot\+Part, int nbr\+Obs, Eigen\+::\+Matrix\+Xd robot\+Vertices)
 \item 
-\mbox{\hyperlink{classplane_1_1Planes_a1992814ad84cbb539466ec062e901481}{Planes}} (ros\+::\+Node\+Handle $\ast$nodehandle, int N, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ obs\+Vertices\+Augmented, double dsafe)
+\mbox{\hyperlink{classplane_1_1Planes_ab7382aeb750dbafa9762dc6a6c2f99e1}{Planes}} (ros\+::\+Node\+Handle $\ast$nodehandle, const int \&N, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&obs\+Vertices\+Augmented, const double \&dsafe, const std\+::string \&robot\+Vertices\+Topic)
 \item 
 \mbox{\hyperlink{classplane_1_1Planes_a701382e1e702cff2a811976d6c754d98}{$\sim$\+Planes}} ()
 \item 
@@ -61,6 +61,8 @@ ros\+::\+Subscriber \mbox{\hyperlink{classplane_1_1Planes_a60fd01600a3a8644e5231
 ros\+::\+Subscriber \mbox{\hyperlink{classplane_1_1Planes_a468f86ebbc265b37c1907ecb42620464}{obs\+\_\+vertices\+\_\+subscriber\+\_\+}}
 \item 
 ros\+::\+Publisher \mbox{\hyperlink{classplane_1_1Planes_ace7457e6689892407079bb70294d5659}{plane\+\_\+data\+\_\+publisher\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classplane_1_1Planes_a86e3b0c6d946d6ace99534b2ca35a376}{robot\+\_\+vertices\+\_\+topic\+\_\+}}
 \item 
 rviz\+\_\+visual\+\_\+tools\+::\+Rviz\+Visual\+Tools\+Ptr \mbox{\hyperlink{classplane_1_1Planes_a38bfb49a814e25f70b15c4eb702119ff}{planes\+Pub\+\_\+}}
 \item 
@@ -137,11 +139,11 @@ More like a data structure to store planes.
 \doxysubsubsection{\texorpdfstring{Planes()}{Planes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily plane\+::\+Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{int}]{nbr\+Robobot\+Part,  }\item[{int}]{nbr\+Obs,  }\item[{Eigen\+::\+Matrix\+Xd}]{robot\+Vertices }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classplane_1_1Planes_a1992814ad84cbb539466ec062e901481}\label{classplane_1_1Planes_a1992814ad84cbb539466ec062e901481}} 
+\mbox{\Hypertarget{classplane_1_1Planes_ab7382aeb750dbafa9762dc6a6c2f99e1}\label{classplane_1_1Planes_ab7382aeb750dbafa9762dc6a6c2f99e1}} 
 \index{plane::Planes@{plane::Planes}!Planes@{Planes}}
 \index{Planes@{Planes}!plane::Planes@{plane::Planes}}
 \doxysubsubsection{\texorpdfstring{Planes()}{Planes()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nodehandle,  }\item[{int}]{N,  }\item[{std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$}]{obs\+Vertices\+Augmented,  }\item[{double}]{dsafe }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nodehandle,  }\item[{const int \&}]{N,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{obs\+Vertices\+Augmented,  }\item[{const double \&}]{dsafe,  }\item[{const std\+::string \&}]{robot\+Vertices\+Topic }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classplane_1_1Planes_a701382e1e702cff2a811976d6c754d98}\label{classplane_1_1Planes_a701382e1e702cff2a811976d6c754d98}} 
 \index{plane::Planes@{plane::Planes}!````~Planes@{$\sim$Planes}}
@@ -357,6 +359,12 @@ Ros node to compute plane\textquotesingle{}s location.
 \index{robot\_vertices\_subscriber\_@{robot\_vertices\_subscriber\_}!plane::Planes@{plane::Planes}}
 \doxysubsubsection{\texorpdfstring{robot\_vertices\_subscriber\_}{robot\_vertices\_subscriber\_}}
 {\footnotesize\ttfamily ros\+::\+Subscriber plane\+::\+Planes\+::robot\+\_\+vertices\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classplane_1_1Planes_a86e3b0c6d946d6ace99534b2ca35a376}\label{classplane_1_1Planes_a86e3b0c6d946d6ace99534b2ca35a376}} 
+\index{plane::Planes@{plane::Planes}!robot\_vertices\_topic\_@{robot\_vertices\_topic\_}}
+\index{robot\_vertices\_topic\_@{robot\_vertices\_topic\_}!plane::Planes@{plane::Planes}}
+\doxysubsubsection{\texorpdfstring{robot\_vertices\_topic\_}{robot\_vertices\_topic\_}}
+{\footnotesize\ttfamily std\+::string plane\+::\+Planes\+::robot\+\_\+vertices\+\_\+topic\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classplane_1_1Planes_a65baafa03b5fa216551601670f1803c0}\label{classplane_1_1Planes_a65baafa03b5fa216551601670f1803c0}} 
 \index{plane::Planes@{plane::Planes}!robotVertices\_@{robotVertices\_}}

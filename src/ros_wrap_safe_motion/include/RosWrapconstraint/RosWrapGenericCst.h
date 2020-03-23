@@ -24,7 +24,7 @@ struct constraintData{
  * \f$ lbA <= Ax <= ubA   \f$
  * Which is defined by a lower bound, upper bound and constraint matrix
  */
-class  generic_cst{
+class  GenericCst{
 public:
     /**
       * @brief basic construtor
@@ -32,9 +32,9 @@ public:
       * @param N
       * @param dt
       */
-     generic_cst(int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
+     GenericCst(int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu);
 
-     virtual ~generic_cst();
+     virtual ~GenericCst();
 
      /**
       * @brief setLowerBound: lbA

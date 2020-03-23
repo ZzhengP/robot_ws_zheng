@@ -1,0 +1,100 @@
+\hypertarget{classCartVelCst}{}\doxysection{Cart\+Vel\+Cst Class Reference}
+\label{classCartVelCst}\index{CartVelCst@{CartVelCst}}
+
+
+{\ttfamily \#include $<$Ros\+Wrap\+Cart\+Vel\+Cst.\+h$>$}
+
+
+
+Inheritance diagram for Cart\+Vel\+Cst\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classCartVelCst__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cart\+Vel\+Cst\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classCartVelCst__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCartVelCst_a5176b477968a5c6a570c06f8b2b82322}{Cart\+Vel\+Cst}} (int ndof, int N, double dt, std\+::string name, Eigen\+::\+Matrix\+Xd Px, Eigen\+::\+Matrix\+Xd Pu, Eigen\+::\+Matrix\+Xd Pxdq, Eigen\+::\+Matrix\+Xd Pudq)
+\item 
+void \mbox{\hyperlink{classCartVelCst_a6147a5452c6058e9931844681ff6a849}{set\+Limit}} (const Eigen\+::\+Vector\+Xd \&min, const Eigen\+::\+Vector\+Xd \&max)
+\item 
+void \mbox{\hyperlink{classCartVelCst_a208e6e1c890935e76443ba51e067e71b}{set\+Lower\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Horizon, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Dot\+Horizon, Eigen\+::\+Vector\+Xd ee\+Vel\+Precedent, const Eigen\+::\+Vector\+Xd \&q\+Horizon\+Precedent, const Eigen\+::\+Vector\+Xd \&dotq\+Horizon\+Precedent)
+\item 
+void \mbox{\hyperlink{classCartVelCst_a02af9a131f5f47ddc1941dd146555509}{set\+Upper\+Bound}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Horizon, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Dot\+Horizon, Eigen\+::\+Vector\+Xd ee\+Vel\+Precedent, const Eigen\+::\+Vector\+Xd \&q\+Horizon\+Precedent, const Eigen\+::\+Vector\+Xd \&dotq\+Horizon\+Precedent)
+\item 
+void \mbox{\hyperlink{classCartVelCst_a2b650c651431cf51f5d0aa8579231a63}{set\+Constraint\+Matrix}} (const Eigen\+::\+Matrix\+Xd \&Jacobian\+Horizon, const Eigen\+::\+Matrix\+Xd \&Jacobian\+Dot\+Horizon)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classCartVelCst_af10119fb640a9ccabba1ddab65eb9b45}{Pxdq\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classCartVelCst_a85a5828835d115de8e244c718bea1521}{Pudq\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCartVelCst_a5176b477968a5c6a570c06f8b2b82322}\label{classCartVelCst_a5176b477968a5c6a570c06f8b2b82322}} 
+\index{CartVelCst@{CartVelCst}!CartVelCst@{CartVelCst}}
+\index{CartVelCst@{CartVelCst}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{CartVelCst()}{CartVelCst()}}
+{\footnotesize\ttfamily Cart\+Vel\+Cst\+::\+Cart\+Vel\+Cst (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{N,  }\item[{double}]{dt,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xd}]{Px,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pu,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pxdq,  }\item[{Eigen\+::\+Matrix\+Xd}]{Pudq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCartVelCst_a2b650c651431cf51f5d0aa8579231a63}\label{classCartVelCst_a2b650c651431cf51f5d0aa8579231a63}} 
+\index{CartVelCst@{CartVelCst}!setConstraintMatrix@{setConstraintMatrix}}
+\index{setConstraintMatrix@{setConstraintMatrix}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{setConstraintMatrix()}{setConstraintMatrix()}}
+{\footnotesize\ttfamily void Cart\+Vel\+Cst\+::set\+Constraint\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Horizon,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Dot\+Horizon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCartVelCst_a6147a5452c6058e9931844681ff6a849}\label{classCartVelCst_a6147a5452c6058e9931844681ff6a849}} 
+\index{CartVelCst@{CartVelCst}!setLimit@{setLimit}}
+\index{setLimit@{setLimit}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{setLimit()}{setLimit()}}
+{\footnotesize\ttfamily void Cart\+Vel\+Cst\+::set\+Limit (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{min,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCartVelCst_a208e6e1c890935e76443ba51e067e71b}\label{classCartVelCst_a208e6e1c890935e76443ba51e067e71b}} 
+\index{CartVelCst@{CartVelCst}!setLowerBound@{setLowerBound}}
+\index{setLowerBound@{setLowerBound}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{setLowerBound()}{setLowerBound()}}
+{\footnotesize\ttfamily void Cart\+Vel\+Cst\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Horizon,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Dot\+Horizon,  }\item[{Eigen\+::\+Vector\+Xd}]{ee\+Vel\+Precedent,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+Horizon\+Precedent,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dotq\+Horizon\+Precedent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCartVelCst_a02af9a131f5f47ddc1941dd146555509}\label{classCartVelCst_a02af9a131f5f47ddc1941dd146555509}} 
+\index{CartVelCst@{CartVelCst}!setUpperBound@{setUpperBound}}
+\index{setUpperBound@{setUpperBound}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{setUpperBound()}{setUpperBound()}}
+{\footnotesize\ttfamily void Cart\+Vel\+Cst\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{robot\+\_\+state,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Horizon,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+Dot\+Horizon,  }\item[{Eigen\+::\+Vector\+Xd}]{ee\+Vel\+Precedent,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+Horizon\+Precedent,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dotq\+Horizon\+Precedent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCartVelCst_a85a5828835d115de8e244c718bea1521}\label{classCartVelCst_a85a5828835d115de8e244c718bea1521}} 
+\index{CartVelCst@{CartVelCst}!Pudq\_@{Pudq\_}}
+\index{Pudq\_@{Pudq\_}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{Pudq\_}{Pudq\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Cart\+Vel\+Cst\+::\+Pudq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCartVelCst_af10119fb640a9ccabba1ddab65eb9b45}\label{classCartVelCst_af10119fb640a9ccabba1ddab65eb9b45}} 
+\index{CartVelCst@{CartVelCst}!Pxdq\_@{Pxdq\_}}
+\index{Pxdq\_@{Pxdq\_}!CartVelCst@{CartVelCst}}
+\doxysubsubsection{\texorpdfstring{Pxdq\_}{Pxdq\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Cart\+Vel\+Cst\+::\+Pxdq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapconstraint/\mbox{\hyperlink{RosWrapCartVelCst_8h}{Ros\+Wrap\+Cart\+Vel\+Cst.\+h}}\end{DoxyCompactItemize}

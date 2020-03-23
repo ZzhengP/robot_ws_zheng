@@ -1,17 +1,17 @@
 #ifndef RosWrapMpcAvoidanceCst_H
 #define RosWrapMpcAvoidanceCst_H
-
 #pragma once
 #include <iostream>
 #include <Eigen/Dense>
 #include <Eigen/Core>
 #include <string>
-#include "RosWrapsepPlane/RosWrapsepPlane.h"
 #include "RosWrapconstraint/RosWrapGenericCst.h"
+#include "RosWrapsepPlane/RosWrapsepPlane.h"
 #include <fstream>
 
 using namespace  std;
 using namespace  plane;
+
 class ObsAvoidanceCSt{
 
 public:

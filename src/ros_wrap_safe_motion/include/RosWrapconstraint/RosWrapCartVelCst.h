@@ -4,12 +4,12 @@
 #include "RosWrapconstraint/RosWrapGenericCst.h"
 #include <fstream>
 
-class cartVelCst: public generic_cst
+class CartVelCst: public GenericCst
 {
 public:
 
-    cartVelCst(int ndof, int N,double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu,Eigen::MatrixXd Pxdq, Eigen::MatrixXd Pudq)
-        : generic_cst(ndof, N, dt, name, Px, Pu ) {
+    CartVelCst(int ndof, int N,double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu,Eigen::MatrixXd Pxdq, Eigen::MatrixXd Pudq)
+        : GenericCst(ndof, N, dt, name, Px, Pu ) {
 
         Pxdq_ = Pxdq;
         Pudq_ = Pudq;

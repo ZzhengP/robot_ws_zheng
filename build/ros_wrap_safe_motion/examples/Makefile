@@ -90,6 +90,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -124,17 +135,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/progress.marks
@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule
-.PHONY : examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule
+examples/CMakeFiles/InteractiveMarkers.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/rule
+.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
 
 # Convenience name for target.
-robotAndObsVerticesSubscriber: examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule
+InteractiveMarkers: examples/CMakeFiles/InteractiveMarkers.dir/rule
 
-.PHONY : robotAndObsVerticesSubscriber
+.PHONY : InteractiveMarkers
 
 # fast build rule for target.
-robotAndObsVerticesSubscriber/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build
-.PHONY : robotAndObsVerticesSubscriber/fast
+InteractiveMarkers/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/build
+.PHONY : InteractiveMarkers/fast
+
+# Convenience name for target.
+examples/CMakeFiles/separatingPlane.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/separatingPlane.dir/rule
+.PHONY : examples/CMakeFiles/separatingPlane.dir/rule
+
+# Convenience name for target.
+separatingPlane: examples/CMakeFiles/separatingPlane.dir/rule
+
+.PHONY : separatingPlane
+
+# fast build rule for target.
+separatingPlane/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
+.PHONY : separatingPlane/fast
 
 # Convenience name for target.
 examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule:
@@ -213,21 +228,6 @@ obsVerticesPublisher/fast:
 .PHONY : obsVerticesPublisher/fast
 
 # Convenience name for target.
-examples/CMakeFiles/constraintSolver.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/constraintSolver.dir/rule
-.PHONY : examples/CMakeFiles/constraintSolver.dir/rule
-
-# Convenience name for target.
-constraintSolver: examples/CMakeFiles/constraintSolver.dir/rule
-
-.PHONY : constraintSolver
-
-# fast build rule for target.
-constraintSolver/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/build
-.PHONY : constraintSolver/fast
-
-# Convenience name for target.
 examples/CMakeFiles/simpletest.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/simpletest.dir/rule
 .PHONY : examples/CMakeFiles/simpletest.dir/rule
@@ -257,32 +257,74 @@ simpleMatrixReceive/fast:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/build
 .PHONY : simpleMatrixReceive/fast
 
-constraintSolver.o: constraintSolver.cpp.o
+# Convenience name for target.
+examples/CMakeFiles/DynamicAndMPCSolver.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
 
-.PHONY : constraintSolver.o
+# Convenience name for target.
+DynamicAndMPCSolver: examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+
+.PHONY : DynamicAndMPCSolver
+
+# fast build rule for target.
+DynamicAndMPCSolver/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/build
+.PHONY : DynamicAndMPCSolver/fast
+
+DynamicAndMPCSolver.o: DynamicAndMPCSolver.cpp.o
+
+.PHONY : DynamicAndMPCSolver.o
 
 # target to build an object file
-constraintSolver.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/constraintSolver.cpp.o
-.PHONY : constraintSolver.cpp.o
+DynamicAndMPCSolver.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/DynamicAndMPCSolver.cpp.o
+.PHONY : DynamicAndMPCSolver.cpp.o
 
-constraintSolver.i: constraintSolver.cpp.i
+DynamicAndMPCSolver.i: DynamicAndMPCSolver.cpp.i
 
-.PHONY : constraintSolver.i
+.PHONY : DynamicAndMPCSolver.i
 
 # target to preprocess a source file
-constraintSolver.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/constraintSolver.cpp.i
-.PHONY : constraintSolver.cpp.i
+DynamicAndMPCSolver.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/DynamicAndMPCSolver.cpp.i
+.PHONY : DynamicAndMPCSolver.cpp.i
 
-constraintSolver.s: constraintSolver.cpp.s
+DynamicAndMPCSolver.s: DynamicAndMPCSolver.cpp.s
 
-.PHONY : constraintSolver.s
+.PHONY : DynamicAndMPCSolver.s
 
 # target to generate assembly for a file
-constraintSolver.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/constraintSolver.cpp.s
-.PHONY : constraintSolver.cpp.s
+DynamicAndMPCSolver.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/DynamicAndMPCSolver.cpp.s
+.PHONY : DynamicAndMPCSolver.cpp.s
+
+InteractiveMarkers.o: InteractiveMarkers.cpp.o
+
+.PHONY : InteractiveMarkers.o
+
+# target to build an object file
+InteractiveMarkers.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o
+.PHONY : InteractiveMarkers.cpp.o
+
+InteractiveMarkers.i: InteractiveMarkers.cpp.i
+
+.PHONY : InteractiveMarkers.i
+
+# target to preprocess a source file
+InteractiveMarkers.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.i
+.PHONY : InteractiveMarkers.cpp.i
+
+InteractiveMarkers.s: InteractiveMarkers.cpp.s
+
+.PHONY : InteractiveMarkers.s
+
+# target to generate assembly for a file
+InteractiveMarkers.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.s
+.PHONY : InteractiveMarkers.cpp.s
 
 movingobstacleavoidance.o: movingobstacleavoidance.cpp.o
 
@@ -338,32 +380,32 @@ obsVerticesPublisher.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/obsVerticesPublisher.cpp.s
 .PHONY : obsVerticesPublisher.cpp.s
 
-robotAndObsVerticesSubscriber.o: robotAndObsVerticesSubscriber.cpp.o
+separatingPlane.o: separatingPlane.cpp.o
 
-.PHONY : robotAndObsVerticesSubscriber.o
+.PHONY : separatingPlane.o
 
 # target to build an object file
-robotAndObsVerticesSubscriber.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/robotAndObsVerticesSubscriber.cpp.o
-.PHONY : robotAndObsVerticesSubscriber.cpp.o
+separatingPlane.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/separatingPlane.cpp.o
+.PHONY : separatingPlane.cpp.o
 
-robotAndObsVerticesSubscriber.i: robotAndObsVerticesSubscriber.cpp.i
+separatingPlane.i: separatingPlane.cpp.i
 
-.PHONY : robotAndObsVerticesSubscriber.i
+.PHONY : separatingPlane.i
 
 # target to preprocess a source file
-robotAndObsVerticesSubscriber.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/robotAndObsVerticesSubscriber.cpp.i
-.PHONY : robotAndObsVerticesSubscriber.cpp.i
+separatingPlane.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/separatingPlane.cpp.i
+.PHONY : separatingPlane.cpp.i
 
-robotAndObsVerticesSubscriber.s: robotAndObsVerticesSubscriber.cpp.s
+separatingPlane.s: separatingPlane.cpp.s
 
-.PHONY : robotAndObsVerticesSubscriber.s
+.PHONY : separatingPlane.s
 
 # target to generate assembly for a file
-robotAndObsVerticesSubscriber.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/robotAndObsVerticesSubscriber.cpp.s
-.PHONY : robotAndObsVerticesSubscriber.cpp.s
+separatingPlane.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/separatingPlane.cpp.s
+.PHONY : separatingPlane.cpp.s
 
 simpleMatrixReceive.o: simpleMatrixReceive.cpp.o
 
@@ -428,28 +470,32 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... rebuild_cache"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... robotAndObsVerticesSubscriber"
+	@echo "... InteractiveMarkers"
+	@echo "... separatingPlane"
 	@echo "... RosMovingobstacleavoidance"
 	@echo "... edit_cache"
 	@echo "... obsVerticesPublisher"
-	@echo "... rebuild_cache"
-	@echo "... constraintSolver"
 	@echo "... simpletest"
 	@echo "... simpleMatrixReceive"
-	@echo "... constraintSolver.o"
-	@echo "... constraintSolver.i"
-	@echo "... constraintSolver.s"
+	@echo "... DynamicAndMPCSolver"
+	@echo "... DynamicAndMPCSolver.o"
+	@echo "... DynamicAndMPCSolver.i"
+	@echo "... DynamicAndMPCSolver.s"
+	@echo "... InteractiveMarkers.o"
+	@echo "... InteractiveMarkers.i"
+	@echo "... InteractiveMarkers.s"
 	@echo "... movingobstacleavoidance.o"
 	@echo "... movingobstacleavoidance.i"
 	@echo "... movingobstacleavoidance.s"
 	@echo "... obsVerticesPublisher.o"
 	@echo "... obsVerticesPublisher.i"
 	@echo "... obsVerticesPublisher.s"
-	@echo "... robotAndObsVerticesSubscriber.o"
-	@echo "... robotAndObsVerticesSubscriber.i"
-	@echo "... robotAndObsVerticesSubscriber.s"
+	@echo "... separatingPlane.o"
+	@echo "... separatingPlane.i"
+	@echo "... separatingPlane.s"
 	@echo "... simpleMatrixReceive.o"
 	@echo "... simpleMatrixReceive.i"
 	@echo "... simpleMatrixReceive.s"

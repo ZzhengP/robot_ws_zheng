@@ -182,8 +182,13 @@ examples/CMakeFiles/RosMovingobstacleavoidance.dir/movingobstacleavoidance.cpp.o
  /opt/ros/melodic/include/urdf/model.h
  /opt/ros/melodic/include/urdf/urdfdom_compatibility.h
  /opt/ros/melodic/include/urdf/visibility_control.hpp
+ /opt/ros/melodic/include/visualization_msgs/InteractiveMarker.h
+ /opt/ros/melodic/include/visualization_msgs/InteractiveMarkerControl.h
+ /opt/ros/melodic/include/visualization_msgs/InteractiveMarkerPose.h
+ /opt/ros/melodic/include/visualization_msgs/InteractiveMarkerUpdate.h
  /opt/ros/melodic/include/visualization_msgs/Marker.h
  /opt/ros/melodic/include/visualization_msgs/MarkerArray.h
+ /opt/ros/melodic/include/visualization_msgs/MenuEntry.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/eigen3/Eigen/Cholesky

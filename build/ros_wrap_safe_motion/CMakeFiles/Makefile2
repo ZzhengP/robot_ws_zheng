@@ -166,12 +166,13 @@ clean: src/clean
 # Directory level rules for directory examples
 
 # Recursive "all" directory target.
-examples/all: examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/all
+examples/all: examples/CMakeFiles/InteractiveMarkers.dir/all
+examples/all: examples/CMakeFiles/separatingPlane.dir/all
 examples/all: examples/CMakeFiles/RosMovingobstacleavoidance.dir/all
 examples/all: examples/CMakeFiles/obsVerticesPublisher.dir/all
-examples/all: examples/CMakeFiles/constraintSolver.dir/all
 examples/all: examples/CMakeFiles/simpletest.dir/all
 examples/all: examples/CMakeFiles/simpleMatrixReceive.dir/all
+examples/all: examples/CMakeFiles/DynamicAndMPCSolver.dir/all
 
 .PHONY : examples/all
 
@@ -181,12 +182,13 @@ examples/preinstall:
 .PHONY : examples/preinstall
 
 # Recursive "clean" directory target.
-examples/clean: examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/clean
+examples/clean: examples/CMakeFiles/InteractiveMarkers.dir/clean
+examples/clean: examples/CMakeFiles/separatingPlane.dir/clean
 examples/clean: examples/CMakeFiles/RosMovingobstacleavoidance.dir/clean
 examples/clean: examples/CMakeFiles/obsVerticesPublisher.dir/clean
-examples/clean: examples/CMakeFiles/constraintSolver.dir/clean
 examples/clean: examples/CMakeFiles/simpletest.dir/clean
 examples/clean: examples/CMakeFiles/simpleMatrixReceive.dir/clean
+examples/clean: examples/CMakeFiles/DynamicAndMPCSolver.dir/clean
 
 .PHONY : examples/clean
 
@@ -2648,7 +2650,7 @@ CMakeFiles/graph_msgs_generate_messages_py.dir/clean:
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=8,9,10,11 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=10,11,12,13 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2675,7 +2677,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=5,6,7 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=7,8,9 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2702,7 +2704,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=14,15 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=16,17 "Built target gtest_main"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2729,7 +2731,7 @@ gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean:
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=12,13 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=14,15 "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2750,31 +2752,58 @@ gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target examples/CMakeFiles/robotAndObsVerticesSubscriber.dir
+# Target rules for target examples/CMakeFiles/InteractiveMarkers.dir
 
 # All Build rule for target.
-examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
-	$(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/depend
-	$(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=18,19 "Built target robotAndObsVerticesSubscriber"
-.PHONY : examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/all
+examples/CMakeFiles/InteractiveMarkers.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
+	$(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/depend
+	$(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=3,4 "Built target InteractiveMarkers"
+.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/all
 
 # Build rule for subdir invocation for target.
-examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule: cmake_check_build_system
+examples/CMakeFiles/InteractiveMarkers.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
-	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
-.PHONY : examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule
+.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
 
 # Convenience name for target.
-robotAndObsVerticesSubscriber: examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/rule
+InteractiveMarkers: examples/CMakeFiles/InteractiveMarkers.dir/rule
 
-.PHONY : robotAndObsVerticesSubscriber
+.PHONY : InteractiveMarkers
 
 # clean rule for target.
-examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/clean:
-	$(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/clean
-.PHONY : examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/clean
+examples/CMakeFiles/InteractiveMarkers.dir/clean:
+	$(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/clean
+.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/clean
+
+#=============================================================================
+# Target rules for target examples/CMakeFiles/separatingPlane.dir
+
+# All Build rule for target.
+examples/CMakeFiles/separatingPlane.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
+	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/depend
+	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=35,36 "Built target separatingPlane"
+.PHONY : examples/CMakeFiles/separatingPlane.dir/all
+
+# Build rule for subdir invocation for target.
+examples/CMakeFiles/separatingPlane.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/separatingPlane.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
+.PHONY : examples/CMakeFiles/separatingPlane.dir/rule
+
+# Convenience name for target.
+separatingPlane: examples/CMakeFiles/separatingPlane.dir/rule
+
+.PHONY : separatingPlane
+
+# clean rule for target.
+examples/CMakeFiles/separatingPlane.dir/clean:
+	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/clean
+.PHONY : examples/CMakeFiles/separatingPlane.dir/clean
 
 #=============================================================================
 # Target rules for target examples/CMakeFiles/RosMovingobstacleavoidance.dir
@@ -2783,7 +2812,7 @@ examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/clean:
 examples/CMakeFiles/RosMovingobstacleavoidance.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/RosMovingobstacleavoidance.dir/build.make examples/CMakeFiles/RosMovingobstacleavoidance.dir/depend
 	$(MAKE) -f examples/CMakeFiles/RosMovingobstacleavoidance.dir/build.make examples/CMakeFiles/RosMovingobstacleavoidance.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=1,2 "Built target RosMovingobstacleavoidance"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=5,6 "Built target RosMovingobstacleavoidance"
 .PHONY : examples/CMakeFiles/RosMovingobstacleavoidance.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2810,7 +2839,7 @@ examples/CMakeFiles/RosMovingobstacleavoidance.dir/clean:
 examples/CMakeFiles/obsVerticesPublisher.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/depend
 	$(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=16,17 "Built target obsVerticesPublisher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=18,19 "Built target obsVerticesPublisher"
 .PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2831,40 +2860,13 @@ examples/CMakeFiles/obsVerticesPublisher.dir/clean:
 .PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/clean
 
 #=============================================================================
-# Target rules for target examples/CMakeFiles/constraintSolver.dir
-
-# All Build rule for target.
-examples/CMakeFiles/constraintSolver.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
-	$(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/depend
-	$(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=3,4 "Built target constraintSolver"
-.PHONY : examples/CMakeFiles/constraintSolver.dir/all
-
-# Build rule for subdir invocation for target.
-examples/CMakeFiles/constraintSolver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
-	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/constraintSolver.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
-.PHONY : examples/CMakeFiles/constraintSolver.dir/rule
-
-# Convenience name for target.
-constraintSolver: examples/CMakeFiles/constraintSolver.dir/rule
-
-.PHONY : constraintSolver
-
-# clean rule for target.
-examples/CMakeFiles/constraintSolver.dir/clean:
-	$(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/clean
-.PHONY : examples/CMakeFiles/constraintSolver.dir/clean
-
-#=============================================================================
 # Target rules for target examples/CMakeFiles/simpletest.dir
 
 # All Build rule for target.
 examples/CMakeFiles/simpletest.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/depend
 	$(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=37,38 "Built target simpletest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=39,40 "Built target simpletest"
 .PHONY : examples/CMakeFiles/simpletest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2891,7 +2893,7 @@ examples/CMakeFiles/simpletest.dir/clean:
 examples/CMakeFiles/simpleMatrixReceive.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/depend
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=35,36 "Built target simpleMatrixReceive"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=37,38 "Built target simpleMatrixReceive"
 .PHONY : examples/CMakeFiles/simpleMatrixReceive.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2910,6 +2912,33 @@ simpleMatrixReceive: examples/CMakeFiles/simpleMatrixReceive.dir/rule
 examples/CMakeFiles/simpleMatrixReceive.dir/clean:
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/clean
 .PHONY : examples/CMakeFiles/simpleMatrixReceive.dir/clean
+
+#=============================================================================
+# Target rules for target examples/CMakeFiles/DynamicAndMPCSolver.dir
+
+# All Build rule for target.
+examples/CMakeFiles/DynamicAndMPCSolver.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
+	$(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/depend
+	$(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=1,2 "Built target DynamicAndMPCSolver"
+.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/all
+
+# Build rule for subdir invocation for target.
+examples/CMakeFiles/DynamicAndMPCSolver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/DynamicAndMPCSolver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
+.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+
+# Convenience name for target.
+DynamicAndMPCSolver: examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+
+.PHONY : DynamicAndMPCSolver
+
+# clean rule for target.
+examples/CMakeFiles/DynamicAndMPCSolver.dir/clean:
+	$(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/clean
+.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/ros_wrap_safe_motion_library.dir

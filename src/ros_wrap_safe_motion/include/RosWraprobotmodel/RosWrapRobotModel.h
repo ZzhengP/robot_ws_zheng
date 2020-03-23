@@ -442,7 +442,7 @@ protected:
     /**
      * @brief Enlarge data to formulate MPC problem (q, dq, ee, Jacobian)
      */
-    Eigen::VectorXd q_horizon_, dotq_horizon_,qqd_horizon_, ee_pos_horion_;
+    Eigen::VectorXd q_horizon_, dotq_horizon_,qqd_horizon_, ee_pos_horion_, foream_pos_horizon_;
     Eigen::MatrixXd jacobian_horizon_;
     Eigen::MatrixXd jacobian_dot_horizon_;
     /**

@@ -297,7 +297,7 @@ int main(int argc, char **argv)
     dqMax.setConstant(pi/10);
     dqMin.tail(ndof).setZero();
     dqMax.tail(ndof).setZero();
-    jntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
+    JntPosCst jointPosCst(ndof,N,dt, "jointPosCst",pandaPx,pandaPu);
     jointPosCst.setLimit(qMin,qMax);
     jointPosCst.setLowerBound(pandaState);
     jointPosCst.setUpperBound(pandaState);
@@ -305,7 +305,7 @@ int main(int argc, char **argv)
     jointPosCst.getConstraintData().print();
     constraintVectorData.push_back(jointPosCst.getConstraintData());
 
-    jntVelCst jointVelCst(ndof,N,dt, "jointVelCst",pandaPxdq,pandaPudq);
+    JntVelCst jointVelCst(ndof,N,dt, "jointVelCst",pandaPxdq,pandaPudq);
     jointVelCst.setLimit(dqMin,dqMax);
     jointVelCst.setLowerBound(pandaState);
     jointVelCst.setUpperBound(pandaState);
@@ -314,7 +314,7 @@ int main(int argc, char **argv)
     constraintVectorData.push_back(jointVelCst.getConstraintData());
 
     // Define joint acceleration limit
-    jntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst",pandaPx,pandaPu);
+    JntAccCst jnt_acc_cst(ndof, N,dt, "jointAccCst",pandaPx,pandaPu);
     jnt_acc_cst.setLimit(ddqMin,ddqMax);
 
     Eigen::VectorXd cartVelMin, cartVelMax, dq ;
@@ -359,7 +359,7 @@ int main(int argc, char **argv)
 //                        + TableAvoidanceCst.getConstraintData().upBound_.size() + + cartesianVelCst.getConstraintData().upBound_.size();
     int constraintSize = 2*ndof*N;
     mpc_solve qptest(1,ndof*N,constraintSize);
-    qptest.initMPCData(H,g,lb,ub);
+    qptest.initMPCData(lb,ub);
     qptest.constructProblem(constraintVectorData,H,g);
 
     qptest.setDefaultOptions();

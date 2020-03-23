@@ -7,10 +7,10 @@
 #include "Eigen/Dense"
 #include "RosWrapconstraint/RosWrapGenericCst.h"
 
-class  jntVelCst : public generic_cst {
+class  JntVelCst : public GenericCst {
 public:
-    jntVelCst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
-        : generic_cst (ndof, N,dt, name, Px, Pu){
+    JntVelCst(int ndof, int N, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+        : GenericCst (ndof, N,dt, name, Px, Pu){
         cstData_.name_ = name;
         cstData_.upBound_.resize(ndof*N_);
         cstData_.lowBound_.resize(ndof*N_);

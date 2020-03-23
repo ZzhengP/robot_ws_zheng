@@ -6,17 +6,17 @@
 /**
  * @brief Acceleration constraint
  */
-class  jntAccCst : public generic_cst
+class  JntAccCst : public GenericCst
 {
 
 public:
 
-    jntAccCst(int ndof, int N,double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
-        : generic_cst(ndof, N,dt, name, Px, Pu) {
+    JntAccCst(int ndof, int N,double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+        : GenericCst(ndof, N,dt, name, Px, Pu) {
 
     }
 
-     ~jntAccCst(){}
+     ~JntAccCst(){}
 
 
     void setLimit(const Eigen::VectorXd &min, const Eigen::VectorXd &max){

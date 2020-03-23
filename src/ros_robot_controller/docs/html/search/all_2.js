@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cartvelcst_10',['cartVelCst',['../classcartVelCst.html',1,'cartVelCst'],['../classcartVelCst.html#a946ce986b3ee13150b8bbdf099b92cf8',1,'cartVelCst::cartVelCst()']]],
+  ['cartvelcst_10',['CartVelCst',['../classCartVelCst.html',1,'CartVelCst'],['../classCartVelCst.html#a5176b477968a5c6a570c06f8b2b82322',1,'CartVelCst::CartVelCst()']]],
   ['chainjacdotsolver_5f_11',['chainjacdotsolver_',['../classarm__kinematic.html#acc35903c99d78b3fafef89d1fd5ff411',1,'arm_kinematic']]],
   ['chainjacsolver_5f_12',['chainjacsolver_',['../classarm__kinematic.html#ac06a2737d5e0c4e0ba8662c4691fdff9',1,'arm_kinematic']]],
   ['chainjnttojacdotsolver_13',['ChainJntToJacDotSolver',['../classKDL_1_1ChainJntToJacDotSolver.html',1,'KDL::ChainJntToJacDotSolver'],['../classKDL_1_1ChainJntToJacDotSolver.html#a6e8ea7ebcb030b3e0140659ae2094b4f',1,'KDL::ChainJntToJacDotSolver::ChainJntToJacDotSolver()']]],
@@ -27,9 +27,9 @@ var searchData=
   ['computepxdq_34',['computePxDq',['../classMPC__Task.html#a03684080939ad5970db9ae7d63142574',1,'MPC_Task']]],
   ['configurationspacedimension_35',['configurationSpaceDimension',['../classrobot_1_1RobotDynClass.html#a053cdd85d52c69e47da337262731d30f',1,'robot::RobotDynClass']]],
   ['constraintdata_36',['constraintData',['../structconstraintData.html',1,'']]],
-  ['constructproblem_37',['constructProblem',['../classmpc__solve.html#a1aa29d5669b1354c1c9dbe03cf6286ea',1,'mpc_solve']]],
-  ['cst_5fname_5f_38',['cst_name_',['../classObsAvoidanceCSt.html#a99a7f6ef147e3b104470036e0ea18900',1,'ObsAvoidanceCSt::cst_name_()'],['../classgeneric__cst.html#a27020b6b3cde3721b0c781888100fe93',1,'generic_cst::cst_name_()']]],
-  ['cstdata_5f_39',['cstData_',['../classObsAvoidanceCSt.html#a9b41c967aa75bc1c98d7190424fed146',1,'ObsAvoidanceCSt::cstData_()'],['../classgeneric__cst.html#a94d063d0b69fdc111703107a04cbbfb7',1,'generic_cst::cstData_()']]],
+  ['constructproblem_37',['constructProblem',['../classmpc__solve.html#a1aa29d5669b1354c1c9dbe03cf6286ea',1,'mpc_solve::constructProblem(const std::vector&lt; constraintData &gt; &amp;constraintVectorData, const Eigen::MatrixXd H, const Eigen::VectorXd g)'],['../classmpc__solve.html#a6b87a8d99af5f219e21611f04b4db343',1,'mpc_solve::constructProblem()']]],
+  ['cst_5fname_5f_38',['cst_name_',['../classObsAvoidanceCSt.html#a99a7f6ef147e3b104470036e0ea18900',1,'ObsAvoidanceCSt::cst_name_()'],['../classGenericCst.html#a750294d7e097f44bdc2e5c40120983d3',1,'GenericCst::cst_name_()']]],
+  ['cstdata_5f_39',['cstData_',['../classObsAvoidanceCSt.html#a9b41c967aa75bc1c98d7190424fed146',1,'ObsAvoidanceCSt::cstData_()'],['../classGenericCst.html#a30f975584d8843fe72e1a22882b8f5d1',1,'GenericCst::cstData_()']]],
   ['cstmatrix_5f_40',['cstMatrix_',['../structconstraintData.html#a53b0c9690c4cd52c662c18e153a37aa9',1,'constraintData']]],
   ['cubeobstaclemarkers_5f_41',['cubeObstacleMarkers_',['../classplane_1_1Planes.html#a21f7cc0cee76e8e1d77a394fa29054d6',1,'plane::Planes']]]
 ];

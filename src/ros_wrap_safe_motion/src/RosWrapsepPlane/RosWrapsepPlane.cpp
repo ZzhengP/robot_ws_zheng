@@ -120,6 +120,7 @@ void Planes::robotVerticesCallback(const visualization_msgs::MarkerArray::ConstP
     // Initialize data's size
     robotVertices_.N = N_;
     robotVertices_.nbrOfObject =  vertices_markers->markers.size()/N_;
+    // robotVertices_.nbrVertices = 2;
     robotVertices_.nbrVertices = 1;
     robotVertices_.Vertices.resize(robotVertices_.nbrOfObject);
 
@@ -127,22 +128,29 @@ void Planes::robotVerticesCallback(const visualization_msgs::MarkerArray::ConstP
 
     nbrRobotPart_ = robotVertices_.nbrOfObject;
     robotVerticesAugmented_.resize(robotVertices_.nbrOfObject);
+    robotVerticesAugmented_[0].resize(3,N_);
 
 
     for (int j = 0; j < robotVertices_.nbrOfObject; ++j) {
             robotVertices_.Vertices[j].resize(3,robotVertices_.nbrVertices);
-            robotVertices_.Vertices[j].block(0,j,3,1) << vertices_markers->markers[robotVertices_.nbrVertices*j].pose.position.x,
-                                                         vertices_markers->markers[robotVertices_.nbrVertices*j].pose.position.y,
-                                                         vertices_markers->markers[robotVertices_.nbrVertices*j].pose.position.z ;
+            // robotVertices_.Vertices[j].block(0,j,3,2) << vertices_markers->markers[j].pose.position.x, vertices_markers->markers[j].pose.position.x,
+            //                                              vertices_markers->markers[j].pose.position.y, vertices_markers->markers[j].pose.position.y,
+            //                                              vertices_markers->markers[j].pose.position.z, vertices_markers->markers[j].pose.position.z ;
+            robotVertices_.Vertices[j].block(0,j,3,1) << vertices_markers->markers[j].pose.position.x,
+                                                         vertices_markers->markers[j].pose.position.y,
+                                                         vertices_markers->markers[j].pose.position.z;
         for (size_t i=0; i < N_; i++){
+            // robotVerticesAugmented_[j].block(0,2*i,3,2) << vertices_markers->markers[i].pose.position.x,vertices_markers->markers[i].pose.position.x,
+            //                                              vertices_markers->markers[i].pose.position.y, vertices_markers->markers[i].pose.position.y,
+            //                                              vertices_markers->markers[i].pose.position.z,vertices_markers->markers[i].pose.position.z ;
             robotVerticesAugmented_[j].block(0,i,3,1) << vertices_markers->markers[i].pose.position.x,
-                                                         vertices_markers->markers[i].pose.position.y,
-                                                         vertices_markers->markers[i].pose.position.z ;
+                                                           vertices_markers->markers[i].pose.position.y,
+                                                           vertices_markers->markers[i].pose.position.z ;
         }   
     }
   
         
-    std::cout << " robot vertices received :\n"<< robotVertices_.Vertices[0]  << std::endl;
+    // std::cout << " robot vertices received :\n"<< robotVertices_.Vertices[0]  << std::endl;
 
   
 
@@ -152,7 +160,7 @@ void Planes::obsVerticesCallback(const std_msgs::Float64MultiArray::ConstPtr & o
 
     obsVerticesAugmented_[0] = msgToEigen(obsVerticesMsg);
 
-   std::cout << " obstacle augmented vertices received :\n"<<  obsVerticesAugmented_[0]  << std::endl;
+//    std::cout << " obstacle augmented vertices received :\n"<<  obsVerticesAugmented_[0]  << std::endl;
 
 }
 void Planes::update(){
@@ -171,7 +179,7 @@ for (int i(0);i<nbrObsPart; i++){
 
                 gPlane_ << planesData_.planeLocation[i].block(0,k,4,1),0 ;
                 plane_solver_ -> setCost(gPlane_);
-                plane_solver_ -> setCstMatrix(robotVerticesAugmented_[j].block(0,k,3,2),obsVerticesAugmented_[0].block(0,k*obsNbrVertices,3,2*obsNbrVertices),
+                plane_solver_ -> setCstMatrix(robotVerticesAugmented_[j].block(0,k,3,2*robotVertices_.nbrVertices),obsVerticesAugmented_[0].block(0,k*obsNbrVertices,3,2*obsNbrVertices),
                                                 planesData_.planeLocation[i].block(0,k,3,1));
 
                 is_plane_solved = plane_solver_ -> solve();
@@ -221,8 +229,8 @@ for (int i(0);i<nbrObsPart; i++){
     cubeObstacleMarkers_->deleteAllMarkers();
 }
 
-Planes::Planes(ros::NodeHandle* nodehandle, int N, std::vector<Eigen::MatrixXd> obsVerticesAugmented,double dsafe)
-        :nh_(*nodehandle),N_(N), dsafe_(dsafe){
+Planes::Planes(ros::NodeHandle* nodehandle, const  int& N,const std::vector<Eigen::MatrixXd>& obsVerticesAugmented,const double& dsafe, const std::string& robotVerticesTopic )
+        :nh_(*nodehandle),N_(N), dsafe_(dsafe), robot_vertices_topic_(robotVerticesTopic){
     
 
     // ----------------------------------  Initialize robot's vertices at position t = 0 ----------------------------------
@@ -231,26 +239,34 @@ Planes::Planes(ros::NodeHandle* nodehandle, int N, std::vector<Eigen::MatrixXd> 
     robotVerticesAugmented_.resize(1);
     robotVertices_.N = N_;
     robotVertices_.nbrOfObject = 1;
+    //  robotVertices_.nbrVertices = 2;
     robotVertices_.nbrVertices = 1;
     robotVertices_.Vertices.resize(robotVertices_.nbrOfObject);
  
     nbrRobotPart_ = robotVertices_.nbrOfObject;
     robotVerticesAugmented_.resize(robotVertices_.nbrOfObject);
-    robotVerticesAugmented_[0].resize(3,N_);
+    // robotVerticesAugmented_[0].resize(3,2*N_);
+     robotVerticesAugmented_[0].resize(3,N_);
 
     for (int j = 0; j < robotVertices_.nbrOfObject; ++j) {
             robotVertices_.Vertices[j].resize(3,robotVertices_.nbrVertices);
+            // robotVertices_.Vertices[j].block(0,j,3,2) << 0.5, 0.5,
+            //                                              0.3, 0.3,
+            //                                              0.1, 0.1 ;
             robotVertices_.Vertices[j].block(0,j,3,1) << 0.5,
                                                          0.3,
-                                                         0.1 ;
+                                                         0.1;
         for (size_t i=0; i < N_; i++){
-            robotVerticesAugmented_[j].block(0,i,3,1) << 0.5,
+            // robotVerticesAugmented_[j].block(0,2*i,3,2) << 0.5, 0.5,
+            //                                              0.3, 0.3,
+            //                                              0.1, 0.1  ;
+            robotVertices_.Vertices[j].block(0,j,3,1) << 0.5,
                                                          0.3,
-                                                         0.1 ;
+                                                         0.1;
         }   
     }
   
-    obsCenter_ << 1.2 , 0.1, 0.1;
+    obsCenter_ << 0.8 , 0.1, 0.1;
     obsVerticesAugmented_ = obsVerticesAugmented;
     obsVertices_.N = N_;
     nbrObs_ = obsVerticesAugmented.size();
@@ -305,7 +321,7 @@ Planes::Planes(ros::NodeHandle* nodehandle, int N, std::vector<Eigen::MatrixXd> 
 
     plane_data_publisher_ = nh_.advertise<std_msgs::Float64MultiArray>("plane_data",1000);
     // ------------------------ finish  Plane solver parameters ---------------------------------------------------------- 
-    robot_vertices_subscriber_ = nh_.subscribe("/robotVerticesPublisher/panda/pandaVertices", 10, &Planes::robotVerticesCallback,this);  
+    robot_vertices_subscriber_ = nh_.subscribe(robot_vertices_topic_, 10, &Planes::robotVerticesCallback,this);  
     obs_vertices_subscriber_ = nh_.subscribe("obstacle_vertices",10,&Planes::obsVerticesCallback, this);
 
     // std::cout <<"---------------------------------------------" << std::endl;
@@ -395,7 +411,7 @@ void Planes::run(){
 
     ROS_INFO( "Start running");
 
-    ros::Rate r(100);// this node will work at 100hz  
+    ros::Rate r(1000);// this node will work at 100hz  
     while (ros::ok()){
 
         update();

@@ -10,7 +10,6 @@
 #include "RosWrapsolver/RosWrapPlaneSolver.h"
 #include "memory"
 #include "qpOASES.hpp"
-#include "RosWrapsolver/RosWrapMpcSolver.h"
 #include <visualization_msgs/MarkerArray.h>
 #include "geometry_msgs/PoseArray.h"
 #include "rviz_visual_tools/rviz_visual_tools.h"//#include "rviz_visual_tools/rviz_visual_tools.h"
@@ -74,7 +73,7 @@ public:
      */
     Planes(int N,int nbrRobobotPart,int nbrObs, std::vector<Eigen::MatrixXd> robotVertices, Eigen::MatrixXd obsVertices);
     Planes(int N,int nbrRobobotPart,int nbrObs, Eigen::MatrixXd robotVertices);
-    Planes(ros::NodeHandle* nodehandle, int N, std::vector<Eigen::MatrixXd> obsVerticesAugmented,double dsafe);
+    Planes(ros::NodeHandle* nodehandle,const  int& N,const std::vector<Eigen::MatrixXd>& obsVerticesAugmented,const double& dsafe, const std::string& robotVerticesTopic);
 
     ~Planes(){
         ROS_INFO("Delete ros robot and obstacle vertices subscriber ")   ;
@@ -123,7 +122,8 @@ public:
      * @brief Ros node to compute plane's location
      * 
      */
-     
+    
+
     ros::NodeHandle nh_;
 
     ros::Subscriber robot_vertices_subscriber_ ;
@@ -132,6 +132,7 @@ public:
 
     ros::Publisher plane_data_publisher_;
 
+    std::string robot_vertices_topic_;
     
     rviz_visual_tools::RvizVisualToolsPtr planesPub_ , cubeObstacleMarkers_ ;   
     

@@ -1364,17 +1364,30 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named robotAndObsVerticesSubscriber
+# Target rules for targets named InteractiveMarkers
 
 # Build rule for target.
-robotAndObsVerticesSubscriber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 robotAndObsVerticesSubscriber
-.PHONY : robotAndObsVerticesSubscriber
+InteractiveMarkers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 InteractiveMarkers
+.PHONY : InteractiveMarkers
 
 # fast build rule for target.
-robotAndObsVerticesSubscriber/fast:
-	$(MAKE) -f examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build.make examples/CMakeFiles/robotAndObsVerticesSubscriber.dir/build
-.PHONY : robotAndObsVerticesSubscriber/fast
+InteractiveMarkers/fast:
+	$(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/build
+.PHONY : InteractiveMarkers/fast
+
+#=============================================================================
+# Target rules for targets named separatingPlane
+
+# Build rule for target.
+separatingPlane: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 separatingPlane
+.PHONY : separatingPlane
+
+# fast build rule for target.
+separatingPlane/fast:
+	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
+.PHONY : separatingPlane/fast
 
 #=============================================================================
 # Target rules for targets named RosMovingobstacleavoidance
@@ -1403,19 +1416,6 @@ obsVerticesPublisher/fast:
 .PHONY : obsVerticesPublisher/fast
 
 #=============================================================================
-# Target rules for targets named constraintSolver
-
-# Build rule for target.
-constraintSolver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 constraintSolver
-.PHONY : constraintSolver
-
-# fast build rule for target.
-constraintSolver/fast:
-	$(MAKE) -f examples/CMakeFiles/constraintSolver.dir/build.make examples/CMakeFiles/constraintSolver.dir/build
-.PHONY : constraintSolver/fast
-
-#=============================================================================
 # Target rules for targets named simpletest
 
 # Build rule for target.
@@ -1440,6 +1440,19 @@ simpleMatrixReceive: cmake_check_build_system
 simpleMatrixReceive/fast:
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/build
 .PHONY : simpleMatrixReceive/fast
+
+#=============================================================================
+# Target rules for targets named DynamicAndMPCSolver
+
+# Build rule for target.
+DynamicAndMPCSolver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DynamicAndMPCSolver
+.PHONY : DynamicAndMPCSolver
+
+# fast build rule for target.
+DynamicAndMPCSolver/fast:
+	$(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/build
+.PHONY : DynamicAndMPCSolver/fast
 
 #=============================================================================
 # Target rules for targets named ros_wrap_safe_motion_library
@@ -1559,12 +1572,13 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... robotAndObsVerticesSubscriber"
+	@echo "... InteractiveMarkers"
+	@echo "... separatingPlane"
 	@echo "... RosMovingobstacleavoidance"
 	@echo "... obsVerticesPublisher"
-	@echo "... constraintSolver"
 	@echo "... simpletest"
 	@echo "... simpleMatrixReceive"
+	@echo "... DynamicAndMPCSolver"
 	@echo "... ros_wrap_safe_motion_library"
 .PHONY : help
 

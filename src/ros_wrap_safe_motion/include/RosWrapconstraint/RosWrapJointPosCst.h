@@ -7,18 +7,20 @@
 /**
  * @brief Joint position constraint class
  */
-class jntPosCst : public generic_cst
+class JntPosCst : public GenericCst
 {
 public:
 
-    jntPosCst(int ndof, int n, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
-        : generic_cst (ndof, n,dt, name, Px, Pu) {
+    JntPosCst(int ndof, int n, double dt, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
+        : GenericCst (ndof, n,dt, name, Px, Pu) {
         cstData_.name_ = name;
         cstData_.upBound_.resize(ndof*N_);
         cstData_.lowBound_.resize(ndof*N_);
         cstData_.cstMatrix_.resize(ndof*N_,ndof*N_);
     }
 
+    ~JntPosCst(){}
+    
     void setLimit(const Eigen::VectorXd &min, const Eigen::VectorXd &max);
 
     void setLowerBound(const Eigen::VectorXd &robot_state);

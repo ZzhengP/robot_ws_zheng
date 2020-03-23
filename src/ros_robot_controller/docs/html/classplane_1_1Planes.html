@@ -103,8 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab8e2d83dbcb927b1ebbebed25d57d7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2cbe842027ad64a9000b87ddef7cfb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#aa2cbe842027ad64a9000b87ddef7cfb7">Planes</a> (int N, int nbrRobobotPart, int nbrObs, Eigen::MatrixXd robotVertices)</td></tr>
 <tr class="separator:aa2cbe842027ad64a9000b87ddef7cfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1992814ad84cbb539466ec062e901481"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a1992814ad84cbb539466ec062e901481">Planes</a> (ros::NodeHandle *nodehandle, int N, std::vector&lt; Eigen::MatrixXd &gt; obsVerticesAugmented, double dsafe)</td></tr>
-<tr class="separator:a1992814ad84cbb539466ec062e901481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7382aeb750dbafa9762dc6a6c2f99e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ab7382aeb750dbafa9762dc6a6c2f99e1">Planes</a> (ros::NodeHandle *nodehandle, const int &amp;N, const std::vector&lt; Eigen::MatrixXd &gt; &amp;obsVerticesAugmented, const double &amp;dsafe, const std::string &amp;robotVerticesTopic)</td></tr>
+<tr class="separator:ab7382aeb750dbafa9762dc6a6c2f99e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701382e1e702cff2a811976d6c754d98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a701382e1e702cff2a811976d6c754d98">~Planes</a> ()</td></tr>
 <tr class="separator:a701382e1e702cff2a811976d6c754d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217fac905ac79cc846c61306bd542108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a217fac905ac79cc846c61306bd542108">robotVerticesCallback</a> (const visualization_msgs::MarkerArray::ConstPtr &amp;vertices_markers)</td></tr>
@@ -138,6 +138,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a468f86ebbc265b37c1907ecb42620464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7457e6689892407079bb70294d5659"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ace7457e6689892407079bb70294d5659">plane_data_publisher_</a></td></tr>
 <tr class="separator:ace7457e6689892407079bb70294d5659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e3b0c6d946d6ace99534b2ca35a376"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a86e3b0c6d946d6ace99534b2ca35a376">robot_vertices_topic_</a></td></tr>
+<tr class="separator:a86e3b0c6d946d6ace99534b2ca35a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38bfb49a814e25f70b15c4eb702119ff"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::RvizVisualToolsPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a38bfb49a814e25f70b15c4eb702119ff">planesPub_</a></td></tr>
 <tr class="separator:a38bfb49a814e25f70b15c4eb702119ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21f7cc0cee76e8e1d77a394fa29054d6"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::RvizVisualToolsPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a21f7cc0cee76e8e1d77a394fa29054d6">cubeObstacleMarkers_</a></td></tr>
@@ -283,8 +285,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1992814ad84cbb539466ec062e901481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1992814ad84cbb539466ec062e901481">&#9670;&nbsp;</a></span>Planes() <span class="overload">[3/3]</span></h2>
+<a id="ab7382aeb750dbafa9762dc6a6c2f99e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7382aeb750dbafa9762dc6a6c2f99e1">&#9670;&nbsp;</a></span>Planes() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,20 +300,26 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>N</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; Eigen::MatrixXd &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
           <td class="paramname"><em>obsVerticesAugmented</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dsafe</em>&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>dsafe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>robotVerticesTopic</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -967,6 +975,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">ros::Subscriber plane::Planes::robot_vertices_subscriber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86e3b0c6d946d6ace99534b2ca35a376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e3b0c6d946d6ace99534b2ca35a376">&#9670;&nbsp;</a></span>robot_vertices_topic_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string plane::Planes::robot_vertices_topic_</td>
         </tr>
       </table>
   </td>

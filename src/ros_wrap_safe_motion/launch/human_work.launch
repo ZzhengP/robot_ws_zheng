@@ -72,10 +72,15 @@
 
 <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ur_description)/franka.rviz" required="true" />
 
+<!-- This node compute robot's dynamic and solve the collision free trajecotory problem
+     And this node publisher data like: robotVerticesAugemented via topic name "/MPController/panda/pandaVertices "-->
+<!--node name ="MPController" pkg = "ros_wrap_safe_motion" type = "DynamicAndMPCSolver" /-->
 
-<node name ="robotVerticesPublisher" pkg = "ros_wrap_safe_motion" type = "RosMovingobstacleavoidance" />
-
-<node name="robotAndObsVerticesSubscriber" pkg = "ros_wrap_safe_motion"  type="robotAndObsVerticesSubscriber"  />
+<!-- This node compute separating plane problem
+     And this node publisher data like: planeData via topic name "/planeData"
+                                      : separating plane for visualization via topic seperating plane: "
+                  subscribe to data like : robot vertices and obstacle's vertices                  -->
+<!--node name="separatingPlane" pkg = "ros_wrap_safe_motion"  type="separatingPlane"  /-->
 
 <!--node name="robotVerticesSubscriber" pkg = "ros_wrap_safe_motion"  type="robotVerticesSubscriber"  /-->
 
