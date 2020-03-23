@@ -131,7 +131,7 @@ int main(int argc, char **argv)
     rviz_visual_tools::RvizVisualToolsPtr cubeObstacleMarkers;
     cubeObstacleMarkers.reset(new rviz_visual_tools::RvizVisualTools("panda_link0","/testObsVertices"));
    
-    ros::Rate loop_rate(1000);
+    ros::Rate loop_rate(10);
 
   /**
    * A count of how many messages we have sent. This is used to create
