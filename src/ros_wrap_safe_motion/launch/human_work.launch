@@ -74,7 +74,7 @@
 
 <!-- This node compute robot's dynamic and solve the collision free trajecotory problem
      And this node publisher data like: robotVerticesAugemented via topic name "/MPController/panda/pandaVertices "-->
-<!--node name ="MPController" pkg = "ros_wrap_safe_motion" type = "DynamicAndMPCSolver" /-->
+<node name ="MPController" pkg = "ros_wrap_safe_motion" type = "DynamicAndMPCSolver" />
 
 <!-- This node compute separating plane problem
      And this node publisher data like: planeData via topic name "/planeData"

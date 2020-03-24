@@ -20,10 +20,9 @@ public:
 
     // Create a random initial pose
     geometry_msgs::Pose init_pose;
-
     interactive_marker_pub_= nh_.advertise<geometry_msgs::Pose>("/interactivePose", 1000);
-    init_pose.position.x = 0.7;
-    init_pose.position.y = -0.2;
+    init_pose.position.x = 0.3;
+    init_pose.position.y = 0.4;
     init_pose.position.z = 0.1;
     // Create a 6DOF interactive marker
     static const double SCALE = 0.2;

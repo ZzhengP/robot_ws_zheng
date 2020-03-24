@@ -261,10 +261,11 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
     q_min_.resize(N_*Ndof_), q_max_.resize(N_*Ndof_) ;
 
     ddq_min_ = ddq_min, ddq_max_ = ddq_max;
-    dq_min_ = dq_min, dq_max_ = dq_max, dq_min_.tail(N_).setZero(), dq_max_.tail(N_).setZero();
+    dq_min_ = dq_min, dq_max_ = dq_max;
+    dq_min_.tail(N_).setZero(), dq_max_.tail(N_).setZero();
     q_min_ = q_min, q_max_ = q_max ;
     
-    dsafe_ = 0.01;
+    dsafe_ = 0.1;
     // ----------------------------------------------   Initialize robot's intrinsec constraints ---------------------------------------------------------
         // Initiliaze this function after having initialize MPC task because of pandaPx, pandaPu
     jnt_pos_cst_ = std::make_shared<JntPosCst>(Ndof_, N_, dt_, "JointPositionConstraint",panda_px_, panda_pu_);
@@ -290,7 +291,7 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
     total_constraint_data_.push_back(jnt_vel_cst_ -> getConstraintData());
 
     // ----------------------------------------------   Initialize collision free trajectory constraints ---------------------------------------------------------
-    table_avoidance_cst_ = std::make_shared<ObsAvoidanceCSt>(Ndof_,N_,dt_,0.05,"TableAvoidanceConstraint",panda_px_,panda_pu_);
+    table_avoidance_cst_ = std::make_shared<ObsAvoidanceCSt>(Ndof_,N_,dt_,0.1,"TableAvoidanceConstraint",panda_px_,panda_pu_);
     robot_vertices_augmented_.resize(1);
     robot_vertices_augmented_[0].resize(3, 2*N_);
 
