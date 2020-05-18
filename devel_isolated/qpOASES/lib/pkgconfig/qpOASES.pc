@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/devel_isolated/qpOASES
-
-Name: qpOASES
-Description: Description of qpOASES
-Version: 3.2.1
-Cflags: -I/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include
-Libs: -L${prefix}/lib -lqpOASES
-Requires: 

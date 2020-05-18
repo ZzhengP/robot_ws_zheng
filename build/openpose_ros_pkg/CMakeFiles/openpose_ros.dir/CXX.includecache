@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zheng/robot_ws_zheng/src/openpose_ros/openpose_ros_pkg/src/openpose.cpp
+atomic
+-
+chrono
+-
+cstdio
+-
+string
+-
+thread
+-
+vector
+-
+gflags/gflags.h
+-
+glog/logging.h
+-
+openpose/headers.hpp
+-
+

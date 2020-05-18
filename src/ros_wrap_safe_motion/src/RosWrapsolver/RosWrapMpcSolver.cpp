@@ -110,6 +110,10 @@ mpc_solve::mpc_solve(ros::NodeHandle* nodehandle, int N_horz, int Ndof, int nbrC
     panda_joint_state_7_pub_ = nh_.advertise<std_msgs::Float64>("/panda/panda_joint7_position_controller/command", 1000);
     plane_data_subscriber_  = nh_.subscribe("plane_data",100, &mpc_solve::planeDataCallback,this );
     interactive_marker_subscriber_   = nh_.subscribe("/interactivePose",100, &mpc_solve::iMarkerCallback,this);
+    goalPublisher.reset(new rviz_visual_tools::RvizVisualTools("panda_link0","/MPCgoal"));
+    PredictedPathPublisher_.reset(new rviz_visual_tools::RvizVisualTools("panda_link0","/mpcPath"));        
+    mpcpath_.resize(N_);      
+
 
 }
 
@@ -149,7 +153,7 @@ void mpc_solve::initTaskData(){
 
     ROS_INFO("INITIALIZE MPC TASK DATA ");
 
-    mpc_task_ = std::make_shared<MPC_Task>(N_,10,0.001,Ndof_,dt_,"pandaTask");
+    mpc_task_ = std::make_shared<MPC_Task>(N_,1,0.001,Ndof_,dt_,"pandaTask");
     bool task_ok;
     task_ok = mpc_task_ -> init();
     
@@ -265,7 +269,7 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
     dq_min_.tail(N_).setZero(), dq_max_.tail(N_).setZero();
     q_min_ = q_min, q_max_ = q_max ;
     
-    dsafe_ = 0.1;
+    dsafe_ = 0.2/2;
     // ----------------------------------------------   Initialize robot's intrinsec constraints ---------------------------------------------------------
         // Initiliaze this function after having initialize MPC task because of pandaPx, pandaPu
     jnt_pos_cst_ = std::make_shared<JntPosCst>(Ndof_, N_, dt_, "JointPositionConstraint",panda_px_, panda_pu_);
@@ -341,7 +345,7 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
     obs_avoidance_cst_ -> setLowerBound();
     obs_avoidance_cst_ -> setUpperBoundAndConstraint(robot_vertices_augmented_,plane_data_,panda_state_,jacobian_horizon_,q_horizon_);
     constraint_number_++ ;
-    total_constraint_data_.push_back(obs_avoidance_cst_ -> getConstraintData());
+     total_constraint_data_.push_back(obs_avoidance_cst_ -> getConstraintData());
 
 }
 
@@ -364,7 +368,7 @@ void mpc_solve::update(){
             }
 
         }
-
+        
 
         // goal_ << interactive_marker_pos_.position.x, interactive_marker_pos_.position.y, interactive_marker_pos_.position.z;
 
@@ -400,8 +404,8 @@ void mpc_solve::update(){
 
         total_constraint_data_[0] = jnt_pos_cst_ -> getConstraintData();
         total_constraint_data_[1] = jnt_vel_cst_ -> getConstraintData();
-        total_constraint_data_[2] = obs_avoidance_cst_ -> getConstraintData();
-        total_constraint_data_[3] = table_avoidance_cst_ -> getConstraintData();
+        total_constraint_data_[2] = table_avoidance_cst_ -> getConstraintData();
+        total_constraint_data_[3] = obs_avoidance_cst_ -> getConstraintData();
 
         constructProblem();
         bool is_solved ;
@@ -435,7 +439,9 @@ void mpc_solve::update(){
         for (int i(0);i<N_;i++){
             robot_vertices_augmented_[0].block(0,2*i,3,1) << ee_pos_horizon_.segment(3*i,3);
             robot_vertices_augmented_[0].block(0,2*i+1,3,1) << ee_pos_horizon_.segment(3*i,3);
-     
+            mpcpath_[i].position.x =  ee_pos_horizon_(3*i);
+            mpcpath_[i].position.y =  ee_pos_horizon_(3*i+1);
+            mpcpath_[i].position.z =  ee_pos_horizon_(3*i+2);
         }
 
         panda_ee_frame_ = panda_arm_ ->getSegmentPosition(8);
@@ -460,10 +466,23 @@ void mpc_solve::update(){
         panda_joint_state_5_pub_.publish(panda_t5);
         panda_joint_state_6_pub_.publish(panda_t6);
         panda_joint_state_7_pub_.publish(panda_t7);
+
+        rviz_visual_tools::colors colorGoal = rviz_visual_tools::GREEN;
+        rviz_visual_tools::colors colorPath = rviz_visual_tools::RED;
+
+        goalPublisher->publishSphere(goalStart_,colorGoal,0.05);
+        goalPublisher->publishSphere(goalEnd_,colorGoal,0.05);
+        goalPublisher->trigger();   
+
+        PredictedPathPublisher_->publishPath(mpcpath_,colorPath);
+ 
+        PredictedPathPublisher_->trigger();
+        PredictedPathPublisher_->deleteAllMarkers();
 }
 
 void mpc_solve::run(){
     ROS_INFO( "Start running");
+
 
     ros::Rate r(1000);// this node will work at 100hz  
     while (ros::ok()){

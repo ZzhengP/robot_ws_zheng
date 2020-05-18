@@ -290,6 +290,33 @@ constraint/RosJointVelCst.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f src/CMakeFiles/ros_robot_controller_library.dir/build.make src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.s
 .PHONY : constraint/RosJointVelCst.cpp.s
 
+humanmodel/humanmodel.o: humanmodel/humanmodel.cpp.o
+
+.PHONY : humanmodel/humanmodel.o
+
+# target to build an object file
+humanmodel/humanmodel.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f src/CMakeFiles/ros_robot_controller_library.dir/build.make src/CMakeFiles/ros_robot_controller_library.dir/humanmodel/humanmodel.cpp.o
+.PHONY : humanmodel/humanmodel.cpp.o
+
+humanmodel/humanmodel.i: humanmodel/humanmodel.cpp.i
+
+.PHONY : humanmodel/humanmodel.i
+
+# target to preprocess a source file
+humanmodel/humanmodel.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f src/CMakeFiles/ros_robot_controller_library.dir/build.make src/CMakeFiles/ros_robot_controller_library.dir/humanmodel/humanmodel.cpp.i
+.PHONY : humanmodel/humanmodel.cpp.i
+
+humanmodel/humanmodel.s: humanmodel/humanmodel.cpp.s
+
+.PHONY : humanmodel/humanmodel.s
+
+# target to generate assembly for a file
+humanmodel/humanmodel.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f src/CMakeFiles/ros_robot_controller_library.dir/build.make src/CMakeFiles/ros_robot_controller_library.dir/humanmodel/humanmodel.cpp.s
+.PHONY : humanmodel/humanmodel.cpp.s
+
 robotmodel/RobotDynTree.o: robotmodel/RobotDynTree.cpp.o
 
 .PHONY : robotmodel/RobotDynTree.o
@@ -559,6 +586,9 @@ help:
 	@echo "... constraint/RosJointVelCst.o"
 	@echo "... constraint/RosJointVelCst.i"
 	@echo "... constraint/RosJointVelCst.s"
+	@echo "... humanmodel/humanmodel.o"
+	@echo "... humanmodel/humanmodel.i"
+	@echo "... humanmodel/humanmodel.s"
 	@echo "... robotmodel/RobotDynTree.o"
 	@echo "... robotmodel/RobotDynTree.i"
 	@echo "... robotmodel/RobotDynTree.s"

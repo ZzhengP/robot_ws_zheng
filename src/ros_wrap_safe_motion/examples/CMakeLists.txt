@@ -24,3 +24,9 @@ target_link_libraries(DynamicAndMPCSolver PRIVATE ${catkin_LIBRARIES} ${GAZEBO_L
 add_executable(InteractiveMarkers InteractiveMarkers.cpp)
 target_link_libraries(InteractiveMarkers PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
 
+
+add_executable(obsInteractiveMarkersPublisher obsInteractiveMarkersPublisher.cpp)
+target_link_libraries(obsInteractiveMarkersPublisher PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
+
+
+

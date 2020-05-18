@@ -1,0 +1,1 @@
+/usr/local/bin/cmake -S/home/zheng/robot_ws_zheng/src/ros_robot_controller -B/home/zheng/robot_ws_zheng/build/ros_robot_controller --check-build-system CMakeFiles/Makefile.cmake 0

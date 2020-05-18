@@ -33,6 +33,6 @@ add_library(ros_wrap_safe_motion_library
             RosWrapsolver/RosWraplpsolve.cpp)
 
 target_include_directories(ros_wrap_safe_motion_library PUBLIC ../include)
-target_link_libraries(ros_wrap_safe_motion_library PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${iDynTree_LIBRARIES} glpk )
+target_link_libraries(ros_wrap_safe_motion_library PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${iDynTree_LIBRARIES} glpk caffe ${OpenPose_LIBS} boost_system glog jsoncpp)
 
 

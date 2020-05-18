@@ -80,16 +80,17 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -100,6 +101,17 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,21 +166,6 @@ preinstall/fast:
 depend:
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-examples/CMakeFiles/iDynTreeTest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/iDynTreeTest.dir/rule
-.PHONY : examples/CMakeFiles/iDynTreeTest.dir/rule
-
-# Convenience name for target.
-iDynTreeTest: examples/CMakeFiles/iDynTreeTest.dir/rule
-
-.PHONY : iDynTreeTest
-
-# fast build rule for target.
-iDynTreeTest/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/build
-.PHONY : iDynTreeTest/fast
 
 # Convenience name for target.
 examples/CMakeFiles/setinit.dir/rule:
@@ -258,6 +243,21 @@ ros_gazebo_sim/fast:
 .PHONY : ros_gazebo_sim/fast
 
 # Convenience name for target.
+examples/CMakeFiles/iDynTreeTest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/iDynTreeTest.dir/rule
+.PHONY : examples/CMakeFiles/iDynTreeTest.dir/rule
+
+# Convenience name for target.
+iDynTreeTest: examples/CMakeFiles/iDynTreeTest.dir/rule
+
+.PHONY : iDynTreeTest
+
+# fast build rule for target.
+iDynTreeTest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/build
+.PHONY : iDynTreeTest/fast
+
+# Convenience name for target.
 examples/CMakeFiles/qpplaneformulation.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/qpplaneformulation.dir/rule
 .PHONY : examples/CMakeFiles/qpplaneformulation.dir/rule
@@ -286,6 +286,21 @@ multiobstacle: examples/CMakeFiles/multiobstacle.dir/rule
 multiobstacle/fast:
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/build
 .PHONY : multiobstacle/fast
+
+# Convenience name for target.
+examples/CMakeFiles/2Dexample.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/2Dexample.dir/rule
+.PHONY : examples/CMakeFiles/2Dexample.dir/rule
+
+# Convenience name for target.
+2Dexample: examples/CMakeFiles/2Dexample.dir/rule
+
+.PHONY : 2Dexample
+
+# fast build rule for target.
+2Dexample/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/2Dexample.dir/build.make examples/CMakeFiles/2Dexample.dir/build
+.PHONY : 2Dexample/fast
 
 # Convenience name for target.
 examples/CMakeFiles/nonlinearsolve.dir/rule:
@@ -331,6 +346,33 @@ franka_example: examples/CMakeFiles/franka_example.dir/rule
 franka_example/fast:
 	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/franka_example.dir/build.make examples/CMakeFiles/franka_example.dir/build
 .PHONY : franka_example/fast
+
+2Dexample.o: 2Dexample.cpp.o
+
+.PHONY : 2Dexample.o
+
+# target to build an object file
+2Dexample.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/2Dexample.dir/build.make examples/CMakeFiles/2Dexample.dir/2Dexample.cpp.o
+.PHONY : 2Dexample.cpp.o
+
+2Dexample.i: 2Dexample.cpp.i
+
+.PHONY : 2Dexample.i
+
+# target to preprocess a source file
+2Dexample.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/2Dexample.dir/build.make examples/CMakeFiles/2Dexample.dir/2Dexample.cpp.i
+.PHONY : 2Dexample.cpp.i
+
+2Dexample.s: 2Dexample.cpp.s
+
+.PHONY : 2Dexample.s
+
+# target to generate assembly for a file
+2Dexample.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_robot_controller && $(MAKE) -f examples/CMakeFiles/2Dexample.dir/build.make examples/CMakeFiles/2Dexample.dir/2Dexample.cpp.s
+.PHONY : 2Dexample.cpp.s
 
 franka_example.o: franka_example.cpp.o
 
@@ -637,22 +679,26 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... iDynTreeTest"
-	@echo "... edit_cache"
+	@echo "... install"
 	@echo "... setinit"
 	@echo "... movingobstacleavoidance"
 	@echo "... qptest"
 	@echo "... obsavoidancedemo"
 	@echo "... list_install_components"
 	@echo "... ros_gazebo_sim"
+	@echo "... iDynTreeTest"
+	@echo "... edit_cache"
 	@echo "... qpplaneformulation"
 	@echo "... multiobstacle"
+	@echo "... 2Dexample"
 	@echo "... nonlinearsolve"
 	@echo "... markers"
 	@echo "... test"
 	@echo "... franka_example"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... 2Dexample.o"
+	@echo "... 2Dexample.i"
+	@echo "... 2Dexample.s"
 	@echo "... franka_example.o"
 	@echo "... franka_example.i"
 	@echo "... franka_example.s"

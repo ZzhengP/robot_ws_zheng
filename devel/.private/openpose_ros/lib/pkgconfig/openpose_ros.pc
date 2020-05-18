@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel/.private/openpose_ros
+
+Name: openpose_ros
+Description: Description of openpose_ros
+Version: 1.2.1
+Cflags: -I/home/zheng/robot_ws_zheng/src/openpose_ros/openpose_ros/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

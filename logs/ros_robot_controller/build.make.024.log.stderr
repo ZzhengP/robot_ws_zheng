@@ -57,6 +57,35 @@ Possible candidates:
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:46: warning: argument 'Px' of command @param is not found in the argument list of generic_cst::setUpperBound(const Eigen::VectorXd &robot_state)
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:59: warning: argument 'Px' of command @param is not found in the argument list of generic_cst::update(const Eigen::VectorXd &robot_state)
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:59: warning: argument 'Pu' of command @param is not found in the argument list of generic_cst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:96: warning: argument '4x4' of command @param is not found in the argument list of humanModel::Adjoint(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:103: warning: The following parameter of humanModel::Adjoint(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:39: warning: argument 'Exponential' of command @param is not found in the argument list of humanModel::AxisAng3(const Eigen::Vector3d &expc3)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:46: warning: The following parameter of humanModel::AxisAng3(const Eigen::Vector3d &expc3) is not documented:
+  parameter 'expc3'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:128: warning: argument 'Home' of command @param is not found in the argument list of humanModel::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:139: warning: The following parameters of humanModel::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList) are not documented:
+  parameter 'M'
+  parameter 'Slist'
+  parameter 'thetaList'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:49: warning: argument 'exponenential' of command @param is not found in the argument list of humanModel::MatrixExp3(const Eigen::Matrix3d &so3mat)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:55: warning: The following parameter of humanModel::MatrixExp3(const Eigen::Matrix3d &so3mat) is not documented:
+  parameter 'so3mat'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:111: warning: argument 'se3' of command @param is not found in the argument list of humanModel::MatrixExp6(const Eigen::MatrixXd &se3mat)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:117: warning: The following parameter of humanModel::MatrixExp6(const Eigen::MatrixXd &se3mat) is not documented:
+  parameter 'se3mat'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:57: warning: argument 'Rotation' of command @param is not found in the argument list of humanModel::MatrixLog3(const Eigen::Matrix3d &R)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:63: warning: The following parameter of humanModel::MatrixLog3(const Eigen::Matrix3d &R) is not documented:
+  parameter 'R'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:88: warning: argument 'spatial' of command @param is not found in the argument list of humanModel::se3ToVec(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:94: warning: The following parameter of humanModel::se3ToVec(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:79: warning: argument 'spatial' of command @param is not found in the argument list of humanModel::VecTose3(const Eigen::VectorXd &V)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:85: warning: The following parameter of humanModel::VecTose3(const Eigen::VectorXd &V) is not documented:
+  parameter 'V'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:23: warning: argument 'angular' of command @param is not found in the argument list of humanModel::VecToso3(const Eigen::Vector3d &omega)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:29: warning: The following parameter of humanModel::VecToso3(const Eigen::Vector3d &omega) is not documented:
+  parameter 'omega'
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:21: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 37 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:23: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 46 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:27: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 59 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
@@ -77,5 +106,3 @@ Possible candidates:
   parameter 'bs_J_bs'
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h:107: warning: @copydetails or @copydoc target 'KDL::SolverI::strError()' not found
-Error: /home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.dot: syntax error in line 37 near 'ntname'
-error: Problems running dot: exit code=1, command='dot', arguments='"/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.dot" -Tpng -o "/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.png"'

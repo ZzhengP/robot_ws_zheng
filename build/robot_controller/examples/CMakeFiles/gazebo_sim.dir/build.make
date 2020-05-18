@@ -120,7 +120,7 @@ gazebo_sim_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib/libqpOASES.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib/libqpOASES.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -162,7 +162,7 @@ gazebo_sim_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
-/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib/libqpOASES.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib/libqpOASES.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim: /usr/lib/x86_64-linux-gnu/libtinyxml2.so

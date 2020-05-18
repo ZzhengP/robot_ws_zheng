@@ -1,0 +1,11 @@
+<launch>
+  <arg name="model" />
+  <param name="mini_cheetah" command="$(find xacro)/xacro.py '$/home/zheng/Bureau/mini_cheetah/mini_cheetah.urdf'" />
+  <node name="mini_cheetah" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model mini_cheetah -param mini_cheetah -x 2 -y 2 -z 0.3 -R 0 -P 0 -Y -3.05"/>
+  <param name="use_gui" value="true"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+</launch>

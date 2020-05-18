@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+.PHONY : examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+
+# Convenience name for target.
+obsInteractiveMarkersPublisher: examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+
+.PHONY : obsInteractiveMarkersPublisher
+
+# fast build rule for target.
+obsInteractiveMarkersPublisher/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build
+.PHONY : obsInteractiveMarkersPublisher/fast
+
+# Convenience name for target.
 examples/CMakeFiles/InteractiveMarkers.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/rule
 .PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
@@ -353,6 +368,33 @@ movingobstacleavoidance.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/RosMovingobstacleavoidance.dir/build.make examples/CMakeFiles/RosMovingobstacleavoidance.dir/movingobstacleavoidance.cpp.s
 .PHONY : movingobstacleavoidance.cpp.s
 
+obsInteractiveMarkersPublisher.o: obsInteractiveMarkersPublisher.cpp.o
+
+.PHONY : obsInteractiveMarkersPublisher.o
+
+# target to build an object file
+obsInteractiveMarkersPublisher.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o
+.PHONY : obsInteractiveMarkersPublisher.cpp.o
+
+obsInteractiveMarkersPublisher.i: obsInteractiveMarkersPublisher.cpp.i
+
+.PHONY : obsInteractiveMarkersPublisher.i
+
+# target to preprocess a source file
+obsInteractiveMarkersPublisher.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.i
+.PHONY : obsInteractiveMarkersPublisher.cpp.i
+
+obsInteractiveMarkersPublisher.s: obsInteractiveMarkersPublisher.cpp.s
+
+.PHONY : obsInteractiveMarkersPublisher.s
+
+# target to generate assembly for a file
+obsInteractiveMarkersPublisher.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.s
+.PHONY : obsInteractiveMarkersPublisher.cpp.s
+
 obsVerticesPublisher.o: obsVerticesPublisher.cpp.o
 
 .PHONY : obsVerticesPublisher.o
@@ -473,6 +515,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... obsInteractiveMarkersPublisher"
 	@echo "... InteractiveMarkers"
 	@echo "... separatingPlane"
 	@echo "... RosMovingobstacleavoidance"
@@ -490,6 +533,9 @@ help:
 	@echo "... movingobstacleavoidance.o"
 	@echo "... movingobstacleavoidance.i"
 	@echo "... movingobstacleavoidance.s"
+	@echo "... obsInteractiveMarkersPublisher.o"
+	@echo "... obsInteractiveMarkersPublisher.i"
+	@echo "... obsInteractiveMarkersPublisher.s"
 	@echo "... obsVerticesPublisher.o"
 	@echo "... obsVerticesPublisher.i"
 	@echo "... obsVerticesPublisher.s"

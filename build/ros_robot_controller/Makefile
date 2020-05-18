@@ -1364,19 +1364,6 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named iDynTreeTest
-
-# Build rule for target.
-iDynTreeTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 iDynTreeTest
-.PHONY : iDynTreeTest
-
-# fast build rule for target.
-iDynTreeTest/fast:
-	$(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/build
-.PHONY : iDynTreeTest/fast
-
-#=============================================================================
 # Target rules for targets named setinit
 
 # Build rule for target.
@@ -1442,6 +1429,19 @@ ros_gazebo_sim/fast:
 .PHONY : ros_gazebo_sim/fast
 
 #=============================================================================
+# Target rules for targets named iDynTreeTest
+
+# Build rule for target.
+iDynTreeTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iDynTreeTest
+.PHONY : iDynTreeTest
+
+# fast build rule for target.
+iDynTreeTest/fast:
+	$(MAKE) -f examples/CMakeFiles/iDynTreeTest.dir/build.make examples/CMakeFiles/iDynTreeTest.dir/build
+.PHONY : iDynTreeTest/fast
+
+#=============================================================================
 # Target rules for targets named qpplaneformulation
 
 # Build rule for target.
@@ -1466,6 +1466,19 @@ multiobstacle: cmake_check_build_system
 multiobstacle/fast:
 	$(MAKE) -f examples/CMakeFiles/multiobstacle.dir/build.make examples/CMakeFiles/multiobstacle.dir/build
 .PHONY : multiobstacle/fast
+
+#=============================================================================
+# Target rules for targets named 2Dexample
+
+# Build rule for target.
+2Dexample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 2Dexample
+.PHONY : 2Dexample
+
+# fast build rule for target.
+2Dexample/fast:
+	$(MAKE) -f examples/CMakeFiles/2Dexample.dir/build.make examples/CMakeFiles/2Dexample.dir/build
+.PHONY : 2Dexample/fast
 
 #=============================================================================
 # Target rules for targets named nonlinearsolve
@@ -1624,14 +1637,15 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... iDynTreeTest"
 	@echo "... setinit"
 	@echo "... movingobstacleavoidance"
 	@echo "... qptest"
 	@echo "... obsavoidancedemo"
 	@echo "... ros_gazebo_sim"
+	@echo "... iDynTreeTest"
 	@echo "... qpplaneformulation"
 	@echo "... multiobstacle"
+	@echo "... 2Dexample"
 	@echo "... nonlinearsolve"
 	@echo "... markers"
 	@echo "... franka_example"

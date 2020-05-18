@@ -7,15 +7,36 @@ project(ros_wrap_safe_motion)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
+
+## ----------------------------   openpose ----------------------------------
+set(INC_DIR /usr/include
+        /usr/local/cuda/include #cuda的include位置 修改为正确的地方
+        ~/openpose/3rdparty/caffe/include #机器中正确的caffe位置
+        ~/openpose/3rdparty/caffe/src #机器中正确的caffe位置
+        )
+set(LINK_DIR /usr/lib
+        /usr/lib/x86_64-linux-gnu/
+        /usr/local/cuda/lib64 #cuda的lib位置 修改为正确的地方
+        ~/openpose/3rdparty/caffe/build/lib #caffe的lib位置 修改为正确的地方
+        )
+
+## ----------------------------  end openpose ----------------------------------
+
+
+
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
   kdl_parser
   gazebo_ros
+  cv_bridge
+  image_transport
   qpOASES
   rviz_visual_tools
   ifopt
@@ -25,6 +46,14 @@ find_package(catkin REQUIRED COMPONENTS
 )
 find_package(gazebo REQUIRED)
 find_package(iDynTree REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(OpenPose REQUIRED)
+find_package(glog)
+
+
+include_directories(${INC_DIR} ${OpenPose_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
+link_directories(${LINK_DIR} ${OpenPose_LIBS} ${OpenCV_LIBS})
+
 catkin_package(
     INCLUDE_DIRS include
     LIBRARIES ros_wrap_safe_motion_library

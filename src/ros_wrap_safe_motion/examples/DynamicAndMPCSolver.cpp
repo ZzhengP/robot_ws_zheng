@@ -89,8 +89,8 @@ int main(int argc, char **argv)
     lb.resize(N*ndof);
     ub.resize(N*ndof);
 
-    lb.setConstant(-15);
-    ub.setConstant(15);
+    lb.setConstant(-8);
+    ub.setConstant(8);
 
 
     Eigen::VectorXd ddqMin, ddqMax, dqMin, dqMax, qMin, qMax, vMax, vMin;
@@ -103,7 +103,7 @@ int main(int argc, char **argv)
 
     dqMin.resize(N*ndof), dqMax.resize(N*ndof);
     dqMin.setConstant(-3.10/2), dqMax.setConstant(3.14/2);
-    // dqMin.tail(ndof).setZero(), dqMax.tail(ndof).setZero();
+     dqMin.tail(ndof).setZero(), dqMax.tail(ndof).setZero();
 
 
     Eigen::VectorXd cartVelMin, cartVelMax ;

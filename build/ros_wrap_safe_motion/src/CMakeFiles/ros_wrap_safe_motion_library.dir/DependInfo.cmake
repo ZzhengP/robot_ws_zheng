@@ -32,10 +32,14 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/cuda/include"
+  "/home/zheng/openpose/3rdparty/caffe/include"
+  "/home/zheng/openpose/3rdparty/caffe/src"
   "."
   "/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include"
-  "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include"
+  "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
+  "/home/zheng/catkin_ws/src/master/trac_ik_lib/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
@@ -47,6 +51,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/OGRE/Terrain"
   "/usr/include/OGRE/Paging"
   "/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/../include"
+  "/usr/include/opencv"
   "/usr/include/eigen3"
   "/usr/include/ignition/math4"
   "/usr/include/ignition/transport4"

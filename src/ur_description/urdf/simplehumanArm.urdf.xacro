@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<!-- An very simplyfied human upper-body -->
+
+<robot name = "human_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ <!-- Constants for human dimension-->
+ 
+
+    <xacro:property name ="forearm_mass" value ="5" />
+    <xacro:property name ="hand_mass" value ="3" />
+    <xacro:property name ="arm_a" value ="0.2" />
+    <xacro:property name ="arm_b" value ="0.05" />
+    <xacro:property name ="arm_c" value ="0.05" />
+
+    <xacro:property name ="L1" value ="0.2" />
+
+
+    <!-- **************************** Joint Properties ********************************* -->
+
+<joint name="joint1" type="revolute">
+  <origin xyz="0.00 ${b/2} ${c - 0.05}" rpy="0. ${PI/2} 0.0"/>
+  <parent link="base_corps_link_2"/>
+  <child link="left_shoulder_psi_link"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint2" type="revolute">
+  <origin xyz="0.0 0. 0." rpy="0. 0. 0.0"/>
+  <parent link="left_shoulder_psi_link"/>
+  <child link="left_arm_shoulder"/>
+  <axis xyz="0 -1 0"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint3" type="revolute">
+  <origin xyz="${L1} 0.025 0." rpy="${PI/2} 0. 0.0"/>
+  <parent link="left_arm_shoulder"/>
+  <child link="left_forearm"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint4" type="fixed">
+    <parent link = "left_forearm"/>
+    <child link="left_hand"/>
+    <origin rpy ="0 0. 0." xyz = "${arm_a} 0.0 0."/>
+</joint>
+
+<!-- **************************** Link Properties ********************************* -->
+
+
+
+
+<link name="left_shoulder_psi_link" >
+  <visual>
+    <geometry>
+      <cylinder radius="0.01" length="0.075"/>
+    </geometry>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+  </visual>
+  <inertial>
+    <mass value="0.01"/>
+    <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+  </inertial>
+</link>
+<!--link name="link_virtual2">
+  <visual>
+    <geometry>
+      <cylinder radius="0.01" length="0.075"/>
+    </geometry>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 0.0"/>
+  </visual>
+</link-->
+
+<link name="left_arm_shoulder">
+  <visual>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.03 0" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+  <collision>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.03 0" rpy="0.0 0.0 0.0"/>
+  </collision>
+  <inertial>
+    <mass value="${forearm_mass}"/>
+    <inertia ixx="${forearm_mass / 12.0 * (arm_b*arm_b + arm_c*arm_c)}" ixy="0.0" ixz="0.0" 
+             iyy="${forearm_mass / 12.0 * (arm_a*arm_a + arm_c*arm_c)}" iyz="0.0" 
+             izz= "${forearm_mass / 12.0 * (arm_a*arm_a + arm_b*arm_b)}"/>
+  </inertial>
+</link>
+
+<link name="left_forearm">
+  <visual>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.0 -0.002" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+ <inertial>
+    <mass value="${forearm_mass}"/>
+    <inertia ixx="${forearm_mass / 12.0 * (arm_b*arm_b + arm_c*arm_c)}" ixy="0.0" ixz="0.0" 
+             iyy="${forearm_mass / 12.0 * (arm_a*arm_a + arm_c*arm_c)}" iyz="0.0" 
+             izz= "${forearm_mass / 12.0 * (arm_a*arm_a + arm_b*arm_b)}"/>
+  </inertial>
+  
+  <collision>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.0 -0.002" rpy="0.0 0.0 0.0"/>
+  </collision> 
+</link>
+
+
+<link name="left_hand">
+  <visual>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+    <origin xyz="0. 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+ <inertial>
+    <mass value="${hand_mass}"/>
+    <inertia ixx="${2/5 * hand_mass*0.05*0.05}" ixy="0.0" ixz="0.0" 
+             iyy="${2/5 * hand_mass*0.05*0.05}" iyz="0.0" 
+             izz= "${2/5 * hand_mass*0.05*0.05}"/>
+  </inertial>
+  
+  <collision>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+    <origin xyz="0. 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </collision> 
+</link>
+
+
+
+    <!-- Import gazebo element -->
+
+    <gazebo reference="left_shoulder_psi_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="left_arm_shoulder">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="left_forearm">
+        <material>Gazebo/White</material>
+    </gazebo>
+    
+    <gazebo reference="left_hand">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+     <!-- **************************** Joint Properties ********************************* -->
+
+<joint name="joint5" type="revolute">
+  <origin xyz="0.00 -${b/2} ${c - 0.05}" rpy="${PI} ${PI/2} 0.0"/>
+  <parent link="base_corps_link_2"/>
+  <child link="right_shoulder_psi_link"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint6" type="revolute">
+  <origin xyz="0.0 0. 0." rpy="0. 0. 0.0"/>
+  <parent link="right_shoulder_psi_link"/>
+  <child link="right_arm_shoulder"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint7" type="revolute">
+  <origin xyz="${L1} 0.025 0." rpy="${PI/2} 0. 0.0"/>
+  <parent link="right_arm_shoulder"/>
+  <child link="right_forearm"/>
+  <axis xyz="0 0 -1"/>
+  <limit lower="-${PI/2}" upper="${PI/2}" effort="100.0" velocity="10.0"/>
+</joint>
+
+<joint name="joint8" type="fixed">
+    <parent link = "right_forearm"/>
+    <child link="right_hand"/>
+    <origin rpy ="0 0. 0." xyz = "${arm_a} 0.0 0."/>
+</joint>
+
+<!-- **************************** Link Properties ********************************* -->
+
+
+
+
+<link name="right_shoulder_psi_link" >
+  <visual>
+    <geometry>
+      <cylinder radius="0.01" length="0.075"/>
+    </geometry>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+  </visual>
+  <inertial>
+    <mass value="0.01"/>
+    <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+  </inertial>
+</link>
+<!--link name="link_virtual2">
+  <visual>
+    <geometry>
+      <cylinder radius="0.01" length="0.075"/>
+    </geometry>
+    <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 0.0"/>
+  </visual>
+</link-->
+
+<link name="right_arm_shoulder">
+  <visual>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.03 0" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+  <collision>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.03 0" rpy="0.0 0.0 0.0"/>
+  </collision>
+  <inertial>
+    <mass value="${forearm_mass}"/>
+    <inertia ixx="${forearm_mass / 12.0 * (arm_b*arm_b + arm_c*arm_c)}" ixy="0.0" ixz="0.0" 
+             iyy="${forearm_mass / 12.0 * (arm_a*arm_a + arm_c*arm_c)}" iyz="0.0" 
+             izz= "${forearm_mass / 12.0 * (arm_a*arm_a + arm_b*arm_b)}"/>
+  </inertial>
+</link>
+
+<link name="right_forearm">
+  <visual>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.0 -0.002" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+ <inertial>
+    <mass value="${forearm_mass}"/>
+    <inertia ixx="${forearm_mass / 12.0 * (arm_b*arm_b + arm_c*arm_c)}" ixy="0.0" ixz="0.0" 
+             iyy="${forearm_mass / 12.0 * (arm_a*arm_a + arm_c*arm_c)}" iyz="0.0" 
+             izz= "${forearm_mass / 12.0 * (arm_a*arm_a + arm_b*arm_b)}"/>
+  </inertial>
+  
+  <collision>
+    <geometry>
+      <box size="${arm_a} ${arm_b} ${arm_c}"/>
+    </geometry>
+    <origin xyz="0.1 0.0 -0.002" rpy="0.0 0.0 0.0"/>
+  </collision> 
+</link>
+
+
+<link name="right_hand">
+  <visual>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+    <origin xyz="0. 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </visual>
+
+  <inertial>
+    <mass value="${hand_mass}"/>
+    <inertia ixx="${2/5 * hand_mass*0.05*0.05}" ixy="0.0" ixz="0.0" 
+             iyy="${2/5 * hand_mass*0.05*0.05}" iyz="0.0" 
+             izz= "${2/5 * hand_mass*0.05*0.05}"/>
+  </inertial>
+  
+  <collision>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+    <origin xyz="0. 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </collision> 
+</link>
+
+
+
+    <!-- Import gazebo element -->
+
+    <gazebo reference="right_shoulder_psi_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="right_arm_shoulder">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="right_forearm">
+        <material>Gazebo/White</material>
+    </gazebo>
+    
+    <gazebo reference="right_hand">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor8">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+   <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/human</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+</robot>

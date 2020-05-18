@@ -21,7 +21,7 @@
 #include "std_msgs/Float64.h"
 #include "std_msgs/Float64MultiArray.h"
 #include "visualization_msgs/InteractiveMarkerUpdate.h"
-
+#include "rviz_visual_tools/rviz_visual_tools.h"
 using namespace plane;
 
 class mpc_solve
@@ -112,6 +112,9 @@ private:
     ros::Publisher panda_joint_state_5_pub_;
     ros::Publisher panda_joint_state_6_pub_;
     ros::Publisher panda_joint_state_7_pub_;
+    rviz_visual_tools::RvizVisualToolsPtr goalPublisher;
+    rviz_visual_tools::RvizVisualToolsPtr PredictedPathPublisher_;
+    std::vector<geometry_msgs::Pose> mpcpath_;
     ros::Subscriber plane_data_subscriber_;
     ros::Subscriber interactive_marker_subscriber_;
 

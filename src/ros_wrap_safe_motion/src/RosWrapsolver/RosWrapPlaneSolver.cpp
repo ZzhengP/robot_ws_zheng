@@ -57,8 +57,8 @@ void PlaneSolver::setCost(const Eigen::VectorXd& f){
     H3(4,4) = 0.2;
     g3.setZero();
     // For linearized
-    H_ = 0.01*H1 + 0.1*H2 + H3;
-    g_ = 0.01*g1 + 0.1*g2 + g3;
+    H_ = 0.1*H1 + 0.1*H2 + H3;
+    g_ = 0.1*g1 + 0.1*g2 + g3;
     // For non linear
 //    H_ = 0.1*H1 + 0.1*H2 + H3;
 //    g_ = 0.1*g1 + 0.1*g2 + g3;
@@ -109,7 +109,7 @@ void PlaneSolver::setCstMatrix(const Eigen::MatrixXd &robotPartielVertices,
 //    A_.block(rcols + pcols, 0, 1 ,5) << 0, 0, 0, 0, 0 ;
     // dsafe_ = dsafe_ /2 ;
     // dsafe_ = 0.1;
-    dsafe_ = 0.05;
+    dsafe_ = 0.;
     lbA_.setConstant(dsafe_);
     //  lbA_.setZero();
     lbA_(rcols + pcols) = 0.9;

@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/install_isolated
-
-Name: qpOASES
-Description: Description of qpOASES
-Version: 3.2.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lqpOASES
-Requires: 

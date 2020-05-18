@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib;/home/zheng/robot_ws_zheng/devel_isolated/ur_description/lib;/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib;/home/zheng/robot_ws_zheng/devel_isolated/ros_robot_controller/lib;/home/zheng/robot_ws_zheng/devel_isolated/robot_controller/lib;/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib;/home/zheng/robot_ws_zheng/devel_isolated/lpsolve_catkin/lib;/home/zheng/robot_ws_zheng/devel_isolated/franka_description/lib;/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple/lib;/home/zheng/robert_ws/devel/lib;/home/zheng/robot_ws_zheng/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib;/home/zheng/robot_ws_zheng/devel/lib;/home/zheng/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

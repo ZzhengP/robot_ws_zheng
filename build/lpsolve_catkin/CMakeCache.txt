@@ -310,7 +310,7 @@ _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 
 //The directory containing a CMake configuration file for catkin_simple.
-catkin_simple_DIR:PATH=/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple/share/catkin_simple/cmake
+catkin_simple_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/catkin_simple/cmake
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/lpsolve_catkin/gtest/googlemock

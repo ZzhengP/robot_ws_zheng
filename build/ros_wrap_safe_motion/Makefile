@@ -1364,6 +1364,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named obsInteractiveMarkersPublisher
+
+# Build rule for target.
+obsInteractiveMarkersPublisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 obsInteractiveMarkersPublisher
+.PHONY : obsInteractiveMarkersPublisher
+
+# fast build rule for target.
+obsInteractiveMarkersPublisher/fast:
+	$(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build
+.PHONY : obsInteractiveMarkersPublisher/fast
+
+#=============================================================================
 # Target rules for targets named InteractiveMarkers
 
 # Build rule for target.
@@ -1572,6 +1585,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... obsInteractiveMarkersPublisher"
 	@echo "... InteractiveMarkers"
 	@echo "... separatingPlane"
 	@echo "... RosMovingobstacleavoidance"

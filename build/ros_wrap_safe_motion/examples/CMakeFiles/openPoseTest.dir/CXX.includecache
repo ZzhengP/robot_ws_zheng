@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/openPoseTest.cpp
+openpose/flags.hpp
+-
+openpose/headers.hpp
+-
+

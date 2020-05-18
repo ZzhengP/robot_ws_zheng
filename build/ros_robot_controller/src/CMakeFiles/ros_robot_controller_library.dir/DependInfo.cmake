@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosGenericCst.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosGenericCst.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointPosCst.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointPosCst.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/constraint/RosJointVelCst.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/constraint/RosJointVelCst.cpp.o"
+  "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/humanmodel/humanmodel.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/RobotDynTree.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RobotDynTree.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/RosRobotModel.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/RosRobotModel.cpp.o"
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/chainjnttojacdotsolver.cpp" "/home/zheng/robot_ws_zheng/build/ros_robot_controller/src/CMakeFiles/ros_robot_controller_library.dir/robotmodel/chainjnttojacdotsolver.cpp.o"
@@ -34,8 +35,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "/home/zheng/robot_ws_zheng/src/ros_robot_controller/include"
-  "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include"
+  "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
+  "/home/zheng/catkin_ws/src/master/trac_ik_lib/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"

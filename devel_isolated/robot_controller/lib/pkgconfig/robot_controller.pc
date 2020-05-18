@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/devel_isolated/robot_controller
-
-Name: robot_controller
-Description: Description of robot_controller
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

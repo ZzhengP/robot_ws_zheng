@@ -57,6 +57,35 @@ Possible candidates:
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:46: warning: argument 'Px' of command @param is not found in the argument list of generic_cst::setUpperBound(const Eigen::VectorXd &robot_state)
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:59: warning: argument 'Px' of command @param is not found in the argument list of generic_cst::update(const Eigen::VectorXd &robot_state)
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h:59: warning: argument 'Pu' of command @param is not found in the argument list of generic_cst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:96: warning: argument '4x4' of command @param is not found in the argument list of humanModel::Adjoint(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:103: warning: The following parameter of humanModel::Adjoint(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:39: warning: argument 'Exponential' of command @param is not found in the argument list of humanModel::AxisAng3(const Eigen::Vector3d &expc3)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:46: warning: The following parameter of humanModel::AxisAng3(const Eigen::Vector3d &expc3) is not documented:
+  parameter 'expc3'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:128: warning: argument 'Home' of command @param is not found in the argument list of humanModel::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:139: warning: The following parameters of humanModel::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList) are not documented:
+  parameter 'M'
+  parameter 'Slist'
+  parameter 'thetaList'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:49: warning: argument 'exponenential' of command @param is not found in the argument list of humanModel::MatrixExp3(const Eigen::Matrix3d &so3mat)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:55: warning: The following parameter of humanModel::MatrixExp3(const Eigen::Matrix3d &so3mat) is not documented:
+  parameter 'so3mat'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:111: warning: argument 'se3' of command @param is not found in the argument list of humanModel::MatrixExp6(const Eigen::MatrixXd &se3mat)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:117: warning: The following parameter of humanModel::MatrixExp6(const Eigen::MatrixXd &se3mat) is not documented:
+  parameter 'se3mat'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:57: warning: argument 'Rotation' of command @param is not found in the argument list of humanModel::MatrixLog3(const Eigen::Matrix3d &R)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:63: warning: The following parameter of humanModel::MatrixLog3(const Eigen::Matrix3d &R) is not documented:
+  parameter 'R'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:88: warning: argument 'spatial' of command @param is not found in the argument list of humanModel::se3ToVec(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:94: warning: The following parameter of humanModel::se3ToVec(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:79: warning: argument 'spatial' of command @param is not found in the argument list of humanModel::VecTose3(const Eigen::VectorXd &V)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:85: warning: The following parameter of humanModel::VecTose3(const Eigen::VectorXd &V) is not documented:
+  parameter 'V'
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:23: warning: argument 'angular' of command @param is not found in the argument list of humanModel::VecToso3(const Eigen::Vector3d &omega)
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:29: warning: The following parameter of humanModel::VecToso3(const Eigen::Vector3d &omega) is not documented:
+  parameter 'omega'
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:21: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 37 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:23: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 46 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosJointPosCst.h:27: warning: argument 'Px' of command @param is not found in the argument list of jntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 59 in file /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/constraint/RosGenericCst.h
@@ -77,9 +106,62 @@ Possible candidates:
   parameter 'bs_J_bs'
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h:107: warning: @copydetails or @copydoc target 'KDL::SolverI::strError()' not found
-Error: dot: can't open /home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/latex/color_8h__dep__incl.dot
-error: Problems running dot: exit code=2, command='dot', arguments='"/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/latex/color_8h__dep__incl.dot" -Tpdf -o "/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/latex/color_8h__dep__incl.pdf"'
-Error: dot: can't open /home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.dot
-error: Problems running dot: exit code=2, command='dot', arguments='"/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.dot" -Tpng -o "/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/color_8h__dep__incl.png"'
-Error: dot: can't open /home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.dot
-error: Problems running dot: exit code=2, command='dot', arguments='"/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.dot" -Tcmapx -o "/home/zheng/robot_ws_zheng/src/ros_robot_controller/docs/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.map"'
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:[m[K In member function ‘[01m[Kstd::vector<Eigen::Matrix<double, -1, 1> > humanModel::computeOccupancy(const VectorXd&, const VectorXd&, const VectorXd&, const int&, const double&)[m[K’:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:367:21:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[KEigen::Vector3d {aka Eigen::Matrix<double, 3, 1>}[m[K’ and ‘[01m[Kvoid[m[K’)
+   ee_vel_normalized = ee_vel.normalize();
+[01;32m[K                     ^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:5[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:206:33:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>&) [with _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE Matrix& operator=(const Matrix& other)
+[01;32m[K                                 ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:206:33:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kvoid[m[K’ to ‘[01m[Kconst Eigen::Matrix<double, 3, 1>&[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:223:33:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = OtherDerived; _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE Matrix& operator=(const DenseBase<OtherDerived>& other)
+[01;32m[K                                 ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:223:33:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:367:21:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst Eigen::DenseBase<Derived>[m[K’ and ‘[01m[Kvoid[m[K’
+   ee_vel_normalized = ee_vel.normalize();
+[01;32m[K                     ^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:5[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:236:33:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::EigenBase<OtherDerived>&) [with OtherDerived = OtherDerived; _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE Matrix& operator=(const EigenBase<OtherDerived> &other)
+[01;32m[K                                 ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:236:33:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:367:21:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst Eigen::EigenBase<Derived>[m[K’ and ‘[01m[Kvoid[m[K’
+   ee_vel_normalized = ee_vel.normalize();
+[01;32m[K                     ^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:5[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:243:33:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::ReturnByValue<OtherDerived>&) [with OtherDerived = OtherDerived; _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     EIGEN_STRONG_INLINE Matrix& operator=(const ReturnByValue<OtherDerived>& func)
+[01;32m[K                                 ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:243:33:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:367:21:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst Eigen::ReturnByValue<Derived>[m[K’ and ‘[01m[Kvoid[m[K’
+   ee_vel_normalized = ee_vel.normalize();
+[01;32m[K                     ^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:438:0[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/humanmodel/humanmodel.h:5[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:281:13:[m[K [01;36m[Knote: [m[Kcandidate: Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>&&) [with _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     Matrix& operator=(Matrix&& other) EIGEN_NOEXCEPT_IF(std::is_nothrow_move_assignable<Scalar>::value)
+[01;32m[K             ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:281:13:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kvoid[m[K’ to ‘[01m[KEigen::Matrix<double, 3, 1>&&[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:392:13:[m[K [01;36m[Knote: [m[Kcandidate: template<class OtherDerived> Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::RotationBase<OtherDerived, ColsAtCompileTime>&) [with OtherDerived = OtherDerived; _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]
+     Matrix& operator=(const RotationBase<OtherDerived,ColsAtCompileTime>& r);
+[01;32m[K             ^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:392:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/humanmodel/humanmodel.cpp:367:21:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst Eigen::RotationBase<OtherDerived, 1>[m[K’ and ‘[01m[Kvoid[m[K’
+   ee_vel_normalized = ee_vel.normalize();
+[01;32m[K                     ^[m[K
+make[2]: *** [src/CMakeFiles/ros_robot_controller_library.dir/humanmodel/humanmodel.cpp.o] Error 1
+make[1]: *** [src/CMakeFiles/ros_robot_controller_library.dir/all] Error 2
+make: *** [all] Error 2

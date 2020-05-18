@@ -1,11 +1,55 @@
+<?xml version="1.0"?>
 <launch>
-  <arg name="model" />
-  <param name="human_description2" command="$(find xacro)/xacro.py '$(find human_model_gazebo)/urdf/humanPu.urdf'" />
-  <node name="urdf_spawner_human2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-        args="-urdf -model human2 -param human_description2 -x 2 -y 2 -z 0.3 -R 0 -P 0 -Y -3.05"/>
-  <param name="use_gui" value="true"/>
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+<arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+<arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+<arg name="rviz"  default="true"/>
+<arg name="model" default="/home/zheng/robot_ws_zheng/src/ur_description/urdf/simplehuman.urdf.xacro"/>
+<arg name="gui" default="true" />
+<!-- startup simulated world -->
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="world_name" default="worlds/empty.world"/>
+  <arg name="paused" value="$(arg paused)"/>
+  <arg name="gui" value="$(arg gui)"/>
+</include>
+
+<param name="robot_description" 
+       command="$(find xacro)/xacro --inorder /home/zheng/robot_ws_zheng/src/ur_description/urdf/simplehuman.urdf.xacro" />
+
+
+<node name="spawn_urdf" pkg="gazebo_ros"
+      type="spawn_model" args="-param robot_description -urdf -model robot" />
+
+
+
+
+<rosparam file="$(find ros_robot_controller)/config/humanControl.yaml" command="load"/>
+
+<!-- load the controllers -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" ns="/human" args="joint_state_controller
+      joint_chest_z_controller
+      joint_chest_y_controller
+      joint1_controller
+      joint2_controller
+      joint3_controller
+      joint5_controller
+      joint6_controller
+      joint7_controller"/>
+
+
+
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  respawn="false" output="screen">
+  <rosparam param="publish_frequency">1000</rosparam>
+  <remap from="/joint_states" to="/human/joint_states" />
+ </node >
+
+ <node name = "joint_state_publisher" pkg = "joint_state_publisher" type = "joint_state_publisher" />
+
+
+  <node name="rviz" pkg="rviz" type="rviz"  required="true" />
+
 
 </launch>

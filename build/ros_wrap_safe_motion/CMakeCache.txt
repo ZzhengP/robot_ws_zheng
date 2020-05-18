@@ -357,6 +357,9 @@ FreeImage_INCLUDE_DIRS:PATH=/usr/include
 //Path to a library.
 FreeImage_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreeimage.so
 
+//The directory containing a CMake configuration file for GFlags.
+GFlags_DIR:PATH=/usr/local/lib/cmake/gflags
+
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
 
@@ -389,6 +392,9 @@ GTS_LIBRARY_gts:FILEPATH=/usr/lib/x86_64-linux-gnu/libgts.so
 
 //Path to a library.
 GTS_LIBRARY_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
+
+//The directory containing a CMake configuration file for Glog.
+Glog_DIR:PATH=Glog_DIR-NOTFOUND
 
 //Path to a library.
 JSONCPP_LIBRARY_jsoncpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libjsoncpp.so
@@ -636,6 +642,12 @@ OGRE_Volume_LIBRARY_FWK:STRING=NOTFOUND
 //x
 OGRE_Volume_LIBRARY_REL:FILEPATH=/usr/lib/x86_64-linux-gnu/libOgreVolume.so
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/share/OpenCV
+
+//The directory containing a CMake configuration file for OpenPose.
+OpenPose_DIR:PATH=/usr/local/lib/OpenPose
+
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
@@ -744,8 +756,14 @@ actionlib_msgs_DIR:PATH=/opt/ros/melodic/share/actionlib_msgs/cmake
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/melodic/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/melodic/share/dynamic_reconfigure/cmake
@@ -785,6 +803,9 @@ genpy_DIR:PATH=/opt/ros/melodic/share/genpy/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
+
+//The directory containing a CMake configuration file for glog.
+glog_DIR:PATH=glog_DIR-NOTFOUND
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/gtest/googlemock
@@ -862,6 +883,9 @@ ignition-msgs1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs1
 //The directory containing a CMake configuration file for ignition-transport4.
 ignition-transport4_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-transport4
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/melodic/share/image_transport/cmake
+
 //The directory containing a CMake configuration file for jsoncpp.
 jsoncpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/jsoncpp
 
@@ -872,7 +896,7 @@ kdl_conversions_DIR:PATH=/opt/ros/melodic/share/kdl_conversions/cmake
 kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libtrac_ik.so
+lib:FILEPATH=/home/zheng/catkin_ws/devel/lib/libtrac_ik.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/melodic/share/message_filters/cmake
@@ -958,8 +982,11 @@ pkgcfg_lib_ZIP_zip:FILEPATH=/usr/lib/x86_64-linux-gnu/libzip.so
 //Path to a library.
 pkgcfg_lib_ZeroMQ_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
 
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
+
 //The directory containing a CMake configuration file for qpOASES.
-qpOASES_DIR:PATH=/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/share/qpOASES/cmake
+qpOASES_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/qpOASES/cmake
 
 //Value Computed by CMake
 ros_wrap_safe_motion_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion
@@ -968,7 +995,7 @@ ros_wrap_safe_motion_BINARY_DIR:STATIC=/home/zheng/robot_ws_zheng/build/ros_wrap
 ros_wrap_safe_motion_SOURCE_DIR:STATIC=/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion
 
 //Dependencies for the target
-ros_wrap_safe_motion_library_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib/libqpOASES.so;general;/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib/librviz_visual_tools.so;general;/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib/librviz_visual_tools_gui.so;general;/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib/librviz_visual_tools_remote_control.so;general;/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib/librviz_visual_tools_imarker_simple.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libifopt_core.so;general;/opt/ros/melodic/lib/libifopt_ipopt.so;general;/opt/ros/melodic/lib/libtrac_ik.so;general;/opt/ros/melodic/lib/libkdl_parser.so;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libeigen_conversions.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/local/lib/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib/libqpOASES.so;general;iDynTree::idyntree-core;general;iDynTree::idyntree-model;general;iDynTree::idyntree-sensors;general;iDynTree::idyntree-modelio-xml;general;iDynTree::idyntree-modelio-urdf;general;iDynTree::idyntree-estimation;general;iDynTree::idyntree-solid-shapes;general;iDynTree::idyntree-high-level;general;iDynTree::idyntree-inverse-kinematics;general;iDynTree::idyntree-optimalcontrol;general;iDynTree::idyntree-high-level-kdl;general;iDynTree::idyntree-regressors;general;iDynTree::idyntree-visualization;general;glpk;
+ros_wrap_safe_motion_library_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib/libqpOASES.so;general;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools.so;general;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools_gui.so;general;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools_remote_control.so;general;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools_imarker_simple.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libifopt_core.so;general;/opt/ros/melodic/lib/libifopt_ipopt.so;general;/home/zheng/catkin_ws/devel/lib/libtrac_ik.so;general;/opt/ros/melodic/lib/libkdl_parser.so;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libeigen_conversions.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/local/lib/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib/libqpOASES.so;general;iDynTree::idyntree-core;general;iDynTree::idyntree-model;general;iDynTree::idyntree-sensors;general;iDynTree::idyntree-modelio-xml;general;iDynTree::idyntree-modelio-urdf;general;iDynTree::idyntree-estimation;general;iDynTree::idyntree-solid-shapes;general;iDynTree::idyntree-high-level;general;iDynTree::idyntree-inverse-kinematics;general;iDynTree::idyntree-optimalcontrol;general;iDynTree::idyntree-high-level-kdl;general;iDynTree::idyntree-regressors;general;iDynTree::idyntree-visualization;general;glpk;general;caffe;general;openpose;general;boost_system;general;glog;general;jsoncpp;
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
@@ -1004,7 +1031,7 @@ rospy_DIR:PATH=/opt/ros/melodic/share/rospy/cmake
 rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for rviz_visual_tools.
-rviz_visual_tools_DIR:PATH=/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/share/rviz_visual_tools/cmake
+rviz_visual_tools_DIR:PATH=/home/zheng/robot_ws_zheng/devel/share/rviz_visual_tools/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
@@ -1037,7 +1064,7 @@ tf_DIR:PATH=/opt/ros/melodic/share/tf/cmake
 tf_conversions_DIR:PATH=/opt/ros/melodic/share/tf_conversions/cmake
 
 //The directory containing a CMake configuration file for trac_ik_lib.
-trac_ik_lib_DIR:PATH=/opt/ros/melodic/share/trac_ik_lib/cmake
+trac_ik_lib_DIR:PATH=/home/zheng/catkin_ws/devel/share/trac_ik_lib/cmake
 
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/melodic/share/trajectory_msgs/cmake
@@ -1461,6 +1488,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/local/bin/doxygen][cfound co
 FIND_PACKAGE_MESSAGE_DETAILS_GTS:INTERNAL=[true][v()]
 //Details about finding JSONCPP
 FIND_PACKAGE_MESSAGE_DETAILS_JSONCPP:INTERNAL=[true][v()]
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v3.2.0()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Protobuf
