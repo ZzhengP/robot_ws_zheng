@@ -46,6 +46,7 @@ examples/CMakeFiles/DynamicAndMPCSolver.dir/DynamicAndMPCSolver.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointAccCst.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h
+ /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsepPlane/RosWrapsepPlane.h

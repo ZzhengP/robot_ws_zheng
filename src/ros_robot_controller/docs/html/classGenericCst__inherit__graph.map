@@ -1,7 +1,8 @@
 <map id="GenericCst" name="GenericCst">
-<area shape="rect" id="node1" title="The generic constraint class &#160;Which is defined by a lower bound, upper bound and constraint matrix." alt="" coords="167,5,255,32"/>
+<area shape="rect" id="node1" title="The generic constraint class &#160;Which is defined by a lower bound, upper bound and constraint matrix." alt="" coords="222,5,310,32"/>
 <area shape="rect" id="node2" href="$classCartVelCst.html" title=" " alt="" coords="5,80,92,107"/>
 <area shape="rect" id="node3" href="$classJntAccCst.html" title="Acceleration constraint." alt="" coords="116,80,200,107"/>
 <area shape="rect" id="node4" href="$classJntPosCst.html" title="Joint position constraint class." alt="" coords="224,80,308,107"/>
 <area shape="rect" id="node5" href="$classJntVelCst.html" title=" " alt="" coords="333,80,413,107"/>
+<area shape="rect" id="node6" href="$classObsAvoidanceCSt.html" title=" " alt="" coords="437,80,567,107"/>
 </map>

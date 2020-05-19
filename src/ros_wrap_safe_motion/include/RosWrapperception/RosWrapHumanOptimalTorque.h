@@ -1,0 +1,6 @@
+#ifndef ROSWRAPHUMANOPTIMALTORQUE_H
+#define ROSWRAPHUMANOPTIMALTORQUE_H
+
+#pragma once 
+
+#endif

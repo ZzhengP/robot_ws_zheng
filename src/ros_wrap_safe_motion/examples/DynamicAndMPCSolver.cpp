@@ -115,6 +115,7 @@ int main(int argc, char **argv)
         cartVelMax.segment(3*k,3) << 0.6, 0.6, 0.6 ;
     }
 
+    
     MPController -> initTaskData();
     MPController -> initArmData(panda_urdf,panda_q_init,panda_dotq_init);
     MPController -> initMPCData(lb,ub);

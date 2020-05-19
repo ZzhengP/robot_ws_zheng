@@ -93,166 +93,167 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;std_msgs/Float64MultiArray.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;visualization_msgs/InteractiveMarkerUpdate.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;rviz_visual_tools/rviz_visual_tools.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceplane.html">plane</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmpc__solve.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmpc__solve.html">mpc_solve</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classmpc__solve.html">mpc_solve</a>(<span class="keywordtype">int</span> N_horz, <span class="keywordtype">int</span> Ndof, <span class="keywordtype">int</span> nbrCst);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classmpc__solve.html">mpc_solve</a>(ros::NodeHandle* nodehandle, <span class="keywordtype">int</span> N_horz, <span class="keywordtype">int</span> Ndof, <span class="keywordtype">int</span> nbrCst, <span class="keywordtype">double</span> dt);</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">   36</a></span>&#160;    <a class="code" href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">~mpc_solve</a>(){}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;map&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceplane.html">plane</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classmpc__solve.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmpc__solve.html">mpc_solve</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classmpc__solve.html">mpc_solve</a>(<span class="keywordtype">int</span> N_horz, <span class="keywordtype">int</span> Ndof, <span class="keywordtype">int</span> nbrCst);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classmpc__solve.html">mpc_solve</a>(ros::NodeHandle* nodehandle, <span class="keywordtype">int</span> N_horz, <span class="keywordtype">int</span> Ndof, <span class="keywordtype">int</span> nbrCst, <span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">   37</a></span>&#160;    <a class="code" href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">~mpc_solve</a>(){}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> initMPCData(Eigen::VectorXd lb, Eigen::VectorXd ub);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> initTaskData();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> initArmData(<span class="keyword">const</span> std::string&amp; panda_urdf, <span class="keyword">const</span> KDL::JntArray&amp; panda_q_init, <span class="keyword">const</span> KDL::JntArray&amp; panda_dq_init);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> initRobotConstraintData(<span class="keyword">const</span> Eigen::VectorXd &amp;ddq_min, <span class="keyword">const</span> Eigen::VectorXd &amp;ddq_max,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;dq_min, <span class="keyword">const</span> Eigen::VectorXd &amp;dq_max, </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;q_min, <span class="keyword">const</span> Eigen::VectorXd &amp;q_max,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;v_min, <span class="keyword">const</span> Eigen::VectorXd &amp;v_max);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> initMPCData(Eigen::VectorXd lb, Eigen::VectorXd ub);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> initTaskData();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> initArmData(<span class="keyword">const</span> std::string&amp; panda_urdf, <span class="keyword">const</span> KDL::JntArray&amp; panda_q_init, <span class="keyword">const</span> KDL::JntArray&amp; panda_dq_init);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> initRobotConstraintData(<span class="keyword">const</span> Eigen::VectorXd &amp;ddq_min, <span class="keyword">const</span> Eigen::VectorXd &amp;ddq_max,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;dq_min, <span class="keyword">const</span> Eigen::VectorXd &amp;dq_max, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;q_min, <span class="keyword">const</span> Eigen::VectorXd &amp;q_max,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keyword">const</span> Eigen::VectorXd &amp;v_min, <span class="keyword">const</span> Eigen::VectorXd &amp;v_max);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> run();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> run();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> solve(Eigen::MatrixXd H, Eigen::VectorXd g,Eigen::VectorXd lb, Eigen::VectorXd ub);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> solve();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> constructProblem(<span class="keyword">const</span> std::vector&lt;constraintData&gt; &amp;constraintVectorData,<span class="keyword">const</span> Eigen::MatrixXd H, <span class="keyword">const</span> Eigen::VectorXd g);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> constructProblem();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> verticesPublisher();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> planeDataCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; plane_msg);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> iMarkerCallback(<span class="keyword">const</span> geometry_msgs::Pose::ConstPtr&amp; imarker_msg);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">   76</a></span>&#160;   Eigen::VectorXd <a class="code" href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">getSolution</a>()</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> optimal_solution_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">   81</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">setDefaultOptions</a>()</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span>(!qpoases_)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;qpsolver pointer is null&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        qpoases_-&gt;setOptions( options_ );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        qpoases_-&gt;setPrintLevel(qpOASES::PL_HIGH);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        qpoases_standard_-&gt;setOptions( options_ );</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        qpoases_standard_-&gt;setPrintLevel(qpOASES::PL_HIGH);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">print</a>(){</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;H_ \n &quot;</span> &lt;&lt;  H_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;g_ \n &quot;</span> &lt;&lt; g_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;A_ \n &quot;</span> &lt;&lt; A_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;lbA_ \n &quot;</span> &lt;&lt; lbA_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ubA_ \n &quot;</span> &lt;&lt; ubA_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;lb_ \n &quot;</span> &lt;&lt; lb_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ub_ \n &quot;</span> &lt;&lt; ub_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ros::NodeHandle nh_;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// create ros topic for sending msg</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ros::Publisher panda_joint_state_1_pub_ ;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ros::Publisher panda_joint_state_2_pub_ ; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ros::Publisher panda_joint_state_3_pub_;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ros::Publisher panda_joint_state_4_pub_;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    ros::Publisher panda_joint_state_5_pub_;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ros::Publisher panda_joint_state_6_pub_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ros::Publisher panda_joint_state_7_pub_;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    rviz_visual_tools::RvizVisualToolsPtr goalPublisher;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    rviz_visual_tools::RvizVisualToolsPtr PredictedPathPublisher_;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::vector&lt;geometry_msgs::Pose&gt; mpcpath_;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ros::Subscriber plane_data_subscriber_;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ros::Subscriber interactive_marker_subscriber_;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::shared_ptr&lt;qpOASES::QProblemB&gt; qpoases_;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::shared_ptr&lt;qpOASES::SQProblem&gt; qpoases_standard_;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    qpOASES::Options options_;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> N_, Ndof_;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">double</span> dt_;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Need RowMajor</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt; H_;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt; A_;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Eigen::VectorXd g_, lb_, ub_, lbA_, ubA_, optimal_solution_;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> solve();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> constructProblem(<span class="keyword">const</span> std::vector&lt;constraintData&gt; &amp;constraintVectorData,<span class="keyword">const</span> Eigen::MatrixXd H, <span class="keyword">const</span> Eigen::VectorXd g);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> constructProblem();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> verticesPublisher();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> planeDataCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; plane_msg);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> iMarkerCallback(<span class="keyword">const</span> geometry_msgs::Pose::ConstPtr&amp; imarker_msg);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">   77</a></span>&#160;   Eigen::VectorXd <a class="code" href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">getSolution</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> optimal_solution_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">   82</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">setDefaultOptions</a>()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>(!qpoases_)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;qpsolver pointer is null&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        qpoases_-&gt;setOptions( options_ );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        qpoases_-&gt;setPrintLevel(qpOASES::PL_HIGH);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        qpoases_standard_-&gt;setOptions( options_ );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        qpoases_standard_-&gt;setPrintLevel(qpOASES::PL_HIGH);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">   94</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">print</a>(){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;H_ \n &quot;</span> &lt;&lt;  H_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;g_ \n &quot;</span> &lt;&lt; g_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;A_ \n &quot;</span> &lt;&lt; A_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;lbA_ \n &quot;</span> &lt;&lt; lbA_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ubA_ \n &quot;</span> &lt;&lt; ubA_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;lb_ \n &quot;</span> &lt;&lt; lb_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ub_ \n &quot;</span> &lt;&lt; ub_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ros::NodeHandle nh_;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// create ros topic for sending msg</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ros::Publisher panda_joint_state_1_pub_ ;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ros::Publisher panda_joint_state_2_pub_ ; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ros::Publisher panda_joint_state_3_pub_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    ros::Publisher panda_joint_state_4_pub_;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ros::Publisher panda_joint_state_5_pub_;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ros::Publisher panda_joint_state_6_pub_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ros::Publisher panda_joint_state_7_pub_;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    rviz_visual_tools::RvizVisualToolsPtr goalPublisher;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    rviz_visual_tools::RvizVisualToolsPtr PredictedPathPublisher_;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    std::vector&lt;geometry_msgs::Pose&gt; mpcpath_;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ros::Subscriber plane_data_subscriber_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ros::Subscriber interactive_marker_subscriber_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::shared_ptr&lt;qpOASES::QProblemB&gt; qpoases_;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::shared_ptr&lt;qpOASES::SQProblem&gt; qpoases_standard_;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    qpOASES::Options options_;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> N_, Ndof_;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> dt_;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Need RowMajor</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt; H_;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt; A_;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    Eigen::VectorXd g_, lb_, ub_, lbA_, ubA_, optimal_solution_;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">int</span> nV_, nC_ ;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> nV_, nC_ ;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// ----------------------------  Ros + Task parameter ----------------------------------</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    std::shared_ptr&lt;MPC_Task&gt; mpc_task_ ;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    Eigen::MatrixXd panda_px_, panda_pu_, panda_pxdq_, panda_pudq_;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    Eigen::Vector3d currentEEpose_, goal_, goalStart_, goalEnd_ ;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Eigen::MatrixXd  state_A_, state_B_;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    geometry_msgs::Pose interactive_marker_pos_;    </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// ---------------------------- Robot Arm Dynamic parameter ----------------------------</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::shared_ptr&lt;arm_kinematic&gt; panda_arm_;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::string panda_urdf_;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    KDL::JntArray panda_q_ini_,  panda_dq_init_, panda_q_des_;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    KDL::Frame panda_des_frame_, panda_ee_frame_;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    Eigen::VectorXd panda_state_;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    Eigen::VectorXd q_, dq_ ;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    Eigen::VectorXd q_horizon_, dq_horizon_, q_horizon_des_,  ee_pos_horizon_ ;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    Eigen::MatrixXd jacobian_, jacobian_horizon_;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    Eigen::VectorXd ddq_min_, ddq_max_, dq_min_, dq_max_, q_min_, q_max_, v_max_, v_min_;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// ----------------------------  Ros + Task parameter ----------------------------------</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::shared_ptr&lt;MPC_Task&gt; mpc_task_ ;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    Eigen::MatrixXd panda_px_, panda_pu_, panda_pxdq_, panda_pudq_;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Eigen::Vector3d currentEEpose_, goal_, goalStart_, goalEnd_ ;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    Eigen::MatrixXd  state_A_, state_B_;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    geometry_msgs::Pose interactive_marker_pos_;    </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// ---------------------------- Robot Arm Dynamic parameter ----------------------------</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::shared_ptr&lt;arm_kinematic&gt; panda_arm_;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::string panda_urdf_;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    KDL::JntArray panda_q_ini_,  panda_dq_init_, panda_q_des_;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    KDL::Frame panda_des_frame_, panda_ee_frame_;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    Eigen::VectorXd panda_state_;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    Eigen::VectorXd q_, dq_ ;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    Eigen::VectorXd q_horizon_, dq_horizon_, q_horizon_des_,  ee_pos_horizon_ ;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    Eigen::MatrixXd jacobian_, jacobian_horizon_;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    Eigen::VectorXd ddq_min_, ddq_max_, dq_min_, dq_max_, q_min_, q_max_, v_max_, v_min_;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// ------------------------- Parameter for obstacle avoidance -----------------------------</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    std::vector&lt;Eigen::MatrixXd&gt; robot_vertices_augmented_;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="structplane_1_1Planes_1_1PlaneData.html">Planes::PlaneData</a> table_planes_;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::shared_ptr&lt;JntPosCst&gt; jnt_pos_cst_ ;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::shared_ptr&lt;JntVelCst&gt; jnt_vel_cst_ ;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::shared_ptr&lt;JntAccCst&gt; jnt_acc_cst_ ;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::shared_ptr&lt;ObsAvoidanceCSt&gt; table_avoidance_cst_;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::shared_ptr&lt;ObsAvoidanceCSt&gt; obs_avoidance_cst_;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::vector&lt;constraintData&gt; total_constraint_data_ ; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> constraint_number_ = 0 ;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="structplane_1_1Planes_1_1PlaneData.html">Planes::PlaneData</a> plane_data_;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    Eigen::MatrixXd plane_data_eigen_;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">double</span> dsafe_;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// ------------------------- Parameter for obstacle avoidance -----------------------------</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::vector&lt;Eigen::MatrixXd&gt; robot_vertices_augmented_;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="structplane_1_1Planes_1_1PlaneData.html">Planes::PlaneData</a> table_planes_;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::shared_ptr&lt;JntPosCst&gt; jnt_pos_cst_ ;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::shared_ptr&lt;JntVelCst&gt; jnt_vel_cst_ ;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::shared_ptr&lt;JntAccCst&gt; jnt_acc_cst_ ;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::shared_ptr&lt;ObsAvoidanceCSt&gt; table_avoidance_cst_;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::shared_ptr&lt;ObsAvoidanceCSt&gt; obs_avoidance_cst_;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::vector&lt;constraintData&gt; total_constraint_data_ ;    </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> constraint_number_ = 0 ;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="structplane_1_1Planes_1_1PlaneData.html">Planes::PlaneData</a> plane_data_;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    Eigen::MatrixXd plane_data_eigen_;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">double</span> dsafe_;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;};</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aRosWrapAvoidanceCst_8h_html"><div class="ttname"><a href="RosWrapAvoidanceCst_8h.html">RosWrapAvoidanceCst.h</a></div></div>
 <div class="ttc" id="aRosWrapMpcTask_8h_html"><div class="ttname"><a href="RosWrapMpcTask_8h.html">RosWrapMpcTask.h</a></div></div>
 <div class="ttc" id="aRosWrapJointAccCst_8h_html"><div class="ttname"><a href="RosWrapJointAccCst_8h.html">RosWrapJointAccCst.h</a></div></div>
-<div class="ttc" id="aclassmpc__solve_html_adb465cf9bd753fcc80808bfc0004180d"><div class="ttname"><a href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">mpc_solve::getSolution</a></div><div class="ttdeci">Eigen::VectorXd getSolution()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:76</div></div>
-<div class="ttc" id="aclassmpc__solve_html_a28927010f0b6a69fe87893a1456bf765"><div class="ttname"><a href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">mpc_solve::~mpc_solve</a></div><div class="ttdeci">~mpc_solve()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:36</div></div>
+<div class="ttc" id="aclassmpc__solve_html_adb465cf9bd753fcc80808bfc0004180d"><div class="ttname"><a href="classmpc__solve.html#adb465cf9bd753fcc80808bfc0004180d">mpc_solve::getSolution</a></div><div class="ttdeci">Eigen::VectorXd getSolution()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:77</div></div>
+<div class="ttc" id="aclassmpc__solve_html_a28927010f0b6a69fe87893a1456bf765"><div class="ttname"><a href="classmpc__solve.html#a28927010f0b6a69fe87893a1456bf765">mpc_solve::~mpc_solve</a></div><div class="ttdeci">~mpc_solve()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:37</div></div>
 <div class="ttc" id="aRosWrapJointVelCst_8h_html"><div class="ttname"><a href="RosWrapJointVelCst_8h.html">RosWrapJointVelCst.h</a></div></div>
 <div class="ttc" id="aRosWrapGenericCst_8h_html"><div class="ttname"><a href="RosWrapGenericCst_8h.html">RosWrapGenericCst.h</a></div></div>
 <div class="ttc" id="anamespaceplane_html"><div class="ttname"><a href="namespaceplane.html">plane</a></div><div class="ttdef"><b>Definition:</b> RosWrapsepPlane.h:24</div></div>
 <div class="ttc" id="aRosWrapJointPosCst_8h_html"><div class="ttname"><a href="RosWrapJointPosCst_8h.html">RosWrapJointPosCst.h</a></div></div>
 <div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div></div>
-<div class="ttc" id="aclassmpc__solve_html_aec976768cd4ce664e15112b5c28b69c7"><div class="ttname"><a href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">mpc_solve::setDefaultOptions</a></div><div class="ttdeci">void setDefaultOptions()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:81</div></div>
+<div class="ttc" id="aclassmpc__solve_html_aec976768cd4ce664e15112b5c28b69c7"><div class="ttname"><a href="classmpc__solve.html#aec976768cd4ce664e15112b5c28b69c7">mpc_solve::setDefaultOptions</a></div><div class="ttdeci">void setDefaultOptions()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:82</div></div>
 <div class="ttc" id="astructplane_1_1Planes_1_1PlaneData_html"><div class="ttname"><a href="structplane_1_1Planes_1_1PlaneData.html">plane::Planes::PlaneData</a></div><div class="ttdef"><b>Definition:</b> RosWrapsepPlane.h:100</div></div>
 <div class="ttc" id="aRosWrapRobotModel_8h_html"><div class="ttname"><a href="RosWrapRobotModel_8h.html">RosWrapRobotModel.h</a></div></div>
-<div class="ttc" id="aclassmpc__solve_html"><div class="ttname"><a href="classmpc__solve.html">mpc_solve</a></div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:27</div></div>
-<div class="ttc" id="aclassmpc__solve_html_ad1840a72304792052959845ef1ef46f1"><div class="ttname"><a href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">mpc_solve::print</a></div><div class="ttdeci">void print()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:93</div></div>
+<div class="ttc" id="aclassmpc__solve_html"><div class="ttname"><a href="classmpc__solve.html">mpc_solve</a></div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:28</div></div>
+<div class="ttc" id="aclassmpc__solve_html_ad1840a72304792052959845ef1ef46f1"><div class="ttname"><a href="classmpc__solve.html#ad1840a72304792052959845ef1ef46f1">mpc_solve::print</a></div><div class="ttdeci">void print()</div><div class="ttdef"><b>Definition:</b> RosWrapMpcSolver.h:94</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

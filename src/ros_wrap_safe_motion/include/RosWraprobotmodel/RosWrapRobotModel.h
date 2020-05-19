@@ -1,5 +1,5 @@
-#ifndef ROSROBOTMODEL_H
-#define ROSROBOTMODEL_H
+#ifndef ROSWRAPROBOTMODEL_H
+#define ROSWRAPROBOTMODEL_H
 
 
 #pragma once

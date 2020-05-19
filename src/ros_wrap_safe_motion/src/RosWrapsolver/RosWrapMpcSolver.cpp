@@ -117,11 +117,11 @@ mpc_solve::mpc_solve(ros::NodeHandle* nodehandle, int N_horz, int Ndof, int nbrC
 
 }
 
-    void mpc_solve::planeDataCallback(const std_msgs::Float64MultiArray::ConstPtr& plane_msg){
-
+void mpc_solve::planeDataCallback(const std_msgs::Float64MultiArray::ConstPtr& plane_msg){
+        // Transform received plane data into Eigen matrix 
         plane_data_eigen_ = msgPlaneToEigen(plane_msg);
         plane_data_.planeLocation[0] = plane_data_eigen_;
-    }
+ }
 
 
 void mpc_solve::iMarkerCallback(const geometry_msgs::Pose::ConstPtr& imarker_msg){
@@ -293,6 +293,7 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
 
     total_constraint_data_.push_back(jnt_pos_cst_ -> getConstraintData());
     total_constraint_data_.push_back(jnt_vel_cst_ -> getConstraintData());
+  
 
     // ----------------------------------------------   Initialize collision free trajectory constraints ---------------------------------------------------------
     table_avoidance_cst_ = std::make_shared<ObsAvoidanceCSt>(Ndof_,N_,dt_,0.1,"TableAvoidanceConstraint",panda_px_,panda_pu_);
@@ -345,11 +346,11 @@ void mpc_solve::initRobotConstraintData(const Eigen::VectorXd &ddq_min, const Ei
     obs_avoidance_cst_ -> setLowerBound();
     obs_avoidance_cst_ -> setUpperBoundAndConstraint(robot_vertices_augmented_,plane_data_,panda_state_,jacobian_horizon_,q_horizon_);
     constraint_number_++ ;
-     total_constraint_data_.push_back(obs_avoidance_cst_ -> getConstraintData());
+    total_constraint_data_.push_back(obs_avoidance_cst_ -> getConstraintData());
+
+
 
 }
-
-
 
     
 
@@ -406,6 +407,7 @@ void mpc_solve::update(){
         total_constraint_data_[1] = jnt_vel_cst_ -> getConstraintData();
         total_constraint_data_[2] = table_avoidance_cst_ -> getConstraintData();
         total_constraint_data_[3] = obs_avoidance_cst_ -> getConstraintData();
+
 
         constructProblem();
         bool is_solved ;
@@ -611,11 +613,17 @@ void mpc_solve::constructProblem(){
     int rows_cumul ;
     rows_cumul = 0;
 
+
     int total_size_of_constraint = 0;
     for (int i(0); i<nbr_cst ; i++){
 
-        total_size_of_constraint = total_size_of_constraint + total_constraint_data_[i].cstMatrix_.rows();
+         total_size_of_constraint = total_size_of_constraint + total_constraint_data_[i].cstMatrix_.rows();
     }
+
+    // for (std::map<std::string, constraintData>::iterator map_ite = constraint_data_map_.begin(); map_ite != constraint_data_map_.end() ; map_ite ++  ){
+
+    //     total_size_of_constraint = total_size_of_constraint + map_ite ->second.cstMatrix_.rows();
+    // }
 
     lbA_.resize(total_size_of_constraint);
     ubA_.resize(total_size_of_constraint);
@@ -626,6 +634,8 @@ void mpc_solve::constructProblem(){
         qpoases_standard_.reset(new qpOASES::SQProblem(nV_,total_size_of_constraint,qpOASES::HST_SEMIDEF));
         nC_ = total_size_of_constraint;
     }
+
+
     for (int i(0); i<nbr_cst ; i++) {
         int rows, cols;
         rows =0;

@@ -1,0 +1,6 @@
+#ifndef ROSWRAPHUMANOCCUPANCY_H
+#define ROSWRAPHUMANOCCUPANCY_H
+#pragma once 
+
+ 
+#endif

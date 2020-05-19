@@ -50,14 +50,16 @@ virtual void \mbox{\hyperlink{classGenericCst_a6ef67c4a6b6f29d44e6bab26434f65b3}
 \begin{DoxyCompactList}\small\item\em update constraint state \+: lbA, ubA, A \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classGenericCst_a6a33064a5d71d01473bc9af46327d7d5}{update}} (const Eigen\+::\+Vector\+Xd \&robot\+\_\+state, const Eigen\+::\+Matrix\+Xd \&Jacobian)
 \item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classGenericCst_aa44f9b1b81aedbed5d3a0296e434ec0e}{get\+Lower\+Bound}} ()
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classGenericCst_a502823356468b9087478fe8b35839aca}{get\+Lower\+Bound}} () const
 \begin{DoxyCompactList}\small\item\em get\+Lower\+Bound \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classGenericCst_adbdafbf434e591b6eb418ac68be44343}{get\+Upper\+Bound}} ()
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classGenericCst_a4a50d68e243949555fae1dae35058013}{get\+Upper\+Bound}} () const
 \begin{DoxyCompactList}\small\item\em get\+Upper\+Bound \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classGenericCst_a97e451a8bfd8a4518940ab15a4b7a92b}{get\+Constraint\+Matrix}} ()
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classGenericCst_a0f868670545d9034a53dbb41611396d7}{get\+Constraint\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em get\+Constraint\+Matrix \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structconstraintData}{constraint\+Data}} \mbox{\hyperlink{classGenericCst_ac88de7802b4fc88ed393aff99d9df714}{get\+Constraint\+Data}} ()
-\begin{DoxyCompactList}\small\item\em get\+Constraint\+Data (name, lbA, ubA, A) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structconstraintData}{constraint\+Data}} \mbox{\hyperlink{classGenericCst_aba98ea8677fd25429ddf94787b63ace5}{get\+Constraint\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Constraint\+Data (name, lbA, ubA, A) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGenericCst_a7eed4b474acf08480f185c85f03f5030}{get\+Constraint\+Name}} () const
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -119,11 +121,11 @@ basic construtor
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classGenericCst_ac88de7802b4fc88ed393aff99d9df714}\label{classGenericCst_ac88de7802b4fc88ed393aff99d9df714}} 
+\mbox{\Hypertarget{classGenericCst_aba98ea8677fd25429ddf94787b63ace5}\label{classGenericCst_aba98ea8677fd25429ddf94787b63ace5}} 
 \index{GenericCst@{GenericCst}!getConstraintData@{getConstraintData}}
 \index{getConstraintData@{getConstraintData}!GenericCst@{GenericCst}}
 \doxysubsubsection{\texorpdfstring{getConstraintData()}{getConstraintData()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structconstraintData}{constraint\+Data}} Generic\+Cst\+::get\+Constraint\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structconstraintData}{constraint\+Data}} Generic\+Cst\+::get\+Constraint\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -132,11 +134,11 @@ get\+Constraint\+Data (name, lbA, ubA, A)
 \begin{DoxyReturn}{Returns}
 cst\+Data\+\_\+ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classGenericCst_a97e451a8bfd8a4518940ab15a4b7a92b}\label{classGenericCst_a97e451a8bfd8a4518940ab15a4b7a92b}} 
+\mbox{\Hypertarget{classGenericCst_a0f868670545d9034a53dbb41611396d7}\label{classGenericCst_a0f868670545d9034a53dbb41611396d7}} 
 \index{GenericCst@{GenericCst}!getConstraintMatrix@{getConstraintMatrix}}
 \index{getConstraintMatrix@{getConstraintMatrix}!GenericCst@{GenericCst}}
 \doxysubsubsection{\texorpdfstring{getConstraintMatrix()}{getConstraintMatrix()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Generic\+Cst\+::get\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Generic\+Cst\+::get\+Constraint\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -145,11 +147,17 @@ get\+Constraint\+Matrix
 \begin{DoxyReturn}{Returns}
 A\+\_\+ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classGenericCst_aa44f9b1b81aedbed5d3a0296e434ec0e}\label{classGenericCst_aa44f9b1b81aedbed5d3a0296e434ec0e}} 
+\mbox{\Hypertarget{classGenericCst_a7eed4b474acf08480f185c85f03f5030}\label{classGenericCst_a7eed4b474acf08480f185c85f03f5030}} 
+\index{GenericCst@{GenericCst}!getConstraintName@{getConstraintName}}
+\index{getConstraintName@{getConstraintName}!GenericCst@{GenericCst}}
+\doxysubsubsection{\texorpdfstring{getConstraintName()}{getConstraintName()}}
+{\footnotesize\ttfamily std\+::string Generic\+Cst\+::get\+Constraint\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classGenericCst_a502823356468b9087478fe8b35839aca}\label{classGenericCst_a502823356468b9087478fe8b35839aca}} 
 \index{GenericCst@{GenericCst}!getLowerBound@{getLowerBound}}
 \index{getLowerBound@{getLowerBound}!GenericCst@{GenericCst}}
 \doxysubsubsection{\texorpdfstring{getLowerBound()}{getLowerBound()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Generic\+Cst\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Generic\+Cst\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -158,11 +166,11 @@ get\+Lower\+Bound
 \begin{DoxyReturn}{Returns}
 lb\+A\+\_\+ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classGenericCst_adbdafbf434e591b6eb418ac68be44343}\label{classGenericCst_adbdafbf434e591b6eb418ac68be44343}} 
+\mbox{\Hypertarget{classGenericCst_a4a50d68e243949555fae1dae35058013}\label{classGenericCst_a4a50d68e243949555fae1dae35058013}} 
 \index{GenericCst@{GenericCst}!getUpperBound@{getUpperBound}}
 \index{getUpperBound@{getUpperBound}!GenericCst@{GenericCst}}
 \doxysubsubsection{\texorpdfstring{getUpperBound()}{getUpperBound()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Generic\+Cst\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Generic\+Cst\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

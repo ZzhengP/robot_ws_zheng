@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['planedatacallback_663',['planeDataCallback',['../classmpc__solve.html#a686c1244e8f3bff10d96e72222c2eb43',1,'mpc_solve']]],
-  ['planes_664',['Planes',['../classplane_1_1Planes.html#ab8e2d83dbcb927b1ebbebed25d57d7ce',1,'plane::Planes::Planes(int N, int nbrRobobotPart, int nbrObs, std::vector&lt; Eigen::MatrixXd &gt; robotVertices, Eigen::MatrixXd obsVertices)'],['../classplane_1_1Planes.html#aa2cbe842027ad64a9000b87ddef7cfb7',1,'plane::Planes::Planes(int N, int nbrRobobotPart, int nbrObs, Eigen::MatrixXd robotVertices)'],['../classplane_1_1Planes.html#ab7382aeb750dbafa9762dc6a6c2f99e1',1,'plane::Planes::Planes(ros::NodeHandle *nodehandle, const int &amp;N, const std::vector&lt; Eigen::MatrixXd &gt; &amp;obsVerticesAugmented, const double &amp;dsafe, const std::string &amp;robotVerticesTopic)']]],
-  ['planesolver_665',['PlaneSolver',['../classPlaneSolver.html#ac7b2d992326d4253ec2f427137fc7e44',1,'PlaneSolver']]],
-  ['print_666',['print',['../structconstraintData.html#a80ccd285e66baec00ed69bf4bf587220',1,'constraintData::print()'],['../classrobot_1_1RobotDynClass.html#aa816eda45894ab45efc265892733987c',1,'robot::RobotDynClass::print()'],['../structplane_1_1Planes_1_1PlaneData.html#a1ef75beb86d55c7a750e506ba0de97ad',1,'plane::Planes::PlaneData::print()'],['../classlpSolver.html#ae57b5884a5ef29e3a1a7318c00857f0e',1,'lpSolver::print()'],['../classmpc__solve.html#ad1840a72304792052959845ef1ef46f1',1,'mpc_solve::print()'],['../classPlaneSolver.html#a9a1996b21c0c4f1a80463aeb4e0162ad',1,'PlaneSolver::print()']]],
-  ['printrobotinformation_667',['printRobotInformation',['../classarm__kinematic.html#a3779e15147070d3e8bf6d85335fbe40c',1,'arm_kinematic']]]
+  ['obsavoidancecst_669',['ObsAvoidanceCSt',['../classObsAvoidanceCSt.html#a56a2a0525e0c7512e676b7da79d65b55',1,'ObsAvoidanceCSt']]],
+  ['obsverticescallback_670',['obsVerticesCallback',['../classplane_1_1Planes.html#ab4c78d97961636fb2d8676d061a3a94a',1,'plane::Planes']]],
+  ['operator_28_29_671',['operator()',['../classSegmentIndice.html#af97ab0b83807580ea3991f3a630f4d82',1,'SegmentIndice']]],
+  ['operator_5b_5d_672',['operator[]',['../classSegmentIndice.html#acaabb3e62852ac8ad13842dc20f233be',1,'SegmentIndice']]]
 ];

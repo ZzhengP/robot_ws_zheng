@@ -71,7 +71,7 @@ public:
       * @brief getLowerBound
       * @return lbA_
       */
-     Eigen::VectorXd getLowerBound(){
+     Eigen::VectorXd getLowerBound() const{
             return lbA_;
      }
 
@@ -79,7 +79,7 @@ public:
       * @brief getUpperBound
       * @return ubA_
       */
-     Eigen::VectorXd getUpperBound(){
+     Eigen::VectorXd getUpperBound() const{
             return ubA_;
      }
 
@@ -87,7 +87,7 @@ public:
       * @brief getConstraintMatrix
       * @return A_
       */
-     Eigen::MatrixXd getConstraintMatrix(){
+     Eigen::MatrixXd getConstraintMatrix() const{
             return A_;
      }
 
@@ -95,11 +95,14 @@ public:
       * @brief getConstraintData (name, lbA, ubA, A)
       * @return cstData_
       */
-     constraintData getConstraintData(){
+     constraintData getConstraintData() const{
             return cstData_;
      }
 
+     std::string getConstraintName() const {
 
+            return this -> cst_name_;
+     }    
 protected:
      Eigen::VectorXd lbA_, ubA_, min_, max_;
      Eigen::MatrixXd A_, Px_, Pu_;

@@ -257,6 +257,8 @@ RosWrapsepPlane/RosWrapsepPlane.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/RosWrapsepPlane/RosWrapsepPlane.h
 RosWrapsolver/RosWraplpsolve.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/RosWrapsolver/RosWraplpsolve.h
+RosWrapperception/RosWrapHumanMotion.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/RosWrapperception/RosWrapHumanMotion.h
 kdl/chain.hpp
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/kdl/chain.hpp
 kdl/jntarray.hpp
@@ -381,6 +383,8 @@ Eigen/Dense
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/Eigen/Dense
 RosWrapconstraint/RosWrapGenericCst.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapconstraint/RosWrapGenericCst.h
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h
 
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h
 iostream
@@ -521,6 +525,8 @@ visualization_msgs/InteractiveMarkerUpdate.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/visualization_msgs/InteractiveMarkerUpdate.h
 rviz_visual_tools/rviz_visual_tools.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/rviz_visual_tools/rviz_visual_tools.h
+map
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/map
 
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/RosWrapPlaneSolver.h
 qpOASES.hpp

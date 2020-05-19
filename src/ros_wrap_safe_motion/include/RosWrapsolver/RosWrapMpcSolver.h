@@ -22,6 +22,7 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "visualization_msgs/InteractiveMarkerUpdate.h"
 #include "rviz_visual_tools/rviz_visual_tools.h"
+#include "map"
 using namespace plane;
 
 class mpc_solve
@@ -164,7 +165,7 @@ private:
     std::shared_ptr<JntAccCst> jnt_acc_cst_ ;
     std::shared_ptr<ObsAvoidanceCSt> table_avoidance_cst_;
     std::shared_ptr<ObsAvoidanceCSt> obs_avoidance_cst_;
-    std::vector<constraintData> total_constraint_data_ ; 
+    std::vector<constraintData> total_constraint_data_ ;    
     unsigned int constraint_number_ = 0 ;
 
     Planes::PlaneData plane_data_;

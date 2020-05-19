@@ -3,7 +3,7 @@
 
 
 ObsAvoidanceCSt::ObsAvoidanceCSt(int ndof, int N, double dt, double dsafe, std::string name,Eigen::MatrixXd Px, Eigen::MatrixXd Pu)
-    :ndof_(ndof),N_(N), dt_(dt),cst_name_(name),Px_(Px),Pu_(Pu),dsafe_(dsafe){
+        : GenericCst (ndof, N,dt, name, Px, Pu),dsafe_(dsafe){
 
              lbA_.resize(2*(N_-1));
              ubA_.resize(2*(N_-1));

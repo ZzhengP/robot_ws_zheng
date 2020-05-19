@@ -419,6 +419,8 @@ visualization_msgs/InteractiveMarkerUpdate.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/visualization_msgs/InteractiveMarkerUpdate.h
 rviz_visual_tools/rviz_visual_tools.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/rviz_visual_tools/rviz_visual_tools.h
+map
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/map
 
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/RosWrapPlaneSolver.h
 qpOASES.hpp
@@ -451,6 +453,10 @@ ros/ros.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraptask/ros/ros.h
 visualization_msgs/MarkerArray.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraptask/visualization_msgs/MarkerArray.h
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapRobotModel.cpp
+RosWraprobotmodel/RosWrapRobotModel.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWraprobotmodel/RosWrapRobotModel.h
 
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapsolver/RosWrapMpcSolver.cpp
 RosWrapsolver/RosWrapMpcSolver.h
