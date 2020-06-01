@@ -79,7 +79,7 @@ $(function() {
 <p>More like a data structure to store planes.  
  <a href="classplane_1_1Planes.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="RosWrapsepPlane_8h_source.html">RosWrapsepPlane.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="sepPlane_8h_source.html">sepPlane.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for plane::Planes:</div>
 <div class="dyncontent">
@@ -103,22 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab8e2d83dbcb927b1ebbebed25d57d7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2cbe842027ad64a9000b87ddef7cfb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#aa2cbe842027ad64a9000b87ddef7cfb7">Planes</a> (int N, int nbrRobobotPart, int nbrObs, Eigen::MatrixXd robotVertices)</td></tr>
 <tr class="separator:aa2cbe842027ad64a9000b87ddef7cfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7382aeb750dbafa9762dc6a6c2f99e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ab7382aeb750dbafa9762dc6a6c2f99e1">Planes</a> (ros::NodeHandle *nodehandle, const int &amp;N, const std::vector&lt; Eigen::MatrixXd &gt; &amp;obsVerticesAugmented, const double &amp;dsafe, const std::string &amp;robotVerticesTopic)</td></tr>
-<tr class="separator:ab7382aeb750dbafa9762dc6a6c2f99e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a701382e1e702cff2a811976d6c754d98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a701382e1e702cff2a811976d6c754d98">~Planes</a> ()</td></tr>
-<tr class="separator:a701382e1e702cff2a811976d6c754d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a217fac905ac79cc846c61306bd542108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a217fac905ac79cc846c61306bd542108">robotVerticesCallback</a> (const visualization_msgs::MarkerArray::ConstPtr &amp;vertices_markers)</td></tr>
-<tr class="memdesc:a217fac905ac79cc846c61306bd542108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call back function for receiving robot's position.  <a href="classplane_1_1Planes.html#a217fac905ac79cc846c61306bd542108">More...</a><br /></td></tr>
-<tr class="separator:a217fac905ac79cc846c61306bd542108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4c78d97961636fb2d8676d061a3a94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ab4c78d97961636fb2d8676d061a3a94a">obsVerticesCallback</a> (const std_msgs::Float64MultiArray::ConstPtr &amp;obsvertices)</td></tr>
-<tr class="separator:ab4c78d97961636fb2d8676d061a3a94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7008fb40be133fb669d54437cd2ec30e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a7008fb40be133fb669d54437cd2ec30e">InitializePlanesData</a> ()</td></tr>
 <tr class="memdesc:a7008fb40be133fb669d54437cd2ec30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitializePlanesData robotVertices, obsVertices <a class="el" href="classplane_1_1Planes.html" title="More like a data structure to store planes.">Planes</a> data.  <a href="classplane_1_1Planes.html#a7008fb40be133fb669d54437cd2ec30e">More...</a><br /></td></tr>
 <tr class="separator:a7008fb40be133fb669d54437cd2ec30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd1ad488f4f71ceff15e98c15dcdf3a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#acd1ad488f4f71ceff15e98c15dcdf3a8">update</a> ()</td></tr>
-<tr class="separator:acd1ad488f4f71ceff15e98c15dcdf3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67fd7ed0af5147b8b45a833c3c04a121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a67fd7ed0af5147b8b45a833c3c04a121">run</a> ()</td></tr>
-<tr class="separator:a67fd7ed0af5147b8b45a833c3c04a121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7683ee145bb777c4fb5229924e9aba1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplane_1_1Planes_1_1PlaneData.html">PlaneData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a7683ee145bb777c4fb5229924e9aba1f">getPlanes</a> ()</td></tr>
 <tr class="separator:a7683ee145bb777c4fb5229924e9aba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -129,27 +116,6 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae8ec834500c7aa8715b06a5d726aeb8e"><td class="memItemLeft" align="right" valign="top">ros::NodeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ae8ec834500c7aa8715b06a5d726aeb8e">nh_</a></td></tr>
-<tr class="memdesc:ae8ec834500c7aa8715b06a5d726aeb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ros node to compute plane's location.  <a href="classplane_1_1Planes.html#ae8ec834500c7aa8715b06a5d726aeb8e">More...</a><br /></td></tr>
-<tr class="separator:ae8ec834500c7aa8715b06a5d726aeb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60fd01600a3a8644e5231f115f635abf"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a60fd01600a3a8644e5231f115f635abf">robot_vertices_subscriber_</a></td></tr>
-<tr class="separator:a60fd01600a3a8644e5231f115f635abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468f86ebbc265b37c1907ecb42620464"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a468f86ebbc265b37c1907ecb42620464">obs_vertices_subscriber_</a></td></tr>
-<tr class="separator:a468f86ebbc265b37c1907ecb42620464"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace7457e6689892407079bb70294d5659"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ace7457e6689892407079bb70294d5659">plane_data_publisher_</a></td></tr>
-<tr class="separator:ace7457e6689892407079bb70294d5659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e3b0c6d946d6ace99534b2ca35a376"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a86e3b0c6d946d6ace99534b2ca35a376">robot_vertices_topic_</a></td></tr>
-<tr class="separator:a86e3b0c6d946d6ace99534b2ca35a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38bfb49a814e25f70b15c4eb702119ff"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::RvizVisualToolsPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a38bfb49a814e25f70b15c4eb702119ff">planesPub_</a></td></tr>
-<tr class="separator:a38bfb49a814e25f70b15c4eb702119ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f7cc0cee76e8e1d77a394fa29054d6"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::RvizVisualToolsPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a21f7cc0cee76e8e1d77a394fa29054d6">cubeObstacleMarkers_</a></td></tr>
-<tr class="separator:a21f7cc0cee76e8e1d77a394fa29054d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5726aad7971b065abf222f0b8386a86"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::colors&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ad5726aad7971b065abf222f0b8386a86">colorPlane_</a> = rviz_visual_tools::TRANSLUCENT_DARK</td></tr>
-<tr class="separator:ad5726aad7971b065abf222f0b8386a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae765fc3296d50b36e1d430a6ce4a25ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#ae765fc3296d50b36e1d430a6ce4a25ff">plane_x_width_</a> = 2</td></tr>
-<tr class="separator:ae765fc3296d50b36e1d430a6ce4a25ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dd658a67476a595fa0975cd9b4a7389"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a2dd658a67476a595fa0975cd9b4a7389">plane_y_width_</a> = 2</td></tr>
-<tr class="separator:a2dd658a67476a595fa0975cd9b4a7389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5622e7783a0eb9186127d3813f1a7e0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a5622e7783a0eb9186127d3813f1a7e0d">N_</a></td></tr>
 <tr class="memdesc:a5622e7783a0eb9186127d3813f1a7e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">N_: horizon of prediction.  <a href="classplane_1_1Planes.html#a5622e7783a0eb9186127d3813f1a7e0d">More...</a><br /></td></tr>
 <tr class="separator:a5622e7783a0eb9186127d3813f1a7e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,35 +126,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a43c6ef9a6adbe9f6565690ab82091e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65aa1b183eba2ef94acc343eb0de2178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a65aa1b183eba2ef94acc343eb0de2178">nbrObs_</a></td></tr>
 <tr class="separator:a65aa1b183eba2ef94acc343eb0de2178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a688c09efd5933e90d63f150a3ed35113"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a688c09efd5933e90d63f150a3ed35113">initialize</a> = true</td></tr>
-<tr class="separator:a688c09efd5933e90d63f150a3ed35113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65baafa03b5fa216551601670f1803c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplane_1_1VerticesData.html">VerticesData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a65baafa03b5fa216551601670f1803c0">robotVertices_</a></td></tr>
 <tr class="separator:a65baafa03b5fa216551601670f1803c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80e2c1a143b438ba0c521e59ed68ec64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplane_1_1VerticesData.html">VerticesData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a80e2c1a143b438ba0c521e59ed68ec64">obsVertices_</a></td></tr>
 <tr class="separator:a80e2c1a143b438ba0c521e59ed68ec64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd5ed24f8f1a757c87ea66d620f02f3a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::MatrixXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#afd5ed24f8f1a757c87ea66d620f02f3a">robotVerticesAugmented_</a></td></tr>
-<tr class="separator:afd5ed24f8f1a757c87ea66d620f02f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb01bcbabcc5e75186bea3c049bd0151"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::MatrixXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#abb01bcbabcc5e75186bea3c049bd0151">obsVerticesAugmented_</a></td></tr>
-<tr class="separator:abb01bcbabcc5e75186bea3c049bd0151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18cabd6cf27947b9608077b5c8742c69"><td class="memItemLeft" align="right" valign="top">geometry_msgs::PoseArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a18cabd6cf27947b9608077b5c8742c69">obsVerticesPose_</a></td></tr>
-<tr class="separator:a18cabd6cf27947b9608077b5c8742c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e6c9b5166bc067f44070567ca89abf"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a35e6c9b5166bc067f44070567ca89abf">obsCenter_</a></td></tr>
-<tr class="separator:a35e6c9b5166bc067f44070567ca89abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34b6b7762d3b3a198ed7493896487d0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classPlaneSolver.html">PlaneSolver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#af34b6b7762d3b3a198ed7493896487d0">plane_solver_</a></td></tr>
-<tr class="memdesc:af34b6b7762d3b3a198ed7493896487d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classplane_1_1Planes.html" title="More like a data structure to store planes.">Planes</a> solver.  <a href="classplane_1_1Planes.html#af34b6b7762d3b3a198ed7493896487d0">More...</a><br /></td></tr>
-<tr class="separator:af34b6b7762d3b3a198ed7493896487d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a388f0de7910d7b233113815e9dde8ada"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a388f0de7910d7b233113815e9dde8ada">dsafe_</a></td></tr>
-<tr class="separator:a388f0de7910d7b233113815e9dde8ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f691cc61c09538a4bf3bda882d76bea"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a4f691cc61c09538a4bf3bda882d76bea">gPlane_</a></td></tr>
-<tr class="separator:a4f691cc61c09538a4bf3bda882d76bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4069af93d7709e9a5ac461f3f4f302"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::colors&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classplane_1_1Planes.html#a3b4069af93d7709e9a5ac461f3f4f302">colorPlane2</a> = rviz_visual_tools::RED</td></tr>
-<tr class="separator:a3b4069af93d7709e9a5ac461f3f4f302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>More like a data structure to store planes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab8e2d83dbcb927b1ebbebed25d57d7ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8e2d83dbcb927b1ebbebed25d57d7ce">&#9670;&nbsp;</a></span>Planes() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e2d83dbcb927b1ebbebed25d57d7ce">&#9670;&nbsp;</a></span>Planes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +193,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aa2cbe842027ad64a9000b87ddef7cfb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2cbe842027ad64a9000b87ddef7cfb7">&#9670;&nbsp;</a></span>Planes() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cbe842027ad64a9000b87ddef7cfb7">&#9670;&nbsp;</a></span>Planes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,77 +228,6 @@ Protected Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab7382aeb750dbafa9762dc6a6c2f99e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7382aeb750dbafa9762dc6a6c2f99e1">&#9670;&nbsp;</a></span>Planes() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Planes::Planes </td>
-          <td>(</td>
-          <td class="paramtype">ros::NodeHandle *&#160;</td>
-          <td class="paramname"><em>nodehandle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>obsVerticesAugmented</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>dsafe</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>robotVerticesTopic</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a701382e1e702cff2a811976d6c754d98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a701382e1e702cff2a811976d6c754d98">&#9670;&nbsp;</a></span>~Planes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">plane::Planes::~Planes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -401,217 +277,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab4c78d97961636fb2d8676d061a3a94a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4c78d97961636fb2d8676d061a3a94a">&#9670;&nbsp;</a></span>obsVerticesCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Planes::obsVerticesCallback </td>
-          <td>(</td>
-          <td class="paramtype">const std_msgs::Float64MultiArray::ConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>obsvertices</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a217fac905ac79cc846c61306bd542108"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a217fac905ac79cc846c61306bd542108">&#9670;&nbsp;</a></span>robotVerticesCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Planes::robotVerticesCallback </td>
-          <td>(</td>
-          <td class="paramtype">const visualization_msgs::MarkerArray::ConstPtr &amp;&#160;</td>
-          <td class="paramname"><em>vertices_markers</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Call back function for receiving robot's position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices_markers</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a67fd7ed0af5147b8b45a833c3c04a121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67fd7ed0af5147b8b45a833c3c04a121">&#9670;&nbsp;</a></span>run()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Planes::run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acd1ad488f4f71ceff15e98c15dcdf3a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd1ad488f4f71ceff15e98c15dcdf3a8">&#9670;&nbsp;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Planes::update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3b4069af93d7709e9a5ac461f3f4f302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b4069af93d7709e9a5ac461f3f4f302">&#9670;&nbsp;</a></span>colorPlane2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rviz_visual_tools::colors plane::Planes::colorPlane2 = rviz_visual_tools::RED</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad5726aad7971b065abf222f0b8386a86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5726aad7971b065abf222f0b8386a86">&#9670;&nbsp;</a></span>colorPlane_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rviz_visual_tools::colors plane::Planes::colorPlane_ = rviz_visual_tools::TRANSLUCENT_DARK</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a21f7cc0cee76e8e1d77a394fa29054d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21f7cc0cee76e8e1d77a394fa29054d6">&#9670;&nbsp;</a></span>cubeObstacleMarkers_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rviz_visual_tools::RvizVisualToolsPtr plane::Planes::cubeObstacleMarkers_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a388f0de7910d7b233113815e9dde8ada"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a388f0de7910d7b233113815e9dde8ada">&#9670;&nbsp;</a></span>dsafe_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double plane::Planes::dsafe_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4f691cc61c09538a4bf3bda882d76bea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f691cc61c09538a4bf3bda882d76bea">&#9670;&nbsp;</a></span>gPlane_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd plane::Planes::gPlane_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a688c09efd5933e90d63f150a3ed35113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a688c09efd5933e90d63f150a3ed35113">&#9670;&nbsp;</a></span>initialize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool plane::Planes::initialize = true</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5622e7783a0eb9186127d3813f1a7e0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5622e7783a0eb9186127d3813f1a7e0d">&#9670;&nbsp;</a></span>N_</h2>
 
@@ -704,74 +370,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae8ec834500c7aa8715b06a5d726aeb8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8ec834500c7aa8715b06a5d726aeb8e">&#9670;&nbsp;</a></span>nh_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::NodeHandle plane::Planes::nh_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ros node to compute plane's location. </p>
-
-</div>
-</div>
-<a id="a468f86ebbc265b37c1907ecb42620464"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a468f86ebbc265b37c1907ecb42620464">&#9670;&nbsp;</a></span>obs_vertices_subscriber_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::Subscriber plane::Planes::obs_vertices_subscriber_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a35e6c9b5166bc067f44070567ca89abf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35e6c9b5166bc067f44070567ca89abf">&#9670;&nbsp;</a></span>obsCenter_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Vector3d plane::Planes::obsCenter_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a80e2c1a143b438ba0c521e59ed68ec64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80e2c1a143b438ba0c521e59ed68ec64">&#9670;&nbsp;</a></span>obsVertices_</h2>
 
@@ -794,140 +392,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="abb01bcbabcc5e75186bea3c049bd0151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb01bcbabcc5e75186bea3c049bd0151">&#9670;&nbsp;</a></span>obsVerticesAugmented_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;Eigen::MatrixXd&gt; plane::Planes::obsVerticesAugmented_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a18cabd6cf27947b9608077b5c8742c69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18cabd6cf27947b9608077b5c8742c69">&#9670;&nbsp;</a></span>obsVerticesPose_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">geometry_msgs::PoseArray plane::Planes::obsVerticesPose_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ace7457e6689892407079bb70294d5659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace7457e6689892407079bb70294d5659">&#9670;&nbsp;</a></span>plane_data_publisher_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::Publisher plane::Planes::plane_data_publisher_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af34b6b7762d3b3a198ed7493896487d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34b6b7762d3b3a198ed7493896487d0">&#9670;&nbsp;</a></span>plane_solver_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classPlaneSolver.html">PlaneSolver</a>&gt; plane::Planes::plane_solver_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classplane_1_1Planes.html" title="More like a data structure to store planes.">Planes</a> solver. </p>
-
-</div>
-</div>
-<a id="ae765fc3296d50b36e1d430a6ce4a25ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae765fc3296d50b36e1d430a6ce4a25ff">&#9670;&nbsp;</a></span>plane_x_width_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double plane::Planes::plane_x_width_ = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2dd658a67476a595fa0975cd9b4a7389"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dd658a67476a595fa0975cd9b4a7389">&#9670;&nbsp;</a></span>plane_y_width_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double plane::Planes::plane_y_width_ = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3d9f928811b24c27a1abe3b4ae4a47bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d9f928811b24c27a1abe3b4ae4a47bd">&#9670;&nbsp;</a></span>planesData_</h2>
 
@@ -938,72 +402,6 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="structplane_1_1Planes_1_1PlaneData.html">PlaneData</a> plane::Planes::planesData_</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a38bfb49a814e25f70b15c4eb702119ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38bfb49a814e25f70b15c4eb702119ff">&#9670;&nbsp;</a></span>planesPub_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rviz_visual_tools::RvizVisualToolsPtr plane::Planes::planesPub_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a60fd01600a3a8644e5231f115f635abf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60fd01600a3a8644e5231f115f635abf">&#9670;&nbsp;</a></span>robot_vertices_subscriber_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::Subscriber plane::Planes::robot_vertices_subscriber_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a86e3b0c6d946d6ace99534b2ca35a376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86e3b0c6d946d6ace99534b2ca35a376">&#9670;&nbsp;</a></span>robot_vertices_topic_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string plane::Planes::robot_vertices_topic_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -1030,31 +428,9 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afd5ed24f8f1a757c87ea66d620f02f3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd5ed24f8f1a757c87ea66d620f02f3a">&#9670;&nbsp;</a></span>robotVerticesAugmented_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;Eigen::MatrixXd&gt; plane::Planes::robotVerticesAugmented_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsepPlane/<a class="el" href="RosWrapsepPlane_8h_source.html">RosWrapsepPlane.h</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapsepPlane/<a class="el" href="RosWrapsepPlane_8cpp.html">RosWrapsepPlane.cpp</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/sepPlane/<a class="el" href="sepPlane_8h_source.html">sepPlane.h</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/sepPlane/<a class="el" href="sepPlane_8cpp.html">sepPlane.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapGenericCst.cpp.o"
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointPosCst.cpp.o"
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointVelCst.cpp.o"
+  "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o"
+  "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o"
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDynTree.cpp.o"
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o"
   "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp.o"

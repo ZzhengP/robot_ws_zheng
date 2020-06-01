@@ -33,7 +33,9 @@ add_library(ros_wrap_safe_motion_library
             RosWrapvisualization/RosWrapMarkers.cpp
             RosWrapsepPlane/RosWrapsepPlane.cpp
             RosWrapsolver/RosWrapPlaneSolver.cpp
-            RosWrapsolver/RosWraplpsolve.cpp)
+            RosWrapsolver/RosWraplpsolve.cpp
+            RosWrapperception/RosWrapHumanOptimalTorque.cpp
+            RosWrapperception/RosWrapHumanMotion.cpp)
 
 target_include_directories(ros_wrap_safe_motion_library PUBLIC ../include)
 target_link_libraries(ros_wrap_safe_motion_library PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${iDynTree_LIBRARIES} glpk caffe ${OpenPose_LIBS} boost_system glog jsoncpp)

@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/share/openni2_launch/cmake/openni2_launchConfig.cmake

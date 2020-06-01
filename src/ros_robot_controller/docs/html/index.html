@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MPController: This package is for generating collision free trajectory in human-robot collaborative task</title>
+<title>MPController: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,24 +60,11 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title">This package is for generating collision free trajectory in human-robot collaborative task </div>  </div>
+<div class="title">MPController Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_zheng_robot_ws_zheng_src_ros_wrap_safe_motion_README"></a> The package is self-containing but depending few open-source package such as <a href="https://gitlab.com/libeigen/eigen.git"><b>Eigen</b></a>, <a href="https://github.com/kuka-isir/qpOASES"><b>qpOASES</b></a>. <a href="https://github.com/PickNikRobotics/rviz_visual_tools"><b>rviz_visual_tools</b></a>. And it simulates result of the paper <a href="https://hal.archives-ouvertes.fr/hal-02496057/document"><b>Online optimal motion generation with guaranteedsafety in shared workspace</b></a></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-config</h1>
-<p>parameter as controller PID gains, controller type and other information such as topic's name etc</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-launch</h1>
-<p>human_work.launch will launch node as Gazebo, rviz, controller, robot's urdf, MPController and separating plane node.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-schema of control</h1>
-<p>First we start robot motion with a disired task and robot's intrinsec constraint such as position, velocity etc with node name <b>MPController</b>, this node publish data such as robot's vertices augmented via topic "MPController/Panda/robotVertices". This node also subcribe to topic "/plane_data" to read separating plane data.</p>
-<p>Secondly, we run <b>separating Plane node</b>, this node publisher data to "/plane_data" and subcriber to robotVertices and Obstacle verticee.</p>
-<p>The end, we use camera to detect obstacle's position and send it to separating plane node. (Not implemented yet, using some simulate obstacle's location) </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

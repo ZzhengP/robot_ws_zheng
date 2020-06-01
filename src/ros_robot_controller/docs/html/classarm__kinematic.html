@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="RosWrapRobotModel_8h_source.html">RosWrapRobotModel.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="RosRobotModel_8h_source.html">RosRobotModel.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for arm_kinematic:</div>
 <div class="dyncontent">
@@ -159,8 +159,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3c10039beaf61349da7ae3be10c02fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2562ee405cc618f782e99de52e9f71f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a2562ee405cc618f782e99de52e9f71f2">setqqdhorizon</a> (const Eigen::VectorXd &amp;qHorizon, const Eigen::VectorXd &amp;dqHorizon)</td></tr>
 <tr class="separator:a2562ee405cc618f782e99de52e9f71f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09659db0a5879ba57388568f91df7e35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a09659db0a5879ba57388568f91df7e35">setMPCState</a> (const Eigen::MatrixXd &amp;pandaPx, const Eigen::MatrixXd &amp;pandaPu, const Eigen::MatrixXd &amp;pandaPxdq, const Eigen::MatrixXd &amp;pandaPudq)</td></tr>
-<tr class="separator:a09659db0a5879ba57388568f91df7e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a0cfeed5f2de7c7d2672a49558c0c4601">computeJntFromCart</a> (const KDL::Frame &amp;desire_frame, KDL::JntArray &amp;q_sol)</td></tr>
 <tr class="memdesc:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute inverse kinematic  <a href="classarm__kinematic.html#a0cfeed5f2de7c7d2672a49558c0c4601">More...</a><br /></td></tr>
 <tr class="separator:a0cfeed5f2de7c7d2672a49558c0c4601"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,21 +183,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8065025e11c27e006447cc409f183c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf195aa4a801c0de23c510e12ae41e05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#acf195aa4a801c0de23c510e12ae41e05">computeJacobianDotHorz</a> (const Eigen::VectorXd &amp;qqd_horizon)</td></tr>
 <tr class="separator:acf195aa4a801c0de23c510e12ae41e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a507d32308d9fa27bf6bf49166a538409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a507d32308d9fa27bf6bf49166a538409">computeCartPosHorz</a> ()</td></tr>
-<tr class="memdesc:a507d32308d9fa27bf6bf49166a538409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute end-effector' position during predicted horizon.  <a href="classarm__kinematic.html#a507d32308d9fa27bf6bf49166a538409">More...</a><br /></td></tr>
-<tr class="separator:a507d32308d9fa27bf6bf49166a538409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3593d97c0194bfbae4caa543bbcfdc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a3593d97c0194bfbae4caa543bbcfdc27">computeJntPosHorz</a> (const Eigen::VectorXd &amp;optimal_control)</td></tr>
-<tr class="memdesc:a3593d97c0194bfbae4caa543bbcfdc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute joint position horizon ;.  <a href="classarm__kinematic.html#a3593d97c0194bfbae4caa543bbcfdc27">More...</a><br /></td></tr>
-<tr class="separator:a3593d97c0194bfbae4caa543bbcfdc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366aafb730ae7231ea87d2af0da09dcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a366aafb730ae7231ea87d2af0da09dcd">computeCartPosHorz</a> (const Eigen::VectorXd &amp;q_horizon)</td></tr>
+<tr class="memdesc:a366aafb730ae7231ea87d2af0da09dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute end-effector' position during predicted horizon.  <a href="classarm__kinematic.html#a366aafb730ae7231ea87d2af0da09dcd">More...</a><br /></td></tr>
+<tr class="separator:a366aafb730ae7231ea87d2af0da09dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d021b105a181009c79fd510dbdb247a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a2d021b105a181009c79fd510dbdb247a">initializeSubscriber</a> ()</td></tr>
 <tr class="memdesc:a2d021b105a181009c79fd510dbdb247a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalize ros subscriber node to update robot's joint position and joint vel.  <a href="classarm__kinematic.html#a2d021b105a181009c79fd510dbdb247a">More...</a><br /></td></tr>
 <tr class="separator:a2d021b105a181009c79fd510dbdb247a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cf85f43dc374890e2a005ab729e8910"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a1cf85f43dc374890e2a005ab729e8910">subscriberCallback</a> (const sensor_msgs::JointState &amp;jntState)</td></tr>
 <tr class="memdesc:a1cf85f43dc374890e2a005ab729e8910"><td class="mdescLeft">&#160;</td><td class="mdescRight">subscriberCallback  <a href="classarm__kinematic.html#a1cf85f43dc374890e2a005ab729e8910">More...</a><br /></td></tr>
 <tr class="separator:a1cf85f43dc374890e2a005ab729e8910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452d6ba140a73daa9873ec2a353baefb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a452d6ba140a73daa9873ec2a353baefb">verticesPublisher</a> ()</td></tr>
-<tr class="memdesc:a452d6ba140a73daa9873ec2a353baefb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node publish robot's vertices.  <a href="classarm__kinematic.html#a452d6ba140a73daa9873ec2a353baefb">More...</a><br /></td></tr>
-<tr class="separator:a452d6ba140a73daa9873ec2a353baefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -207,8 +199,18 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7325dd6969b72e4f6ab49455098563dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6a92880459adb00f39676d43f4963af"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#ab6a92880459adb00f39676d43f4963af">subscriber_</a></td></tr>
 <tr class="separator:ab6a92880459adb00f39676d43f4963af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d6f24885a6e5d39a3758d489aaadf2"><td class="memItemLeft" align="right" valign="top">rviz_visual_tools::RvizVisualToolsPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#af3d6f24885a6e5d39a3758d489aaadf2">robotVerticesPub_</a></td></tr>
-<tr class="separator:af3d6f24885a6e5d39a3758d489aaadf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9058876ffedeeefb02890ccf9102f1"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a9c9058876ffedeeefb02890ccf9102f1">publisher_1_</a></td></tr>
+<tr class="separator:a9c9058876ffedeeefb02890ccf9102f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad35cebbaec5c7267371d6b2000ab21b"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#aad35cebbaec5c7267371d6b2000ab21b">publisher_2_</a></td></tr>
+<tr class="separator:aad35cebbaec5c7267371d6b2000ab21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f6a9a0068e7ea4df7e595d17ff5070"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a50f6a9a0068e7ea4df7e595d17ff5070">publisher_3_</a></td></tr>
+<tr class="separator:a50f6a9a0068e7ea4df7e595d17ff5070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae665b7f14e81f51fcfc77c3d84e6fa0e"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#ae665b7f14e81f51fcfc77c3d84e6fa0e">publisher_4_</a></td></tr>
+<tr class="separator:ae665b7f14e81f51fcfc77c3d84e6fa0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1fd7a90de55cf5d036da65741b4bf8"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a1b1fd7a90de55cf5d036da65741b4bf8">publisher_5_</a></td></tr>
+<tr class="separator:a1b1fd7a90de55cf5d036da65741b4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0f15944bac6e86c71277593277b927"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a4d0f15944bac6e86c71277593277b927">publisher_6_</a></td></tr>
+<tr class="separator:a4d0f15944bac6e86c71277593277b927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44642c6d85f688f58b9382893d9a759b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a44642c6d85f688f58b9382893d9a759b">NrOfDeg_</a></td></tr>
 <tr class="memdesc:a44642c6d85f688f58b9382893d9a759b"><td class="mdescLeft">&#160;</td><td class="mdescRight">NrOfDeg_ : dof of robot.  <a href="classarm__kinematic.html#a44642c6d85f688f58b9382893d9a759b">More...</a><br /></td></tr>
 <tr class="separator:a44642c6d85f688f58b9382893d9a759b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,8 +248,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a54bc85307f61d67c52c0624e52855efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad506e1d204d5485a9138925c26435ba6"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#ad506e1d204d5485a9138925c26435ba6">ee_pos_horion_</a></td></tr>
 <tr class="separator:ad506e1d204d5485a9138925c26435ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af153effe5a7ef60b2b5c7123df9093ba"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#af153effe5a7ef60b2b5c7123df9093ba">foream_pos_horizon_</a></td></tr>
-<tr class="separator:af153effe5a7ef60b2b5c7123df9093ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fa6f8373103cdb2b788bb6b5f378f4d"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a6fa6f8373103cdb2b788bb6b5f378f4d">jacobian_horizon_</a></td></tr>
 <tr class="separator:a6fa6f8373103cdb2b788bb6b5f378f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcbf2f5cc4afaab9b140ab5c289fdacf"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#afcbf2f5cc4afaab9b140ab5c289fdacf">jacobian_dot_horizon_</a></td></tr>
@@ -311,15 +311,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a538b29e778dcf48bc66d85dcded69bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680411d847fb87392aa4329b06bdf9fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSegmentIndice.html">SegmentIndice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a680411d847fb87392aa4329b06bdf9fc">seg_names_idx_</a></td></tr>
 <tr class="separator:a680411d847fb87392aa4329b06bdf9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c26351edde0114ebd9b69b62743c05"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a18c26351edde0114ebd9b69b62743c05">pandaPx_</a></td></tr>
-<tr class="memdesc:a18c26351edde0114ebd9b69b62743c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPC state.  <a href="classarm__kinematic.html#a18c26351edde0114ebd9b69b62743c05">More...</a><br /></td></tr>
-<tr class="separator:a18c26351edde0114ebd9b69b62743c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f4cb98c08e50fb2e702c28bb2cc015f"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a3f4cb98c08e50fb2e702c28bb2cc015f">pandaPu_</a></td></tr>
-<tr class="separator:a3f4cb98c08e50fb2e702c28bb2cc015f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4f35be672adee07b15e4691777ab743"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#aa4f35be672adee07b15e4691777ab743">pandaPxdq_</a></td></tr>
-<tr class="separator:aa4f35be672adee07b15e4691777ab743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e41e701dafc6cf31de0acafbc68e67"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarm__kinematic.html#a79e41e701dafc6cf31de0acafbc68e67">pandaPudq_</a></td></tr>
-<tr class="separator:a79e41e701dafc6cf31de0acafbc68e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is used to compute forward and inverse kinematic with <a class="el" href="namespaceKDL.html">KDL</a> </p>
@@ -423,8 +414,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a507d32308d9fa27bf6bf49166a538409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a507d32308d9fa27bf6bf49166a538409">&#9670;&nbsp;</a></span>computeCartPosHorz()</h2>
+<a id="a366aafb730ae7231ea87d2af0da09dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366aafb730ae7231ea87d2af0da09dcd">&#9670;&nbsp;</a></span>computeCartPosHorz()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +423,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void arm_kinematic::computeCartPosHorz </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>q_horizon</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -666,40 +658,6 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">desire_frame</td><td></td></tr>
     <tr><td class="paramname">q_sol</td><td>desired joint position </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3593d97c0194bfbae4caa543bbcfdc27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3593d97c0194bfbae4caa543bbcfdc27">&#9670;&nbsp;</a></span>computeJntPosHorz()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void arm_kinematic::computeJntPosHorz </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>optimal_control</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Compute joint position horizon ;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">optimal_control</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1460,46 +1418,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a09659db0a5879ba57388568f91df7e35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09659db0a5879ba57388568f91df7e35">&#9670;&nbsp;</a></span>setMPCState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void arm_kinematic::setMPCState </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>pandaPx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>pandaPu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>pandaPxdq</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>pandaPudq</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2562ee405cc618f782e99de52e9f71f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2562ee405cc618f782e99de52e9f71f2">&#9670;&nbsp;</a></span>setqqdhorizon()</h2>
 
@@ -1596,25 +1514,6 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a452d6ba140a73daa9873ec2a353baefb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a452d6ba140a73daa9873ec2a353baefb">&#9670;&nbsp;</a></span>verticesPublisher()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void arm_kinematic::verticesPublisher </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Node publish robot's vertices. </p>
 
 </div>
 </div>
@@ -1908,28 +1807,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>the forward kinematic solver for position and inverse kinematic </p>
-
-</div>
-</div>
-<a id="af153effe5a7ef60b2b5c7123df9093ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af153effe5a7ef60b2b5c7123df9093ba">&#9670;&nbsp;</a></span>foream_pos_horizon_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd arm_kinematic::foream_pos_horizon_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -2294,8 +2171,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3f4cb98c08e50fb2e702c28bb2cc015f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f4cb98c08e50fb2e702c28bb2cc015f">&#9670;&nbsp;</a></span>pandaPu_</h2>
+<a id="a9c9058876ffedeeefb02890ccf9102f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9058876ffedeeefb02890ccf9102f1">&#9670;&nbsp;</a></span>publisher_1_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2304,7 +2181,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd arm_kinematic::pandaPu_</td>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_1_</td>
         </tr>
       </table>
   </td>
@@ -2316,8 +2193,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a79e41e701dafc6cf31de0acafbc68e67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79e41e701dafc6cf31de0acafbc68e67">&#9670;&nbsp;</a></span>pandaPudq_</h2>
+<a id="aad35cebbaec5c7267371d6b2000ab21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad35cebbaec5c7267371d6b2000ab21b">&#9670;&nbsp;</a></span>publisher_2_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2326,7 +2203,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd arm_kinematic::pandaPudq_</td>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_2_</td>
         </tr>
       </table>
   </td>
@@ -2338,8 +2215,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a18c26351edde0114ebd9b69b62743c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18c26351edde0114ebd9b69b62743c05">&#9670;&nbsp;</a></span>pandaPx_</h2>
+<a id="a50f6a9a0068e7ea4df7e595d17ff5070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f6a9a0068e7ea4df7e595d17ff5070">&#9670;&nbsp;</a></span>publisher_3_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2348,7 +2225,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd arm_kinematic::pandaPx_</td>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_3_</td>
         </tr>
       </table>
   </td>
@@ -2358,12 +2235,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>MPC state. </p>
-
 </div>
 </div>
-<a id="aa4f35be672adee07b15e4691777ab743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4f35be672adee07b15e4691777ab743">&#9670;&nbsp;</a></span>pandaPxdq_</h2>
+<a id="ae665b7f14e81f51fcfc77c3d84e6fa0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae665b7f14e81f51fcfc77c3d84e6fa0e">&#9670;&nbsp;</a></span>publisher_4_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2372,7 +2247,51 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd arm_kinematic::pandaPxdq_</td>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_4_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b1fd7a90de55cf5d036da65741b4bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b1fd7a90de55cf5d036da65741b4bf8">&#9670;&nbsp;</a></span>publisher_5_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_5_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d0f15944bac6e86c71277593277b927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0f15944bac6e86c71277593277b927">&#9670;&nbsp;</a></span>publisher_6_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Publisher arm_kinematic::publisher_6_</td>
         </tr>
       </table>
   </td>
@@ -2512,28 +2431,6 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">Eigen::VectorXd arm_kinematic::robot_state_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af3d6f24885a6e5d39a3758d489aaadf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d6f24885a6e5d39a3758d489aaadf2">&#9670;&nbsp;</a></span>robotVerticesPub_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rviz_visual_tools::RvizVisualToolsPtr arm_kinematic::robotVerticesPub_</td>
         </tr>
       </table>
   </td>
@@ -2810,8 +2707,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/<a class="el" href="RosWrapRobotModel_8h_source.html">RosWrapRobotModel.h</a></li>
-<li>/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/<a class="el" href="RosWrapRobotModel_8cpp.html">RosWrapRobotModel.cpp</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/<a class="el" href="RosRobotModel_8h_source.html">RosRobotModel.h</a></li>
+<li>/home/zheng/robot_ws_zheng/src/ros_robot_controller/src/robotmodel/<a class="el" href="RosRobotModel_8cpp.html">RosRobotModel.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

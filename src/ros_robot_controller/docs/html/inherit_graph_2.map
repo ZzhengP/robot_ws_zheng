@@ -1,8 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGenericCst.html" title="The generic constraint class &#160;Which is defined by a lower bound, upper bound and constraint matrix." alt="" coords="5,107,93,133"/>
-<area shape="rect" id="node2" href="$classCartVelCst.html" title=" " alt="" coords="163,5,250,32"/>
-<area shape="rect" id="node3" href="$classJntAccCst.html" title="Acceleration constraint." alt="" coords="165,56,249,83"/>
-<area shape="rect" id="node4" href="$classJntPosCst.html" title="Joint position constraint class." alt="" coords="165,107,249,133"/>
-<area shape="rect" id="node5" href="$classJntVelCst.html" title=" " alt="" coords="167,157,247,184"/>
-<area shape="rect" id="node6" href="$classObsAvoidanceCSt.html" title=" " alt="" coords="141,208,272,235"/>
+<area shape="rect" id="node1" href="$classgeneric__cst.html" title="The generic constraint class &#160;Which is defined by a lower bound, upper bound and constraint matrix." alt="" coords="5,81,95,108"/>
+<area shape="rect" id="node2" href="$classcartVelCst.html" title=" " alt="" coords="143,5,227,32"/>
+<area shape="rect" id="node3" href="$classjntAccCst.html" title="Acceleration constraint." alt="" coords="145,56,225,83"/>
+<area shape="rect" id="node4" href="$classjntPosCst.html" title="Joint position constraint class." alt="" coords="145,107,225,133"/>
+<area shape="rect" id="node5" href="$classjntVelCst.html" title=" " alt="" coords="147,157,223,184"/>
 </map>

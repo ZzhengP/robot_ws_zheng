@@ -1,0 +1,66 @@
+status/usr/local/NiTE-Linux-x64-2.2/Include
+status/usr/local/NiTE-Linux-x64-2.2/Redist
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+Nite2_INCLUDEDIR
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+   used as include directory in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+Nite2_LIBRARY
+    linked by target "openni2_tracker" in directory /home/zheng/robot_ws_zheng/src/openni2_tracker
+

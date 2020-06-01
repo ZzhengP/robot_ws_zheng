@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['random_678',['random',['../structrobot_1_1EigenRobotAcceleration.html#afd76ba2da7693258447d171712b9e3fd',1,'robot::EigenRobotAcceleration']]],
-  ['resize_679',['resize',['../structrobot_1_1EigenRobotState.html#aa92f7430d96e4a13c23cb57c47490d71',1,'robot::EigenRobotState::resize()'],['../structrobot_1_1iDynTreeRobotState.html#aef33b5bdea47625ce09b0270a978f9c5',1,'robot::iDynTreeRobotState::resize()'],['../structrobot_1_1EigenRobotAcceleration.html#af09290d5c198fcc8b2d7f92adb0ba47f',1,'robot::EigenRobotAcceleration::resize()'],['../structrobot_1_1iDynTreeRobotAcceleration.html#acd9fcb9f7b6dc6e1c9dc4eb94fc0c7fa',1,'robot::iDynTreeRobotAcceleration::resize()']]],
-  ['robotdynclass_680',['RobotDynClass',['../classrobot_1_1RobotDynClass.html#aa73bc9be788dca91fc4f539a074c7b84',1,'robot::RobotDynClass']]],
-  ['robotverticescallback_681',['robotVerticesCallback',['../classplane_1_1Planes.html#a217fac905ac79cc846c61306bd542108',1,'plane::Planes']]],
-  ['run_682',['run',['../classplane_1_1Planes.html#a67fd7ed0af5147b8b45a833c3c04a121',1,'plane::Planes::run()'],['../classmpc__solve.html#a1c96e72545636042f014c7e1e2712c7c',1,'mpc_solve::run()']]]
+  ['planes_667',['Planes',['../classplane_1_1Planes.html#ab8e2d83dbcb927b1ebbebed25d57d7ce',1,'plane::Planes::Planes(int N, int nbrRobobotPart, int nbrObs, std::vector&lt; Eigen::MatrixXd &gt; robotVertices, Eigen::MatrixXd obsVertices)'],['../classplane_1_1Planes.html#aa2cbe842027ad64a9000b87ddef7cfb7',1,'plane::Planes::Planes(int N, int nbrRobobotPart, int nbrObs, Eigen::MatrixXd robotVertices)']]],
+  ['planesolver_668',['PlaneSolver',['../classPlaneSolver.html#ac7b2d992326d4253ec2f427137fc7e44',1,'PlaneSolver']]],
+  ['print_669',['print',['../structconstraintData.html#a80ccd285e66baec00ed69bf4bf587220',1,'constraintData::print()'],['../classrobot_1_1RobotDynClass.html#aa816eda45894ab45efc265892733987c',1,'robot::RobotDynClass::print()'],['../structplane_1_1Planes_1_1PlaneData.html#a1ef75beb86d55c7a750e506ba0de97ad',1,'plane::Planes::PlaneData::print()'],['../classlpSolver.html#ae57b5884a5ef29e3a1a7318c00857f0e',1,'lpSolver::print()'],['../classmpc__solve.html#ad1840a72304792052959845ef1ef46f1',1,'mpc_solve::print()'],['../classPlaneSolver.html#a9a1996b21c0c4f1a80463aeb4e0162ad',1,'PlaneSolver::print()']]],
+  ['printrobotinformation_670',['printRobotInformation',['../classarm__kinematic.html#a3779e15147070d3e8bf6d85335fbe40c',1,'arm_kinematic']]]
 ];

@@ -1,0 +1,75 @@
+WARNING: Package name "qpOASES" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+WARNING: Package name "qpOASES" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+WARNING: Package name "robot6R" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+WARNING: Package name "qpOASES" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+WARNING: Package name "qpOASES" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+WARNING: Package name "robot6R" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+In file included from [01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:46:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/pluginlib/./class_list_macros.hpp:40[m[K,
+                 from [01m[K/opt/ros/melodic/include/pluginlib/class_list_macros.h:35[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/ros/openni2_camera_nodelet.cpp:56[m[K:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:[m[K In function ‘[01m[Kvoid class_loader::impl::registerPlugin(const string&, const string&)[m[K’:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:183:7:[m[K [01;31m[Kerror: [m[K‘[01m[Knullptr[m[K’ was not declared in this scope
+   if (nullptr == getCurrentlyActiveClassLoader()) {
+[01;32m[K       ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:[m[K In function ‘[01m[KBase* class_loader::impl::createInstance(const string&, class_loader::ClassLoader*)[m[K’:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:242:40:[m[K [01;31m[Kerror: [m[K‘[01m[Knullptr[m[K’ was not declared in this scope
+   AbstractMetaObject<Base> * factory = nullptr;
+[01;32m[K                                        ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:[m[K In function ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> > class_loader::impl::getAvailableClasses(class_loader::ClassLoader*)[m[K’:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:300:15:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[Kit[m[K’ with no type [-fpermissive]
+   for (auto & it : factory_map) {
+[01;32m[K               ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:300:20:[m[K [01;35m[Kwarning: [m[Krange-based ‘[01m[Kfor[m[K’ loops only available with -std=c++11 or -std=gnu++11
+   for (auto & it : factory_map) {
+[01;32m[K                    ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:301:43:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksecond[m[K’ in ‘[01m[Kit[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+     AbstractMetaObjectBase * factory = it.second;
+[01;32m[K                                           ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:303:28:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfirst[m[K’ in ‘[01m[Kit[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+       classes.push_back(it.first);
+[01;32m[K                            ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:304:35:[m[K [01;31m[Kerror: [m[K‘[01m[Knullptr[m[K’ was not declared in this scope
+     } else if (factory->isOwnedBy(nullptr)) {
+[01;32m[K                                   ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader_core.hpp:305:42:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfirst[m[K’ in ‘[01m[Kit[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+       classes_with_no_owner.push_back(it.first);
+[01;32m[K                                          ^[m[K
+In file included from [01m[K/opt/ros/melodic/include/pluginlib/./class_list_macros.hpp:40:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/pluginlib/class_list_macros.h:35[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/ros/openni2_camera_nodelet.cpp:56[m[K:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:[m[K At global scope:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:82:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kusing[m[K’
+   using DeleterType = std::function<void(Base *)>;
+[01;32m[K   ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:85:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kusing[m[K’
+   using UniquePtr = std::unique_ptr<Base, DeleterType<Base>>;
+[01;32m[K   ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:127:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kshared_ptr[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a template type
+   std::shared_ptr<Base> createSharedInstance(const std::string & derived_class_name)
+[01;32m[K        ^[m[K
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:160:3:[m[K [01;31m[Kerror: [m[K‘[01m[KUniquePtr[m[K’ does not name a type
+   UniquePtr<Base> createUniqueInstance(const std::string & derived_class_name)
+[01;32m[K   ^[m[K
+In file included from [01m[K/opt/ros/melodic/include/pluginlib/./class_list_macros.hpp:40:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/pluginlib/class_list_macros.h:35[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/ros/openni2_camera_nodelet.cpp:56[m[K:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:[m[K In member function ‘[01m[Kvoid class_loader::ClassLoader::onPluginDeletion(Base*)[m[K’:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:246:9:[m[K [01;31m[Kerror: [m[K‘[01m[Knullptr[m[K’ was not declared in this scope
+     if (nullptr == obj) {
+[01;32m[K         ^[m[K
+In file included from [01m[K/usr/include/boost/assert.hpp:58:0[m[K,
+                 from [01m[K/usr/include/boost/thread/pthread/mutex.hpp:20[m[K,
+                 from [01m[K/usr/include/boost/thread/mutex.hpp:16[m[K,
+                 from [01m[K/opt/ros/melodic/include/dynamic_reconfigure/config_init_mutex.h:4[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/devel/.private/openni2_camera/include/openni2_camera/OpenNI2Config.h:25[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/include/openni2_camera/openni2_driver.h:43[m[K,
+                 from [01m[K/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/ros/openni2_camera_nodelet.cpp:32[m[K:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:[m[K In member function ‘[01m[KBase* class_loader::ClassLoader::createRawInstance(const string&, bool)[m[K’:
+[01m[K/opt/ros/melodic/include/class_loader/class_loader.hpp:302:19:[m[K [01;31m[Kerror: [m[K‘[01m[Knullptr[m[K’ was not declared in this scope
+     assert(obj != nullptr);  // Unreachable assertion if createInstance() throws on failure
+[01;32m[K                   ^[m[K
+make[2]: *** [CMakeFiles/openni2_camera_nodelet.dir/ros/openni2_camera_nodelet.cpp.o] Error 1
+make[1]: *** [CMakeFiles/openni2_camera_nodelet.dir/all] Error 2
+make[1]: *** Attente des tâches non terminées....
+make: *** [all] Error 2

@@ -1364,6 +1364,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named humanperceptiontest
+
+# Build rule for target.
+humanperceptiontest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 humanperceptiontest
+.PHONY : humanperceptiontest
+
+# fast build rule for target.
+humanperceptiontest/fast:
+	$(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/build
+.PHONY : humanperceptiontest/fast
+
+#=============================================================================
 # Target rules for targets named obsInteractiveMarkersPublisher
 
 # Build rule for target.
@@ -1585,6 +1598,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... humanperceptiontest"
 	@echo "... obsInteractiveMarkersPublisher"
 	@echo "... InteractiveMarkers"
 	@echo "... separatingPlane"

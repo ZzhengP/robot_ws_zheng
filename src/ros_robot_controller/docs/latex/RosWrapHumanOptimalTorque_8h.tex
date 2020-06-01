@@ -1,0 +1,96 @@
+\hypertarget{RosWrapHumanOptimalTorque_8h}{}\doxysection{/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapperception/\+Ros\+Wrap\+Human\+Optimal\+Torque.h File Reference}
+\label{RosWrapHumanOptimalTorque_8h}\index{/home/zheng/robot\_ws\_zheng/src/ros\_wrap\_safe\_motion/include/RosWrapperception/RosWrapHumanOptimalTorque.h@{/home/zheng/robot\_ws\_zheng/src/ros\_wrap\_safe\_motion/include/RosWrapperception/RosWrapHumanOptimalTorque.h}}
+{\ttfamily \#include \char`\"{}qp\+O\+A\+S\+E\+S.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/shared\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Ros\+Wrapcommun/color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}map\char`\"{}}\newline
+Include dependency graph for Ros\+Wrap\+Human\+Optimal\+Torque.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RosWrapHumanOptimalTorque_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{RosWrapHumanOptimalTorque_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHumanTorque}{Human\+Torque}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}} \{ \newline
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8d9da3c171d12a0337ffea31e5695027}{hand\+\_\+jerk}} = 0, 
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a3aeba024a87ec6e04adce2d629bf2335}{joint\+\_\+jerk}}, 
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a60f94114f7dfb73956eca7ba9abe11ac}{joint\+\_\+ddq}}, 
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a1392253ec9d6fdfafa4a72f192d6e250}{torque\+\_\+variation}}, 
+\newline
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8a2b743d4c6ae8f77f1037a4a3978c9d}{torque}}, 
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a2659a4355be58dd5cde9bba061734c66}{geodesis}}, 
+\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a550d96ebb44bfd808aa48c9a8d72da2d}{energy}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_a982821570eb1b4197588c2c239884fdd}{operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}} c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}} 
+\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!optimal\_objective@{optimal\_objective}}
+\index{optimal\_objective@{optimal\_objective}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}
+\doxysubsubsection{\texorpdfstring{optimal\_objective}{optimal\_objective}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hand\_jerk@{hand\_jerk}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!hand\_jerk@{hand\_jerk}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8d9da3c171d12a0337ffea31e5695027}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8d9da3c171d12a0337ffea31e5695027}} 
+hand\+\_\+jerk&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{joint\_jerk@{joint\_jerk}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!joint\_jerk@{joint\_jerk}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a3aeba024a87ec6e04adce2d629bf2335}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a3aeba024a87ec6e04adce2d629bf2335}} 
+joint\+\_\+jerk&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{joint\_ddq@{joint\_ddq}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!joint\_ddq@{joint\_ddq}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a60f94114f7dfb73956eca7ba9abe11ac}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a60f94114f7dfb73956eca7ba9abe11ac}} 
+joint\+\_\+ddq&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{torque\_variation@{torque\_variation}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!torque\_variation@{torque\_variation}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a1392253ec9d6fdfafa4a72f192d6e250}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a1392253ec9d6fdfafa4a72f192d6e250}} 
+torque\+\_\+variation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{torque@{torque}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!torque@{torque}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8a2b743d4c6ae8f77f1037a4a3978c9d}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a8a2b743d4c6ae8f77f1037a4a3978c9d}} 
+torque&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{geodesis@{geodesis}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!geodesis@{geodesis}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a2659a4355be58dd5cde9bba061734c66}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a2659a4355be58dd5cde9bba061734c66}} 
+geodesis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{energy@{energy}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!energy@{energy}}}\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a550d96ebb44bfd808aa48c9a8d72da2d}\label{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321a550d96ebb44bfd808aa48c9a8d72da2d}} 
+energy&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{RosWrapHumanOptimalTorque_8h_a982821570eb1b4197588c2c239884fdd}\label{RosWrapHumanOptimalTorque_8h_a982821570eb1b4197588c2c239884fdd}} 
+\index{RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!RosWrapHumanOptimalTorque.h@{RosWrapHumanOptimalTorque.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}}}]{c }\end{DoxyParamCaption})}
+

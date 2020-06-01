@@ -166,6 +166,7 @@ clean: src/clean
 # Directory level rules for directory examples
 
 # Recursive "all" directory target.
+examples/all: examples/CMakeFiles/humanperceptiontest.dir/all
 examples/all: examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/all
 examples/all: examples/CMakeFiles/InteractiveMarkers.dir/all
 examples/all: examples/CMakeFiles/separatingPlane.dir/all
@@ -183,6 +184,7 @@ examples/preinstall:
 .PHONY : examples/preinstall
 
 # Recursive "clean" directory target.
+examples/clean: examples/CMakeFiles/humanperceptiontest.dir/clean
 examples/clean: examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/clean
 examples/clean: examples/CMakeFiles/InteractiveMarkers.dir/clean
 examples/clean: examples/CMakeFiles/separatingPlane.dir/clean
@@ -1653,7 +1655,7 @@ CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
 CMakeFiles/rosWrapperdoc.dir/all:
 	$(MAKE) -f CMakeFiles/rosWrapperdoc.dir/build.make CMakeFiles/rosWrapperdoc.dir/depend
 	$(MAKE) -f CMakeFiles/rosWrapperdoc.dir/build.make CMakeFiles/rosWrapperdoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=22 "Built target rosWrapperdoc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=24 "Built target rosWrapperdoc"
 .PHONY : CMakeFiles/rosWrapperdoc.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2754,18 +2756,45 @@ gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
+# Target rules for target examples/CMakeFiles/humanperceptiontest.dir
+
+# All Build rule for target.
+examples/CMakeFiles/humanperceptiontest.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
+	$(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/depend
+	$(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=18,19 "Built target humanperceptiontest"
+.PHONY : examples/CMakeFiles/humanperceptiontest.dir/all
+
+# Build rule for subdir invocation for target.
+examples/CMakeFiles/humanperceptiontest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/humanperceptiontest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
+.PHONY : examples/CMakeFiles/humanperceptiontest.dir/rule
+
+# Convenience name for target.
+humanperceptiontest: examples/CMakeFiles/humanperceptiontest.dir/rule
+
+.PHONY : humanperceptiontest
+
+# clean rule for target.
+examples/CMakeFiles/humanperceptiontest.dir/clean:
+	$(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/clean
+.PHONY : examples/CMakeFiles/humanperceptiontest.dir/clean
+
+#=============================================================================
 # Target rules for target examples/CMakeFiles/obsInteractiveMarkersPublisher.dir
 
 # All Build rule for target.
 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/depend
 	$(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=18,19 "Built target obsInteractiveMarkersPublisher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=20,21 "Built target obsInteractiveMarkersPublisher"
 .PHONY : examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
@@ -2792,7 +2821,7 @@ examples/CMakeFiles/InteractiveMarkers.dir/all: src/CMakeFiles/ros_wrap_safe_mot
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/InteractiveMarkers.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
@@ -2814,12 +2843,12 @@ examples/CMakeFiles/InteractiveMarkers.dir/clean:
 examples/CMakeFiles/separatingPlane.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/depend
 	$(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=37,38 "Built target separatingPlane"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=41,42 "Built target separatingPlane"
 .PHONY : examples/CMakeFiles/separatingPlane.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/separatingPlane.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/separatingPlane.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/separatingPlane.dir/rule
@@ -2846,7 +2875,7 @@ examples/CMakeFiles/RosMovingobstacleavoidance.dir/all: src/CMakeFiles/ros_wrap_
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/RosMovingobstacleavoidance.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
@@ -2868,12 +2897,12 @@ examples/CMakeFiles/RosMovingobstacleavoidance.dir/clean:
 examples/CMakeFiles/obsVerticesPublisher.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/depend
 	$(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=20,21 "Built target obsVerticesPublisher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=22,23 "Built target obsVerticesPublisher"
 .PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/obsVerticesPublisher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsVerticesPublisher.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/rule
@@ -2895,12 +2924,12 @@ examples/CMakeFiles/obsVerticesPublisher.dir/clean:
 examples/CMakeFiles/simpletest.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/depend
 	$(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=41,42 "Built target simpletest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=45,46 "Built target simpletest"
 .PHONY : examples/CMakeFiles/simpletest.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/simpletest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/simpletest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/simpletest.dir/rule
@@ -2922,12 +2951,12 @@ examples/CMakeFiles/simpletest.dir/clean:
 examples/CMakeFiles/simpleMatrixReceive.dir/all: src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/depend
 	$(MAKE) -f examples/CMakeFiles/simpleMatrixReceive.dir/build.make examples/CMakeFiles/simpleMatrixReceive.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=39,40 "Built target simpleMatrixReceive"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=43,44 "Built target simpleMatrixReceive"
 .PHONY : examples/CMakeFiles/simpleMatrixReceive.dir/all
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/simpleMatrixReceive.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/simpleMatrixReceive.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/simpleMatrixReceive.dir/rule
@@ -2954,7 +2983,7 @@ examples/CMakeFiles/DynamicAndMPCSolver.dir/all: src/CMakeFiles/ros_wrap_safe_mo
 
 # Build rule for subdir invocation for target.
 examples/CMakeFiles/DynamicAndMPCSolver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/DynamicAndMPCSolver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
@@ -2976,12 +3005,12 @@ examples/CMakeFiles/DynamicAndMPCSolver.dir/clean:
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/all:
 	$(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/depend
 	$(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36 "Built target ros_wrap_safe_motion_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40 "Built target ros_wrap_safe_motion_library"
 .PHONY : src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/ros_wrap_safe_motion_library.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles 0
 .PHONY : src/CMakeFiles/ros_wrap_safe_motion_library.dir/rule

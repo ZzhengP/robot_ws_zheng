@@ -7,27 +7,365 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classHumanMotion_a79a64aa4efb69cce54be744eb22446ef}{Human\+Motion}} ()
+\mbox{\hyperlink{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}{Human\+Motion}} (const int \&ndof, const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&M\+\_\+joint, const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&M\+\_\+\+CoM, const Eigen\+::\+Matrix\+Xd \&S\+\_\+list)
 \item 
 \mbox{\hyperlink{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}{$\sim$\+Human\+Motion}} ()
+\item 
+bool \mbox{\hyperlink{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}{near\+Zero}} (const double \&val)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}{Vec\+Toso3}} (const Eigen\+::\+Vector3d \&omega)
+\begin{DoxyCompactList}\small\item\em return the skew matrix presentation of angular velocity \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}{so3\+To\+Vec}} (const Eigen\+::\+Matrix3d \&omega\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em return the vector presentation of angular velocity skew matrix \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}{Axis\+Ang3}} (const Eigen\+::\+Vector3d \&expc3)
+\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into it\textquotesingle{}s individual components. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}{Matrix\+Exp3}} (const Eigen\+::\+Matrix3d \&so3mat)
+\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into a rotation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}{Matrix\+Log3}} (const Eigen\+::\+Matrix3d \&R)
+\begin{DoxyCompactList}\small\item\em Computes the matrix logarithm of a rotation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}{Rp\+To\+Trans}} (const Eigen\+::\+Matrix3d \&R, const Eigen\+::\+Vector3d \&p)
+\begin{DoxyCompactList}\small\item\em Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}{Trans\+To\+Rp}} (const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a84b7e69cca855303313f7568f1134f52}{Vec\+Tose3}} (const Eigen\+::\+Vector\+Xd \&V)
+\begin{DoxyCompactList}\small\item\em Translates a spatial velocity vector into a transformation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}{se3\+To\+Vec}} (const Eigen\+::\+Matrix\+Xd \&T)
+\begin{DoxyCompactList}\small\item\em Translates a spatial velocity transformation matrix into a spatial velocity vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}{Adjoint}} (const Eigen\+::\+Matrix\+Xd \&T)
+\begin{DoxyCompactList}\small\item\em adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_abec342c613b77208d2845f2fa6370f26}{Trans\+Inv}} (const Eigen\+::\+Matrix\+Xd \&transform)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a126e0c933620768232e86881867bc447}{Rot\+Inv}} (const Eigen\+::\+Matrix\+Xd \&rot\+Matrix)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}{Matrix\+Exp6}} (const Eigen\+::\+Matrix\+Xd \&se3mat)
+\begin{DoxyCompactList}\small\item\em Rotation expanded for screw axis. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}{Matrix\+Log6}} (const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}{F\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\begin{DoxyCompactList}\small\item\em Compute end effector frame (used for current spatial position calculation) \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}{F\+Kin\+Body}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}{Jacobian\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}{Jacobian\+Body}} (const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}{get\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}{get\+Relative\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&Ti, const Eigen\+::\+Matrix\+Xd \&Tj)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}{compute\+Velocity}} (const Eigen\+::\+Vector\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+bool \mbox{\hyperlink{classHumanMotion_a90418bc4c9e2922112cfe604222071de}{I\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&T, Eigen\+::\+Vector\+Xd \&thetalist, double eomg, double ev)
+\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}{compute\+Occupancy}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+init, const Eigen\+::\+Vector\+Xd \&dq\+\_\+init, const Eigen\+::\+Vector\+Xd \&ddq\+\_\+init, const int \&N, const double \&Vmax)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classHumanMotion_a79a64aa4efb69cce54be744eb22446ef}\label{classHumanMotion_a79a64aa4efb69cce54be744eb22446ef}} 
+\mbox{\Hypertarget{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}\label{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}} 
 \index{HumanMotion@{HumanMotion}!HumanMotion@{HumanMotion}}
 \index{HumanMotion@{HumanMotion}!HumanMotion@{HumanMotion}}
 \doxysubsubsection{\texorpdfstring{HumanMotion()}{HumanMotion()}}
-{\footnotesize\ttfamily Human\+Motion\+::\+Human\+Motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Human\+Motion\+::\+Human\+Motion (\begin{DoxyParamCaption}\item[{const int \&}]{ndof,  }\item[{const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&}]{M\+\_\+joint,  }\item[{const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&}]{M\+\_\+\+CoM,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{S\+\_\+list }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}\label{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}} 
 \index{HumanMotion@{HumanMotion}!````~HumanMotion@{$\sim$HumanMotion}}
 \index{````~HumanMotion@{$\sim$HumanMotion}!HumanMotion@{HumanMotion}}
 \doxysubsubsection{\texorpdfstring{$\sim$HumanMotion()}{~HumanMotion()}}
-{\footnotesize\ttfamily Human\+Motion\+::$\sim$\+Human\+Motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Human\+Motion\+::$\sim$\+Human\+Motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}\label{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}} 
+\index{HumanMotion@{HumanMotion}!Adjoint@{Adjoint}}
+\index{Adjoint@{Adjoint}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{Adjoint()}{Adjoint()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Adjoint (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+
+adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 4x4} & Transformation matrix S\+E(3) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+6x6 Adjoint Representation of the matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}\label{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}} 
+\index{HumanMotion@{HumanMotion}!AxisAng3@{AxisAng3}}
+\index{AxisAng3@{AxisAng3}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{AxisAng3()}{AxisAng3()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d Human\+Motion\+::\+Axis\+Ang3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{expc3 }\end{DoxyParamCaption})}
+
+
+
+Translates an exponential rotation into it\textquotesingle{}s individual components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Exponential} & rotation (rotation matrix in terms of a rotation axis and the angle of rotation) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The axis and angle of rotation as \mbox{[}x, y, z, theta\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}\label{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}} 
+\index{HumanMotion@{HumanMotion}!computeOccupancy@{computeOccupancy}}
+\index{computeOccupancy@{computeOccupancy}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeOccupancy()}{computeOccupancy()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ Human\+Motion\+::compute\+Occupancy (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dq\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddq\+\_\+init,  }\item[{const int \&}]{N,  }\item[{const double \&}]{Vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}\label{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}} 
+\index{HumanMotion@{HumanMotion}!computeVelocity@{computeVelocity}}
+\index{computeVelocity@{computeVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeVelocity()}{computeVelocity()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::compute\+Velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}\label{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}} 
+\index{HumanMotion@{HumanMotion}!FKinBody@{FKinBody}}
+\index{FKinBody@{FKinBody}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{FKinBody()}{FKinBody()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+F\+Kin\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}\label{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}} 
+\index{HumanMotion@{HumanMotion}!FKinSpace@{FKinSpace}}
+\index{FKinSpace@{FKinSpace}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{FKinSpace()}{FKinSpace()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+F\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+
+
+Compute end effector frame (used for current spatial position calculation) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Home} & configuration (position and orientation) of end-\/effector The joint screw axes in the space frame when the manipulator is at the home position A list of joint coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transfomation matrix representing the end-\/effector frame when the joints are at the specified coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}\label{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}} 
+\index{HumanMotion@{HumanMotion}!getRelativeTransformation@{getRelativeTransformation}}
+\index{getRelativeTransformation@{getRelativeTransformation}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getRelativeTransformation()}{getRelativeTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::get\+Relative\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Ti,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Tj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}\label{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}} 
+\index{HumanMotion@{HumanMotion}!getTransformation@{getTransformation}}
+\index{getTransformation@{getTransformation}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getTransformation()}{getTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::get\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a90418bc4c9e2922112cfe604222071de}\label{classHumanMotion_a90418bc4c9e2922112cfe604222071de}} 
+\index{HumanMotion@{HumanMotion}!IKinSpace@{IKinSpace}}
+\index{IKinSpace@{IKinSpace}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{IKinSpace()}{IKinSpace()}}
+{\footnotesize\ttfamily bool Human\+Motion\+::\+I\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T,  }\item[{Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{double}]{eomg,  }\item[{double}]{ev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}\label{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}} 
+\index{HumanMotion@{HumanMotion}!JacobianBody@{JacobianBody}}
+\index{JacobianBody@{JacobianBody}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{JacobianBody()}{JacobianBody()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Jacobian\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}\label{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}} 
+\index{HumanMotion@{HumanMotion}!JacobianSpace@{JacobianSpace}}
+\index{JacobianSpace@{JacobianSpace}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{JacobianSpace()}{JacobianSpace()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Jacobian\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}\label{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}} 
+\index{HumanMotion@{HumanMotion}!MatrixExp3@{MatrixExp3}}
+\index{MatrixExp3@{MatrixExp3}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{MatrixExp3()}{MatrixExp3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d Human\+Motion\+::\+Matrix\+Exp3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{so3mat }\end{DoxyParamCaption})}
+
+
+
+Translates an exponential rotation into a rotation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exponenential} & representation of a rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}\label{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}} 
+\index{HumanMotion@{HumanMotion}!MatrixExp6@{MatrixExp6}}
+\index{MatrixExp6@{MatrixExp6}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{MatrixExp6()}{MatrixExp6()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Matrix\+Exp6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{se3mat }\end{DoxyParamCaption})}
+
+
+
+Rotation expanded for screw axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em se3} & matrix representation of exponential coordinates (transformation matrix) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+6x6 Matrix representing the rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}\label{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}} 
+\index{HumanMotion@{HumanMotion}!MatrixLog3@{MatrixLog3}}
+\index{MatrixLog3@{MatrixLog3}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{MatrixLog3()}{MatrixLog3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d Human\+Motion\+::\+Matrix\+Log3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R }\end{DoxyParamCaption})}
+
+
+
+Computes the matrix logarithm of a rotation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Rotation} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix logarithm of a rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}\label{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}} 
+\index{HumanMotion@{HumanMotion}!MatrixLog6@{MatrixLog6}}
+\index{MatrixLog6@{MatrixLog6}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{MatrixLog6()}{MatrixLog6()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Matrix\+Log6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Eigen\+::\+Matrix\+Xd 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}\label{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}} 
+\index{HumanMotion@{HumanMotion}!nearZero@{nearZero}}
+\index{nearZero@{nearZero}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
+{\footnotesize\ttfamily bool Human\+Motion\+::near\+Zero (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a126e0c933620768232e86881867bc447}\label{classHumanMotion_a126e0c933620768232e86881867bc447}} 
+\index{HumanMotion@{HumanMotion}!RotInv@{RotInv}}
+\index{RotInv@{RotInv}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{RotInv()}{RotInv()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Rot\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{rot\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}\label{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}} 
+\index{HumanMotion@{HumanMotion}!RpToTrans@{RpToTrans}}
+\index{RpToTrans@{RpToTrans}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{RpToTrans()}{RpToTrans()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Rp\+To\+Trans (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R,  }\item[{const Eigen\+::\+Vector3d \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matrix of T = \mbox{[} \mbox{[}R, p\mbox{]}, \mbox{[}0, 1\mbox{]} \mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}\label{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}} 
+\index{HumanMotion@{HumanMotion}!se3ToVec@{se3ToVec}}
+\index{se3ToVec@{se3ToVec}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{se3ToVec()}{se3ToVec()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::se3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+
+Translates a spatial velocity transformation matrix into a spatial velocity vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spatial} & velocity transformation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{[}angular velocity, linear velocity \mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}\label{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}} 
+\index{HumanMotion@{HumanMotion}!so3ToVec@{so3ToVec}}
+\index{so3ToVec@{so3ToVec}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{so3ToVec()}{so3ToVec()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d Human\+Motion\+::so3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{omega\+\_\+matrix }\end{DoxyParamCaption})}
+
+
+
+return the vector presentation of angular velocity skew matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega\+\_\+matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angular velocity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_abec342c613b77208d2845f2fa6370f26}\label{classHumanMotion_abec342c613b77208d2845f2fa6370f26}} 
+\index{HumanMotion@{HumanMotion}!TransInv@{TransInv}}
+\index{TransInv@{TransInv}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{TransInv()}{TransInv()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Trans\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{transform }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}\label{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}} 
+\index{HumanMotion@{HumanMotion}!TransToRp@{TransToRp}}
+\index{TransToRp@{TransToRp}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{TransToRp()}{TransToRp()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ Human\+Motion\+::\+Trans\+To\+Rp (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a84b7e69cca855303313f7568f1134f52}\label{classHumanMotion_a84b7e69cca855303313f7568f1134f52}} 
+\index{HumanMotion@{HumanMotion}!VecTose3@{VecTose3}}
+\index{VecTose3@{VecTose3}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{VecTose3()}{VecTose3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Vec\+Tose3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V }\end{DoxyParamCaption})}
+
+
+
+Translates a spatial velocity vector into a transformation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spatial} & velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+spatial velocity transformation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}\label{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}} 
+\index{HumanMotion@{HumanMotion}!VecToso3@{VecToso3}}
+\index{VecToso3@{VecToso3}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{VecToso3()}{VecToso3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Vec\+Toso3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{omega }\end{DoxyParamCaption})}
+
+
+
+return the skew matrix presentation of angular velocity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angular} & velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+skew matrix 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapperception/\mbox{\hyperlink{RosWrapHumanMotion_8h}{Ros\+Wrap\+Human\+Motion.\+h}}\end{DoxyCompactItemize}
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapperception/\mbox{\hyperlink{RosWrapHumanMotion_8h}{Ros\+Wrap\+Human\+Motion.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/src/\+Ros\+Wrapperception/\mbox{\hyperlink{RosWrapHumanMotion_8cpp}{Ros\+Wrap\+Human\+Motion.\+cpp}}\end{DoxyCompactItemize}

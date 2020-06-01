@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['humanmotion_643',['HumanMotion',['../classHumanMotion.html#a79a64aa4efb69cce54be744eb22446ef',1,'HumanMotion']]]
+  ['humanmodel_636',['humanModel',['../classhumanModel.html#af1d8cb38ecdd46d7e01b53b3b0070695',1,'humanModel']]]
 ];

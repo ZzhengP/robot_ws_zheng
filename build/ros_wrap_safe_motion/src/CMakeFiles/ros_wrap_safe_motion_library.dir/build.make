@@ -226,6 +226,32 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.s"
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapsolver/RosWraplpsolve.cpp -o CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.s
 
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o: src/CMakeFiles/ros_wrap_safe_motion_library.dir/flags.make
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o: /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanOptimalTorque.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanOptimalTorque.cpp
+
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanOptimalTorque.cpp > CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.i
+
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanOptimalTorque.cpp -o CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.s
+
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o: src/CMakeFiles/ros_wrap_safe_motion_library.dir/flags.make
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o: /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanMotion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o -c /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanMotion.cpp
+
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.i"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanMotion.cpp > CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.i
+
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.s"
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanMotion.cpp -o CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.s
+
 # Object files for target ros_wrap_safe_motion_library
 ros_wrap_safe_motion_library_OBJECTS = \
 "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o" \
@@ -240,7 +266,9 @@ ros_wrap_safe_motion_library_OBJECTS = \
 "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapvisualization/RosWrapMarkers.cpp.o" \
 "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.cpp.o" \
 "CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapPlaneSolver.cpp.o" \
-"CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.o"
+"CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.o" \
+"CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o" \
+"CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o"
 
 # External object files for target ros_wrap_safe_motion_library
 ros_wrap_safe_motion_library_EXTERNAL_OBJECTS =
@@ -258,6 +286,8 @@ ros_wrap_safe_motion_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.cpp.o
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapPlaneSolver.cpp.o
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.o
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: /opt/ros/melodic/lib/libgazebo_ros_api_plugin.so
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: /opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so
@@ -518,7 +548,7 @@ ros_wrap_safe_motion_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: /home/zheng/openpose/build/caffe/lib/libcaffe.so
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: /usr/local/lib/libgflags.a
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so: src/CMakeFiles/ros_wrap_safe_motion_library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX shared library /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so"
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ros_wrap_safe_motion_library.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

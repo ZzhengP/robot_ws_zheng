@@ -90,17 +90,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,6 +112,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -166,6 +166,21 @@ preinstall/fast:
 depend:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+examples/CMakeFiles/humanperceptiontest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/humanperceptiontest.dir/rule
+.PHONY : examples/CMakeFiles/humanperceptiontest.dir/rule
+
+# Convenience name for target.
+humanperceptiontest: examples/CMakeFiles/humanperceptiontest.dir/rule
+
+.PHONY : humanperceptiontest
+
+# fast build rule for target.
+humanperceptiontest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/build
+.PHONY : humanperceptiontest/fast
 
 # Convenience name for target.
 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule:
@@ -341,6 +356,33 @@ InteractiveMarkers.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.s
 .PHONY : InteractiveMarkers.cpp.s
 
+humanperceptiontest.o: humanperceptiontest.cpp.o
+
+.PHONY : humanperceptiontest.o
+
+# target to build an object file
+humanperceptiontest.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/humanperceptiontest.cpp.o
+.PHONY : humanperceptiontest.cpp.o
+
+humanperceptiontest.i: humanperceptiontest.cpp.i
+
+.PHONY : humanperceptiontest.i
+
+# target to preprocess a source file
+humanperceptiontest.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/humanperceptiontest.cpp.i
+.PHONY : humanperceptiontest.cpp.i
+
+humanperceptiontest.s: humanperceptiontest.cpp.s
+
+.PHONY : humanperceptiontest.s
+
+# target to generate assembly for a file
+humanperceptiontest.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/humanperceptiontest.cpp.s
+.PHONY : humanperceptiontest.cpp.s
+
 movingobstacleavoidance.o: movingobstacleavoidance.cpp.o
 
 .PHONY : movingobstacleavoidance.o
@@ -512,9 +554,10 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... humanperceptiontest"
 	@echo "... obsInteractiveMarkersPublisher"
 	@echo "... InteractiveMarkers"
 	@echo "... separatingPlane"
@@ -530,6 +573,9 @@ help:
 	@echo "... InteractiveMarkers.o"
 	@echo "... InteractiveMarkers.i"
 	@echo "... InteractiveMarkers.s"
+	@echo "... humanperceptiontest.o"
+	@echo "... humanperceptiontest.i"
+	@echo "... humanperceptiontest.s"
 	@echo "... movingobstacleavoidance.o"
 	@echo "... movingobstacleavoidance.i"
 	@echo "... movingobstacleavoidance.s"

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['verticespublisher_718',['verticesPublisher',['../classarm__kinematic.html#a452d6ba140a73daa9873ec2a353baefb',1,'arm_kinematic::verticesPublisher()'],['../classmpc__solve.html#a825d7da2905c517c5d7b57a033e3413f',1,'mpc_solve::verticesPublisher()']]]
+  ['transinv_710',['TransInv',['../classhumanModel.html#a4db705fbbac3de95d1bf7723de398a2b',1,'humanModel']]],
+  ['transtorp_711',['TransToRp',['../classhumanModel.html#ac9030e5ef1a50233918894179c913840',1,'humanModel']]]
 ];
