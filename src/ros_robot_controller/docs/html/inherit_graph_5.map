@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classlpSolver.html" title="This is a C++ Eigen&#45;Based wrapp for solving linear programming problem In lp_solve file the problem i..." alt="" coords="5,5,75,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node2" href="$classKDL_1_1ChainJntToJacDotSolver.html" title="Computes the Jacobian time derivative (Jdot) by calculating the partial derivatives regarding to a jo..." alt="" coords="116,5,319,32"/>
 </map>

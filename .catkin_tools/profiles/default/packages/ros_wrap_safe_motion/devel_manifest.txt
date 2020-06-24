@@ -6,6 +6,7 @@ ros_wrap_safe_motion
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/obsVerticesPublisher /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/obsVerticesPublisher
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/InteractiveMarkers /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/InteractiveMarkers
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/simpleMatrixReceive /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/simpleMatrixReceive
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/torch_test /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/torch_test
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/simpletest /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/simpletest
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/separatingPlane /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/separatingPlane
 /home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/obsInteractiveMarkersPublisher /home/zheng/robot_ws_zheng/devel/lib/ros_wrap_safe_motion/obsInteractiveMarkersPublisher

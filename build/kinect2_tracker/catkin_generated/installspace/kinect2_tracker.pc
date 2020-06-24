@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/install
+
+Name: kinect2_tracker
+Description: Description of kinect2_tracker
+Version: 0.0.1
+Cflags: -I${prefix}/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lkinect2_tracker
+Requires: cv_bridge geometry_msgs image_transport kdl_conversions roscpp roslib tf tf_conversions visualization_msgs message_runtime

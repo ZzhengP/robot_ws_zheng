@@ -2,7 +2,7 @@
 \label{classarm__kinematic}\index{arm\_kinematic@{arm\_kinematic}}
 
 
-{\ttfamily \#include $<$Ros\+Robot\+Model.\+h$>$}
+{\ttfamily \#include $<$Ros\+Wrap\+Robot\+Model.\+h$>$}
 
 
 
@@ -70,6 +70,8 @@ void \mbox{\hyperlink{classarm__kinematic_a3c10039beaf61349da7ae3be10c02fb5}{set
 \item 
 void \mbox{\hyperlink{classarm__kinematic_a2562ee405cc618f782e99de52e9f71f2}{setqqdhorizon}} (const Eigen\+::\+Vector\+Xd \&q\+Horizon, const Eigen\+::\+Vector\+Xd \&dq\+Horizon)
 \item 
+void \mbox{\hyperlink{classarm__kinematic_a09659db0a5879ba57388568f91df7e35}{set\+M\+P\+C\+State}} (const Eigen\+::\+Matrix\+Xd \&panda\+Px, const Eigen\+::\+Matrix\+Xd \&panda\+Pu, const Eigen\+::\+Matrix\+Xd \&panda\+Pxdq, const Eigen\+::\+Matrix\+Xd \&panda\+Pudq)
+\item 
 void \mbox{\hyperlink{classarm__kinematic_a0cfeed5f2de7c7d2672a49558c0c4601}{compute\+Jnt\+From\+Cart}} (const K\+D\+L\+::\+Frame \&desire\+\_\+frame, K\+D\+L\+::\+Jnt\+Array \&q\+\_\+sol)
 \begin{DoxyCompactList}\small\item\em compute inverse kinematic \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_aa9c9ea3af91784724ab99b59c9551db7}{compute\+Jacobian}} ()
@@ -88,12 +90,16 @@ void \mbox{\hyperlink{classarm__kinematic_a8065025e11c27e006447cc409f183c68}{com
 \begin{DoxyCompactList}\small\item\em Compute\+Jacobian matrix during predicted horizon. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_acf195aa4a801c0de23c510e12ae41e05}{compute\+Jacobian\+Dot\+Horz}} (const Eigen\+::\+Vector\+Xd \&qqd\+\_\+horizon)
 \item 
-void \mbox{\hyperlink{classarm__kinematic_a366aafb730ae7231ea87d2af0da09dcd}{compute\+Cart\+Pos\+Horz}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+horizon)
+void \mbox{\hyperlink{classarm__kinematic_a507d32308d9fa27bf6bf49166a538409}{compute\+Cart\+Pos\+Horz}} ()
 \begin{DoxyCompactList}\small\item\em Compute end-\/effector\textquotesingle{} position during predicted horizon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classarm__kinematic_a3593d97c0194bfbae4caa543bbcfdc27}{compute\+Jnt\+Pos\+Horz}} (const Eigen\+::\+Vector\+Xd \&optimal\+\_\+control)
+\begin{DoxyCompactList}\small\item\em Compute joint position horizon ;. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a2d021b105a181009c79fd510dbdb247a}{initialize\+Subscriber}} ()
 \begin{DoxyCompactList}\small\item\em Initalize ros subscriber node to update robot\textquotesingle{}s joint position and joint vel. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classarm__kinematic_a1cf85f43dc374890e2a005ab729e8910}{subscriber\+Callback}} (const sensor\+\_\+msgs\+::\+Joint\+State \&jnt\+State)
-\begin{DoxyCompactList}\small\item\em subscriber\+Callback \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em subscriber\+Callback \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classarm__kinematic_a452d6ba140a73daa9873ec2a353baefb}{vertices\+Publisher}} ()
+\begin{DoxyCompactList}\small\item\em Node publish robot\textquotesingle{}s vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -101,17 +107,7 @@ ros\+::\+Node\+Handle \mbox{\hyperlink{classarm__kinematic_a7325dd6969b72e4f6ab4
 \item 
 ros\+::\+Subscriber \mbox{\hyperlink{classarm__kinematic_ab6a92880459adb00f39676d43f4963af}{subscriber\+\_\+}}
 \item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_a9c9058876ffedeeefb02890ccf9102f1}{publisher\+\_\+1\+\_\+}}
-\item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_aad35cebbaec5c7267371d6b2000ab21b}{publisher\+\_\+2\+\_\+}}
-\item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_a50f6a9a0068e7ea4df7e595d17ff5070}{publisher\+\_\+3\+\_\+}}
-\item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_ae665b7f14e81f51fcfc77c3d84e6fa0e}{publisher\+\_\+4\+\_\+}}
-\item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_a1b1fd7a90de55cf5d036da65741b4bf8}{publisher\+\_\+5\+\_\+}}
-\item 
-ros\+::\+Publisher \mbox{\hyperlink{classarm__kinematic_a4d0f15944bac6e86c71277593277b927}{publisher\+\_\+6\+\_\+}}
+rviz\+\_\+visual\+\_\+tools\+::\+Rviz\+Visual\+Tools\+Ptr \mbox{\hyperlink{classarm__kinematic_af3d6f24885a6e5d39a3758d489aaadf2}{robot\+Vertices\+Pub\+\_\+}}
 \item 
 unsigned int \mbox{\hyperlink{classarm__kinematic_a44642c6d85f688f58b9382893d9a759b}{Nr\+Of\+Deg\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Nr\+Of\+Deg\+\_\+ \+: dof of robot. \end{DoxyCompactList}\item 
@@ -144,6 +140,8 @@ Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classarm__kinematic_ad7ea053d73a2a96f68ca
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classarm__kinematic_a54bc85307f61d67c52c0624e52855efe}{qqd\+\_\+horizon\+\_\+}}
 \item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classarm__kinematic_ad506e1d204d5485a9138925c26435ba6}{ee\+\_\+pos\+\_\+horion\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classarm__kinematic_af153effe5a7ef60b2b5c7123df9093ba}{foream\+\_\+pos\+\_\+horizon\+\_\+}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classarm__kinematic_a6fa6f8373103cdb2b788bb6b5f378f4d}{jacobian\+\_\+horizon\+\_\+}}
 \item 
@@ -202,6 +200,14 @@ std\+::string \mbox{\hyperlink{classarm__kinematic_a2689ece0be42fb60b7d570cdf9e4
 std\+::string \mbox{\hyperlink{classarm__kinematic_a538b29e778dcf48bc66d85dcded69bdd}{tip\+\_\+link\+\_\+ros\+\_\+name}}
 \item 
 \mbox{\hyperlink{classSegmentIndice}{Segment\+Indice}} \mbox{\hyperlink{classarm__kinematic_a680411d847fb87392aa4329b06bdf9fc}{seg\+\_\+names\+\_\+idx\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classarm__kinematic_a18c26351edde0114ebd9b69b62743c05}{panda\+Px\+\_\+}}
+\begin{DoxyCompactList}\small\item\em M\+PC state. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classarm__kinematic_a3f4cb98c08e50fb2e702c28bb2cc015f}{panda\+Pu\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classarm__kinematic_aa4f35be672adee07b15e4691777ab743}{panda\+Pxdq\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classarm__kinematic_a79e41e701dafc6cf31de0acafbc68e67}{panda\+Pudq\+\_\+}}
 \end{DoxyCompactItemize}
 
 
@@ -239,11 +245,11 @@ Constructor creates robot\textquotesingle{}s kinematic chain
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classarm__kinematic_a366aafb730ae7231ea87d2af0da09dcd}\label{classarm__kinematic_a366aafb730ae7231ea87d2af0da09dcd}} 
+\mbox{\Hypertarget{classarm__kinematic_a507d32308d9fa27bf6bf49166a538409}\label{classarm__kinematic_a507d32308d9fa27bf6bf49166a538409}} 
 \index{arm\_kinematic@{arm\_kinematic}!computeCartPosHorz@{computeCartPosHorz}}
 \index{computeCartPosHorz@{computeCartPosHorz}!arm\_kinematic@{arm\_kinematic}}
 \doxysubsubsection{\texorpdfstring{computeCartPosHorz()}{computeCartPosHorz()}}
-{\footnotesize\ttfamily void arm\+\_\+kinematic\+::compute\+Cart\+Pos\+Horz (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+\_\+horizon }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::compute\+Cart\+Pos\+Horz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -333,6 +339,21 @@ compute inverse kinematic
 {\em desire\+\_\+frame} & \\
 \hline
 {\em q\+\_\+sol} & desired joint position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classarm__kinematic_a3593d97c0194bfbae4caa543bbcfdc27}\label{classarm__kinematic_a3593d97c0194bfbae4caa543bbcfdc27}} 
+\index{arm\_kinematic@{arm\_kinematic}!computeJntPosHorz@{computeJntPosHorz}}
+\index{computeJntPosHorz@{computeJntPosHorz}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{computeJntPosHorz()}{computeJntPosHorz()}}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::compute\+Jnt\+Pos\+Horz (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{optimal\+\_\+control }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute joint position horizon ;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimal\+\_\+control} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classarm__kinematic_a5bb62edae09343e1d25aa0eee247b82b}\label{classarm__kinematic_a5bb62edae09343e1d25aa0eee247b82b}} 
@@ -671,6 +692,12 @@ Sets the joint velocity of the model.
 \mbox{\texttt{ in}}  & {\em qd\+\_\+des} & the joint velocity in rad. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classarm__kinematic_a09659db0a5879ba57388568f91df7e35}\label{classarm__kinematic_a09659db0a5879ba57388568f91df7e35}} 
+\index{arm\_kinematic@{arm\_kinematic}!setMPCState@{setMPCState}}
+\index{setMPCState@{setMPCState}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{setMPCState()}{setMPCState()}}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::set\+M\+P\+C\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{panda\+Px,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{panda\+Pu,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{panda\+Pxdq,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{panda\+Pudq }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classarm__kinematic_a2562ee405cc618f782e99de52e9f71f2}\label{classarm__kinematic_a2562ee405cc618f782e99de52e9f71f2}} 
 \index{arm\_kinematic@{arm\_kinematic}!setqqdhorizon@{setqqdhorizon}}
 \index{setqqdhorizon@{setqqdhorizon}!arm\_kinematic@{arm\_kinematic}}
@@ -709,6 +736,16 @@ subscriber\+Callback
 {\em Ros} & message joint state \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classarm__kinematic_a452d6ba140a73daa9873ec2a353baefb}\label{classarm__kinematic_a452d6ba140a73daa9873ec2a353baefb}} 
+\index{arm\_kinematic@{arm\_kinematic}!verticesPublisher@{verticesPublisher}}
+\index{verticesPublisher@{verticesPublisher}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{verticesPublisher()}{verticesPublisher()}}
+{\footnotesize\ttfamily void arm\+\_\+kinematic\+::vertices\+Publisher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Node publish robot\textquotesingle{}s vertices. 
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -801,6 +838,12 @@ The jacobian solver.
 
 
 the forward kinematic solver for position and inverse kinematic 
+
+\mbox{\Hypertarget{classarm__kinematic_af153effe5a7ef60b2b5c7123df9093ba}\label{classarm__kinematic_af153effe5a7ef60b2b5c7123df9093ba}} 
+\index{arm\_kinematic@{arm\_kinematic}!foream\_pos\_horizon\_@{foream\_pos\_horizon\_}}
+\index{foream\_pos\_horizon\_@{foream\_pos\_horizon\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{foream\_pos\_horizon\_}{foream\_pos\_horizon\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd arm\+\_\+kinematic\+::foream\+\_\+pos\+\_\+horizon\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classarm__kinematic_a7e107eddaa86f86c437d250663865a90}\label{classarm__kinematic_a7e107eddaa86f86c437d250663865a90}} 
 \index{arm\_kinematic@{arm\_kinematic}!frame\_vel\_@{frame\_vel\_}}
@@ -914,41 +957,33 @@ joints\+\_\+name\+\_\+
 
 Nr\+Of\+Deg\+\_\+ \+: dof of robot. 
 
-N\+\_\+prediction \+: Prediction step \mbox{\Hypertarget{classarm__kinematic_a9c9058876ffedeeefb02890ccf9102f1}\label{classarm__kinematic_a9c9058876ffedeeefb02890ccf9102f1}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_1\_@{publisher\_1\_}}
-\index{publisher\_1\_@{publisher\_1\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_1\_}{publisher\_1\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+N\+\_\+prediction \+: Prediction step \mbox{\Hypertarget{classarm__kinematic_a3f4cb98c08e50fb2e702c28bb2cc015f}\label{classarm__kinematic_a3f4cb98c08e50fb2e702c28bb2cc015f}} 
+\index{arm\_kinematic@{arm\_kinematic}!pandaPu\_@{pandaPu\_}}
+\index{pandaPu\_@{pandaPu\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{pandaPu\_}{pandaPu\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd arm\+\_\+kinematic\+::panda\+Pu\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classarm__kinematic_aad35cebbaec5c7267371d6b2000ab21b}\label{classarm__kinematic_aad35cebbaec5c7267371d6b2000ab21b}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_2\_@{publisher\_2\_}}
-\index{publisher\_2\_@{publisher\_2\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_2\_}{publisher\_2\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classarm__kinematic_a79e41e701dafc6cf31de0acafbc68e67}\label{classarm__kinematic_a79e41e701dafc6cf31de0acafbc68e67}} 
+\index{arm\_kinematic@{arm\_kinematic}!pandaPudq\_@{pandaPudq\_}}
+\index{pandaPudq\_@{pandaPudq\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{pandaPudq\_}{pandaPudq\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd arm\+\_\+kinematic\+::panda\+Pudq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classarm__kinematic_a50f6a9a0068e7ea4df7e595d17ff5070}\label{classarm__kinematic_a50f6a9a0068e7ea4df7e595d17ff5070}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_3\_@{publisher\_3\_}}
-\index{publisher\_3\_@{publisher\_3\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_3\_}{publisher\_3\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+3\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classarm__kinematic_a18c26351edde0114ebd9b69b62743c05}\label{classarm__kinematic_a18c26351edde0114ebd9b69b62743c05}} 
+\index{arm\_kinematic@{arm\_kinematic}!pandaPx\_@{pandaPx\_}}
+\index{pandaPx\_@{pandaPx\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{pandaPx\_}{pandaPx\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd arm\+\_\+kinematic\+::panda\+Px\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classarm__kinematic_ae665b7f14e81f51fcfc77c3d84e6fa0e}\label{classarm__kinematic_ae665b7f14e81f51fcfc77c3d84e6fa0e}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_4\_@{publisher\_4\_}}
-\index{publisher\_4\_@{publisher\_4\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_4\_}{publisher\_4\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+4\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classarm__kinematic_a1b1fd7a90de55cf5d036da65741b4bf8}\label{classarm__kinematic_a1b1fd7a90de55cf5d036da65741b4bf8}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_5\_@{publisher\_5\_}}
-\index{publisher\_5\_@{publisher\_5\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_5\_}{publisher\_5\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+5\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classarm__kinematic_a4d0f15944bac6e86c71277593277b927}\label{classarm__kinematic_a4d0f15944bac6e86c71277593277b927}} 
-\index{arm\_kinematic@{arm\_kinematic}!publisher\_6\_@{publisher\_6\_}}
-\index{publisher\_6\_@{publisher\_6\_}!arm\_kinematic@{arm\_kinematic}}
-\doxysubsubsection{\texorpdfstring{publisher\_6\_}{publisher\_6\_}}
-{\footnotesize\ttfamily ros\+::\+Publisher arm\+\_\+kinematic\+::publisher\+\_\+6\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+M\+PC state. 
+
+\mbox{\Hypertarget{classarm__kinematic_aa4f35be672adee07b15e4691777ab743}\label{classarm__kinematic_aa4f35be672adee07b15e4691777ab743}} 
+\index{arm\_kinematic@{arm\_kinematic}!pandaPxdq\_@{pandaPxdq\_}}
+\index{pandaPxdq\_@{pandaPxdq\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{pandaPxdq\_}{pandaPxdq\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd arm\+\_\+kinematic\+::panda\+Pxdq\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classarm__kinematic_a491f392668f37361908f907104b95968}\label{classarm__kinematic_a491f392668f37361908f907104b95968}} 
 \index{arm\_kinematic@{arm\_kinematic}!q\_@{q\_}}
@@ -997,6 +1032,12 @@ the rosparam argument names
 \index{robot\_state\_@{robot\_state\_}!arm\_kinematic@{arm\_kinematic}}
 \doxysubsubsection{\texorpdfstring{robot\_state\_}{robot\_state\_}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd arm\+\_\+kinematic\+::robot\+\_\+state\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classarm__kinematic_af3d6f24885a6e5d39a3758d489aaadf2}\label{classarm__kinematic_af3d6f24885a6e5d39a3758d489aaadf2}} 
+\index{arm\_kinematic@{arm\_kinematic}!robotVerticesPub\_@{robotVerticesPub\_}}
+\index{robotVerticesPub\_@{robotVerticesPub\_}!arm\_kinematic@{arm\_kinematic}}
+\doxysubsubsection{\texorpdfstring{robotVerticesPub\_}{robotVerticesPub\_}}
+{\footnotesize\ttfamily rviz\+\_\+visual\+\_\+tools\+::\+Rviz\+Visual\+Tools\+Ptr arm\+\_\+kinematic\+::robot\+Vertices\+Pub\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classarm__kinematic_a2689ece0be42fb60b7d570cdf9e48364}\label{classarm__kinematic_a2689ece0be42fb60b7d570cdf9e48364}} 
 \index{arm\_kinematic@{arm\_kinematic}!root\_link\_ros\_name@{root\_link\_ros\_name}}
@@ -1074,5 +1115,5 @@ the rosparam argument names
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/robotmodel/\mbox{\hyperlink{RosRobotModel_8h}{Ros\+Robot\+Model.\+h}}\item 
-/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/robotmodel/\mbox{\hyperlink{RosRobotModel_8cpp}{Ros\+Robot\+Model.\+cpp}}\end{DoxyCompactItemize}
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wraprobotmodel/\mbox{\hyperlink{RosWrapRobotModel_8h}{Ros\+Wrap\+Robot\+Model.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/src/\+Ros\+Wraprobotmodel/\mbox{\hyperlink{RosWrapRobotModel_8cpp}{Ros\+Wrap\+Robot\+Model.\+cpp}}\end{DoxyCompactItemize}

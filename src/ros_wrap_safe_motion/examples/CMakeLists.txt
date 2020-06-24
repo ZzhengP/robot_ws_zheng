@@ -31,4 +31,3 @@ target_link_libraries(obsInteractiveMarkersPublisher PRIVATE ${catkin_LIBRARIES}
 add_executable(humanperceptiontest humanperceptiontest.cpp)
 target_link_libraries(humanperceptiontest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_wrap_safe_motion_library )
 
-

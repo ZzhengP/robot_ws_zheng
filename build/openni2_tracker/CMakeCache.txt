@@ -274,13 +274,19 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
 //Path to a file.
-Nite2_INCLUDEDIR:PATH=Nite2_INCLUDEDIR-NOTFOUND
+Nite2_INCLUDEDIR:PATH=/home/zheng/NiTE-Linux-x64-2.2/Include
+
+//Path to a file.
+Nite2_INCLUDE_DIR:PATH=/home/zheng/NiTE-Linux-x64-2.2/Include
 
 //Path to a library.
-Nite2_LIBRARY:FILEPATH=Nite2_LIBRARY-NOTFOUND
+Nite2_LIBRARY:FILEPATH=/home/zheng/NiTE-Linux-x64-2.2/Redist/libNiTE2.so
 
 //Path to a file.
 OpenNI2_INCLUDEDIR:PATH=/usr/include/openni2
+
+//Path to a file.
+OpenNI2_INCLUDE_DIR:PATH=/usr/include/openni2
 
 //Path to a library.
 OpenNI2_LIBRARIES:FILEPATH=/usr/lib/libOpenNI2.so

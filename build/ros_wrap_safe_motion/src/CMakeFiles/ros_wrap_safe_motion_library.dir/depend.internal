@@ -344,54 +344,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapAvoidan
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapGenericCst.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapconstraint/RosWrapGenericCst.cpp
@@ -602,54 +554,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapGeneric
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointPosCst.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h
@@ -861,54 +765,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointPo
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointVelCst.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h
@@ -1127,54 +983,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapconstraint/RosWrapJointVe
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixPower.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixSquareRoot.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapperception/RosWrapHumanMotion.cpp
@@ -1385,54 +1193,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMo
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOptimalTorque.cpp.o
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
@@ -1733,54 +1493,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOp
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDynTree.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotDynTree.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapRobotDynTree.cpp
@@ -1991,58 +1703,7 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDy
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/kdl_tl.hpp
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/nlopt_ik.hpp
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/trac_ik.hpp
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/RosWrapCommunDefinition.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/color.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h
@@ -2161,6 +1822,9 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotMo
  /opt/ros/melodic/include/std_msgs/Float64.h
  /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
+ /opt/ros/melodic/include/trac_ik/kdl_tl.hpp
+ /opt/ros/melodic/include/trac_ik/nlopt_ik.hpp
+ /opt/ros/melodic/include/trac_ik/trac_ik.hpp
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/melodic/include/urdf/model.h
@@ -2380,54 +2044,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotMo
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp
@@ -2595,54 +2211,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapchainjn
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.cpp.o
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
@@ -2984,58 +2552,7 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/kdl_tl.hpp
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/nlopt_ik.hpp
- /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/trac_ik.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.ipp
@@ -3203,6 +2720,9 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.c
  /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h
  /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h
  /opt/ros/melodic/include/std_msgs/String.h
+ /opt/ros/melodic/include/trac_ik/kdl_tl.hpp
+ /opt/ros/melodic/include/trac_ik/nlopt_ik.hpp
+ /opt/ros/melodic/include/trac_ik/trac_ik.hpp
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
  /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/melodic/include/urdf/model.h
@@ -3434,54 +2954,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.c
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixPower.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixSquareRoot.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapPlaneSolver.cpp.o
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
  /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
@@ -3782,54 +3254,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapPlaneSolver
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/color.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapsolver/RosWraplpsolve.h
@@ -4041,54 +3465,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWraplpsolve.cpp
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraptask/RosWrapMpcTask.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/RosWrapCommunDefinition.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/color.h
@@ -4374,54 +3750,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraptask/RosWrapMpcTask.cpp.o
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixPower.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixSquareRoot.h
  /usr/include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapvisualization/RosWrapMarkers.cpp.o
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapvisualization/RosWrapMarkers.h
  /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWrapvisualization/RosWrapMarkers.cpp
@@ -4717,51 +4045,3 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapvisualization/RosWrapMark
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
- /usr/local/cuda/include/builtin_types.h
- /usr/local/cuda/include/channel_descriptor.h
- /usr/local/cuda/include/crt/device_double_functions.h
- /usr/local/cuda/include/crt/device_double_functions.hpp
- /usr/local/cuda/include/crt/device_functions.h
- /usr/local/cuda/include/crt/device_functions.hpp
- /usr/local/cuda/include/crt/func_macro.h
- /usr/local/cuda/include/crt/host_defines.h
- /usr/local/cuda/include/crt/sm_70_rt.h
- /usr/local/cuda/include/crt/sm_70_rt.hpp
- /usr/local/cuda/include/cuda_device_runtime_api.h
- /usr/local/cuda/include/cuda_fp16.h
- /usr/local/cuda/include/cuda_fp16.hpp
- /usr/local/cuda/include/cuda_runtime_api.h
- /usr/local/cuda/include/cuda_surface_types.h
- /usr/local/cuda/include/cuda_texture_types.h
- /usr/local/cuda/include/device_atomic_functions.h
- /usr/local/cuda/include/device_atomic_functions.hpp
- /usr/local/cuda/include/device_functions.h
- /usr/local/cuda/include/device_functions_decls.h
- /usr/local/cuda/include/device_types.h
- /usr/local/cuda/include/driver_types.h
- /usr/local/cuda/include/host_defines.h
- /usr/local/cuda/include/math_constants.h
- /usr/local/cuda/include/math_functions.hpp
- /usr/local/cuda/include/sm_20_atomic_functions.h
- /usr/local/cuda/include/sm_20_atomic_functions.hpp
- /usr/local/cuda/include/sm_20_intrinsics.h
- /usr/local/cuda/include/sm_20_intrinsics.hpp
- /usr/local/cuda/include/sm_30_intrinsics.h
- /usr/local/cuda/include/sm_30_intrinsics.hpp
- /usr/local/cuda/include/sm_32_atomic_functions.h
- /usr/local/cuda/include/sm_32_atomic_functions.hpp
- /usr/local/cuda/include/sm_32_intrinsics.h
- /usr/local/cuda/include/sm_32_intrinsics.hpp
- /usr/local/cuda/include/sm_35_atomic_functions.h
- /usr/local/cuda/include/sm_35_intrinsics.h
- /usr/local/cuda/include/sm_60_atomic_functions.h
- /usr/local/cuda/include/sm_60_atomic_functions.hpp
- /usr/local/cuda/include/sm_61_intrinsics.h
- /usr/local/cuda/include/sm_61_intrinsics.hpp
- /usr/local/cuda/include/surface_functions.h
- /usr/local/cuda/include/surface_indirect_functions.h
- /usr/local/cuda/include/surface_types.h
- /usr/local/cuda/include/texture_fetch_functions.h
- /usr/local/cuda/include/texture_indirect_functions.h
- /usr/local/cuda/include/texture_types.h
- /usr/local/cuda/include/vector_types.h

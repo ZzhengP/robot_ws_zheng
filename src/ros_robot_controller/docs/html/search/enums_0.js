@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['returnvalue_828',['returnValue',['../RosMpcSolver_8cpp.html#a81d556f613bfbabd0b1f9488c0fa865e',1,'RosMpcSolver.cpp']]]
+  ['optimal_5fobjective_958',['optimal_objective',['../RosWrapHumanOptimalTorque_8h.html#ad40aa99ab0abca8a9ecabefc00bb7321',1,'RosWrapHumanOptimalTorque.h']]]
 ];

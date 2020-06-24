@@ -67,8 +67,11 @@ $(function() {
 <li>generalizedBiasForces()
 : <a class="el" href="classrobot_1_1RobotDynClass.html#ac3e09fd69a36be72067e548a75492e25">robot::RobotDynClass</a>
 </li>
-<li>generic_cst()
-: <a class="el" href="classgeneric__cst.html#ac1c0b36ab00a1194dd6d154f1d1bea96">generic_cst</a>
+<li>GenericCst()
+: <a class="el" href="classGenericCst.html#a72257b4c65b355edf3277e13abc4cb30">GenericCst</a>
+</li>
+<li>get_update_objective()
+: <a class="el" href="classHumanTorque.html#a2f57ea5020b90a69a6d88fe6ada7c7cc">HumanTorque</a>
 </li>
 <li>getBaseFrame()
 : <a class="el" href="classrobot_1_1RobotDynClass.html#aa27e4828bf59e718f33d8bc72e0e0c71">robot::RobotDynClass</a>
@@ -80,15 +83,18 @@ $(function() {
 : <a class="el" href="classarm__kinematic.html#a65202532f71c5473e5f8cec1b944ba91">arm_kinematic</a>
 </li>
 <li>getConstraintData()
-: <a class="el" href="classgeneric__cst.html#af0de0d07f4eadbaef2f420921a9cc0cb">generic_cst</a>
+: <a class="el" href="classGenericCst.html#aba98ea8677fd25429ddf94787b63ace5">GenericCst</a>
 , <a class="el" href="classObsAvoidanceCSt.html#a708edb9df1090beb52aff4fc6ad75c63">ObsAvoidanceCSt</a>
 </li>
 <li>getConstraintLowerBound()
 : <a class="el" href="classPlaneSolver.html#a42ff90253b987eb89d0e126e11a7a0dd">PlaneSolver</a>
 </li>
 <li>getConstraintMatrix()
-: <a class="el" href="classgeneric__cst.html#a62b360fae15ca6fda8114c22d14459c9">generic_cst</a>
+: <a class="el" href="classGenericCst.html#a0f868670545d9034a53dbb41611396d7">GenericCst</a>
 , <a class="el" href="classPlaneSolver.html#a3223a13bba41f987dad03834b175d8c0">PlaneSolver</a>
+</li>
+<li>getConstraintName()
+: <a class="el" href="classGenericCst.html#a7eed4b474acf08480f185c85f03f5030">GenericCst</a>
 </li>
 <li>getConstraintUpperBound()
 : <a class="el" href="classPlaneSolver.html#a5a8458cf9d5768f790a1d26a93d4e6ad">PlaneSolver</a>
@@ -142,7 +148,7 @@ $(function() {
 , <a class="el" href="classrobot_1_1RobotDynClass.html#a1b314d7eeaf6b1bfa50e86c5574598c2">robot::RobotDynClass</a>
 </li>
 <li>getLowerBound()
-: <a class="el" href="classgeneric__cst.html#aeea66a61e89666e863e08cf3293da933">generic_cst</a>
+: <a class="el" href="classGenericCst.html#a502823356468b9087478fe8b35839aca">GenericCst</a>
 , <a class="el" href="classPlaneSolver.html#aa2b316aa639e263fd0ee1938c38cc00e">PlaneSolver</a>
 </li>
 <li>getMarkers()
@@ -204,7 +210,7 @@ $(function() {
 : <a class="el" href="classrobot_1_1RobotDynClass.html#ae153c976687eda67cd176d6a8cbd13b4">robot::RobotDynClass</a>
 </li>
 <li>getRelativeTransformation()
-: <a class="el" href="classhumanModel.html#a212f9910af5573accaca5703de4dc179">humanModel</a>
+: <a class="el" href="classHumanMotion.html#a5d3522edf1cf5cc6c40ae4f02c76108b">HumanMotion</a>
 </li>
 <li>getRobotModel()
 : <a class="el" href="classrobot_1_1RobotDynClass.html#ada8f4a62d5774383e1f258e02d627f9e">robot::RobotDynClass</a>
@@ -236,10 +242,10 @@ $(function() {
 : <a class="el" href="classMPC__Task.html#a8e3d98573abbba4ae9717ae60a17f897">MPC_Task</a>
 </li>
 <li>getTransformation()
-: <a class="el" href="classhumanModel.html#a430bf7c2d713cc081edf9bc8db09cb22">humanModel</a>
+: <a class="el" href="classHumanMotion.html#a66d496d404c25d098a3ce9bcc6c09321">HumanMotion</a>
 </li>
 <li>getUpperBound()
-: <a class="el" href="classgeneric__cst.html#a02de5e5b6128351ba5f879c68ee102cf">generic_cst</a>
+: <a class="el" href="classGenericCst.html#a4a50d68e243949555fae1dae35058013">GenericCst</a>
 , <a class="el" href="classPlaneSolver.html#aaf322906b7f6ed8bae2b682018046d19">PlaneSolver</a>
 </li>
 <li>getVectorg()
@@ -248,9 +254,15 @@ $(function() {
 <li>global_gravity_vector_
 : <a class="el" href="classrobot_1_1RobotDynClass.html#a2c6142af13eceafe77fd5ede3c157067">robot::RobotDynClass</a>
 </li>
+<li>gPlane_
+: <a class="el" href="classplane_1_1Planes.html#a4f691cc61c09538a4bf3bda882d76bea">plane::Planes</a>
+</li>
 <li>gravity
 : <a class="el" href="structrobot_1_1EigenRobotState.html#a75ce569904204fa3ad6c4ca5ee9b9d26">robot::EigenRobotState</a>
 , <a class="el" href="structrobot_1_1iDynTreeRobotState.html#af456cd984f5635a2384d9e9b9bbe1d93">robot::iDynTreeRobotState</a>
+</li>
+<li>GravityForces()
+: <a class="el" href="classHumanMotion.html#a4a46fffd5f116158cbdf05a474ae9648">HumanMotion</a>
 </li>
 <li>gravityTorque_
 : <a class="el" href="classarm__kinematic.html#a002cbbe4b1fa8843943d0c5b70cb4847">arm_kinematic</a>

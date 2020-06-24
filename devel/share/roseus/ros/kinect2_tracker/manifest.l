@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/kinect2_tracker/share/roseus/ros/kinect2_tracker/manifest.l

@@ -39,6 +39,18 @@ Eigen::MatrixXd HumanMotion::VecToso3(const Eigen::Vector3d& omega){
     return m;
 }
 
+
+Eigen::MatrixXd HumanMotion::ad(Eigen::VectorXd V) {
+		Eigen::Matrix3d omgmat = HumanMotion::VecToso3(Eigen::Vector3d(V(0), V(1), V(2)));
+
+		Eigen::MatrixXd result(6, 6);
+		result.topLeftCorner<3, 3>() = omgmat;
+		result.topRightCorner<3, 3>() = Eigen::Matrix3d::Zero(3, 3);
+		result.bottomLeftCorner<3, 3>() = HumanMotion::VecToso3(Eigen::Vector3d(V(3), V(4), V(5)));
+		result.bottomRightCorner<3, 3>() = omgmat;
+		return result;
+}
+
 Eigen::Vector3d HumanMotion::so3ToVec(const Eigen::Matrix3d& omega_matrix){
 
     Eigen::Vector3d omega;
@@ -334,7 +346,117 @@ bool HumanMotion::IKinSpace(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd&
 		return !err;
 	}
 
+Eigen::VectorXd HumanMotion::InverseDynamics(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist, const Eigen::VectorXd& ddthetalist,
+									const Eigen::VectorXd& g, const Eigen::VectorXd& Ftip, const std::vector<Eigen::MatrixXd>& Mlist,
+									const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+	    // the size of the lists
+		int n = thetalist.size();
 
+		Eigen::MatrixXd Mi = Eigen::MatrixXd::Identity(4, 4);
+		Eigen::MatrixXd Ai = Eigen::MatrixXd::Zero(6,n);
+		std::vector<Eigen::MatrixXd> AdTi;
+		for (int i = 0; i < n+1; i++) {
+			AdTi.push_back(Eigen::MatrixXd::Zero(6,6));
+		}
+		Eigen::MatrixXd Vi = Eigen::MatrixXd::Zero(6,n+1);    // velocity
+		Eigen::MatrixXd Vdi = Eigen::MatrixXd::Zero(6,n+1);   // acceleration
+
+		Vdi.block(3, 0, 3, 1) = - g;
+		AdTi[n] = HumanMotion::Adjoint(HumanMotion::TransInv(Mlist[n]));
+		Eigen::VectorXd Fi = Ftip;
+
+		Eigen::VectorXd taulist = Eigen::VectorXd::Zero(n);
+
+		// forward pass
+		for (int i = 0; i < n; i++) {
+			Mi = Mi * Mlist[i];
+			Ai.col(i) = HumanMotion::Adjoint(HumanMotion::TransInv(Mi))*Slist.col(i);
+
+			AdTi[i] = HumanMotion::Adjoint(HumanMotion::MatrixExp6(HumanMotion::VecTose3(Ai.col(i)*-thetalist(i)))
+			          * HumanMotion::TransInv(Mlist[i]));
+
+			Vi.col(i+1) = AdTi[i] * Vi.col(i) + Ai.col(i) * dthetalist(i);
+			Vdi.col(i+1) = AdTi[i] * Vdi.col(i) + Ai.col(i) * ddthetalist(i)
+						   + ad(Vi.col(i+1)) * Ai.col(i) * dthetalist(i); // this index is different from book!
+		}
+
+		// backward pass
+		for (int i = n-1; i >= 0; i--) {
+			Fi = AdTi[i+1].transpose() * Fi + Glist[i] * Vdi.col(i+1)
+			     - ad(Vi.col(i+1)).transpose() * (Glist[i] * Vi.col(i+1));
+			taulist(i) = Fi.transpose() * Ai.col(i);
+		}
+		return taulist;
+	}
+
+
+Eigen::VectorXd  HumanMotion::GravityForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& g,
+											const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+	    int n = thetalist.size();
+		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
+		Eigen::VectorXd dummyForce = Eigen::VectorXd::Zero(6);
+		Eigen::VectorXd grav =  HumanMotion::InverseDynamics(thetalist, dummylist, dummylist, g,
+                                                dummyForce, Mlist, Glist, Slist);
+		return grav;
+	}
+
+Eigen::MatrixXd HumanMotion::MassMatrix(const Eigen::VectorXd& thetalist,
+                        	const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+		int n = thetalist.size();
+		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
+		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
+		Eigen::VectorXd dummyforce = Eigen::VectorXd::Zero(6);
+		Eigen::MatrixXd M = Eigen::MatrixXd::Zero(n,n);
+		for (int i = 0; i < n; i++) {
+			Eigen::VectorXd ddthetalist = Eigen::VectorXd::Zero(n);
+			ddthetalist(i) = 1;
+			M.col(i) =  HumanMotion::InverseDynamics(thetalist, dummylist, ddthetalist,
+                             dummyg, dummyforce, Mlist, Glist, Slist);
+		}
+		return M;
+	}
+
+
+Eigen::VectorXd HumanMotion::VelQuadraticForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist,
+                                const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+		int n = thetalist.size();
+		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
+		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
+		Eigen::VectorXd dummyforce = Eigen::VectorXd::Zero(6);
+		Eigen::VectorXd c = HumanMotion::InverseDynamics(thetalist, dthetalist, dummylist,
+                             dummyg, dummyforce, Mlist, Glist, Slist);
+		return c;
+}
+
+
+Eigen::VectorXd HumanMotion::EndEffectorForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& Ftip,
+								const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+		int n = thetalist.size();
+		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
+		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
+
+		Eigen::VectorXd JTFtip = HumanMotion::InverseDynamics(thetalist, dummylist, dummylist,
+                             dummyg, Ftip, Mlist, Glist, Slist);
+		return JTFtip;
+}
+
+Eigen::VectorXd HumanMotion::ForwardDynamics(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist, const Eigen::VectorXd& taulist,
+									const Eigen::VectorXd& g, const Eigen::VectorXd& Ftip, const std::vector<Eigen::MatrixXd>& Mlist,
+									const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+
+		Eigen::VectorXd totalForce = taulist - HumanMotion::VelQuadraticForces(thetalist, dthetalist, Mlist, Glist, Slist)
+                 							 - HumanMotion::GravityForces(thetalist, g, Mlist, Glist, Slist)
+                                             - HumanMotion::EndEffectorForces(thetalist, Ftip, Mlist, Glist, Slist);
+
+		Eigen::MatrixXd M = HumanMotion::MassMatrix(thetalist, Mlist, Glist, Slist);
+
+		// Use LDLT since M is positive definite
+        Eigen::VectorXd ddthetalist = M.ldlt().solve(totalForce);
+
+		return ddthetalist;
+}
+
+	
 std::vector<Eigen::VectorXd> HumanMotion::computeOccupancy(const Eigen::VectorXd& q_init, const Eigen::VectorXd& dq_init,const Eigen::VectorXd& ddq_init, const int & N, const double & Vmax){
 
 	double dt = 0.05,  L1 = 1., L2 = 1.;

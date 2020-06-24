@@ -11,5 +11,6 @@ export CMAKE_PREFIX_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_trac
 export LD_LIBRARY_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/zheng/robot_ws_zheng/build/openni2_tracker"
+export PYTHONPATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/zheng/robot_ws_zheng/src/openni2_tracker:$ROS_PACKAGE_PATH"

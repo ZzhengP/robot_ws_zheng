@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.1)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_PREFIX_PATH "/home/zheng/libtorch")
 project(ros_wrap_safe_motion)
-
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
-
-
+## Compile as C++14, supported in ROS Kinetic and newer
+add_compile_options(-std=c++14)
+SET(CMAKE_CXX_FLAGS "-std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 ## ----------------------------   openpose ----------------------------------
 set(INC_DIR /usr/include
         /usr/local/cuda/include #cuda的include位置 修改为正确的地方
@@ -49,7 +49,15 @@ find_package(iDynTree REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(OpenPose REQUIRED)
 find_package(glog)
+find_package(Torch REQUIRED)
+find_package(OpenCV 3.0 QUIET)
 
+if(NOT OpenCV_FOUND)
+    find_package(OpenCV 2.4.3 QUIET)
+    if(NOT OpenCV_FOUND)
+        message(FATAL_ERROR "OpenCV > 2.4.3 not found.")
+    endif()
+endif()
 
 include_directories(${INC_DIR} ${OpenPose_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
 link_directories(${LINK_DIR} ${OpenPose_LIBS} ${OpenCV_LIBS})
