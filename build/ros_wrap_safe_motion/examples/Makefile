@@ -68,27 +68,38 @@ install/strip/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+.PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-.PHONY : list_install_components/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -102,38 +113,27 @@ install/local/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,109 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/humanperceptiontest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/humanperceptiontest.dir/rule
-.PHONY : examples/CMakeFiles/humanperceptiontest.dir/rule
+examples/CMakeFiles/DynamicAndMPCSolver.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
 
 # Convenience name for target.
-humanperceptiontest: examples/CMakeFiles/humanperceptiontest.dir/rule
+DynamicAndMPCSolver: examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
 
-.PHONY : humanperceptiontest
+.PHONY : DynamicAndMPCSolver
 
 # fast build rule for target.
-humanperceptiontest/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/build
-.PHONY : humanperceptiontest/fast
-
-# Convenience name for target.
-examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
-.PHONY : examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
-
-# Convenience name for target.
-obsInteractiveMarkersPublisher: examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
-
-.PHONY : obsInteractiveMarkersPublisher
-
-# fast build rule for target.
-obsInteractiveMarkersPublisher/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build
-.PHONY : obsInteractiveMarkersPublisher/fast
-
-# Convenience name for target.
-examples/CMakeFiles/InteractiveMarkers.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/rule
-.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
-
-# Convenience name for target.
-InteractiveMarkers: examples/CMakeFiles/InteractiveMarkers.dir/rule
-
-.PHONY : InteractiveMarkers
-
-# fast build rule for target.
-InteractiveMarkers/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/build
-.PHONY : InteractiveMarkers/fast
-
-# Convenience name for target.
-examples/CMakeFiles/separatingPlane.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/separatingPlane.dir/rule
-.PHONY : examples/CMakeFiles/separatingPlane.dir/rule
-
-# Convenience name for target.
-separatingPlane: examples/CMakeFiles/separatingPlane.dir/rule
-
-.PHONY : separatingPlane
-
-# fast build rule for target.
-separatingPlane/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
-.PHONY : separatingPlane/fast
-
-# Convenience name for target.
-examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
-.PHONY : examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
-
-# Convenience name for target.
-RosMovingobstacleavoidance: examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
-
-.PHONY : RosMovingobstacleavoidance
-
-# fast build rule for target.
-RosMovingobstacleavoidance/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/RosMovingobstacleavoidance.dir/build.make examples/CMakeFiles/RosMovingobstacleavoidance.dir/build
-.PHONY : RosMovingobstacleavoidance/fast
-
-# Convenience name for target.
-examples/CMakeFiles/obsVerticesPublisher.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsVerticesPublisher.dir/rule
-.PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/rule
-
-# Convenience name for target.
-obsVerticesPublisher: examples/CMakeFiles/obsVerticesPublisher.dir/rule
-
-.PHONY : obsVerticesPublisher
-
-# fast build rule for target.
-obsVerticesPublisher/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/build
-.PHONY : obsVerticesPublisher/fast
-
-# Convenience name for target.
-examples/CMakeFiles/simpletest.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/simpletest.dir/rule
-.PHONY : examples/CMakeFiles/simpletest.dir/rule
-
-# Convenience name for target.
-simpletest: examples/CMakeFiles/simpletest.dir/rule
-
-.PHONY : simpletest
-
-# fast build rule for target.
-simpletest/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/build
-.PHONY : simpletest/fast
+DynamicAndMPCSolver/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/build
+.PHONY : DynamicAndMPCSolver/fast
 
 # Convenience name for target.
 examples/CMakeFiles/simpleMatrixReceive.dir/rule:
@@ -288,19 +198,124 @@ simpleMatrixReceive/fast:
 .PHONY : simpleMatrixReceive/fast
 
 # Convenience name for target.
-examples/CMakeFiles/DynamicAndMPCSolver.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
-.PHONY : examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+examples/CMakeFiles/simpletest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/simpletest.dir/rule
+.PHONY : examples/CMakeFiles/simpletest.dir/rule
 
 # Convenience name for target.
-DynamicAndMPCSolver: examples/CMakeFiles/DynamicAndMPCSolver.dir/rule
+simpletest: examples/CMakeFiles/simpletest.dir/rule
 
-.PHONY : DynamicAndMPCSolver
+.PHONY : simpletest
 
 # fast build rule for target.
-DynamicAndMPCSolver/fast:
-	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/DynamicAndMPCSolver.dir/build.make examples/CMakeFiles/DynamicAndMPCSolver.dir/build
-.PHONY : DynamicAndMPCSolver/fast
+simpletest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/simpletest.dir/build.make examples/CMakeFiles/simpletest.dir/build
+.PHONY : simpletest/fast
+
+# Convenience name for target.
+examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
+.PHONY : examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
+
+# Convenience name for target.
+RosMovingobstacleavoidance: examples/CMakeFiles/RosMovingobstacleavoidance.dir/rule
+
+.PHONY : RosMovingobstacleavoidance
+
+# fast build rule for target.
+RosMovingobstacleavoidance/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/RosMovingobstacleavoidance.dir/build.make examples/CMakeFiles/RosMovingobstacleavoidance.dir/build
+.PHONY : RosMovingobstacleavoidance/fast
+
+# Convenience name for target.
+examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+.PHONY : examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+
+# Convenience name for target.
+obsInteractiveMarkersPublisher: examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/rule
+
+.PHONY : obsInteractiveMarkersPublisher
+
+# fast build rule for target.
+obsInteractiveMarkersPublisher/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build.make examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/build
+.PHONY : obsInteractiveMarkersPublisher/fast
+
+# Convenience name for target.
+examples/CMakeFiles/separatingPlane.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/separatingPlane.dir/rule
+.PHONY : examples/CMakeFiles/separatingPlane.dir/rule
+
+# Convenience name for target.
+separatingPlane: examples/CMakeFiles/separatingPlane.dir/rule
+
+.PHONY : separatingPlane
+
+# fast build rule for target.
+separatingPlane/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/separatingPlane.dir/build.make examples/CMakeFiles/separatingPlane.dir/build
+.PHONY : separatingPlane/fast
+
+# Convenience name for target.
+examples/CMakeFiles/humanperceptiontest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/humanperceptiontest.dir/rule
+.PHONY : examples/CMakeFiles/humanperceptiontest.dir/rule
+
+# Convenience name for target.
+humanperceptiontest: examples/CMakeFiles/humanperceptiontest.dir/rule
+
+.PHONY : humanperceptiontest
+
+# fast build rule for target.
+humanperceptiontest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/humanperceptiontest.dir/build.make examples/CMakeFiles/humanperceptiontest.dir/build
+.PHONY : humanperceptiontest/fast
+
+# Convenience name for target.
+examples/CMakeFiles/poseDepthTest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/poseDepthTest.dir/rule
+.PHONY : examples/CMakeFiles/poseDepthTest.dir/rule
+
+# Convenience name for target.
+poseDepthTest: examples/CMakeFiles/poseDepthTest.dir/rule
+
+.PHONY : poseDepthTest
+
+# fast build rule for target.
+poseDepthTest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/poseDepthTest.dir/build.make examples/CMakeFiles/poseDepthTest.dir/build
+.PHONY : poseDepthTest/fast
+
+# Convenience name for target.
+examples/CMakeFiles/InteractiveMarkers.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/rule
+.PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
+
+# Convenience name for target.
+InteractiveMarkers: examples/CMakeFiles/InteractiveMarkers.dir/rule
+
+.PHONY : InteractiveMarkers
+
+# fast build rule for target.
+InteractiveMarkers/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/build
+.PHONY : InteractiveMarkers/fast
+
+# Convenience name for target.
+examples/CMakeFiles/obsVerticesPublisher.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/obsVerticesPublisher.dir/rule
+.PHONY : examples/CMakeFiles/obsVerticesPublisher.dir/rule
+
+# Convenience name for target.
+obsVerticesPublisher: examples/CMakeFiles/obsVerticesPublisher.dir/rule
+
+.PHONY : obsVerticesPublisher
+
+# fast build rule for target.
+obsVerticesPublisher/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/build
+.PHONY : obsVerticesPublisher/fast
 
 DynamicAndMPCSolver.o: DynamicAndMPCSolver.cpp.o
 
@@ -464,6 +479,33 @@ obsVerticesPublisher.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/obsVerticesPublisher.dir/build.make examples/CMakeFiles/obsVerticesPublisher.dir/obsVerticesPublisher.cpp.s
 .PHONY : obsVerticesPublisher.cpp.s
 
+poseDepthTest.o: poseDepthTest.cpp.o
+
+.PHONY : poseDepthTest.o
+
+# target to build an object file
+poseDepthTest.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/poseDepthTest.dir/build.make examples/CMakeFiles/poseDepthTest.dir/poseDepthTest.cpp.o
+.PHONY : poseDepthTest.cpp.o
+
+poseDepthTest.i: poseDepthTest.cpp.i
+
+.PHONY : poseDepthTest.i
+
+# target to preprocess a source file
+poseDepthTest.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/poseDepthTest.dir/build.make examples/CMakeFiles/poseDepthTest.dir/poseDepthTest.cpp.i
+.PHONY : poseDepthTest.cpp.i
+
+poseDepthTest.s: poseDepthTest.cpp.s
+
+.PHONY : poseDepthTest.s
+
+# target to generate assembly for a file
+poseDepthTest.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/poseDepthTest.dir/build.make examples/CMakeFiles/poseDepthTest.dir/poseDepthTest.cpp.s
+.PHONY : poseDepthTest.cpp.s
+
 separatingPlane.o: separatingPlane.cpp.o
 
 .PHONY : separatingPlane.o
@@ -552,21 +594,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... humanperceptiontest"
-	@echo "... obsInteractiveMarkersPublisher"
-	@echo "... InteractiveMarkers"
-	@echo "... separatingPlane"
-	@echo "... RosMovingobstacleavoidance"
-	@echo "... edit_cache"
-	@echo "... obsVerticesPublisher"
-	@echo "... simpletest"
-	@echo "... simpleMatrixReceive"
 	@echo "... DynamicAndMPCSolver"
+	@echo "... simpleMatrixReceive"
+	@echo "... simpletest"
+	@echo "... edit_cache"
+	@echo "... RosMovingobstacleavoidance"
+	@echo "... obsInteractiveMarkersPublisher"
+	@echo "... separatingPlane"
+	@echo "... humanperceptiontest"
+	@echo "... rebuild_cache"
+	@echo "... poseDepthTest"
+	@echo "... InteractiveMarkers"
+	@echo "... test"
+	@echo "... install/local"
+	@echo "... obsVerticesPublisher"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... DynamicAndMPCSolver.o"
 	@echo "... DynamicAndMPCSolver.i"
 	@echo "... DynamicAndMPCSolver.s"
@@ -585,6 +628,9 @@ help:
 	@echo "... obsVerticesPublisher.o"
 	@echo "... obsVerticesPublisher.i"
 	@echo "... obsVerticesPublisher.s"
+	@echo "... poseDepthTest.o"
+	@echo "... poseDepthTest.i"
+	@echo "... poseDepthTest.s"
 	@echo "... separatingPlane.o"
 	@echo "... separatingPlane.i"
 	@echo "... separatingPlane.s"

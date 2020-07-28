@@ -1,0 +1,289 @@
+warning: Tag 'CLANG_ASSISTED_PARSING' at line 1026 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' belongs to an option that was not enabled at compile time.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+warning: Tag 'CLANG_OPTIONS' at line 1034 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' belongs to an option that was not enabled at compile time.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+warning: Tag 'PERL_PATH' at line 2117 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: Tag 'MSCGEN_PATH' at line 2139 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: ignoring unknown tag '2020' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'GitHub' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Inc' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Terms' at line 2436, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Privacy' at line 2437, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Security' at line 2438, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Status' at line 2439, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Help' at line 2440, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Contact' at line 2442, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'GitHub' at line 2442, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Pricing' at line 2443, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'API' at line 2444, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Training' at line 2445, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Blog' at line 2446, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'About' at line 2447, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: tag INPUT: input source '/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/impl/' does not exist
+warning: tag INPUT: input source '/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/samples/' does not exist
+warning: source /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/impl is not a readable file or directory... skipping.
+warning: source /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/samples is not a readable file or directory... skipping.
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp:35: warning: no matching class member found for 
+  int KDL::ChainJntToJacDotSolver::JntToJacDot(const JntArrayVel &q_in, Twist &jac_dot_q_dot, int seg_nr)
+Possible candidates:
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Twist &jac_dot_q_dot, int seg_nr=-1)'
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Jacobian &jdot, int seg_nr=-1)'
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp:42: warning: no matching class member found for 
+  int KDL::ChainJntToJacDotSolver::JntToJacDot(const JntArrayVel &q_in, Jacobian &jdot, int seg_nr)
+Possible candidates:
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Twist &jac_dot_q_dot, int seg_nr=-1)'
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Jacobian &jdot, int seg_nr=-1)'
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:108: warning: argument 'kdl_segment' of command @param is not found in the argument list of arm_kinematic::getSegment(unsigned int segment)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:137: warning: argument 'kdl_frame' of command @param is not found in the argument list of arm_kinematic::getSegmentPosition(const std::string &segment_name)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:127: warning: argument 'kdl_frame' of command @param is not found in the argument list of arm_kinematic::getSegmentPosition(unsigned int segment)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:273: warning: argument 'qd_des' of command @param is not found in the argument list of arm_kinematic::setJointVelocities(const Eigen::VectorXd &qd)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:277: warning: The following parameter of arm_kinematic::setJointVelocities(const Eigen::VectorXd &qd) is not documented:
+  parameter 'qd'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:396: warning: argument 'Ros' of command @param is not found in the argument list of arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:400: warning: The following parameter of arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState) is not documented:
+  parameter 'jntState'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:35: warning: The following parameters of GenericCst::GenericCst(int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu) are not documented:
+  parameter 'name'
+  parameter 'Px'
+  parameter 'Pu'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:39: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::setLowerBound(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:48: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::setUpperBound(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:61: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:61: warning: argument 'Pu' of command @param is not found in the argument list of GenericCst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:108: warning: argument '4x4' of command @param is not found in the argument list of HumanMotion::Adjoint(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:115: warning: The following parameter of HumanMotion::Adjoint(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:51: warning: argument 'Exponential' of command @param is not found in the argument list of HumanMotion::AxisAng3(const Eigen::Vector3d &expc3)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:58: warning: The following parameter of HumanMotion::AxisAng3(const Eigen::Vector3d &expc3) is not documented:
+  parameter 'expc3'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:140: warning: argument 'Home' of command @param is not found in the argument list of HumanMotion::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:151: warning: The following parameters of HumanMotion::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList) are not documented:
+  parameter 'M'
+  parameter 'Slist'
+  parameter 'thetaList'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:61: warning: argument 'exponenential' of command @param is not found in the argument list of HumanMotion::MatrixExp3(const Eigen::Matrix3d &so3mat)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:67: warning: The following parameter of HumanMotion::MatrixExp3(const Eigen::Matrix3d &so3mat) is not documented:
+  parameter 'so3mat'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:123: warning: argument 'se3' of command @param is not found in the argument list of HumanMotion::MatrixExp6(const Eigen::MatrixXd &se3mat)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:129: warning: The following parameter of HumanMotion::MatrixExp6(const Eigen::MatrixXd &se3mat) is not documented:
+  parameter 'se3mat'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:69: warning: argument 'Rotation' of command @param is not found in the argument list of HumanMotion::MatrixLog3(const Eigen::Matrix3d &R)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:75: warning: The following parameter of HumanMotion::MatrixLog3(const Eigen::Matrix3d &R) is not documented:
+  parameter 'R'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:100: warning: argument 'spatial' of command @param is not found in the argument list of HumanMotion::se3ToVec(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:106: warning: The following parameter of HumanMotion::se3ToVec(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:91: warning: argument 'spatial' of command @param is not found in the argument list of HumanMotion::VecTose3(const Eigen::VectorXd &V)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:97: warning: The following parameter of HumanMotion::VecTose3(const Eigen::VectorXd &V) is not documented:
+  parameter 'V'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:26: warning: argument 'angular' of command @param is not found in the argument list of HumanMotion::VecToso3(const Eigen::Vector3d &omega)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:32: warning: The following parameter of HumanMotion::VecToso3(const Eigen::Vector3d &omega) is not documented:
+  parameter 'omega'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:26: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 39 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:28: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 48 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:32: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:32: warning: argument 'Pu' of command @param is not found in the argument list of JntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:23: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 39 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:24: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 48 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:26: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:26: warning: argument 'Pu' of command @param is not found in the argument list of JntVelCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:143: warning: argument 'bs_J_bs' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivative(const Jacobian &J, const unsigned int &joint_idx, const unsigned int &column_idx, const int &representation)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:152: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivative(const Jacobian &J, const unsigned int &joint_idx, const unsigned int &column_idx, const int &representation) is not documented:
+  parameter 'J'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:121: warning: argument 'bs_J_ee' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivativeBodyFixed(const Jacobian &ee_J_ee, const unsigned int &joint_idx, const unsigned int &column_idx)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:129: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivativeBodyFixed(const Jacobian &ee_J_ee, const unsigned int &joint_idx, const unsigned int &column_idx) is not documented:
+  parameter 'ee_J_ee'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:132: warning: argument 'ee_J_ee' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivativeInertial(const Jacobian &bs_J_bs, const unsigned int &joint_idx, const unsigned int &column_idx)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:140: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivativeInertial(const Jacobian &bs_J_bs, const unsigned int &joint_idx, const unsigned int &column_idx) is not documented:
+  parameter 'bs_J_bs'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copydetails or @copydoc target 'KDL::SolverI::strError()' not found
+CMakeFiles/simpletest.dir/simpletest.cpp.o : Dans la fonction « main » :
+simpletest.cpp:(.text+0x72) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+simpletest.cpp:(.text+0xce) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+CMakeFiles/simpletest.dir/simpletest.cpp.o : Dans la fonction « void ros::Publisher::publish<std_msgs::Float64MultiArray_<std::allocator<void> > >(std_msgs::Float64MultiArray_<std::allocator<void> > const&) const » :
+simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0xb0) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x1dc) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x2fa) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x440) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x56c) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/simpletest.dir/simpletest.cpp.o:simpletest.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x6a1) : encore plus de références indéfinies suivent vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/simpletest] Error 1
+make[1]: *** [examples/CMakeFiles/simpletest.dir/all] Error 2
+make[1]: *** Attente des tâches non terminées....
+CMakeFiles/simpleMatrixReceive.dir/simpleMatrixReceive.cpp.o : Dans la fonction « main » :
+simpleMatrixReceive.cpp:(.text+0x2db) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+simpleMatrixReceive.cpp:(.text+0x337) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+CMakeFiles/simpleMatrixReceive.dir/simpleMatrixReceive.cpp.o : Dans la fonction « ros::SubscriptionCallbackHelperT<boost::shared_ptr<std_msgs::Float64MultiArray_<std::allocator<void> > const> const&, void>::deserialize(ros::SubscriptionCallbackHelperDeserializeParams const&) » :
+simpleMatrixReceive.cpp:(.text._ZN3ros27SubscriptionCallbackHelperTIRKN5boost10shared_ptrIKN8std_msgs18Float64MultiArray_ISaIvEEEEEvE11deserializeERKNS_43SubscriptionCallbackHelperDeserializeParamsE[_ZN3ros27SubscriptionCallbackHelperTIRKN5boost10shared_ptrIKN8std_msgs18Float64MultiArray_ISaIvEEEEEvE11deserializeERKNS_43SubscriptionCallbackHelperDeserializeParamsE]+0xb5) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/simpleMatrixReceive] Error 1
+make[1]: *** [examples/CMakeFiles/simpleMatrixReceive.dir/all] Error 2
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o : Dans la fonction « main » :
+obsInteractiveMarkersPublisher.cpp:(.text+0xf0c) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+obsInteractiveMarkersPublisher.cpp:(.text+0xf68) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+obsInteractiveMarkersPublisher.cpp:(.text+0xfd2) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, int&) const »
+obsInteractiveMarkersPublisher.cpp:(.text+0x105a) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, int&) const »
+obsInteractiveMarkersPublisher.cpp:(.text+0x10ff) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, double&) const »
+obsInteractiveMarkersPublisher.cpp:(.text+0x1163) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, double&) const »
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o : Dans la fonction « simpleObsMarkerPublisher::simpleObsMarkerPublisher(ros::NodeHandle*, int const&, int const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&) » :
+obsInteractiveMarkersPublisher.cpp:(.text._ZN24simpleObsMarkerPublisherC2EPN3ros10NodeHandleERKiS4_RKN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEES9_[_ZN24simpleObsMarkerPublisherC5EPN3ros10NodeHandleERKiS4_RKN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEES9_]+0x1e0) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZN24simpleObsMarkerPublisherC2EPN3ros10NodeHandleERKiS4_RKN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEES9_[_ZN24simpleObsMarkerPublisherC5EPN3ros10NodeHandleERKiS4_RKN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEES9_]+0x55a) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o : Dans la fonction « simpleObsMarkerPublisher::initRos() » :
+obsInteractiveMarkersPublisher.cpp:(.text._ZN24simpleObsMarkerPublisher7initRosEv[_ZN24simpleObsMarkerPublisher7initRosEv]+0x19d) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZN24simpleObsMarkerPublisher7initRosEv[_ZN24simpleObsMarkerPublisher7initRosEv]+0x1cd) : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o : Dans la fonction « simpleObsMarkerPublisher::update() » :
+obsInteractiveMarkersPublisher.cpp:(.text._ZN24simpleObsMarkerPublisher6updateEv[_ZN24simpleObsMarkerPublisher6updateEv]+0x745) : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishCylinder(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&) »
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o : Dans la fonction « void ros::Publisher::publish<std_msgs::Float64MultiArray_<std::allocator<void> > >(std_msgs::Float64MultiArray_<std::allocator<void> > const&) const » :
+obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0xb0) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x1dc) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x2fa) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x440) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x56c) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/obsInteractiveMarkersPublisher.dir/obsInteractiveMarkersPublisher.cpp.o:obsInteractiveMarkersPublisher.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs18Float64MultiArray_ISaIvEEEEEvRKT_]+0x6a1) : encore plus de références indéfinies suivent vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/obsInteractiveMarkersPublisher] Error 1
+make[1]: *** [examples/CMakeFiles/obsInteractiveMarkersPublisher.dir/all] Error 2
+CMakeFiles/DynamicAndMPCSolver.dir/DynamicAndMPCSolver.cpp.o : Dans la fonction « main » :
+DynamicAndMPCSolver.cpp:(.text+0x10f) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+DynamicAndMPCSolver.cpp:(.text+0x16b) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+DynamicAndMPCSolver.cpp:(.text+0x1d5) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, int&) const »
+DynamicAndMPCSolver.cpp:(.text+0x249) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, double&) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::Tree(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishCylinder(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameBiasAcc(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « kdl_parser::treeFromFile(std::string const&, KDL::Tree&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getJointName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameVel(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getRelativeTransform(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameIndex(std::string const&) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getFrameName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(geometry_msgs::Pose_<std::allocator<void> > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::setFloatingBase(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getLinkName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishPath(std::vector<geometry_msgs::Pose_<std::allocator<void> >, std::allocator<geometry_msgs::Pose_<std::allocator<void> > > > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::loadRobotModelFromFile(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::getChain(std::string const&, std::string const&, KDL::Chain&) const »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/DynamicAndMPCSolver] Error 1
+make[1]: *** [examples/CMakeFiles/DynamicAndMPCSolver.dir/all] Error 2
+CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o : Dans la fonction « main » :
+InteractiveMarkers.cpp:(.text+0x162) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+InteractiveMarkers.cpp:(.text+0x234) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text+0x337) : référence indéfinie vers « ros::console::print(ros::console::FilterBase*, void*, ros::console::levels::Level, std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&, char const*, int, char const*) »
+InteractiveMarkers.cpp:(.text+0x435) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text+0x538) : référence indéfinie vers « ros::console::print(ros::console::FilterBase*, void*, ros::console::levels::Level, std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&, char const*, int, char const*) »
+CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o : Dans la fonction « rviz_visual_tools::IMarkerSimpleDemo::IMarkerSimpleDemo() » :
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0xd3) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0x1eb) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0x21b) : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0x41e) : référence indéfinie vers « rviz_visual_tools::IMarkerSimple::IMarkerSimple(std::string const&, double, geometry_msgs::Pose_<std::allocator<void> > const&) »
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0x5aa) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemoC2Ev[_ZN17rviz_visual_tools17IMarkerSimpleDemoC5Ev]+0x6ad) : référence indéfinie vers « ros::console::print(ros::console::FilterBase*, void*, ros::console::levels::Level, std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&, char const*, int, char const*) »
+CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o : Dans la fonction « rviz_visual_tools::IMarkerSimpleDemo::processIMarkerPose(boost::shared_ptr<visualization_msgs::InteractiveMarkerFeedback_<std::allocator<void> > const> const&) » :
+InteractiveMarkers.cpp:(.text._ZN17rviz_visual_tools17IMarkerSimpleDemo18processIMarkerPoseERKN5boost10shared_ptrIKN18visualization_msgs26InteractiveMarkerFeedback_ISaIvEEEEE[_ZN17rviz_visual_tools17IMarkerSimpleDemo18processIMarkerPoseERKN5boost10shared_ptrIKN18visualization_msgs26InteractiveMarkerFeedback_ISaIvEEEEE]+0x9d) : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(geometry_msgs::Pose_<std::allocator<void> > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&, unsigned long) »
+CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o : Dans la fonction « void ros::Publisher::publish<geometry_msgs::Pose_<std::allocator<void> > >(geometry_msgs::Pose_<std::allocator<void> > const&) const » :
+InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0xb0) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0x1dc) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0x2fa) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0x440) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0x56c) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.o:InteractiveMarkers.cpp:(.text._ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN13geometry_msgs5Pose_ISaIvEEEEEvRKT_]+0x6a1) : encore plus de références indéfinies suivent vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/InteractiveMarkers] Error 1
+make[1]: *** [examples/CMakeFiles/InteractiveMarkers.dir/all] Error 2
+CMakeFiles/RosMovingobstacleavoidance.dir/movingobstacleavoidance.cpp.o : Dans la fonction « main » :
+movingobstacleavoidance.cpp:(.text+0x1063) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+movingobstacleavoidance.cpp:(.text+0x10bf) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+CMakeFiles/RosMovingobstacleavoidance.dir/movingobstacleavoidance.cpp.o : Dans la fonction « void ros::Publisher::publish<std_msgs::Float64_<std::allocator<void> > >(std_msgs::Float64_<std::allocator<void> > const&) const » :
+movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0xb0) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0x1dc) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0x2fa) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0x440) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0x56c) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/RosMovingobstacleavoidance.dir/movingobstacleavoidance.cpp.o:movingobstacleavoidance.cpp:(.text._ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_[_ZNK3ros9Publisher7publishIN8std_msgs8Float64_ISaIvEEEEEvRKT_]+0x6a1) : encore plus de références indéfinies suivent vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::Tree(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishCylinder(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameBiasAcc(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « kdl_parser::treeFromFile(std::string const&, KDL::Tree&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getJointName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameVel(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getRelativeTransform(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameIndex(std::string const&) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getFrameName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(geometry_msgs::Pose_<std::allocator<void> > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::setFloatingBase(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getLinkName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishPath(std::vector<geometry_msgs::Pose_<std::allocator<void> >, std::allocator<geometry_msgs::Pose_<std::allocator<void> > > > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::loadRobotModelFromFile(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::getChain(std::string const&, std::string const&, KDL::Chain&) const »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/RosMovingobstacleavoidance] Error 1
+make[1]: *** [examples/CMakeFiles/RosMovingobstacleavoidance.dir/all] Error 2
+CMakeFiles/separatingPlane.dir/separatingPlane.cpp.o : Dans la fonction « main » :
+separatingPlane.cpp:(.text+0xbb6) : référence indéfinie vers « ros::init(int&, char**, std::string const&, unsigned int) »
+separatingPlane.cpp:(.text+0xc12) : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+separatingPlane.cpp:(.text+0xc7c) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, int&) const »
+separatingPlane.cpp:(.text+0xd01) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, int&) const »
+separatingPlane.cpp:(.text+0xda6) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, double&) const »
+separatingPlane.cpp:(.text+0xe07) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, double&) const »
+separatingPlane.cpp:(.text+0xe8d) : référence indéfinie vers « ros::NodeHandle::getParam(std::string const&, std::string&) const »
+separatingPlane.cpp:(.text+0x1123) : référence indéfinie vers « ros::master::getNodes(std::vector<std::string, std::allocator<std::string> >&) »
+separatingPlane.cpp:(.text+0x1259) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+CMakeFiles/separatingPlane.dir/separatingPlane.cpp.o : Dans la fonction « plane::Planes::~Planes() » :
+separatingPlane.cpp:(.text._ZN5plane6PlanesD2Ev[_ZN5plane6PlanesD5Ev]+0x7b) : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::Tree(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishCylinder(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameBiasAcc(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « kdl_parser::treeFromFile(std::string const&, KDL::Tree&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getJointName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameVel(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getRelativeTransform(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameIndex(std::string const&) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getFrameName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(geometry_msgs::Pose_<std::allocator<void> > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::setFloatingBase(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getLinkName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishPath(std::vector<geometry_msgs::Pose_<std::allocator<void> >, std::allocator<geometry_msgs::Pose_<std::allocator<void> > > > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::loadRobotModelFromFile(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::getChain(std::string const&, std::string const&, KDL::Chain&) const »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/separatingPlane] Error 1
+make[1]: *** [examples/CMakeFiles/separatingPlane.dir/all] Error 2
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::Tree(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « ros::console::initializeLogLocation(ros::console::LogLocation*, std::string const&, ros::console::levels::Level) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishCylinder(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameBiasAcc(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « kdl_parser::treeFromFile(std::string const&, KDL::Tree&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getJointName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « ros::NodeHandle::NodeHandle(std::string const&, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > > const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameVel(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getRelativeTransform(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::getFrameIndex(std::string const&) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getFrameName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(geometry_msgs::Pose_<std::allocator<void> > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::RvizVisualTools(std::string, std::string, ros::NodeHandle) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::setFloatingBase(std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::Model::getLinkName(int) const »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishPath(std::vector<geometry_msgs::Pose_<std::allocator<void> >, std::allocator<geometry_msgs::Pose_<std::allocator<void> > > > const&, rviz_visual_tools::colors, rviz_visual_tools::scales, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « iDynTree::KinDynComputations::loadRobotModelFromFile(std::string const&, std::string const&) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « rviz_visual_tools::RvizVisualTools::publishSphere(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, rviz_visual_tools::colors, double, std::string const&, unsigned long) »
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/libros_wrap_safe_motion_library.so : référence indéfinie vers « KDL::Tree::getChain(std::string const&, std::string const&, KDL::Chain&) const »
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/lib/ros_wrap_safe_motion/humanperceptiontest] Error 1
+make[1]: *** [examples/CMakeFiles/humanperceptiontest.dir/all] Error 2
+make: *** [all] Error 2

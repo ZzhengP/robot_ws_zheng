@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/zheng/robot_ws_zheng/build/rviz_visual_tools"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/zheng/robot_ws_zheng/src/rviz_visual_tools:$ROS_PACKAGE_PATH"

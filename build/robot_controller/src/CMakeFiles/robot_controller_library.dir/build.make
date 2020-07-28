@@ -131,6 +131,9 @@ robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libclass_loader.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/libPocoFoundation.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/librosconsole_bridge.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libgazebo_ros_api_plugin.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so
@@ -146,7 +149,6 @@ robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libmessage_filters.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libroscpp.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libtf2.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/librosconsole.so
@@ -220,7 +222,6 @@ robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libmessage_filters.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libroscpp.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/libtf2.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /opt/ros/melodic/lib/librosconsole.so
@@ -258,6 +259,7 @@ robot_controller_library_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/local/lib/libprotobuf.so
 /home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/librobot_controller_library.so: /usr/lib/x86_64-linux-gnu/libsdformat.so

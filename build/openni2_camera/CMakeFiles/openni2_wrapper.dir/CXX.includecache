@@ -86,16 +86,6 @@ cstddef
 ostream
 -
 
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_convert.cpp
-openni2_camera/openni2_convert.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_convert.h
-openni2_camera/openni2_exception.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_exception.h
-boost/make_shared.hpp
--
-string
--
-
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_device.cpp
 OpenNI.h
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/OpenNI.h
@@ -120,10 +110,6 @@ boost/make_shared.hpp
 string
 -
 
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_device_info.cpp
-openni2_camera/openni2_device_info.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_device_info.h
-
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_device_manager.cpp
 openni2_camera/openni2_device_manager.h
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_device_manager.h
@@ -144,12 +130,6 @@ string
 OpenNI.h
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/OpenNI.h
 
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_exception.cpp
-openni2_camera/openni2_exception.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_exception.h
-sstream
--
-
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_frame_listener.cpp
 OpenNI.h
 /home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/OpenNI.h
@@ -161,16 +141,6 @@ sensor_msgs/image_encodings.h
 -
 ros/ros.h
 -
-
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_timer_filter.cpp
-openni2_camera/openni2_timer_filter.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_timer_filter.h
-algorithm
--
-
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_video_mode.cpp
-openni2_camera/openni2_video_mode.h
-/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera/src/openni2_camera/openni2_video_mode.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

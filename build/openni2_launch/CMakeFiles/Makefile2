@@ -384,8 +384,8 @@ CMakeFiles/tests.dir/clean:
 # Target rules for target CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir
 
 # All Build rule for target.
-CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/all: CMakeFiles/clean_test_results_openni2_launch.dir/all
 CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/all: CMakeFiles/tests.dir/all
+CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/all: CMakeFiles/clean_test_results_openni2_launch.dir/all
 	$(MAKE) -f CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/build.make CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/depend
 	$(MAKE) -f CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/build.make CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zheng/robot_ws_zheng/build/openni2_launch/CMakeFiles --progress-num= "Built target _run_tests_openni2_launch_roslaunch-check_launch"

@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/opt/ros/melodic/lib;/home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib;/home/zheng/catkin_ws/devel/lib")
+set(ORDERED_PATHS "/home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib;/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib;/home/zheng/catkin_ws/devel/lib;/opt/ros/melodic/lib")

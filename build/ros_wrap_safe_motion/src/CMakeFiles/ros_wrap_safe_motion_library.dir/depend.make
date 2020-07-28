@@ -1703,6 +1703,9 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDy
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDynTree.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotDynTree.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/kdl_tl.hpp
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/nlopt_ik.hpp
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/trac_ik.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/RosWrapCommunDefinition.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/color.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h
@@ -1821,9 +1824,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotMo
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/Float64.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/Header.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/trac_ik/kdl_tl.hpp
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/trac_ik/nlopt_ik.hpp
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/trac_ik/trac_ik.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWraprobotmodel/RosWrapRobotModel.cpp.o: /opt/ros/melodic/include/urdf/model.h
@@ -2552,6 +2552,9 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsepPlane/RosWrapsepPlane.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/kdl_tl.hpp
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/nlopt_ik.hpp
+src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/catkin_ws/src/master/trac_ik_lib/include/trac_ik/trac_ik.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.ipp
@@ -2719,9 +2722,6 @@ src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.c
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/std_msgs/MultiArrayDimension.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/std_msgs/MultiArrayLayout.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/trac_ik/kdl_tl.hpp
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/trac_ik/nlopt_ik.hpp
-src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/trac_ik/trac_ik.hpp
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectory.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/trajectory_msgs/JointTrajectoryPoint.h
 src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapsolver/RosWrapMpcSolver.cpp.o: /opt/ros/melodic/include/urdf/model.h

@@ -9,7 +9,6 @@ if [ -n "$DESTDIR" ] ; then
             /bin/echo "otherwise python's distutils will bork things."
             exit 1
     esac
-    DESTDIR_ARG="--root=$DESTDIR"
 fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
@@ -27,7 +26,8 @@ echo_and_run /usr/bin/env \
     CATKIN_BINARY_DIR="/home/zheng/robot_ws_zheng/build/openni2_launch" \
     "/usr/bin/python2" \
     "/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch/setup.py" \
+     \
     build --build-base "/home/zheng/robot_ws_zheng/build/openni2_launch" \
     install \
-    $DESTDIR_ARG \
+    --root="${DESTDIR-/}" \
     --install-layout=deb --prefix="/home/zheng/robot_ws_zheng/install" --install-scripts="/home/zheng/robot_ws_zheng/install/bin"

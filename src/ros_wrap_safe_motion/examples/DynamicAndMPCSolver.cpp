@@ -92,7 +92,7 @@ int main(int argc, char **argv)
     lb.setConstant(-8);
     ub.setConstant(8);
 
-
+    
     Eigen::VectorXd ddqMin, ddqMax, dqMin, dqMax, qMin, qMax, vMax, vMin;
 
 
@@ -120,7 +120,6 @@ int main(int argc, char **argv)
     MPController -> initArmData(panda_urdf,panda_q_init,panda_dotq_init);
     MPController -> initMPCData(lb,ub);
     MPController -> initRobotConstraintData(ddqMin,ddqMax,dqMin,dqMax,qMin,qMax,cartVelMin,cartVelMax);
-
     MPController ->run();    
 
     return 0;

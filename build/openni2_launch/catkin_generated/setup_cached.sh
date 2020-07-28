@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_launch:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/zheng/robot_ws_zheng/build/openni2_launch"
 export PYTHONPATH="/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"

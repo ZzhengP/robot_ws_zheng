@@ -1,0 +1,116 @@
+warning: Tag 'CLANG_ASSISTED_PARSING' at line 1026 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' belongs to an option that was not enabled at compile time.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+warning: Tag 'CLANG_OPTIONS' at line 1034 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' belongs to an option that was not enabled at compile time.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+warning: Tag 'PERL_PATH' at line 2117 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: Tag 'MSCGEN_PATH' at line 2139 of file '/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: ignoring unknown tag '2020' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'GitHub' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Inc' at line 2435, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Terms' at line 2436, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Privacy' at line 2437, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Security' at line 2438, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Status' at line 2439, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Help' at line 2440, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Contact' at line 2442, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'GitHub' at line 2442, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Pricing' at line 2443, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'API' at line 2444, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Training' at line 2445, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'Blog' at line 2446, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: ignoring unknown tag 'About' at line 2447, file /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/Doxyfile
+warning: tag INPUT: input source '/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/impl/' does not exist
+warning: tag INPUT: input source '/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/samples/' does not exist
+warning: source /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/impl is not a readable file or directory... skipping.
+warning: source /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/samples is not a readable file or directory... skipping.
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp:35: warning: no matching class member found for 
+  int KDL::ChainJntToJacDotSolver::JntToJacDot(const JntArrayVel &q_in, Twist &jac_dot_q_dot, int seg_nr)
+Possible candidates:
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Twist &jac_dot_q_dot, int seg_nr=-1)'
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Jacobian &jdot, int seg_nr=-1)'
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/src/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.cpp:42: warning: no matching class member found for 
+  int KDL::ChainJntToJacDotSolver::JntToJacDot(const JntArrayVel &q_in, Jacobian &jdot, int seg_nr)
+Possible candidates:
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Twist &jac_dot_q_dot, int seg_nr=-1)'
+  'virtual int KDL::ChainJntToJacDotSolver::JntToJacDot(const KDL::JntArrayVel &q_in, KDL::Jacobian &jdot, int seg_nr=-1)'
+
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:108: warning: argument 'kdl_segment' of command @param is not found in the argument list of arm_kinematic::getSegment(unsigned int segment)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:137: warning: argument 'kdl_frame' of command @param is not found in the argument list of arm_kinematic::getSegmentPosition(const std::string &segment_name)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:127: warning: argument 'kdl_frame' of command @param is not found in the argument list of arm_kinematic::getSegmentPosition(unsigned int segment)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:273: warning: argument 'qd_des' of command @param is not found in the argument list of arm_kinematic::setJointVelocities(const Eigen::VectorXd &qd)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:277: warning: The following parameter of arm_kinematic::setJointVelocities(const Eigen::VectorXd &qd) is not documented:
+  parameter 'qd'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:396: warning: argument 'Ros' of command @param is not found in the argument list of arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapRobotModel.h:400: warning: The following parameter of arm_kinematic::subscriberCallback(const sensor_msgs::JointState &jntState) is not documented:
+  parameter 'jntState'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:35: warning: The following parameters of GenericCst::GenericCst(int ndof, int N, double dt, std::string name, Eigen::MatrixXd Px, Eigen::MatrixXd Pu) are not documented:
+  parameter 'name'
+  parameter 'Px'
+  parameter 'Pu'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:39: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::setLowerBound(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:48: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::setUpperBound(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:61: warning: argument 'Px' of command @param is not found in the argument list of GenericCst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h:61: warning: argument 'Pu' of command @param is not found in the argument list of GenericCst::update(const Eigen::VectorXd &robot_state)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:108: warning: argument '4x4' of command @param is not found in the argument list of HumanMotion::Adjoint(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:115: warning: The following parameter of HumanMotion::Adjoint(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:51: warning: argument 'Exponential' of command @param is not found in the argument list of HumanMotion::AxisAng3(const Eigen::Vector3d &expc3)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:58: warning: The following parameter of HumanMotion::AxisAng3(const Eigen::Vector3d &expc3) is not documented:
+  parameter 'expc3'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:140: warning: argument 'Home' of command @param is not found in the argument list of HumanMotion::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:151: warning: The following parameters of HumanMotion::FKinSpace(const Eigen::MatrixXd &M, const Eigen::MatrixXd &Slist, const Eigen::VectorXd &thetaList) are not documented:
+  parameter 'M'
+  parameter 'Slist'
+  parameter 'thetaList'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:61: warning: argument 'exponenential' of command @param is not found in the argument list of HumanMotion::MatrixExp3(const Eigen::Matrix3d &so3mat)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:67: warning: The following parameter of HumanMotion::MatrixExp3(const Eigen::Matrix3d &so3mat) is not documented:
+  parameter 'so3mat'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:123: warning: argument 'se3' of command @param is not found in the argument list of HumanMotion::MatrixExp6(const Eigen::MatrixXd &se3mat)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:129: warning: The following parameter of HumanMotion::MatrixExp6(const Eigen::MatrixXd &se3mat) is not documented:
+  parameter 'se3mat'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:69: warning: argument 'Rotation' of command @param is not found in the argument list of HumanMotion::MatrixLog3(const Eigen::Matrix3d &R)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:75: warning: The following parameter of HumanMotion::MatrixLog3(const Eigen::Matrix3d &R) is not documented:
+  parameter 'R'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:100: warning: argument 'spatial' of command @param is not found in the argument list of HumanMotion::se3ToVec(const Eigen::MatrixXd &T)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:106: warning: The following parameter of HumanMotion::se3ToVec(const Eigen::MatrixXd &T) is not documented:
+  parameter 'T'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:91: warning: argument 'spatial' of command @param is not found in the argument list of HumanMotion::VecTose3(const Eigen::VectorXd &V)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:97: warning: The following parameter of HumanMotion::VecTose3(const Eigen::VectorXd &V) is not documented:
+  parameter 'V'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:26: warning: argument 'angular' of command @param is not found in the argument list of HumanMotion::VecToso3(const Eigen::Vector3d &omega)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h:32: warning: The following parameter of HumanMotion::VecToso3(const Eigen::Vector3d &omega) is not documented:
+  parameter 'omega'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:26: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 39 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:28: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 48 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:32: warning: argument 'Px' of command @param is not found in the argument list of JntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointPosCst.h:32: warning: argument 'Pu' of command @param is not found in the argument list of JntPosCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:23: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::setLowerBound(const Eigen::VectorXd &robot_state) inherited from member setLowerBound at line 39 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:24: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::setUpperBound(const Eigen::VectorXd &robot_state) inherited from member setUpperBound at line 48 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:26: warning: argument 'Px' of command @param is not found in the argument list of JntVelCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapJointVelCst.h:26: warning: argument 'Pu' of command @param is not found in the argument list of JntVelCst::update(const Eigen::VectorXd &robot_state) inherited from member update at line 61 in file /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapconstraint/RosWrapGenericCst.h
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:143: warning: argument 'bs_J_bs' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivative(const Jacobian &J, const unsigned int &joint_idx, const unsigned int &column_idx, const int &representation)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:152: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivative(const Jacobian &J, const unsigned int &joint_idx, const unsigned int &column_idx, const int &representation) is not documented:
+  parameter 'J'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:121: warning: argument 'bs_J_ee' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivativeBodyFixed(const Jacobian &ee_J_ee, const unsigned int &joint_idx, const unsigned int &column_idx)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:129: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivativeBodyFixed(const Jacobian &ee_J_ee, const unsigned int &joint_idx, const unsigned int &column_idx) is not documented:
+  parameter 'ee_J_ee'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:132: warning: argument 'ee_J_ee' of command @param is not found in the argument list of KDL::ChainJntToJacDotSolver::getPartialDerivativeInertial(const Jacobian &bs_J_bs, const unsigned int &joint_idx, const unsigned int &column_idx)
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:140: warning: The following parameter of KDL::ChainJntToJacDotSolver::getPartialDerivativeInertial(const Jacobian &bs_J_bs, const unsigned int &joint_idx, const unsigned int &column_idx) is not documented:
+  parameter 'bs_J_bs'
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copybrief or @copydoc target 'KDL::SolverI::strError()' not found
+/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWraprobotmodel/RosWrapchainjnttojacdotsolver.h:107: warning: @copydetails or @copydoc target 'KDL::SolverI::strError()' not found
+[01m[K/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/poseDepthTest.cpp:[m[K In function ‘[01m[Kint main()[m[K’:
+[01m[K/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/poseDepthTest.cpp:32:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kargc[m[K’ was not declared in this scope
+     ros::init(argc, argv, "front_end");
+[01;32m[K               ^[m[K
+[01m[K/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/poseDepthTest.cpp:32:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kargv[m[K’ was not declared in this scope
+     ros::init(argc, argv, "front_end");
+[01;32m[K                     ^[m[K
+make[2]: *** [examples/CMakeFiles/poseDepthTest.dir/poseDepthTest.cpp.o] Error 1
+make[1]: *** [examples/CMakeFiles/poseDepthTest.dir/all] Error 2
+make: *** [all] Error 2

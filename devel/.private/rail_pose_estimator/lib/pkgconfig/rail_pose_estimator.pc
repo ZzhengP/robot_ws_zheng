@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel/.private/rail_pose_estimator
+
+Name: rail_pose_estimator
+Description: Description of rail_pose_estimator
+Version: 1.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy sensor_msgs cv_bridge rail_pose_estimation_msgs std_msgs

@@ -92,6 +92,7 @@ test_wrapper_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/libmessage_filters.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/libnodeletlib.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/libbondcpp.so
+/home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/x86_64-linux-gnu/libuuid.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/libclass_loader.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/libPocoFoundation.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/x86_64-linux-gnu/libdl.so
@@ -102,7 +103,6 @@ test_wrapper_EXTERNAL_OBJECTS =
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/libroscpp.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/librosconsole.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/zheng/robot_ws_zheng/devel/.private/openni2_camera/lib/openni2_camera/test_wrapper: /opt/ros/melodic/lib/librosconsole_backend_interface.so

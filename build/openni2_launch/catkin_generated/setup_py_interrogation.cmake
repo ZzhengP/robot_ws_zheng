@@ -1,3 +1,4 @@
+set(openni2_launch_SETUP_PY_SETUP_MODULE "distutils.core")
 set(openni2_launch_SETUP_PY_VERSION "0.4.2")
 set(openni2_launch_SETUP_PY_SCRIPTS "")
 set(openni2_launch_SETUP_PY_PACKAGES "openni2_launch")

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build/openni2_launch
 include CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/progress.make
 
 CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch:
-	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch/roslaunch-check_launch.xml "/usr/local/bin/cmake -E make_directory /home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch" "/opt/ros/melodic/share/roslaunch/cmake/../scripts/roslaunch-check -o '/home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch/roslaunch-check_launch.xml' '/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch/launch' "
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/run_tests.py /home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch/roslaunch-check_launch.xml "/usr/local/bin/cmake -E make_directory /home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch" "/opt/ros/melodic/share/roslaunch/cmake/../scripts/roslaunch-check -o \"/home/zheng/robot_ws_zheng/build/openni2_launch/test_results/openni2_launch/roslaunch-check_launch.xml\" \"/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch/launch\" "
 
 _run_tests_openni2_launch_roslaunch-check_launch: CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch
 _run_tests_openni2_launch_roslaunch-check_launch: CMakeFiles/_run_tests_openni2_launch_roslaunch-check_launch.dir/build.make

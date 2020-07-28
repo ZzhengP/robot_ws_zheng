@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.1)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_PREFIX_PATH "/home/zheng/libtorch")
 project(ros_wrap_safe_motion)
 ## Compile as C++14, supported in ROS Kinetic and newer
 add_compile_options(-std=c++14)
 SET(CMAKE_CXX_FLAGS "-std=c++14")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
+
+
 ## ----------------------------   openpose ----------------------------------
 set(INC_DIR /usr/include
         /usr/local/cuda/include #cuda的include位置 修改为正确的地方
@@ -33,6 +33,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
   kdl_parser
   gazebo_ros
   cv_bridge
@@ -43,6 +44,8 @@ find_package(catkin REQUIRED COMPONENTS
 #  lpsolve_catkin
   trac_ik_lib
   eigen_conversions
+  pcl_conversions 
+  pcl_ros
 )
 find_package(gazebo REQUIRED)
 find_package(iDynTree REQUIRED)
@@ -50,6 +53,8 @@ find_package(OpenCV REQUIRED)
 find_package(OpenPose REQUIRED)
 find_package(glog)
 find_package(Torch REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
+set(CMAKE_PREFIX_PATH="/home/zheng/libtorch")
 find_package(OpenCV 3.0 QUIET)
 
 if(NOT OpenCV_FOUND)

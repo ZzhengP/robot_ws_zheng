@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/zheng/robot_ws_zheng/devel/.private/catkin_simple:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/zheng/robot_ws_zheng/devel/.private/catkin_simple/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/zheng/robot_ws_zheng/devel/.private/catkin_simple/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/zheng/robot_ws_zheng/build/catkin_simple"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/zheng/robot_ws_zheng/devel/.private/catkin_simple/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/zheng/robot_ws_zheng/src/catkin_simple:$ROS_PACKAGE_PATH"

@@ -57,8 +57,8 @@ struct DataType< ::openni2_camera::GetSerial > {
 };
 
 
-// service_traits::MD5Sum< ::openni2_camera::GetSerialRequest> should match 
-// service_traits::MD5Sum< ::openni2_camera::GetSerial > 
+// service_traits::MD5Sum< ::openni2_camera::GetSerialRequest> should match
+// service_traits::MD5Sum< ::openni2_camera::GetSerial >
 template<>
 struct MD5Sum< ::openni2_camera::GetSerialRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::openni2_camera::GetSerialRequest>
   }
 };
 
-// service_traits::DataType< ::openni2_camera::GetSerialRequest> should match 
-// service_traits::DataType< ::openni2_camera::GetSerial > 
+// service_traits::DataType< ::openni2_camera::GetSerialRequest> should match
+// service_traits::DataType< ::openni2_camera::GetSerial >
 template<>
 struct DataType< ::openni2_camera::GetSerialRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::openni2_camera::GetSerialRequest>
   }
 };
 
-// service_traits::MD5Sum< ::openni2_camera::GetSerialResponse> should match 
-// service_traits::MD5Sum< ::openni2_camera::GetSerial > 
+// service_traits::MD5Sum< ::openni2_camera::GetSerialResponse> should match
+// service_traits::MD5Sum< ::openni2_camera::GetSerial >
 template<>
 struct MD5Sum< ::openni2_camera::GetSerialResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::openni2_camera::GetSerialResponse>
   }
 };
 
-// service_traits::DataType< ::openni2_camera::GetSerialResponse> should match 
-// service_traits::DataType< ::openni2_camera::GetSerial > 
+// service_traits::DataType< ::openni2_camera::GetSerialResponse> should match
+// service_traits::DataType< ::openni2_camera::GetSerial >
 template<>
 struct DataType< ::openni2_camera::GetSerialResponse>
 {
