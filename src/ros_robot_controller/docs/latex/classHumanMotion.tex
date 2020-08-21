@@ -57,6 +57,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a5d3522edf1cf5cc6c40ae4f
 \item 
 bool \mbox{\hyperlink{classHumanMotion_a90418bc4c9e2922112cfe604222071de}{I\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&T, Eigen\+::\+Vector\+Xd \&thetalist, double eomg, double ev)
 \item 
+bool \mbox{\hyperlink{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}{I\+K\+Numerical\+Solver}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Vector3d \&xd, Eigen\+::\+Vector4d \&thetalist)
+\begin{DoxyCompactList}\small\item\em Compute inverse kinematic for given constraint. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_acf439f24c5516331a1848046dd8299c2}{Inverse\+Dynamics}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
 \item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a4a46fffd5f116158cbdf05a474ae9648}{Gravity\+Forces}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
@@ -205,6 +207,32 @@ Transfomation matrix representing the end-\/effector frame when the joints are a
 \doxysubsubsection{\texorpdfstring{IKinSpace()}{IKinSpace()}}
 {\footnotesize\ttfamily bool Human\+Motion\+::\+I\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T,  }\item[{Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{double}]{eomg,  }\item[{double}]{ev }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}\label{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}} 
+\index{HumanMotion@{HumanMotion}!IKNumericalSolver@{IKNumericalSolver}}
+\index{IKNumericalSolver@{IKNumericalSolver}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{IKNumericalSolver()}{IKNumericalSolver()}}
+{\footnotesize\ttfamily bool Human\+Motion\+::\+I\+K\+Numerical\+Solver (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Vector3d \&}]{xd,  }\item[{Eigen\+::\+Vector4d \&}]{thetalist }\end{DoxyParamCaption})}
+
+
+
+Compute inverse kinematic for given constraint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slist} & \\
+\hline
+{\em M} & \\
+\hline
+{\em T} & \\
+\hline
+{\em thetalist} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classHumanMotion_acf439f24c5516331a1848046dd8299c2}\label{classHumanMotion_acf439f24c5516331a1848046dd8299c2}} 
 \index{HumanMotion@{HumanMotion}!InverseDynamics@{InverseDynamics}}
 \index{InverseDynamics@{InverseDynamics}!HumanMotion@{HumanMotion}}

@@ -65,7 +65,7 @@ if(NOT OpenCV_FOUND)
 endif()
 
 include_directories(${INC_DIR} ${OpenPose_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
-link_directories(${LINK_DIR} ${OpenPose_LIBS} ${OpenCV_LIBS})
+link_directories(${LINK_DIR} ${OpenPose_LIBS} ${OpenCV_LIBS} ${PCL_LIBRARIES})
 
 catkin_package(
     INCLUDE_DIRS include

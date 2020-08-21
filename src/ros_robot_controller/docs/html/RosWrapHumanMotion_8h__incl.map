@@ -1,8 +1,10 @@
 <map id="/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h" name="/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapperception/RosWrapHumanMotion.h">
-<area shape="rect" id="node1" title=" " alt="" coords="123,5,355,76"/>
+<area shape="rect" id="node1" title=" " alt="" coords="213,5,445,76"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,124,103,151"/>
 <area shape="rect" id="node3" title=" " alt="" coords="127,124,186,151"/>
 <area shape="rect" id="node4" title=" " alt="" coords="210,124,269,151"/>
 <area shape="rect" id="node5" title=" " alt="" coords="293,124,365,151"/>
 <area shape="rect" id="node6" title=" " alt="" coords="389,124,436,151"/>
+<area shape="rect" id="node7" title=" " alt="" coords="461,124,530,151"/>
+<area shape="rect" id="node8" title=" " alt="" coords="554,124,661,151"/>
 </map>

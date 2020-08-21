@@ -134,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5d3522edf1cf5cc6c40ae4f02c76108b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90418bc4c9e2922112cfe604222071de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a90418bc4c9e2922112cfe604222071de">IKinSpace</a> (const Eigen::MatrixXd &amp;Slist, const Eigen::MatrixXd &amp;M, const Eigen::MatrixXd &amp;T, Eigen::VectorXd &amp;thetalist, double eomg, double ev)</td></tr>
 <tr class="separator:a90418bc4c9e2922112cfe604222071de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8c5a6044f4f233ee39a68b1cc65597"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aea8c5a6044f4f233ee39a68b1cc65597">IKNumericalSolver</a> (const Eigen::MatrixXd &amp;Slist, const Eigen::MatrixXd &amp;M, const Eigen::Vector3d &amp;xd, Eigen::Vector4d &amp;thetalist)</td></tr>
+<tr class="memdesc:aea8c5a6044f4f233ee39a68b1cc65597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inverse kinematic for given constraint.  <a href="classHumanMotion.html#aea8c5a6044f4f233ee39a68b1cc65597">More...</a><br /></td></tr>
+<tr class="separator:aea8c5a6044f4f233ee39a68b1cc65597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf439f24c5516331a1848046dd8299c2"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#acf439f24c5516331a1848046dd8299c2">InverseDynamics</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
 <tr class="separator:acf439f24c5516331a1848046dd8299c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a46fffd5f116158cbdf05a474ae9648"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a4a46fffd5f116158cbdf05a474ae9648">GravityForces</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
@@ -702,6 +705,60 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea8c5a6044f4f233ee39a68b1cc65597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8c5a6044f4f233ee39a68b1cc65597">&#9670;&nbsp;</a></span>IKNumericalSolver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HumanMotion::IKNumericalSolver </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Slist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramname"><em>xd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Vector4d &amp;&#160;</td>
+          <td class="paramname"><em>thetalist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute inverse kinematic for given constraint. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Slist</td><td></td></tr>
+    <tr><td class="paramname">M</td><td></td></tr>
+    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">thetalist</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
 
 </div>
 </div>

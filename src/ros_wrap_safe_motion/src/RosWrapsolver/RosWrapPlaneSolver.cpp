@@ -109,11 +109,12 @@ void PlaneSolver::setCstMatrix(const Eigen::MatrixXd &robotPartielVertices,
 //    A_.block(rcols + pcols, 0, 1 ,5) << 0, 0, 0, 0, 0 ;
     // dsafe_ = dsafe_ /2 ;
     // dsafe_ = 0.1;
-    dsafe_ = 0.;
+    dsafe_ = 0;
     lbA_.setConstant(dsafe_);
     //  lbA_.setZero();
     lbA_(rcols + pcols) = 0.9;
-    lbA_.tail(2) << -0.3, -0.3;
+    // lbA_.tail(2) << -0.3, -0.3;
+    lbA_.tail(2) << -0.8, -0.8; // modified 
     // lbA_ << dsafe_,dsafe_,dsafe_,dsafe_,dsafe_,dsafe_, 0.9;
 
 //    lbA_.tail(1) <<  1-0.1;
@@ -122,7 +123,7 @@ void PlaneSolver::setCstMatrix(const Eigen::MatrixXd &robotPartielVertices,
     // ubA_(rcols + pcols +1) = 1;
     ubA_(rcols + pcols) = 1;
     ubA_.tail(2) << 0.7,0.7;
- 
+
 }
 
 

@@ -63,9 +63,9 @@ class image_converter:
     self.image_pub = rospy.Publisher("image_topic_2",Image)
     self.keypts_pub = rospy.Publisher('/keypoints',Float32MultiArray,queue_size=10)
     self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/camera/color/image_raw",Image,self.callback) # For realsense
+    # self.image_sub = rospy.Subscriber("/camera/color/image_raw",Image,self.callback) # For realsense
     # self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image,self.callback) # For Asus 
-
+    self.image_sub = rospy.Subscriber("/pcl/output",Image,self.callback) # for point cloud 
   def callback(self,data):
     try:
       cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")

@@ -1,7 +1,8 @@
 #include "RosWrapperception/RosWrapHumanMotion.h"
 
+const double pi = 3.1415927;
 
-
+using namespace std ;
 HumanMotion::HumanMotion(const int& ndof,const std::map<std::string, Eigen::Matrix4d> & M_joint,
                          const std::map<std::string, Eigen::Matrix4d> & M_CoM,const Eigen::MatrixXd &S_list):ndof_(ndof){
 
@@ -20,6 +21,7 @@ HumanMotion::HumanMotion(const int& ndof,const std::map<std::string, Eigen::Matr
 
             S_list_ = S_list ;
 
+			cout << " ndof private member " << ndof_ << endl; 
 };
 
 bool HumanMotion::nearZero(const double& val){
@@ -345,6 +347,64 @@ bool HumanMotion::IKinSpace(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd&
 		}
 		return !err;
 	}
+
+
+bool HumanMotion::IKNumericalSolver(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd & M, const Eigen::Vector3d& xd, Eigen::Vector4d & thetalist){
+	 
+	Eigen::MatrixXd Js = Slist;
+
+	Eigen::Vector4d lb, ub, g ;
+	Eigen::Vector3d f;
+	lb << 0,0,-pi/2,0;
+	ub << pi/2, pi/2, pi/2, pi/2;
+
+	Eigen::Matrix4d hand_frame;
+	std::vector<Eigen::MatrixXd> Rp;
+	Eigen::Matrix4d H; 
+
+	qpOASES::QProblemB IKSolver(ndof_);
+	qpOASES::Options options;
+	options.enableFlippingBounds = qpOASES::BT_FALSE;
+	options.initialStatusBounds = qpOASES::ST_INACTIVE;
+	options.numRefinementSteps = 1;
+	IKSolver.setOptions( options );
+	int nWSR = 10;
+	Eigen::Vector3d error;
+	error = Rp[1]-xd;
+	while (error.norm() > 0.01){
+		H.setZero();
+		Eigen::MatrixXd E;
+		E.resize(3,4);
+
+		Js = HumanMotion::JacobianSpace(Slist,thetalist);
+		hand_frame =  HumanMotion::FKinSpace(M, Slist, thetalist);
+		Rp = HumanMotion::TransToRp(hand_frame);
+		E = Js.block(3,0,3,4);
+	
+		f = Rp[1] - (Js*thetalist).tail(3) -xd ;
+
+		H = E.transpose()*E;
+		g = E.transpose()*f;
+
+	
+		/* Solve first QP. */
+		
+		IKSolver.init( H.data(),g.data(),lb.data(),ub.data(), nWSR,0 );
+
+		/* Get and print solution of second QP. */
+
+		IKSolver.getPrimalSolution( thetalist.data() );
+	
+		error = Rp[1]-xd;
+		std::cout << " error: \n" << error.norm() <<std::endl;  
+
+	}
+	std::cout << " H : \n" << H << '\n' << "g : \n" << g <<std::endl;  
+	std::cout << " thetalist: \n" << thetalist <<std::endl;  
+	std::cout << " xd: \n" << xd <<std::endl;  
+	std::cout << " error: \n" << error.norm() <<std::endl;  
+
+}
 
 Eigen::VectorXd HumanMotion::InverseDynamics(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist, const Eigen::VectorXd& ddthetalist,
 									const Eigen::VectorXd& g, const Eigen::VectorXd& Ftip, const std::vector<Eigen::MatrixXd>& Mlist,

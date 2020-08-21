@@ -6,6 +6,8 @@
 #include <cmath>
 #include <iostream>
 #include "map"
+#include "memory"
+#include "qpOASES.hpp"
 
  class HumanMotion
  {
@@ -190,6 +192,17 @@
     */
         bool IKinSpace(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd& M, const Eigen::MatrixXd& T, Eigen::VectorXd& thetalist, double eomg, double ev);
    
+        /**
+         * @brief Compute inverse kinematic for given constraint
+         * 
+         * @param Slist 
+         * @param M 
+         * @param T 
+         * @param thetalist 
+         * @return true 
+         * @return false 
+         */
+        bool IKNumericalSolver(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd & M, const Eigen::Vector3d& xd, Eigen::Vector4d & thetalist);
         //------------------------------------- Dynamic -------------------------------------------------------------
 
         /* 
@@ -321,6 +334,7 @@
 
 
         Eigen::VectorXd computeVelocity(const Eigen::VectorXd& V, const Eigen::MatrixXd& T);
+
         std::vector<Eigen::VectorXd> computeOccupancy(const Eigen::VectorXd& q_init, const Eigen::VectorXd& dq_init,const Eigen::VectorXd& ddq_init, const int & N, const double & Vmax);
 
     private:
@@ -328,7 +342,7 @@
         Eigen::MatrixXd  S_list_, B_list_  ;
         Eigen::Matrix4d M_hand_;
         std::map<std::string, Eigen::Matrix4d> M_joint_, M_CoM_;
-        int ndof_;
+        const int ndof_;
         Eigen::VectorXd q_, dq_, ddq_ ;
 
      
