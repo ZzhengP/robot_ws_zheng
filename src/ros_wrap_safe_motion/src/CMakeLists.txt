@@ -16,8 +16,10 @@ set(HEADER_LIST "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWraprobotmodel/Ro
                 "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapvisualization/RosWrapMarkers.h"
                 "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapsepPlane/RosWrapsepPlane.h"
                 "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapperception/RosWrapHumanMotion.h"
+                "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapperception/RosWrapHumanMotionMR.h"
                 "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapperception/RosWrapHumanOccupancy.h"
                 "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapperception/RosWrapHumanOptimalTorque.h"
+                "${ros_wrap_safe_motion_SOURCE_DIR}/include/RosWrapperception/eigenmultivariatenormal.h"
                 )
 
 add_library(ros_wrap_safe_motion_library
@@ -35,7 +37,9 @@ add_library(ros_wrap_safe_motion_library
             RosWrapsolver/RosWrapPlaneSolver.cpp
             RosWrapsolver/RosWraplpsolve.cpp
             RosWrapperception/RosWrapHumanOptimalTorque.cpp
-            RosWrapperception/RosWrapHumanMotion.cpp)
+            RosWrapperception/RosWrapHumanMotion.cpp
+            RosWrapperception/RosWrapHumanMotionMR.cpp
+            RosWrapperception/RosWrapHumanOccupancy.cpp)
 
 target_include_directories(ros_wrap_safe_motion_library PUBLIC ../include)
 target_link_libraries(ros_wrap_safe_motion_library PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${iDynTree_LIBRARIES} glpk caffe ${OpenPose_LIBS} boost_system glog jsoncpp)

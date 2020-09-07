@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -100,18 +112,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -288,6 +288,21 @@ poseDepthTest/fast:
 .PHONY : poseDepthTest/fast
 
 # Convenience name for target.
+examples/CMakeFiles/MRtest.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MRtest.dir/rule
+.PHONY : examples/CMakeFiles/MRtest.dir/rule
+
+# Convenience name for target.
+MRtest: examples/CMakeFiles/MRtest.dir/rule
+
+.PHONY : MRtest
+
+# fast build rule for target.
+MRtest/fast:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/MRtest.dir/build.make examples/CMakeFiles/MRtest.dir/build
+.PHONY : MRtest/fast
+
+# Convenience name for target.
 examples/CMakeFiles/InteractiveMarkers.dir/rule:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/InteractiveMarkers.dir/rule
 .PHONY : examples/CMakeFiles/InteractiveMarkers.dir/rule
@@ -370,6 +385,33 @@ InteractiveMarkers.s: InteractiveMarkers.cpp.s
 InteractiveMarkers.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/InteractiveMarkers.dir/build.make examples/CMakeFiles/InteractiveMarkers.dir/InteractiveMarkers.cpp.s
 .PHONY : InteractiveMarkers.cpp.s
+
+MRtest.o: MRtest.cpp.o
+
+.PHONY : MRtest.o
+
+# target to build an object file
+MRtest.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/MRtest.dir/build.make examples/CMakeFiles/MRtest.dir/MRtest.cpp.o
+.PHONY : MRtest.cpp.o
+
+MRtest.i: MRtest.cpp.i
+
+.PHONY : MRtest.i
+
+# target to preprocess a source file
+MRtest.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/MRtest.dir/build.make examples/CMakeFiles/MRtest.dir/MRtest.cpp.i
+.PHONY : MRtest.cpp.i
+
+MRtest.s: MRtest.cpp.s
+
+.PHONY : MRtest.s
+
+# target to generate assembly for a file
+MRtest.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f examples/CMakeFiles/MRtest.dir/build.make examples/CMakeFiles/MRtest.dir/MRtest.cpp.s
+.PHONY : MRtest.cpp.s
 
 humanperceptiontest.o: humanperceptiontest.cpp.o
 
@@ -594,6 +636,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... DynamicAndMPCSolver"
 	@echo "... simpleMatrixReceive"
 	@echo "... simpletest"
@@ -604,9 +647,9 @@ help:
 	@echo "... humanperceptiontest"
 	@echo "... rebuild_cache"
 	@echo "... poseDepthTest"
+	@echo "... MRtest"
 	@echo "... InteractiveMarkers"
 	@echo "... test"
-	@echo "... install/local"
 	@echo "... obsVerticesPublisher"
 	@echo "... list_install_components"
 	@echo "... install"
@@ -616,6 +659,9 @@ help:
 	@echo "... InteractiveMarkers.o"
 	@echo "... InteractiveMarkers.i"
 	@echo "... InteractiveMarkers.s"
+	@echo "... MRtest.o"
+	@echo "... MRtest.i"
+	@echo "... MRtest.s"
 	@echo "... humanperceptiontest.o"
 	@echo "... humanperceptiontest.i"
 	@echo "... humanperceptiontest.s"

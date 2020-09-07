@@ -33,3 +33,6 @@ target_link_libraries(humanperceptiontest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_L
 
 add_executable(poseDepthTest poseDepthTest.cpp)
 target_link_libraries(poseDepthTest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ${OpenCV_LIBRARIES} glpk ros_wrap_safe_motion_library)
+
+add_executable(MRtest MRtest.cpp)
+target_link_libraries(MRtest PRIVATE ${catkin_LIBRARIES} ${qpOASES_LIBRARIES}   ros_wrap_safe_motion_library )

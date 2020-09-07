@@ -1,6 +1,8 @@
 #include "RosWrapperception/RosWrapHumanOptimalTorque.h"
 #include "RosWrapperception/RosWrapHumanMotion.h"
 #include "memory"
+#include <Eigen/Dense>
+
 
 int main(){
 
@@ -28,88 +30,80 @@ int main(){
 
     // ------------------------  Test of human kinematic model ---------------------
     const int ndof = 4;
-    // const double arm_len = 0.271;
-    const double arm_len = 1;
-    // const double forearm_len = 0.283;
-    const double forearm_len = 1;
-    // const double hand_len = 0.08;
-    const double hand_len = 0.0;
-    // const double shoulder_len = 0.15;
-    const double shoulder_len = 0.;
-    const double pi = 3.1415927;
-    std::map<std::string, Eigen::Matrix4d>  M_joint;
-    std::map<std::string, Eigen::Matrix4d>  M_CoM;
+    const double pi = 3.1415927 ;
+    const double lu = 0.5, lf= 0.5, lh = 0.1, lc1 = 0.25, lc2 = 0.3, m1 = 1, m2 = 1;
+    Eigen::MatrixXd DHparam;
+
+    DHparam.resize(ndof,4);
+
+    // DHparam << 0, 0, 0, 0,
+    //            0, pi/2, 0, pi/2,
+    //            0, pi/2, 0, pi/2,
+    //            0, pi/2, 0, pi/2 ;  
+    DHparam << 0, 0, 0, 0,
+               0, -pi/2, 0, -pi/2 + 0 ,
+               0, -pi/2, 0, -pi/2 + 0 ,
+               lu, 0, 0, 0 + 0  ;  
+
+    std::shared_ptr<HumanMotion> humanmotion = std::make_shared<HumanMotion>(ndof, DHparam,lc1, lc2,lu,lf,lh, m1, m2);    
 
 
+    Eigen::VectorXd theta, dtheta, ddtheta, torque;
+    theta.resize(ndof);
+    dtheta.resize(ndof);
+    ddtheta.resize(ndof);
+    torque.resize(ndof);
+    theta << -pi/2, 0, 0, 0;
+    dtheta <<  0, 0, 0, 0;
+    ddtheta << 0, 0, 0, 0;
+    humanmotion->computeForwardKinematic(theta);
 
-    M_joint["M_shoulder1"] << 0,0,1,0,
-                              0,1,0,-shoulder_len,
-                              -1,0,0,0,
-                              0,0,0,1;
+    humanmotion->computeTransformationMatrixToBaseList();
+    
+    // std::cout <<" hand transform \n" << humanmotion->getHandTransformation()<< std::endl;
+    std::vector<Eigen::Matrix4d> TransformationMatrixList, TransformationMatrixToBaseList;
+    TransformationMatrixList = humanmotion->getTransformationMatrixList();
+    TransformationMatrixToBaseList = humanmotion->getTransformationToBaseMatrixList();
+    humanmotion->print();      
+    humanmotion->computeStackedVelocity(dtheta);
+    std::vector<Eigen::Vector3d> StackedLinearVelocity;
+    std::vector<Eigen::Vector3d> StackedAngularVelocity;
 
-    M_joint["M_shoulder2"] << 1,0,0,0,
-                              0,0,1,-shoulder_len,
-                              0,-1,0,0,
-                              0,0,0,1;
+    StackedAngularVelocity = humanmotion -> getStackedAngularVelocity();
+    StackedLinearVelocity = humanmotion -> getStackedLinearVelocity();
+    Eigen::Matrix3d Rot05;
+    Rot05 = TransformationMatrixToBaseList[ndof].block(0,0,3,3);
+    std::cout <<" wrist angular velocity :\n" << StackedAngularVelocity[ndof-1]<< std::endl;
+    std::cout <<" wrist linear velocity :\n" << StackedLinearVelocity[ndof-1]<< std::endl;
+    Eigen::MatrixXd Jacobian, Jacobian_C1, Jacobian_C2;
+    Jacobian.resize(6,ndof);
+    Jacobian_C1.resize(6,ndof);
+    Jacobian_C2.resize(6,ndof);
 
-    M_joint["M_shoulder3"] << 1,0,0,0,
-                              0,1,0,-shoulder_len,
-                              0,0,1,0,
-                              0,0,0,1;
+    humanmotion -> computeJacobian();
+    Jacobian_C1 =  humanmotion -> computeJacobianC1(TransformationMatrixToBaseList);
+    Jacobian_C2 = humanmotion ->computeJacobianC2(TransformationMatrixToBaseList);
+    humanmotion -> computeJacobianC2();
+    Jacobian = humanmotion->getJacobian();
+    
+    Eigen::VectorXd vel;
+    vel.resize(6);
+    vel = Jacobian*dtheta;
+    std::cout <<" linear velocity in  base frame :\n" << vel.segment(0,3) << std::endl;
+    std::cout <<" angular velocity in  base frame :\n" << vel.segment(3,3) << std::endl;
+    humanmotion->computeHandVelocity();
+    std::cout <<" forwarkd hand linear velocity : \n" << Rot05*humanmotion->getHandLinearVelocity() << std::endl;
 
-    M_joint["M_forearm"] << 1,0,0,0,
-                            0,cos(pi/2),-sin(pi/2),-shoulder_len,
-                            0,-sin(pi/2),cos(pi/2),-arm_len,
-                            0,0,0,1;
+    Eigen::Matrix4d InertialMass;
+    InertialMass.setZero();
+    InertialMass = humanmotion->computeInertialMass(TransformationMatrixToBaseList, Jacobian_C1, Jacobian_C2);
 
-    M_joint["M_hand"] <<   1,0,0,0,
-                           0,1,0,-shoulder_len,
-                           0,0,1,-arm_len - forearm_len,
-                           0,0,0,1;             
+    std::cout <<" inertial Mass :\n " << InertialMass << std::endl;
 
-    M_CoM["M_C1"] << 1,0,0,0,
-                     0,1,0,0,
-                     0,0,1,-arm_len/2,
-                     0,0,0,1;
+    torque = humanmotion -> computeForwardDynamic(dtheta, ddtheta);
 
-    M_CoM["M_C2"] << 1,0,0,0,
-                     0,1,0,-shoulder_len,
-                     0,0,1,-arm_len - forearm_len/2,
-                     0,0,0,1;                 
-        
-
-    Eigen::MatrixXd S_list; 
-    S_list.resize(6,ndof);
-    S_list.block(0,0,6,1) << -1, 0, 0, 0, 0, 0 ;
-    S_list.block(0,1,6,1) << 0, -1, 0, 0, 0, 0 ;
-    S_list.block(0,2,6,1) << 0, 0, 1, 0, 0, 0 ;
-    S_list.block(0,3,6,1) << 0, -1, 0 , -arm_len, 0, 0 ;
-
-
-    std::shared_ptr<HumanMotion> human_motion = std::make_shared<HumanMotion>(ndof, M_joint, M_CoM, S_list);
-
-    Eigen::Vector4d theta_list( 0,0,0,0);
-    Eigen::Matrix4d current_hand_frame, desired_hand_frame;
-    Eigen::Matrix4d current_elbow_frame;
-    current_hand_frame = human_motion -> FKinSpace(M_joint["M_hand"], S_list, theta_list);
-    std::vector<Eigen::MatrixXd> Rp;
-    std::cout <<" current hand frame \n" << current_hand_frame << std::endl; 
-    Rp = human_motion->TransToRp(current_hand_frame);
-    Eigen::VectorXd desired_theta ;
-    desired_theta.resize(4);
-    desired_theta.setZero();
-    desired_hand_frame.setZero();
-    desired_hand_frame(3,3) = 1;
-    desired_hand_frame.block(0,0,3,3) << 0,0,-1,
-                                         0,1,0,
-                                         1,0,0;
-
-    desired_hand_frame.block(0,3,3,1) << 1,0,-1;
-    bool is_IK_solved;
-    // is_IK_solved = human_motion->IKNumericalSolver(S_list,M_joint["M_hand"],Rp[1],desired_theta);
-    is_IK_solved = human_motion -> IKinSpace(S_list,M_joint["M_hand"],desired_hand_frame,desired_theta,0.001,0.001);
-    std::cout <<" desired theta :\n " << desired_theta << std::endl;
-    std::cout <<" desired hand frame \n" << human_motion -> FKinSpace(M_joint["M_hand"], S_list, desired_theta) << std::endl; 
+    std::cout <<" torque :\n " << torque << std::endl;
 
     return 0;
 }
+

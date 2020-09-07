@@ -209,6 +209,8 @@ RosWrapperception/RosWrapHumanMotion.h
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/RosWrapperception/RosWrapHumanMotion.h
 memory
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/memory
+Eigen/Dense
+-
 
 /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/RosWrapcommun/color.h
 

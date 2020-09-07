@@ -1754,6 +1754,19 @@ poseDepthTest/fast:
 .PHONY : poseDepthTest/fast
 
 #=============================================================================
+# Target rules for targets named MRtest
+
+# Build rule for target.
+MRtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MRtest
+.PHONY : MRtest
+
+# fast build rule for target.
+MRtest/fast:
+	$(MAKE) -f examples/CMakeFiles/MRtest.dir/build.make examples/CMakeFiles/MRtest.dir/build
+.PHONY : MRtest/fast
+
+#=============================================================================
 # Target rules for targets named InteractiveMarkers
 
 # Build rule for target.
@@ -1927,6 +1940,7 @@ help:
 	@echo "... separatingPlane"
 	@echo "... humanperceptiontest"
 	@echo "... poseDepthTest"
+	@echo "... MRtest"
 	@echo "... InteractiveMarkers"
 	@echo "... obsVerticesPublisher"
 	@echo "... ros_wrap_safe_motion_library"

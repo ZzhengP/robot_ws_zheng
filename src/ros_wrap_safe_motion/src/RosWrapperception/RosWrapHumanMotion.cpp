@@ -3,596 +3,457 @@
 const double pi = 3.1415927;
 
 using namespace std ;
-HumanMotion::HumanMotion(const int& ndof,const std::map<std::string, Eigen::Matrix4d> & M_joint,
-                         const std::map<std::string, Eigen::Matrix4d> & M_CoM,const Eigen::MatrixXd &S_list):ndof_(ndof){
 
-            for (auto ite = M_joint.begin(); ite != M_joint.end(); ite++ ){
+HumanMotion::HumanMotion(const int & ndof, const Eigen::MatrixXd & DHparam, const double & lc1, const double & lc2, const double & lu,
+					     const double & lf,const double & lh, const double & m1, const double & m2 )
+						:ndof_(ndof), DHparam_(DHparam),lc1_(lc1), lc2_(lc2),lu_(lu), lf_(lf), lh_(lh), m1_(m1), m2_(m2){
+			
+			std::cout <<" create human motion class" << std::endl;
+			handTransformMatrix_.setIdentity();
+			handPosition_.setZero();
 
-                M_joint_[ite->first] = ite->second;
-            }
+			int rows = DHparam_.rows();
+			TransformationMatrixList_.resize(rows + 1);
+			TransformationMatrixToBaseList_.resize(rows+1);
 
-            for (auto ite = M_CoM.begin(); ite != M_CoM.end(); ite++ ){
-
-                M_CoM_[ite->first] = ite->second;
-            }
-
-            S_list_.resize(6,ndof_);
-            B_list_.resize(6,ndof_);
-
-            S_list_ = S_list ;
-
-			cout << " ndof private member " << ndof_ << endl; 
-};
-
-bool HumanMotion::nearZero(const double& val){
-    return (std::abs(val) < 0.000001 );
-}
-
-
-
-Eigen::MatrixXd HumanMotion::VecToso3(const Eigen::Vector3d& omega){
-
-    Eigen::Matrix3d m ;
-
-    m << 0, -omega(2), omega(1),
-        omega(2), 0, -omega(0),
-        -omega(1), omega(0), 0 ;
-    
-    return m;
-}
-
-
-Eigen::MatrixXd HumanMotion::ad(Eigen::VectorXd V) {
-		Eigen::Matrix3d omgmat = HumanMotion::VecToso3(Eigen::Vector3d(V(0), V(1), V(2)));
-
-		Eigen::MatrixXd result(6, 6);
-		result.topLeftCorner<3, 3>() = omgmat;
-		result.topRightCorner<3, 3>() = Eigen::Matrix3d::Zero(3, 3);
-		result.bottomLeftCorner<3, 3>() = HumanMotion::VecToso3(Eigen::Vector3d(V(3), V(4), V(5)));
-		result.bottomRightCorner<3, 3>() = omgmat;
-		return result;
-}
-
-Eigen::Vector3d HumanMotion::so3ToVec(const Eigen::Matrix3d& omega_matrix){
-
-    Eigen::Vector3d omega;
-    omega << omega_matrix(2,1), omega_matrix(0,2), omega_matrix(1,0);
-
-    return omega;
-}
-
-
-Eigen::Vector4d HumanMotion::AxisAng3(const Eigen::Vector3d& expc3){
-
-    Eigen::Vector4d v_ret; 
-
-    v_ret << expc3.normalized(), expc3.norm();
-    return v_ret;    
-}
-
-Eigen::Matrix3d HumanMotion::MatrixExp3(const Eigen::Matrix3d& so3mat){
-    
-    Eigen::Vector3d omgtheta = HumanMotion::so3ToVec(so3mat);
-
-		Eigen::Matrix3d m_ret = Eigen::Matrix3d::Identity();
-		if (HumanMotion::nearZero(so3mat.norm())) {
-			return m_ret;
-		}
-		else {
-			double theta = (AxisAng3(omgtheta))(3);
-			Eigen::Matrix3d omgmat = so3mat * (1 / theta);
-			return m_ret + std::sin(theta) * omgmat + ((1 - std::cos(theta)) * (omgmat * omgmat));
-		}
-}
-
-
-Eigen::Matrix3d HumanMotion::MatrixLog3(const Eigen::Matrix3d& R){
-    
-     double acosinput = (R.trace() - 1) / 2.0;
-		Eigen::MatrixXd m_ret = Eigen::MatrixXd::Zero(3, 3);
-		if (acosinput >= 1)
-			return m_ret;
-		else if (acosinput <= -1) {
-			Eigen::Vector3d omg;
-			if (!HumanMotion::nearZero(1 + R(2, 2)))
-				omg = (1.0 / std::sqrt(2 * (1 + R(2, 2))))*Eigen::Vector3d(R(0, 2), R(1, 2), 1 + R(2, 2));
-			else if (!HumanMotion::nearZero(1 + R(1, 1)))
-				omg = (1.0 / std::sqrt(2 * (1 + R(1, 1))))*Eigen::Vector3d(R(0, 1), 1 + R(1, 1), R(2, 1));
-			else
-				omg = (1.0 / std::sqrt(2 * (1 + R(0, 0))))*Eigen::Vector3d(1 + R(0, 0), R(1, 0), R(2, 0));
-			m_ret = HumanMotion::VecToso3(M_PI * omg);
-			return m_ret;
-		}
-		else {
-			double theta = std::acos(acosinput);
-			m_ret = theta / 2.0 / sin(theta)*(R - R.transpose());
-			return m_ret;
-		}  
-}
-
-Eigen::MatrixXd HumanMotion::RpToTrans(const Eigen::Matrix3d& R, const Eigen::Vector3d& p){
-
-    Eigen::MatrixXd m_ret(4,4);
-    
-    m_ret << R, p,
-             0,0,0,1;
-    return m_ret;
- }
-
-
-std::vector<Eigen::MatrixXd> HumanMotion::TransToRp(const Eigen::MatrixXd& T){
-    
-    std::vector<Eigen::MatrixXd> Rp_ret;
-    Eigen::Matrix3d R_ret;
+			// Linear and angular velocity 
+			stacked_linear_velocity_.resize(ndof_); 
+			stacked_angular_velocity_.resize(ndof_); 
 	
-    // Get top left 3x3 corner
-	R_ret = T.block<3, 3>(0, 0);
-
-	Eigen::Vector3d p_ret(T(0, 3), T(1, 3), T(2, 3));
-
-	Rp_ret.push_back(R_ret);
-	Rp_ret.push_back(p_ret);
-
-	return Rp_ret;
-}
-
-Eigen::MatrixXd HumanMotion::VecTose3(const Eigen::VectorXd& V){
-    // Separate angular (exponential representation) and linear velocities
-    Eigen::Vector3d exp(V(0), V(1), V(2));
-	Eigen::Vector3d linear(V(3), V(4), V(5));
-
-	// Fill in values to the appropriate parts of the transformation matrix
-	Eigen::MatrixXd m_ret(4, 4);
-	m_ret << HumanMotion::VecToso3(exp), linear,
-			0, 0, 0, 0;
-
-	return m_ret;
-}
-
-Eigen::VectorXd HumanMotion::se3ToVec(const Eigen::MatrixXd& T){
-
-    Eigen::VectorXd m_ret(6);
+			
+		    // Linear and angular acceleration 
+			stacked_linear_acc_.resize(ndof_); 
+			stacked_angular_acc_.resize(ndof_); 
 	
-    m_ret << T(2, 1), T(0, 2), T(1, 0), T(0, 3), T(1, 3), T(2, 3);
 
-	return m_ret;
+			q_.resize(ndof_);
+			dq_.resize(ndof_);
+			ddq_.resize(ndof_);
+			q_.setZero();
+			dq_.setZero();
+			ddq_.setZero();
+			aList_.resize(ndof_);
+			alphaList_.resize(ndof_);
+			dList_.resize(ndof_);
+			thetaList_.resize(ndof_);
+			aList_ = DHparam_.col(0);
+			alphaList_ = DHparam_.col(1);
+			dList_ = DHparam_.col(2);
+			thetaList_ = DHparam_.col(3);
+
+
+			for (int it(0); it < ndof_; it ++){
+
+				 TransformationMatrixList_[it] << cos(thetaList_(it)), -sin(thetaList_(it)), 0 , aList_(it),
+				 								  sin(thetaList_(it))*cos(alphaList_(it)), cos(thetaList_(it))*cos(alphaList_(it)), -sin(alphaList_(it)), -sin(alphaList_(it))*dList_(it),
+												  sin(thetaList_(it))*sin(alphaList_(it)), cos(thetaList_(it))*sin(alphaList_(it)), cos(alphaList_(it)), cos(alphaList_(it))*dList_(it),
+												  0,0,0,1 	 ; 	
+				 handTransformMatrix_ = handTransformMatrix_*TransformationMatrixList_[it];
+				 TransformationMatrixToBaseList_[it] = handTransformMatrix_;
+
+				 stacked_linear_velocity_[it].setZero();
+				 stacked_angular_velocity_[it].setZero();
+
+				 stacked_linear_acc_[it].setZero();
+				 stacked_angular_acc_[it].setZero();
+			}				
+
+			TransformationMatrixList_[ndof_] << 1, 0, 0, lf_,
+						 						0, 1, 0, 0, 
+												0, 0, 1, 0, 
+												0, 0, 0, 1;
+			handTransformMatrix_ = handTransformMatrix_*TransformationMatrixList_[ndof_];
+			TransformationMatrixToBaseList_[ndof_] = handTransformMatrix_; 	
+
+	 		T3C1_ << 1, 0, 0, lc1_,
+				 	0, 1, 0, 0, 
+			 		0, 0, 1, 0, 
+				 	0, 0, 0, 1;
+
+			T4C2_ << 1, 0, 0, lc2_,
+				 	0, 1, 0, 0, 
+			 		0, 0, 1, 0, 
+				 	0, 0, 0, 1;
+			Jacobian_.resize(6,ndof_);
+			Jacobian_.setZero();
+			
+			Jacobian_C1_.resize(6,ndof_);
+			Jacobian_C1_.setZero();
+			Jacobian_C2_.resize(6,ndof_);
+			Jacobian_C2_.setZero();
+
+			Ic1_.setIdentity();
+			Ic2_.setIdentity();
+
+			std::cout <<" human motion created" << std::endl;
+
 }
 
-Eigen::MatrixXd HumanMotion::TransInv(const Eigen::MatrixXd& transform){
-    
-    auto rp = HumanMotion::TransToRp(transform);
-	auto Rt = rp.at(0).transpose();
-	auto t = -(Rt * rp.at(1));
-	Eigen::MatrixXd inv(4, 4);
-	inv = Eigen::MatrixXd::Zero(4,4);
-	inv.block(0, 0, 3, 3) = Rt;
-	inv.block(0, 3, 3, 1) = t;
-	inv(3, 3) = 1;
-	return inv;
 
-}
+void HumanMotion::print() const{
 
-Eigen::MatrixXd HumanMotion::Adjoint(const Eigen::MatrixXd& T){
+	int i = 0 , j =0;
+	for (auto it = TransformationMatrixList_.cbegin(); it != TransformationMatrixList_.cend(); it++) {
 
-    	std::vector<Eigen::MatrixXd> R = HumanMotion::TransToRp(T);
-		Eigen::MatrixXd ad_ret(6, 6);
-		ad_ret = Eigen::MatrixXd::Zero(6, 6);
-		Eigen::MatrixXd zeroes = Eigen::MatrixXd::Zero(3, 3);
-		ad_ret << R[0], zeroes,
-			   HumanMotion::VecToso3(R[1]) * R[0], R[0];
-		return ad_ret;
-
-
-}
-
-
-Eigen::MatrixXd HumanMotion::MatrixExp6(const Eigen::MatrixXd& se3mat){
-        // Extract the angular velocity vector from the transformation matrix
-		Eigen::Matrix3d se3mat_cut = se3mat.block<3, 3>(0, 0);
-		Eigen::Vector3d omgtheta =  HumanMotion::so3ToVec(se3mat_cut);
-
-		Eigen::MatrixXd m_ret(4, 4);
-
-		// If negligible rotation, m_Ret = [[Identity, angular velocty ]]
-		//									[	0	 ,		1		   ]]
-		if ( HumanMotion::nearZero(omgtheta.norm())) {
-			// Reuse previous variables that have our required size
-			se3mat_cut = Eigen::MatrixXd::Identity(3, 3);
-			omgtheta << se3mat(0, 3), se3mat(1, 3), se3mat(2, 3);
-			m_ret << se3mat_cut, omgtheta,
-				0, 0, 0, 1;
-			return m_ret;
-		}
-		// If not negligible, MR page 105
-		else {
-			double theta = (HumanMotion::AxisAng3(omgtheta))(3);
-			Eigen::Matrix3d omgmat = se3mat.block<3, 3>(0, 0) / theta;
-			Eigen::Matrix3d expExpand = Eigen::MatrixXd::Identity(3, 3) * theta + (1 - std::cos(theta)) * omgmat + ((theta - std::sin(theta)) * (omgmat * omgmat));
-			Eigen::Vector3d linear(se3mat(0, 3), se3mat(1, 3), se3mat(2, 3));
-			Eigen::Vector3d GThetaV = (expExpand*linear) / theta;
-			m_ret << MatrixExp3(se3mat_cut), GThetaV,
-				     0, 0, 0, 1;
-			return m_ret;
-		}
-
-
-}
-
-
-
-Eigen::MatrixXd HumanMotion::MatrixLog6(const Eigen::MatrixXd& T) {
-		Eigen::MatrixXd m_ret(4, 4);
-		auto rp = HumanMotion::TransToRp(T);
-		Eigen::Matrix3d omgmat = MatrixLog3(rp.at(0));
-		Eigen::Matrix3d zeros3d = Eigen::Matrix3d::Zero(3, 3);
-		if (HumanMotion::nearZero(omgmat.norm())) {
-			m_ret << zeros3d, rp.at(1),
-				0, 0, 0, 0;
-		}
-		else {
-			double theta = std::acos((rp.at(0).trace() - 1) / 2.0);
-			Eigen::Matrix3d logExpand1 = Eigen::MatrixXd::Identity(3, 3) - omgmat / 2.0;
-			Eigen::Matrix3d logExpand2 = (1.0 / theta - 1.0 / std::tan(theta / 2.0) / 2)*omgmat*omgmat / theta;
-			Eigen::Matrix3d logExpand = logExpand1 + logExpand2;
-			m_ret << omgmat, logExpand*rp.at(1),
-				0, 0, 0, 0;
-		}
-		return m_ret;
+		std::cout << "relative transformation for " << i+1 << " to " << i << " is :\n "<<
+				     (*it) << std::endl;
+		i++; 
 	}
 
+	for (auto it = TransformationMatrixToBaseList_.cbegin(); it != TransformationMatrixToBaseList_.cend(); it++) {
 
-Eigen::MatrixXd HumanMotion::FKinSpace(const Eigen::MatrixXd& M, const Eigen::MatrixXd& Slist, const Eigen::VectorXd& thetaList){
-    
-    	Eigen::MatrixXd T;
-		T.resize(4,4) ;
-		T =  M;
-
-		for (int i = (thetaList.size() - 1); i > -1; i--) {
-			T = MatrixExp6(VecTose3(Slist.col(i)*thetaList(i))) * T;
-		}
-
-		return T;
-}
-
-
-Eigen::MatrixXd HumanMotion::FKinBody(const Eigen::MatrixXd& M, const Eigen::MatrixXd& Blist, const Eigen::VectorXd& thetaList){
-    
-    	Eigen::MatrixXd T = M;
-		for (int i = (thetaList.size() - 1); i > -1; i--) {
-			T = T*MatrixExp6(VecTose3(Blist.col(i)*thetaList(i))) ;
-		}
-		return T;
-}
-
-
-Eigen::MatrixXd HumanMotion::JacobianSpace(const Eigen::MatrixXd& Slist, const Eigen::VectorXd& thetaList){
-
-        Eigen::MatrixXd Js = Slist;
-		Eigen::MatrixXd T = Eigen::MatrixXd::Identity(4, 4);
-		Eigen::VectorXd sListTemp(Slist.col(0).size());
-		for (int i = 1; i < thetaList.size(); i++) {
-			sListTemp << Slist.col(i - 1) * thetaList(i - 1);
-			T = T * MatrixExp6(VecTose3(sListTemp));
-			// std::cout << "array: " << sListTemp << std::endl;
-			Js.col(i) = Adjoint(T) * Slist.col(i);
-		}
-
-		return Js;
-}
-
-
-Eigen::MatrixXd HumanMotion::JacobianBody(const Eigen::MatrixXd& Blist, const Eigen::VectorXd& thetaList){
-    
-    	Eigen::MatrixXd Jb = Blist;
-		Eigen::MatrixXd T = Eigen::MatrixXd::Identity(4, 4);
-		Eigen::VectorXd bListTemp(Blist.col(0).size());
-		for (int i = thetaList.size() - 2; i >= 0; i--){
-            
-            bListTemp << Blist.col(i + 1) * thetaList(i + 1);
-			T = T * MatrixExp6(VecTose3(-1 * bListTemp));
-			// std::cout << "array: " << sListTemp << std::endl;
-			Jb.col(i) = Adjoint(T) * Blist.col(i);
-		}
-		return Jb;
-}
-
-Eigen::MatrixXd HumanMotion::getRelativeTransformation(const Eigen::MatrixXd& Ti, const Eigen::MatrixXd& Tj){
-
-    Eigen::MatrixXd rel_trans(4,4);
-
-    rel_trans = HumanMotion::TransInv(Ti)*Tj;
-
-}
-
-Eigen::VectorXd HumanMotion::computeVelocity(const Eigen::VectorXd& V, const Eigen::MatrixXd& T){
-
-    Eigen::VectorXd Velocity ;
-    Velocity.resize(6);
-	Velocity.setZero();
-
-    auto Rp = HumanMotion::TransToRp(T);
-    Eigen::Vector3d p = Rp[1];
-    Eigen::Vector3d omg , lin_vel;
-    omg = V.head(3);
-	lin_vel = V.tail(3) +  omg.cross(p);
-	Velocity.head(3) << omg;
-    Velocity.tail(3) << lin_vel;
-
-    return Velocity;
-}
-
-bool HumanMotion::IKinSpace(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd& M, const Eigen::MatrixXd& T,
-		Eigen::VectorXd& thetalist, double eomg, double ev) {
-		int i = 0;
-		int maxiterations = 20;
-		Eigen::MatrixXd Tfk = FKinSpace(M, Slist, thetalist);
-		Eigen::MatrixXd Tdiff = TransInv(Tfk)*T;
-		Eigen::VectorXd Vs = Adjoint(Tfk)*se3ToVec(MatrixLog6(Tdiff));
-		Eigen::Vector3d angular(Vs(0), Vs(1), Vs(2));
-		Eigen::Vector3d linear(Vs(3), Vs(4), Vs(5));
-
-		bool err = (angular.norm() > eomg || linear.norm() > ev);
-		Eigen::MatrixXd Js;
-		while (err && i < maxiterations) {
-			Js = JacobianSpace(Slist, thetalist);
-			thetalist += Js.bdcSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(Vs);
-			i += 1;
-			// iterate
-			Tfk = FKinSpace(M, Slist, thetalist);
-			Tdiff = TransInv(Tfk)*T;
-			Vs = Adjoint(Tfk)*se3ToVec(MatrixLog6(Tdiff));
-			angular = Eigen::Vector3d(Vs(0), Vs(1), Vs(2));
-			linear = Eigen::Vector3d(Vs(3), Vs(4), Vs(5));
-			err = (angular.norm() > eomg || linear.norm() > ev);
-		}
-		return !err;
+		std::cout << " transformation for " << j+1  << " to " << 0 << " is :\n "<<
+				     (*it) << std::endl;
+		j++; 
 	}
 
+}
 
-bool HumanMotion::IKNumericalSolver(const Eigen::MatrixXd& Slist, const Eigen::MatrixXd & M, const Eigen::Vector3d& xd, Eigen::Vector4d & thetalist){
-	 
-	Eigen::MatrixXd Js = Slist;
+void HumanMotion::computeStackedVelocity(const Eigen::VectorXd& dtheta){
 
-	Eigen::Vector4d lb, ub, g ;
-	Eigen::Vector3d f;
-	lb << 0,0,-pi/2,0;
-	ub << pi/2, pi/2, pi/2, pi/2;
+	Eigen::Vector3d vo, wo, z, pi_j ;
+	Eigen::Matrix3d Roti_j; // j > i 
+	vo.setZero(); 
+	wo.setZero();
+	z << 0, 0, 1;
 
-	Eigen::Matrix4d hand_frame;
-	std::vector<Eigen::MatrixXd> Rp;
-	Eigen::Matrix4d H; 
+	for (int i(0); i<ndof_; i++){
+		stacked_linear_velocity_[i].setZero();
+		stacked_angular_velocity_[i].setZero();
+	}
+	for (int i(0); i<ndof_; i++){
 
-	qpOASES::QProblemB IKSolver(ndof_);
-	qpOASES::Options options;
-	options.enableFlippingBounds = qpOASES::BT_FALSE;
-	options.initialStatusBounds = qpOASES::ST_INACTIVE;
-	options.numRefinementSteps = 1;
-	IKSolver.setOptions( options );
-	int nWSR = 10;
-	Eigen::Vector3d error;
-	error = Rp[1]-xd;
-	while (error.norm() > 0.01){
-		H.setZero();
-		Eigen::MatrixXd E;
-		E.resize(3,4);
+		Roti_j = TransformationMatrixList_[i].block(0,0,3,3);
+		pi_j = TransformationMatrixList_[i].block(0,3,3,1) ;
 
-		Js = HumanMotion::JacobianSpace(Slist,thetalist);
-		hand_frame =  HumanMotion::FKinSpace(M, Slist, thetalist);
-		Rp = HumanMotion::TransToRp(hand_frame);
-		E = Js.block(3,0,3,4);
-	
-		f = Rp[1] - (Js*thetalist).tail(3) -xd ;
-
-		H = E.transpose()*E;
-		g = E.transpose()*f;
-
-	
-		/* Solve first QP. */
+		if (i == 0){
+			stacked_angular_velocity_[i] =  wo + dtheta(i)* z;
+			stacked_linear_velocity_[i] =Roti_j.transpose()*(vo + skewSymmetricMatrix(wo)*TransformationMatrixList_[i].block(0,3,3,1));
+		}else
+		{
 		
-		IKSolver.init( H.data(),g.data(),lb.data(),ub.data(), nWSR,0 );
+  			stacked_angular_velocity_[i] = Roti_j.transpose()*stacked_angular_velocity_[i-1] + dtheta[i]* z;
+			stacked_linear_velocity_[i] =  Roti_j.transpose()*(stacked_linear_velocity_[i-1] + skewSymmetricMatrix(stacked_angular_velocity_[i-1])*pi_j);
 
-		/* Get and print solution of second QP. */
 
-		IKSolver.getPrimalSolution( thetalist.data() );
-	
-		error = Rp[1]-xd;
-		std::cout << " error: \n" << error.norm() <<std::endl;  
-
+		}
+		
 	}
-	std::cout << " H : \n" << H << '\n' << "g : \n" << g <<std::endl;  
-	std::cout << " thetalist: \n" << thetalist <<std::endl;  
-	std::cout << " xd: \n" << xd <<std::endl;  
-	std::cout << " error: \n" << error.norm() <<std::endl;  
+	// Roti_j = TransformationMatrixList_[ndof_].block(0,0,3,3);
+	// pi_j = TransformationMatrixList[ndof_].block(0,3,3,1) ;
+	// stacked_angular_velocity_[ndof_].setZero();
+	// stacked_linear_velocity_[ndof_] =  Roti_j.transpose()*(stacked_linear_velocity_[ndof_-1] + skewSymmetricMatrix(stacked_angular_velocity_[ndof_-1])*pi_j);
 
 }
 
-Eigen::VectorXd HumanMotion::InverseDynamics(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist, const Eigen::VectorXd& ddthetalist,
-									const Eigen::VectorXd& g, const Eigen::VectorXd& Ftip, const std::vector<Eigen::MatrixXd>& Mlist,
-									const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
-	    // the size of the lists
-		int n = thetalist.size();
 
-		Eigen::MatrixXd Mi = Eigen::MatrixXd::Identity(4, 4);
-		Eigen::MatrixXd Ai = Eigen::MatrixXd::Zero(6,n);
-		std::vector<Eigen::MatrixXd> AdTi;
-		for (int i = 0; i < n+1; i++) {
-			AdTi.push_back(Eigen::MatrixXd::Zero(6,6));
-		}
-		Eigen::MatrixXd Vi = Eigen::MatrixXd::Zero(6,n+1);    // velocity
-		Eigen::MatrixXd Vdi = Eigen::MatrixXd::Zero(6,n+1);   // acceleration
+void HumanMotion::computeJacobian(){
 
-		Vdi.block(3, 0, 3, 1) = - g;
-		AdTi[n] = HumanMotion::Adjoint(HumanMotion::TransInv(Mlist[n]));
-		Eigen::VectorXd Fi = Ftip;
-
-		Eigen::VectorXd taulist = Eigen::VectorXd::Zero(n);
-
-		// forward pass
-		for (int i = 0; i < n; i++) {
-			Mi = Mi * Mlist[i];
-			Ai.col(i) = HumanMotion::Adjoint(HumanMotion::TransInv(Mi))*Slist.col(i);
-
-			AdTi[i] = HumanMotion::Adjoint(HumanMotion::MatrixExp6(HumanMotion::VecTose3(Ai.col(i)*-thetalist(i)))
-			          * HumanMotion::TransInv(Mlist[i]));
-
-			Vi.col(i+1) = AdTi[i] * Vi.col(i) + Ai.col(i) * dthetalist(i);
-			Vdi.col(i+1) = AdTi[i] * Vdi.col(i) + Ai.col(i) * ddthetalist(i)
-						   + ad(Vi.col(i+1)) * Ai.col(i) * dthetalist(i); // this index is different from book!
-		}
-
-		// backward pass
-		for (int i = n-1; i >= 0; i--) {
-			Fi = AdTi[i+1].transpose() * Fi + Glist[i] * Vdi.col(i+1)
-			     - ad(Vi.col(i+1)).transpose() * (Glist[i] * Vi.col(i+1));
-			taulist(i) = Fi.transpose() * Ai.col(i);
-		}
-		return taulist;
-	}
-
-
-Eigen::VectorXd  HumanMotion::GravityForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& g,
-											const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
-	    int n = thetalist.size();
-		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
-		Eigen::VectorXd dummyForce = Eigen::VectorXd::Zero(6);
-		Eigen::VectorXd grav =  HumanMotion::InverseDynamics(thetalist, dummylist, dummylist, g,
-                                                dummyForce, Mlist, Glist, Slist);
-		return grav;
-	}
-
-Eigen::MatrixXd HumanMotion::MassMatrix(const Eigen::VectorXd& thetalist,
-                        	const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
-		int n = thetalist.size();
-		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
-		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
-		Eigen::VectorXd dummyforce = Eigen::VectorXd::Zero(6);
-		Eigen::MatrixXd M = Eigen::MatrixXd::Zero(n,n);
-		for (int i = 0; i < n; i++) {
-			Eigen::VectorXd ddthetalist = Eigen::VectorXd::Zero(n);
-			ddthetalist(i) = 1;
-			M.col(i) =  HumanMotion::InverseDynamics(thetalist, dummylist, ddthetalist,
-                             dummyg, dummyforce, Mlist, Glist, Slist);
-		}
-		return M;
-	}
-
-
-Eigen::VectorXd HumanMotion::VelQuadraticForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist,
-                                const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
-		int n = thetalist.size();
-		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
-		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
-		Eigen::VectorXd dummyforce = Eigen::VectorXd::Zero(6);
-		Eigen::VectorXd c = HumanMotion::InverseDynamics(thetalist, dthetalist, dummylist,
-                             dummyg, dummyforce, Mlist, Glist, Slist);
-		return c;
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d Ton;
+	 Eigen::Vector4d Ptilde, Pe, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
+	 Ton = TransformationMatrixToBaseList_[ndof_];
+	 for (int i(0); i < ndof_; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList_[i].block(0,0,3,3);
+		 Pe = Ton*Ptilde;
+		 Pi = TransformationMatrixToBaseList_[i]*Ptilde;
+		 Jacobian_.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(Pe.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian_.block(3,i,3,1) =  Rot*zo;
+	 }
 }
 
+Eigen::MatrixXd HumanMotion::computeJacobian(const std::vector<Eigen::Matrix4d> &TransformationMatrixToBaseList){
 
-Eigen::VectorXd HumanMotion::EndEffectorForces(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& Ftip,
-								const std::vector<Eigen::MatrixXd>& Mlist, const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
-		int n = thetalist.size();
-		Eigen::VectorXd dummylist = Eigen::VectorXd::Zero(n);
-		Eigen::VectorXd dummyg = Eigen::VectorXd::Zero(3);
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d Ton;
+	 Eigen::Vector4d Ptilde, Pe, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
+	 Ton = TransformationMatrixToBaseList[ndof_];
 
-		Eigen::VectorXd JTFtip = HumanMotion::InverseDynamics(thetalist, dummylist, dummylist,
-                             dummyg, Ftip, Mlist, Glist, Slist);
-		return JTFtip;
+	 Eigen::MatrixXd Jacobian;
+	 Jacobian.resize(6,ndof_);
+	 Jacobian.setZero();
+	 for (int i(0); i < ndof_; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList[i].block(0,0,3,3);
+		 Pe = Ton*Ptilde;
+		 Pi = TransformationMatrixToBaseList[i]*Ptilde;
+		 Jacobian.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(Pe.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian.block(3,i,3,1) =  Rot*zo;
+	 }
+
+	 return Jacobian;
 }
 
-Eigen::VectorXd HumanMotion::ForwardDynamics(const Eigen::VectorXd& thetalist, const Eigen::VectorXd& dthetalist, const Eigen::VectorXd& taulist,
-									const Eigen::VectorXd& g, const Eigen::VectorXd& Ftip, const std::vector<Eigen::MatrixXd>& Mlist,
-									const std::vector<Eigen::MatrixXd>& Glist, const Eigen::MatrixXd& Slist) {
+void HumanMotion::computeJacobianC1(){
 
-		Eigen::VectorXd totalForce = taulist - HumanMotion::VelQuadraticForces(thetalist, dthetalist, Mlist, Glist, Slist)
-                 							 - HumanMotion::GravityForces(thetalist, g, Mlist, Glist, Slist)
-                                             - HumanMotion::EndEffectorForces(thetalist, Ftip, Mlist, Glist, Slist);
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d ToC1;
+	 Eigen::Vector4d Ptilde, PC1, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
 
-		Eigen::MatrixXd M = HumanMotion::MassMatrix(thetalist, Mlist, Glist, Slist);
+	 ToC1 = TransformationMatrixToBaseList_[2]*T3C1_;
+	 for (int i(0); i < 3; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList_[i].block(0,0,3,3);
+		 PC1 = ToC1*Ptilde;
+		 Pi = TransformationMatrixToBaseList_[i]*Ptilde;
+		 Jacobian_C1_.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(PC1.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian_C1_.block(3,i,3,1) =  Rot*zo;
+	 }
+}
+Eigen::MatrixXd HumanMotion::computeJacobianC1(const std::vector<Eigen::Matrix4d> &TransformationMatrixToBaseList){
 
-		// Use LDLT since M is positive definite
-        Eigen::VectorXd ddthetalist = M.ldlt().solve(totalForce);
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d ToC1;
+	 Eigen::Vector4d Ptilde, PC1, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
 
-		return ddthetalist;
+	 Eigen::MatrixXd Jacobian_C1;
+	 Jacobian_C1.resize(6,ndof_);
+	 Jacobian_C1.setZero();
+
+	 ToC1 = TransformationMatrixToBaseList[2]*T3C1_;
+	 for (int i(0); i < 3; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList[i].block(0,0,3,3);
+		 PC1 = ToC1*Ptilde;
+		 Pi = TransformationMatrixToBaseList[i]*Ptilde;
+		 Jacobian_C1.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(PC1.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian_C1.block(3,i,3,1) =  Rot*zo;
+	 }
+
+	 return Jacobian_C1;
 }
 
-	
-std::vector<Eigen::VectorXd> HumanMotion::computeOccupancy(const Eigen::VectorXd& q_init, const Eigen::VectorXd& dq_init,const Eigen::VectorXd& ddq_init, const int & N, const double & Vmax){
+void HumanMotion::computeJacobianC2(){
 
-	double dt = 0.05,  L1 = 1., L2 = 1.;
-	Eigen::VectorXd q, dq, ddq ;
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d ToC2;
+	 Eigen::Vector4d Ptilde, PC2, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
 
-	q = q_init;
-	dq = dq_init;
-	ddq = ddq_init;
-	
-    Eigen::Matrix4d M_hand ;
+	 ToC2 = TransformationMatrixToBaseList_[3]*T4C2_;
+	 for (int i(0); i < ndof_; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList_[i].block(0,0,3,3);
+		 PC2 = ToC2*Ptilde;
+		 Pi = TransformationMatrixToBaseList_[i]*Ptilde;
+		 Jacobian_C2_.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(PC2.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian_C2_.block(3,i,3,1) =  Rot*zo;
+	 }
+}
 
-    M_hand << 1,0,0,L1 + L2,
-              0,1,0,0,
-              0,0,1,0,
-              0,0,0,1;
+Eigen::MatrixXd HumanMotion::computeJacobianC2(const std::vector<Eigen::Matrix4d> &TransformationMatrixToBaseList){
 
-    std::vector<Eigen::Matrix4d> M_list ;
-    M_list.resize(3);
-    
-    M_list[0] << 1,0,0,0,
-                 0,1,0,0,
-                 0,0,1,0,
-                 0,0,0,1;
+	 Eigen::Matrix3d Rot;
+	 Eigen::Matrix4d ToC2;
+	 Eigen::Vector4d Ptilde, PC2, Pi;	
+	 Eigen::Vector3d zo;
+	 zo << 0, 0, 1; 
+	 Ptilde << 0, 0, 0, 1;
 
-    M_list[1] << 1,0,0,L1,
-                 0,1,0,0,
-                 0,0,1,0,
-                 0,0,0,1;
+	 Eigen::MatrixXd Jacobian_C2;
+	 Jacobian_C2.resize(6,ndof_);
+	 Jacobian_C2.setZero();
+	 ToC2 = TransformationMatrixToBaseList_[3]*T4C2_;
+	 for (int i(0); i < ndof_; i++){
+		 // Linear velocity part 
+		 Rot = TransformationMatrixToBaseList_[i].block(0,0,3,3);
+		 PC2 = ToC2*Ptilde;
+		 Pi = TransformationMatrixToBaseList_[i]*Ptilde;
+		 Jacobian_C2.block(0,i,3,1) =  skewSymmetricMatrix(Rot*zo)*(PC2.segment(0,3)- Pi.segment(0,3));
+		 // Angular velocity part 
+		 Jacobian_C2.block(3,i,3,1) =  Rot*zo;
+	 }
 
-    M_list[2] = M_hand;
-
-    Eigen::MatrixXd S_list;
-
-    S_list.resize(6,2) ;
-    S_list.block(0,0,6,1) << 0, 0, 1, 0, 0, 0;
-    S_list.block(0,1,6,1) << 0, 0, 1, 0, -1, 0;
-	
-	Eigen::MatrixXd J_tool_space ;
-    J_tool_space.resize(6,2);
-
-	Eigen::VectorXd ee_twist_space, ee_vel; 
-    ee_twist_space.resize(6);
-	ee_vel.resize(6);
-	Eigen::Matrix4d ee_trans_base;
-	ee_trans_base = FKinSpace(M_hand, S_list, q);
-	
-	auto Rp = TransToRp(ee_trans_base);
-	Eigen::Vector3d p = Rp[1];
-	std::vector<Eigen::VectorXd> hand_prediction_data;
-
-	hand_prediction_data.resize(N-1);
-
-	for (int i(0); i < N-1 ; i++){
-
-		q = q + dq*dt + ddq*dt*dt/2;
-	
-    	J_tool_space = JacobianSpace(S_list,q);
-    	ee_twist_space = J_tool_space*dq;
-        ee_trans_base = FKinSpace(M_hand, S_list, q);
-		auto Rp = TransToRp(ee_trans_base);
-	    p = Rp[1];
-
-        ee_vel = computeVelocity(ee_twist_space,ee_trans_base);
-		Eigen::Vector3d ee_vel_normalized ;
-		ee_vel_normalized = ee_vel.tail(3).normalized();
-	    p = p + ee_vel_normalized*Vmax*dt ;
-
-		ee_trans_base.block(0,3,3,1) << p;
-	
-		auto Ik_solved = IKinSpace(S_list, M_hand, ee_trans_base, q, 0.001, 0.001);
-		std::cout <<" q  after max velocity\n" << q <<'\n';
+	 return Jacobian_C2;
+}
+Eigen::MatrixXd HumanMotion::computeInertialMass(const std::vector<Eigen::Matrix4d> &TransformationMatrixToBaseList,
+												 const Eigen::MatrixXd & Jacobian_c1, const Eigen::MatrixXd & Jacobian_c2){
 
 
-		hand_prediction_data[i].resize(2);
-		hand_prediction_data[i] =  p;
+	Eigen::MatrixXd inertialMass, M1, M2;
+    Eigen::Matrix4d ToC1, ToC2;
+
+	inertialMass.resize(ndof_,ndof_);
+	M1.resize(6,6);
+	M1.setIdentity();
+	M2.resize(6,6);
+	M2.setIdentity();
+
+	M1.block(0,0,3,3) = M1.block(0,0,3,3)*m1_;
+	M2.block(0,0,3,3) = M2.block(0,0,3,3)*m2_;
+
+	ToC1 = TransformationMatrixToBaseList[2]*T3C1_;
+	ToC2 = TransformationMatrixToBaseList[3]*T4C2_;
+
+	M1.block(3,3,3,3) = ToC1.block(0,0,3,3)*Ic1_*ToC1.block(0,0,3,3).transpose();
+	M2.block(3,3,3,3) = ToC2.block(0,0,3,3)*Ic2_*ToC2.block(0,0,3,3).transpose();
+
+	inertialMass = Jacobian_c1.transpose()*M1*Jacobian_c1 + Jacobian_c2.transpose()*M2*Jacobian_c2;
+
+	return inertialMass;
+}
+
+Eigen::VectorXd HumanMotion::computeForwardDynamic(const Eigen::VectorXd & dq,const Eigen::VectorXd & ddq){
+
+	std::vector<Eigen::Matrix3d> stackedInertialMatrix;
+	std::vector<Eigen::Vector3d> F, N, f, n;
+	stackedInertialMatrix.resize(ndof_);
+	F.resize(ndof_), N.resize(ndof_), f.resize(ndof_), n.resize(ndof_);
+	stackedInertialMatrix[0].setZero();
+	stackedInertialMatrix[1].setZero();
+	stackedInertialMatrix[2] = Ic1_;
+	stackedInertialMatrix[3] = Ic2_;
+
+	std::vector<Eigen::Vector3d> Pcom, Vcom ;
+	Pcom.resize(ndof_);
+	Pcom[0] << 0, 0, 0;
+	Pcom[1] << 0, 0, 0;
+	Pcom[2] << lc1_, 0, 0;
+	Pcom[3] << lc2_, 0, 0;
+
+    Vcom.resize(ndof_);
+
+	Eigen::Matrix3d Roti_j;
+	Eigen::Vector3d pi_j, z;
+	z << 0, 0, 1;
+	Eigen::VectorXd m, torque ;
+	m.resize(4), torque.resize(4);
+	m << 0, 0, m1_, m2_;
+	torque << 0,0,0,0;
+	for(int i(0); i < ndof_; i++){
+		
+		Roti_j = TransformationMatrixList_[i].block(0,0,3,3);
+		pi_j = TransformationMatrixList_[i].block(0,3,3,1) ;
+		if (i == 0){
+			stacked_angular_acc_[i] = ddq[i]*z  ;
+			stacked_linear_acc_[i] << 0, -9.81 , 0;
+			Vcom[i] = skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[0]  ;
+			F[i] = m[i]*Vcom[i];
+			N[i] = stackedInertialMatrix[0]*stacked_angular_acc_[i] 
+				   + skewSymmetricMatrix(stacked_angular_velocity_[i])*stackedInertialMatrix[0]*stacked_angular_velocity_[i];
+		}else{
+			stacked_angular_acc_[i] = Roti_j.transpose()*stacked_angular_acc_[i-1] 
+									  + skewSymmetricMatrix(Roti_j.transpose()*stacked_angular_velocity_[i-1])*dq[i]*z + ddq[i]*z ;
+										
+			stacked_linear_acc_[i] = Roti_j.transpose()*(skewSymmetricMatrix(stacked_angular_acc_[i-1])*pi_j + 
+									 skewSymmetricMatrix(stacked_angular_acc_[i-1])*skewSymmetricMatrix(stacked_angular_acc_[i-1])*pi_j + stacked_linear_acc_[i-1]);
+			
+			
+			Vcom[i] = skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[i] +
+					 skewSymmetricMatrix(stacked_angular_acc_[i])*skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[i] +stacked_linear_acc_[i];			 ;
+			F[i] = m[i]*Vcom[i] ;
+			N[i] = stackedInertialMatrix[0]*stacked_angular_acc_[i]+ skewSymmetricMatrix(stacked_angular_acc_[i])*stackedInertialMatrix[i]*stacked_angular_acc_[i];
+		}
 	}
 
-	return hand_prediction_data;
+	for (int i(3); i>-1; i-- ){
+		Roti_j = TransformationMatrixList_[i].block(0,0,3,3);
+		pi_j = TransformationMatrixList_[i].block(0,3,3,1) ;
+		if (i==3){
+			f[i] = F[i];
+			n[i] = N[i] +  skewSymmetricMatrix(Pcom[i])*F[i];
+			 torque[i] = n[i].transpose()*z; 
+		}else
+		{
+			f[i] = Roti_j*f[i+1] + F[i];
+			n[i] = N[i] + Roti_j*n[i+1] + skewSymmetricMatrix(Pcom[i])*F[i]
+				  + skewSymmetricMatrix(pi_j)*Roti_j*f[i+1] ;
+			torque[i] = n[i].transpose()*z; 	
+		}
+		
+	}
+	return torque;
+}
+Eigen::VectorXd HumanMotion::computeCoriolisGravity(const Eigen::VectorXd & dq){
+
+	std::vector<Eigen::Matrix3d> stackedInertialMatrix;
+	std::vector<Eigen::Vector3d> F, N, f, n;
+	stackedInertialMatrix.resize(ndof_);
+	F.resize(ndof_), N.resize(ndof_), f.resize(ndof_), n.resize(ndof_);
+	stackedInertialMatrix[0].setZero();
+	stackedInertialMatrix[1].setZero();
+	stackedInertialMatrix[2] = Ic1_;
+	stackedInertialMatrix[3] = Ic2_;
+
+	std::vector<Eigen::Vector3d> Pcom, Vcom ;
+	Pcom.resize(ndof_);
+	Pcom[0] << 0, 0, 0;
+	Pcom[1] << 0, 0, 0;
+	Pcom[2] << lc1_, 0, 0;
+	Pcom[3] << lc2_, 0, 0;
+
+    Vcom.resize(ndof_);
+
+	Eigen::Matrix3d Roti_j;
+	Eigen::Vector3d pi_j, z;
+	z << 0, 0, 1;
+	Eigen::VectorXd m, ddq, H ;
+	m.resize(4), ddq.resize(4);
+	m << 0, 0, m1_, m2_;
+	ddq << 0,0,0,0;
+	H.resize(4);
+	H << 0,0, 0,0;
+	for(int i(0); i < ndof_; i++){
+		
+		Roti_j = TransformationMatrixList_[i].block(0,0,3,3);
+		pi_j = TransformationMatrixList_[i].block(0,3,3,1) ;
+		if (i == 0){
+			stacked_angular_acc_[i] = ddq[i]*z  ;
+			stacked_linear_acc_[i] << 0, -9.81 , 0;
+			Vcom[i] = skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[0]  ;
+			F[i] = m[i]*Vcom[i];
+			N[i] = stackedInertialMatrix[0]*stacked_angular_acc_[i] 
+				   + skewSymmetricMatrix(stacked_angular_velocity_[i])*stackedInertialMatrix[0]*stacked_angular_velocity_[i];
+		}else{
+			stacked_angular_acc_[i] = Roti_j.transpose()*stacked_angular_acc_[i-1] 
+									  + skewSymmetricMatrix(Roti_j.transpose()*stacked_angular_velocity_[i-1])*dq[i]*z + ddq[i]*z ;
+										
+			stacked_linear_acc_[i] = Roti_j.transpose()*(skewSymmetricMatrix(stacked_angular_acc_[i-1])*pi_j + 
+									 skewSymmetricMatrix(stacked_angular_acc_[i-1])*skewSymmetricMatrix(stacked_angular_acc_[i-1])*pi_j + stacked_linear_acc_[i-1]);
+			
+			
+			Vcom[i] = skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[i] +
+					 skewSymmetricMatrix(stacked_angular_acc_[i])*skewSymmetricMatrix(stacked_angular_acc_[i])*Pcom[i] +stacked_linear_acc_[i];			 ;
+			F[i] = m[i]*Vcom[i] ;
+			N[i] = stackedInertialMatrix[0]*stacked_angular_acc_[i]+ skewSymmetricMatrix(stacked_angular_acc_[i])*stackedInertialMatrix[i]*stacked_angular_acc_[i];
+		}
+	}
+
+	for (int i(3); i>-1; i-- ){
+		Roti_j = TransformationMatrixList_[i].block(0,0,3,3);
+		pi_j = TransformationMatrixList_[i].block(0,3,3,1) ;
+		if (i==3){
+			f[i] = F[i];
+			n[i] = N[i] +  skewSymmetricMatrix(Pcom[i])*F[i];
+			H[i] = n[i].transpose()*z; 
+		}else
+		{
+			f[i] = Roti_j*f[i+1] + F[i];
+			n[i] = N[i] + Roti_j*n[i+1] + skewSymmetricMatrix(Pcom[i])*F[i]
+				  + skewSymmetricMatrix(pi_j)*Roti_j*f[i+1] ;
+			H[i] = n[i].transpose()*z; 	
+		}
+		
+	}
+	return H;
 }

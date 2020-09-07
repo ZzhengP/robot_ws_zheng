@@ -317,6 +317,60 @@ RosWrapperception/RosWrapHumanMotion.cpp.s:
 	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotion.cpp.s
 .PHONY : RosWrapperception/RosWrapHumanMotion.cpp.s
 
+RosWrapperception/RosWrapHumanMotionMR.o: RosWrapperception/RosWrapHumanMotionMR.cpp.o
+
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.o
+
+# target to build an object file
+RosWrapperception/RosWrapHumanMotionMR.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotionMR.cpp.o
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.cpp.o
+
+RosWrapperception/RosWrapHumanMotionMR.i: RosWrapperception/RosWrapHumanMotionMR.cpp.i
+
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.i
+
+# target to preprocess a source file
+RosWrapperception/RosWrapHumanMotionMR.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotionMR.cpp.i
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.cpp.i
+
+RosWrapperception/RosWrapHumanMotionMR.s: RosWrapperception/RosWrapHumanMotionMR.cpp.s
+
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.s
+
+# target to generate assembly for a file
+RosWrapperception/RosWrapHumanMotionMR.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanMotionMR.cpp.s
+.PHONY : RosWrapperception/RosWrapHumanMotionMR.cpp.s
+
+RosWrapperception/RosWrapHumanOccupancy.o: RosWrapperception/RosWrapHumanOccupancy.cpp.o
+
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.o
+
+# target to build an object file
+RosWrapperception/RosWrapHumanOccupancy.cpp.o:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOccupancy.cpp.o
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.cpp.o
+
+RosWrapperception/RosWrapHumanOccupancy.i: RosWrapperception/RosWrapHumanOccupancy.cpp.i
+
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.i
+
+# target to preprocess a source file
+RosWrapperception/RosWrapHumanOccupancy.cpp.i:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOccupancy.cpp.i
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.cpp.i
+
+RosWrapperception/RosWrapHumanOccupancy.s: RosWrapperception/RosWrapHumanOccupancy.cpp.s
+
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.s
+
+# target to generate assembly for a file
+RosWrapperception/RosWrapHumanOccupancy.cpp.s:
+	cd /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion && $(MAKE) -f src/CMakeFiles/ros_wrap_safe_motion_library.dir/build.make src/CMakeFiles/ros_wrap_safe_motion_library.dir/RosWrapperception/RosWrapHumanOccupancy.cpp.s
+.PHONY : RosWrapperception/RosWrapHumanOccupancy.cpp.s
+
 RosWrapperception/RosWrapHumanOptimalTorque.o: RosWrapperception/RosWrapHumanOptimalTorque.cpp.o
 
 .PHONY : RosWrapperception/RosWrapHumanOptimalTorque.o
@@ -616,6 +670,12 @@ help:
 	@echo "... RosWrapperception/RosWrapHumanMotion.o"
 	@echo "... RosWrapperception/RosWrapHumanMotion.i"
 	@echo "... RosWrapperception/RosWrapHumanMotion.s"
+	@echo "... RosWrapperception/RosWrapHumanMotionMR.o"
+	@echo "... RosWrapperception/RosWrapHumanMotionMR.i"
+	@echo "... RosWrapperception/RosWrapHumanMotionMR.s"
+	@echo "... RosWrapperception/RosWrapHumanOccupancy.o"
+	@echo "... RosWrapperception/RosWrapHumanOccupancy.i"
+	@echo "... RosWrapperception/RosWrapHumanOccupancy.s"
 	@echo "... RosWrapperception/RosWrapHumanOptimalTorque.o"
 	@echo "... RosWrapperception/RosWrapHumanOptimalTorque.i"
 	@echo "... RosWrapperception/RosWrapHumanOptimalTorque.s"

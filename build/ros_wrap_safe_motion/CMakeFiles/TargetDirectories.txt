@@ -141,6 +141,7 @@
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/install/strip.dir
+/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/install/local.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/DynamicAndMPCSolver.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/simpleMatrixReceive.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/simpletest.dir
@@ -151,9 +152,9 @@
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/humanperceptiontest.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/rebuild_cache.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/poseDepthTest.dir
+/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/MRtest.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/InteractiveMarkers.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/test.dir
-/home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/install/local.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/obsVerticesPublisher.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/list_install_components.dir
 /home/zheng/robot_ws_zheng/build/ros_wrap_safe_motion/examples/CMakeFiles/install.dir

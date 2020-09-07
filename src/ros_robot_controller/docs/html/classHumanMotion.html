@@ -73,90 +73,58 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a85e9c8039ea86fcb697f3346c1786b55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a85e9c8039ea86fcb697f3346c1786b55">HumanMotion</a> (const int &amp;ndof, const std::map&lt; std::string, Eigen::Matrix4d &gt; &amp;M_joint, const std::map&lt; std::string, Eigen::Matrix4d &gt; &amp;M_CoM, const Eigen::MatrixXd &amp;S_list)</td></tr>
-<tr class="separator:a85e9c8039ea86fcb697f3346c1786b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b7c734ee81711372dfaace85b5a209"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a83b7c734ee81711372dfaace85b5a209">HumanMotion</a> (const int &amp;ndof, const Eigen::MatrixXd &amp;DHparam, const double &amp;lc1, const double &amp;lc2, const double &amp;lu, const double &amp;lf, const double &amp;lh, const double &amp;m1, const double &amp;m2)</td></tr>
+<tr class="separator:a83b7c734ee81711372dfaace85b5a209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835949fcfd011d11cd3c31c462d34348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a835949fcfd011d11cd3c31c462d34348">print</a> () const</td></tr>
+<tr class="separator:a835949fcfd011d11cd3c31c462d34348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac3331323cd1dda555664e8d9c8383f"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a8ac3331323cd1dda555664e8d9c8383f">getHandTransformation</a> () const</td></tr>
+<tr class="separator:a8ac3331323cd1dda555664e8d9c8383f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0871a504f1c697f45b3dbe1fb17ad6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Matrix4d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a4d0871a504f1c697f45b3dbe1fb17ad6">getTransformationMatrixList</a> ()</td></tr>
+<tr class="separator:a4d0871a504f1c697f45b3dbe1fb17ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6746673572a5c42b8782e53142b8acf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Matrix4d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ab6746673572a5c42b8782e53142b8acf">getTransformationToBaseMatrixList</a> ()</td></tr>
+<tr class="separator:ab6746673572a5c42b8782e53142b8acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21308cc97a1cbba07140fbd7da646fb8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Vector3d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a21308cc97a1cbba07140fbd7da646fb8">getStackedLinearVelocity</a> ()</td></tr>
+<tr class="separator:a21308cc97a1cbba07140fbd7da646fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210d84c1771d0467ada539a3a956f17e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Vector3d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a210d84c1771d0467ada539a3a956f17e">getStackedAngularVelocity</a> ()</td></tr>
+<tr class="separator:a210d84c1771d0467ada539a3a956f17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79027b2e7a973743c587e493935ad83"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aa79027b2e7a973743c587e493935ad83">getJacobian</a> ()</td></tr>
+<tr class="separator:aa79027b2e7a973743c587e493935ad83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef20d3e563088831e75df5b3f6b70195"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aef20d3e563088831e75df5b3f6b70195">skewSymmetricMatrix</a> (const Eigen::Vector3d &amp;angularVel)</td></tr>
+<tr class="separator:aef20d3e563088831e75df5b3f6b70195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0694ddad432a7a9bb572b6d2476005"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a0e0694ddad432a7a9bb572b6d2476005">computeForwardKinematic</a> (const Eigen::VectorXd &amp;theta)</td></tr>
+<tr class="separator:a0e0694ddad432a7a9bb572b6d2476005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a011e66a79b4608aac126bb8e68f25bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a011e66a79b4608aac126bb8e68f25bc1">computeTransformationMatrixToBaseList</a> ()</td></tr>
+<tr class="separator:a011e66a79b4608aac126bb8e68f25bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f88979d46add4175bb42b321c8add5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ac3f88979d46add4175bb42b321c8add5">computeStackedVelocity</a> (const Eigen::VectorXd &amp;dtheta)</td></tr>
+<tr class="separator:ac3f88979d46add4175bb42b321c8add5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa02b28f2187aa2319042d636877fa64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#afa02b28f2187aa2319042d636877fa64">computeHandVelocity</a> ()</td></tr>
+<tr class="separator:afa02b28f2187aa2319042d636877fa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a39b012dc11fcc7f9161bf520b908f"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a27a39b012dc11fcc7f9161bf520b908f">getHandLinearVelocity</a> ()</td></tr>
+<tr class="separator:a27a39b012dc11fcc7f9161bf520b908f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e475a5aa884aefb9e709290cc1bdcb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a7e475a5aa884aefb9e709290cc1bdcb7">computeJacobian</a> ()</td></tr>
+<tr class="separator:a7e475a5aa884aefb9e709290cc1bdcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233dfe45f342ead640909e6ed3e4b347"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a233dfe45f342ead640909e6ed3e4b347">computeJacobian</a> (const std::vector&lt; Eigen::Matrix4d &gt; &amp;TransformationMatrixToBaseList)</td></tr>
+<tr class="separator:a233dfe45f342ead640909e6ed3e4b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdc6b5d54f41d397c2e1971a6887332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#accdc6b5d54f41d397c2e1971a6887332">computeJacobianC1</a> ()</td></tr>
+<tr class="separator:accdc6b5d54f41d397c2e1971a6887332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7919c1832d0485f3aa0a69ec6c592f29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a7919c1832d0485f3aa0a69ec6c592f29">computeJacobianC2</a> ()</td></tr>
+<tr class="separator:a7919c1832d0485f3aa0a69ec6c592f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28566bb42ffcc7f2e5a0ead97ca568b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ae28566bb42ffcc7f2e5a0ead97ca568b">computeJacobianC1</a> (const std::vector&lt; Eigen::Matrix4d &gt; &amp;TransformationMatrixToBaseList)</td></tr>
+<tr class="separator:ae28566bb42ffcc7f2e5a0ead97ca568b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1612310694a7e13dbe35c5656e1ee892"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a1612310694a7e13dbe35c5656e1ee892">computeJacobianC2</a> (const std::vector&lt; Eigen::Matrix4d &gt; &amp;TransformationMatrixToBaseList)</td></tr>
+<tr class="separator:a1612310694a7e13dbe35c5656e1ee892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0d70b0b4a2833aaf4cad1758f4b2b9"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a6e0d70b0b4a2833aaf4cad1758f4b2b9">computeForwardDynamic</a> (const Eigen::VectorXd &amp;dq, const Eigen::VectorXd &amp;ddq)</td></tr>
+<tr class="separator:a6e0d70b0b4a2833aaf4cad1758f4b2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3d3f2706020eb864ba05ecf78643d3"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a9a3d3f2706020eb864ba05ecf78643d3">computeCoriolisGravity</a> (const Eigen::VectorXd &amp;dq)</td></tr>
+<tr class="separator:a9a3d3f2706020eb864ba05ecf78643d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1274e2061568da8e3915c0861ad9bcbd"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a1274e2061568da8e3915c0861ad9bcbd">computeInertialMass</a> (const std::vector&lt; Eigen::Matrix4d &gt; &amp;TransformationMatrixToBaseList, const Eigen::MatrixXd &amp;Jacobian_c1, const Eigen::MatrixXd &amp;jacobian_c2)</td></tr>
+<tr class="separator:a1274e2061568da8e3915c0861ad9bcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90e4b00a43b590ca4995109c383ea2e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a90e4b00a43b590ca4995109c383ea2e5">~HumanMotion</a> ()</td></tr>
 <tr class="separator:a90e4b00a43b590ca4995109c383ea2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ee7252fba92d7cd5705b7daa813e9c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a2ee7252fba92d7cd5705b7daa813e9c9">nearZero</a> (const double &amp;val)</td></tr>
-<tr class="separator:a2ee7252fba92d7cd5705b7daa813e9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb7433dddf93997f9414f9cfba47e4ed"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aeb7433dddf93997f9414f9cfba47e4ed">VecToso3</a> (const Eigen::Vector3d &amp;omega)</td></tr>
-<tr class="memdesc:aeb7433dddf93997f9414f9cfba47e4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the skew matrix presentation of angular velocity  <a href="classHumanMotion.html#aeb7433dddf93997f9414f9cfba47e4ed">More...</a><br /></td></tr>
-<tr class="separator:aeb7433dddf93997f9414f9cfba47e4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a211b05b6a6c9aba15785c46012cf750c"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a211b05b6a6c9aba15785c46012cf750c">ad</a> (Eigen::VectorXd)</td></tr>
-<tr class="separator:a211b05b6a6c9aba15785c46012cf750c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae76ac881034b71ea19ba8247aeb956e1"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ae76ac881034b71ea19ba8247aeb956e1">so3ToVec</a> (const Eigen::Matrix3d &amp;omega_matrix)</td></tr>
-<tr class="memdesc:ae76ac881034b71ea19ba8247aeb956e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the vector presentation of angular velocity skew matrix  <a href="classHumanMotion.html#ae76ac881034b71ea19ba8247aeb956e1">More...</a><br /></td></tr>
-<tr class="separator:ae76ac881034b71ea19ba8247aeb956e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0ddf7d839b925486c0753c9d7f3f828"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#af0ddf7d839b925486c0753c9d7f3f828">AxisAng3</a> (const Eigen::Vector3d &amp;expc3)</td></tr>
-<tr class="memdesc:af0ddf7d839b925486c0753c9d7f3f828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates an exponential rotation into it's individual components.  <a href="classHumanMotion.html#af0ddf7d839b925486c0753c9d7f3f828">More...</a><br /></td></tr>
-<tr class="separator:af0ddf7d839b925486c0753c9d7f3f828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7f50461364d5cba1f79518f6fa63751"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aa7f50461364d5cba1f79518f6fa63751">MatrixExp3</a> (const Eigen::Matrix3d &amp;so3mat)</td></tr>
-<tr class="memdesc:aa7f50461364d5cba1f79518f6fa63751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates an exponential rotation into a rotation matrix.  <a href="classHumanMotion.html#aa7f50461364d5cba1f79518f6fa63751">More...</a><br /></td></tr>
-<tr class="separator:aa7f50461364d5cba1f79518f6fa63751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac323e3595a9aa5d22dd8113cbd292146"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ac323e3595a9aa5d22dd8113cbd292146">MatrixLog3</a> (const Eigen::Matrix3d &amp;R)</td></tr>
-<tr class="memdesc:ac323e3595a9aa5d22dd8113cbd292146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the matrix logarithm of a rotation matrix.  <a href="classHumanMotion.html#ac323e3595a9aa5d22dd8113cbd292146">More...</a><br /></td></tr>
-<tr class="separator:ac323e3595a9aa5d22dd8113cbd292146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a342f1a44d235ecfd1b2948c8278bb36b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a342f1a44d235ecfd1b2948c8278bb36b">RpToTrans</a> (const Eigen::Matrix3d &amp;R, const Eigen::Vector3d &amp;p)</td></tr>
-<tr class="memdesc:a342f1a44d235ecfd1b2948c8278bb36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines a rotation matrix and position vector into a single Special Euclidian Group (SE3) homogeneous transformation matrix.  <a href="classHumanMotion.html#a342f1a44d235ecfd1b2948c8278bb36b">More...</a><br /></td></tr>
-<tr class="separator:a342f1a44d235ecfd1b2948c8278bb36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7b3fa9568a44e02cdcbc5fd3aae1faa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::MatrixXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ae7b3fa9568a44e02cdcbc5fd3aae1faa">TransToRp</a> (const Eigen::MatrixXd &amp;T)</td></tr>
-<tr class="separator:ae7b3fa9568a44e02cdcbc5fd3aae1faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b7e69cca855303313f7568f1134f52"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a84b7e69cca855303313f7568f1134f52">VecTose3</a> (const Eigen::VectorXd &amp;V)</td></tr>
-<tr class="memdesc:a84b7e69cca855303313f7568f1134f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates a spatial velocity vector into a transformation matrix.  <a href="classHumanMotion.html#a84b7e69cca855303313f7568f1134f52">More...</a><br /></td></tr>
-<tr class="separator:a84b7e69cca855303313f7568f1134f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95bbe887ac11d37a7be9f6b245f1792c"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a95bbe887ac11d37a7be9f6b245f1792c">se3ToVec</a> (const Eigen::MatrixXd &amp;T)</td></tr>
-<tr class="memdesc:a95bbe887ac11d37a7be9f6b245f1792c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates a spatial velocity transformation matrix into a spatial velocity vector.  <a href="classHumanMotion.html#a95bbe887ac11d37a7be9f6b245f1792c">More...</a><br /></td></tr>
-<tr class="separator:a95bbe887ac11d37a7be9f6b245f1792c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e8a53df7f385022d4a7a3db915455b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ac9e8a53df7f385022d4a7a3db915455b">Adjoint</a> (const Eigen::MatrixXd &amp;T)</td></tr>
-<tr class="memdesc:ac9e8a53df7f385022d4a7a3db915455b"><td class="mdescLeft">&#160;</td><td class="mdescRight">adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors  <a href="classHumanMotion.html#ac9e8a53df7f385022d4a7a3db915455b">More...</a><br /></td></tr>
-<tr class="separator:ac9e8a53df7f385022d4a7a3db915455b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abec342c613b77208d2845f2fa6370f26"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#abec342c613b77208d2845f2fa6370f26">TransInv</a> (const Eigen::MatrixXd &amp;transform)</td></tr>
-<tr class="separator:abec342c613b77208d2845f2fa6370f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a126e0c933620768232e86881867bc447"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a126e0c933620768232e86881867bc447">RotInv</a> (const Eigen::MatrixXd &amp;rotMatrix)</td></tr>
-<tr class="separator:a126e0c933620768232e86881867bc447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9afb23ba7bfce76cb350df3c215f203d"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a9afb23ba7bfce76cb350df3c215f203d">MatrixExp6</a> (const Eigen::MatrixXd &amp;se3mat)</td></tr>
-<tr class="memdesc:a9afb23ba7bfce76cb350df3c215f203d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation expanded for screw axis.  <a href="classHumanMotion.html#a9afb23ba7bfce76cb350df3c215f203d">More...</a><br /></td></tr>
-<tr class="separator:a9afb23ba7bfce76cb350df3c215f203d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e23c90099bfc40b121ba75ffc6fe89"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aa1e23c90099bfc40b121ba75ffc6fe89">MatrixLog6</a> (const Eigen::MatrixXd &amp;T)</td></tr>
-<tr class="separator:aa1e23c90099bfc40b121ba75ffc6fe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2be503af4a2b7e0030bd9e728d123a70"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a2be503af4a2b7e0030bd9e728d123a70">FKinSpace</a> (const Eigen::MatrixXd &amp;M, const Eigen::MatrixXd &amp;Slist, const Eigen::VectorXd &amp;thetaList)</td></tr>
-<tr class="memdesc:a2be503af4a2b7e0030bd9e728d123a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute end effector frame (used for current spatial position calculation)  <a href="classHumanMotion.html#a2be503af4a2b7e0030bd9e728d123a70">More...</a><br /></td></tr>
-<tr class="separator:a2be503af4a2b7e0030bd9e728d123a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae13192e081be1467d7c9662eb3d0540"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aae13192e081be1467d7c9662eb3d0540">FKinBody</a> (const Eigen::MatrixXd &amp;M, const Eigen::MatrixXd &amp;Blist, const Eigen::VectorXd &amp;thetaList)</td></tr>
-<tr class="separator:aae13192e081be1467d7c9662eb3d0540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e8c00eec141c844136f17b8070d83cf"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a3e8c00eec141c844136f17b8070d83cf">JacobianSpace</a> (const Eigen::MatrixXd &amp;Slist, const Eigen::VectorXd &amp;thetaList)</td></tr>
-<tr class="separator:a3e8c00eec141c844136f17b8070d83cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ca2d73bf13e66d027c9a9a58f11cde"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a66ca2d73bf13e66d027c9a9a58f11cde">JacobianBody</a> (const Eigen::MatrixXd &amp;Blist, const Eigen::VectorXd &amp;thetaList)</td></tr>
-<tr class="separator:a66ca2d73bf13e66d027c9a9a58f11cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66d496d404c25d098a3ce9bcc6c09321"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a66d496d404c25d098a3ce9bcc6c09321">getTransformation</a> (const Eigen::MatrixXd &amp;M, const Eigen::VectorXd &amp;thetaList)</td></tr>
-<tr class="separator:a66d496d404c25d098a3ce9bcc6c09321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d3522edf1cf5cc6c40ae4f02c76108b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a5d3522edf1cf5cc6c40ae4f02c76108b">getRelativeTransformation</a> (const Eigen::MatrixXd &amp;Ti, const Eigen::MatrixXd &amp;Tj)</td></tr>
-<tr class="separator:a5d3522edf1cf5cc6c40ae4f02c76108b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90418bc4c9e2922112cfe604222071de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a90418bc4c9e2922112cfe604222071de">IKinSpace</a> (const Eigen::MatrixXd &amp;Slist, const Eigen::MatrixXd &amp;M, const Eigen::MatrixXd &amp;T, Eigen::VectorXd &amp;thetalist, double eomg, double ev)</td></tr>
-<tr class="separator:a90418bc4c9e2922112cfe604222071de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8c5a6044f4f233ee39a68b1cc65597"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#aea8c5a6044f4f233ee39a68b1cc65597">IKNumericalSolver</a> (const Eigen::MatrixXd &amp;Slist, const Eigen::MatrixXd &amp;M, const Eigen::Vector3d &amp;xd, Eigen::Vector4d &amp;thetalist)</td></tr>
-<tr class="memdesc:aea8c5a6044f4f233ee39a68b1cc65597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inverse kinematic for given constraint.  <a href="classHumanMotion.html#aea8c5a6044f4f233ee39a68b1cc65597">More...</a><br /></td></tr>
-<tr class="separator:aea8c5a6044f4f233ee39a68b1cc65597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf439f24c5516331a1848046dd8299c2"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#acf439f24c5516331a1848046dd8299c2">InverseDynamics</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:acf439f24c5516331a1848046dd8299c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a46fffd5f116158cbdf05a474ae9648"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a4a46fffd5f116158cbdf05a474ae9648">GravityForces</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:a4a46fffd5f116158cbdf05a474ae9648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6495d774edf106616ffc42748da8f7c4"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a6495d774edf106616ffc42748da8f7c4">MassMatrix</a> (const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:a6495d774edf106616ffc42748da8f7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae05b8d7024b7028ed9aa7c6db710a934"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ae05b8d7024b7028ed9aa7c6db710a934">VelQuadraticForces</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:ae05b8d7024b7028ed9aa7c6db710a934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac37974386ccb0299fcd354a887655011"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ac37974386ccb0299fcd354a887655011">EndEffectorForces</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:ac37974386ccb0299fcd354a887655011"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90eec25dca0530dd40d831acff6f5986"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a90eec25dca0530dd40d831acff6f5986">ForwardDynamics</a> (const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const Eigen::VectorXd &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const std::vector&lt; Eigen::MatrixXd &gt; &amp;, const Eigen::MatrixXd &amp;)</td></tr>
-<tr class="separator:a90eec25dca0530dd40d831acff6f5986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68cd2fd39013d1f2ca8d4b6b47d84abe"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#a68cd2fd39013d1f2ca8d4b6b47d84abe">computeVelocity</a> (const Eigen::VectorXd &amp;V, const Eigen::MatrixXd &amp;T)</td></tr>
-<tr class="separator:a68cd2fd39013d1f2ca8d4b6b47d84abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad739f767fc5381b518f88e191403b7a2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanMotion.html#ad739f767fc5381b518f88e191403b7a2">computeOccupancy</a> (const Eigen::VectorXd &amp;q_init, const Eigen::VectorXd &amp;dq_init, const Eigen::VectorXd &amp;ddq_init, const int &amp;N, const double &amp;Vmax)</td></tr>
-<tr class="separator:ad739f767fc5381b518f88e191403b7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a85e9c8039ea86fcb697f3346c1786b55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85e9c8039ea86fcb697f3346c1786b55">&#9670;&nbsp;</a></span>HumanMotion()</h2>
+<a id="a83b7c734ee81711372dfaace85b5a209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b7c734ee81711372dfaace85b5a209">&#9670;&nbsp;</a></span>HumanMotion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,20 +138,50 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::map&lt; std::string, Eigen::Matrix4d &gt; &amp;&#160;</td>
-          <td class="paramname"><em>M_joint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; std::string, Eigen::Matrix4d &gt; &amp;&#160;</td>
-          <td class="paramname"><em>M_CoM</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>S_list</em>&#160;</td>
+          <td class="paramname"><em>DHparam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>m1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>m2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -221,17 +219,17 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a211b05b6a6c9aba15785c46012cf750c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a211b05b6a6c9aba15785c46012cf750c">&#9670;&nbsp;</a></span>ad()</h2>
+<a id="a9a3d3f2706020eb864ba05ecf78643d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3d3f2706020eb864ba05ecf78643d3">&#9670;&nbsp;</a></span>computeCoriolisGravity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::ad </td>
+          <td class="memname">Eigen::VectorXd HumanMotion::computeCoriolisGravity </td>
           <td>(</td>
-          <td class="paramtype">Eigen::VectorXd&#160;</td>
-          <td class="paramname"><em>V</em></td><td>)</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>dq</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -239,95 +237,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac9e8a53df7f385022d4a7a3db915455b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9e8a53df7f385022d4a7a3db915455b">&#9670;&nbsp;</a></span>Adjoint()</h2>
+<a id="a6e0d70b0b4a2833aaf4cad1758f4b2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e0d70b0b4a2833aaf4cad1758f4b2b9">&#9670;&nbsp;</a></span>computeForwardDynamic()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::Adjoint </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">4x4</td><td>Transformation matrix SE(3) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>6x6 Adjoint Representation of the matrix </dd></dl>
-
-</div>
-</div>
-<a id="af0ddf7d839b925486c0753c9d7f3f828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0ddf7d839b925486c0753c9d7f3f828">&#9670;&nbsp;</a></span>AxisAng3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Vector4d HumanMotion::AxisAng3 </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>expc3</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Translates an exponential rotation into it's individual components. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Exponential</td><td>rotation (rotation matrix in terms of a rotation axis and the angle of rotation) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The axis and angle of rotation as [x, y, z, theta] </dd></dl>
-
-</div>
-</div>
-<a id="ad739f767fc5381b518f88e191403b7a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad739f767fc5381b518f88e191403b7a2">&#9670;&nbsp;</a></span>computeOccupancy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; Eigen::VectorXd &gt; HumanMotion::computeOccupancy </td>
+          <td class="memname">Eigen::VectorXd HumanMotion::computeForwardDynamic </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>q_init</em>, </td>
+          <td class="paramname"><em>dq</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>dq_init</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>ddq_init</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>Vmax</em>&#160;</td>
+          <td class="paramname"><em>ddq</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -339,715 +265,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a68cd2fd39013d1f2ca8d4b6b47d84abe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68cd2fd39013d1f2ca8d4b6b47d84abe">&#9670;&nbsp;</a></span>computeVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::computeVelocity </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>V</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac37974386ccb0299fcd354a887655011"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac37974386ccb0299fcd354a887655011">&#9670;&nbsp;</a></span>EndEffectorForces()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::EndEffectorForces </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>Ftip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aae13192e081be1467d7c9662eb3d0540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae13192e081be1467d7c9662eb3d0540">&#9670;&nbsp;</a></span>FKinBody()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::FKinBody </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Blist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetaList</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2be503af4a2b7e0030bd9e728d123a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2be503af4a2b7e0030bd9e728d123a70">&#9670;&nbsp;</a></span>FKinSpace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::FKinSpace </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetaList</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute end effector frame (used for current spatial position calculation) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Home</td><td>configuration (position and orientation) of end-effector The joint screw axes in the space frame when the manipulator is at the home position A list of joint coordinates.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Transfomation matrix representing the end-effector frame when the joints are at the specified coordinates </dd></dl>
-
-</div>
-</div>
-<a id="a90eec25dca0530dd40d831acff6f5986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90eec25dca0530dd40d831acff6f5986">&#9670;&nbsp;</a></span>ForwardDynamics()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::ForwardDynamics </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>dthetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>taulist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>Ftip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5d3522edf1cf5cc6c40ae4f02c76108b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d3522edf1cf5cc6c40ae4f02c76108b">&#9670;&nbsp;</a></span>getRelativeTransformation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::getRelativeTransformation </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Ti</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Tj</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a66d496d404c25d098a3ce9bcc6c09321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66d496d404c25d098a3ce9bcc6c09321">&#9670;&nbsp;</a></span>getTransformation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::getTransformation </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetaList</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4a46fffd5f116158cbdf05a474ae9648"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a46fffd5f116158cbdf05a474ae9648">&#9670;&nbsp;</a></span>GravityForces()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::GravityForces </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a90418bc4c9e2922112cfe604222071de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90418bc4c9e2922112cfe604222071de">&#9670;&nbsp;</a></span>IKinSpace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HumanMotion::IKinSpace </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>eomg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ev</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aea8c5a6044f4f233ee39a68b1cc65597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea8c5a6044f4f233ee39a68b1cc65597">&#9670;&nbsp;</a></span>IKNumericalSolver()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HumanMotion::IKNumericalSolver </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>xd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::Vector4d &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute inverse kinematic for given constraint. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Slist</td><td></td></tr>
-    <tr><td class="paramname">M</td><td></td></tr>
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">thetalist</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-
-</div>
-</div>
-<a id="acf439f24c5516331a1848046dd8299c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf439f24c5516331a1848046dd8299c2">&#9670;&nbsp;</a></span>InverseDynamics()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::InverseDynamics </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>dthetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>ddthetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>Ftip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a66ca2d73bf13e66d027c9a9a58f11cde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66ca2d73bf13e66d027c9a9a58f11cde">&#9670;&nbsp;</a></span>JacobianBody()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::JacobianBody </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Blist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetaList</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e8c00eec141c844136f17b8070d83cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e8c00eec141c844136f17b8070d83cf">&#9670;&nbsp;</a></span>JacobianSpace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::JacobianSpace </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetaList</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6495d774edf106616ffc42748da8f7c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6495d774edf106616ffc42748da8f7c4">&#9670;&nbsp;</a></span>MassMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::MassMatrix </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa7f50461364d5cba1f79518f6fa63751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7f50461364d5cba1f79518f6fa63751">&#9670;&nbsp;</a></span>MatrixExp3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Matrix3d HumanMotion::MatrixExp3 </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
-          <td class="paramname"><em>so3mat</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Translates an exponential rotation into a rotation matrix. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">exponenential</td><td>representation of a rotation </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Rotation matrix </dd></dl>
-
-</div>
-</div>
-<a id="a9afb23ba7bfce76cb350df3c215f203d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afb23ba7bfce76cb350df3c215f203d">&#9670;&nbsp;</a></span>MatrixExp6()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::MatrixExp6 </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>se3mat</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Rotation expanded for screw axis. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">se3</td><td>matrix representation of exponential coordinates (transformation matrix) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>6x6 Matrix representing the rotation </dd></dl>
-
-</div>
-</div>
-<a id="ac323e3595a9aa5d22dd8113cbd292146"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac323e3595a9aa5d22dd8113cbd292146">&#9670;&nbsp;</a></span>MatrixLog3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Matrix3d HumanMotion::MatrixLog3 </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
-          <td class="paramname"><em>R</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Computes the matrix logarithm of a rotation matrix. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Rotation</td><td>matrix </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>matrix logarithm of a rotation </dd></dl>
-
-</div>
-</div>
-<a id="aa1e23c90099bfc40b121ba75ffc6fe89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1e23c90099bfc40b121ba75ffc6fe89">&#9670;&nbsp;</a></span>MatrixLog6()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::MatrixLog6 </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Eigen::MatrixXd </dd></dl>
-
-</div>
-</div>
-<a id="a2ee7252fba92d7cd5705b7daa813e9c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ee7252fba92d7cd5705b7daa813e9c9">&#9670;&nbsp;</a></span>nearZero()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HumanMotion::nearZero </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a126e0c933620768232e86881867bc447"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a126e0c933620768232e86881867bc447">&#9670;&nbsp;</a></span>RotInv()</h2>
+<a id="a0e0694ddad432a7a9bb572b6d2476005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0694ddad432a7a9bb572b6d2476005">&#9670;&nbsp;</a></span>computeForwardKinematic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1056,10 +275,10 @@ false </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::RotInv </td>
+          <td class="memname">void HumanMotion::computeForwardKinematic </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>rotMatrix</em></td><td>)</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>theta</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1072,23 +291,54 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a342f1a44d235ecfd1b2948c8278bb36b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a342f1a44d235ecfd1b2948c8278bb36b">&#9670;&nbsp;</a></span>RpToTrans()</h2>
+<a id="afa02b28f2187aa2319042d636877fa64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa02b28f2187aa2319042d636877fa64">&#9670;&nbsp;</a></span>computeHandVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HumanMotion::computeHandVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1274e2061568da8e3915c0861ad9bcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1274e2061568da8e3915c0861ad9bcbd">&#9670;&nbsp;</a></span>computeInertialMass()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::RpToTrans </td>
+          <td class="memname">Eigen::MatrixXd HumanMotion::computeInertialMass </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
+          <td class="paramtype">const std::vector&lt; Eigen::Matrix4d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>TransformationMatrixToBaseList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Jacobian_c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>jacobian_c2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1098,83 +348,18 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Combines a rotation matrix and position vector into a single Special Euclidian Group (SE3) homogeneous transformation matrix. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">R</td><td></td></tr>
-    <tr><td class="paramname">p</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Matrix of T = [ [R, p], [0, 1] ] </dd></dl>
-
 </div>
 </div>
-<a id="a95bbe887ac11d37a7be9f6b245f1792c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95bbe887ac11d37a7be9f6b245f1792c">&#9670;&nbsp;</a></span>se3ToVec()</h2>
+<a id="a7e475a5aa884aefb9e709290cc1bdcb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e475a5aa884aefb9e709290cc1bdcb7">&#9670;&nbsp;</a></span>computeJacobian() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::se3ToVec </td>
+          <td class="memname">void HumanMotion::computeJacobian </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Translates a spatial velocity transformation matrix into a spatial velocity vector. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td>velocity transformation matrix </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>[angular velocity, linear velocity ] </dd></dl>
-
-</div>
-</div>
-<a id="ae76ac881034b71ea19ba8247aeb956e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae76ac881034b71ea19ba8247aeb956e1">&#9670;&nbsp;</a></span>so3ToVec()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Vector3d HumanMotion::so3ToVec </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
-          <td class="paramname"><em>omega_matrix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>return the vector presentation of angular velocity skew matrix </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">omega_matrix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>angular velocity </dd></dl>
-
-</div>
-</div>
-<a id="abec342c613b77208d2845f2fa6370f26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abec342c613b77208d2845f2fa6370f26">&#9670;&nbsp;</a></span>TransInv()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::TransInv </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>transform</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1182,17 +367,17 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ae7b3fa9568a44e02cdcbc5fd3aae1faa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7b3fa9568a44e02cdcbc5fd3aae1faa">&#9670;&nbsp;</a></span>TransToRp()</h2>
+<a id="a233dfe45f342ead640909e6ed3e4b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233dfe45f342ead640909e6ed3e4b347">&#9670;&nbsp;</a></span>computeJacobian() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; Eigen::MatrixXd &gt; HumanMotion::TransToRp </td>
+          <td class="memname">Eigen::MatrixXd HumanMotion::computeJacobian </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>T</em></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; Eigen::Matrix4d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>TransformationMatrixToBaseList</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1200,102 +385,333 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a84b7e69cca855303313f7568f1134f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84b7e69cca855303313f7568f1134f52">&#9670;&nbsp;</a></span>VecTose3()</h2>
+<a id="accdc6b5d54f41d397c2e1971a6887332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accdc6b5d54f41d397c2e1971a6887332">&#9670;&nbsp;</a></span>computeJacobianC1() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::VecTose3 </td>
+          <td class="memname">void HumanMotion::computeJacobianC1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae28566bb42ffcc7f2e5a0ead97ca568b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28566bb42ffcc7f2e5a0ead97ca568b">&#9670;&nbsp;</a></span>computeJacobianC1() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HumanMotion::computeJacobianC1 </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; Eigen::Matrix4d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>TransformationMatrixToBaseList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7919c1832d0485f3aa0a69ec6c592f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7919c1832d0485f3aa0a69ec6c592f29">&#9670;&nbsp;</a></span>computeJacobianC2() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HumanMotion::computeJacobianC2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1612310694a7e13dbe35c5656e1ee892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1612310694a7e13dbe35c5656e1ee892">&#9670;&nbsp;</a></span>computeJacobianC2() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HumanMotion::computeJacobianC2 </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; Eigen::Matrix4d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>TransformationMatrixToBaseList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3f88979d46add4175bb42b321c8add5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f88979d46add4175bb42b321c8add5">&#9670;&nbsp;</a></span>computeStackedVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HumanMotion::computeStackedVelocity </td>
           <td>(</td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>V</em></td><td>)</td>
+          <td class="paramname"><em>dtheta</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Translates a spatial velocity vector into a transformation matrix. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td>velocity </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>spatial velocity transformation matrix </dd></dl>
+</div>
+</div>
+<a id="a011e66a79b4608aac126bb8e68f25bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011e66a79b4608aac126bb8e68f25bc1">&#9670;&nbsp;</a></span>computeTransformationMatrixToBaseList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HumanMotion::computeTransformationMatrixToBaseList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
-<a id="aeb7433dddf93997f9414f9cfba47e4ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb7433dddf93997f9414f9cfba47e4ed">&#9670;&nbsp;</a></span>VecToso3()</h2>
+<a id="a27a39b012dc11fcc7f9161bf520b908f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a39b012dc11fcc7f9161bf520b908f">&#9670;&nbsp;</a></span>getHandLinearVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d HumanMotion::getHandLinearVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ac3331323cd1dda555664e8d9c8383f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac3331323cd1dda555664e8d9c8383f">&#9670;&nbsp;</a></span>getHandTransformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix4d HumanMotion::getHandTransformation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa79027b2e7a973743c587e493935ad83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79027b2e7a973743c587e493935ad83">&#9670;&nbsp;</a></span>getJacobian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HumanMotion::getJacobian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a210d84c1771d0467ada539a3a956f17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210d84c1771d0467ada539a3a956f17e">&#9670;&nbsp;</a></span>getStackedAngularVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Eigen::Vector3d&gt; HumanMotion::getStackedAngularVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21308cc97a1cbba07140fbd7da646fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21308cc97a1cbba07140fbd7da646fb8">&#9670;&nbsp;</a></span>getStackedLinearVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Eigen::Vector3d&gt; HumanMotion::getStackedLinearVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d0871a504f1c697f45b3dbe1fb17ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0871a504f1c697f45b3dbe1fb17ad6">&#9670;&nbsp;</a></span>getTransformationMatrixList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Eigen::Matrix4d&gt; HumanMotion::getTransformationMatrixList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6746673572a5c42b8782e53142b8acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6746673572a5c42b8782e53142b8acf">&#9670;&nbsp;</a></span>getTransformationToBaseMatrixList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Eigen::Matrix4d&gt; HumanMotion::getTransformationToBaseMatrixList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a835949fcfd011d11cd3c31c462d34348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a835949fcfd011d11cd3c31c462d34348">&#9670;&nbsp;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd HumanMotion::VecToso3 </td>
+          <td class="memname">void HumanMotion::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef20d3e563088831e75df5b3f6b70195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef20d3e563088831e75df5b3f6b70195">&#9670;&nbsp;</a></span>skewSymmetricMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix3d HumanMotion::skewSymmetricMatrix </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>omega</em></td><td>)</td>
+          <td class="paramname"><em>angularVel</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-<p>return the skew matrix presentation of angular velocity </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">angular</td><td>velocity </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>skew matrix </dd></dl>
-
-</div>
-</div>
-<a id="ae05b8d7024b7028ed9aa7c6db710a934"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae05b8d7024b7028ed9aa7c6db710a934">&#9670;&nbsp;</a></span>VelQuadraticForces()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::VectorXd HumanMotion::VelQuadraticForces </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>thetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>dthetalist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; Eigen::MatrixXd &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Glist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>Slist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

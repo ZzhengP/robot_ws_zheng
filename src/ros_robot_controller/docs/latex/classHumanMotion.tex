@@ -7,82 +7,62 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}{Human\+Motion}} (const int \&ndof, const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&M\+\_\+joint, const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&M\+\_\+\+CoM, const Eigen\+::\+Matrix\+Xd \&S\+\_\+list)
+\mbox{\hyperlink{classHumanMotion_a83b7c734ee81711372dfaace85b5a209}{Human\+Motion}} (const int \&ndof, const Eigen\+::\+Matrix\+Xd \&D\+Hparam, const double \&lc1, const double \&lc2, const double \&lu, const double \&lf, const double \&lh, const double \&m1, const double \&m2)
+\item 
+void \mbox{\hyperlink{classHumanMotion_a835949fcfd011d11cd3c31c462d34348}{print}} () const
+\item 
+Eigen\+::\+Matrix4d \mbox{\hyperlink{classHumanMotion_a8ac3331323cd1dda555664e8d9c8383f}{get\+Hand\+Transformation}} () const
+\item 
+std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \mbox{\hyperlink{classHumanMotion_a4d0871a504f1c697f45b3dbe1fb17ad6}{get\+Transformation\+Matrix\+List}} ()
+\item 
+std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \mbox{\hyperlink{classHumanMotion_ab6746673572a5c42b8782e53142b8acf}{get\+Transformation\+To\+Base\+Matrix\+List}} ()
+\item 
+std\+::vector$<$ Eigen\+::\+Vector3d $>$ \mbox{\hyperlink{classHumanMotion_a21308cc97a1cbba07140fbd7da646fb8}{get\+Stacked\+Linear\+Velocity}} ()
+\item 
+std\+::vector$<$ Eigen\+::\+Vector3d $>$ \mbox{\hyperlink{classHumanMotion_a210d84c1771d0467ada539a3a956f17e}{get\+Stacked\+Angular\+Velocity}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aa79027b2e7a973743c587e493935ad83}{get\+Jacobian}} ()
+\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{classHumanMotion_aef20d3e563088831e75df5b3f6b70195}{skew\+Symmetric\+Matrix}} (const Eigen\+::\+Vector3d \&angular\+Vel)
+\item 
+void \mbox{\hyperlink{classHumanMotion_a0e0694ddad432a7a9bb572b6d2476005}{compute\+Forward\+Kinematic}} (const Eigen\+::\+Vector\+Xd \&theta)
+\item 
+void \mbox{\hyperlink{classHumanMotion_a011e66a79b4608aac126bb8e68f25bc1}{compute\+Transformation\+Matrix\+To\+Base\+List}} ()
+\item 
+void \mbox{\hyperlink{classHumanMotion_ac3f88979d46add4175bb42b321c8add5}{compute\+Stacked\+Velocity}} (const Eigen\+::\+Vector\+Xd \&dtheta)
+\item 
+void \mbox{\hyperlink{classHumanMotion_afa02b28f2187aa2319042d636877fa64}{compute\+Hand\+Velocity}} ()
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classHumanMotion_a27a39b012dc11fcc7f9161bf520b908f}{get\+Hand\+Linear\+Velocity}} ()
+\item 
+void \mbox{\hyperlink{classHumanMotion_a7e475a5aa884aefb9e709290cc1bdcb7}{compute\+Jacobian}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a233dfe45f342ead640909e6ed3e4b347}{compute\+Jacobian}} (const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&Transformation\+Matrix\+To\+Base\+List)
+\item 
+void \mbox{\hyperlink{classHumanMotion_accdc6b5d54f41d397c2e1971a6887332}{compute\+Jacobian\+C1}} ()
+\item 
+void \mbox{\hyperlink{classHumanMotion_a7919c1832d0485f3aa0a69ec6c592f29}{compute\+Jacobian\+C2}} ()
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_ae28566bb42ffcc7f2e5a0ead97ca568b}{compute\+Jacobian\+C1}} (const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&Transformation\+Matrix\+To\+Base\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a1612310694a7e13dbe35c5656e1ee892}{compute\+Jacobian\+C2}} (const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&Transformation\+Matrix\+To\+Base\+List)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a6e0d70b0b4a2833aaf4cad1758f4b2b9}{compute\+Forward\+Dynamic}} (const Eigen\+::\+Vector\+Xd \&dq, const Eigen\+::\+Vector\+Xd \&ddq)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a9a3d3f2706020eb864ba05ecf78643d3}{compute\+Coriolis\+Gravity}} (const Eigen\+::\+Vector\+Xd \&dq)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a1274e2061568da8e3915c0861ad9bcbd}{compute\+Inertial\+Mass}} (const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&Transformation\+Matrix\+To\+Base\+List, const Eigen\+::\+Matrix\+Xd \&Jacobian\+\_\+c1, const Eigen\+::\+Matrix\+Xd \&jacobian\+\_\+c2)
 \item 
 \mbox{\hyperlink{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}{$\sim$\+Human\+Motion}} ()
-\item 
-bool \mbox{\hyperlink{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}{near\+Zero}} (const double \&val)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}{Vec\+Toso3}} (const Eigen\+::\+Vector3d \&omega)
-\begin{DoxyCompactList}\small\item\em return the skew matrix presentation of angular velocity \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a211b05b6a6c9aba15785c46012cf750c}{ad}} (Eigen\+::\+Vector\+Xd)
-\item 
-Eigen\+::\+Vector3d \mbox{\hyperlink{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}{so3\+To\+Vec}} (const Eigen\+::\+Matrix3d \&omega\+\_\+matrix)
-\begin{DoxyCompactList}\small\item\em return the vector presentation of angular velocity skew matrix \end{DoxyCompactList}\item 
-Eigen\+::\+Vector4d \mbox{\hyperlink{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}{Axis\+Ang3}} (const Eigen\+::\+Vector3d \&expc3)
-\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into it\textquotesingle{}s individual components. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix3d \mbox{\hyperlink{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}{Matrix\+Exp3}} (const Eigen\+::\+Matrix3d \&so3mat)
-\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into a rotation matrix. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix3d \mbox{\hyperlink{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}{Matrix\+Log3}} (const Eigen\+::\+Matrix3d \&R)
-\begin{DoxyCompactList}\small\item\em Computes the matrix logarithm of a rotation matrix. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}{Rp\+To\+Trans}} (const Eigen\+::\+Matrix3d \&R, const Eigen\+::\+Vector3d \&p)
-\begin{DoxyCompactList}\small\item\em Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. \end{DoxyCompactList}\item 
-std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}{Trans\+To\+Rp}} (const Eigen\+::\+Matrix\+Xd \&T)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a84b7e69cca855303313f7568f1134f52}{Vec\+Tose3}} (const Eigen\+::\+Vector\+Xd \&V)
-\begin{DoxyCompactList}\small\item\em Translates a spatial velocity vector into a transformation matrix. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}{se3\+To\+Vec}} (const Eigen\+::\+Matrix\+Xd \&T)
-\begin{DoxyCompactList}\small\item\em Translates a spatial velocity transformation matrix into a spatial velocity vector. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}{Adjoint}} (const Eigen\+::\+Matrix\+Xd \&T)
-\begin{DoxyCompactList}\small\item\em adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_abec342c613b77208d2845f2fa6370f26}{Trans\+Inv}} (const Eigen\+::\+Matrix\+Xd \&transform)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a126e0c933620768232e86881867bc447}{Rot\+Inv}} (const Eigen\+::\+Matrix\+Xd \&rot\+Matrix)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}{Matrix\+Exp6}} (const Eigen\+::\+Matrix\+Xd \&se3mat)
-\begin{DoxyCompactList}\small\item\em Rotation expanded for screw axis. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}{Matrix\+Log6}} (const Eigen\+::\+Matrix\+Xd \&T)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}{F\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
-\begin{DoxyCompactList}\small\item\em Compute end effector frame (used for current spatial position calculation) \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}{F\+Kin\+Body}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}{Jacobian\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}{Jacobian\+Body}} (const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}{get\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Vector\+Xd \&theta\+List)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}{get\+Relative\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&Ti, const Eigen\+::\+Matrix\+Xd \&Tj)
-\item 
-bool \mbox{\hyperlink{classHumanMotion_a90418bc4c9e2922112cfe604222071de}{I\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&T, Eigen\+::\+Vector\+Xd \&thetalist, double eomg, double ev)
-\item 
-bool \mbox{\hyperlink{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}{I\+K\+Numerical\+Solver}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Vector3d \&xd, Eigen\+::\+Vector4d \&thetalist)
-\begin{DoxyCompactList}\small\item\em Compute inverse kinematic for given constraint. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_acf439f24c5516331a1848046dd8299c2}{Inverse\+Dynamics}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a4a46fffd5f116158cbdf05a474ae9648}{Gravity\+Forces}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classHumanMotion_a6495d774edf106616ffc42748da8f7c4}{Mass\+Matrix}} (const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_ae05b8d7024b7028ed9aa7c6db710a934}{Vel\+Quadratic\+Forces}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_ac37974386ccb0299fcd354a887655011}{End\+Effector\+Forces}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a90eec25dca0530dd40d831acff6f5986}{Forward\+Dynamics}} (const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const Eigen\+::\+Vector\+Xd \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Matrix\+Xd \&)
-\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}{compute\+Velocity}} (const Eigen\+::\+Vector\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&T)
-\item 
-std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}{compute\+Occupancy}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+init, const Eigen\+::\+Vector\+Xd \&dq\+\_\+init, const Eigen\+::\+Vector\+Xd \&ddq\+\_\+init, const int \&N, const double \&Vmax)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}\label{classHumanMotion_a85e9c8039ea86fcb697f3346c1786b55}} 
+\mbox{\Hypertarget{classHumanMotion_a83b7c734ee81711372dfaace85b5a209}\label{classHumanMotion_a83b7c734ee81711372dfaace85b5a209}} 
 \index{HumanMotion@{HumanMotion}!HumanMotion@{HumanMotion}}
 \index{HumanMotion@{HumanMotion}!HumanMotion@{HumanMotion}}
 \doxysubsubsection{\texorpdfstring{HumanMotion()}{HumanMotion()}}
-{\footnotesize\ttfamily Human\+Motion\+::\+Human\+Motion (\begin{DoxyParamCaption}\item[{const int \&}]{ndof,  }\item[{const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&}]{M\+\_\+joint,  }\item[{const std\+::map$<$ std\+::string, Eigen\+::\+Matrix4d $>$ \&}]{M\+\_\+\+CoM,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{S\+\_\+list }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Human\+Motion\+::\+Human\+Motion (\begin{DoxyParamCaption}\item[{const int \&}]{ndof,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{D\+Hparam,  }\item[{const double \&}]{lc1,  }\item[{const double \&}]{lc2,  }\item[{const double \&}]{lu,  }\item[{const double \&}]{lf,  }\item[{const double \&}]{lh,  }\item[{const double \&}]{m1,  }\item[{const double \&}]{m2 }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}\label{classHumanMotion_a90e4b00a43b590ca4995109c383ea2e5}} 
 \index{HumanMotion@{HumanMotion}!````~HumanMotion@{$\sim$HumanMotion}}
@@ -93,359 +73,137 @@ std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{classHumanMotion_ad7
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classHumanMotion_a211b05b6a6c9aba15785c46012cf750c}\label{classHumanMotion_a211b05b6a6c9aba15785c46012cf750c}} 
-\index{HumanMotion@{HumanMotion}!ad@{ad}}
-\index{ad@{ad}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{ad()}{ad()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::ad (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{V }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}\label{classHumanMotion_ac9e8a53df7f385022d4a7a3db915455b}} 
-\index{HumanMotion@{HumanMotion}!Adjoint@{Adjoint}}
-\index{Adjoint@{Adjoint}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{Adjoint()}{Adjoint()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Adjoint (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
-
-
-
-adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors 
-
-
-\begin{DoxyParams}{Parameters}
-{\em 4x4} & Transformation matrix S\+E(3) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-6x6 Adjoint Representation of the matrix 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}\label{classHumanMotion_af0ddf7d839b925486c0753c9d7f3f828}} 
-\index{HumanMotion@{HumanMotion}!AxisAng3@{AxisAng3}}
-\index{AxisAng3@{AxisAng3}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{AxisAng3()}{AxisAng3()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector4d Human\+Motion\+::\+Axis\+Ang3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{expc3 }\end{DoxyParamCaption})}
-
-
-
-Translates an exponential rotation into it\textquotesingle{}s individual components. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em Exponential} & rotation (rotation matrix in terms of a rotation axis and the angle of rotation) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The axis and angle of rotation as \mbox{[}x, y, z, theta\mbox{]} 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}\label{classHumanMotion_ad739f767fc5381b518f88e191403b7a2}} 
-\index{HumanMotion@{HumanMotion}!computeOccupancy@{computeOccupancy}}
-\index{computeOccupancy@{computeOccupancy}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{computeOccupancy()}{computeOccupancy()}}
-{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ Human\+Motion\+::compute\+Occupancy (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dq\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddq\+\_\+init,  }\item[{const int \&}]{N,  }\item[{const double \&}]{Vmax }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}\label{classHumanMotion_a68cd2fd39013d1f2ca8d4b6b47d84abe}} 
-\index{HumanMotion@{HumanMotion}!computeVelocity@{computeVelocity}}
-\index{computeVelocity@{computeVelocity}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{computeVelocity()}{computeVelocity()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::compute\+Velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_ac37974386ccb0299fcd354a887655011}\label{classHumanMotion_ac37974386ccb0299fcd354a887655011}} 
-\index{HumanMotion@{HumanMotion}!EndEffectorForces@{EndEffectorForces}}
-\index{EndEffectorForces@{EndEffectorForces}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{EndEffectorForces()}{EndEffectorForces()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::\+End\+Effector\+Forces (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Ftip,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}\label{classHumanMotion_aae13192e081be1467d7c9662eb3d0540}} 
-\index{HumanMotion@{HumanMotion}!FKinBody@{FKinBody}}
-\index{FKinBody@{FKinBody}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{FKinBody()}{FKinBody()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+F\+Kin\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}\label{classHumanMotion_a2be503af4a2b7e0030bd9e728d123a70}} 
-\index{HumanMotion@{HumanMotion}!FKinSpace@{FKinSpace}}
-\index{FKinSpace@{FKinSpace}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{FKinSpace()}{FKinSpace()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+F\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
-
-
-
-Compute end effector frame (used for current spatial position calculation) 
-
-
-\begin{DoxyParams}{Parameters}
-{\em Home} & configuration (position and orientation) of end-\/effector The joint screw axes in the space frame when the manipulator is at the home position A list of joint coordinates.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Transfomation matrix representing the end-\/effector frame when the joints are at the specified coordinates 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_a90eec25dca0530dd40d831acff6f5986}\label{classHumanMotion_a90eec25dca0530dd40d831acff6f5986}} 
-\index{HumanMotion@{HumanMotion}!ForwardDynamics@{ForwardDynamics}}
-\index{ForwardDynamics@{ForwardDynamics}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{ForwardDynamics()}{ForwardDynamics()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::\+Forward\+Dynamics (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dthetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{taulist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{g,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Ftip,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}\label{classHumanMotion_a5d3522edf1cf5cc6c40ae4f02c76108b}} 
-\index{HumanMotion@{HumanMotion}!getRelativeTransformation@{getRelativeTransformation}}
-\index{getRelativeTransformation@{getRelativeTransformation}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{getRelativeTransformation()}{getRelativeTransformation()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::get\+Relative\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Ti,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Tj }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}\label{classHumanMotion_a66d496d404c25d098a3ce9bcc6c09321}} 
-\index{HumanMotion@{HumanMotion}!getTransformation@{getTransformation}}
-\index{getTransformation@{getTransformation}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{getTransformation()}{getTransformation()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::get\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a4a46fffd5f116158cbdf05a474ae9648}\label{classHumanMotion_a4a46fffd5f116158cbdf05a474ae9648}} 
-\index{HumanMotion@{HumanMotion}!GravityForces@{GravityForces}}
-\index{GravityForces@{GravityForces}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{GravityForces()}{GravityForces()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::\+Gravity\+Forces (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{g,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a90418bc4c9e2922112cfe604222071de}\label{classHumanMotion_a90418bc4c9e2922112cfe604222071de}} 
-\index{HumanMotion@{HumanMotion}!IKinSpace@{IKinSpace}}
-\index{IKinSpace@{IKinSpace}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{IKinSpace()}{IKinSpace()}}
-{\footnotesize\ttfamily bool Human\+Motion\+::\+I\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T,  }\item[{Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{double}]{eomg,  }\item[{double}]{ev }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}\label{classHumanMotion_aea8c5a6044f4f233ee39a68b1cc65597}} 
-\index{HumanMotion@{HumanMotion}!IKNumericalSolver@{IKNumericalSolver}}
-\index{IKNumericalSolver@{IKNumericalSolver}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{IKNumericalSolver()}{IKNumericalSolver()}}
-{\footnotesize\ttfamily bool Human\+Motion\+::\+I\+K\+Numerical\+Solver (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Vector3d \&}]{xd,  }\item[{Eigen\+::\+Vector4d \&}]{thetalist }\end{DoxyParamCaption})}
-
-
-
-Compute inverse kinematic for given constraint. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em Slist} & \\
-\hline
-{\em M} & \\
-\hline
-{\em T} & \\
-\hline
-{\em thetalist} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true 
-
-false 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_acf439f24c5516331a1848046dd8299c2}\label{classHumanMotion_acf439f24c5516331a1848046dd8299c2}} 
-\index{HumanMotion@{HumanMotion}!InverseDynamics@{InverseDynamics}}
-\index{InverseDynamics@{InverseDynamics}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{InverseDynamics()}{InverseDynamics()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::\+Inverse\+Dynamics (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dthetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddthetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{g,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Ftip,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}\label{classHumanMotion_a66ca2d73bf13e66d027c9a9a58f11cde}} 
-\index{HumanMotion@{HumanMotion}!JacobianBody@{JacobianBody}}
-\index{JacobianBody@{JacobianBody}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{JacobianBody()}{JacobianBody()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Jacobian\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}\label{classHumanMotion_a3e8c00eec141c844136f17b8070d83cf}} 
-\index{HumanMotion@{HumanMotion}!JacobianSpace@{JacobianSpace}}
-\index{JacobianSpace@{JacobianSpace}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{JacobianSpace()}{JacobianSpace()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Jacobian\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a6495d774edf106616ffc42748da8f7c4}\label{classHumanMotion_a6495d774edf106616ffc42748da8f7c4}} 
-\index{HumanMotion@{HumanMotion}!MassMatrix@{MassMatrix}}
-\index{MassMatrix@{MassMatrix}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{MassMatrix()}{MassMatrix()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Mass\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}\label{classHumanMotion_aa7f50461364d5cba1f79518f6fa63751}} 
-\index{HumanMotion@{HumanMotion}!MatrixExp3@{MatrixExp3}}
-\index{MatrixExp3@{MatrixExp3}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{MatrixExp3()}{MatrixExp3()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix3d Human\+Motion\+::\+Matrix\+Exp3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{so3mat }\end{DoxyParamCaption})}
-
-
-
-Translates an exponential rotation into a rotation matrix. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em exponenential} & representation of a rotation \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Rotation matrix 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}\label{classHumanMotion_a9afb23ba7bfce76cb350df3c215f203d}} 
-\index{HumanMotion@{HumanMotion}!MatrixExp6@{MatrixExp6}}
-\index{MatrixExp6@{MatrixExp6}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{MatrixExp6()}{MatrixExp6()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Matrix\+Exp6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{se3mat }\end{DoxyParamCaption})}
-
-
-
-Rotation expanded for screw axis. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em se3} & matrix representation of exponential coordinates (transformation matrix) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-6x6 Matrix representing the rotation 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}\label{classHumanMotion_ac323e3595a9aa5d22dd8113cbd292146}} 
-\index{HumanMotion@{HumanMotion}!MatrixLog3@{MatrixLog3}}
-\index{MatrixLog3@{MatrixLog3}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{MatrixLog3()}{MatrixLog3()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix3d Human\+Motion\+::\+Matrix\+Log3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R }\end{DoxyParamCaption})}
-
-
-
-Computes the matrix logarithm of a rotation matrix. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em Rotation} & matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-matrix logarithm of a rotation 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}\label{classHumanMotion_aa1e23c90099bfc40b121ba75ffc6fe89}} 
-\index{HumanMotion@{HumanMotion}!MatrixLog6@{MatrixLog6}}
-\index{MatrixLog6@{MatrixLog6}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{MatrixLog6()}{MatrixLog6()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Matrix\+Log6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em T} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Eigen\+::\+Matrix\+Xd 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}\label{classHumanMotion_a2ee7252fba92d7cd5705b7daa813e9c9}} 
-\index{HumanMotion@{HumanMotion}!nearZero@{nearZero}}
-\index{nearZero@{nearZero}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
-{\footnotesize\ttfamily bool Human\+Motion\+::near\+Zero (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a126e0c933620768232e86881867bc447}\label{classHumanMotion_a126e0c933620768232e86881867bc447}} 
-\index{HumanMotion@{HumanMotion}!RotInv@{RotInv}}
-\index{RotInv@{RotInv}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{RotInv()}{RotInv()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Rot\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{rot\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\mbox{\Hypertarget{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}\label{classHumanMotion_a342f1a44d235ecfd1b2948c8278bb36b}} 
-\index{HumanMotion@{HumanMotion}!RpToTrans@{RpToTrans}}
-\index{RpToTrans@{RpToTrans}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{RpToTrans()}{RpToTrans()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Rp\+To\+Trans (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R,  }\item[{const Eigen\+::\+Vector3d \&}]{p }\end{DoxyParamCaption})}
-
-
-
-Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em R} & \\
-\hline
-{\em p} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Matrix of T = \mbox{[} \mbox{[}R, p\mbox{]}, \mbox{[}0, 1\mbox{]} \mbox{]} 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}\label{classHumanMotion_a95bbe887ac11d37a7be9f6b245f1792c}} 
-\index{HumanMotion@{HumanMotion}!se3ToVec@{se3ToVec}}
-\index{se3ToVec@{se3ToVec}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{se3ToVec()}{se3ToVec()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::se3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
-
-
-
-Translates a spatial velocity transformation matrix into a spatial velocity vector. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em spatial} & velocity transformation matrix \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{[}angular velocity, linear velocity \mbox{]} 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}\label{classHumanMotion_ae76ac881034b71ea19ba8247aeb956e1}} 
-\index{HumanMotion@{HumanMotion}!so3ToVec@{so3ToVec}}
-\index{so3ToVec@{so3ToVec}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{so3ToVec()}{so3ToVec()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector3d Human\+Motion\+::so3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{omega\+\_\+matrix }\end{DoxyParamCaption})}
-
-
-
-return the vector presentation of angular velocity skew matrix 
-
-
-\begin{DoxyParams}{Parameters}
-{\em omega\+\_\+matrix} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-angular velocity 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_abec342c613b77208d2845f2fa6370f26}\label{classHumanMotion_abec342c613b77208d2845f2fa6370f26}} 
-\index{HumanMotion@{HumanMotion}!TransInv@{TransInv}}
-\index{TransInv@{TransInv}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{TransInv()}{TransInv()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Trans\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{transform }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}\label{classHumanMotion_ae7b3fa9568a44e02cdcbc5fd3aae1faa}} 
-\index{HumanMotion@{HumanMotion}!TransToRp@{TransToRp}}
-\index{TransToRp@{TransToRp}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{TransToRp()}{TransToRp()}}
-{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ Human\+Motion\+::\+Trans\+To\+Rp (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classHumanMotion_a84b7e69cca855303313f7568f1134f52}\label{classHumanMotion_a84b7e69cca855303313f7568f1134f52}} 
-\index{HumanMotion@{HumanMotion}!VecTose3@{VecTose3}}
-\index{VecTose3@{VecTose3}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{VecTose3()}{VecTose3()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Vec\+Tose3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V }\end{DoxyParamCaption})}
-
-
-
-Translates a spatial velocity vector into a transformation matrix. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em spatial} & velocity \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-spatial velocity transformation matrix 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}\label{classHumanMotion_aeb7433dddf93997f9414f9cfba47e4ed}} 
-\index{HumanMotion@{HumanMotion}!VecToso3@{VecToso3}}
-\index{VecToso3@{VecToso3}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{VecToso3()}{VecToso3()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::\+Vec\+Toso3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{omega }\end{DoxyParamCaption})}
-
-
-
-return the skew matrix presentation of angular velocity 
-
-
-\begin{DoxyParams}{Parameters}
-{\em angular} & velocity \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-skew matrix 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classHumanMotion_ae05b8d7024b7028ed9aa7c6db710a934}\label{classHumanMotion_ae05b8d7024b7028ed9aa7c6db710a934}} 
-\index{HumanMotion@{HumanMotion}!VelQuadraticForces@{VelQuadraticForces}}
-\index{VelQuadraticForces@{VelQuadraticForces}!HumanMotion@{HumanMotion}}
-\doxysubsubsection{\texorpdfstring{VelQuadraticForces()}{VelQuadraticForces()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::\+Vel\+Quadratic\+Forces (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dthetalist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Mlist,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{Glist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classHumanMotion_a9a3d3f2706020eb864ba05ecf78643d3}\label{classHumanMotion_a9a3d3f2706020eb864ba05ecf78643d3}} 
+\index{HumanMotion@{HumanMotion}!computeCoriolisGravity@{computeCoriolisGravity}}
+\index{computeCoriolisGravity@{computeCoriolisGravity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeCoriolisGravity()}{computeCoriolisGravity()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::compute\+Coriolis\+Gravity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{dq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a6e0d70b0b4a2833aaf4cad1758f4b2b9}\label{classHumanMotion_a6e0d70b0b4a2833aaf4cad1758f4b2b9}} 
+\index{HumanMotion@{HumanMotion}!computeForwardDynamic@{computeForwardDynamic}}
+\index{computeForwardDynamic@{computeForwardDynamic}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeForwardDynamic()}{computeForwardDynamic()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Human\+Motion\+::compute\+Forward\+Dynamic (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{dq,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a0e0694ddad432a7a9bb572b6d2476005}\label{classHumanMotion_a0e0694ddad432a7a9bb572b6d2476005}} 
+\index{HumanMotion@{HumanMotion}!computeForwardKinematic@{computeForwardKinematic}}
+\index{computeForwardKinematic@{computeForwardKinematic}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeForwardKinematic()}{computeForwardKinematic()}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Forward\+Kinematic (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_afa02b28f2187aa2319042d636877fa64}\label{classHumanMotion_afa02b28f2187aa2319042d636877fa64}} 
+\index{HumanMotion@{HumanMotion}!computeHandVelocity@{computeHandVelocity}}
+\index{computeHandVelocity@{computeHandVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeHandVelocity()}{computeHandVelocity()}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Hand\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a1274e2061568da8e3915c0861ad9bcbd}\label{classHumanMotion_a1274e2061568da8e3915c0861ad9bcbd}} 
+\index{HumanMotion@{HumanMotion}!computeInertialMass@{computeInertialMass}}
+\index{computeInertialMass@{computeInertialMass}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeInertialMass()}{computeInertialMass()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::compute\+Inertial\+Mass (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&}]{Transformation\+Matrix\+To\+Base\+List,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Jacobian\+\_\+c1,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{jacobian\+\_\+c2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a7e475a5aa884aefb9e709290cc1bdcb7}\label{classHumanMotion_a7e475a5aa884aefb9e709290cc1bdcb7}} 
+\index{HumanMotion@{HumanMotion}!computeJacobian@{computeJacobian}}
+\index{computeJacobian@{computeJacobian}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobian()}{computeJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Jacobian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a233dfe45f342ead640909e6ed3e4b347}\label{classHumanMotion_a233dfe45f342ead640909e6ed3e4b347}} 
+\index{HumanMotion@{HumanMotion}!computeJacobian@{computeJacobian}}
+\index{computeJacobian@{computeJacobian}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobian()}{computeJacobian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::compute\+Jacobian (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&}]{Transformation\+Matrix\+To\+Base\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_accdc6b5d54f41d397c2e1971a6887332}\label{classHumanMotion_accdc6b5d54f41d397c2e1971a6887332}} 
+\index{HumanMotion@{HumanMotion}!computeJacobianC1@{computeJacobianC1}}
+\index{computeJacobianC1@{computeJacobianC1}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobianC1()}{computeJacobianC1()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Jacobian\+C1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_ae28566bb42ffcc7f2e5a0ead97ca568b}\label{classHumanMotion_ae28566bb42ffcc7f2e5a0ead97ca568b}} 
+\index{HumanMotion@{HumanMotion}!computeJacobianC1@{computeJacobianC1}}
+\index{computeJacobianC1@{computeJacobianC1}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobianC1()}{computeJacobianC1()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::compute\+Jacobian\+C1 (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&}]{Transformation\+Matrix\+To\+Base\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a7919c1832d0485f3aa0a69ec6c592f29}\label{classHumanMotion_a7919c1832d0485f3aa0a69ec6c592f29}} 
+\index{HumanMotion@{HumanMotion}!computeJacobianC2@{computeJacobianC2}}
+\index{computeJacobianC2@{computeJacobianC2}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobianC2()}{computeJacobianC2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Jacobian\+C2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a1612310694a7e13dbe35c5656e1ee892}\label{classHumanMotion_a1612310694a7e13dbe35c5656e1ee892}} 
+\index{HumanMotion@{HumanMotion}!computeJacobianC2@{computeJacobianC2}}
+\index{computeJacobianC2@{computeJacobianC2}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeJacobianC2()}{computeJacobianC2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::compute\+Jacobian\+C2 (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&}]{Transformation\+Matrix\+To\+Base\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_ac3f88979d46add4175bb42b321c8add5}\label{classHumanMotion_ac3f88979d46add4175bb42b321c8add5}} 
+\index{HumanMotion@{HumanMotion}!computeStackedVelocity@{computeStackedVelocity}}
+\index{computeStackedVelocity@{computeStackedVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeStackedVelocity()}{computeStackedVelocity()}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Stacked\+Velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{dtheta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanMotion_a011e66a79b4608aac126bb8e68f25bc1}\label{classHumanMotion_a011e66a79b4608aac126bb8e68f25bc1}} 
+\index{HumanMotion@{HumanMotion}!computeTransformationMatrixToBaseList@{computeTransformationMatrixToBaseList}}
+\index{computeTransformationMatrixToBaseList@{computeTransformationMatrixToBaseList}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{computeTransformationMatrixToBaseList()}{computeTransformationMatrixToBaseList()}}
+{\footnotesize\ttfamily void Human\+Motion\+::compute\+Transformation\+Matrix\+To\+Base\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a27a39b012dc11fcc7f9161bf520b908f}\label{classHumanMotion_a27a39b012dc11fcc7f9161bf520b908f}} 
+\index{HumanMotion@{HumanMotion}!getHandLinearVelocity@{getHandLinearVelocity}}
+\index{getHandLinearVelocity@{getHandLinearVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getHandLinearVelocity()}{getHandLinearVelocity()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d Human\+Motion\+::get\+Hand\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a8ac3331323cd1dda555664e8d9c8383f}\label{classHumanMotion_a8ac3331323cd1dda555664e8d9c8383f}} 
+\index{HumanMotion@{HumanMotion}!getHandTransformation@{getHandTransformation}}
+\index{getHandTransformation@{getHandTransformation}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getHandTransformation()}{getHandTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4d Human\+Motion\+::get\+Hand\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_aa79027b2e7a973743c587e493935ad83}\label{classHumanMotion_aa79027b2e7a973743c587e493935ad83}} 
+\index{HumanMotion@{HumanMotion}!getJacobian@{getJacobian}}
+\index{getJacobian@{getJacobian}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getJacobian()}{getJacobian()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Human\+Motion\+::get\+Jacobian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a210d84c1771d0467ada539a3a956f17e}\label{classHumanMotion_a210d84c1771d0467ada539a3a956f17e}} 
+\index{HumanMotion@{HumanMotion}!getStackedAngularVelocity@{getStackedAngularVelocity}}
+\index{getStackedAngularVelocity@{getStackedAngularVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getStackedAngularVelocity()}{getStackedAngularVelocity()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Vector3d$>$ Human\+Motion\+::get\+Stacked\+Angular\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a21308cc97a1cbba07140fbd7da646fb8}\label{classHumanMotion_a21308cc97a1cbba07140fbd7da646fb8}} 
+\index{HumanMotion@{HumanMotion}!getStackedLinearVelocity@{getStackedLinearVelocity}}
+\index{getStackedLinearVelocity@{getStackedLinearVelocity}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getStackedLinearVelocity()}{getStackedLinearVelocity()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Vector3d$>$ Human\+Motion\+::get\+Stacked\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a4d0871a504f1c697f45b3dbe1fb17ad6}\label{classHumanMotion_a4d0871a504f1c697f45b3dbe1fb17ad6}} 
+\index{HumanMotion@{HumanMotion}!getTransformationMatrixList@{getTransformationMatrixList}}
+\index{getTransformationMatrixList@{getTransformationMatrixList}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getTransformationMatrixList()}{getTransformationMatrixList()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Matrix4d$>$ Human\+Motion\+::get\+Transformation\+Matrix\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_ab6746673572a5c42b8782e53142b8acf}\label{classHumanMotion_ab6746673572a5c42b8782e53142b8acf}} 
+\index{HumanMotion@{HumanMotion}!getTransformationToBaseMatrixList@{getTransformationToBaseMatrixList}}
+\index{getTransformationToBaseMatrixList@{getTransformationToBaseMatrixList}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{getTransformationToBaseMatrixList()}{getTransformationToBaseMatrixList()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Matrix4d$>$ Human\+Motion\+::get\+Transformation\+To\+Base\+Matrix\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanMotion_a835949fcfd011d11cd3c31c462d34348}\label{classHumanMotion_a835949fcfd011d11cd3c31c462d34348}} 
+\index{HumanMotion@{HumanMotion}!print@{print}}
+\index{print@{print}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Human\+Motion\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classHumanMotion_aef20d3e563088831e75df5b3f6b70195}\label{classHumanMotion_aef20d3e563088831e75df5b3f6b70195}} 
+\index{HumanMotion@{HumanMotion}!skewSymmetricMatrix@{skewSymmetricMatrix}}
+\index{skewSymmetricMatrix@{skewSymmetricMatrix}!HumanMotion@{HumanMotion}}
+\doxysubsubsection{\texorpdfstring{skewSymmetricMatrix()}{skewSymmetricMatrix()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d Human\+Motion\+::skew\+Symmetric\+Matrix (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{angular\+Vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
