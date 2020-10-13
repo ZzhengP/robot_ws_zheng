@@ -1,0 +1,188 @@
+\hypertarget{classHumanTorque}{}\doxysection{Human\+Torque Class Reference}
+\label{classHumanTorque}\index{HumanTorque@{HumanTorque}}
+
+
+{\ttfamily \#include $<$Ros\+Wrap\+Human\+Optimal\+Torque.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHumanTorque_a135c8df58bfb6862fade5d6075b7a8bb}{Human\+Torque}} (const double \&dt)
+\begin{DoxyCompactList}\small\item\em Construct a new Human Torque object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHumanTorque_a561f78e1b6bfdfec22660372eaed4b6f}{$\sim$\+Human\+Torque}} ()
+\item 
+void \mbox{\hyperlink{classHumanTorque_a488079dd90ab49face39e6802a55abea}{compute\+\_\+\+H\+\_\+g}} (Eigen\+::\+Matrix\+Xd \&H, Eigen\+::\+Vector\+Xd \&g, const Eigen\+::\+Matrix\+Xd \&E, const Eigen\+::\+Vector\+Xd \&f)
+\item 
+void \mbox{\hyperlink{classHumanTorque_ad2fa67fd9878ff89fcc42e7ebb51b224}{compute\+\_\+hand\+\_\+jerk}} ()
+\begin{DoxyCompactList}\small\item\em Minimize hand jerk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a4acb08e04c6990eeda5dc004d1d71c88}{compute\+\_\+joint\+\_\+jerk}} ()
+\begin{DoxyCompactList}\small\item\em Minimize joint jerk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a09dd0763878fbfd62c4ff951a9d9d6a1}{compute\+\_\+joint\+\_\+acceleration}} ()
+\begin{DoxyCompactList}\small\item\em Minimize joint acceleration if no parameters, means data stored in map is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a8d3e334c040cf5e4e3a905ddcb814c7f}{compute\+\_\+torque\+\_\+change}} ()
+\begin{DoxyCompactList}\small\item\em Minimize the variation of the change of the torque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a63f29438a65b62da1974770c631c60fb}{compute\+\_\+minimal\+\_\+torque}} ()
+\begin{DoxyCompactList}\small\item\em Minimize torque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a0511d151fb5276d6f96d1acd1748e485}{compute\+\_\+geodesis}} ()
+\begin{DoxyCompactList}\small\item\em Minize the geodesis distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_a8b3f388ab26413c1bb22dbcb3abfd46f}{compute\+\_\+energy}} ()
+\begin{DoxyCompactList}\small\item\em Minimize energy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHumanTorque_ae4b30c90e341d835c9683a41417ee849}{update\+\_\+dynamic\+\_\+parameters}} (const Eigen\+::\+Matrix\+Xd \&J, const Eigen\+::\+Vector\+Xd \&dd\+X\+\_\+prec, const Eigen\+::\+Vector\+Xd \&ddq\+\_\+prec, const Eigen\+::\+Vector\+Xd \&torque\+\_\+prec, const Eigen\+::\+Vector\+Xd \&q\+\_\+prec, const Eigen\+::\+Vector\+Xd \&dq\+\_\+prec, const Eigen\+::\+Matrix\+Xd \&inertial\+\_\+matrix, const Eigen\+::\+Vector\+Xd \&coriolis, const Eigen\+::\+Vector\+Xd \&gravity)
+\item 
+void \mbox{\hyperlink{classHumanTorque_a112f0e68e03fdc9974c60931a3a3ae9c}{update\+\_\+objective}} ()
+\item 
+void \mbox{\hyperlink{classHumanTorque_a2f57ea5020b90a69a6d88fe6ada7c7cc}{get\+\_\+update\+\_\+objective}} (\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}} c)
+\item 
+void \mbox{\hyperlink{classHumanTorque_ab3bc5b483784b4edfd1f632a3702887d}{compute\+\_\+total\+\_\+objective}} ()
+\item 
+bool \mbox{\hyperlink{classHumanTorque_ad2d54ebcb5ce5bbc47bc932ecbcd0fff}{solve}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHumanTorque_a135c8df58bfb6862fade5d6075b7a8bb}\label{classHumanTorque_a135c8df58bfb6862fade5d6075b7a8bb}} 
+\index{HumanTorque@{HumanTorque}!HumanTorque@{HumanTorque}}
+\index{HumanTorque@{HumanTorque}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{HumanTorque()}{HumanTorque()}}
+{\footnotesize\ttfamily Human\+Torque\+::\+Human\+Torque (\begin{DoxyParamCaption}\item[{const double \&}]{dt }\end{DoxyParamCaption})}
+
+
+
+Construct a new Human Torque object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & interval of discretization \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHumanTorque_a561f78e1b6bfdfec22660372eaed4b6f}\label{classHumanTorque_a561f78e1b6bfdfec22660372eaed4b6f}} 
+\index{HumanTorque@{HumanTorque}!````~HumanTorque@{$\sim$HumanTorque}}
+\index{````~HumanTorque@{$\sim$HumanTorque}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{$\sim$HumanTorque()}{~HumanTorque()}}
+{\footnotesize\ttfamily Human\+Torque\+::$\sim$\+Human\+Torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHumanTorque_a8b3f388ab26413c1bb22dbcb3abfd46f}\label{classHumanTorque_a8b3f388ab26413c1bb22dbcb3abfd46f}} 
+\index{HumanTorque@{HumanTorque}!compute\_energy@{compute\_energy}}
+\index{compute\_energy@{compute\_energy}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_energy()}{compute\_energy()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize energy. 
+
+\mbox{\Hypertarget{classHumanTorque_a0511d151fb5276d6f96d1acd1748e485}\label{classHumanTorque_a0511d151fb5276d6f96d1acd1748e485}} 
+\index{HumanTorque@{HumanTorque}!compute\_geodesis@{compute\_geodesis}}
+\index{compute\_geodesis@{compute\_geodesis}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_geodesis()}{compute\_geodesis()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+geodesis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minize the geodesis distance. 
+
+\mbox{\Hypertarget{classHumanTorque_a488079dd90ab49face39e6802a55abea}\label{classHumanTorque_a488079dd90ab49face39e6802a55abea}} 
+\index{HumanTorque@{HumanTorque}!compute\_H\_g@{compute\_H\_g}}
+\index{compute\_H\_g@{compute\_H\_g}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_H\_g()}{compute\_H\_g()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+\+H\+\_\+g (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Xd \&}]{H,  }\item[{Eigen\+::\+Vector\+Xd \&}]{g,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanTorque_ad2fa67fd9878ff89fcc42e7ebb51b224}\label{classHumanTorque_ad2fa67fd9878ff89fcc42e7ebb51b224}} 
+\index{HumanTorque@{HumanTorque}!compute\_hand\_jerk@{compute\_hand\_jerk}}
+\index{compute\_hand\_jerk@{compute\_hand\_jerk}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_hand\_jerk()}{compute\_hand\_jerk()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+hand\+\_\+jerk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize hand jerk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em J} & (Jacobian) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHumanTorque_a09dd0763878fbfd62c4ff951a9d9d6a1}\label{classHumanTorque_a09dd0763878fbfd62c4ff951a9d9d6a1}} 
+\index{HumanTorque@{HumanTorque}!compute\_joint\_acceleration@{compute\_joint\_acceleration}}
+\index{compute\_joint\_acceleration@{compute\_joint\_acceleration}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_joint\_acceleration()}{compute\_joint\_acceleration()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+joint\+\_\+acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize joint acceleration if no parameters, means data stored in map is updated. 
+
+\mbox{\Hypertarget{classHumanTorque_a4acb08e04c6990eeda5dc004d1d71c88}\label{classHumanTorque_a4acb08e04c6990eeda5dc004d1d71c88}} 
+\index{HumanTorque@{HumanTorque}!compute\_joint\_jerk@{compute\_joint\_jerk}}
+\index{compute\_joint\_jerk@{compute\_joint\_jerk}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_joint\_jerk()}{compute\_joint\_jerk()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+joint\+\_\+jerk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize joint jerk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint} & acceleration precedent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHumanTorque_a63f29438a65b62da1974770c631c60fb}\label{classHumanTorque_a63f29438a65b62da1974770c631c60fb}} 
+\index{HumanTorque@{HumanTorque}!compute\_minimal\_torque@{compute\_minimal\_torque}}
+\index{compute\_minimal\_torque@{compute\_minimal\_torque}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_minimal\_torque()}{compute\_minimal\_torque()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+minimal\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize torque. 
+
+\mbox{\Hypertarget{classHumanTorque_a8d3e334c040cf5e4e3a905ddcb814c7f}\label{classHumanTorque_a8d3e334c040cf5e4e3a905ddcb814c7f}} 
+\index{HumanTorque@{HumanTorque}!compute\_torque\_change@{compute\_torque\_change}}
+\index{compute\_torque\_change@{compute\_torque\_change}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_torque\_change()}{compute\_torque\_change()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+torque\+\_\+change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Minimize the variation of the change of the torque. 
+
+\mbox{\Hypertarget{classHumanTorque_ab3bc5b483784b4edfd1f632a3702887d}\label{classHumanTorque_ab3bc5b483784b4edfd1f632a3702887d}} 
+\index{HumanTorque@{HumanTorque}!compute\_total\_objective@{compute\_total\_objective}}
+\index{compute\_total\_objective@{compute\_total\_objective}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{compute\_total\_objective()}{compute\_total\_objective()}}
+{\footnotesize\ttfamily void Human\+Torque\+::compute\+\_\+total\+\_\+objective (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanTorque_a2f57ea5020b90a69a6d88fe6ada7c7cc}\label{classHumanTorque_a2f57ea5020b90a69a6d88fe6ada7c7cc}} 
+\index{HumanTorque@{HumanTorque}!get\_update\_objective@{get\_update\_objective}}
+\index{get\_update\_objective@{get\_update\_objective}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{get\_update\_objective()}{get\_update\_objective()}}
+{\footnotesize\ttfamily void Human\+Torque\+::get\+\_\+update\+\_\+objective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h_ad40aa99ab0abca8a9ecabefc00bb7321}{optimal\+\_\+objective}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classHumanTorque_ad2d54ebcb5ce5bbc47bc932ecbcd0fff}\label{classHumanTorque_ad2d54ebcb5ce5bbc47bc932ecbcd0fff}} 
+\index{HumanTorque@{HumanTorque}!solve@{solve}}
+\index{solve@{solve}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily bool Human\+Torque\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanTorque_ae4b30c90e341d835c9683a41417ee849}\label{classHumanTorque_ae4b30c90e341d835c9683a41417ee849}} 
+\index{HumanTorque@{HumanTorque}!update\_dynamic\_parameters@{update\_dynamic\_parameters}}
+\index{update\_dynamic\_parameters@{update\_dynamic\_parameters}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{update\_dynamic\_parameters()}{update\_dynamic\_parameters()}}
+{\footnotesize\ttfamily void Human\+Torque\+::update\+\_\+dynamic\+\_\+parameters (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{J,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dd\+X\+\_\+prec,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddq\+\_\+prec,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{torque\+\_\+prec,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+\_\+prec,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dq\+\_\+prec,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{inertial\+\_\+matrix,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{coriolis,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{gravity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHumanTorque_a112f0e68e03fdc9974c60931a3a3ae9c}\label{classHumanTorque_a112f0e68e03fdc9974c60931a3a3ae9c}} 
+\index{HumanTorque@{HumanTorque}!update\_objective@{update\_objective}}
+\index{update\_objective@{update\_objective}!HumanTorque@{HumanTorque}}
+\doxysubsubsection{\texorpdfstring{update\_objective()}{update\_objective()}}
+{\footnotesize\ttfamily void Human\+Torque\+::update\+\_\+objective (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapperception/\mbox{\hyperlink{RosWrapHumanOptimalTorque_8h}{Ros\+Wrap\+Human\+Optimal\+Torque.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/src/\+Ros\+Wrapperception/\mbox{\hyperlink{RosWrapHumanOptimalTorque_8cpp}{Ros\+Wrap\+Human\+Optimal\+Torque.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+\label{index_md__home_zheng_robot_ws_zheng_src_ros_wrap_safe_motion_README}%
+\Hypertarget{index_md__home_zheng_robot_ws_zheng_src_ros_wrap_safe_motion_README}%
+ The package is self-\/containing but depending few open-\/source package such as \href{https://gitlab.com/libeigen/eigen.git}{\texttt{ {\bfseries{Eigen}}}}, \href{https://github.com/kuka-isir/qpOASES}{\texttt{ {\bfseries{qp\+O\+A\+S\+ES}}}}. \href{https://github.com/PickNikRobotics/rviz_visual_tools}{\texttt{ {\bfseries{rviz\+\_\+visual\+\_\+tools}}}}. And it simulates result of the paper \href{https://hal.archives-ouvertes.fr/hal-02496057/document}{\texttt{ {\bfseries{Online optimal motion generation with guaranteedsafety in shared workspace}}}}\hypertarget{index_autotoc_md1}{}\doxysection{config}\label{index_autotoc_md1}
+parameter as controller P\+ID gains, controller type and other information such as topic\textquotesingle{}s name etc\hypertarget{index_autotoc_md2}{}\doxysection{launch}\label{index_autotoc_md2}
+human\+\_\+work.\+launch will launch node as Gazebo, rviz, controller, robot\textquotesingle{}s urdf, M\+P\+Controller and separating plane node.\hypertarget{index_autotoc_md3}{}\doxysection{schema of control}\label{index_autotoc_md3}
+First we start robot motion with a disired task and robot\textquotesingle{}s intrinsec constraint such as position, velocity etc with node name {\bfseries{M\+P\+Controller}}, this node publish data such as robot\textquotesingle{}s vertices augmented via topic \char`\"{}\+M\+P\+Controller/\+Panda/robot\+Vertices\char`\"{}. This node also subcribe to topic \char`\"{}/plane\+\_\+data\char`\"{} to read separating plane data.
+
+Secondly, we run {\bfseries{separating Plane node}}, this node publisher data to \char`\"{}/plane\+\_\+data\char`\"{} and subcriber to robot\+Vertices and Obstacle verticee.
+
+The end, we use camera to detect obstacle\textquotesingle{}s position and send it to separating plane node. (Not implemented yet, using some simulate obstacle\textquotesingle{}s location) 

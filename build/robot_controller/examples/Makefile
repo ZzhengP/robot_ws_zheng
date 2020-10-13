@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src
+CMAKE_SOURCE_DIR = /home/zheng/robot_ws_zheng/src/robot_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build
+CMAKE_BINARY_DIR = /home/zheng/robot_ws_zheng/build/robot_controller
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,27 +80,6 @@ install/fast: preinstall/fast
 	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -111,28 +90,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/zheng/robot_ws_zheng/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/zheng/robot_ws_zheng/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-
-.PHONY : package_source/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -157,16 +114,37 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles /home/zheng/robot_ws_zheng/build/robot_controller/examples/CMakeFiles/progress.marks
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/CMakeFiles 0
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/robot_controller/CMakeFiles /home/zheng/robot_ws_zheng/build/robot_controller/examples/CMakeFiles/progress.marks
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zheng/robot_ws_zheng/build/robot_controller/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/clean
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,47 +154,47 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/preinstall
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/preinstall
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
-.PHONY : robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
+examples/CMakeFiles/gazebo_sim.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/gazebo_sim.dir/rule
+.PHONY : examples/CMakeFiles/gazebo_sim.dir/rule
 
 # Convenience name for target.
-gazebo_sim: robot_controller/examples/CMakeFiles/gazebo_sim.dir/rule
+gazebo_sim: examples/CMakeFiles/gazebo_sim.dir/rule
 
 .PHONY : gazebo_sim
 
 # fast build rule for target.
 gazebo_sim/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/build
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/gazebo_sim.dir/build.make examples/CMakeFiles/gazebo_sim.dir/build
 .PHONY : gazebo_sim/fast
 
 # Convenience name for target.
-robot_controller/examples/CMakeFiles/load_robot_0.dir/rule:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f CMakeFiles/Makefile2 robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
-.PHONY : robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
+examples/CMakeFiles/load_robot_0.dir/rule:
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/load_robot_0.dir/rule
+.PHONY : examples/CMakeFiles/load_robot_0.dir/rule
 
 # Convenience name for target.
-load_robot_0: robot_controller/examples/CMakeFiles/load_robot_0.dir/rule
+load_robot_0: examples/CMakeFiles/load_robot_0.dir/rule
 
 .PHONY : load_robot_0
 
 # fast build rule for target.
 load_robot_0/fast:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/load_robot_0.dir/build.make robot_controller/examples/CMakeFiles/load_robot_0.dir/build
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/load_robot_0.dir/build.make examples/CMakeFiles/load_robot_0.dir/build
 .PHONY : load_robot_0/fast
 
 gazebo_sim.o: gazebo_sim.cpp.o
@@ -225,7 +203,7 @@ gazebo_sim.o: gazebo_sim.cpp.o
 
 # target to build an object file
 gazebo_sim.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/gazebo_sim.dir/build.make examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.o
 .PHONY : gazebo_sim.cpp.o
 
 gazebo_sim.i: gazebo_sim.cpp.i
@@ -234,7 +212,7 @@ gazebo_sim.i: gazebo_sim.cpp.i
 
 # target to preprocess a source file
 gazebo_sim.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/gazebo_sim.dir/build.make examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.i
 .PHONY : gazebo_sim.cpp.i
 
 gazebo_sim.s: gazebo_sim.cpp.s
@@ -243,7 +221,7 @@ gazebo_sim.s: gazebo_sim.cpp.s
 
 # target to generate assembly for a file
 gazebo_sim.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/gazebo_sim.dir/build.make robot_controller/examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/gazebo_sim.dir/build.make examples/CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.s
 .PHONY : gazebo_sim.cpp.s
 
 load_robot.o: load_robot.cpp.o
@@ -252,7 +230,7 @@ load_robot.o: load_robot.cpp.o
 
 # target to build an object file
 load_robot.cpp.o:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/load_robot_0.dir/build.make robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/load_robot_0.dir/build.make examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.o
 .PHONY : load_robot.cpp.o
 
 load_robot.i: load_robot.cpp.i
@@ -261,7 +239,7 @@ load_robot.i: load_robot.cpp.i
 
 # target to preprocess a source file
 load_robot.cpp.i:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/load_robot_0.dir/build.make robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.i
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/load_robot_0.dir/build.make examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.i
 .PHONY : load_robot.cpp.i
 
 load_robot.s: load_robot.cpp.s
@@ -270,7 +248,7 @@ load_robot.s: load_robot.cpp.s
 
 # target to generate assembly for a file
 load_robot.cpp.s:
-	cd /home/zheng/robot_ws_zheng/build && $(MAKE) -f robot_controller/examples/CMakeFiles/load_robot_0.dir/build.make robot_controller/examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.s
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(MAKE) -f examples/CMakeFiles/load_robot_0.dir/build.make examples/CMakeFiles/load_robot_0.dir/load_robot.cpp.s
 .PHONY : load_robot.cpp.s
 
 # Help Target
@@ -281,15 +259,13 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... rebuild_cache"
 	@echo "... gazebo_sim"
-	@echo "... list_install_components"
-	@echo "... load_robot_0"
 	@echo "... edit_cache"
-	@echo "... package"
-	@echo "... package_source"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... load_robot_0"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
 	@echo "... gazebo_sim.o"
 	@echo "... gazebo_sim.i"
 	@echo "... gazebo_sim.s"
@@ -307,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zheng/robot_ws_zheng/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zheng/robot_ws_zheng/build/robot_controller && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

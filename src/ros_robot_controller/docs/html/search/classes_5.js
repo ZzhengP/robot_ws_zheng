@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['jntacccst_436',['jntAccCst',['../classjntAccCst.html',1,'']]],
-  ['jntposcst_437',['jntPosCst',['../classjntPosCst.html',1,'']]],
-  ['jntvelcst_438',['jntVelCst',['../classjntVelCst.html',1,'']]]
+  ['idyntreerobotacceleration_497',['iDynTreeRobotAcceleration',['../structrobot_1_1iDynTreeRobotAcceleration.html',1,'robot']]],
+  ['idyntreerobotstate_498',['iDynTreeRobotState',['../structrobot_1_1iDynTreeRobotState.html',1,'robot']]]
 ];

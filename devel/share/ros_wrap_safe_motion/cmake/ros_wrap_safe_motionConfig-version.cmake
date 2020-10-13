@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/ros_wrap_safe_motion/share/ros_wrap_safe_motion/cmake/ros_wrap_safe_motionConfig-version.cmake

@@ -1,0 +1,62 @@
+\hypertarget{classEigen_1_1EigenMultivariateNormal}{}\doxysection{Eigen\+::Eigen\+Multivariate\+Normal$<$ Scalar, Size $>$ Class Template Reference}
+\label{classEigen_1_1EigenMultivariateNormal}\index{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}}
+
+
+{\ttfamily \#include $<$eigenmultivariatenormal.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal_a5bd9c4310bd1d0b89def7cbc89716529}{Eigen\+Multivariate\+Normal}} (const Matrix$<$ Scalar, Size, 1 $>$ \&mean, const Matrix$<$ Scalar, Size, Size $>$ \&covar)
+\item 
+void \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal_ad7a60637e96c3849bcc1b5e7f6ccb5ba}{set\+Mean}} (const Matrix$<$ Scalar, Size, 1 $>$ \&mean)
+\item 
+void \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal_a527f262c8f7627c1feda0a1b1eb37964}{set\+Covar}} (const Matrix$<$ Scalar, Size, Size $>$ \&covar)
+\item 
+Matrix$<$ Scalar, Size,-\/1 $>$ \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal_ac37fba6f80e4cfedeafac5636ef8aeb3}{samples}} (int nn)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar, int Size$>$\newline
+class Eigen\+::\+Eigen\+Multivariate\+Normal$<$ Scalar, Size $>$}
+
+Find the eigen-\/decomposition of the covariance matrix and then store it for sampling from a multi-\/variate normal 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEigen_1_1EigenMultivariateNormal_a5bd9c4310bd1d0b89def7cbc89716529}\label{classEigen_1_1EigenMultivariateNormal_a5bd9c4310bd1d0b89def7cbc89716529}} 
+\index{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}!EigenMultivariateNormal@{EigenMultivariateNormal}}
+\index{EigenMultivariateNormal@{EigenMultivariateNormal}!Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}}
+\doxysubsubsection{\texorpdfstring{EigenMultivariateNormal()}{EigenMultivariateNormal()}}
+{\footnotesize\ttfamily template$<$typename Scalar , int Size$>$ \\
+\mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal}{Eigen\+::\+Eigen\+Multivariate\+Normal}}$<$ Scalar, Size $>$\+::\mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal}{Eigen\+Multivariate\+Normal}} (\begin{DoxyParamCaption}\item[{const Matrix$<$ Scalar, Size, 1 $>$ \&}]{mean,  }\item[{const Matrix$<$ Scalar, Size, Size $>$ \&}]{covar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEigen_1_1EigenMultivariateNormal_ac37fba6f80e4cfedeafac5636ef8aeb3}\label{classEigen_1_1EigenMultivariateNormal_ac37fba6f80e4cfedeafac5636ef8aeb3}} 
+\index{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}!samples@{samples}}
+\index{samples@{samples}!Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}}
+\doxysubsubsection{\texorpdfstring{samples()}{samples()}}
+{\footnotesize\ttfamily template$<$typename Scalar , int Size$>$ \\
+Matrix$<$Scalar,Size,-\/1$>$ \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal}{Eigen\+::\+Eigen\+Multivariate\+Normal}}$<$ Scalar, Size $>$\+::samples (\begin{DoxyParamCaption}\item[{int}]{nn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draw nn samples from the gaussian and return them as columns in a Size by nn matrix \mbox{\Hypertarget{classEigen_1_1EigenMultivariateNormal_a527f262c8f7627c1feda0a1b1eb37964}\label{classEigen_1_1EigenMultivariateNormal_a527f262c8f7627c1feda0a1b1eb37964}} 
+\index{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}!setCovar@{setCovar}}
+\index{setCovar@{setCovar}!Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}}
+\doxysubsubsection{\texorpdfstring{setCovar()}{setCovar()}}
+{\footnotesize\ttfamily template$<$typename Scalar , int Size$>$ \\
+void \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal}{Eigen\+::\+Eigen\+Multivariate\+Normal}}$<$ Scalar, Size $>$\+::set\+Covar (\begin{DoxyParamCaption}\item[{const Matrix$<$ Scalar, Size, Size $>$ \&}]{covar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEigen_1_1EigenMultivariateNormal_ad7a60637e96c3849bcc1b5e7f6ccb5ba}\label{classEigen_1_1EigenMultivariateNormal_ad7a60637e96c3849bcc1b5e7f6ccb5ba}} 
+\index{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}!setMean@{setMean}}
+\index{setMean@{setMean}!Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$@{Eigen::EigenMultivariateNormal$<$ Scalar, Size $>$}}
+\doxysubsubsection{\texorpdfstring{setMean()}{setMean()}}
+{\footnotesize\ttfamily template$<$typename Scalar , int Size$>$ \\
+void \mbox{\hyperlink{classEigen_1_1EigenMultivariateNormal}{Eigen\+::\+Eigen\+Multivariate\+Normal}}$<$ Scalar, Size $>$\+::set\+Mean (\begin{DoxyParamCaption}\item[{const Matrix$<$ Scalar, Size, 1 $>$ \&}]{mean }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+wrap\+\_\+safe\+\_\+motion/include/\+Ros\+Wrapperception/\mbox{\hyperlink{eigenmultivariatenormal_8h}{eigenmultivariatenormal.\+h}}\end{DoxyCompactItemize}

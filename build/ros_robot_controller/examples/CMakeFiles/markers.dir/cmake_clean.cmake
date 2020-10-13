@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/markers"
-  "/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/markers.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/ros_robot_controller/markers"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/ros_robot_controller/markers.pdb"
   "CMakeFiles/markers.dir/markers.cpp.o"
 )
 

@@ -1,0 +1,15 @@
+[  6%] Built target usb_reset
+[ 10%] Built target openni2_camera_gencfg
+[ 41%] Built target openni2_wrapper
+[ 48%] Built target test_wrapper
+[ 55%] Built target list_devices
+[ 55%] Built target _openni2_camera_generate_messages_check_deps_GetSerial
+[ 62%] Built target openni2_camera_generate_messages_py
+[ 65%] Built target openni2_camera_generate_messages_cpp
+[ 72%] Built target openni2_camera_generate_messages_eus
+[ 75%] Built target openni2_camera_generate_messages_nodejs
+[ 79%] Built target openni2_camera_generate_messages_lisp
+[ 86%] Built target openni2_driver_lib
+[ 86%] Built target openni2_camera_generate_messages
+[ 93%] Built target openni2_camera_node
+[100%] Built target openni2_camera_nodelet

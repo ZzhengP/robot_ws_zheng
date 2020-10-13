@@ -1,0 +1,5 @@
+Linked: (/home/zheng/robot_ws_zheng/devel/.private/openpose_ros/lib/pkgconfig/openpose_ros.pc, /home/zheng/robot_ws_zheng/devel/lib/pkgconfig/openpose_ros.pc)
+Linked: (/home/zheng/robot_ws_zheng/devel/.private/openpose_ros/lib/openpose_ros/openpose_ros_test, /home/zheng/robot_ws_zheng/devel/lib/openpose_ros/openpose_ros_test)
+Linked: (/home/zheng/robot_ws_zheng/devel/.private/openpose_ros/lib/openpose_ros/openpose_ros_node, /home/zheng/robot_ws_zheng/devel/lib/openpose_ros/openpose_ros_node)
+Linked: (/home/zheng/robot_ws_zheng/devel/.private/openpose_ros/share/openpose_ros/cmake/openpose_rosConfig-version.cmake, /home/zheng/robot_ws_zheng/devel/share/openpose_ros/cmake/openpose_rosConfig-version.cmake)
+Linked: (/home/zheng/robot_ws_zheng/devel/.private/openpose_ros/share/openpose_ros/cmake/openpose_rosConfig.cmake, /home/zheng/robot_ws_zheng/devel/share/openpose_ros/cmake/openpose_rosConfig.cmake)

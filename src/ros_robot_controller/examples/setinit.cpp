@@ -61,7 +61,14 @@ int main(int argc, char **argv)
 
     // initialize robot's joint position and velocity according to roslaunch initialization
 //    panda_q_init.data << 1.57, 0, 0, -1.8, 0, 1.57, 0;
-    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
+//    panda_q_init.data<<0.5, 0., 0., -1.8,0.,1.57 , 0. ;
+    panda_q_init.data << 1.11222,
+                         0.80472,
+                         -0.535436,
+                         -1.98801,
+                         0.764916,
+                         2.5814,
+                         0.0391129;
     panda_dotq_init.data << 0, 0, 0, 0, 0, 0, 0;
 
     // initialize robot's kinematic class

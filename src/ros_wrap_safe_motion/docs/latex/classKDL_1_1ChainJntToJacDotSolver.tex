@@ -1,0 +1,347 @@
+\hypertarget{classKDL_1_1ChainJntToJacDotSolver}{}\doxysection{K\+DL\+::Chain\+Jnt\+To\+Jac\+Dot\+Solver Class Reference}
+\label{classKDL_1_1ChainJntToJacDotSolver}\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+
+
+Computes the Jacobian time derivative (Jdot) by calculating the partial derivatives regarding to a joint angle, in the Hybrid, Body-\/fixed or Inertial representation.  
+
+
+
+
+{\ttfamily \#include $<$chainjnttojacdotsolver.\+h$>$}
+
+
+
+Inheritance diagram for K\+DL\+::Chain\+Jnt\+To\+Jac\+Dot\+Solver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classKDL_1_1ChainJntToJacDotSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for K\+DL\+::Chain\+Jnt\+To\+Jac\+Dot\+Solver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classKDL_1_1ChainJntToJacDotSolver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a6e8ea7ebcb030b3e0140659ae2094b4f}{Chain\+Jnt\+To\+Jac\+Dot\+Solver}} (const Chain \&chain)
+\item 
+virtual \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a9b33fa8fd0c7427630d0a55a6267584a}{$\sim$\+Chain\+Jnt\+To\+Jac\+Dot\+Solver}} ()
+\item 
+virtual int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot}} (const K\+D\+L\+::\+Jnt\+Array\+Vel \&q\+\_\+in, K\+D\+L\+::\+Twist \&jac\+\_\+dot\+\_\+q\+\_\+dot, int seg\+\_\+nr=-\/1)
+\begin{DoxyCompactList}\small\item\em Computes $ {}_{bs}\dot{J}^{ee}.\dot{q} $. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_abe57a83d3c1dd009b6f378f1181c6daf}{Jnt\+To\+Jac\+Dot}} (const K\+D\+L\+::\+Jnt\+Array\+Vel \&q\+\_\+in, K\+D\+L\+::\+Jacobian \&jdot, int seg\+\_\+nr=-\/1)
+\begin{DoxyCompactList}\small\item\em Computes $ {}_{bs}\dot{J}^{ee} $. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a9b9dcd50feaaa8e7d02247d1736a63a9}{set\+Locked\+Joints}} (const std\+::vector$<$ bool $>$ locked\+\_\+joints)
+\item 
+void \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4372a1110d73e8d06f8fc3b9af3d7a69}{set\+Hybrid\+Representation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Hybrid representation (ref Frame\+: base, ref Point\+: end-\/effector) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a9c8dca1d13a07c64e36f8e36469f6457}{set\+Body\+Fixed\+Representation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Body-\/fixed representation (ref Frame\+: end-\/effector, ref Point\+: end-\/effector) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a5a4a4caa62490ccac64d998d01d7cdb7}{set\+Internial\+Representation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Inertial representation (ref Frame\+: base, ref Point\+: base) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_ad7d9701ed8822d9c40ce514ff007eb75}{set\+Representation}} (const int \&representation)
+\begin{DoxyCompactList}\small\item\em Sets the internal variable for the representation (with a check on the value) \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a639902ebdacd0369dd3c16252cf27f2f}{str\+Error}} (const int error) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a8980dab80c64840a11d602e53707daa9}{E\+\_\+\+J\+A\+C\+\_\+\+D\+O\+T\+\_\+\+F\+A\+I\+L\+ED}} = -\/100
+\item 
+static const int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a7b5110209dd98908ca1ae355689204c6}{H\+Y\+B\+R\+ID}} = 0
+\item 
+static const int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_aba6343c8e3e3e70de9cdaa9184cddfd6}{B\+O\+D\+Y\+F\+I\+X\+ED}} = 1
+\item 
+static const int \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a1b54fa7673dfe987b5e6443f92fe0c2f}{I\+N\+T\+E\+R\+T\+I\+AL}} = 2
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const Twist \& \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a8d31da39b18d4bf3c9197534156c0c81}{get\+Partial\+Derivative\+Hybrid}} (const Jacobian \&bs\+\_\+\+J\+\_\+ee, const unsigned int \&joint\+\_\+idx, const unsigned int \&column\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Computes $ \frac{\partial {}_{bs}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. \end{DoxyCompactList}\item 
+const Twist \& \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a943afe70e6e32efaf9b00a3ba055321b}{get\+Partial\+Derivative\+Body\+Fixed}} (const Jacobian \&ee\+\_\+\+J\+\_\+ee, const unsigned int \&joint\+\_\+idx, const unsigned int \&column\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Computes $ \frac{\partial {}_{ee}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. \end{DoxyCompactList}\item 
+const Twist \& \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_adb260c52adf1352f5a68f83653dbc1a5}{get\+Partial\+Derivative\+Inertial}} (const Jacobian \&bs\+\_\+\+J\+\_\+bs, const unsigned int \&joint\+\_\+idx, const unsigned int \&column\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Computes $ \frac{\partial {}_{bs}J^{i,bs}}{\partial q^{j}}.\dot{q}^{j} $. \end{DoxyCompactList}\item 
+const Twist \& \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a3ca412ce22cc43d0c29074ea3d6dead3}{get\+Partial\+Derivative}} (const Jacobian \&J, const unsigned int \&joint\+\_\+idx, const unsigned int \&column\+\_\+idx, const int \&representation)
+\begin{DoxyCompactList}\small\item\em Computes $ \frac{\partial J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_abf33f1cf45e7c3f97bb12f7f2a370c4a}{update\+Internal\+Data\+Structures}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the Jacobian time derivative (Jdot) by calculating the partial derivatives regarding to a joint angle, in the Hybrid, Body-\/fixed or Inertial representation. 
+
+This work is based on \+: Symbolic differentiation of the velocity mapping for a serial kinematic chain H. Bruyninckx, J. De Schutter doi\+:10.\+1016/0094-\/114X(95)00069-\/B
+
+url \+: \href{http://www.sciencedirect.com/science/article/pii/0094114X9500069B}{\texttt{ http\+://www.\+sciencedirect.\+com/science/article/pii/0094114\+X9500069B}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a6e8ea7ebcb030b3e0140659ae2094b4f}\label{classKDL_1_1ChainJntToJacDotSolver_a6e8ea7ebcb030b3e0140659ae2094b4f}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!ChainJntToJacDotSolver@{ChainJntToJacDotSolver}}
+\index{ChainJntToJacDotSolver@{ChainJntToJacDotSolver}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{ChainJntToJacDotSolver()}{ChainJntToJacDotSolver()}}
+{\footnotesize\ttfamily K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver (\begin{DoxyParamCaption}\item[{const Chain \&}]{chain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a9b33fa8fd0c7427630d0a55a6267584a}\label{classKDL_1_1ChainJntToJacDotSolver_a9b33fa8fd0c7427630d0a55a6267584a}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!````~ChainJntToJacDotSolver@{$\sim$ChainJntToJacDotSolver}}
+\index{````~ChainJntToJacDotSolver@{$\sim$ChainJntToJacDotSolver}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$ChainJntToJacDotSolver()}{~ChainJntToJacDotSolver()}}
+{\footnotesize\ttfamily K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::$\sim$\+Chain\+Jnt\+To\+Jac\+Dot\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a3ca412ce22cc43d0c29074ea3d6dead3}\label{classKDL_1_1ChainJntToJacDotSolver_a3ca412ce22cc43d0c29074ea3d6dead3}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!getPartialDerivative@{getPartialDerivative}}
+\index{getPartialDerivative@{getPartialDerivative}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{getPartialDerivative()}{getPartialDerivative()}}
+{\footnotesize\ttfamily const Twist \& K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::get\+Partial\+Derivative (\begin{DoxyParamCaption}\item[{const Jacobian \&}]{J,  }\item[{const unsigned int \&}]{joint\+\_\+idx,  }\item[{const unsigned int \&}]{column\+\_\+idx,  }\item[{const int \&}]{representation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes $ \frac{\partial J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bs\+\_\+\+J\+\_\+bs} & The Jacobian expressed in the base frame with the end effector as the reference point \\
+\hline
+{\em joint\+\_\+idx} & The indice of the current joint (j in the formula) \\
+\hline
+{\em column\+\_\+idx} & The indice of the current column (i in the formula) \\
+\hline
+{\em representation} & The representation (Hybrid,Body-\/fixed,Inertial) in which you want to get d\+J/dqj .qdotj \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Twist The twist representing d\+Ji/dqj .qdotj 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a943afe70e6e32efaf9b00a3ba055321b}\label{classKDL_1_1ChainJntToJacDotSolver_a943afe70e6e32efaf9b00a3ba055321b}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!getPartialDerivativeBodyFixed@{getPartialDerivativeBodyFixed}}
+\index{getPartialDerivativeBodyFixed@{getPartialDerivativeBodyFixed}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{getPartialDerivativeBodyFixed()}{getPartialDerivativeBodyFixed()}}
+{\footnotesize\ttfamily const Twist \& K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::get\+Partial\+Derivative\+Body\+Fixed (\begin{DoxyParamCaption}\item[{const Jacobian \&}]{ee\+\_\+\+J\+\_\+ee,  }\item[{const unsigned int \&}]{joint\+\_\+idx,  }\item[{const unsigned int \&}]{column\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes $ \frac{\partial {}_{ee}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bs\+\_\+\+J\+\_\+ee} & The Jacobian expressed in the end effector frame with the end effector as the reference point \\
+\hline
+{\em joint\+\_\+idx} & The indice of the current joint (j in the formula) \\
+\hline
+{\em column\+\_\+idx} & The indice of the current column (i in the formula) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Twist The twist representing d\+Ji/dqj .qdotj 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a8d31da39b18d4bf3c9197534156c0c81}\label{classKDL_1_1ChainJntToJacDotSolver_a8d31da39b18d4bf3c9197534156c0c81}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!getPartialDerivativeHybrid@{getPartialDerivativeHybrid}}
+\index{getPartialDerivativeHybrid@{getPartialDerivativeHybrid}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{getPartialDerivativeHybrid()}{getPartialDerivativeHybrid()}}
+{\footnotesize\ttfamily const Twist \& K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::get\+Partial\+Derivative\+Hybrid (\begin{DoxyParamCaption}\item[{const Jacobian \&}]{bs\+\_\+\+J\+\_\+ee,  }\item[{const unsigned int \&}]{joint\+\_\+idx,  }\item[{const unsigned int \&}]{column\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes $ \frac{\partial {}_{bs}J^{i,ee}}{\partial q^{j}}.\dot{q}^{j} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bs\+\_\+\+J\+\_\+ee} & The Jacobian expressed in the base frame with the end effector as the reference point (default in \mbox{\hyperlink{namespaceKDL}{K\+DL}} Jacobian Solver) \\
+\hline
+{\em joint\+\_\+idx} & The index of the current joint (j in the formula) \\
+\hline
+{\em column\+\_\+idx} & The index of the current column (i in the formula) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Twist The twist representing d\+Ji/dqj .qdotj 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_adb260c52adf1352f5a68f83653dbc1a5}\label{classKDL_1_1ChainJntToJacDotSolver_adb260c52adf1352f5a68f83653dbc1a5}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!getPartialDerivativeInertial@{getPartialDerivativeInertial}}
+\index{getPartialDerivativeInertial@{getPartialDerivativeInertial}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{getPartialDerivativeInertial()}{getPartialDerivativeInertial()}}
+{\footnotesize\ttfamily const Twist \& K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::get\+Partial\+Derivative\+Inertial (\begin{DoxyParamCaption}\item[{const Jacobian \&}]{bs\+\_\+\+J\+\_\+bs,  }\item[{const unsigned int \&}]{joint\+\_\+idx,  }\item[{const unsigned int \&}]{column\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Computes $ \frac{\partial {}_{bs}J^{i,bs}}{\partial q^{j}}.\dot{q}^{j} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ee\+\_\+\+J\+\_\+ee} & The Jacobian expressed in the base frame with the base as the reference point \\
+\hline
+{\em joint\+\_\+idx} & The indice of the current joint (j in the formula) \\
+\hline
+{\em column\+\_\+idx} & The indice of the current column (i in the formula) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Twist The twist representing d\+Ji/dqj .qdotj 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_abe57a83d3c1dd009b6f378f1181c6daf}\label{classKDL_1_1ChainJntToJacDotSolver_abe57a83d3c1dd009b6f378f1181c6daf}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!JntToJacDot@{JntToJacDot}}
+\index{JntToJacDot@{JntToJacDot}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{JntToJacDot()}{JntToJacDot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+Jnt\+To\+Jac\+Dot (\begin{DoxyParamCaption}\item[{const K\+D\+L\+::\+Jnt\+Array\+Vel \&}]{q\+\_\+in,  }\item[{K\+D\+L\+::\+Jacobian \&}]{jdot,  }\item[{int}]{seg\+\_\+nr = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes $ {}_{bs}\dot{J}^{ee} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q\+\_\+in} & Current joint positions and velocities \\
+\hline
+{\em jdot} & The jacobian time derivative in the configured representation (H\+Y\+B\+R\+ID, B\+O\+D\+Y\+F\+I\+X\+ED or I\+N\+E\+R\+T\+I\+AL) \\
+\hline
+{\em seg\+\_\+nr} & The final segment to compute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if no errors happened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}\label{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!JntToJacDot@{JntToJacDot}}
+\index{JntToJacDot@{JntToJacDot}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{JntToJacDot()}{JntToJacDot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+Jnt\+To\+Jac\+Dot (\begin{DoxyParamCaption}\item[{const K\+D\+L\+::\+Jnt\+Array\+Vel \&}]{q\+\_\+in,  }\item[{K\+D\+L\+::\+Twist \&}]{jac\+\_\+dot\+\_\+q\+\_\+dot,  }\item[{int}]{seg\+\_\+nr = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes $ {}_{bs}\dot{J}^{ee}.\dot{q} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q\+\_\+in} & Current joint positions and velocities \\
+\hline
+{\em jac\+\_\+dot\+\_\+q\+\_\+dot} & The twist representing Jdot$\ast$qdot \\
+\hline
+{\em seg\+\_\+nr} & The final segment to compute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 if no errors happened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a9c8dca1d13a07c64e36f8e36469f6457}\label{classKDL_1_1ChainJntToJacDotSolver_a9c8dca1d13a07c64e36f8e36469f6457}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!setBodyFixedRepresentation@{setBodyFixedRepresentation}}
+\index{setBodyFixedRepresentation@{setBodyFixedRepresentation}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{setBodyFixedRepresentation()}{setBodyFixedRepresentation()}}
+{\footnotesize\ttfamily void K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::set\+Body\+Fixed\+Representation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Body-\/fixed representation (ref Frame\+: end-\/effector, ref Point\+: end-\/effector) 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a4372a1110d73e8d06f8fc3b9af3d7a69}\label{classKDL_1_1ChainJntToJacDotSolver_a4372a1110d73e8d06f8fc3b9af3d7a69}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!setHybridRepresentation@{setHybridRepresentation}}
+\index{setHybridRepresentation@{setHybridRepresentation}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{setHybridRepresentation()}{setHybridRepresentation()}}
+{\footnotesize\ttfamily void K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::set\+Hybrid\+Representation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Hybrid representation (ref Frame\+: base, ref Point\+: end-\/effector) 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a5a4a4caa62490ccac64d998d01d7cdb7}\label{classKDL_1_1ChainJntToJacDotSolver_a5a4a4caa62490ccac64d998d01d7cdb7}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!setInternialRepresentation@{setInternialRepresentation}}
+\index{setInternialRepresentation@{setInternialRepresentation}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{setInternialRepresentation()}{setInternialRepresentation()}}
+{\footnotesize\ttfamily void K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::set\+Internial\+Representation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classKDL_1_1ChainJntToJacDotSolver_a4d79e8dba399eead7aea1a539d74ceaa}{Jnt\+To\+Jac\+Dot()}} will compute in the Inertial representation (ref Frame\+: base, ref Point\+: base) 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a9b9dcd50feaaa8e7d02247d1736a63a9}\label{classKDL_1_1ChainJntToJacDotSolver_a9b9dcd50feaaa8e7d02247d1736a63a9}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!setLockedJoints@{setLockedJoints}}
+\index{setLockedJoints@{setLockedJoints}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{setLockedJoints()}{setLockedJoints()}}
+{\footnotesize\ttfamily int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::set\+Locked\+Joints (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$}]{locked\+\_\+joints }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_ad7d9701ed8822d9c40ce514ff007eb75}\label{classKDL_1_1ChainJntToJacDotSolver_ad7d9701ed8822d9c40ce514ff007eb75}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!setRepresentation@{setRepresentation}}
+\index{setRepresentation@{setRepresentation}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{setRepresentation()}{setRepresentation()}}
+{\footnotesize\ttfamily void K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::set\+Representation (\begin{DoxyParamCaption}\item[{const int \&}]{representation }\end{DoxyParamCaption})}
+
+
+
+Sets the internal variable for the representation (with a check on the value) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em representation} & The representation for Jdot \+: H\+Y\+B\+R\+ID,B\+O\+D\+Y\+F\+I\+X\+ED or I\+N\+T\+E\+R\+T\+I\+AL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a639902ebdacd0369dd3c16252cf27f2f}\label{classKDL_1_1ChainJntToJacDotSolver_a639902ebdacd0369dd3c16252cf27f2f}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!strError@{strError}}
+\index{strError@{strError}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{strError()}{strError()}}
+{\footnotesize\ttfamily const char $\ast$ K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::str\+Error (\begin{DoxyParamCaption}\item[{const int}]{error }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_abf33f1cf45e7c3f97bb12f7f2a370c4a}\label{classKDL_1_1ChainJntToJacDotSolver_abf33f1cf45e7c3f97bb12f7f2a370c4a}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!updateInternalDataStructures@{updateInternalDataStructures}}
+\index{updateInternalDataStructures@{updateInternalDataStructures}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{updateInternalDataStructures()}{updateInternalDataStructures()}}
+{\footnotesize\ttfamily void K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::update\+Internal\+Data\+Structures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_aba6343c8e3e3e70de9cdaa9184cddfd6}\label{classKDL_1_1ChainJntToJacDotSolver_aba6343c8e3e3e70de9cdaa9184cddfd6}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!BODYFIXED@{BODYFIXED}}
+\index{BODYFIXED@{BODYFIXED}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{BODYFIXED}{BODYFIXED}}
+{\footnotesize\ttfamily const int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+B\+O\+D\+Y\+F\+I\+X\+ED = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a8980dab80c64840a11d602e53707daa9}\label{classKDL_1_1ChainJntToJacDotSolver_a8980dab80c64840a11d602e53707daa9}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!E\_JAC\_DOT\_FAILED@{E\_JAC\_DOT\_FAILED}}
+\index{E\_JAC\_DOT\_FAILED@{E\_JAC\_DOT\_FAILED}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{E\_JAC\_DOT\_FAILED}{E\_JAC\_DOT\_FAILED}}
+{\footnotesize\ttfamily const int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+E\+\_\+\+J\+A\+C\+\_\+\+D\+O\+T\+\_\+\+F\+A\+I\+L\+ED = -\/100\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a7b5110209dd98908ca1ae355689204c6}\label{classKDL_1_1ChainJntToJacDotSolver_a7b5110209dd98908ca1ae355689204c6}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!HYBRID@{HYBRID}}
+\index{HYBRID@{HYBRID}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{HYBRID}{HYBRID}}
+{\footnotesize\ttfamily const int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+H\+Y\+B\+R\+ID = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classKDL_1_1ChainJntToJacDotSolver_a1b54fa7673dfe987b5e6443f92fe0c2f}\label{classKDL_1_1ChainJntToJacDotSolver_a1b54fa7673dfe987b5e6443f92fe0c2f}} 
+\index{KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}!INTERTIAL@{INTERTIAL}}
+\index{INTERTIAL@{INTERTIAL}!KDL::ChainJntToJacDotSolver@{KDL::ChainJntToJacDotSolver}}
+\doxysubsubsection{\texorpdfstring{INTERTIAL}{INTERTIAL}}
+{\footnotesize\ttfamily const int K\+D\+L\+::\+Chain\+Jnt\+To\+Jac\+Dot\+Solver\+::\+I\+N\+T\+E\+R\+T\+I\+AL = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/robotmodel/\mbox{\hyperlink{chainjnttojacdotsolver_8h}{chainjnttojacdotsolver.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/robotmodel/\mbox{\hyperlink{chainjnttojacdotsolver_8cpp}{chainjnttojacdotsolver.\+cpp}}\end{DoxyCompactItemize}

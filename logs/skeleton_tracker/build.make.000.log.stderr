@@ -1,0 +1,132 @@
+CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make:195: avertissement : surchargement de la recette pour la cible « /home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/_package.lisp »
+CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make:127: avertissement : ancienne recette ignorée pour la cible « /home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/_package.lisp »
+CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make:195: avertissement : surchargement de la recette pour la cible « /home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/_package.lisp »
+CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make:127: avertissement : ancienne recette ignorée pour la cible « /home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/_package.lisp »
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/roslisp/rosbuild/scripts/genmsg_lisp.py", line 871, in <module>
+    generate_msg(sys.argv[1])
+  File "/opt/ros/melodic/share/roslisp/rosbuild/scripts/genmsg_lisp.py", line 725, in generate_msg
+    (_, spec) = roslib.msgs.load_from_file(msg_path, package)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/msgs.py", line 661, in load_from_file
+    raise MsgSpecException("%s: [%s] is not a legal type name"%(file_path, type_))
+roslib.msgs.MsgSpecException: /home/zheng/robot_ws_zheng/src/openni2-tracker/msg/TrackerUser.msg: [openni2-tracker/TrackerUser] is not a legal type name
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/genmsg_cpp.py", line 44, in <module>
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/genmsg_cpp.py", line 44, in <module>
+    msg_gen.generate_messages(sys.argv)
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/msg_gen.py", line 739, in generate_messages
+        generate(arg)
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/msg_gen.py", line 693, in generate
+msg_gen.generate_messages(sys.argv)
+    (_, spec) = roslib.msgs.load_from_file(msg_path, package)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/msgs.py", line 661, in load_from_file
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/msg_gen.py", line 739, in generate_messages
+    raise MsgSpecException("%s: [%s] is not a legal type name"%(file_path, type_))
+roslib.msgs.MsgSpecException: /home/zheng/robot_ws_zheng/src/openni2-tracker/msg/TrackerUser.msg: [openni2-tracker/TrackerUser] is not a legal type name
+    generate(arg)
+  File "/opt/ros/melodic/share/roscpp/rosbuild/scripts/msg_gen.py", line 693, in generate
+    (_, spec) = roslib.msgs.load_from_file(msg_path, package)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/msgs.py", line 661, in load_from_file
+    raise MsgSpecException("%s: [%s] is not a legal type name"%(file_path, type_))
+roslib.msgs.make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/TrackerUser.lisp] Error 1
+MsgSpecException: /home/zheng/robot_ws_zheng/src/openni2-tracker/msg/TrackerUserArray.msg: [openni2-tracker/TrackerUserArray] is not a legal type name
+make[2]: *** Attente des tâches non terminées....
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/roslisp/rosbuild/scripts/genmsg_lisp.py", line 871, in <module>
+    generate_msg(sys.argv[1])
+  File "/opt/ros/melodic/share/roslisp/rosbuild/scripts/genmsg_lisp.py", line 725, in generate_msg
+    (_, spec) = roslib.msgs.load_from_file(msg_path, package)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/msgs.py", line 661, in load_from_file
+    raise MsgSpecException("%s: [%s] is not a legal type name"%(file_path, type_))
+roslib.msgs.MsgSpecException: /home/zheng/robot_ws_zheng/src/openni2-tracker/msg/TrackerUserArray.msg: [openni2-tracker/TrackerUserArray] is not a legal type name
+make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/cpp/include/openni2-tracker/TrackerUser.h] Error 1
+make[2]: *** Attente des tâches non terminées....
+make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/cpp/include/openni2-tracker/TrackerUserArray.h] Error 1
+make[1]: *** [CMakeFiles/ROSBUILD_genmsg_cpp.dir/all] Error 2
+make[1]: *** Attente des tâches non terminées....
+make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/msg_gen/lisp/TrackerUserArray.lisp] Error 1
+make[1]: *** [CMakeFiles/ROSBUILD_genmsg_lisp.dir/all] Error 2
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/rospy/rosbuild/scripts/genutil.py", line 131, in genmain
+    retcode = generate_messages(rospack, package, msg_file, subdir)
+  File "/opt/ros/melodic/share/rospy/rosbuild/scripts/genutil.py", line 84, in generate_messages
+    path = rospack.get_path(package)
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 203, in get_path
+    raise ResourceNotFound(name, ros_paths=self._ros_paths)
+ResourceNotFound: openni2-tracker
+ROS path [0]=/opt/ros/melodic/share/ros
+ROS path [1]=/home/zheng/robot_ws_zheng/src/catkin_simple
+ROS path [2]=/home/zheng/robot_ws_zheng/src/franka_description
+ROS path [3]=/home/zheng/robot_ws_zheng/src/lpsolve_catkin
+ROS path [4]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera
+ROS path [5]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch
+ROS path [6]=/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1
+ROS path [7]=/home/zheng/robot_ws_zheng/src/robot_controller
+ROS path [8]=/home/zheng/robot_ws_zheng/src/ros_robot_controller
+ROS path [9]=/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion
+ROS path [10]=/home/zheng/robot_ws_zheng/src/rviz_visual_tools
+ROS path [11]=/home/zheng/robot_ws_zheng/src/openni2-tracker
+ROS path [12]=/home/zheng/robot_ws_zheng/src/ur_description
+ROS path [13]=/home/zheng/catkin_ws/src
+ROS path [14]=/opt/ros/melodic/share
+ERROR: openni2-tracker
+ROS path [0]=/opt/ros/melodic/share/ros
+ROS path [1]=/home/zheng/robot_ws_zheng/src/catkin_simple
+ROS path [2]=/home/zheng/robot_ws_zheng/src/franka_description
+ROS path [3]=/home/zheng/robot_ws_zheng/src/lpsolve_catkin
+ROS path [4]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera
+ROS path [5]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch
+ROS path [6]=/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1
+ROS path [7]=/home/zheng/robot_ws_zheng/src/robot_controller
+ROS path [8]=/home/zheng/robot_ws_zheng/src/ros_robot_controller
+ROS path [9]=/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion
+ROS path [10]=/home/zheng/robot_ws_zheng/src/rviz_visual_tools
+ROS path [11]=/home/zheng/robot_ws_zheng/src/openni2-tracker
+ROS path [12]=/home/zheng/robot_ws_zheng/src/ur_description
+ROS path [13]=/home/zheng/catkin_ws/src
+ROS path [14]=/opt/ros/melodic/share
+make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/src/openni2-tracker/msg/_TrackerUser.py] Error 3
+make[2]: *** Attente des tâches non terminées....
+Traceback (most recent call last):
+  File "/opt/ros/melodic/share/rospy/rosbuild/scripts/genutil.py", line 131, in genmain
+    retcode = generate_messages(rospack, package, msg_file, subdir)
+  File "/opt/ros/melodic/share/rospy/rosbuild/scripts/genutil.py", line 84, in generate_messages
+    path = rospack.get_path(package)
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 203, in get_path
+    raise ResourceNotFound(name, ros_paths=self._ros_paths)
+ResourceNotFound: openni2-tracker
+ROS path [0]=/opt/ros/melodic/share/ros
+ROS path [1]=/home/zheng/robot_ws_zheng/src/catkin_simple
+ROS path [2]=/home/zheng/robot_ws_zheng/src/franka_description
+ROS path [3]=/home/zheng/robot_ws_zheng/src/lpsolve_catkin
+ROS path [4]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera
+ROS path [5]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch
+ROS path [6]=/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1
+ROS path [7]=/home/zheng/robot_ws_zheng/src/robot_controller
+ROS path [8]=/home/zheng/robot_ws_zheng/src/ros_robot_controller
+ROS path [9]=/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion
+ROS path [10]=/home/zheng/robot_ws_zheng/src/rviz_visual_tools
+ROS path [11]=/home/zheng/robot_ws_zheng/src/openni2-tracker
+ROS path [12]=/home/zheng/robot_ws_zheng/src/ur_description
+ROS path [13]=/home/zheng/catkin_ws/src
+ROS path [14]=/opt/ros/melodic/share
+ERROR: openni2-tracker
+ROS path [0]=/opt/ros/melodic/share/ros
+ROS path [1]=/home/zheng/robot_ws_zheng/src/catkin_simple
+ROS path [2]=/home/zheng/robot_ws_zheng/src/franka_description
+ROS path [3]=/home/zheng/robot_ws_zheng/src/lpsolve_catkin
+ROS path [4]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_camera
+ROS path [5]=/home/zheng/robot_ws_zheng/src/openni2_camera/openni2_launch
+ROS path [6]=/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1
+ROS path [7]=/home/zheng/robot_ws_zheng/src/robot_controller
+ROS path [8]=/home/zheng/robot_ws_zheng/src/ros_robot_controller
+ROS path [9]=/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion
+ROS path [10]=/home/zheng/robot_ws_zheng/src/rviz_visual_tools
+ROS path [11]=/home/zheng/robot_ws_zheng/src/openni2-tracker
+ROS path [12]=/home/zheng/robot_ws_zheng/src/ur_description
+ROS path [13]=/home/zheng/catkin_ws/src
+ROS path [14]=/opt/ros/melodic/share
+make[2]: *** [/home/zheng/robot_ws_zheng/src/openni2-tracker/src/openni2-tracker/msg/_TrackerUserArray.py] Error 3
+make[1]: *** [CMakeFiles/ROSBUILD_genmsg_py.dir/all] Error 2
+make: *** [all] Error 2

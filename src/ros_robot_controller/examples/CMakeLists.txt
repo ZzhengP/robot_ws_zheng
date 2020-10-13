@@ -2,6 +2,8 @@
 add_executable(ros_gazebo_sim ros_gazebo_sim.cpp)
 target_link_libraries(ros_gazebo_sim PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} ros_robot_controller_library)
 
+add_executable(2Dexample 2Dexample.cpp)
+target_link_libraries(2Dexample PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
 
 
 add_executable(franka_example franka_example.cpp)
@@ -17,8 +19,8 @@ target_link_libraries(obsavoidancedemo PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBR
 add_executable(setinit setinit.cpp)
 target_link_libraries(setinit PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES} glpk ros_robot_controller_library)
 
-add_executable(lpsolvetest lpsolve_test.cpp)
-target_link_libraries(lpsolvetest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${iDynTree_LIBRARIES} ${qpOASES_LIBRARIES} ${lpsolve_LIBRAIRIES} glpk ros_robot_controller_library)
+#add_executable(lpsolvetest lpsolve_test.cpp)
+#target_link_libraries(lpsolvetest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${iDynTree_LIBRARIES} ${qpOASES_LIBRARIES} ${lpsolve_LIBRAIRIES} glpk ros_robot_controller_library)
 
 
 
@@ -28,6 +30,16 @@ target_link_libraries(iDynTreeTest PRIVATE ${catkin_LIBRARIES} ${iDynTree_LIBRAR
 
 add_executable(qpplaneformulation qpplaneformulation.cpp)
 target_link_libraries(qpplaneformulation PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
+
+add_executable(multiobstacle multiobstacle.cpp)
+target_link_libraries(multiobstacle PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
+add_executable(movingobstacleavoidance movingobstacleavoidance.cpp)
+target_link_libraries(movingobstacleavoidance PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
+
+add_executable(nonlinearsolve nonlinearsolve.cpp)
+target_link_libraries(nonlinearsolve PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)
 
 add_executable(qptest qptest.cpp)
 target_link_libraries(qptest PRIVATE ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${qpOASES_LIBRARIES}  glpk ros_robot_controller_library)

@@ -40,7 +40,6 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
      nbrRobotPart_ = RobotVertices.size();
     // 2*2 because 2 vertices and 2 instants
     lbA_.resize(2*PlaneData.nbrPlane*(N_ - 1));
-    std::cout <<" low bounds size :\n" << lbA_.size() <<'\n';
     lbA_.setConstant(-100000);
     ubA_.resize(2*PlaneData.nbrPlane*(N_ - 1));
     ubA_.setZero();
@@ -57,13 +56,17 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
     JacobianEnlarge.setZero();
     MatrixZeros.resize(3,7);
     MatrixZeros.setZero();
+    Eigen::MatrixXd PxPBP, PuPBP;
+    Eigen::VectorXd VerticesPrecedent, qLargePrecedent;
+
+    for (int nbrOfPlane(0); nbrOfPlane < PlaneData.nbrPlane ; nbrOfPlane ++ ){
     for (int k(0); k < N_ -1 ; k ++  ){
-        bLarge.segment(2*k,2) << PlaneData.planeLocation[0](3,k)- dsafe_, PlaneData.planeLocation[0](3,k) - dsafe_;
+        bLarge.segment(2*k,2) << PlaneData.planeLocation[nbrOfPlane](3,k)- dsafe_, PlaneData.planeLocation[nbrOfPlane](3,k) - dsafe_;
     }
 
     for (int k(0); k< N_-1 ; k++){
-        nLarge.block(2*k,6*k,2,6) << PlaneData.planeLocation[0].block(0,k,3,1).transpose(), 0,0,0,
-                                     0,0,0,PlaneData.planeLocation[0].block(0,k,3,1).transpose();
+        nLarge.block(2*k,6*k,2,6) << PlaneData.planeLocation[nbrOfPlane].block(0,k,3,1).transpose(), 0,0,0,
+                                     0,0,0,PlaneData.planeLocation[nbrOfPlane].block(0,k,3,1).transpose();
     }
 
     for (int k(0); k<N_-1; k++){
@@ -71,7 +74,6 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
                                                  MatrixZeros,JacobianHorizon.block(6*k,7*k,3,7);
     }
 
-    Eigen::MatrixXd PxPBP, PuPBP;
     PxPBP.resize(14*(N_-1), 14);
     PuPBP.resize(14*(N_-1),7*N_);
 
@@ -80,7 +82,6 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
         PuPBP.block(14*k,0,14,7*N_) = Pu_.block(7*k,0,14,7*N_);
     }
 
-    Eigen::VectorXd VerticesPrecedent, qLargePrecedent;
     VerticesPrecedent.resize(3*2*(N_-1));
     qLargePrecedent.resize(14*(N_-1));
 
@@ -88,10 +89,11 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
         VerticesPrecedent.segment(6*k,6) << RobotVertices[0].block(0,2*k,3,1), RobotVertices[0].block(0,2*(k+1),3,1);
         qLargePrecedent.segment(14*k,14) << qHorizonPrecedent.segment(7*k,7) , qHorizonPrecedent.segment(7*(k+1),7) ;
     }
-    A_ = nLarge*JacobianEnlarge*PuPBP;
+    A_.block(2*(N_-1)*nbrOfPlane,0,2*(N_-1),7*N_) = nLarge*JacobianEnlarge*PuPBP;
 
 //    ubA_ = bLarge - nLarge*(VerticesPrecedent + JacobianEnlarge*(PxPBP*robotState - qHorizonPrecedent));
-    ubA_ = bLarge- nLarge*(VerticesPrecedent + JacobianEnlarge*(PxPBP*robotState - qLargePrecedent));
+    ubA_.segment(2*(N_-1)*nbrOfPlane,2*(N_-1)) = bLarge- nLarge*(VerticesPrecedent + JacobianEnlarge*(PxPBP*robotState - qLargePrecedent));
+    }
     std::ofstream myfile_;
 
     myfile_.open ("/home/zheng/Bureau/obsAvoidance.txt");
@@ -113,7 +115,10 @@ void ObsAvoidanceCSt::setUpperBoundAndConstraint(const std::vector<Eigen::Matrix
     myfile_ << "nLarge*(JacobianEnlarge*(- qLargePrecedent) ) \n" <<nLarge*(JacobianEnlarge*(- qLargePrecedent) ) <<'\n';
 //    std::cout <<"ubA_ constraint avoidance :\n" << bLarge- nLarge*VerticesPrecedent - nLarge*JacobianEnlarge*PxPBP*robotState + nLarge*JacobianEnlarge*qLargePrecedent <<  "\n" ;
     myfile_.close();
+
+//    std::cout <<cst_name_ << " ubA :\n " << ubA_.size() << '\n' ;
     cstData_.upBound_.resize(ubA_.size());
+
     cstData_.upBound_.setZero(1000);
     cstData_.lowBound_.resize(lbA_.size());
     cstData_.cstMatrix_.resize(2*PlaneData.nbrPlane*(N_ - 1),7*N_);

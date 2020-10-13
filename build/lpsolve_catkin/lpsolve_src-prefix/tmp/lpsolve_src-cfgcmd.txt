@@ -1,1 +1,1 @@
-cmd='cd;../lpsolve_src;&&;pwd;&&;cp;/home/zheng/robot_ws_zheng/src/lpsolve_catkin/CMakeLists_lpsolve.txt;../lpsolve_src/CMakeLists.txt;&&;cmake;-DCMAKE_INSTALL_PREFIX=/home/zheng/robot_ws_zheng/devel;.'
+cmd='cd;../lpsolve_src;&&;pwd;&&;cp;/home/zheng/robot_ws_zheng/src/lpsolve_catkin/CMakeLists_lpsolve.txt;../lpsolve_src/CMakeLists.txt;&&;cmake;-DCMAKE_INSTALL_PREFIX=/home/zheng/robot_ws_zheng/devel/.private/lpsolve_catkin;.'

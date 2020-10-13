@@ -1,6 +1,11 @@
 <launch>
-  <!-- start world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
-  <arg name="world_name" value = "/home/zheng/robot_ws_zheng/src/humanModels/Luca/model.sdf"/>
+  <arg name="model" />
+  <param name="human_description2" command="$(find xacro)/xacro.py '$(find human_model_gazebo)/urdf/humanPu.urdf'" />
+  <node name="urdf_spawner_human2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model human2 -param human_description2 -x 2 -y 2 -z 0.3 -R 0 -P 0 -Y -3.05"/>
+  <param name="use_gui" value="true"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 </launch>

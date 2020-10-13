@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/zheng/robot_ws_zheng/build/rviz_visual_tools/rviz_visual_tools_autogen/mocs_compilation.cpp
-
 /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/deprecation.h
 
 /home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/rviz_visual_tools/remote_control.h

@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/00-load_robot_model.dir/00-load_robot_model.cc.o  -o /home/zheng/robot_ws_zheng/devel/lib/orca/00-load_robot_model  -Wl,-rpath,/home/zheng/robot_ws_zheng/devel/lib: /home/zheng/robot_ws_zheng/devel/lib/liborca.so /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.5.2 

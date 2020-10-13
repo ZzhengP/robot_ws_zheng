@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zheng/robot_ws_zheng/devel/lib/robot_controller/gazebo_sim"
-  "/home/zheng/robot_ws_zheng/devel/lib/robot_controller/gazebo_sim.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim"
+  "/home/zheng/robot_ws_zheng/devel/.private/robot_controller/lib/robot_controller/gazebo_sim.pdb"
   "CMakeFiles/gazebo_sim.dir/gazebo_sim.cpp.o"
 )
 

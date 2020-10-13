@@ -1,0 +1,6 @@
+devel_space: /home/zheng/robot_ws_zheng/devel
+install: false
+install_space: /home/zheng/robot_ws_zheng/install
+profile: default
+source_space: /home/zheng/robot_ws_zheng/src
+workspace: /home/zheng/robot_ws_zheng

@@ -4,5 +4,5 @@ Name: catkin_simple
 Description: Description of catkin_simple
 Version: 0.1.1
 Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/install/lib 
+Libs: -L${prefix}/lib 
 Requires: catkin

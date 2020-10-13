@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.2, 2020-02-22T14:33:01. -->
+<!-- Written by QtCreator 4.9.2, 2020-03-19T12:27:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -105,22 +105,22 @@
     <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges">
-     <value type="QString">CMAKE_PREFIX_PATH=/home/zheng/robot_ws_zheng/devel:/home/zheng/catkin_ws/devel:/opt/ros/melodic</value>
-     <value type="QString">LD_LIBRARY_PATH=/home/zheng/robot_ws_zheng/devel/lib:/home/zheng/catkin_ws/devel/lib:/opt/ros/melodic/lib</value>
-     <value type="QString">PATH=/home/zheng/catkin_ws/devel/bin:/opt/ros/melodic/bin:/home/zheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</value>
-     <value type="QString">PKG_CONFIG_PATH=/home/zheng/robot_ws_zheng/devel/lib/pkgconfig:/home/zheng/catkin_ws/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig</value>
+     <value type="QString">CMAKE_PREFIX_PATH=/home/zheng/robot_ws_zheng/devel_isolated/ur_description:/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools:/home/zheng/robot_ws_zheng/devel_isolated/ros_robot_controller:/home/zheng/robot_ws_zheng/devel_isolated/robot_controller:/home/zheng/robot_ws_zheng/devel_isolated/qpOASES:/home/zheng/robot_ws_zheng/devel_isolated/lpsolve_catkin:/home/zheng/robot_ws_zheng/devel_isolated/franka_description:/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple:/home/zheng/robert_ws/devel:/home/zheng/robot_ws_zheng/devel:/opt/ros/melodic</value>
+     <value type="QString">LD_LIBRARY_PATH=/home/zheng/robot_ws_zheng/devel_isolated/ur_description/lib:/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib:/home/zheng/robot_ws_zheng/devel_isolated/ros_robot_controller/lib:/home/zheng/robot_ws_zheng/devel_isolated/robot_controller/lib:/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib:/home/zheng/robot_ws_zheng/devel_isolated/lpsolve_catkin/lib:/home/zheng/robot_ws_zheng/devel_isolated/franka_description/lib:/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple/lib:/home/zheng/robert_ws/devel/lib:/home/zheng/robot_ws_zheng/devel/lib:/opt/ros/melodic/lib</value>
+     <value type="QString">PATH=/opt/ros/melodic/bin:/home/zheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</value>
+     <value type="QString">PKG_CONFIG_PATH=/home/zheng/robot_ws_zheng/devel_isolated/ur_description/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/ros_robot_controller/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/robot_controller/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/lpsolve_catkin/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/franka_description/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple/lib/pkgconfig:/home/zheng/robert_ws/devel/lib/pkgconfig:/home/zheng/robot_ws_zheng/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig</value>
      <value type="QString">PWD=/home/zheng/robot_ws_zheng</value>
-     <value type="QString">PYTHONPATH=/home/zheng/robot_ws_zheng/devel/lib/python2.7/dist-packages:/home/zheng/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages</value>
+     <value type="QString">PYTHONPATH=/opt/ros/melodic/lib/python2.7/dist-packages</value>
      <value type="QString">QTDIR</value>
-     <value type="QString">ROSLISP_PACKAGE_DIRECTORIES=/home/zheng/robot_ws_zheng/devel/share/common-lisp:/home/zheng/catkin_ws/devel/share/common-lisp</value>
+     <value type="QString">ROSLISP_PACKAGE_DIRECTORIES=/home/zheng/robot_ws_zheng/devel_isolated/ur_description/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/rviz_visual_tools/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/ros_robot_controller/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/robot_controller/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/qpOASES/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/lpsolve_catkin/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/franka_description/share/common-lisp:/home/zheng/robot_ws_zheng/devel_isolated/catkin_simple/share/common-lisp:/home/zheng/robert_ws/devel/share/common-lisp:/home/zheng/robot_ws_zheng/devel/share/common-lisp</value>
      <value type="QString">ROS_DISTRO=melodic</value>
      <value type="QString">ROS_ETC_DIR=/opt/ros/melodic/etc/ros</value>
      <value type="QString">ROS_MASTER_URI=http://localhost:11311</value>
-     <value type="QString">ROS_PACKAGE_PATH=/home/zheng/robot_ws_zheng/src:/home/zheng/catkin_ws/src:/opt/ros/melodic/share</value>
+     <value type="QString">ROS_PACKAGE_PATH=/home/zheng/robot_ws_zheng/src/ur_description:/home/zheng/robot_ws_zheng/src/rviz_visual_tools:/home/zheng/robot_ws_zheng/src/ros_robot_controller:/home/zheng/robot_ws_zheng/src/robot_controller:/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1:/home/zheng/robot_ws_zheng/src/lpsolve_catkin:/home/zheng/robot_ws_zheng/src/franka_description:/home/zheng/robot_ws_zheng/src/catkin_simple:/home/zheng/robert_ws/src/follow_me_complete:/home/zheng/robert_ws/src/husky_highlevel_controller:/home/zheng/robot_ws_zheng/src/catkin_simple:/home/zheng/robot_ws_zheng/src/franka_description:/home/zheng/robot_ws_zheng/src/lpsolve_catkin:/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1:/home/zheng/robot_ws_zheng/src/robot_controller:/home/zheng/robot_ws_zheng/src/ros_robot_controller:/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion:/home/zheng/robot_ws_zheng/src/rviz_visual_tools:/home/zheng/robot_ws_zheng/src/ur_description:/opt/ros/melodic/share</value>
      <value type="QString">ROS_PYTHON_VERSION=2</value>
      <value type="QString">ROS_ROOT=/opt/ros/melodic/share/ros</value>
      <value type="QString">ROS_VERSION=1</value>
-     <value type="QString">SHLVL=123</value>
+     <value type="QString">SHLVL=956</value>
      <value type="QString">TERM=xterm</value>
      <value type="QString">_=/usr/bin/env</value>
     </valuelist>

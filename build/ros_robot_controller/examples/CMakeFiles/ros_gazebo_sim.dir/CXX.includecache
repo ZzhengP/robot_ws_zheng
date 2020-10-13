@@ -32,7 +32,7 @@ memory
 boost/date_time.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES.hpp
 MessageHandling.cpp
 -
 Utils.cpp
@@ -82,51 +82,51 @@ qpOASES/extras/OQPinterface.hpp
 qpOASES/extras/SolutionAnalysis.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.hpp
 qpOASES/SubjectTo.hpp
 -
 qpOASES/Bounds.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Bounds.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Bounds.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Constants.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Constants.hpp
 qpOASES/Types.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/ConstraintProduct.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/ConstraintProduct.hpp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Constraints.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Constraints.hpp
 qpOASES/SubjectTo.hpp
 -
 qpOASES/Constraints.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Constraints.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Constraints.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Flipper.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Flipper.hpp
 qpOASES/Bounds.hpp
 -
 qpOASES/Constraints.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Indexlist.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Indexlist.hpp
 qpOASES/Utils.hpp
 -
 qpOASES/Indexlist.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Indexlist.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Indexlist.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/LapackBlasReplacement.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/LapackBlasReplacement.hpp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Matrices.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Matrices.hpp
 qpOASES/Utils.hpp
 -
 qpOASES/Indexlist.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/MessageHandling.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/MessageHandling.hpp
 stdio.h
 -
 string.h
@@ -138,13 +138,13 @@ qpOASES/Constants.hpp
 qpOASES/MessageHandling.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/MessageHandling.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/MessageHandling.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Options.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Options.hpp
 qpOASES/Utils.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/QProblem.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/QProblem.hpp
 qpOASES/QProblemB.hpp
 -
 qpOASES/Constraints.hpp
@@ -156,9 +156,9 @@ qpOASES/Matrices.hpp
 qpOASES/QProblem.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/QProblem.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/QProblem.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/QProblemB.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/QProblemB.hpp
 qpOASES/Flipper.hpp
 -
 qpOASES/Options.hpp
@@ -168,17 +168,17 @@ qpOASES/Matrices.hpp
 qpOASES/QProblemB.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/QProblemB.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/QProblemB.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SQProblem.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SQProblem.hpp
 qpOASES/QProblem.hpp
 -
 qpOASES/SQProblem.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SQProblem.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SQProblem.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SQProblemSchur.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SQProblemSchur.hpp
 qpOASES/SQProblem.hpp
 -
 qpOASES/SparseSolver.hpp
@@ -188,37 +188,37 @@ qpOASES/LapackBlasReplacement.hpp
 qpOASES/SQProblemSchur.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SQProblemSchur.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SQProblemSchur.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SparseSolver.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SparseSolver.hpp
 qpOASES/Utils.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SubjectTo.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SubjectTo.hpp
 qpOASES/Indexlist.hpp
 -
 qpOASES/SubjectTo.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/SubjectTo.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/SubjectTo.ipp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Types.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Types.hpp
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Utils.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Utils.hpp
 qpOASES/MessageHandling.hpp
 -
 qpOASES/Utils.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/Utils.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/Utils.ipp
 math.h
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/OQPinterface.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/extras/OQPinterface.hpp
 qpOASES/Options.hpp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.hpp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.hpp
 qpOASES/SQProblem.hpp
 -
 qpOASES/SQProblemSchur.hpp
@@ -226,7 +226,7 @@ qpOASES/SQProblemSchur.hpp
 qpOASES/extras/SolutionAnalysis.ipp
 -
 
-/home/zheng/catkin_ws/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
+/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/qpOASES/extras/SolutionAnalysis.ipp
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/examples/ros_gazebo_sim.cpp
 robotmodel/RosRobotModel.h
@@ -333,6 +333,8 @@ kdl/chainfksolverpos_recursive.hpp
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainfksolverpos_recursive.hpp
 kdl/chainjnttojacsolver.hpp
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacsolver.hpp
+kdl/chainjnttojacdotsolver.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacdotsolver.hpp
 boost/timer.hpp
 -
 kdl/chainiksolverpos_lma.hpp
@@ -359,6 +361,26 @@ sensor_msgs/JointState.h
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/sensor_msgs/JointState.h
 trac_ik/trac_ik.hpp
 -
+chainjnttojacdotsolver.h
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
+
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/chainjnttojacdotsolver.h
+kdl/solveri.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/solveri.hpp
+kdl/frames.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/frames.hpp
+kdl/jntarrayvel.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/jntarrayvel.hpp
+kdl/jacobian.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/jacobian.hpp
+kdl/chain.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chain.hpp
+kdl/framevel.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/framevel.hpp
+kdl/chainjnttojacsolver.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainjnttojacsolver.hpp
+kdl/chainfksolverpos_recursive.hpp
+/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/robotmodel/kdl/chainfksolverpos_recursive.hpp
 
 /home/zheng/robot_ws_zheng/src/ros_robot_controller/include/solver/RosMpcSolver.h
 qpOASES.hpp
@@ -701,6 +723,24 @@ chainjnttojacsolver.hpp
 /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 utilities/svd_HH.hpp
 /opt/ros/melodic/include/kdl/utilities/svd_HH.hpp
+
+/opt/ros/melodic/include/kdl/chainjnttojacdotsolver.hpp
+solveri.hpp
+/opt/ros/melodic/include/kdl/solveri.hpp
+frames.hpp
+/opt/ros/melodic/include/kdl/frames.hpp
+jntarrayvel.hpp
+/opt/ros/melodic/include/kdl/jntarrayvel.hpp
+jacobian.hpp
+/opt/ros/melodic/include/kdl/jacobian.hpp
+chain.hpp
+/opt/ros/melodic/include/kdl/chain.hpp
+framevel.hpp
+/opt/ros/melodic/include/kdl/framevel.hpp
+chainjnttojacsolver.hpp
+/opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
+chainfksolverpos_recursive.hpp
+/opt/ros/melodic/include/kdl/chainfksolverpos_recursive.hpp
 
 /opt/ros/melodic/include/kdl/chainjnttojacsolver.hpp
 solveri.hpp

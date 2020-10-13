@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo"
-  "/home/zheng/robot_ws_zheng/devel/lib/ros_robot_controller/obsavoidancedemo.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/ros_robot_controller/obsavoidancedemo"
+  "/home/zheng/robot_ws_zheng/devel/.private/ros_robot_controller/lib/ros_robot_controller/obsavoidancedemo.pdb"
   "CMakeFiles/obsavoidancedemo.dir/obsavoidancedemo.cpp.o"
 )
 

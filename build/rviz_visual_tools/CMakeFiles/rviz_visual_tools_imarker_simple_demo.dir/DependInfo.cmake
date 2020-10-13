@@ -19,9 +19,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "rviz_visual_tools"
+  "."
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools"
-  "rviz_visual_tools/rviz_visual_tools_imarker_simple_demo_autogen/include"
+  "rviz_visual_tools_imarker_simple_demo_autogen/include"
   "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"

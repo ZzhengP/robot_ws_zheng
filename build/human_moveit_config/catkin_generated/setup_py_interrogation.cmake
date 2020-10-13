@@ -1,6 +1,0 @@
-set(human_moveit_config_SETUP_PY_VERSION "0.2.0")
-set(human_moveit_config_SETUP_PY_SCRIPTS "")
-set(human_moveit_config_SETUP_PY_PACKAGES "human_moveit_config;sensor_link;tools;trajectories")
-set(human_moveit_config_SETUP_PY_PACKAGE_DIRS "src/human_moveit_config;src/sensor_link;src/tools;src/trajectories")
-set(human_moveit_config_SETUP_PY_MODULES "")
-set(human_moveit_config_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,5 @@
+Symlinking /home/zheng/robot_ws_zheng/devel/lib/pkgconfig/skeleton_extract_3d.pc
+Symlinking /home/zheng/robot_ws_zheng/devel/lib/skeleton_extract_3d/skeleton_extract_3d_node
+Symlinking /home/zheng/robot_ws_zheng/devel/lib/skeleton_extract_3d/skeleton_extract_3d_visualization_node
+Symlinking /home/zheng/robot_ws_zheng/devel/share/skeleton_extract_3d/cmake/skeleton_extract_3dConfig.cmake
+Symlinking /home/zheng/robot_ws_zheng/devel/share/skeleton_extract_3d/cmake/skeleton_extract_3dConfig-version.cmake

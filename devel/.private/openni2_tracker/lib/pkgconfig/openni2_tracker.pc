@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker
+
+Name: openni2_tracker
+Description: Description of openni2_tracker
+Version: 0.1.0
+Cflags: -I/home/zheng/robot_ws_zheng/devel/.private/openni2_tracker/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs geometry_msgs message_runtime

@@ -1,0 +1,6 @@
+[31m[1mCMake Error[0m at /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/CMakeLists.txt:7:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "CMAKE_CXX_FLAGS:STRING=-std=c++14".
+
+
+make: *** [cmake_check_build_system] Error 1

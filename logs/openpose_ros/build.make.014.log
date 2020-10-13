@@ -1,0 +1,39 @@
+[  0%] Built target openpose_ros_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target openpose_ros_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target openpose_ros_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target openpose_ros_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target openpose_ros_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[ 14%] [32mBuilding CXX object CMakeFiles/openpose_ros_test.dir/src/openpose_test.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/openpose_ros_node.dir/src/openpose_flags.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/openpose_ros_node.dir/src/openpose.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/openpose_ros_node.dir/src/openpose_ros_node.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/openpose_ros_node.dir/src/openpose_ros_io.cpp.o[0m
+[ 85%] [32m[1mLinking CXX executable /home/zheng/robot_ws_zheng/devel/.private/openpose_ros/lib/openpose_ros/openpose_ros_test[0m
+[ 85%] Built target openpose_ros_test
+[100%] [32m[1mLinking CXX executable /home/zheng/robot_ws_zheng/devel/.private/openpose_ros/lib/openpose_ros/openpose_ros_node[0m
+[100%] Built target openpose_ros_node

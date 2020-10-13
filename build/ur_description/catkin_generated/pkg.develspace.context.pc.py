@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "ur_description"
-PROJECT_SPACE_DIR = "/home/zheng/robot_ws_zheng/devel"
+PROJECT_SPACE_DIR = "/home/zheng/robot_ws_zheng/devel/.private/ur_description"
 PROJECT_VERSION = "1.2.1"

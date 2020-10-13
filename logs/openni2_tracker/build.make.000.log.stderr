@@ -1,0 +1,7 @@
+[01m[K/home/zheng/robot_ws_zheng/src/openni2_tracker/src/openni2_tracker.cpp:34:21:[m[K [01;31m[Kfatal error: [m[Kros/ros.h: Aucun fichier ou dossier de ce type
+ #include <ros/ros.h>
+[01;32m[K                     ^[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/openni2_tracker.dir/src/openni2_tracker.cpp.o] Error 1
+make[1]: *** [CMakeFiles/openni2_tracker.dir/all] Error 2
+make: *** [all] Error 2

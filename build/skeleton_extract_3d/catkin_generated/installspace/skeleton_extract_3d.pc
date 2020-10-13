@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/install
+
+Name: skeleton_extract_3d
+Description: Description of skeleton_extract_3d
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

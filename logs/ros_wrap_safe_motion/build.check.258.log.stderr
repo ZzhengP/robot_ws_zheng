@@ -1,0 +1,24 @@
+[33m[1mCMake Warning[0m at /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/CMakeLists.txt:51 (find_package):
+  By not providing "Findglog.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "glog", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "glog" with any of
+  the following names:
+
+    glogConfig.cmake
+    glog-config.cmake
+
+  Add the installation prefix of "glog" to CMAKE_PREFIX_PATH or set
+  "glog_DIR" to a directory containing one of the above files.  If "glog"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+[31m[1mCMake Error[0m at /home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/examples/CMakeLists.txt:35 (target_link_libraries):
+  Cannot specify link libraries for target
+  "torch;torch_library;/home/zheng/libtorch/lib/libc10.so;/usr/lib/x86_64-linux-gnu/libcuda.so;/usr/local/cuda-9.0/lib64/libnvrtc.so;/usr/local/cuda-9.0/lib64/libnvToolsExt.so;/usr/local/cuda-9.0/lib64/libcudart.so;/home/zheng/libtorch/lib/libc10_cuda.so"
+  which is not built by this project.
+
+
+make: *** [cmake_check_build_system] Error 1

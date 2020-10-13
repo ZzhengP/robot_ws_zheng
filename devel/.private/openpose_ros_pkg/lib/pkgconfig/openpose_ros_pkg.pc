@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel/.private/openpose_ros_pkg
+
+Name: openpose_ros_pkg
+Description: Description of openpose_ros_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: std_msgs roscpp cv_bridge openpose_ros_msgs roslib image_transport

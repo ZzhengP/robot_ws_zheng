@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/openni2_launch/lib/pkgconfig/openni2_launch.pc

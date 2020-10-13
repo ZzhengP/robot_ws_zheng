@@ -2,7 +2,7 @@
 DEVELSPACE = 'FALSE' == 'TRUE'
 INSTALLSPACE = 'TRUE' == 'TRUE'
 
-CATKIN_DEVEL_PREFIX = '/home/zheng/robot_ws_zheng/devel'
+CATKIN_DEVEL_PREFIX = '/home/zheng/robot_ws_zheng/devel/.private/catkin_simple'
 
 CATKIN_GLOBAL_BIN_DESTINATION = 'bin'
 CATKIN_GLOBAL_ETC_DESTINATION = 'etc'
@@ -20,11 +20,11 @@ CATKIN_PACKAGE_LIBEXEC_DESTINATION = ''
 CATKIN_PACKAGE_PYTHON_DESTINATION = 'lib/python2.7/dist-packages/catkin_simple'
 CATKIN_PACKAGE_SHARE_DESTINATION = 'share/catkin_simple'
 
-CMAKE_BINARY_DIR = '/home/zheng/robot_ws_zheng/build'
+CMAKE_BINARY_DIR = '/home/zheng/robot_ws_zheng/build/catkin_simple'
 CMAKE_CURRENT_BINARY_DIR = '/home/zheng/robot_ws_zheng/build/catkin_simple'
 CMAKE_CURRENT_SOURCE_DIR = '/home/zheng/robot_ws_zheng/src/catkin_simple'
 CMAKE_INSTALL_PREFIX = '/home/zheng/robot_ws_zheng/install'
-CMAKE_SOURCE_DIR = '/home/zheng/robot_ws_zheng/src'
+CMAKE_SOURCE_DIR = '/home/zheng/robot_ws_zheng/src/catkin_simple'
 
 PKG_CMAKE_DIR = '${catkin_simple_DIR}'
 

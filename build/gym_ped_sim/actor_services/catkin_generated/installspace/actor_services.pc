@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/install
-
-Name: actor_services
-Description: Description of actor_services
-Version: 0.0.0
-Cflags: -I/home/zheng/robot_ws_zheng/install/include
-Libs: -L/home/zheng/robot_ws_zheng/install/lib 
-Requires: 

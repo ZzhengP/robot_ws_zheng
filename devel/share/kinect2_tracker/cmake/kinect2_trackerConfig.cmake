@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/kinect2_tracker/share/kinect2_tracker/cmake/kinect2_trackerConfig.cmake

@@ -1,0 +1,8 @@
+prefix=/home/zheng/robot_ws_zheng/devel/.private/rail_pose_estimation_msgs
+
+Name: rail_pose_estimation_msgs
+Description: Description of rail_pose_estimation_msgs
+Version: 1.0.1
+Cflags: -I/home/zheng/robot_ws_zheng/devel/.private/rail_pose_estimation_msgs/include
+Libs: -L${prefix}/lib 
+Requires: sensor_msgs std_msgs

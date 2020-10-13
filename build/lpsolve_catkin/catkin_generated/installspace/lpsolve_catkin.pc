@@ -3,6 +3,6 @@ prefix=/home/zheng/robot_ws_zheng/install
 Name: lpsolve_catkin
 Description: Description of lpsolve_catkin
 Version: 5.5.2
-Cflags: -I/home/zheng/robot_ws_zheng/install/include
-Libs: -L/home/zheng/robot_ws_zheng/install/lib -llpsolve
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -llpsolve
 Requires: 

@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/skeleton_extract_3d/lib/pkgconfig/skeleton_extract_3d.pc

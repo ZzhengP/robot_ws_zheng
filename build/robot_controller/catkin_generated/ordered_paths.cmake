@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/home/zheng/catkin_ws/devel/lib;/opt/ros/melodic/lib")
+set(ORDERED_PATHS "/home/zheng/robot_ws_zheng/devel/.private/qpOASES/lib;/opt/ros/melodic/lib")

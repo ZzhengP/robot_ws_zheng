@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/zheng/robot_ws_zheng/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/zheng/robot_ws_zheng/src/qpOASES-3.2.1/include/**",
+                "/home/zheng/robot_ws_zheng/src/robot_controller/include/**",
+                "/home/zheng/robot_ws_zheng/src/ros_robot_controller/include/**",
+                "/home/zheng/robot_ws_zheng/src/ros_wrap_safe_motion/include/**",
+                "/home/zheng/robot_ws_zheng/src/rviz_visual_tools/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "configurationProvider": "b2.catkin_tools"
+        }
+    ],
+    "version": 4
+}

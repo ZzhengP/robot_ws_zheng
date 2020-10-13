@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../../../lib/libidyntree-regressors.a  CMakeFiles/idyntree-regressors.dir/src/DynamicsRegressorParameters.cpp.o CMakeFiles/idyntree-regressors.dir/src/dummy/DummyDynamicsRegressorGenerator.cpp.o
-/usr/bin/ranlib ../../../../../lib/libidyntree-regressors.a

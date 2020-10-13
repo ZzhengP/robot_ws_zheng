@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../../../lib/libidyntree-visualization.a  CMakeFiles/idyntree-visualization.dir/src/Visualizer.cpp.o
-/usr/bin/ranlib ../../../../../lib/libidyntree-visualization.a

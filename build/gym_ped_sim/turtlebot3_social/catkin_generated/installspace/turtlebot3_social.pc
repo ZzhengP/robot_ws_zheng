@@ -1,8 +1,0 @@
-prefix=/home/zheng/robot_ws_zheng/install
-
-Name: turtlebot3_social
-Description: Description of turtlebot3_social
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/zheng/robot_ws_zheng/install/lib 
-Requires: 

@@ -10,6 +10,7 @@
 #include "kdl/jntarray.hpp"
 #include "kdl/chainfksolverpos_recursive.hpp"
 #include "kdl/chainjnttojacsolver.hpp"
+#include "kdl/chainjnttojacdotsolver.hpp"
 #include <boost/timer.hpp>
 #include "kdl/chainiksolverpos_lma.hpp"
 #include "kdl/frames_io.hpp"
@@ -23,7 +24,7 @@
 #include "std_msgs/Float64.h"
 #include "sensor_msgs/JointState.h"
 #include <trac_ik/trac_ik.hpp>
-
+#include "chainjnttojacdotsolver.h"
 
 class SegmentIndice
 {
@@ -160,6 +161,9 @@ public:
         return dotq_horizon_;
     }
 
+    Eigen::VectorXd getqqdEnlarged(){
+        return qqd_horizon_;
+    }
     /**
      * @brief getJacobianHorz
      * @return jacobian matrix predicted
@@ -167,6 +171,10 @@ public:
     Eigen::MatrixXd getJacobianHorz()
     {
         return jacobian_horizon_;
+    }
+
+    Eigen::MatrixXd getJacobianDotHorz(){
+        return jacobian_dot_horizon_;
     }
     /**
      * @brief get robot state, current joint position and joint velocity
@@ -279,10 +287,19 @@ public:
      */
     void setJointHorizon(const Eigen::VectorXd &qHorizon){
         q_horizon_ = qHorizon;
+
     }
+
 
     void setJointVelHorizon(const Eigen::VectorXd &dqHorizon){
         dotq_horizon_ = dqHorizon ;
+    }
+
+    void setqqdhorizon(const Eigen::VectorXd &qHorizon,const Eigen::VectorXd &dqHorizon){
+        for (int k(0) ; k < N_Prediction_ ; k++){
+            qqd_horizon_.segment(2*NrOfDeg_*k, NrOfDeg_) = qHorizon.segment(NrOfDeg_*k,NrOfDeg_);
+            qqd_horizon_.segment(2*NrOfDeg_*k+NrOfDeg_,NrOfDeg_) = dqHorizon.segment(NrOfDeg_*k,NrOfDeg_);
+        }
     }
     /**
      * @brief compute inverse kinematic
@@ -300,10 +317,18 @@ public:
      */
     void computeJacobian()
     {
-        chainjacsolver_->JntToJac(q_, jacobian_,7);
+//        chainjacsolver_->JntToJac(q_, jacobian_,7);
+        chainjacsolver_->JntToJac(q_, jacobian_,8);
     }
 
+    /**
+      * @brief compute jacobian dot
+      */
 
+    void computeJacobianDot(){
+//        chainjacdotsolver_ ->JntToJacDot(qqd_,jacobianDot_,7);
+        chainjacdotsolver_ ->JntToJacDot(qqd_,jacobianDot_,8);
+    }
     /**
      * @brief getJacobian
      * @return jacobian
@@ -312,17 +337,28 @@ public:
     {
         return jacobian_;
     }
+
+    KDL::Jacobian getJacobianDot(){
+        return jacobianDot_;
+    }
     /**
      * @brief computeJacobian
      * @param q_in
      * @param jacobian_out
      */
     void computeJacobian(const KDL::JntArray& q_in, KDL::Jacobian& jacobian_out){
-        chainjacsolver_->JntToJac(q_in,jacobian_out,7);
+//        chainjacsolver_->JntToJac(q_in,jacobian_out,7);
+        chainjacsolver_->JntToJac(q_in,jacobian_out,8);
+
     }
 
 
+    void computeJacobianDot(const KDL::JntArrayVel & qqd_in, KDL::Jacobian& jacobianDot_out ){
 
+//        chainjacdotsolver_ -> JntToJacDot(qqd_in, jacobianDot_out,7);
+        chainjacdotsolver_ -> JntToJacDot(qqd_in, jacobianDot_out,8);
+
+    }
 
     /**
      * @brief ComputeJacobian matrix during predicted horizon
@@ -330,6 +366,7 @@ public:
      */
     void computeJacobianHorz(const Eigen::VectorXd &q_horizon);
 
+    void computeJacobianDotHorz(const Eigen::VectorXd &qqd_horizon);
     /**
      * @brief Compute end-effector' position during predicted horizon
      * @param q_horizon
@@ -360,7 +397,7 @@ protected:
      * @brief NrOfDeg_ : dof of robot
      * @brief N_prediction : Prediction step
      */
-    unsigned int NrOfDeg_, N_Prediciton_ ;
+    unsigned int NrOfDeg_, N_Prediction_ ;
 
     /**
      * @brief The chain structure of the robot
@@ -382,13 +419,14 @@ protected:
 
     KDL::JntArray q_, dotq_;
     Eigen::VectorXd robot_state_;
-    KDL::Jacobian jacobian_;
+    KDL::Jacobian jacobian_, jacobianDot_;
     Eigen::Vector3d RPY_angle_ ;
     /**
      * @brief Enlarge data to formulate MPC problem (q, dq, ee, Jacobian)
      */
-    Eigen::VectorXd q_horizon_, dotq_horizon_, ee_pos_horion_;
+    Eigen::VectorXd q_horizon_, dotq_horizon_,qqd_horizon_, ee_pos_horion_;
     Eigen::MatrixXd jacobian_horizon_;
+    Eigen::MatrixXd jacobian_dot_horizon_;
     /**
      * @brief joints_name_
      */
@@ -407,8 +445,7 @@ protected:
     * @brief The jacobian solver.
     */
     boost::scoped_ptr<KDL::ChainJntToJacSolver> chainjacsolver_;
-
-    /**
+    boost::scoped_ptr<KDL::ChainJntToJacDotSolver> chainjacdotsolver_;    /**
        * @brief The gravity induced joint torque
        * for the current joint position.
        */

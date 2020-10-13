@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/rviz_visual_tools_imarker_simple_autogen.dir/ParseCache.txt"
   "rviz_visual_tools_imarker_simple_autogen"
-  "/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_imarker_simple.pdb"
-  "/home/zheng/robot_ws_zheng/devel/lib/librviz_visual_tools_imarker_simple.so"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools_imarker_simple.pdb"
+  "/home/zheng/robot_ws_zheng/devel/.private/rviz_visual_tools/lib/librviz_visual_tools_imarker_simple.so"
   "CMakeFiles/rviz_visual_tools_imarker_simple.dir/rviz_visual_tools_imarker_simple_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/rviz_visual_tools_imarker_simple.dir/src/imarker_simple.cpp.o"
 )

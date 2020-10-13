@@ -1,10 +1,10 @@
 {
 	"BUILD_DIR" : "/home/zheng/robot_ws_zheng/build/rviz_visual_tools/rviz_visual_tools_gui_autogen",
-	"CMAKE_BINARY_DIR" : "/home/zheng/robot_ws_zheng/build",
+	"CMAKE_BINARY_DIR" : "/home/zheng/robot_ws_zheng/build/rviz_visual_tools",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/zheng/robot_ws_zheng/build/rviz_visual_tools",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/zheng/robot_ws_zheng/src/rviz_visual_tools",
 	"CMAKE_EXECUTABLE" : "/usr/local/bin/cmake",
-	"CMAKE_SOURCE_DIR" : "/home/zheng/robot_ws_zheng/src",
+	"CMAKE_SOURCE_DIR" : "/home/zheng/robot_ws_zheng/src/rviz_visual_tools",
 	"HEADERS" : 
 	[
 		[
@@ -25,6 +25,7 @@
 	[
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
 		"QT_NO_KEYWORDS",
 		"QT_WIDGETS_LIB",
 		"ROSCONSOLE_BACKEND_LOG4CXX",
@@ -56,12 +57,12 @@
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
 		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
 		"/usr/include",
-		"/usr/include/c++/7",
-		"/usr/include/x86_64-linux-gnu/c++/7",
-		"/usr/include/c++/7/backward",
-		"/usr/lib/gcc/x86_64-linux-gnu/7/include",
+		"/usr/include/c++/5",
+		"/usr/include/x86_64-linux-gnu/c++/5",
+		"/usr/include/c++/5/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/5/include",
 		"/usr/local/include",
-		"/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+		"/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
 		"/usr/include/x86_64-linux-gnu"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],

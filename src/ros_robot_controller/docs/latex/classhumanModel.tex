@@ -1,0 +1,371 @@
+\hypertarget{classhumanModel}{}\doxysection{human\+Model Class Reference}
+\label{classhumanModel}\index{humanModel@{humanModel}}
+
+
+{\ttfamily \#include $<$humanmodel.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhumanModel_af1d8cb38ecdd46d7e01b53b3b0070695}{human\+Model}} (const int \&ndof, const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&M\+\_\+home)
+\item 
+\mbox{\hyperlink{classhumanModel_a532baef252527e0e34efdb69005ef4c7}{$\sim$human\+Model}} ()
+\item 
+bool \mbox{\hyperlink{classhumanModel_afc782e112f16b222ad93dfabdde145b3}{near\+Zero}} (const double \&val)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_aca8c7ffff7e743c86afbad14da1adfd8}{Vec\+Toso3}} (const Eigen\+::\+Vector3d \&omega)
+\begin{DoxyCompactList}\small\item\em return the skew matrix presentation of angular velocity \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classhumanModel_afab67d69b87430d7a4e0799ec7e5e8ad}{so3\+To\+Vec}} (const Eigen\+::\+Matrix3d \&omega\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em return the vector presentation of angular velocity skew matrix \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4d \mbox{\hyperlink{classhumanModel_a9107afdf69dd4deaae36b586d47d00ca}{Axis\+Ang3}} (const Eigen\+::\+Vector3d \&expc3)
+\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into it\textquotesingle{}s individual components. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{classhumanModel_a44c7663f917730e23f8bdd31a7fc77b7}{Matrix\+Exp3}} (const Eigen\+::\+Matrix3d \&so3mat)
+\begin{DoxyCompactList}\small\item\em Translates an exponential rotation into a rotation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{classhumanModel_a7bfc9d48a250dc85217852aa39d0ccc0}{Matrix\+Log3}} (const Eigen\+::\+Matrix3d \&R)
+\begin{DoxyCompactList}\small\item\em Computes the matrix logarithm of a rotation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_aa2624ad2452c42fbf368f71064cbd723}{Rp\+To\+Trans}} (const Eigen\+::\+Matrix3d \&R, const Eigen\+::\+Vector3d \&p)
+\begin{DoxyCompactList}\small\item\em Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{classhumanModel_ac9030e5ef1a50233918894179c913840}{Trans\+To\+Rp}} (const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_ac39c931ac36e2ab4a14f6710dc1fd25e}{Vec\+Tose3}} (const Eigen\+::\+Vector\+Xd \&V)
+\begin{DoxyCompactList}\small\item\em Translates a spatial velocity vector into a transformation matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classhumanModel_af0f702586f7f7029de68c7857bbd1de8}{se3\+To\+Vec}} (const Eigen\+::\+Matrix\+Xd \&T)
+\begin{DoxyCompactList}\small\item\em Translates a spatial velocity transformation matrix into a spatial velocity vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a5ed2085a88439b02253799ba9f22815b}{Adjoint}} (const Eigen\+::\+Matrix\+Xd \&T)
+\begin{DoxyCompactList}\small\item\em adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a4db705fbbac3de95d1bf7723de398a2b}{Trans\+Inv}} (const Eigen\+::\+Matrix\+Xd \&transform)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a713998a23afc6e15f8464ac329f4f139}{Rot\+Inv}} (const Eigen\+::\+Matrix\+Xd \&rot\+Matrix)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a003dd8f2cf45e03fc7c78705392e95a3}{Matrix\+Exp6}} (const Eigen\+::\+Matrix\+Xd \&se3mat)
+\begin{DoxyCompactList}\small\item\em Rotation expanded for screw axis. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_abc4c8431b8cb51eab7a7f2c15bb9ab80}{Matrix\+Log6}} (const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a501b920b5e75a76c433b543b80352379}{F\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\begin{DoxyCompactList}\small\item\em Compute end effector frame (used for current spatial position calculation) \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a9e78712d9e8f4582a188e8690fe6e099}{F\+Kin\+Body}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_afd07fa918fa23ef88b10aeddf5dd95e3}{Jacobian\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a397b7f43bbe93173dbf812a3f7d17626}{Jacobian\+Body}} (const Eigen\+::\+Matrix\+Xd \&Blist, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a430bf7c2d713cc081edf9bc8db09cb22}{get\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Vector\+Xd \&theta\+List)
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classhumanModel_a212f9910af5573accaca5703de4dc179}{get\+Relative\+Transformation}} (const Eigen\+::\+Matrix\+Xd \&Ti, const Eigen\+::\+Matrix\+Xd \&Tj)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classhumanModel_abbf81260a682fa8548516ae03a2b5a4f}{compute\+Velocity}} (const Eigen\+::\+Vector\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&T)
+\item 
+bool \mbox{\hyperlink{classhumanModel_aabdb586a49e8c0f8876d03cfdf183f65}{I\+Kin\+Space}} (const Eigen\+::\+Matrix\+Xd \&Slist, const Eigen\+::\+Matrix\+Xd \&M, const Eigen\+::\+Matrix\+Xd \&T, Eigen\+::\+Vector\+Xd \&thetalist, double eomg, double ev)
+\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{classhumanModel_a9de0002dd8ee012847b7044fdd9027ee}{compute\+Occupancy}} (const Eigen\+::\+Vector\+Xd \&q\+\_\+init, const Eigen\+::\+Vector\+Xd \&dq\+\_\+init, const Eigen\+::\+Vector\+Xd \&ddq\+\_\+init, const int \&N, const double \&Vmax)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhumanModel_af1d8cb38ecdd46d7e01b53b3b0070695}\label{classhumanModel_af1d8cb38ecdd46d7e01b53b3b0070695}} 
+\index{humanModel@{humanModel}!humanModel@{humanModel}}
+\index{humanModel@{humanModel}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{humanModel()}{humanModel()}}
+{\footnotesize\ttfamily human\+Model\+::human\+Model (\begin{DoxyParamCaption}\item[{const int \&}]{ndof,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix4d $>$ \&}]{M\+\_\+home }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a532baef252527e0e34efdb69005ef4c7}\label{classhumanModel_a532baef252527e0e34efdb69005ef4c7}} 
+\index{humanModel@{humanModel}!````~humanModel@{$\sim$humanModel}}
+\index{````~humanModel@{$\sim$humanModel}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$humanModel()}{~humanModel()}}
+{\footnotesize\ttfamily human\+Model\+::$\sim$human\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhumanModel_a5ed2085a88439b02253799ba9f22815b}\label{classhumanModel_a5ed2085a88439b02253799ba9f22815b}} 
+\index{humanModel@{humanModel}!Adjoint@{Adjoint}}
+\index{Adjoint@{Adjoint}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{Adjoint()}{Adjoint()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Adjoint (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+
+adjoint representation of a transformation matrix Used to change the frame of reference for spatial velocity vectors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 4x4} & Transformation matrix S\+E(3) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+6x6 Adjoint Representation of the matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a9107afdf69dd4deaae36b586d47d00ca}\label{classhumanModel_a9107afdf69dd4deaae36b586d47d00ca}} 
+\index{humanModel@{humanModel}!AxisAng3@{AxisAng3}}
+\index{AxisAng3@{AxisAng3}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{AxisAng3()}{AxisAng3()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4d human\+Model\+::\+Axis\+Ang3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{expc3 }\end{DoxyParamCaption})}
+
+
+
+Translates an exponential rotation into it\textquotesingle{}s individual components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Exponential} & rotation (rotation matrix in terms of a rotation axis and the angle of rotation) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The axis and angle of rotation as \mbox{[}x, y, z, theta\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a9de0002dd8ee012847b7044fdd9027ee}\label{classhumanModel_a9de0002dd8ee012847b7044fdd9027ee}} 
+\index{humanModel@{humanModel}!computeOccupancy@{computeOccupancy}}
+\index{computeOccupancy@{computeOccupancy}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{computeOccupancy()}{computeOccupancy()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ human\+Model\+::compute\+Occupancy (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{dq\+\_\+init,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ddq\+\_\+init,  }\item[{const int \&}]{N,  }\item[{const double \&}]{Vmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_abbf81260a682fa8548516ae03a2b5a4f}\label{classhumanModel_abbf81260a682fa8548516ae03a2b5a4f}} 
+\index{humanModel@{humanModel}!computeVelocity@{computeVelocity}}
+\index{computeVelocity@{computeVelocity}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{computeVelocity()}{computeVelocity()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd human\+Model\+::compute\+Velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a9e78712d9e8f4582a188e8690fe6e099}\label{classhumanModel_a9e78712d9e8f4582a188e8690fe6e099}} 
+\index{humanModel@{humanModel}!FKinBody@{FKinBody}}
+\index{FKinBody@{FKinBody}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{FKinBody()}{FKinBody()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+F\+Kin\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a501b920b5e75a76c433b543b80352379}\label{classhumanModel_a501b920b5e75a76c433b543b80352379}} 
+\index{humanModel@{humanModel}!FKinSpace@{FKinSpace}}
+\index{FKinSpace@{FKinSpace}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{FKinSpace()}{FKinSpace()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+F\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+
+
+Compute end effector frame (used for current spatial position calculation) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Home} & configuration (position and orientation) of end-\/effector The joint screw axes in the space frame when the manipulator is at the home position A list of joint coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transfomation matrix representing the end-\/effector frame when the joints are at the specified coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a212f9910af5573accaca5703de4dc179}\label{classhumanModel_a212f9910af5573accaca5703de4dc179}} 
+\index{humanModel@{humanModel}!getRelativeTransformation@{getRelativeTransformation}}
+\index{getRelativeTransformation@{getRelativeTransformation}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{getRelativeTransformation()}{getRelativeTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::get\+Relative\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Ti,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{Tj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a430bf7c2d713cc081edf9bc8db09cb22}\label{classhumanModel_a430bf7c2d713cc081edf9bc8db09cb22}} 
+\index{humanModel@{humanModel}!getTransformation@{getTransformation}}
+\index{getTransformation@{getTransformation}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{getTransformation()}{getTransformation()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::get\+Transformation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_aabdb586a49e8c0f8876d03cfdf183f65}\label{classhumanModel_aabdb586a49e8c0f8876d03cfdf183f65}} 
+\index{humanModel@{humanModel}!IKinSpace@{IKinSpace}}
+\index{IKinSpace@{IKinSpace}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{IKinSpace()}{IKinSpace()}}
+{\footnotesize\ttfamily bool human\+Model\+::\+I\+Kin\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{T,  }\item[{Eigen\+::\+Vector\+Xd \&}]{thetalist,  }\item[{double}]{eomg,  }\item[{double}]{ev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a397b7f43bbe93173dbf812a3f7d17626}\label{classhumanModel_a397b7f43bbe93173dbf812a3f7d17626}} 
+\index{humanModel@{humanModel}!JacobianBody@{JacobianBody}}
+\index{JacobianBody@{JacobianBody}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{JacobianBody()}{JacobianBody()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Jacobian\+Body (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Blist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_afd07fa918fa23ef88b10aeddf5dd95e3}\label{classhumanModel_afd07fa918fa23ef88b10aeddf5dd95e3}} 
+\index{humanModel@{humanModel}!JacobianSpace@{JacobianSpace}}
+\index{JacobianSpace@{JacobianSpace}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{JacobianSpace()}{JacobianSpace()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Jacobian\+Space (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Slist,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{theta\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a44c7663f917730e23f8bdd31a7fc77b7}\label{classhumanModel_a44c7663f917730e23f8bdd31a7fc77b7}} 
+\index{humanModel@{humanModel}!MatrixExp3@{MatrixExp3}}
+\index{MatrixExp3@{MatrixExp3}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{MatrixExp3()}{MatrixExp3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d human\+Model\+::\+Matrix\+Exp3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{so3mat }\end{DoxyParamCaption})}
+
+
+
+Translates an exponential rotation into a rotation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exponenential} & representation of a rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a003dd8f2cf45e03fc7c78705392e95a3}\label{classhumanModel_a003dd8f2cf45e03fc7c78705392e95a3}} 
+\index{humanModel@{humanModel}!MatrixExp6@{MatrixExp6}}
+\index{MatrixExp6@{MatrixExp6}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{MatrixExp6()}{MatrixExp6()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Matrix\+Exp6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{se3mat }\end{DoxyParamCaption})}
+
+
+
+Rotation expanded for screw axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em se3} & matrix representation of exponential coordinates (transformation matrix) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+6x6 Matrix representing the rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a7bfc9d48a250dc85217852aa39d0ccc0}\label{classhumanModel_a7bfc9d48a250dc85217852aa39d0ccc0}} 
+\index{humanModel@{humanModel}!MatrixLog3@{MatrixLog3}}
+\index{MatrixLog3@{MatrixLog3}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{MatrixLog3()}{MatrixLog3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d human\+Model\+::\+Matrix\+Log3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R }\end{DoxyParamCaption})}
+
+
+
+Computes the matrix logarithm of a rotation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Rotation} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix logarithm of a rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_abc4c8431b8cb51eab7a7f2c15bb9ab80}\label{classhumanModel_abc4c8431b8cb51eab7a7f2c15bb9ab80}} 
+\index{humanModel@{humanModel}!MatrixLog6@{MatrixLog6}}
+\index{MatrixLog6@{MatrixLog6}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{MatrixLog6()}{MatrixLog6()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Matrix\+Log6 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Eigen\+::\+Matrix\+Xd 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_afc782e112f16b222ad93dfabdde145b3}\label{classhumanModel_afc782e112f16b222ad93dfabdde145b3}} 
+\index{humanModel@{humanModel}!nearZero@{nearZero}}
+\index{nearZero@{nearZero}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
+{\footnotesize\ttfamily bool human\+Model\+::near\+Zero (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_a713998a23afc6e15f8464ac329f4f139}\label{classhumanModel_a713998a23afc6e15f8464ac329f4f139}} 
+\index{humanModel@{humanModel}!RotInv@{RotInv}}
+\index{RotInv@{RotInv}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{RotInv()}{RotInv()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Rot\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{rot\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classhumanModel_aa2624ad2452c42fbf368f71064cbd723}\label{classhumanModel_aa2624ad2452c42fbf368f71064cbd723}} 
+\index{humanModel@{humanModel}!RpToTrans@{RpToTrans}}
+\index{RpToTrans@{RpToTrans}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{RpToTrans()}{RpToTrans()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Rp\+To\+Trans (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R,  }\item[{const Eigen\+::\+Vector3d \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Combines a rotation matrix and position vector into a single Special Euclidian Group (S\+E3) homogeneous transformation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matrix of T = \mbox{[} \mbox{[}R, p\mbox{]}, \mbox{[}0, 1\mbox{]} \mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_af0f702586f7f7029de68c7857bbd1de8}\label{classhumanModel_af0f702586f7f7029de68c7857bbd1de8}} 
+\index{humanModel@{humanModel}!se3ToVec@{se3ToVec}}
+\index{se3ToVec@{se3ToVec}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{se3ToVec()}{se3ToVec()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd human\+Model\+::se3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+
+
+Translates a spatial velocity transformation matrix into a spatial velocity vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spatial} & velocity transformation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{[}angular velocity, linear velocity \mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_afab67d69b87430d7a4e0799ec7e5e8ad}\label{classhumanModel_afab67d69b87430d7a4e0799ec7e5e8ad}} 
+\index{humanModel@{humanModel}!so3ToVec@{so3ToVec}}
+\index{so3ToVec@{so3ToVec}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{so3ToVec()}{so3ToVec()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d human\+Model\+::so3\+To\+Vec (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{omega\+\_\+matrix }\end{DoxyParamCaption})}
+
+
+
+return the vector presentation of angular velocity skew matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega\+\_\+matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angular velocity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_a4db705fbbac3de95d1bf7723de398a2b}\label{classhumanModel_a4db705fbbac3de95d1bf7723de398a2b}} 
+\index{humanModel@{humanModel}!TransInv@{TransInv}}
+\index{TransInv@{TransInv}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{TransInv()}{TransInv()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Trans\+Inv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{transform }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_ac9030e5ef1a50233918894179c913840}\label{classhumanModel_ac9030e5ef1a50233918894179c913840}} 
+\index{humanModel@{humanModel}!TransToRp@{TransToRp}}
+\index{TransToRp@{TransToRp}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{TransToRp()}{TransToRp()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ human\+Model\+::\+Trans\+To\+Rp (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{T }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhumanModel_ac39c931ac36e2ab4a14f6710dc1fd25e}\label{classhumanModel_ac39c931ac36e2ab4a14f6710dc1fd25e}} 
+\index{humanModel@{humanModel}!VecTose3@{VecTose3}}
+\index{VecTose3@{VecTose3}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{VecTose3()}{VecTose3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Vec\+Tose3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{V }\end{DoxyParamCaption})}
+
+
+
+Translates a spatial velocity vector into a transformation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spatial} & velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+spatial velocity transformation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classhumanModel_aca8c7ffff7e743c86afbad14da1adfd8}\label{classhumanModel_aca8c7ffff7e743c86afbad14da1adfd8}} 
+\index{humanModel@{humanModel}!VecToso3@{VecToso3}}
+\index{VecToso3@{VecToso3}!humanModel@{humanModel}}
+\doxysubsubsection{\texorpdfstring{VecToso3()}{VecToso3()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd human\+Model\+::\+Vec\+Toso3 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{omega }\end{DoxyParamCaption})}
+
+
+
+return the skew matrix presentation of angular velocity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angular} & velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+skew matrix 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/include/humanmodel/\mbox{\hyperlink{humanmodel_8h}{humanmodel.\+h}}\item 
+/home/zheng/robot\+\_\+ws\+\_\+zheng/src/ros\+\_\+robot\+\_\+controller/src/humanmodel/\mbox{\hyperlink{humanmodel_8cpp}{humanmodel.\+cpp}}\end{DoxyCompactItemize}

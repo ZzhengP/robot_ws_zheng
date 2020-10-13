@@ -1,0 +1,1 @@
+/home/zheng/robot_ws_zheng/devel/.private/openni2_camera/share/roseus/ros/openni2_camera/manifest.l

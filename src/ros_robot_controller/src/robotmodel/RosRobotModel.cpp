@@ -10,7 +10,8 @@ arm_kinematic::arm_kinematic(ros::NodeHandle* nodehandle,const std::string& urdf
    q_.resize(NrOfDeg_);
    dotq_.resize(NrOfDeg_);
    robot_state_.resize(2*NrOfDeg_);
-   qqd_.resize(NrOfDeg_);
+   qqd_.q.resize(NrOfDeg_);
+   qqd_.qdot.resize(NrOfDeg_);
    jacobian_.resize(NrOfDeg_);
    joints_name_.resize(NrOfDeg_);
    L(0)=1;L(1)=1;L(2)=1;
@@ -18,6 +19,7 @@ arm_kinematic::arm_kinematic(ros::NodeHandle* nodehandle,const std::string& urdf
    fksolver_.reset(new KDL::ChainFkSolverPos_recursive(arm_chain_));
    iksolver_.reset(new KDL::ChainIkSolverPos_LMA(arm_chain_, L));
    chainjacsolver_.reset(new KDL::ChainJntToJacSolver(arm_chain_));
+   chainjacdotsolver_.reset(new KDL::ChainJntToJacDotSolver(arm_chain_));
    double timeout_in_secs=0.005;
    double error=1e-5;
 
@@ -60,7 +62,8 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
    q_.resize(NrOfDeg_);
    dotq_.resize(NrOfDeg_);
    robot_state_.resize(2*NrOfDeg_);
-   qqd_.resize(NrOfDeg_);
+   qqd_.q.resize(NrOfDeg_);
+   qqd_.qdot.resize(NrOfDeg_);
    jacobian_.resize(NrOfDeg_);
    joints_name_.resize(NrOfDeg_);
    L(0)=1;L(1)=1;L(2)=1;
@@ -68,6 +71,8 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
    fksolver_.reset(new KDL::ChainFkSolverPos_recursive(arm_chain_));
    iksolver_.reset(new KDL::ChainIkSolverPos_LMA(arm_chain_, L));
    chainjacsolver_.reset(new KDL::ChainJntToJacSolver(arm_chain_));
+   chainjacdotsolver_.reset(new KDL::ChainJntToJacDotSolver(arm_chain_));
+
    for (int i(0); i<NrOfDeg_ ;i++)
    {
        joints_name_[i] = arm_chain_.getSegment(i).getName();
@@ -97,25 +102,29 @@ arm_kinematic::arm_kinematic(const std::string& urdf_name, unsigned int NrOfDeg,
 
 bool arm_kinematic::init(Eigen::VectorXd q_init, Eigen::VectorXd dotq_init,unsigned int N)
 {
-    N_Prediciton_ = N;
+    N_Prediction_ = N;
     setState(q_init,dotq_init);
     robot_state_.head(NrOfDeg_) = q_init;
     robot_state_.tail(NrOfDeg_) = dotq_init ;
-    q_horizon_.resize(N_Prediciton_*NrOfDeg_);
+    q_horizon_.resize(N_Prediction_*NrOfDeg_);
     q_horizon_.setZero();
 
-    dotq_horizon_.resize(N_Prediciton_*NrOfDeg_);
+    dotq_horizon_.resize(N_Prediction_*NrOfDeg_);
     dotq_horizon_.setZero();
 
-    jacobian_horizon_.resize(N_Prediciton_*6,N_Prediciton_*NrOfDeg_);
+    qqd_horizon_.resize(2*N_Prediction_*NrOfDeg_);
+    qqd_horizon_.setZero();
+    jacobian_horizon_.resize(N_Prediction_*6,N_Prediction_*NrOfDeg_);
     jacobian_horizon_.setZero();
 
-    ee_pos_horion_.resize(N_Prediciton_*3);
+    jacobian_dot_horizon_.resize(N_Prediction_*6,N_Prediction_*NrOfDeg_);
+    jacobian_dot_horizon_.setZero();
+    ee_pos_horion_.resize(N_Prediction_*3);
     ee_pos_horion_.setZero();
     ee_pos_ = getSegmentPosition(7);
     ee_pos_.M.GetRPY(RPY_angle_(0),RPY_angle_(1),RPY_angle_(2));
 
-    for (int i(0); i<N_Prediciton_; i ++)
+    for (int i(0); i<N_Prediction_; i ++)
     {
         q_horizon_.segment(NrOfDeg_*i, NrOfDeg_) = q_init;
         dotq_horizon_.segment(NrOfDeg_*i,NrOfDeg_) = dotq_init;
@@ -141,7 +150,9 @@ void arm_kinematic::setJointPositions(const Eigen::VectorXd& q)
 {
      for(unsigned int i=0; i<NrOfDeg_ ; i++){
            q_.data(i)= q(i);
+
        }
+     qqd_.q = q_;
 }
 
 void arm_kinematic::setJointVelocities(const Eigen::VectorXd& qd)
@@ -149,6 +160,7 @@ void arm_kinematic::setJointVelocities(const Eigen::VectorXd& qd)
     for(unsigned int i=0; i<NrOfDeg_ ; i++){
          dotq_.data(i) = qd(i);
      }
+    qqd_.qdot = dotq_;
 }
 
 void arm_kinematic::setState(const Eigen::VectorXd& q,const Eigen::VectorXd& dq)
@@ -162,7 +174,7 @@ void arm_kinematic::setState(const Eigen::VectorXd& q,const Eigen::VectorXd& dq)
 
 void arm_kinematic::computeJacobianHorz(const Eigen::VectorXd &q_horizon)
 {
-    for (size_t i(0); i<N_Prediciton_; i++)
+    for (size_t i(0); i<N_Prediction_; i++)
     {
       KDL::JntArray q_horz_temp;
       KDL::Jacobian jac_temp;
@@ -179,10 +191,33 @@ void arm_kinematic::computeJacobianHorz(const Eigen::VectorXd &q_horizon)
     }
 }
 
+void arm_kinematic::computeJacobianDotHorz(const Eigen::VectorXd &qqd_horizon)
+{
+    for (size_t i(0); i<N_Prediction_; i++)
+    {
+      KDL::JntArrayVel qqd_horz_temp;
+      KDL::Jacobian jacobianDot_temp;
+      qqd_horz_temp.resize(NrOfDeg_);
+//      qqd_horz_temp.q.resize(NrOfDeg_);
+      qqd_horz_temp.q.data.setZero();
+//      qqd_horz_temp.qdot.resize(NrOfDeg_);
+      qqd_horz_temp.qdot.data.setZero();
+
+      jacobianDot_temp.resize(NrOfDeg_);
+      jacobianDot_temp.data.setZero();
+
+      qqd_horz_temp.q.data = qqd_horizon.segment(2*NrOfDeg_*i,NrOfDeg_);
+      qqd_horz_temp.qdot.data = qqd_horizon.segment(2*NrOfDeg_*i+NrOfDeg_,NrOfDeg_);
+
+      computeJacobianDot(qqd_horz_temp,jacobianDot_temp);
+      jacobian_horizon_.block(6*i,NrOfDeg_*i,6,NrOfDeg_) = jacobianDot_temp.data;
+    }
+}
+
 
 void arm_kinematic::computeCartPosHorz(const Eigen::VectorXd &q_horizon)
 {
-    for (int i(0); i<N_Prediciton_; i++)
+    for (int i(0); i<N_Prediction_; i++)
     {
       KDL::JntArray q_horz_temp;
       KDL::Frame frame_horz_temp;
