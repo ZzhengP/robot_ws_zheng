@@ -1,4 +1,8 @@
-# robot\_ws\_zheng
+---
+description: This is a documentary for using the MPC control framework on the Panda robot.
+---
+
+# panda\_MPC
 
 1. Fix ananconda with Ros issues [https://medium.com/@zuxinl/ubuntu-18-04-ros-python3-anaconda-cuda-environment-configuration-cb8c8e42c68d](https://medium.com/@zuxinl/ubuntu-18-04-ros-python3-anaconda-cuda-environment-configuration-cb8c8e42c68d)
 2. Create virtual environmment for tensorflow-gpu \(using pip or conda\) [https://www.tensorflow.org/install/pip?hl=fr\#ubuntu-macos](https://www.tensorflow.org/install/pip?hl=fr#ubuntu-macos)
