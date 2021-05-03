@@ -8,9 +8,16 @@ description: This is a documentary for using the MPC control framework on the Pa
 
 #### Option 1: Install via apt
 
+{% hint style="warning" %}
+#### Attention
+
+This method is preferred if build from source has problems
+{% endhint %}
+
 ```text
 sudo apt install ros-melodic-libfranka
 sudo apt install ros-melodic-franka-ros
-
 ```
+
+
 
